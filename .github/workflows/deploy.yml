@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Trigger the action on pushes to the 'main' branch (adjust if your default branch is different)
+      - main
 
 jobs:
   build:
@@ -16,17 +16,19 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18' # Use the node version you're working with
+          node-version-file: '.nvmrc'
+
+      - name: Install pnpm
+        run: npm install -g pnpm
 
       - name: Install dependencies
-        run: npm install
+        run: pnpm install
 
       - name: Build static site
-        run: npm run build && npm run export
+        run: pnpm build && pnpm export
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out  # This is the default export directory for Next.js static exports
-          # You can specify a 'cname' if you're using a custom domain
+          publish_dir: ./out
