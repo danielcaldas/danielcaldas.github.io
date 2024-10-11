@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Panda Blog</title><description>Panda Blog, a blog powered by Astro</description><link>https://astro-theme-panda.vercel.app/</link><item><title>CSSconf EU 2018</title><link>https://astro-theme-panda.vercel.app/posts/about-css-conf-eu-berlin-2018/</link><guid isPermaLink="true">https://astro-theme-panda.vercel.app/posts/about-css-conf-eu-berlin-2018/</guid><description>My notes on the CSSconfg EU 2018</description><pubDate>Sun, 17 Jun 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hello all!! I decided to write this blog post to share with you the new things I learned attending this year&apos;s edition of &amp;lt;a href=&amp;quot;https://2018.  cssconf.eu&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;cssconf.eu official web page&amp;quot;&amp;gt;CSSconf EU&amp;lt;/a&amp;gt; in Berlin (Friday, June 1st). In this post I will focus more on the talks, I will cover other venue details in &amp;lt;a href=&amp;quot;https://goodguydaniel.com/blog/about-js-conf-eu-berlin-2018/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;JSconf EU 2018 | Blog&amp;quot;&amp;gt;another blog post&amp;lt;/a&amp;gt; on &amp;lt;a href=&amp;quot;https://goodguydaniel.com/blog/about-js-conf-eu-berlin-2018/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;JSconf EU 2018 | Blog&amp;quot;&amp;gt;JSConf EU&amp;lt;/a&amp;gt; that had a similar organization.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Hey 👋</title><description>Blogpost, note taking and other things</description><link>https://danielcaldas.github.io/</link><item><title>CSSconf EU 2018</title><link>https://danielcaldas.github.io/posts/about-css-conf-eu-berlin-2018/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/about-css-conf-eu-berlin-2018/</guid><description>My notes on the CSSconfg EU 2018</description><pubDate>Sun, 17 Jun 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hello all!! I decided to write this blog post to share with you the new things I learned attending this year&apos;s edition of &amp;lt;a href=&amp;quot;https://2018.  cssconf.eu&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;cssconf.eu official web page&amp;quot;&amp;gt;CSSconf EU&amp;lt;/a&amp;gt; in Berlin (Friday, June 1st). In this post I will focus more on the talks, I will cover other venue details in &amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/about-js-conf-eu-berlin-2018/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;JSconf EU 2018 | Blog&amp;quot;&amp;gt;another blog post&amp;lt;/a&amp;gt; on &amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/about-js-conf-eu-berlin-2018/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;JSconf EU 2018 | Blog&amp;quot;&amp;gt;JSConf EU&amp;lt;/a&amp;gt; that had a similar organization.&lt;/p&gt;
 &lt;h3&gt;For starters&lt;/h3&gt;
 &lt;p&gt;If you were there as I was, you were probably wondering whether you were at the right conference, since at the beginning you would ask yourself &lt;strong&gt;where is the CSS&lt;/strong&gt;?&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3liNnh6dTM4ZmlwNnZiemxhMmR3aWNlYWh0ZndiZWhydGsxdWFzaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hEc4k5pN17GZq/giphy.webp&quot; alt=&quot;where is the css, john travolta&quot;&gt;
@@ -379,8 +379,1373 @@ video
 &amp;lt;/li&amp;gt;
 &amp;lt;/ul&amp;gt;&lt;/p&gt;
 &lt;h3&gt;And then...&lt;/h3&gt;
-&lt;p&gt;I will also write &amp;lt;a href=&amp;quot;https://goodguydaniel.com/blog/about-js-conf-eu-berlin-2018/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;JSconf EU 2018 | Blog&amp;quot;&amp;gt;a blog post about the JSConf&amp;lt;/a&amp;gt; that happened in the following two days where I&apos;ll also talk about Berlin and the venue to give you a real insider perspective on the conference so that you can properly decide whether or not you will attend it next year.&lt;/p&gt;
-</content:encoded></item><item><title>Basic markdown style guide</title><link>https://astro-theme-panda.vercel.app/posts/markdown-example/</link><guid isPermaLink="true">https://astro-theme-panda.vercel.app/posts/markdown-example/</guid><description>You can author content using the familiar markdown syntax you already know. All basic markdown syntax is supported.</description><pubDate>Sat, 02 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Markdown is powered by &lt;a href=&quot;https://markdoc.dev/&quot;&gt;Markdoc&lt;/a&gt;. This is an example post to demonstrate all the basic markdown syntax. You can author content using the familiar markdown syntax you already know.&lt;/p&gt;
+&lt;p&gt;I will also write &amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/about-js-conf-eu-berlin-2018/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;JSconf EU 2018 | Blog&amp;quot;&amp;gt;a blog post about the JSConf&amp;lt;/a&amp;gt; that happened in the following two days where I&apos;ll also talk about Berlin and the venue to give you a real insider perspective on the conference so that you can properly decide whether or not you will attend it next year.&lt;/p&gt;
+</content:encoded></item><item><title>JSConf EU 2018</title><link>https://danielcaldas.github.io/posts/about-js-conf-eu-berlin-2018/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/about-js-conf-eu-berlin-2018/</guid><description>My notes on the epic JSConf EU 2018</description><pubDate>Sun, 12 Aug 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;As promised in the post on &lt;a href=&quot;https://danielcaldas.github.io/posts/about-css-conf-eu-berlin-2018/&quot;&gt;CSSconf EU 2018&lt;/a&gt; I will now talk a bit about the JSConf EU 2018 that followed the CSSConf in the Berlin Arena (June 2nd and 3rd).&lt;/p&gt;
+&lt;h4&gt;What will you find here&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#talks&quot;&gt;Talks (in-depth coverage of selected talks)&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#day-1&quot;&gt;Day 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#day-2&quot;&gt;Day 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#other-things-ive-learned&quot;&gt;Other things I&apos;ve learned&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#the-venue&quot;&gt;The venue&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#berlin&quot;&gt;Berlin&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Talks&lt;/h3&gt;
+&lt;p&gt;As you&apos;re probably expecting the talks weren&apos;t exclusively technical (of course we got to see a few &lt;em&gt;hands on&lt;/em&gt; kind of presentation) topics ranged from ethics, productivity, history all the way to the more technical realm with performance, user experience, machine learning, IoT and of course the Javascript language itself &amp;lt;a href=&amp;quot;https://2018.jsconf.eu/schedule/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;jsconf eu 2018 berlin schedule&amp;quot;&amp;gt;check out the conference full schedule&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;p&gt;Now I&apos;ll focus on a few interesting talks that I had the change to see on each day, I&apos;ll give an overview on the content that was more meaningful (in my opinion of course). I&apos;ll break down the talks into &amp;lt;a href=&amp;quot;#day-1&amp;quot; title=&amp;quot;Day 1 talks&amp;quot;&amp;gt;Day 1&amp;lt;/a&amp;gt; and &amp;lt;a href=&amp;quot;#day-2&amp;quot; title=&amp;quot;Day 2 talks&amp;quot;&amp;gt;Day 2&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;h3&gt;Day 1&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#d1t1&quot;&gt;(1) Kablooie: A History of Errors &amp;amp; a Future of Solutions - Sarah Groff Hennigh Palermo - JSConf EU 2018&lt;/a&gt; | &amp;lt;a href=&amp;quot;https://www.youtube.com/watch?v=tteIQBPPxqc&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Kablooie: A History of Errors &amp;amp; a Future of Solutions - Sarah Groff Hennigh Palermo - JSConf EU 2018&amp;quot;&amp;gt;talk video&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#d1t2&quot;&gt;(2) Native BigInts in JavaScript: A Case Study in TC39 - Daniel Ehrenberg - JSConf EU 2018&lt;/a&gt; | &amp;lt;a href=&amp;quot;https://www.youtube.com/watch?v=RiU5OzMZ7z8&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Native BigInts in JavaScript: A Case Study in TC39 - Daniel Ehrenberg - JSConf EU 2018&amp;quot;&amp;gt;talk video&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#d1t3&quot;&gt;(3) Further Adventures of the Event Loop - Erin Zimmer - JSConf EU 2018&lt;/a&gt; | &amp;lt;a href=&amp;quot;https://www.youtube.com/watch?v=u1kqx6AenYw&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Further Adventures of the Event Loop - Erin Zimmer - JSConf EU 2018&amp;quot;&amp;gt;talk video&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#d1t4&quot;&gt;(4) Hand-crafting WebAssembly - Emil Bay - JSConf EU 2018&lt;/a&gt; | &amp;lt;a href=&amp;quot;https://www.youtube.com/watch?v=CfdmzVos1Fs&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Hand-crafting WebAssembly - Emil Bay - JSConf EU 2018&amp;quot;&amp;gt;talk video&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#d1t5&quot;&gt;(5) 10 Things I Regret About Node.js - Ryan Dahl - JSConf EU 2018&lt;/a&gt; | &amp;lt;a href=&amp;quot;https://www.youtube.com/watch?v=M3BM9TB-8yA&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;10 Things I Regret About Node.js - Ryan Dahl - JSConf EU 2018&amp;quot;&amp;gt;talk video&amp;lt;/a&amp;gt; | &amp;lt;a href=&amp;quot;http://tinyclouds.org/jsconf2018.pdf&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;design mistakes in node slides&amp;quot;&amp;gt;slides&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The opening talk was about errors &lt;a href=&quot;#day-1&quot;&gt;&amp;lt;span id=&amp;quot;d1t1&amp;quot;&amp;gt;(1)&amp;lt;/span&amp;gt;&lt;/a&gt;, yes errors. I&apos;ve highlighted this topic because error handling is often forgotten or skipped but shouldn&apos;t this be part of the modelling process and architecture of our applications? Well that&apos;s another story.
+Questioning type systems and discussing errors from a human perspective a pretty valid statement was pointed out
+on Javascript error handling mechanism, &lt;strong&gt;it is practically the same since it came out in &amp;lt;a href=&amp;quot;https://codeburst.io/javascript-wtf-is-es6-es8-es-2017-ecmascript-dca859e4821c&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;JavaScript — WTF is ES6, ES8, ES 2017, ECMAScript… ?&amp;quot;&amp;gt;ES3&amp;lt;/a&amp;gt;&lt;/strong&gt;. Of course the language evolved in ways that try
+to mitigate predictable runtime errors with static analysis, the ES5 brought along the &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Strict mode&amp;quot;&amp;gt;strict mode&amp;lt;/a&amp;gt;, strict mode is basically (talk quote) &lt;em&gt;&amp;quot;disallow bad code that otherwise would be allowed according to the language grammar&amp;quot;&lt;/em&gt;. Next a list of how typically errors are handled and here handled in the past was shown, from the classic &lt;em&gt;just crash&lt;/em&gt; classic to exceptions, signals, options/maybes....
+Some conclusions here were:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We need more robust way to deal with nullity (&amp;lt;a href=&amp;quot;https://github.com/tc39/proposal-optional-chaining&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;tc39 optional chaining proposal&amp;quot;&amp;gt;optional chaining tc39 proposal&amp;lt;/a&amp;gt;)&lt;/li&gt;
+&lt;li&gt;Expand ways to work with errors (e.g. &lt;em&gt;onError&lt;/em&gt; event listeners).&lt;/li&gt;
+&lt;li&gt;Focusing on default arguments.&lt;/li&gt;
+&lt;li&gt;Maintain good state in the face of user interaction while warning for events that caused transition to a bad one.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Other ideas that the speaker brought to discussion envolved &amp;lt;a href=&amp;quot;https://users.ece.cmu.edu/~koopman/des_s99/sw_fault_tolerance/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;cmu recovery blocks&amp;quot;&amp;gt;recovery blocks&amp;lt;/a&amp;gt; and &amp;lt;a href=&amp;quot;https://www.microsoft.com/en-us/research/wp-content/uploads/2016/08/algeff-tr-2016-v2.pdf&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;microsoft technical report algebraic effects for functional programming&amp;quot;&amp;gt;algebraic effects&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Next &amp;lt;a href=&amp;quot;https://twitter.com/littledan?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;daniel ehrenberg twitter&amp;quot;&amp;gt;Daniel Ehrenberg&amp;lt;/a&amp;gt; talks to us about numbers &lt;a href=&quot;#day-1&quot;&gt;&amp;lt;span id=&amp;quot;d1t2&amp;quot;&amp;gt;(2)&amp;lt;/span&amp;gt;&lt;/a&gt;. So the problem is that number representation in Javascript are limited to 2^35, as in:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const x = 2 ** 53;
+// x is 9007199254740992
+const y = x + 1;
+// y is again 9007199254740992
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;According to this presentation &lt;em&gt;long/ulong&lt;/em&gt; types where proposed back there (1999) in some of the first ECMA specifications, still they didn&apos;t make till the very end. But why this limitation in numerical representation in Javascript. Numbers in Javascript are 64-bit floating point binary numbers (&amp;lt;a href=&amp;quot;https://en.wikipedia.org/wiki/Double-precision_floating-point_format&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;wikipedia double-precision floating-point format&amp;quot;&amp;gt;IEEE 754 64-bit floats&amp;lt;/a&amp;gt;), and they&apos;re structure is:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/about-js-conf-eu-berlin-2018/binary-number-representation.png&quot; alt=&quot;binary floating point number representation&quot; title=&quot;binary floating point number representation&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;cite&amp;gt;souce: https://www.youtube.com/watch?v=RiU5OzMZ7z8&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;p&gt;So the 2^53 maximum number (900719925474099&lt;strong&gt;2&lt;/strong&gt;) looks like this when in the binary floating point representation:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;0 10000110100 0...(x52)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Adding &lt;strong&gt;1&lt;/strong&gt; we get:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;0 10000110100 0...(x51)... &lt;strong&gt;1&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;that is 900719925474099&lt;strong&gt;4&lt;/strong&gt;. So... Ok we get it, with a 64-bit representation it&apos;s impossible to represent all the numbers since you have the limitation of a 64-bit combination pattern to form numbers, at some point we need to round it, go up to infinity or throw an error.&lt;/p&gt;
+&lt;p&gt;But wait, is this a real use case? Yes, &amp;lt;a href=&amp;quot;https://developer.twitter.com/en/docs/basics/twitter-ids.html&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;twitter developers twitter ids (snowflake)&amp;quot;&amp;gt;checkout Twitter IDs (snowflake) issue&amp;lt;/a&amp;gt; that made them add an &lt;code&gt;id_string&lt;/code&gt; field so that when Javascript parses the id it keeps this unchanged id in the string format.
+The proposed solution is &amp;lt;a href=&amp;quot;https://github.com/tc39/proposal-bigint&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;tc39/proposal-bigint&amp;quot;&amp;gt;&lt;em&gt;BigInt&lt;/em&gt;&amp;lt;/a&amp;gt;. Not some library such as &amp;lt;a href=&amp;quot;https://github.com/indutny/bn.js/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;BigNum in pure javascript&amp;quot;&amp;gt;bn.js&amp;lt;/a&amp;gt;, instead a native Javascript supported BigInt type.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;x = 2n ** 53n;
+// x is 9007199254740992n
+y = x + 1n;
+// y is now 9007199254740993n
+// note that if you try and add a number you will get a TypeError
+y = x + 1;
+// Uncaught TypeError: Cannot mix BigInt and other types, use explicit conversions
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can check the progress of the proposal at the github repository &amp;lt;a href=&amp;quot;https://github.com/tc39/proposal-bigint&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;arbitrary precision integers in javascript&amp;quot;&amp;gt;tc39/proposal-bigint&amp;lt;/a&amp;gt;, it is at the time of this writing in stage 3.&lt;/p&gt;
+&lt;p&gt;In my opinion may solve huge corner cases as the one exposed previously, still I think it will make arithmetic operations less error prune since we can eventually now run into &lt;em&gt;TypeErrors&lt;/em&gt; for mixing numbers with BigInts. If BigInt is not explicit enough to developers we can start to fall into messy errors, but maybe I&apos;m overreacting here.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&quot;#day-1&quot;&gt;&amp;lt;span id=&amp;quot;d1t3&amp;quot;&amp;gt;(3)&amp;lt;/span&amp;gt;&lt;/a&gt; You most certainly have seen the Philip Roberts&apos; talk on the event loop &amp;lt;a href=&amp;quot;https://www.youtube.com/watch?v=8aGhZQkoFbQ&amp;amp;t=4s&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Philip Roberts: What the heck is the event loop anyway? | JSConf EU&amp;quot;&amp;gt;&lt;em&gt;What the heck is the event loop anyway? | JSConf EU&lt;/em&gt;&amp;lt;/a&amp;gt;. If not, please stop reading this and watch that, it&apos;s way more important. In this next talk we dive into the event loop to learn that the event loop is a bit more complex than what you saw in Philip Roberts&apos; talk.&lt;/p&gt;
+&lt;p&gt;To start we can think of the &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;javascript mdn event loop&amp;quot;&amp;gt;event loop&amp;lt;/a&amp;gt; as the main function of the browser, something like:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;while (queue.waitForMessage()) {
+  queue.processNextMessage();
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A quick look into how task queues work on web browsers. So first &lt;em&gt;tasks&lt;/em&gt; are small unities of work to be executed from start to finish. Rendering pipeline in browsers is responsible for painting things in the browser. This pipeline can run when a task finishes, but the rendering pipeline has a separate time cycle and sometimes waiting is inevitable between the time a tasks finished and the time render pipeline runs again. Also if you have a task that takes really a long time to run the rendering pipeline has to wait, potentially your page will start to slow down at this point.&lt;/p&gt;
+&lt;p&gt;There are this things called micro-tasks (&amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;guide using promises mdn&amp;quot;&amp;gt;promises&apos; callbacks are handled as micro-tasks&amp;lt;/a&amp;gt;). Micro-tasks are handled differently than regular tasks, micro-tasks are queued in a micro task queue, this queue runs after each task and while the queue is emptying other micro-tasks might be added and executed in the same event loop tick.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/about-js-conf-eu-berlin-2018/task-queue-meme.jpg&quot; alt=&quot;buzz and woody&quot; title=&quot;buzz and woody meme&quot;&gt;
+&amp;lt;cite&amp;gt;source: https://imgflip.com/memegenerator/13026863/TOYSTORY-EVERYWHERE&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;p&gt;There&apos;s more. Animations have a dedicated queue as well the &lt;strong&gt;animation frame callback queue&lt;/strong&gt;. When some animation tasks ends the event loop proceeds to the repaint, meaning that we don&apos;t wait up for new animation tasks that might appear, and it makes sense because if that happens it&apos;s because some animation was requested to be displayed in the next frame (thus in the next repaint).&lt;/p&gt;
+&lt;p&gt;At the end of these series of explanations we got the following pseudo code:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;while (true) {
+  queue = getNextQueue();
+  task = queue.pop();
+
+  execute(task);
+
+  while (microtaskQueue.hasTasks()) {
+    doMicroTask();
+  }
+
+  if (isRepaintTime()) {
+    animationTasks = animationQueue.copyTasks();
+
+    for (task in animationTasks) {
+      doAnimationTask(task);
+    }
+
+    repaint();
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And that should be it. &lt;strong&gt;Now a quick peek into Node.js&lt;/strong&gt;. Node should be more simpler since:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;There are no scripting parsing events.&lt;/li&gt;
+&lt;li&gt;There are no user interactions.&lt;/li&gt;
+&lt;li&gt;There are no animation frame callbacks.&lt;/li&gt;
+&lt;li&gt;There is no rendering pipeline.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A few interesting things:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;setImmediate(callback)&lt;/code&gt; is the same as &lt;code&gt;setTimeout(callback, 0)&lt;/code&gt; but it runs first!&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;process.nextTick(callback)&lt;/code&gt; all this callbacks will run before the promises callbacks.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;setImmediate(callback)&lt;/code&gt; does something on the next tick.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;process.nextTick(callback)&lt;/code&gt; does something immediately.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Below the pseudo-code for the Node event loop:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;while (tasksAreWaiting()) {
+  queue = getNextQueue();
+
+  while (queue.hasTasks()) {
+    task = queue.pop();
+
+    execute(task);
+
+    while (nextTickQueue.hasTasks()) {
+      doNextTickTask();
+    }
+
+    while (promiseQueue.hasTasks()) {
+      doPromiseTask();
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;small&amp;gt;
+(
+&amp;lt;a
+href=&amp;quot;https://medium.freecodecamp.org/walking-inside-nodejs-event-loop-85caeca391a9&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;medium walking inside the node.js event loop&amp;quot;&lt;/p&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;this nice
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;/a&amp;gt;{&amp;quot; &amp;quot;}
+article explains with more detail the event loop inside Node.js)
+&amp;lt;/small&amp;gt;&lt;/p&gt;
+&lt;p&gt;Regarding &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/API/Worker&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;mdn web api worker&amp;quot;&amp;gt;web workers&amp;lt;/a&amp;gt; the only relevant fact pointed out is that they are simple to understand since each web worker runs it&apos;s own event loop on a separate thread and they are not allowed to manipulate DOM so no need to worry about user interactions here.&lt;/p&gt;
+&lt;p&gt;If you are interested in more of this you can check this very complete post &amp;lt;a href=&amp;quot;https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;tasks, microtasks, queues and schedules&amp;quot;&amp;gt;&lt;em&gt;Tasks, micro tasks, queues and schedules&lt;/em&gt;&amp;lt;/a&amp;gt;, it contains interesting animated demonstrations.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&quot;#day-1&quot;&gt;&amp;lt;span id=&amp;quot;d1t4&amp;quot;&amp;gt;(4)&amp;lt;/span&amp;gt;&lt;/a&gt; More than a year has passed since the release of &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/WebAssembly/Concepts&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;&amp;quot;&amp;gt;WebAssembly (WASM)&amp;lt;/a&amp;gt;, it is still in its first steps towards what could be a game changer in web development (some say). In the next talk that I will mention WASM itself was introduced. So first of all WASM:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It&apos;s not very web, it&apos;s only pure computation.&lt;/li&gt;
+&lt;li&gt;It&apos;s not very assembly, it&apos;s not the code that actually runs on the machine, it&apos;s an abstraction.&lt;/li&gt;
+&lt;li&gt;In WASM we cannot perform system calls (unless with explicit access).&lt;/li&gt;
+&lt;li&gt;WASM cannot access additional hardware, you can check a simple example below.&lt;/li&gt;
+&lt;li&gt;&amp;lt;a
+href=&amp;quot;https://developer.mozilla.org/en-US/docs/WebAssembly/Understanding_the_text_format&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;mdn wasm understanding the text format&amp;quot;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+Web assembly text-format (WAT)
+&amp;lt;/a&amp;gt; is the assembly language for WASM.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;language-wasm&quot;&gt;(module
+  (func $square
+    (export &amp;quot;square&amp;quot;)
+    (param $x i32)
+    (result i32)
+    (return
+      (i32.mul (get_local $x) (get_local $x))
+    )
+  )
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That&apos;s enough WAT for now, you&apos;re probably wondering how can we use WASM modules within javascript. It&apos;s actually simple, you just have a small amount of boilerplate to load the WASM module. Let&apos;s import and use &lt;code&gt;square.wasm&lt;/code&gt; module.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;fetch(&amp;quot;square.wasm&amp;quot;)
+  .then((response) =&amp;gt; response.arrayBuffer())
+  .then((bytes) =&amp;gt; WebAssembly.instantiate(bytes, importObject))
+  .then((results) =&amp;gt; {
+    const square = results.instance.exports.square;
+    const x = square(2);
+
+    console.log(x); // 4
+  });
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Of course you probably won&apos;t be using many native WAT modules, you will compile your C, C++, Rust or whatever into WASM, using it the same way we did above.&lt;/p&gt;
+&lt;p&gt;I think a very strong point was a little too much implicit during this talk, performance was mentioned still, with WASM we will be able to obtain a &lt;strong&gt;more robust and coherent performance cross platform/browser&lt;/strong&gt; and &lt;strong&gt;portability across operating systems and different CPU architectures&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/about-js-conf-eu-berlin-2018/wasm-diagram.png&quot; alt=&quot;wasm diagram comparing to cpu architectures&quot; title=&quot;wasm diagram comparing to cpu architectures&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;Caption
+source=&amp;quot;https://www.youtube.com/watch?v=bac0dGQbUto&amp;quot;
+text=&amp;quot;As you can see WASM sits between our source code and creates an abstraction layer on top of the various CPU architectures. This diagram is from the talk, &apos;Dan Callahan: Practical WebAssembly | JSConf Budapest 2017&apos;&amp;quot;
+/&amp;gt;&lt;/p&gt;
+&lt;p&gt;If you want to look more into the benefits or what actually could be achieved with WASM I highly recommend the two following talks &amp;lt;a href=&amp;quot;https://www.youtube.com/watch?v=PpuAqLCraAQ&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;real world webassembly chrome dev summit 2017&amp;quot;&amp;gt;Real World WebAssembly (Chrome Dev Summit 2017)&amp;lt;/a&amp;gt; and &amp;lt;a href=&amp;quot;https://www.youtube.com/watch?v=bac0dGQbUto&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;dan callahan: practical webassembly jsconf budapest 2017&amp;quot;&amp;gt;Dan Callahan: Practical WebAssembly | JSConf Budapest 2017&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;I couldn&apos;t have imagined a better talk to end day 1 &lt;a href=&quot;#day-1&quot;&gt;&amp;lt;span id=&amp;quot;d1t5&amp;quot;&amp;gt;(5)&amp;lt;/span&amp;gt;&lt;/a&gt;. On stage we had &amp;lt;a href=&amp;quot;https://en.wikipedia.org/wiki/Ryan_Dahl&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;ryan dahl wiki page&amp;quot;&amp;gt;Ryan Dahl&amp;lt;/a&amp;gt; inventor of Node.js.
+First Ryan gives us a bit of context on the talk, like how we wanted to build better servers with event-driven non-blocking I/O, and why dynamic languages are great (for certain kind of tasks), being Javascript the best dynamic language.&lt;/p&gt;
+&lt;p&gt;The talk had the following introduction:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;&amp;quot;(...) using Node now looks like nails on chalkboard to me, I see the bugs that I introduced, I mean at this point they are not really bugs it&apos;s just how it works, but they are bugs. They were design mistakes made that just cannot be corrected now because there&apos;s so much software that uses it (...) It offends my sensibilities (...)&amp;quot;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/about-js-conf-eu-berlin-2018/ryan-dahl-thug-life.png&quot; alt=&quot;ryan dahl thug life&quot; title=&quot;ryan dahl thug life&quot;&gt;
+&amp;lt;cite&amp;gt;source: https://www.youtube.com/watch?v=M3BM9TB-8yA&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;p&gt;So let&apos;s take look at the mentioned regrets:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Not sticking with Promises&lt;/strong&gt; - promises were added very earlier, but Ryan decided to remove then because Node.js aim was to be minimalist;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Security&lt;/strong&gt; - Javascript is a very secure sandbox, unfortunately in Node we just bound to everything, not safe. Networking access for instance is given by default.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The build system (GYP)&lt;/strong&gt; - probably the biggest regret. Chrome used to use GYP, now it uses GN. There are several wrappers around this (e.g. node-gyp) which brings layers of unnecessary complexity and terrible experience for users.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;package.json&lt;/strong&gt; - allowing &lt;code&gt;require()&lt;/code&gt; in Node semantics to look into &lt;code&gt;package.json&lt;/code&gt; and look through files, this made &lt;code&gt;package.json&lt;/code&gt; necessary to node applications, so we ended up with a centralized repository for modules. Ultimately NPM was included in the Node distribution.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;node_modules&lt;/strong&gt; - if you have multiple projects it tends to have multiple &lt;code&gt;node_modules&lt;/code&gt; folders... It gets big.
+![node_modules heaviest object in the universe](./assets/about-js-conf-eu-berlin-2018/node-modules-meme.jpg &amp;quot;node_modules heaviest object in the universe&amp;quot;
+&amp;lt;cite&amp;gt;source: https://www.youtube.com/watch?v=M3BM9TB-8yA&amp;lt;/cite&amp;gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;require(&amp;quot;module&amp;quot;) without the extension .js&lt;/strong&gt; - at some point someone thought that requiring files without the extension would be cleaner, so you just end up trying to look up the extension in the filesystem, it is &lt;code&gt;.js&lt;/code&gt;? &lt;code&gt;.jsx&lt;/code&gt;? &lt;code&gt;.ts&lt;/code&gt;? Well in this one I agree with Ryan just write down the f*** extension!&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;index.js&lt;/strong&gt; - Ryan thought it was cute. There was &lt;code&gt;index.html&lt;/code&gt; and in the same wave of thinking it should be cute to have an &lt;code&gt;index.js&lt;/code&gt; why not? Well it ends up that this raised complexity of the module loading system unnecessarily.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;How user code is managed by the module system&lt;/strong&gt; - As Ryan was developing Node he focuses mainly on &lt;em&gt;evented&lt;/em&gt; I/O leaving some things behind, one of them was the module system and how it manages user code.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And then a plot twist. At the end of complaining about Node.js Ryan presented a possible alternative to Node.js and how it could be better.&lt;/p&gt;
+&lt;p&gt;The alternative? &amp;lt;a href=&amp;quot;https://github.com/denoland/deno&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;A secure TypeScript runtime on V8&amp;quot;&amp;gt;deno&amp;lt;/a&amp;gt;, a a secure TypeScript runtime on V8. The main goals of deno are &lt;strong&gt;security&lt;/strong&gt;, &lt;strong&gt;simplicity of the module system&lt;/strong&gt; and &lt;strong&gt;support typescript out of the box&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3&gt;Day 2&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#d2t1&quot;&gt;(1) To push, or not to push?! - The future of HTTP/2 server push - Patrick Hamann - JSConf EU 2018&lt;/a&gt; | &amp;lt;a href=&amp;quot;https://www.youtube.com/watch?v=cznVISavm-k&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;To push, or not to push?! - The future of HTTP/2 server push - Patrick Hamann - JSConf EU 2018&amp;quot;&amp;gt;talk video&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#d2t2&quot;&gt;(2) TC39 Panel - JSConf EU 2018&lt;/a&gt; | &amp;lt;a href=&amp;quot;https://www.youtube.com/watch?v=Hj5q8uyqGYc&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;TC39 Panel - JSConf EU 2018&amp;quot;&amp;gt;talk video&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#d2t3&quot;&gt;(3) JavaScript Engines: The Good Parts™ - Mathias Bynens &amp;amp; Benedikt Meurer - JSConf EU 2018&lt;/a&gt; | &amp;lt;a href=&amp;quot;https://www.youtube.com/watch?v=5nmpokoRaZI&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;JavaScript Engines: The Good Parts™ - Mathias Bynens &amp;amp; Benedikt Meurer - JSConf EU 2018&amp;quot;&amp;gt;talk video&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#d2t4&quot;&gt;(4) Imagine This: A Web Without Servers - Tara Vancil - JSConf EU 2018&lt;/a&gt; | &amp;lt;a href=&amp;quot;https://www.youtube.com/watch?v=rJ_WvfF3FN8&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Imagine This: A Web Without Servers - Tara Vancil - JSConf EU 2018&amp;quot;&amp;gt;talk video&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#d2t5&quot;&gt;(5) Deep Learning in JS - Ashi Krishnan - JSConf EU 2018&lt;/a&gt; | &amp;lt;a href=&amp;quot;https://www.youtube.com/watch?v=SV-cgdobtTA&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Deep Learning in JS - Ashi Krishnan - JSConf EU 2018&amp;quot;&amp;gt;talk video&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&quot;#day-2&quot;&gt;&amp;lt;span id=&amp;quot;d2t1&amp;quot;&amp;gt;(1)&amp;lt;/span&amp;gt;&lt;/a&gt; First talk we&apos;ll see on day two is strictly related with JS it&apos;s a more broader theme in regards of performance and how can we improve resource loading, let&apos;s get to know a few of this technique and show that &amp;lt;a href=&amp;quot;https://http2.github.io/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;This is the home page for HTTP/2, a major revision of the Web&apos;s protocol&amp;quot;&amp;gt;HTTP/2&amp;lt;/a&amp;gt; solo will not solve all your performance problems.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;HTTP/2 will solve this.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;HTTP/2 will certainly bring speed to the web, but the thing is that &lt;strong&gt;resource loading in the browser is hard&lt;/strong&gt;. Performance is tighly coupled to latency, speed of light will not get any faster, TCP handshakes will not go away as well as TCP congestion mechanisms that penalizes us at the beginning of every connection.
+The way that browsers and servers interact does not allows us to take the best performance on resource loading.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;What are critical resources?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A critical request is one that contains an asset that is essential to the content within the users&apos; viewport.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;A good loading strategy:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Prioritizes above-the-fold rendering.&lt;/li&gt;
+&lt;li&gt;Prioritizes interactivity..&lt;/li&gt;
+&lt;li&gt;It&apos;s easy to use.&lt;/li&gt;
+&lt;li&gt;It&apos;s measurable.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So let&apos;s look into some techniques...&lt;/p&gt;
+&lt;h4&gt;Preload&lt;/h4&gt;
+&lt;p&gt;What if we could tell the browser upfront what are the resources that we want to load?
+Resources as fonts are know are &lt;strong&gt;critical hidden sub-resources&lt;/strong&gt; since we only know of their existent after the browser executes a few steps:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/about-js-conf-eu-berlin-2018/push-loading-pipeline-1.png&quot; alt=&quot;push loading pipeline&quot; title=&quot;push loading pipeline&quot;&gt;
+&amp;lt;cite&amp;gt;source: https://www.youtube.com/watch?v=cznVISavm-k&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Get request homepage (browser will start to construct the DOM under the hood)&lt;/li&gt;
+&lt;li&gt;Stysheets and script tags referenced in the page are found. CSS is render blocking thus we need to wait for all the bytes to come down&lt;/li&gt;
+&lt;li&gt;CSS gets downloaded and then CCS Object Model and the DOM are combibed to form the render tree&lt;/li&gt;
+&lt;li&gt;We have a render tree. Browser will dispatch font requests here.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;What if we could:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Provide a declarative fetch primitive that initializes an early fetch and separates fetching from resource execution.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So you can, preload with HTTP header:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;Link: &amp;lt;some-font.woff&amp;gt;; rel=preload; as=font; crossorigin
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Or with markup:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;link rel=&amp;quot;preload&amp;quot; href=&amp;quot;/styles.css&amp;quot; as=&amp;quot;style&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;
+&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Shopify switch to preloading fonts saw 50% (1.2 sec) improvement in time-to-text-paint.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;
+&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h4&gt;Server push&lt;/h4&gt;
+&lt;p&gt;Imagine the following scenario:&lt;/p&gt;
+&lt;p&gt;The connection will be left for a while (red area) while the server is thinking, this will specially be the case if you have a server-side rendered application.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/about-js-conf-eu-berlin-2018/push-server-1.png&quot; alt=&quot;resource loading illustration&quot; title=&quot;resource loading illustration&quot;&gt;
+&amp;lt;cite&amp;gt;source: https://www.youtube.com/watch?v=cznVISavm-k&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;p&gt;But, what if the server could predict that the next required asset from the browser will be the &lt;code&gt;main.css&lt;/code&gt; file?
+Image the browser could send this at soon as it receives the first request.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;Link: &amp;lt;font.woff2&amp;gt;; rel=preload; as=font; crossorigin # indicate push via preload Link header
+Link: &amp;lt;main.css&amp;gt;; rel=preload; as=style; nopush # use no push to disable push semantics and only use preload
+Link: &amp;lt;application.js&amp;gt;; rel=preload; as=style; x-http2-push-only # disable preload semantics with x-http2-push-only
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/about-js-conf-eu-berlin-2018/push-server-2.png&quot; alt=&quot;resource loading with push illustration&quot; title=&quot;resource loading with push illustration&quot;&gt;
+&amp;lt;cite&amp;gt;source: https://www.youtube.com/watch?v=cznVISavm-k&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;p&gt;If you&apos;re server is HTTP/2 enable, it will read the above configs and initiate the pushes for you.
+Benifits? In Europe saving this 1 round trip time in a 3G connection could save us as much as 800ms.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/about-js-conf-eu-berlin-2018/push-server-3.png&quot; alt=&quot;saving 1 RTT&quot; title=&quot;saving 1 RTT&quot;&gt;
+&amp;lt;cite&amp;gt;source: https://www.youtube.com/watch?v=cznVISavm-k&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;p&gt;But notice we still have an idle time at the beginning of the connection in &lt;code&gt;index.html&lt;/code&gt;. This idle time happens because &lt;strong&gt;only when we fully send the index.html, only then we initialize the push&lt;/strong&gt;.&lt;/p&gt;
+&lt;h4&gt;Async push&lt;/h4&gt;
+&lt;p&gt;The goal here is to decouple the pushing behavior from our application HTML response starting the push right at the beginning of the connection flow.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/about-js-conf-eu-berlin-2018/push-server-4.png&quot; alt=&quot;async push illustration&quot; title=&quot;async push illustration&quot;&gt;
+&amp;lt;cite&amp;gt;source: https://www.youtube.com/watch?v=cznVISavm-k&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;p&gt;Notice that we don&apos;t need to wait for the server to receive send out the &lt;code&gt;index.html&lt;/code&gt;, simply by knowing that the &lt;code&gt;index.html&lt;/code&gt; was requested we can start to push resources! Below simple snippet on how to achieve this with Node.js.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const http2 = require(&amp;quot;http2&amp;quot;);
+
+function handler(request, response) {
+  if (request.url === &amp;quot;index.html&amp;quot;) {
+    const push = response.push(&amp;quot;/critical.css&amp;quot;);
+    push.writeHead(200);
+    fs.createReadStream(&amp;quot;/critical.css&amp;quot;).pipe(push);
+  }
+
+  /**
+   * Generate index response:
+   * - Fetch data from DB
+   * - Render some template
+   * etc.
+   */
+
+  response.end(data);
+}
+
+const server = http2.createServer(opts, handler);
+server.listen(80);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Again, benefits?&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/about-js-conf-eu-berlin-2018/push-server-5.png&quot; alt=&quot;async push benefits illustration&quot; title=&quot;async push benefits illustration&quot;&gt;
+&amp;lt;cite&amp;gt;source: https://www.youtube.com/watch?v=cznVISavm-k&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;h4&gt;But why is nobody adopting it?&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Cache&lt;/strong&gt;. The browser has the ability to say &lt;em&gt;&amp;quot;Please don&apos;t send me that &lt;code&gt;main.css&lt;/code&gt; already got it in my cache.&amp;quot;&lt;/em&gt;, but with HTTP/2 push what happens is that by the time the browser is saying this we have already sent the &lt;code&gt;main.css&lt;/code&gt;, so we have a race condition here!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/about-js-conf-eu-berlin-2018/push-server-6.png&quot; alt=&quot;async push benefits illustration&quot; title=&quot;async push benefits illustration&quot;&gt;
+&amp;lt;cite&amp;gt;source: https://www.youtube.com/watch?v=cznVISavm-k&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;p&gt;Yet another blog post by Jake Archibald is mentioned in this talk, if you want to go with HTTP/2 into production checkout &amp;lt;a href=&amp;quot;https://jakearchibald.com/2017/h2-push-tougher-than-i-thought/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;HTTP/2 push is tougher than I thought&amp;quot;&amp;gt;HTTP/2 push is tougher than I thought&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;p&gt;Also, the lack of adoption of push has made some vendors think in removing push from the HTTP/2 specification.&lt;/p&gt;
+&lt;h4&gt;When should I push?&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;You have long RTTs or server processing&lt;/li&gt;
+&lt;li&gt;You can use async push&lt;/li&gt;
+&lt;li&gt;You have client-rendered app shell (&amp;lt;a href=&amp;quot;https://developers.google.com/web/fundamentals/performance/prpl-pattern/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;PRPL pattern&amp;quot;&amp;gt;&lt;strong&gt;PRPL&lt;/strong&gt; - &lt;strong&gt;P&lt;/strong&gt;ush, &lt;strong&gt;R&lt;/strong&gt;ender, &lt;strong&gt;P&lt;/strong&gt;re-cache and &lt;strong&gt;L&lt;/strong&gt;azy-load&amp;lt;/a&amp;gt;)&lt;/li&gt;
+&lt;li&gt;You control the client (native, Electron etc.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;The Future&lt;/h4&gt;
+&lt;h5&gt;Cache digest (CACHE_DIGEST)&lt;/h5&gt;
+&lt;p&gt;Fix the racing condition between push and browser cache. The browser sends information about what content has in cache so that server can decided what to push! You can check the &lt;em&gt;CACHE_DIGEST&lt;/em&gt; specification &amp;lt;a href=&amp;quot;https://tools.ietf.org/html/draft-kazuho-h2-cache-digest-00&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;draft of Cache Digests for HTTP2&amp;quot;&amp;gt;here&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;h5&gt;103 Early Hints&lt;/h5&gt;
+&lt;p&gt;All this seems very complex, we need to maintain state. But HTTP is special and known for being stateless. The proposal of the new code &amp;lt;a href=&amp;quot;https://evertpot.com/http/103-early-hints&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;103 Early Hints&amp;quot;&amp;gt;&lt;em&gt;103 Early Hints&lt;/em&gt;&amp;lt;/a&amp;gt; is kind of a inversion of control compared to the &lt;em&gt;CACHE_DIGEST&lt;/em&gt; this time the server will tell the browser upfront what resources are available for download, this is a small reply only containing headers and it happens of course before or within the &lt;em&gt;server think time&lt;/em&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;HTTP/1.1 103 Early Hints
+Link: &amp;lt;/main.css&amp;gt;; rel=preload; as=style;
+Link: &amp;lt;/main.js&amp;gt;; rel=preload; as=script;
+Link: &amp;lt;/application-data.json&amp;gt;; rel=preload; as=fetch
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the speakers&apos; opinion this is a lot more powerful than push since we&apos;re moving the decision process back to the browser.&lt;/p&gt;
+&lt;h5&gt;Priority Hints&lt;/h5&gt;
+&lt;p&gt;Allow us to decorate our HTML in ways that we are able to prioritize resources explicitly with &amp;lt;a href=&amp;quot;https://github.com/WICG/priority-hints&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;WICG/priority-hints&amp;quot;&amp;gt;priority hints&amp;lt;/a&amp;gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;img src=&amp;quot;some-image.jpg&amp;quot; important=&amp;quot;low&amp;quot;&amp;gt;
+&amp;lt;img src=&amp;quot;very-important-image.jpg&amp;quot; important=&amp;quot;high&amp;quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h4&gt;Resource priorities checklist&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;✔️ Identify critical resources&lt;/li&gt;
+&lt;li&gt;✔️ Preload hidden sub-resources&lt;/li&gt;
+&lt;li&gt;✔️ Preconnect critical third-parties&lt;/li&gt;
+&lt;li&gt;❌ Avoid pushing with preload&lt;/li&gt;
+&lt;li&gt;⚠️ Use async push with care&lt;/li&gt;
+&lt;li&gt;🚀 Decorate HTML with priority hints&lt;/li&gt;
+&lt;li&gt;🚀 Use Early Hints when available&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&quot;#day-2&quot;&gt;&amp;lt;span id=&amp;quot;d2t2&amp;quot;&amp;gt;(2)&amp;lt;/span&amp;gt;&lt;/a&gt; A very enlightening moment was the conversation and &lt;em&gt;Q&amp;amp;A&lt;/em&gt; session with the &amp;lt;a href=&amp;quot;https://github.com/orgs/tc39/people&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;TC39 github&amp;quot;&amp;gt;TC39 panel&amp;lt;/a&amp;gt;. Not only I got an insider perspective on how things work within the ones behind for the mediation of ECMAScript specification but got to ear some of the upcoming new exciting features for Javascript. I&apos;ll leave below a resumed transcription of the most relevant discussed topics during the &lt;em&gt;Q&amp;amp;A&lt;/em&gt; session.&lt;/p&gt;
+&lt;h4&gt;(Q) How does TC39 works?&lt;/h4&gt;
+&lt;p&gt;TC39 is a committee of delegates how are representing members in ECMA international, they get together every 2 months for 3 days to discuss what proposals are up discuss what changes were in made. They operate on consensus which means that we all have to agree for something to move forward which is pretty unique in programming standards.
+Then there&apos;s the proposal process, that works like this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Stage 0&lt;/strong&gt; is a pseudo stage, an idea, the proposal exists.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stage 1&lt;/strong&gt; is where the committee has considered that the proposal is something worth to move forward and find a solution for it.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stage 2&lt;/strong&gt; is where there is a draft, a specification that identifies what the behavior should be.&lt;/li&gt;
+&lt;li&gt;In &lt;strong&gt;Stage 3&lt;/strong&gt; some browsers and other engines should already have implemented this feature.&lt;/li&gt;
+&lt;li&gt;At &lt;strong&gt;Stage 4&lt;/strong&gt; it&apos;s ready, and it should have already at least two shipping implementation in major browsers.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;(Q) Other languages use the &lt;code&gt;private&lt;/code&gt; keyword for private members. How did we end up with the &lt;code&gt;#&lt;/code&gt; for private methods and property access?&lt;/h4&gt;
+&lt;p&gt;There is two different things here. Private declaration and private access. Since javascript is not statically typed you cannot at runtime tell whether or not some given property is private or public. Then we ended with the &lt;code&gt;#&lt;/code&gt; to declare and access private properties, you can think of the &lt;code&gt;#&lt;/code&gt; as part of the name of the property like for instance:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;class SomeClass {
+  constructor(prop) {
+    this.#prop = prop;
+  }
+
+  getProp() {
+    return this.#prop;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;These is a class feature that is part of a series of related separated proposals (that could possible merge into each other in the future or even break into more specific ones):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;lt;a
+id=&amp;quot;proposal-private-fields&amp;quot;
+href=&amp;quot;https://github.com/tc39/proposal-private-fields&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;A Private Fields Proposal for ECMAScript&amp;quot;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+tc39/proposal-private-fields
+&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a
+href=&amp;quot;https://github.com/tc39/proposal-class-fields&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;Orthogonally-informed combination of public and private fields proposals&amp;quot;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+tc39/proposal-class-fields
+&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a
+href=&amp;quot;https://github.com/tc39/proposal-private-methods&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;Private methods and getter/setters for ES6 classes &amp;quot;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+tc39/proposal-private-methods
+&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;(Q) What is javascript identity? Are we moving towards other non strongly typed programming languages with object oriented programming (e.g. with the introduction of es6 classes)? Or more functional? What are we aiming for?&lt;/h4&gt;
+&lt;p&gt;The idea it&apos;s to get the best of both worlds. Other languages such as Rust or Swift are largely influenced by both object oriented and functional paradigms.&lt;/p&gt;
+&lt;h4&gt;(Q) What&apos;s the relationship between Javascript WASM as compile targets?&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Javascript and WASM are complementary&lt;/strong&gt; as compile targets, so for some of the features that don&apos;t make sense in Javascript you can actually use WASM as the home for that feature where it could make more sense.&lt;/p&gt;
+&lt;h4&gt;(Q) Can you show yours perspective on the flatten vs smoosh debate?&lt;/h4&gt;
+&lt;p&gt;There was a proposal to add &lt;code&gt;flatten&lt;/code&gt; and &lt;code&gt;flatMap&lt;/code&gt; to the Array prototype. Is was implemented and shipped by Mozilla, but soon they realize tha this was breaking certain web pages. Basically some web pages were relying on certain implementations not being there, this if of course the worst that can happen to a proposal, we don&apos;t want to break the web. So we rollback and we knew that we needed to change the proposal in some way. In this case because the name itself was a problem (&lt;code&gt;flatten&lt;/code&gt;) we had to rename it somehow... The proposal author decided to send a &amp;lt;a href=&amp;quot;https://github.com/tc39/proposal-flatMap/pull/56&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;tc39/proposal-flatMap rename flatten to smoosh&amp;quot;&amp;gt;&lt;em&gt;joke pull request&lt;/em&gt;&amp;lt;/a&amp;gt; with a rename to &lt;code&gt;smoosh&lt;/code&gt; and &lt;code&gt;smooshMap&lt;/code&gt;, but it was not clear that this was a joke so... everybody freaked out.&lt;/p&gt;
+&lt;h4&gt;(Q) What are some of the awesome features coming up next?&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://github.com/tc39/proposal-optional-chaining&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;tc39/proposal-optional-chaining&amp;quot;&amp;gt;
+Optional chaining
+&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://github.com/tc39/proposal-pattern-matching&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;tc39/proposal-pattern-matching&amp;quot;&amp;gt;
+Pattern matching
+&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;#proposal-private-fields&amp;quot; title=&amp;quot;Class features&amp;quot;&amp;gt;
+Class features (private and public class fields)
+&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;#d1t2&amp;quot; title=&amp;quot;Native BigInts in JavaScript: A Case Study in TC39 - Daniel Ehrenberg - JSConf EU 2018&amp;quot;&amp;gt;
+BigInts
+&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;(Q) What about a native method for deep object cloning?&lt;/h4&gt;
+&lt;p&gt;Good idea, but very complex. 😎&lt;/p&gt;
+&lt;h4&gt;(Q) What&apos;s the medium turn around for a proposal to become reality?&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Some&lt;/strong&gt; of them &lt;strong&gt;take years&lt;/strong&gt;, but &lt;strong&gt;at least a year to 18 months&lt;/strong&gt; it&apos;s a more realistic estimation.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&quot;#day-2&quot;&gt;&amp;lt;span id=&amp;quot;d2t3&amp;quot;&amp;gt;(3)&amp;lt;/span&amp;gt;&lt;/a&gt; A vital part of the Javascript runtimes are engines. &amp;lt;a href=&amp;quot;https://github.com/v8/v8&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;The official mirror of the V8 Git repository&amp;quot;&amp;gt;V8&amp;lt;/a&amp;gt; is the Javascript engine for Chrome, Electron and Node.js. In the next talk we&apos;ll look into fundamental parts that are common to V8 and all other major Javascript engines:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;SpiderMonkey&amp;quot;&amp;gt;
+SpiderMonkey
+&amp;lt;/a&amp;gt; powers Firefox.&lt;/li&gt;
+&lt;li&gt;&amp;lt;a
+href=&amp;quot;https://github.com/Microsoft/ChakraCore&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;ChakraCore is the core part of the Chakra Javascript engine that powers Microsoft Edge
+&amp;quot;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+Chakra
+&amp;lt;/a&amp;gt; for Microsoft Edge.&lt;/li&gt;
+&lt;li&gt;&amp;lt;a
+href=&amp;quot;https://developer.apple.com/documentation/javascriptcore&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;JavaScriptCore
+&amp;quot;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+&amp;lt;b&amp;gt;J&amp;lt;/b&amp;gt;ava&amp;lt;b&amp;gt;S&amp;lt;/b&amp;gt;cript&amp;lt;b&amp;gt;C&amp;lt;/b&amp;gt;ore (JSC)
+&amp;lt;/a&amp;gt; powers Safari and also React Native applications.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;(Aside note, if you want to run Javascript directly in several engines you can install &amp;lt;a href=&amp;quot;https://github.com/GoogleChromeLabs/jsvu&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;JavaScript (engine) Version Updater&amp;quot;&amp;gt;jsvu&amp;lt;/a&amp;gt;.)&lt;/p&gt;
+&lt;p&gt;All engines have this similar base architecture.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/about-js-conf-eu-berlin-2018/engines-pipeline.png&quot; alt=&quot;engines common abstract pipeline&quot; title=&quot;engines common abstract pipeline&quot;&gt;
+&amp;lt;cite&amp;gt;source: https://www.youtube.com/watch?v=5nmpokoRaZI&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;p&gt;Regarding the important part (yellow square in the middle with interpreter and optimizing compiler) below are the main differences pointed for every Javascript engine:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;V8 is represented in the above diagram with one optimizer compiler.&lt;/li&gt;
+&lt;li&gt;SpiderMonkey has 2 optimizer compilers, so this is like a 2 staged optimization.&lt;/li&gt;
+&lt;li&gt;ChakraCore it&apos;s somehow similar to SpiderMonkey with 2 optimizer compilers.&lt;/li&gt;
+&lt;li&gt;JSC has 3 optimized compilers taking the number of optimization layers to the space.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So we can already see the that the base architectural components for a Javascript engines are: &lt;strong&gt;parser&lt;/strong&gt;, &lt;strong&gt;interpreter&lt;/strong&gt; and &lt;strong&gt;compiler pipeline&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Now, the most interesting part is around Objects and how they are represented within engines. So Objects are basically dictionaries like in the following image.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/about-js-conf-eu-berlin-2018/engines-shapes-1.png&quot; alt=&quot;simple shape illustration&quot; title=&quot;simple shape illustration&quot;&gt;
+&amp;lt;cite&amp;gt;source: https://www.youtube.com/watch?v=5nmpokoRaZI&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;p&gt;So an object has this string attributes that map to the value and metainformation of that property the &lt;strong&gt;property attributes&lt;/strong&gt; according to the ECMAScript language specification. What do they mean this property attributes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Value&lt;/strong&gt; of the property, nothing much to say here.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Writable&lt;/strong&gt; determines whether if the property can be reassigned to.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Enumerable&lt;/strong&gt; means that the property can appear in &lt;code&gt;for in&lt;/code&gt; loops.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Configurable&lt;/strong&gt; means that is a &lt;em&gt;deletable&lt;/em&gt; property.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can access this them in Javascript with:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;Object.getOwnPropertyDescriptors(someObject);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So another interesting fact around Objects is that they store they metainformation on a separate data structure so that the actual object only contains the values and a pointer to that data structure. The data structure that contains all the metainformation is called &lt;strong&gt;Shape&lt;/strong&gt; (in SpiderMonkey, other engines have other names but hey are misleading. The computer science term for this is &lt;em&gt;hidden class&lt;/em&gt;).&lt;/p&gt;
+&lt;p&gt;Know let&apos;s check how object declaration and property access are optimized in engines. Basically they build a doubled linked tree like structure that defines all possible shapes and each new added property only stores metainformation regarding itself. The &lt;code&gt;Offset&lt;/code&gt; just tells you where you will find the property within the JSON object.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/about-js-conf-eu-berlin-2018/engines-shapes-2.png&quot; alt=&quot;shape extended&quot; title=&quot;shape extended&quot;&gt;
+&amp;lt;cite&amp;gt;source: https://www.youtube.com/watch?v=5nmpokoRaZI&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;p&gt;But! This isn&apos;t always the case it turns out that for cases where you have already a shape that derives from a base object, but then you go and initialize some object in a different way (e.g. with some properties already), the engine will create a new shape as it is more efficient for engines to keep the shape&apos;s structures the smallest as possible. As you can see in the next picture a new shape will be created despite property &lt;code&gt;x&lt;/code&gt; being already in the first shape chain.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/about-js-conf-eu-berlin-2018/engines-shapes-3.png&quot; alt=&quot;shape extended exception&quot; title=&quot;shape extended exception&quot;&gt;
+&amp;lt;cite&amp;gt;source: https://www.youtube.com/watch?v=5nmpokoRaZI&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;p&gt;Then the main motivation for engines to have shapes is &amp;lt;a href=&amp;quot;https://mathiasbynens.be/notes/shapes-ics#ics&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;JavaScript engine fundamentals: Shapes and Inline Caches by Mathias Bynens&amp;quot;&amp;gt;inline cache (IC)&amp;lt;/a&amp;gt;. This mechanism stores information about where to find properties within an object so that we can optimize the property look up. Basically for a given retrieved property it stores the offset where the property was found inside the shape, that way you can skip the fetch of the property metainformation to get the offset, you just access it right away!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/about-js-conf-eu-berlin-2018/engines-shapes-4.png&quot; alt=&quot;inline cache illustration&quot; title=&quot;inline cache illustration&quot;&gt;
+&amp;lt;cite&amp;gt;source: https://www.youtube.com/watch?v=5nmpokoRaZI&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;p&gt;At the end two important notes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Always initialize objects in the same way&lt;/strong&gt; so that engines can maximize the reuse of shapes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Don&apos;t mess with the property attributes of array elements&lt;/strong&gt; so that they can be stored and operated upon efficiently.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;(&lt;strong&gt;Note&lt;/strong&gt;: I skipped arrays in the above talk as they are handled in similar ways and with similar mechanisms compared to objects.)&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;On this second day I would also like to mention two more talks, &lt;em&gt;A Web Without Servers&lt;/em&gt; &lt;a href=&quot;#day-2&quot;&gt;&amp;lt;span id=&amp;quot;d2t4&amp;quot;&amp;gt;(4)&amp;lt;/span&amp;gt;&lt;/a&gt; because Beaker browser a peer-to-peer browser was presented here with a decentralized web in mind. Also &lt;em&gt;Deep Learning in JS&lt;/em&gt; &lt;a href=&quot;#day-2&quot;&gt;&amp;lt;span id=&amp;quot;d2t5&amp;quot;&amp;gt;(5)&amp;lt;/span&amp;gt;&lt;/a&gt; because machine learning is a pretty hot topic and we should highlight the fact that &amp;lt;a href=&amp;quot;https://js.tensorflow.org/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;A JavaScript library for training and deploying ML models in the browser and on Node.js&amp;quot;&amp;gt;TensorFlow.js&amp;lt;/a&amp;gt; already available &lt;strong&gt;which makes Javascript even more broad in terms of its applications&lt;/strong&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4&gt;Other things I&apos;ve learned&lt;/h4&gt;
+&lt;p&gt;&amp;lt;small&amp;gt;(⚠️ randomly presented)&amp;lt;/small&amp;gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;&amp;quot;Whenever you are designing a program, there are things that you think it might be cute to add in... &lt;strong&gt;You always regret those&lt;/strong&gt;. If they are unnecessary and simply cute, don&apos;t do them!&amp;quot;&lt;/em&gt; (&lt;em&gt;Ryan Dahl&lt;/em&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;There is this new thing out there called &amp;lt;a href=&amp;quot;https://github.com/denoland/deno&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;A secure TypeScript runtime on V8&amp;quot;&amp;gt;deno&amp;lt;/a&amp;gt;.&lt;/li&gt;
+&lt;li&gt;If you throw an error inside a nested throw clause the outside catch will not be executed. In a similar fashion if you reject a promise passing in a throw statement the catch will not evaluate as in:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;function justThrowAnErr() {
+  throw new Error(&amp;quot;some error message&amp;quot;);
+}
+
+function fetchSomeRainbows(nRainbows) {
+  if (!nRainbows) {
+    return Promise.reject(justThrowAnErr());
+  }
+  return Promise.resolve(&amp;quot;here u go&amp;quot;);
+}
+
+fetchSomeRainbows().catch((rainbowError) =&amp;gt; console.log(&amp;quot;unable to fetch rainbows&amp;quot;));
+
+// this will output: &amp;quot;Error: some error message&amp;quot;
+// instead of &amp;quot;unable to fetch rainbows&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Facebook has built an ultra fast javascript bundler for React Native, if you are into this stuff you have
+probably heard about &amp;lt;a href=&amp;quot;https://facebook.github.io/metro&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;metro The JavaScript bundler for React Native&amp;quot;&amp;gt;metro&amp;lt;/a&amp;gt;.&lt;/li&gt;
+&lt;li&gt;When using:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;a href=&amp;quot;&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;&amp;quot;&amp;gt;&amp;lt;main&amp;gt;&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;you will want to set a &lt;code&gt;role=&amp;quot;main&amp;quot;&lt;/code&gt; attribute if you want to support IE11.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;One should add &lt;code&gt;role=&amp;quot;banner&amp;quot;&lt;/code&gt; on your main header not to be confused with other headers that you might
+have.&lt;/li&gt;
+&lt;li&gt;Do you develop your features for accessibility? I mean can a disable person you only uses the keyboard use your web site/app? This question made me think.&lt;/li&gt;
+&lt;li&gt;You can practically do everything with Javascript today and people are serious about this.&lt;/li&gt;
+&lt;li&gt;I didn&apos;t know much about the browsers internals (e.g. event loop task queues), but after this conference at least I&apos;m aware of how much I don&apos;t know about it 😎.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;The venue&lt;/h2&gt;
+&lt;p&gt;So, the event toke place at the Berlin Arena, an old building/factory kind of &lt;em&gt;hipster&lt;/em&gt; place, very cool and very hot by that time of the year! Good thing water was free of charge and could be reached by a few steps from almost any place inside the arena. So yeah despite the cool space and stage set up, there where always free soft drinks (and frozen yogurt!) around to make sure one&apos;s never dehydrate. Talking about stage, aside the unbearable heat, the space was pretty cozy with round tables so that people could have laptops and other stuff on the table while assisting to the talks. Also worth mentioning, there were a few electronic music live performances by &amp;lt;a href=&amp;quot;https://twitter.com/nested_loops?lang=en&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;nested_loops twitter&amp;quot;&amp;gt;nested_loops&amp;lt;/a&amp;gt; and &amp;lt;a href=&amp;quot;http://livejs.network/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;live:js official website&amp;quot;&amp;gt;live:js&amp;lt;/a&amp;gt;, the sound and the visual effects played nicely producing &amp;lt;a href=&amp;quot;https://www.youtube.com/watch?v=dPWRaN2PXZw&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;live:js opening performance youtube&amp;quot;&amp;gt;a great show&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/about-js-conf-eu-berlin-2018/stage.jpeg&quot; alt=&quot;stage&quot; title=&quot;js conf eu 2018 berlin stage&quot;&gt;
+&amp;lt;cite&amp;gt;source: https://2018.jsconf.eu/news/photos/&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/about-js-conf-eu-berlin-2018/venue-1.jpg&quot; alt=&quot;venue image&quot; title=&quot;venue image&quot;&gt;
+&amp;lt;cite&amp;gt;source: https://2018.jsconf.eu/news/photos/&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/about-js-conf-eu-berlin-2018/venue-2.jpg&quot; alt=&quot;another venue image&quot; title=&quot;another venue image&quot;&gt;
+&amp;lt;cite&amp;gt;source: https://2018.jsconf.eu/news/photos/&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;p&gt;Throughout the venue there were exhibition stands of the sponsor companies, aside the &lt;em&gt;goodies&lt;/em&gt; you could see products demonstration, talk to people about the company or even get a job interview.&lt;/p&gt;
+&lt;p&gt;Breakfast, lunch and dinner where included in the ticket, so we (me and my colleagues) agreed that it would be worth and try and so we venture into the vegan world (for me practically unknown at the time). The food was nice I mean, I had the opportunity to try a few dishes such as vegan hamburger, vegan gnocchi, vegan pasta, you get it...&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/about-js-conf-eu-berlin-2018/food-sample.jpeg&quot; alt=&quot;vegan food sample&quot; title=&quot;js conf eu 2018 berlin vegan food sample&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;Caption text=&amp;quot;Gnocchi Pesto&amp;quot; /&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/about-js-conf-eu-berlin-2018/another-food-sample.jpeg&quot; alt=&quot;another vegan food sample&quot; title=&quot;js conf eu 2018 berlin another vegan food sample&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;Caption text=&amp;quot;Vegan Risotto&amp;quot; /&amp;gt;&lt;/p&gt;
+&lt;p&gt;At the end of the day, we just grabbed a bear near the river and enjoy the remaining sunshine (no, we could not use the pool).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/about-js-conf-eu-berlin-2018/venue-view-outside.jpeg&quot; alt=&quot;js conf eu 2018 berlin venue outside view&quot; title=&quot;js conf eu 2018 berlin venue outside view&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;Caption /&amp;gt;&lt;/p&gt;
+&lt;h2&gt;Berlin&lt;/h2&gt;
+&lt;p&gt;You know Berlin right? The capital and largest city in Germany, also one of the largest and multicultural cities in Europe. Despite the conference busy schedule I took sometime (mainly my last day) to visit a few of the high rated places in Berlin such as the museum island, the Berlin Cathedral, the Brandenburg Gate, Checkpoint Charlie and a few other spots. It is really worth visiting, besides the obvious places that you would wanna check as the ones mentioned previously Berlin has a great urban structure with organized and large street blocks composed by beautiful buildings, huge and various green spaces and of course an endless nightlife cater for all tastes.&lt;/p&gt;
+&lt;p&gt;And this is me (&lt;em&gt;left&lt;/em&gt;) and my colleagues on our last day in Berlin.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/about-js-conf-eu-berlin-2018/group-photo.jpeg&quot; alt=&quot;berliner dom group photo&quot; title=&quot;berliner dom group photo&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;Caption /&amp;gt;&lt;/p&gt;
+&lt;p&gt;See you soon.&lt;/p&gt;
+</content:encoded></item><item><title>Reactive Series (pt. 5) - Awesome Resources for Reactive Programming</title><link>https://danielcaldas.github.io/posts/awesome-reactive/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/awesome-reactive/</guid><description>My notes on the epic JSConf EU 2018</description><pubDate>Fri, 12 Feb 2021 00:00:00 GMT</pubDate><content:encoded>&lt;ul&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/why-reactive-programming&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Why You Should Consider Reactive Programming | danielcaldas.github.io&amp;quot;&amp;gt;Part 1 - Why You Should Consider Reactive Programming&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-programming-fundamentals&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Fundamentals of Reactive Programming | danielcaldas.github.io&amp;quot;&amp;gt;Part 2 - Fundamentals of Reactive Programming&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/hands-on-reactive-programming-rxjs&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Hands-on Reactive Programming with RxJS | danielcaldas.github.io&amp;quot;&amp;gt;Part 3 - Hands-on Reactive Programming with RxJS&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-rxjs-pros-cons&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Reactive Programming: The Good and the Bad | danielcaldas.github.io&amp;quot;&amp;gt;Part 4 - Reactive Programming: The Good and the Bad&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Part 5 - Awesome RxJS and Reactive Programming Resources&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here we are! Thanks for riding along in this journey. As promised, I&apos;ll compile in an organized manner a collection of resources that will help you sharping those reactive programming skills and built a better understanding of many of these concepts that are so abstract.&lt;/p&gt;
+&lt;h4&gt;Visualization&lt;/h4&gt;
+&lt;p&gt;These are some of the best websites/tools that I know.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://rxviz.com&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;animated playground for rx observables&amp;quot;&amp;gt;
+Rx Visualizer Animated playground for Rx Observables
+&amp;lt;/a&amp;gt; - excellent code to animation playground. Suitable for limited complexity use cases, remarkable for learning.&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://www.learnrxjs.io&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;introduction, learn rxjs&amp;quot;&amp;gt;
+Learn RxJS
+&amp;lt;/a&amp;gt; - because the official documentation can be a bit heavy and lacking examples for specific areas, this is a resource
+that I often utilize.&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://reactive.how&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;rxjs and reactive programming, animations and visual lessons&amp;quot;&amp;gt;
+reactive.how
+&amp;lt;/a&amp;gt; - here you can find the most beautiful and clean animations for the different Rx operators. Refer to this one for
+good visual explanations for operators.&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://bitbucket.org/achary/rx-marbles/src/master&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;achary/rx-marbles on Bitbucket&amp;quot;&amp;gt;
+rx-marbles
+&amp;lt;/a&amp;gt; - my tool of choice to generate marble diagrams. I&apos;ve used it to create the marble diagrams presented throughout this
+series. It has a nice DSL that allows you to generate marble diagrams programmatically, instead of dragging and dropping
+stuff around.&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://rxmarbles.com&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;interactive diagrams of rx observables&amp;quot;&amp;gt;
+rxmarbles.com
+&amp;lt;/a&amp;gt; - more marble diagrams that depict the different Rx operators.&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://www.rxjs-fruits.com/subscribe&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;rxjs-fruits.com is a game for learning RxJS&amp;quot;&amp;gt;
+RxJS Fruits
+&amp;lt;/a&amp;gt; - play this interactive game to learn Rx. A more fun way of learning. It brings that bit of &amp;lt;i&amp;gt;gamification&amp;lt;/i&amp;gt; into
+the learning process, making the learning experience much more enjoyable.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Talks&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://www.youtube.com/watch?v=B-nFj2o03i8&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;video, complex features made easy with rxjs&amp;quot;&amp;gt;Complex Features Made Easy With RxJS&amp;lt;/a&amp;gt; - A demo of the power of RxJS. In this talk, the presenter builds complex features on top of an existing Angular application. The features comprehend things like animations, handling user events, and HTTP requests.&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://www.youtube.com/watch?v=m40cF91F8_A&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;video, creating an observable from scratch, live-coding session&amp;quot;&amp;gt;Creating an observable from scratch (live-coding session) - Ben Lesh&amp;lt;/a&amp;gt; - if you want to understand Observables&apos; internals, this deep dive is the right resource. In this talk, you have the chance to see how to build an Observable (and even operators!) from scratch with interactive code examples.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Articles&lt;/h4&gt;
+&lt;p&gt;These are loose articles that I read along the way, and they boost the understanding around those little details that are left out when you go through tutorials that cover the broad and most essential concepts. There are always those small bumps along the way, things we don&apos;t quite yet understand, but at some point their comprehension can play a pivotal role in the decisions that we make while we code!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://dev.to/benlesh/a-simple-explanation-of-functional-pipe-in-javascript-2hbj&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;a simple explanation of functional pipe in javascript&amp;quot;&amp;gt;A simple explanation of functional pipe in JavaScript&amp;lt;/a&amp;gt; - Ben Lesh, project lead of RxJS project, walks through the internal decision making and thought process that led RxJS to incorporate the function &amp;lt;code&amp;gt;.pipe()&amp;lt;/code&amp;gt; into its API.&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://css-tricks.com/animated-intro-rxjs&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;an animated intro to rxjs&amp;quot;&amp;gt;An Animated Intro to RxJS&amp;lt;/a&amp;gt; - don&apos;t be mistaken by the title. In this article, not only you&apos;ll get comprehensive code snippets to trigger some cool animations with RxJS, but you&apos;ll also get a fair introduction to some of the base concepts of reactive programming and RxJS.&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://medium.com/@jshvarts/read-marble-diagrams-like-a-pro-3d72934d3ef5&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;understanding marble diagrams for reactive streams&amp;quot;&amp;gt;Understanding Marble Diagrams for Reactive Streams&amp;lt;/a&amp;gt; - an extensive walkthrough on several operators of the Rx API. It can be somewhat redundant if you can pick up things by looking at the documentation, but we&apos;re all different. Sometimes all it takes is another explanation for us to pick up that hard concept.&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://rxjs-dev.firebaseapp.com/guide/testing/internal-marble-tests&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;rxjs, writing marble tests&amp;quot;&amp;gt;Writing Marble Tests&amp;lt;/a&amp;gt; - you can approach unit testing with a similar pattern to procedural code. You can go with a &amp;lt;a href=&amp;quot;https://medium.com/angular-in-depth/how-to-test-observables-a00038c7faad&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;how to test observables the ultimate guide&amp;quot;&amp;gt;&amp;quot;subscribe and assert way&amp;quot;&amp;lt;/a&amp;gt; but there&apos;s a fair amount of caveats that you need to be aware of when doing so, such as the lengthy transformation of streams or calling &amp;lt;code&amp;gt;done&amp;lt;/code&amp;gt; to signal the end of asynchronous operations. Marble tests are stream-oriented and enable you to perform assertions on higher-level stream representations in a less &amp;lt;i&amp;gt;boilerplate-ish&amp;lt;/i&amp;gt; fashion than the &amp;quot;&amp;lt;i&amp;gt;subscribe and assert way&amp;lt;/i&amp;gt;&amp;quot;.&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://medium.com/@benlesh/rxjs-dont-unsubscribe-6753ed4fda87&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;rxjs, don’t unsubscribe&amp;quot;&amp;gt; RxJS: Don’t Unsubscribe &amp;lt;/a&amp;gt; - tl;dr leverage Rx itself to manage subscriptions instead of being worried about unsubscribing yourself and thinking about all the scenarios where you need to unsubscribe. You can think of it this way: &amp;quot;Can I code this in a way that streams will cleanup themselves?&amp;quot;.&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://medium.com/@puppybits/rxjs-is-great-so-why-have-i-moved-on-534c513e7af3&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;rxjs is great. so why have i moved on&amp;quot;&amp;gt;RxJS is great. So why have I moved on?&amp;lt;/a&amp;gt; - a distinct point of view on how an alternative path to progress when we get to a point where we become overwhelmed by massive amounts of entangled streams in our codebase. &amp;lt;a href=&amp;quot;https://developers.redhat.com/blog/2017/06/30/5-things-to-know-about-reactive-programming&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;five things to know about reactive programming, red hat developer&amp;quot;&amp;gt;5 Things to Know About Reactive Programming&amp;lt;/a&amp;gt; - I&apos;ve read this one more than once; beyond SPAs, reactive patterns have their advantages when applied to the server-side world - &amp;lt;i&amp;gt;examples in this article are in Java&amp;lt;/i&amp;gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;p&gt;That&apos;s all! I hope you&apos;ve enjoyed this &amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/series-reactive-programming-rxjs&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Reactive Series | danielcaldas.github.io&amp;quot;&amp;gt;Reactive Series&amp;lt;/a&amp;gt; as much as I did.&lt;/p&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/why-reactive-programming&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Why You Should Consider Reactive Programming | danielcaldas.github.io&amp;quot;&amp;gt;Part 1 - Why You Should Consider Reactive Programming&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-programming-fundamentals&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Fundamentals of Reactive Programming | danielcaldas.github.io&amp;quot;&amp;gt;Part 2 - Fundamentals of Reactive Programming&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/hands-on-reactive-programming-rxjs&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Hands-on Reactive Programming with RxJS | danielcaldas.github.io&amp;quot;&amp;gt;Part 3 - Hands-on Reactive Programming with RxJS&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-rxjs-pros-cons&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Reactive Programming: The Good and the Bad | danielcaldas.github.io&amp;quot;&amp;gt;Part 4 - Reactive Programming: The Good and the Bad&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Part 5 - Awesome RxJS and Reactive Programming Resources&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded></item><item><title>How to Mock API Calls</title><link>https://danielcaldas.github.io/posts/best-http-request-mock-tool/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/best-http-request-mock-tool/</guid><description>My notes on the epic JSConf EU 2018</description><pubDate>Sun, 14 Jun 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;See https://tweak-extension.com/blog/how-to-mock-api-calls.&lt;/p&gt;
+</content:encoded></item><item><title>Better imports with webpack resolve.alias</title><link>https://danielcaldas.github.io/posts/better-imports-webpack-alias/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/better-imports-webpack-alias/</guid><description>Better imports with webpack resolve.alias</description><pubDate>Fri, 10 Jan 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I want to write a short article where once more I emphasize one of the superpowers of &amp;lt;a href=&amp;quot;https://webpack.js.org/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;bundle your scripts&amp;quot;&amp;gt;webpack&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;p&gt;Have you ever came across this in some of your project&apos;s codebase(s)?&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;import { powerUtility } from &apos;../../../../common/utils&apos;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Wouldn&apos;t it be pleasing to refer to a top-level module/namespace in any place you need to import something?&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;import { powerUtility } from &apos;@project-x-utils&apos;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With webpack, having something like that, it&apos;s very straightforward. Aliasing module names for shorter and clear import statements have considerable gains in terms of codebase discoverability, codebase navigation, and of course, general readability. Aliasing modules is especially helpful for large codebases organized in modules.&lt;/p&gt;
+&lt;p&gt;Aliasing modules is as simple as using &amp;lt;a href=&amp;quot;https://webpack.js.org/configuration/resolve/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;webpack options that change how modules are resolved&amp;quot;&amp;gt;webpack &lt;em&gt;Resolve&lt;/em&gt; configurations&amp;lt;/a&amp;gt;, more precisely &amp;lt;a href=&amp;quot;https://webpack.js.org/configuration/resolve/#resolvealias&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;webpack aliases to import or require certain modules more easily&amp;quot;&amp;gt;resolve.alias&amp;lt;/a&amp;gt;. To follow up on the previous example, here is how your &lt;code&gt;webpack.config.js&lt;/code&gt; file should look like if you want to be able to import your &lt;em&gt;utils&lt;/em&gt; module as displayed above.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const webpack = require(&apos;webpack&apos;)
+// ...
+
+const options = {
+  entry: {
+    // ...
+  },
+  output: {
+    // ...
+  },
+  module: {
+    // ...
+  },
+  resolve: {
+    alias: {
+      // Note: &apos;src/common/utils&apos; is the path to the module, in this case &amp;quot;utils&amp;quot;
+      &apos;@project-x-utils&apos;: path.resolve(__dirname, &apos;src/common/utils&apos;),
+      // ...
+    },
+  },
+  plugins: [
+    // ...
+  ],
+}
+
+module.exports = options
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now you can go ahead and remove all those 100 characters long relative imports at the beginning of your JavaScript files.&lt;/p&gt;
+</content:encoded></item><item><title>Browser polyfill madness, Mozilla and IE</title><link>https://danielcaldas.github.io/posts/browser-polyfill-madness-mozilla-internet-explorer/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/browser-polyfill-madness-mozilla-internet-explorer/</guid><description>Browser polyfill madness, Mozilla and IE</description><pubDate>Sat, 20 Jul 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Recently I have experienced the real pain of &lt;em&gt;polyfilling&lt;/em&gt; the innocent looking &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isSafeInteger&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;mdn web docs number is safe integer&amp;quot;&amp;gt;Number.isSafeInteger&amp;lt;/a&amp;gt; method.&lt;/p&gt;
+&lt;p&gt;&amp;lt;small&amp;gt;
+&amp;lt;a
+href=&amp;quot;https://developer.mozilla.org/en-US/docs/Glossary/Polyfill&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;mdn web docs glossary polyfill&amp;quot;&lt;/p&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;What is a polyfill?
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;/a&amp;gt;
+&amp;lt;/small&amp;gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A polyfill is a piece of code (usually JavaScript on the Web) used to provide modern functionality on older browsers that do not natively support it.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;It happened at work; something was not working for IE 11, and there was a lot of culprit pull requests, but one in particular sparkled my attention. In this pull request, there was a line of code that was using &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isSafeInteger&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;mdn web docs number is safe integer&amp;quot;&amp;gt;Number.isSafeInteger&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;return arr.filter(Number.isSafeInteger)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Nothing special, until I checked the famous browser compatibility tables of &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isSafeInteger#Browser_compatibility&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;mdn web docs&amp;quot;&amp;gt;MDN web docs&amp;lt;/a&amp;gt; to confirm that my theory was real, &lt;code&gt;Number.isSafeInteger&lt;/code&gt; is not supported in &amp;lt;a href=&amp;quot;https://en.wikipedia.org/wiki/Internet_Explorer&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;wikipedia internet explorer microsoft browser&amp;quot;&amp;gt;IE&amp;lt;/a&amp;gt;, oh snap.&lt;/p&gt;
+&lt;p&gt;I ran to the polyfill section, I copied out the recommended &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isSafeInteger#Polyfill&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;mdn web docs polyfill section for method number is safe integer&amp;quot;&amp;gt;polyfill code&amp;lt;/a&amp;gt;, and I victoriously announced to my team, &amp;quot;I found it!&amp;quot;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;Number.isSafeInteger =
+  Number.isSafeInteger ||
+  function (value) {
+    return Number.isInteger(value) &amp;amp;&amp;amp; Math.abs(value) &amp;lt;= Number.MAX_SAFE_INTEGER
+  }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Not that simple, it turns out that &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;mdn web docs number is integer&amp;quot;&amp;gt;Number.isInteger&amp;lt;/a&amp;gt; was also not supported and we had no polyfill again for it. I did not want to commit the same mistake twice, so this time I double-checked the source code of the polyfill for &lt;code&gt;Number.isInteger&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;Number.isInteger =
+  Number.isInteger ||
+  function (value) {
+    return typeof value === &apos;number&apos; &amp;amp;&amp;amp; isFinite(value) &amp;amp;&amp;amp; Math.floor(value) === value
+  }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So guess what? Yes, &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isFinite&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;mdn web docs number is finite&amp;quot;&amp;gt;Number.isFinite&amp;lt;/a&amp;gt; is also not supported in IE!&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;
+&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;if (Number.isFinite === undefined)
+  Number.isFinite = function (value) {
+    return typeof value === &apos;number&apos; &amp;amp;&amp;amp; isFinite(value)
+  }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You maybe think that&apos;s it, he finished with &lt;em&gt;polyfilling&lt;/em&gt; madness. I thought the same, I don&apos;t blame you. Do you remember the original method that I was desperately trying to polyfill?&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;Number.isSafeInteger =
+  Number.isSafeInteger ||
+  function (value) {
+    return Number.isInteger(value) &amp;amp;&amp;amp; Math.abs(value) &amp;lt;= Number.MAX_SAFE_INTEGER
+  }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It happens that &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;mdn web docs number max safe integer&amp;quot;&amp;gt;Number.MAX_SAFE_INTEGER&amp;lt;/a&amp;gt; is also not supported on IE, so I had to polyfill that as well.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;if (!Number.MAX_SAFE_INTEGER) {
+  Number.MAX_SAFE_INTEGER = 9007199254740991 // Math.pow(2, 53) - 1;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h3&gt;Lessons&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Whenever you spot unconventional/&lt;em&gt;non-frequently-used&lt;/em&gt; methods in your &lt;strong&gt;code reviews&lt;/strong&gt;, scream to the world that your peer might be breaking something, ask them to &lt;strong&gt;consult the documentation for browser compatibility&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Don&apos;t blindly trust MDN web docs Polyfill sections&lt;/strong&gt;. Unfortunately, they don&apos;t
+warn you about whether or not the implementation of the polyfill needs to be &lt;em&gt;polyfilled&lt;/em&gt; itself.&lt;/li&gt;
+&lt;/ol&gt;
+</content:encoded></item><item><title>You Can&apos;t Call Hooks Inside Conditions? Yes you can</title><link>https://danielcaldas.github.io/posts/call-react-hooks-inside-conditions/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/call-react-hooks-inside-conditions/</guid><description>You Can&apos;t Call Hooks Inside Conditions? Yes you can</description><pubDate>Wed, 20 May 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;tl;dr&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Calling hooks conditionally breaks the rules, yes.&lt;/li&gt;
+&lt;li&gt;Wrap the hook with a component and render that component optionally to toggle the usage of the hook.&lt;/li&gt;
+&lt;li&gt;The rules of hooks are somewhat reflections of the constraints of this React API.&lt;/li&gt;
+&lt;li&gt;Example final full code &lt;a href=&quot;#example-full-code&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/call-react-hooks-inside-conditions/forbidden-seagull.png&quot; alt=&quot;&amp;quot;forbidden seagull bending the rules&amp;quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;cite&amp;gt;source: https://www.flickr.com/photos/sameli/1898511953&amp;quot;&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;h3&gt;Bending the Rules&lt;/h3&gt;
+&lt;p&gt;There&apos;s a &amp;lt;a href=&amp;quot;https://reactjs.org/docs/hooks-rules.html&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Rules of Hooks - React&amp;quot;&amp;gt;bunch of reasons why you can&apos;t use a React hook conditionally&amp;lt;/a&amp;gt; under a particular condition.&lt;/p&gt;
+&lt;p&gt;Before I start, I would like you to take a moment to reflect on the following questions?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why did you end up needing this? And, is it your fault, or is it the library&apos;s fault?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;. &amp;lt;br /&amp;gt;
+. &amp;lt;br /&amp;gt;
+. &amp;lt;br /&amp;gt;
+. &amp;lt;br /&amp;gt;
+. &amp;lt;br /&amp;gt;
+. &amp;lt;br /&amp;gt;
+. &amp;lt;br /&amp;gt;
+. &amp;lt;br /&amp;gt;
+. &amp;lt;br /&amp;gt;
+. &amp;lt;br /&amp;gt;
+. &amp;lt;br /&amp;gt;
+. &amp;lt;br /&amp;gt;
+. &amp;lt;br /&amp;gt;
+. &amp;lt;br /&amp;gt;
+. &amp;lt;br /&amp;gt;
+. &amp;lt;br /&amp;gt;
+. &amp;lt;br /&amp;gt;
+. &amp;lt;br /&amp;gt;
+. &amp;lt;br /&amp;gt;
+. &amp;lt;br /&amp;gt;
+. &amp;lt;br /&amp;gt;
+. &amp;lt;br /&amp;gt;
+. &amp;lt;br /&amp;gt;
+. &amp;lt;br /&amp;gt;
+. &amp;lt;br /&amp;gt;
+. &amp;lt;br /&amp;gt;
+. &amp;lt;br /&amp;gt;
+. &amp;lt;br /&amp;gt;
+. &amp;lt;br /&amp;gt;
+. &amp;lt;br /&amp;gt;
+. &amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;p&gt;When I first tried to answer the question myself, I settled that it would be my fault If I had written the code since the very beginning.
+If you pick React hooks API, you should structure the code accordingly not to end up falling into such scenarios where your better option might be breaking the rules. On the other end, if you have hundreds of components combined in a large shared codebase, you might hit a dead end where the most optimal option for the time being it&apos;s not beautiful. Still, it gets the job done and buys you and your team time to get things out faster, ideally you would come back and remove the hack later. Still, most of the time in the real world, we know that&apos;s not going to happen, so you better documenting it properly to alleviate the unavoidable spike on &lt;em&gt;WTFs/minute&lt;/em&gt; (got this from &amp;lt;a href=&amp;quot;http://cleancoder.com/products&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;nofollow&amp;quot; title=&amp;quot;Uncle Bob Martin&amp;quot;&amp;gt;Clean Code by Robert C. Martin&amp;lt;/a&amp;gt;).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/call-react-hooks-inside-conditions/wtfs-per-minute-code-review.png&quot; alt=&quot;&amp;quot;code review cartoon&amp;quot;&quot;&gt;
+&amp;lt;cite&amp;gt;source: https://www.osnews.com/story/19266/wtfs&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;p&gt;As always, I think there&apos;s nothing better than an example to explain a concept, let&apos;s look into one.&lt;/p&gt;
+&lt;p&gt;In this example, we have a custom hook &lt;code&gt;useRandomNumberEverySecond&lt;/code&gt; that produces a random number every one second. In a real scenario, you could potentially have a super sophisticated hook that performs asynchronous stuff like data fetching and puts everything together. For the sake of simplicity, we&apos;re just returning a number.&lt;/p&gt;
+&lt;p&gt;We want only to call on &lt;code&gt;useRandomNumberEverySecond&lt;/code&gt; and use its result, if and only if, a flag &lt;code&gt;isHookActive&lt;/code&gt; has value &lt;code&gt;true&lt;/code&gt;. But, how can we achieve this if we declare hooks at the top level of a component, and we can&apos;t wrap them inside &lt;code&gt;if&lt;/code&gt; statements?&lt;/p&gt;
+&lt;p&gt;My suggested approach is to wrap our hook &lt;code&gt;useRandomNumberEverySecond&lt;/code&gt; in a second component, &lt;code&gt;RandomNumberWrapper&lt;/code&gt;, that mediates the relationship between our target component and the hook &lt;code&gt;useRandomNumberEverySecond&lt;/code&gt;. Let&apos;s see how that looks.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets//call-react-hooks-inside-conditions/example-final-result.gif&quot; alt=&quot;&amp;quot;example final result&amp;quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;As proof of concept, the goal is to have the button in the interface toggle the usage of our custom React hook.&lt;/p&gt;
+&lt;h4&gt;Custom React Hook&lt;/h4&gt;
+&lt;p&gt;Our custom hook &lt;code&gt;useRandomNumberEverySecond&lt;/code&gt; generates a random number every second.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max))
+}
+
+function useRandomNumberEverySecond(max = 1000) {
+  const [number, setNumber] = useState(getRandomInt(max))
+
+  useEffect(() =&amp;gt; {
+    const interval = setInterval(() =&amp;gt; setNumber(getRandomInt(max)), 1000)
+    return () =&amp;gt; clearInterval(interval)
+  }, [max])
+
+  return number
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h4&gt;The Main Component&lt;/h4&gt;
+&lt;p&gt;Our main component looks like this, where &lt;code&gt;number&lt;/code&gt; is provided by our custom hook (when active).&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-jsx&quot;&gt;export default function App() {
+  const [isHookActive, setIsHookActive] = useState(false)
+  const [number, setNumber] = useState(0)
+  return (
+    &amp;lt;div className=&amp;quot;App&amp;quot;&amp;gt;
+      &amp;lt;h1&amp;gt;Bending the Rules of Hooks&amp;lt;/h1&amp;gt;
+      &amp;lt;button onClick={() =&amp;gt; setIsHookActive(!isHookActive)}&amp;gt;Click to toggle custom hook usage&amp;lt;/button&amp;gt;
+      &amp;lt;h4&amp;gt;{isHookActive ? `hook output is: ${number}` : &apos;hook is not active&apos;}&amp;lt;/h4&amp;gt;
+      {isHookActive &amp;amp;&amp;amp; &amp;lt;RandomNumberWrapper setState={setNumber} /&amp;gt;}
+    &amp;lt;/div&amp;gt;
+  )
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Notice that the component &lt;code&gt;RandomNumberWrapper&lt;/code&gt; only renders when &lt;code&gt;isHookActive&lt;/code&gt; is true. Now let&apos;s take a look at &lt;code&gt;RandomNumberWrapper&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Now let&apos;s see how our main component consumes the custom hook &lt;code&gt;useRandomNumberEverySecond&lt;/code&gt;.&lt;/p&gt;
+&lt;h4&gt;The Wrapper Component&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;function RandomNumberWrapper({ setState }) {
+  const number = useRandomNumberEverySecond()
+
+  useEffect(() =&amp;gt; {
+    setState(number)
+  }, [setState, number])
+
+  return null
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And that&apos;s it! &lt;code&gt;RandomNumberWrapper&lt;/code&gt; blindly proxies whatever data comes from &lt;code&gt;useRandomNumberEverySecond&lt;/code&gt; via the callback &lt;code&gt;setState&lt;/code&gt;, which then updates the &lt;code&gt;number&lt;/code&gt; state property in our main component. You can go ahead and apply this pattern to any hook in your codebase, wrapping up, you need to:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create a new component to &lt;strong&gt;wrap the usage of the hook&lt;/strong&gt; you intent to use conditionally.&lt;/li&gt;
+&lt;li&gt;Pass into this new component, a &lt;code&gt;setter&lt;/code&gt; that &lt;strong&gt;allows you to forward the data&lt;/strong&gt; back to the parent component.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Conditionally mount the new component&lt;/strong&gt; in your target component and pass in the &lt;code&gt;setter&lt;/code&gt; as a prop to the new component, that&apos;s how you&apos;re going to receive the state updates coming from your custom React hook.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Closing Notes&lt;/h4&gt;
+&lt;p&gt;I hope you found this pattern helpful! After working some time with &amp;lt;a href=&amp;quot;https://svelte.dev/docs#3_$_marks_a_statement_as_reactive&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;API Docs Svelte&amp;quot;&amp;gt;reactivity blocks in Svelte&amp;lt;/a&amp;gt;, React hooks feel like making fire with sticks and stones compared to making fire with a lighter.&lt;/p&gt;
+&lt;h5&gt;Example Full Code&lt;/h5&gt;
+&lt;p&gt;&amp;lt;details&amp;gt;
+&amp;lt;summary&amp;gt;Expand to see example full code&amp;lt;/summary&amp;gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-jsx&quot;&gt;import React, { useState, useEffect } from &apos;react&apos;
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max))
+}
+
+function useRandomNumberEverySecond(max = 1000) {
+  const [number, setNumber] = useState(getRandomInt(max))
+
+  useEffect(() =&amp;gt; {
+    const interval = setInterval(() =&amp;gt; setNumber(getRandomInt(max)), 1000)
+    return () =&amp;gt; clearInterval(interval)
+  }, [max])
+
+  return number
+}
+
+function RandomNumberWrapper({ setState }) {
+  const number = useRandomNumberEverySecond()
+
+  useEffect(() =&amp;gt; {
+    setState(number)
+  }, [setState, number])
+
+  return null
+}
+
+export default function App() {
+  const [isHookActive, setIsHookActive] = useState(false)
+  const [number, setNumber] = useState(0)
+  return (
+    &amp;lt;div className=&amp;quot;App&amp;quot;&amp;gt;
+      &amp;lt;h1&amp;gt;Bending the Rules of Hooks&amp;lt;/h1&amp;gt;
+      &amp;lt;button onClick={() =&amp;gt; setIsHookActive(!isHookActive)}&amp;gt;Click to toggle custom hook usage&amp;lt;/button&amp;gt;
+      &amp;lt;h4&amp;gt;{isHookActive ? `hook output is: ${number}` : &apos;hook is not active&apos;}&amp;lt;/h4&amp;gt;
+      {isHookActive &amp;amp;&amp;amp; &amp;lt;RandomNumberWrapper setState={setNumber} /&amp;gt;}
+    &amp;lt;/div&amp;gt;
+  )
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;/details&amp;gt;&lt;/p&gt;
+</content:encoded></item><item><title>Debugging Javascript with VS Code</title><link>https://danielcaldas.github.io/posts/debugging-javascript-with-vscode/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/debugging-javascript-with-vscode/</guid><description>My notes on the epic JSConf EU 2018</description><pubDate>Sun, 17 Feb 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Prepare to set up some rocket science debugging toolkit in &amp;lt;a href=&amp;quot;https://code.visualstudio.com/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;visual studio code is a lightweight but powerful source code editor which runs on your desktop&amp;quot;&amp;gt;VS Code&amp;lt;/a&amp;gt; for Javascript. After this, you can start kicking ass and showing off your debugging skills to your peers.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/debugging-javascript-with-vscode/debug-animation-1.gif&quot; alt=&quot;vscode debugging animation&amp;quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;To be precise and not only provide generic instructions on how to setup debugging in VS Code I will provide a step by step guide based on a real open source project so that you can checkout the config and how all the pieces come together. Without further ado I present to you &amp;lt;a href=&amp;quot;https://github.com/danielcaldas/el-conversor&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;a number to word list converter as a node backend and react/redux fronted&amp;quot;&amp;gt;el-conversor&amp;lt;/a&amp;gt;. The project uses &amp;lt;a href=&amp;quot;https://www.ecma-international.org/publications/standards/Ecma-262.htm&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;standard ecma-262&amp;quot;&amp;gt;ES6&amp;lt;/a&amp;gt;, and the build tool is &amp;lt;a href=&amp;quot;https://webpack.js.org/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;bundle your scripts&amp;quot;&amp;gt;webpack&amp;lt;/a&amp;gt;, this is important to mention because because if you&apos;re using &amp;lt;a href=&amp;quot;https://www.ecma-international.org/publications/standards/Ecma-262.htm&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;standard ecma-262&amp;quot;&amp;gt;ES6&amp;lt;/a&amp;gt; you will need to properly configure &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Use a source map - Firefox Developer Tools | MDN&amp;quot;&amp;gt;&lt;em&gt;source maps&lt;/em&gt;&amp;lt;/a&amp;gt;. At the end of the &lt;a href=&quot;#how-to&quot;&gt;how to guide section&lt;/a&gt; you should have this amazing development setup.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/debugging-javascript-with-vscode/expanding-brain.jpg&quot; alt=&quot;expanding brain debugger meme&quot; title=&quot;expanding brain debugger meme&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;cite&amp;gt;source: https://imgflip.com/memegenerator/Expanding-Brain&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;h3&gt;How to&lt;/h3&gt;
+&lt;p&gt;Next we will dive deep into &amp;lt;a href=&amp;quot;https://github.com/danielcaldas/el-conversor/pull/14&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;feature/setup vscode debugging&amp;quot;&amp;gt;this pull request&amp;lt;/a&amp;gt; and go step by step on how to set up the perfect debugging environment.&lt;/p&gt;
+&lt;h4&gt;Javascript debugger&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Install &amp;lt;a href=&amp;quot;https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;debug your javascript code in the Chrome browser, or any other target that supports the chrome debugger protocol&amp;quot;&amp;gt;Debugger for Chrome&amp;lt;/a&amp;gt;.&lt;/li&gt;
+&lt;li&gt;On your root folder create a &lt;code&gt;.vscode&lt;/code&gt; folder (it may already exist, in that case, jump this step).&lt;/li&gt;
+&lt;li&gt;Create a &lt;code&gt;launch.json&lt;/code&gt; file inside the &lt;code&gt;.vscode&lt;/code&gt; directory with the following configuration or click on the gear icon in the debug tab on vscode:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&quot;language-json:title=.vscode/launch.json&quot;&gt;{
+  &amp;quot;version&amp;quot;: &amp;quot;0.2.0&amp;quot;,
+  &amp;quot;configurations&amp;quot;: [
+    {
+      &amp;quot;type&amp;quot;: &amp;quot;chrome&amp;quot;,
+      &amp;quot;request&amp;quot;: &amp;quot;launch&amp;quot;,
+      &amp;quot;name&amp;quot;: &amp;quot;JS Debugger&amp;quot;,
+      &amp;quot;userDataDir&amp;quot;: true,
+      &amp;quot;url&amp;quot;: &amp;quot;http://localhost:3002/&amp;quot;,
+      &amp;quot;webRoot&amp;quot;: &amp;quot;${workspaceFolder}&amp;quot;,
+      &amp;quot;sourceMapPathOverrides&amp;quot;: {
+        &amp;quot;webpack:///*&amp;quot;: &amp;quot;${webRoot}/*&amp;quot;
+      }
+    }
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;small&amp;gt;
+You can read more about &amp;lt;i&amp;gt;sourceMapPathOverrides&amp;lt;/i&amp;gt; property in the official{&amp;quot; &amp;quot;}
+&amp;lt;a
+href=&amp;quot;https://github.com/Microsoft/vscode-chrome-debug/blob/master/README.md#sourcemaps&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;microsoft/vscode-chrome-debug README.md&amp;quot;&lt;/p&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;the README.md of microsoft/vscode-chrome-debug
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;/a&amp;gt;
+&amp;lt;/small&amp;gt;&lt;/p&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;The only thing that you would need to eventually fine tune is the url parameter in order to point to your local dev server.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Now running your development server and simultaneously activating the vscode javascript debugger you&apos;re finally able to debug your code!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/debugging-javascript-with-vscode/vscode-debugger-part-1.png&quot; alt=&quot;vscode debugger&quot; title=&quot;vscode debugger javascript&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;Caption /&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h4&gt;Redux DevTools&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚠️ Although this setup is handy it adds considerable overhead to your development setup. Maybe in the future, better integrations (maybe natively integrated with the IDE) will be available, or maybe there&apos;s already some better integration that I might not be aware of, please comment this page if that&apos;s the case.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;If you&apos;re using &amp;lt;a href=&amp;quot;https://redux.js.org/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;a predictable state container for javascript apps&amp;quot;&amp;gt;Redux&amp;lt;/a&amp;gt; there is a strong possibility that you&apos;re debugging your application state with &amp;lt;a href=&amp;quot;https://marketplace.visualstudio.com/items?itemName=jingkaizhao.vscode-redux-devtools&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;vscode redux devtools wrapper&amp;quot;&amp;gt;Redux DevTools&amp;lt;/a&amp;gt;. Wouldn&apos;t it be nice to run the Redux DevTools on a VS Code tab, along side with your shinny new debugger? 😎&lt;/p&gt;
+&lt;p&gt;To bring all this convenience into your favorite IDE, you need to perform the following steps.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Install &amp;lt;a href=&amp;quot;https://marketplace.visualstudio.com/items?itemName=jingkaizhao.vscode-redux-devtools&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;visual studio code extension to include remotedev-app into editor&amp;quot;&amp;gt;Redux DevTools extension&amp;lt;/a&amp;gt; for VS Code.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create a remote devserver to broadcast actions to the VS Code extension. For this you need to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Install as a dev dependency &amp;lt;a href=&amp;quot;https://www.npmjs.com/package/remotedev-server&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;bridge for communicating with an application remotely via redux devtools extension, remote redux devtools or remotedev&amp;quot;&amp;gt;remotedev-server&amp;lt;/a&amp;gt;.&lt;/li&gt;
+&lt;li&gt;Create a js script with the following snippet:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// remotedev-server.js
+const remotedev = require(&apos;remotedev-server&apos;)
+remotedev({ hostname: &apos;127.0.0.1&apos;, port: 1024 })
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now considering you are already running your local dev server, run the above snippet with &lt;code&gt;node remotedev-server.js&lt;/code&gt;(this will launch the remote dev server and you should keep it running in some terminal in order to continuously broadcast actions for the extension).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Open the extension Redux DevTools (it should open a tab with the empty devtools).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Go to settings.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Select use local (custom) server and set the &lt;strong&gt;hostname&lt;/strong&gt; and &lt;strong&gt;port&lt;/strong&gt; to the same values that you defined on the script of step 2.b. (default being &lt;code&gt;127.0.0.1&lt;/code&gt; and &lt;code&gt;1024&lt;/code&gt;).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Integrate the &amp;lt;a href=&amp;quot;https://github.com/zalmoxisus/remote-redux-devtools&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;redux devtools remotely&amp;quot;&amp;gt;remote-redux-devtools&amp;lt;/a&amp;gt; in you project:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// el-conversor/app/common/store.js
+import { createStore, applyMiddleware } from &apos;redux&apos;
+import { createLogger } from &apos;redux-logger&apos;
+import promise from &apos;redux-promise-middleware&apos;
+import { composeWithDevTools } from &apos;remote-redux-devtools&apos;
+
+import reducer from &apos;./reducers&apos;
+
+const ENV = window.ENV
+
+const middleware =
+  ENV.NAME === &apos;production&apos; ? applyMiddleware(promise()) : applyMiddleware(promise(), createLogger())
+
+const composeEnhancers = composeWithDevTools({
+  realtime: true,
+  name: &apos;store&apos;,
+  host: &apos;localhost&apos;,
+  port: 1024,
+})
+
+export default createStore(reducer, {}, composeEnhancers(middleware))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Launch the VS Code debugger.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Go back to the Redux DevTools and click the connect button.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You&apos;re good to go! If everything went as expected you should have a similar setup to the one below.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/debugging-javascript-with-vscode/vscode-debugger-part-2.png&quot; alt=&quot;vscode setup redux final&quot; title=&quot;vscode setup redux final&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;Caption /&amp;gt;&lt;/p&gt;
+&lt;h3&gt;Conclusions&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/debugging-javascript-with-vscode/debug-animation-2.gif&quot; alt=&quot;vscode setup redux final&quot; title=&quot;vscode setup redux final&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I might have spent one or two days trying to figure out how to bring all these pieces together, but having done it, believe that it increased my productivity in ways that by far compensate the invested time. I hope you find this article useful especially if it saves you one day of trouble trying to figure out the right configs.&lt;/p&gt;
+</content:encoded></item><item><title>Why are developers bad at (manually) testing their code?</title><link>https://danielcaldas.github.io/posts/developers-bad-at-testing-own-code/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/developers-bad-at-testing-own-code/</guid><description>Why are developers bad at (manually) testing their code?</description><pubDate>Tue, 06 Apr 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Manual testing of any software it&apos;s a vital activity to ensure its quality and long-term stability. Together with their coding activities, developers test their code changes to understand if they produce the desired outcome without breaking any existing software functionality. So far, so good.&lt;/p&gt;
+&lt;p&gt;Today I&apos;m writing a few points on &lt;strong&gt;why developers are bad at manual testing&lt;/strong&gt; their own code changes, especially at detecting unwanted side-effects in areas of the software often unrelated to the modified parts.&lt;/p&gt;
+&lt;p&gt;I&apos;m writing because, at this point in time, I have experienced two very different setups towards software testing:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;As a developer, I write a piece of code, and &lt;strong&gt;I&apos;ll have a dedicated tester&lt;/strong&gt; testing the product with my code change before my change is pushed to production.&lt;/li&gt;
+&lt;li&gt;As a developer, I write a piece of code, and &lt;strong&gt;I&apos;m alone responsible&lt;/strong&gt; for testing that code change before moving the change to production.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&amp;lt;small&amp;gt;
+&amp;lt;i&amp;gt;(both 1 and 2 follow standard code reviewing practices, but this is not relevant in this context)&amp;lt;/i&amp;gt;
+&amp;lt;/small&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Although slower, I believe that the 1st setup often results in much more stable software, and here are the reasons that back up my opinion.&lt;/strong&gt;&lt;/p&gt;
+&lt;h4&gt;1. The &amp;quot;Mental Bandwith&amp;quot; Problem&lt;/h4&gt;
+&lt;p&gt;Year after year, I&apos;m more convinced that I&apos;m &lt;strong&gt;at my best when I focus on one task at a time. Also, the more specific&lt;/strong&gt;
+&lt;strong&gt;the task, the better.&lt;/strong&gt; &amp;lt;a href=&amp;quot;https://sloanreview.mit.edu/article/the-impossibility-of-focusing-on-two-things-at-once/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;The Impossibility of Focusing on Two Things at Once&amp;quot;&amp;gt;Science backs up the fact&amp;lt;/a&amp;gt; that it&apos;s
+naturally hard for humans to focus on two tasks of different nature simultaneously.&lt;/p&gt;
+&lt;p&gt;Now, if you&apos;re developing and testing your own code, you&apos;ll be stretching yourself as an individual to do two very different
+tasks in nature. You&apos;ll also be performing constant context switching because this is what happens when you&apos;re testing your
+code changes: &lt;em&gt;&amp;quot;Ok, let me check this case, and that case... Oh damn! Forgot to handle this in the code, should be just one&lt;/em&gt;
+&lt;em&gt;line, let me go back and add it... Alright! Back to testing where were we...&amp;quot;&lt;/em&gt;. Of course, it always depends on how strict and
+organized you can be, but overall, it is pretty hard to take your mind away from the underlying implementation &lt;strong&gt;you&lt;/strong&gt; did!&lt;/p&gt;
+&lt;p&gt;As a developer testing my own code, I often tend to be as strict as possible in the sense that I&apos;ll avoid switching context until
+I went through all the &amp;quot;bullet points&amp;quot; I wanted to cover. Nonetheless, because testing is also my responsibility, I&apos;ll probably dedicate
+less energy to things such as refactoring the existing implementation, making it more readable, especially after I&apos;ve manually tested
+something thoroughly. Unit tests often give me a lot of confidence to do this, but that&apos;s not always the case. Some
+functionalities (especially in the web platform) are tricky to capture in any form of automation.&lt;/p&gt;
+&lt;h4&gt;2. Emotional Attachment&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;It&apos;s good to be proud of the code we write. But more or less, every developer grows some kind of emotional attachment to the code they write&lt;/strong&gt;, and
+in my opinion, this attachment is proportional to the time you spend around a given task. It was not easy for me to assume
+this, but I had to stop at some point and don&apos;t be afraid to throw my code away if necessary. When developers test their code, they
+unconsciously (or sometimes event consciously) cut corners and avoid specific scenarios because they are afraid that their beloved
+code would not make it. Suppose you have a tester trying out your change. In that case, you bring a second person to the table, &lt;strong&gt;this&lt;/strong&gt;
+&lt;strong&gt;person it&apos;s not emotionally invested in the code, so it&apos;s easier for them to tell you that something is wrong&lt;/strong&gt;.&lt;/p&gt;
+&lt;h4&gt;3. The Big Picture&lt;/h4&gt;
+&lt;p&gt;By manually testing the code of dozens of developers you work with, you&apos;ll probably come across different functionalities, variants, and
+shapes of that software as a tester. &lt;strong&gt;The tester then develops a transversal knowledge of the software as opposed to developers&apos; knowledge, which&lt;/strong&gt;
+&lt;strong&gt;is often vertical&lt;/strong&gt;. Developers tend to work in specific verticals of a codebase, making them ignorant and continually less aware of what a given
+change means to the whole project. Thus &lt;strong&gt;I believe dedicated testers develop a more solid mental model of the software by constantly testing&lt;/strong&gt;
+&lt;strong&gt;changes and seeing the product evolve on its various fronts&lt;/strong&gt;.&lt;/p&gt;
+&lt;h4&gt;4. Role Specialization&lt;/h4&gt;
+&lt;p&gt;Because testers allocate their efforts towards manual testing and other testing-related activities such as writing automation tests, they&apos;ll develop a more specialized set of skills appropriate for testing software. This involves:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Getting familiar with different tools to automate their flows.&lt;/li&gt;
+&lt;li&gt;Getting familiar with whatever technologies are employed to automate the testing process.&lt;/li&gt;
+&lt;li&gt;Getting a sense of community by gathering with other testers working on the same project and joining external communities to expand or share their expertise.&lt;/li&gt;
+&lt;li&gt;There are also developers that are particularly passitionate about this topic, why not let them go fulltime?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;5. A Fresher Pair of Eyes&lt;/h4&gt;
+&lt;p&gt;An obvious statement. Often a fresher perspective brings value to the table. This doesn&apos;t apply only to software testing. Did it ever
+happen to you being stuck at something, stopping, going for a walk, coming back, and suddenly the problem is no longer there? Well, the
+same can happened if you get someone else help.&lt;/p&gt;
+&lt;h4&gt;6. The &amp;quot;My code is bulletproof&amp;quot; attitude&lt;/h4&gt;
+&lt;p&gt;There will be times when it&apos;s tempting to just push a change because you know such a simple code change &lt;strong&gt;(the famous &amp;quot;one-liner&amp;quot;) can&apos;t&lt;/strong&gt;
+&lt;strong&gt;possibly break something else totally unrelated&lt;/strong&gt;. I was proven more than once that this is not true. Getting that tiny code change through a
+streamlined process of code review and manual testing (by a second individual), it&apos;s totally worth it because, again, the quality assurance engineer often
+has a broader understanding of the software from an end-user perspective. As a developer, I have to make sure I clearly communicate
+through the proper channels (usually documentation in the Pull/Merge request) the intent of my change.&lt;/p&gt;
+&lt;p&gt;See ya 👋&lt;/p&gt;
+</content:encoded></item><item><title>Functional bits</title><link>https://danielcaldas.github.io/posts/functional-bits-tips/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/functional-bits-tips/</guid><description>Functional bits</description><pubDate>Mon, 30 Mar 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Here are some of my top favorite personal utilities to make your programming style more functional. They increase the readability of my code and help me transforming those less pretty pieces of logic into something that I&apos;m proud of and that I can confidently change by merely modifying a line of code (or maybe less).&lt;/p&gt;
+&lt;h3&gt;The bits&lt;/h3&gt;
+&lt;p&gt;I list below a series of utilities together with a short background/motivation followed by an example where I demonstrate both the imperative and functional approaches, where the functional approach makes use of the respective utility. You can also find a rough implementation of the utility by the end of its section.&lt;/p&gt;
+&lt;h4&gt;tap&lt;/h4&gt;
+&lt;p&gt;Inspired by the &amp;lt;a href=&amp;quot;https://rxjs-dev.firebaseapp.com/api/operators/tap&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;RxJS tap operator&amp;quot;&amp;gt;RxJS tap operator&amp;lt;/a&amp;gt;. With &lt;code&gt;tap&lt;/code&gt;, you can perform non-intrusive side effects. By non-intrusive, I mean that you can leverage the power of a functional style of coding to perform a task, and simultaneously deliver a side effect (e.g., &lt;code&gt;console.log&lt;/code&gt;) within your approach. Let&apos;s have a look.&lt;/p&gt;
+&lt;h5&gt;Imperative&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;let agesSum = 0
+const totalNumberOfUsers = users.length
+
+for (const user of users) {
+  const birthdate = user.birthdate * 1000 // convert to milliseconds
+  console.log(birthdate)
+  const userAge = new Date().getFullYear() - new Date(birthdate).getFullYear()
+  agesSum += userAge
+}
+
+const meanAge = agesSum / totalNumberOfUsers
+
+console.log(`Users are in average ${meanAge} years old.`)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h5&gt;Functional with &lt;code&gt;tap&lt;/code&gt;&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const sum = (arr) =&amp;gt; arr.reduce((s, n) =&amp;gt; s + n, 0)
+const mean = (arr) =&amp;gt; sum(arr) / arr.length
+const meanAge = mean(
+  users
+    .map((user) =&amp;gt; user.birthdate * 1000) // convert to milliseconds
+    .tap((birthdates) =&amp;gt; console.log(birthdates)) // logs array of birthdates
+    .map((birthdate) =&amp;gt; new Date().getFullYear() - new Date(birthdate).getFullYear()),
+)
+
+console.log(`Users are in average ${meanAge} years old.`)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I give you that right now, it&apos;s far more understandable how you would log something in between your imperative approach. You can inspect each age individually as the code progresses. But as you can see in the functional approach analyzing the birthdates at a particular stage of your data transformations is also possible! Below the implementation of &lt;code&gt;tap&lt;/code&gt;. Warning, this approach extends the &lt;code&gt;Array.prototype&lt;/code&gt;, use at your own risk.&lt;/p&gt;
+&lt;h5&gt;Implementing &lt;code&gt;tap&lt;/code&gt;&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;Object.defineProperty(Array.prototype, &apos;tap&apos;, {
+  value: function (fn) {
+    fn(this)
+    return this
+  },
+  writable: true,
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h4&gt;and &amp;amp; or&lt;/h4&gt;
+&lt;p&gt;Did it ever happen to you ending up with an &lt;code&gt;if&lt;/code&gt; statement that needs to be broken down into several LOC &amp;lt;small&amp;gt;(&amp;lt;i&amp;gt;Lines Of Code&amp;lt;/i&amp;gt;)&amp;lt;/small&amp;gt; because it is too long, and the linter starts crying about it? There&apos;s an elegant solution for that, and it&apos;s pure composition, let me share it with you.&lt;/p&gt;
+&lt;h5&gt;Imperative&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const usersEligibleForSurvey = []
+
+for (const user of users) {
+  const age = getAgeFromUnixTimestamp(user.birthdate)
+
+  if (user.gender === &apos;female&apos; &amp;amp;&amp;amp; age &amp;lt; 33 &amp;amp;&amp;amp; user.location.country === &apos;denmark&apos;) {
+    usersEligibleForSurvey.push(user)
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h5&gt;Functional with &lt;code&gt;and&lt;/code&gt;&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const isFemale = (user) =&amp;gt; user.gender === &apos;female&apos;
+const isBelowAge = (age) =&amp;gt; (user) =&amp;gt; getAgeFromUnixTimestamp(user.birthdate) &amp;lt; age
+const isFromCountry = (country) =&amp;gt; (user) =&amp;gt; user.location.country === country
+const isUserEligibleForSurvey = and(isFemale, isBelowAge(33), isFromCountry(&apos;denmark&apos;))
+
+const usersEligibleForSurvey = users.filter(isUserEligibleForSurvey)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Instead of a single if statement, you now have a reusable function. More than that, you can easily plugin and out any criteria to exclude users from the survey! Let&apos;s say you had a very complex function that, given a specific user would check some rules against the postcode to exclude certain areas of the country. Given you have that function, append it into the &lt;code&gt;and&lt;/code&gt; arguments. That&apos;s all! &lt;code&gt;isUserEligibleForSurvey&lt;/code&gt; is now checking for the postcode as well, you&apos;re good to go.
+&lt;code&gt;and&lt;/code&gt; is an excellent example of why we describe this kind of approach as declarative programming, &lt;strong&gt;you&apos;re expressing the logic without describing its control flow&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h5&gt;Implementing &lt;code&gt;and&lt;/code&gt;&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;function and(...fns) {
+  const n = fns.length
+
+  return (...args) =&amp;gt; {
+    for (let i = 0; i &amp;lt; n; i++) {
+      const fn = fns[i]
+      const result = fn(...args)
+      if (!result) {
+        return false
+      }
+    }
+
+    return true
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;More functional, less efficient, since it executes all the predicates.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const and =
+  (...fns) =&amp;gt;
+  (...args) =&amp;gt;
+    fns.reduce((prev, fn) =&amp;gt; prev &amp;amp;&amp;amp; fn(...args))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h4&gt;select &amp;amp; drop&lt;/h4&gt;
+&lt;p&gt;RxJS has &amp;lt;a href=&amp;quot;https://rxjs-dev.firebaseapp.com/api/operators/pluck&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;RxJS operators, pluck&amp;quot;&amp;gt;pluck&amp;lt;/a&amp;gt;, lodash has &amp;lt;a href=&amp;quot;https://rxjs-dev.firebaseapp.com/api/operators/pluck&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Lodash pick&amp;quot;&amp;gt;pick&amp;lt;/a&amp;gt;. I find &lt;code&gt;select&lt;/code&gt; a more concise and name. Projecting properties from objects is a prevalent task. The fact that JavaScript has destructuring built-in is a live proof of that. You could use destructuring to project properties; &amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/destructuring-not-so-good-parts/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Destructuring in JavaScript: the not so good parts&amp;quot;&amp;gt;it&apos;s often more tedious, and it&apos;s not suitable for every occasion&amp;lt;/a&amp;gt; to use within a chain of operations.&lt;/p&gt;
+&lt;h5&gt;Imperative&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;let countries = new Set()
+
+for (const user of users) {
+  countries.add(user.location.country)
+}
+
+console.log(Array.from(countries).join(&apos;, &apos;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h5&gt;Functional with &lt;code&gt;select&lt;/code&gt;&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const countries = new Set(users.map(select(&apos;location.country&apos;)))
+
+console.log(Array.from(countries).join(&apos;, &apos;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the functional approach, &lt;code&gt;select&lt;/code&gt; extracts from each user the &lt;code&gt;country&lt;/code&gt; field located within the &lt;code&gt;location&lt;/code&gt; object.&lt;/p&gt;
+&lt;p&gt;Again, with the functional approach, we shift towards a more declarative style.
+There&apos;s also an &amp;quot;opposite&amp;quot; of &lt;code&gt;select&lt;/code&gt;, which is &lt;code&gt;drop&lt;/code&gt;. In short, instead of picking up the properties of an object, you declare which properties you want to drop.&lt;/p&gt;
+&lt;h5&gt;Implementing &lt;code&gt;select&lt;/code&gt;&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// something similar to lodash/get
+function get(o, query, defaultValue = undefined) {
+  if (!query) return defaultValue
+  const path = query.split(&apos;.&apos;)
+  let pointer = o
+
+  for (const k of path) {
+    pointer = pointer[k]
+    if (!pointer) return defaultValue
+  }
+
+  return pointer
+}
+
+/**
+ * When there&apos;s only a single property in `keys` the value is not wrapped in an object e.g.
+ * &amp;gt; const city = select(&apos;location.city&apos;)(users[0])
+ * &amp;gt; console.log(city)
+ * &amp;gt; &apos;staphorst&apos;
+ *
+ * Nested paths are flatten at the top level e.g.
+ * &amp;gt; const cityCountry = select(&apos;location.city&apos;, &apos;location.country&apos;)(users[0])
+ * &amp;gt; console.log(cityCountry)
+ * &amp;gt; { &apos;location.city&apos;: &apos;staphorst&apos;, &apos;location.country&apos;: &apos;netherlands&apos; }
+ */
+const select =
+  (...keys) =&amp;gt;
+  (o) =&amp;gt;
+    keys.length === 1
+      ? get(o, keys[0])
+      : keys.reduce((acc, k) =&amp;gt; {
+          acc[k] = get(o, k)
+          return acc
+        }, {})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h4&gt;pipe&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;pipe&lt;/code&gt; would be something like &amp;lt;a href=&amp;quot;https://lodash.com/docs/4.17.15#flow&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;lodash flow&amp;quot;&amp;gt;lodash/flow&amp;lt;/a&amp;gt; where you can take &lt;em&gt;N&lt;/em&gt; functions where each performs a unique task and combine them in chain where data flows from left to right. The output of a function within the pipe is the input to the next one (and so on). It&apos;s good to use something like &lt;code&gt;pipe&lt;/code&gt; when you need to perform a series of data transformations on a given input. Let&apos;s look at the following example, where we want to format our &lt;code&gt;users&lt;/code&gt; data in a way that is friendly to be consumed by the UI, but first, there are some requirements that need to be met in terms of the shape of each user Object individually.
+The goal is to render a table with the name (first name + last name), age, and country (with the first character capitalized) so that the Marketing department of the company &lt;em&gt;X&lt;/em&gt; can have a look at their users&apos; data nicely formatted.&lt;/p&gt;
+&lt;p&gt;First let me introduce some shared utilities to do some work on our user Object, we use them in both the imperative and functional approach for ease of comparison.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// returns number representable of the user age
+function getUserAge(user) {
+  return new Date().getFullYear() - new Date(user.birthdate * 1000).getFullYear()
+}
+// returns the name of the user&apos;s country (capitalized)
+function formatCountry(user) {
+  let tmp = Array.from(user.location.country)
+  tmp[0] = tmp[0].toUpperCase()
+  return tmp.join(&apos;&apos;)
+}
+// puts together first &amp;amp; last name in the same string
+function getFirstAndLastName(user) {
+  return `${user.first_name} ${user.last_name}`
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, let&apos;s dive in and translate those requirements into code.&lt;/p&gt;
+&lt;h5&gt;Imperative&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const formattedUsers = []
+
+for (const user of users) {
+  const formattedUser = {
+    name: getFirstAndLastName(user),
+    age: getUserAge(user),
+    country: formatCountry(user),
+  }
+
+  formattedUsers.push(formattedUser)
+}
+
+console.log(formattedUsers) // data ready for the UI!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h5&gt;Functional with &lt;code&gt;pipe&lt;/code&gt;&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const formatUser = pipe(
+  (user) =&amp;gt; ({ ...user, name: getFirstAndLastName(user) }),
+  (user) =&amp;gt; ({ ...user, age: getUserAge(user) }),
+  (user) =&amp;gt; ({ ...user, country: formatCountry(user) }),
+  select(&apos;name&apos;, &apos;age&apos;, &apos;country&apos;),
+)
+const formattedUsers = users.map(formatUser)
+
+console.log(formattedUsers) // data ready for the UI!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;small&amp;gt;
+The only small &lt;em&gt;trick&lt;/em&gt; here is that I had to feed the initial &amp;lt;code&amp;gt;user&amp;lt;/code&amp;gt; down through the &amp;lt;code&amp;gt;pipe&amp;lt;/code&amp;gt;,
+and we incrementally append new data properties to a newly created user Object (original &amp;lt;code&amp;gt;user&amp;lt;/code&amp;gt; is not
+mutated).
+&amp;lt;/small&amp;gt;&lt;/p&gt;
+&lt;p&gt;As you can see, using &lt;code&gt;pipe&lt;/code&gt;, you have a clear separation of concerns in terms of what transformations run against your input, again at any point in time, you can plug in or out a new transformation function from the &lt;code&gt;pipe&lt;/code&gt; with minimal effort.&lt;/p&gt;
+&lt;h5&gt;Implementing &lt;code&gt;pipe&lt;/code&gt;&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const pipe =
+  (...fns) =&amp;gt;
+  (...args) =&amp;gt;
+    fns.reduce((prev, fn) =&amp;gt; fn(prev), ...args)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h3&gt;Takeaways&lt;/h3&gt;
+&lt;p&gt;Web applications are complex, meaning your code becomes inherently more complicated. Functional constructs do the trick for me when it comes to rearranging my logic into a compact implementation that may read like plain English. But besides a potential big win on &lt;strong&gt;readability&lt;/strong&gt; there are other advantageous things in the package:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Functions are more natural to reason&lt;/strong&gt; - &amp;quot;divide and conquer&amp;quot; one of the most underrated statements that put you on the road to &amp;lt;a href=&amp;quot;http://cleancoder.com/products&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;nofollow&amp;quot; title=&amp;quot;Uncle Bob Martin&amp;quot;&amp;gt;clean code&amp;lt;/a&amp;gt;. Your functions will execute one task and one task only, and do it well. You name the smaller functions of your program with intent.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Code resilience&lt;/strong&gt; - you&apos;ll notice that your code becomes more &lt;strong&gt;bulletproof&lt;/strong&gt;. Splitting your code into smaller functions and compose them at a higher level of your implementation will make your system more &lt;strong&gt;robust&lt;/strong&gt;, more &lt;strong&gt;comfortable to test&lt;/strong&gt;, &lt;strong&gt;achieving the same with less LOC&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Composability&lt;/strong&gt; - your code becomes more composable, allowing you to &lt;strong&gt;plug&amp;amp;play functions to promptly tweak your implementation&lt;/strong&gt;. You&apos;ll pull existing functions together to compose them into more intricate ones that will get the job done and still read comfortably.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Performance?&lt;/strong&gt; - From the example above, when implementing the &lt;code&gt;and&lt;/code&gt; utility, we saw that the functional approach is not able to return earlier as the imperative approach did. There&apos;s no way to early break from functional constructs such as &lt;code&gt;.map&lt;/code&gt; or &lt;code&gt;.reduce&lt;/code&gt; (which is a good thing! no, side-effects allowed!). Don&apos;t trick yourself in thinking that such detail dictates overall better performance for an imperative approach. Sometimes the benefits of making it &lt;strong&gt;readable&lt;/strong&gt; and composable through more trivial functions will bring you, your team, and your product far more significant advantages than speeding up the JavaScript execution by a few fractions of a millisecond.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;On the &amp;quot;not so good side&amp;quot; of things, &lt;strong&gt;the biggest challenge this coding style faces today is debugability&lt;/strong&gt;. &lt;em&gt;&amp;quot;Oh, but they say also debugging becomes easier!&amp;quot;&lt;/em&gt; I don&apos;t think so, but let me clarify what I mean by &lt;em&gt;&amp;quot;debugability&amp;quot;&lt;/em&gt;. One on hand &lt;strong&gt;code is more natural to track because there&apos;s much structure to it, yes&lt;/strong&gt;. &lt;strong&gt;But&lt;/strong&gt; on the other hand, &lt;strong&gt;diving into specific detail of the implementation becomes hard&lt;/strong&gt; because you kind of need to perform &lt;strong&gt;&amp;quot;reverse engineering&amp;quot; of the compact code&lt;/strong&gt; to perform a log in the console or other adding a breakpoint (use &lt;code&gt;tap&lt;/code&gt;, he&apos;s your friend there!).&lt;/p&gt;
+&lt;p&gt;I think these tools are good ones to spark your interest in a more functional coding style and maybe if you see fit dive into libraries like &amp;lt;a href=&amp;quot;https://github.com/lodash/lodash/wiki/FP-Guide&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;lodash FP guide on GitHub&amp;quot;&amp;gt;lodash/fp&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;p&gt;Another tip that I would like to drop is that when adopting a functional architecture &lt;strong&gt;it&apos;s good to keep in mind some good practices when it comes to design functions&lt;/strong&gt;. I found &amp;lt;a href=&amp;quot;http://cleancoder.com/products&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;nofollow&amp;quot; title=&amp;quot;Uncle Bob Martin&amp;quot;&amp;gt;Clean Code&amp;lt;/a&amp;gt; (by &amp;lt;a href=&amp;quot;http://www.cleancoder.com/products&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Uncle Bob Martin | cleancoder.com&amp;quot;&amp;gt;Uncle Bob Martin&amp;lt;/a&amp;gt;) to be an awesome resource that helped me laying down some ground rules when it comes to designing function APIs that are clean and scalable.&lt;/p&gt;
+&lt;p&gt;Do you find these few bits of the functional world beneficial? Give them a try!&lt;/p&gt;
+&lt;p&gt;If you fell like going through the above examples by executing them to get a better understanding of how they&apos;re working, you can use the below dataset as input.&lt;/p&gt;
+&lt;p&gt;&amp;lt;Accordion summary=&amp;quot;Dataset used for code examples&amp;quot;&amp;gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const users = [
+  {
+    email: &apos;melany.wijngaard@example.com&apos;,
+    gender: &apos;female&apos;,
+    phone_number: &apos;(727)-033-9347&apos;,
+    birthdate: 608022796,
+    location: {
+      street: &apos;2431 predikherenkerkhof&apos;,
+      city: &apos;staphorst&apos;,
+      state: &apos;gelderland&apos;,
+      postcode: 64265,
+    },
+    username: &apos;bigpeacock217&apos;,
+    password: &apos;eagle&apos;,
+    first_name: &apos;melany&apos;,
+    last_name: &apos;wijngaard&apos;,
+    title: &apos;miss&apos;,
+  },
+  {
+    email: &apos;nanna.pedersen@example.com&apos;,
+    gender: &apos;female&apos;,
+    phone_number: &apos;43672992&apos;,
+    birthdate: 591428535,
+    location: {
+      street: &apos;2177 fåborgvej&apos;,
+      city: &apos;aarhus&apos;,
+      state: &apos;syddanmark&apos;,
+      postcode: 87547,
+    },
+    username: &apos;purpleduck599&apos;,
+    password: &apos;davids&apos;,
+    first_name: &apos;nanna&apos;,
+    last_name: &apos;pedersen&apos;,
+    title: &apos;ms&apos;,
+  },
+  {
+    email: &apos;amelia.mercier@example.com&apos;,
+    gender: &apos;female&apos;,
+    phone_number: &apos;(168)-747-5950&apos;,
+    birthdate: 1132298571,
+    location: {
+      street: &apos;7454 rue duquesne&apos;,
+      city: &apos;echandens-denges&apos;,
+      state: &apos;vaud&apos;,
+      postcode: 3811,
+    },
+    username: &apos;whitefrog218&apos;,
+    password: &apos;forest&apos;,
+    first_name: &apos;amelia&apos;,
+    last_name: &apos;mercier&apos;,
+    title: &apos;madame&apos;,
+  },
+]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;/Accordion&amp;gt;&lt;/p&gt;
+</content:encoded></item><item><title>How to use RxJS with Svelte</title><link>https://danielcaldas.github.io/posts/how-to-svelte-rxjs/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/how-to-svelte-rxjs/</guid><description>How to use RxJS with Svelte</description><pubDate>Mon, 05 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Svelte is an increasingly famous JavaScript framework; &amp;lt;a href=&amp;quot;https://www.reddit.com/r/javascript/comments/llk8jp/review_of_svelte/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Review of Svelte : javascript&amp;quot;&amp;gt;the community&amp;lt;/a&amp;gt; appears to be reacting positively to the developer experience offered by Svelte. RxJS has increasingly become a standard for &amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-programming-fundamentals&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Fundamentals of Reactive Programming | danielcaldas.github.io&amp;quot;&amp;gt;Reactive Programming&amp;lt;/a&amp;gt; mainly due to Angular’s endorsement that builds its core functionalities around Observables, and the framework &amp;lt;a href=&amp;quot;https://angular.io/guide/http#requesting-non-json-data&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Angular&amp;quot;&amp;gt;naturally interfaces with RxJS&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;p&gt;Svelte has a reactive nature that makes it extremely suitable to integrate with RxJS. Why would anybody put the effort? &lt;strong&gt;Well, simply put, you can leverage the whole RxJS ecosystem and APIs to manipulate data streams that would perfectly plug into Svelte&lt;/strong&gt;. Let’s look at a small example where we regularly pull data from a set of characters in a &amp;lt;a href=&amp;quot;https://anapioficeandfire.com/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;An API of Ice And Fire&amp;quot;&amp;gt;public Game of Thrones API&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const CHARACTERS_IDS = [583, 582, 581];
+let gotCharacters = of([]);
+const ajaxCharacters = () =&amp;gt;
+ CHARACTERS_IDS.map((cid) =&amp;gt;
+   ajax({
+     method: &apos;get&apos;,
+     url: `https://anapioficeandfire.com/api/characters/${cid}`,
+   })
+ );
+gotCharacters = interval(5000).pipe(
+ tap(() =&amp;gt; console.log(&apos;fetching characters...&apos;)),
+ switchMap(() =&amp;gt; combineLatest(...ajaxCharacters(CHARACTERS_IDS))),
+ startWith([])
+);
+&amp;lt;div&amp;gt;
+ {#each $gotCharacters as c}
+   &amp;lt;li id=&amp;quot;{`character-${c.id}`}&amp;quot;&amp;gt;
+     &amp;lt;ul&amp;gt;
+       &amp;lt;li id=&amp;quot;{`character-${c.id}-name`}&amp;quot;&amp;gt;
+         Name: {c.name}, Played by: {c.playedBy}
+       &amp;lt;/li&amp;gt;
+     &amp;lt;/ul&amp;gt;
+   &amp;lt;/li&amp;gt;
+ {/each}
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;See how &lt;code&gt;$gotCharacters&lt;/code&gt; &lt;strong&gt;within the Svelte template language auto subscribed to what originally is an RxJS stream? We’re directly streaming data to the UI with no boilerplate in between whatsoever to pull values out of the stream of us!&lt;/strong&gt; In this small example, we see how we can have an RxJS flavored implementation within a Svelte component, leveraging the full power of RxJS operators to create and manipulate data streams.&lt;/p&gt;
+&lt;p&gt;We can say Svelte is the &lt;em&gt;“new cool kid in the block”&lt;/em&gt;. It has enlarged its community over the years. &amp;lt;a href=&amp;quot;https://svelte.dev/blog/svelte-3-rethinking-reactivity&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Svelte 3: Rethinking reactivity&amp;quot;&amp;gt;Svelte 3&amp;lt;/a&amp;gt; comes with reactivity at its core, making it suitable to plugin RxJS into Svelte applications.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“As usual, React and Vue lead the pack, but Svelte is quickly establishing itself as a very serious contender for the front-end crown.“, &amp;lt;a href=&amp;quot;https://2020.stateofjs.com/en-US/technologies/front-end-frameworks/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;State of JS 2020: Front-end Frameworks&amp;quot;&amp;gt;State of JS 2020: Front-end Frameworks&amp;lt;/a&amp;gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;RxJS is known to be the go to library when it comes to programming with streams. Reactive programming &amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-rxjs-pros-cons&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Reactive Programming: The Good and the Bad | danielcaldas.github.io&amp;quot;&amp;gt;is famous for making complex things easier&amp;lt;/a&amp;gt; by offering an extensive API of operators that give developers extreme power and flexibility when writing complex event-driven user interfaces.&lt;/p&gt;
+</content:encoded></item><item><title>Basic markdown style guide</title><link>https://danielcaldas.github.io/posts/markdown-example/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/markdown-example/</guid><description>You can author content using the familiar markdown syntax you already know. All basic markdown syntax is supported.</description><pubDate>Sat, 02 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Markdown is powered by &lt;a href=&quot;https://markdoc.dev/&quot;&gt;Markdoc&lt;/a&gt;. This is an example post to demonstrate all the basic markdown syntax. You can author content using the familiar markdown syntax you already know.&lt;/p&gt;
 &lt;h2&gt;Inline formatting&lt;/h2&gt;
 &lt;p&gt;Bold: &lt;strong&gt;This text is bold&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Italics: &lt;em&gt;This text is italics&lt;/em&gt;.&lt;/p&gt;
@@ -462,4 +1827,58 @@ video
   &amp;lt;/body&amp;gt;
 &amp;lt;/html&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-</content:encoded><category>tech</category></item></channel></rss>
+</content:encoded><category>tech</category></item><item><title>SLIs, SLOs and SLAs in 2 minutes</title><link>https://danielcaldas.github.io/posts/sli-slo-sla/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/sli-slo-sla/</guid><description>Measuring the service level of your application</description><pubDate>Thu, 13 Aug 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;Service Level Indicator (SLI)&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;An SLI is a service level indicator — a carefully defined quantitative measure of some aspect of the level of service that is provided.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&amp;lt;small&amp;gt;
+&amp;lt;a
+href=&amp;quot;https://landing.google.com/sre/sre-book/chapters/service-level-objectives/&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;Google - Site Reliability Engineering&amp;quot;&lt;/p&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;source: Google SRE book
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;/a&amp;gt;
+&amp;lt;/small&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Examples&lt;/strong&gt;: error rate; request latency; throughput (e.g., requests p/second); availability (time the service is usable); durability (for
+data storages: the confidence of retaining data over time).&lt;/p&gt;
+&lt;h5&gt;Where and how to measure them?&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Processing server logs&lt;/strong&gt; - derive them from server-side logs. You can do this on the fly or retroactively with some post-processing job that runs on your records and collects data to backfill your SLI information.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Application-level metrics&lt;/strong&gt; - capture individual request metrics&apos; performance at the application level (e.g., how long did the server took to perform a particular operation).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Front-end metrics&lt;/strong&gt; - getting closer to the users. We can measure key user interaction points with some (out of the box) tooling made available by cloud providers. We can also perform some manual logging in specific checkpoints of the user journey with the help of platforms such as &amp;lt;a href=&amp;quot;https://www.datadoghq.com/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Cloud Monitoring as a Service | Datadog&amp;quot;&amp;gt;datadog&amp;lt;/a&amp;gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Synthetic clients&lt;/strong&gt; - this method consists of implementing bots that emulate user interaction to make sure it&apos;s possible to complete a user journey. Bots are just an approximation of the real user behavior. Users are creative and often do unexpected things. Synthetic clients generally require higher implementation effort. The previous two arguments make synthetic clients one of my least preferred methods.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Service Level Objective (SLO)&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;An SLO is a service level objective: a target value or range of or a service level that is measured by an SLI. A natural structure for SLOs is thus SLI ≤ target, or lower bound ≤ SLI ≤ upper bound.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&amp;lt;small&amp;gt;
+&amp;lt;a
+href=&amp;quot;https://landing.google.com/sre/sre-book/chapters/service-level-objectives/&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;Google - Site Reliability Engineering&amp;quot;&lt;/p&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;source: Google SRE book
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;/a&amp;gt;
+&amp;lt;/small&amp;gt;&lt;/p&gt;
+&lt;p&gt;I&apos;m new to this, but I would stick with a range of values as much as possible.
+The SLO maps to the SLI by adding boundaries. It sets a goal for an SLI over a period of time.&lt;/p&gt;
+&lt;h4&gt;Service Level Agreement (SLA)&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;service level agreements: an explicit or implicit contract with your users that includes consequences of meeting (or missing) the SLOs they contain.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&amp;lt;small&amp;gt;
+&amp;lt;a
+href=&amp;quot;https://landing.google.com/sre/sre-book/chapters/service-level-objectives/&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;Google - Site Reliability Engineering&amp;quot;&lt;/p&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;source: Google SRE book
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;/a&amp;gt;
+&amp;lt;/small&amp;gt;&lt;/p&gt;
+&lt;p&gt;It might be useful to think of the SLA as your answer: &lt;em&gt;&amp;quot;What happens if one fails to comply with the agreed SLOs?&amp;quot;&lt;/em&gt;&lt;/p&gt;
+</content:encoded></item></channel></rss>

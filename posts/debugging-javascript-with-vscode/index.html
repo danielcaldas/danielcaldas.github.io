@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="en-US" class="mx-4"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v4.5.12"><meta name="description" content="Blogpost, note taking and other things"><title>Debugging Javascript with VS Code - Hey 👋</title><link rel="stylesheet" href="/_astro/about.CqWF9aB5.css">
+<style>:root{--color-primary-main: #222222;--color-secondary-main: #444444;--color-text-body: 55 65 81;--color-text-heading: 55 65 81;--color-text-link: var(--color-primary-main);--color-text-link-hover: var(--color-secondary-main);--color-border: var(--color-primary-main);--color-code-bg: #f3f4f6;scroll-behavior:smooth}:root.dark{color-scheme:dark;--color-primary-main: 235 153 161;--color-secondary-main: 226 111 122;--color-text-body: 214 211 209;--color-text-heading: 255 255 255;--color-text-link: var(--color-primary-main);--color-text-link-hover: var(--color-secondary-main);--color-border: var(--color-primary-main);--color-code-bg: #1a202c;scroll-behavior:smooth}body{font-family:Verdana,sans-serif;overflow-y:scroll}img{max-width:28rem}time,div{color:rgb(var(--color-text-heading))}.panda-link-static{text-decoration:none;color:rgb(var(--color-text-link))}.panda-link-static:hover{text-decoration-line:underline;text-underline-offset:4px;cursor:pointer}.panda-link-static:hover{color:rgb(var(--color-text-link-hover));text-decoration-thickness:.125rem;text-underline-offset:5px}.panda-link{text-decoration:none;color:rgb(var(--color-text-link))}.panda-link:hover{cursor:pointer}.panda-link:hover{color:rgb(var(--color-text-link-hover))}a.animated{--animated-underline-from: rgb(var(--color-text-link));--animated-underline-to: rgb(var(--color-text-link));position:relative;box-decoration-break:clone;text-decoration:none}a.animated:after{left:0;right:0;bottom:-4px;content:"";height:2px;width:auto;position:absolute;transform:translateZ(0) scaleX(0);transform-origin:left center;transition:all .25s ease-in-out;background-image:linear-gradient(to right,var(--animated-underline-from),var(--animated-underline-to))}a.animated:hover:after{transform:translateZ(0) scale(1)}a.animated.active:after{transform:translateZ(0) scale(1)}.max-width{margin-left:auto;margin-right:auto;max-width:65ch}.panda-text{--un-text-opacity:1;color:rgb(29 78 216 / var(--un-text-opacity));text-decoration:none;cursor:pointer}.panda-text:hover{text-decoration-line:underline;text-underline-offset:4px}.panda-text:hover{--un-text-opacity:1;color:rgb(29 78 216 / var(--un-text-opacity))}.dark .panda-text,.dark .panda-text:hover{--un-text-opacity:1;color:rgb(245 245 244 / var(--un-text-opacity))}.prose :where(a):not(:where([data-footnote-ref],[data-footnote-backref],.not-prose,.not-prose *)){padding-left:.25rem;padding-right:.25rem;text-decoration-line:underline;text-underline-offset:4px;hover:underline}.prose :where(blockquote):not(:where(.not-prose,.not-prose *)){padding:.5rem .5rem .5rem 1rem;margin:0;--un-bg-opacity:1;background-color:rgb(243 244 246 / var(--un-bg-opacity));border-radius:.125rem .5rem .5rem .125rem;border-left-style:solid;font-size:1rem;line-height:1.5rem;font-weight:400;border-left:6px solid rgb(var(--color-primary-main))!important}.dark .prose :where(blockquote):not(:where(.not-prose,.not-prose *)){--un-bg-opacity:1;background-color:rgb(87 83 78 / var(--un-bg-opacity))}.prose :where(ol>li):not(:where(.not-prose,.not-prose *))::marker,.prose :where(ul>li):not(:where(.not-prose,.not-prose *))::marker,.prose :where(summary):not(:where(.not-prose,.not-prose *))::marker{color:rgb(var(--color-primary-main));margin-right:1rem;font-weight:600}[data-footnote-ref]:before{content:" ["}[data-footnote-ref]:after{content:"] "}[data-footnote-backref]{text-decoration:none}[data-footnote-ref]{font-weight:400;text-decoration:none}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.duration-300{transition-duration:.3s}
+</style><script type="module">document.addEventListener("astro:page-load",setup);document.addEventListener("astro:after-swap",setup);
+</script>
+<script type="module" src="/_astro/page.55INgWwS.js"></script>
+<script>!(function(w,p,f,c){if(!window.crossOriginIsolated && !navigator.serviceWorker) return;c=w[p]=Object.assign(w[p]||{},{"lib":"/~partytown/","debug":false});c[f]=(c[f]||[])})(window,'partytown','forward');/* Partytown 0.8.2 - MIT builder.io */
+!function(t,e,n,i,o,r,a,s,d,c,l,p){function u(){p||(p=1,"/"==(a=(r.lib||"/~partytown/")+(r.debug?"debug/":""))[0]&&(d=e.querySelectorAll('script[type="text/partytown"]'),i!=t?i.dispatchEvent(new CustomEvent("pt1",{detail:t})):(s=setTimeout(f,1e4),e.addEventListener("pt0",w),o?h(1):n.serviceWorker?n.serviceWorker.register(a+(r.swPath||"partytown-sw.js"),{scope:a}).then((function(t){t.active?h():t.installing&&t.installing.addEventListener("statechange",(function(t){"activated"==t.target.state&&h()}))}),console.error):f())))}function h(t){c=e.createElement(t?"script":"iframe"),t||(c.style.display="block",c.style.width="0",c.style.height="0",c.style.border="0",c.style.visibility="hidden",c.setAttribute("aria-hidden",!0)),c.src=a+"partytown-"+(t?"atomics.js?v=0.8.2":"sandbox-sw.html?"+Date.now()),e.querySelector(r.sandboxParent||"body").appendChild(c)}function f(n,o){for(w(),i==t&&(r.forward||[]).map((function(e){delete t[e.split(".")[0]]})),n=0;n<d.length;n++)(o=e.createElement("script")).innerHTML=d[n].innerHTML,o.nonce=r.nonce,e.head.appendChild(o);c&&c.parentNode.removeChild(c)}function w(){clearTimeout(s)}r=t.partytown||{},i==t&&(r.forward||[]).map((function(e){l=t,e.split(".").map((function(e,n,i){l=l[i[n]]=n+1<i.length?"push"==i[n+1]?[]:l[i[n]]||{}:function(){(t._ptf=t._ptf||[]).push(i,arguments)}}))})),"complete"==e.readyState?u():(t.addEventListener("DOMContentLoaded",u),t.addEventListener("load",u))}(window,document,navigator,top,window.crossOriginIsolated);;((d,s)=>(s=d.currentScript,d.addEventListener('astro:before-swap',()=>s.remove(),{once:true})))(document);</script></head> <body class="max-width dark:bg-stone-700"> <div class="my-6 flex"> <a href="/" class="hover:cursor-pointer opacity-100 hover:opacity-80 panda-link"> <i class="hidden">danielcaldas.github.io</i> <h1>~/</h1> </a> <div class="text-sm place-content-center inline ml-auto"> <button id="themeToggle" class="mt-1 cursor-pointer border-0 bg-transparent"> <svg width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="opacity-100 hover:opacity-80"> <path class="fill-black dark:fill-transparent" d="M20.742 13.045a8.088 8.088 0 0 1-2.077.271c-2.135 0-4.14-.83-5.646-2.336a8.025 8.025 0 0 1-2.064-7.723A1 1 0 0 0 9.73 2.034a10.014 10.014 0 0 0-4.489 2.582c-3.898 3.898-3.898 10.243 0 14.143a9.937 9.937 0 0 0 7.072 2.93 9.93 9.93 0 0 0 7.07-2.929 10.007 10.007 0 0 0 2.583-4.491 1.001 1.001 0 0 0-1.224-1.224zm-2.772 4.301a7.947 7.947 0 0 1-5.656 2.343 7.953 7.953 0 0 1-5.658-2.344c-3.118-3.119-3.118-8.195 0-11.314a7.923 7.923 0 0 1 2.06-1.483 10.027 10.027 0 0 0 2.89 7.848 9.972 9.972 0 0 0 7.848 2.891 8.036 8.036 0 0 1-1.484 2.059z"></path> <path class="fill-transparent dark:fill-white" d="M6.993 12c0 2.761 2.246 5.007 5.007 5.007s5.007-2.246 5.007-5.007S14.761 6.993 12 6.993 6.993 9.239 6.993 12zM12 8.993c1.658 0 3.007 1.349 3.007 3.007S13.658 15.007 12 15.007 8.993 13.658 8.993 12 10.342 8.993 12 8.993zM10.998 19h2v3h-2zm0-17h2v3h-2zm-9 9h3v2h-3zm17 0h3v2h-3zM4.219 18.363l2.12-2.122 1.415 1.414-2.12 2.122zM16.24 6.344l2.122-2.122 1.414 1.414-2.122 2.122zM6.342 7.759 4.22 5.637l1.415-1.414 2.12 2.122zm13.434 10.605-1.414 1.414-2.122-2.122 1.414-1.414z"></path> </svg> </button> <script>
+    function handleToggleClick() {
+        const element = document.documentElement
+        element.classList.toggle('dark')
+        const isDark = element.classList.contains('dark')
+        localStorage.setItem('theme', isDark ? 'dark' : 'light')
+    }
+
+    function setup() {
+        let current_theme
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+            current_theme = localStorage.getItem('theme')
+        }
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            current_theme = 'dark'
+        }
+        current_theme = current_theme || 'light'
+        if (current_theme === 'light') {
+            document.documentElement.classList.remove('dark')
+        } else {
+            document.documentElement.classList.add('dark')
+        }
+        window.localStorage.setItem('theme', current_theme)
+        // button event bind
+        document.getElementById('themeToggle').addEventListener('click', handleToggleClick)
+    }
+
+    setup()
+</script>  </div> </div>  <main>  <a rel="prefetch" class="panda-link mt-6" href="/">Back</a> <style>
+        /* notification */
+        .notification p {
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 0.5rem 1rem;
+            font-size: small;
+        }
+
+        .notification-warning {
+            background-color: #fff3cd;
+            border-color: #ffeeba;
+            color: #856404;
+        }
+
+        .notification-danger {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+        }
+
+        .notification-success {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+        }
+
+        .notification-info {
+            background-color: #d1ecf1;
+            border-color: #bee5eb;
+            color: #0c5460;
+        }
+
+        .dark .notification-warning {
+            background-color: #856404;
+            border-color: #ffeeba;
+            color: #fff3cd;
+        }
+
+        .dark .notification-danger {
+            background-color: #721c24;
+            border-color: #f5c6cb;
+            color: #f8d7da;
+        }
+
+        .dark .notification-success {
+            background-color: #155724;
+            border-color: #c3e6cb;
+            color: #d4edda;
+        }
+
+        .dark .notification-info {
+            background-color: #0c5460;
+            border-color: #bee5eb;
+            color: #d1ecf1;
+        }
+    </style> <div class="mt-6"> <h1 class="text-4xl">Debugging Javascript with VS Code</h1> <div class="flex sm:flex-row flex-col rounded-lg bg-stone-100 dark:bg-stone-600 p-2 px-4"> <div> <span class="ml-2"> <a href="/tags/javascript" class="text-sm mr-2 panda-link">
+#javascript </a> </span><span class="ml-2"> <a href="/tags/productivity" class="text-sm mr-2 panda-link">
+#productivity </a> </span><span class="ml-2"> <a href="/tags/vscode" class="text-sm mr-2 panda-link">
+#vscode </a> </span> </div> <span class="ml-auto mr-4 text-sm font-normal"> Posted on 17, Feb, 2019</span> </div> </div> <article class="prose dark:prose-invert prose-stone max-w-prose mt-6">  <p>Prepare to set up some rocket science debugging toolkit in <a href="https://code.visualstudio.com/" target="_blank" title="visual studio code is a lightweight but powerful source code editor which runs on your desktop">VS Code</a> for Javascript. After this, you can start kicking ass and showing off your debugging skills to your peers.</p>
+<p><img  src="/_astro/debug-animation-1.CxCS972R_Jas48.webp" alt="vscode debugging animation&#34;" width="800" height="600" loading="lazy" decoding="async"></p>
+<p>To be precise and not only provide generic instructions on how to setup debugging in VS Code I will provide a step by step guide based on a real open source project so that you can checkout the config and how all the pieces come together. Without further ado I present to you <a href="https://github.com/danielcaldas/el-conversor" target="_blank" title="a number to word list converter as a node backend and react/redux fronted">el-conversor</a>. The project uses <a href="https://www.ecma-international.org/publications/standards/Ecma-262.htm" target="_blank" title="standard ecma-262">ES6</a>, and the build tool is <a href="https://webpack.js.org/" target="_blank" title="bundle your scripts">webpack</a>, this is important to mention because because if you’re using <a href="https://www.ecma-international.org/publications/standards/Ecma-262.htm" target="_blank" title="standard ecma-262">ES6</a> you will need to properly configure <a href="https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map" target="_blank" title="Use a source map - Firefox Developer Tools | MDN"><em>source maps</em></a>. At the end of the <a href="#how-to">how to guide section</a> you should have this amazing development setup.</p>
+<p><img  src="/_astro/expanding-brain.BiqCdhtW_Z1yUH3h.webp" alt="expanding brain debugger meme" title="expanding brain debugger meme" width="500" height="701" loading="lazy" decoding="async"></p>
+<p><cite>source: <a href="https://imgflip.com/memegenerator/Expanding-Brain">https://imgflip.com/memegenerator/Expanding-Brain</a></cite></p>
+<h3 id="how-to"><a class="__permalink-h" href="#how-to" aria-label="how to permalink">»</a>How to</h3>
+<p>Next we will dive deep into <a href="https://github.com/danielcaldas/el-conversor/pull/14" target="_blank" title="feature/setup vscode debugging">this pull request</a> and go step by step on how to set up the perfect debugging environment.</p>
+<h4 id="javascript-debugger"><a class="__permalink-h" href="#javascript-debugger" aria-label="javascript debugger permalink">»</a>Javascript debugger</h4>
+<ol>
+<li>Install <a href="https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome" target="_blank" title="debug your javascript code in the Chrome browser, or any other target that supports the chrome debugger protocol">Debugger for Chrome</a>.</li>
+<li>On your root folder create a <code>.vscode</code> folder (it may already exist, in that case, jump this step).</li>
+<li>Create a <code>launch.json</code> file inside the <code>.vscode</code> directory with the following configuration or click on the gear icon in the debug tab on vscode:</li>
+</ol>
+<div class="expressive-code"><link rel="stylesheet" href="/_astro/ec.ggich.css"><script type="module" src="/_astro/ec.dy9ns.js"></script><figure class="frame"><figcaption class="header"></figcaption><pre tabindex="0"><code><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">{</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">  </span></span><span style="--0:#d6deeb;--1:#403f53">"version": "0.2.0",</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">  </span></span><span style="--0:#d6deeb;--1:#403f53">"configurations": [</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">{</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">      </span></span><span style="--0:#d6deeb;--1:#403f53">"type": "chrome",</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">      </span></span><span style="--0:#d6deeb;--1:#403f53">"request": "launch",</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">      </span></span><span style="--0:#d6deeb;--1:#403f53">"name": "JS Debugger",</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">      </span></span><span style="--0:#d6deeb;--1:#403f53">"userDataDir": true,</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">      </span></span><span style="--0:#d6deeb;--1:#403f53">"url": "http://localhost:3002/",</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">      </span></span><span style="--0:#d6deeb;--1:#403f53">"webRoot": "${workspaceFolder}",</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">      </span></span><span style="--0:#d6deeb;--1:#403f53">"sourceMapPathOverrides": {</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">        </span></span><span style="--0:#d6deeb;--1:#403f53">"webpack:///*": "${webRoot}/*"</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">      </span></span><span style="--0:#d6deeb;--1:#403f53">}</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">}</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">  </span></span><span style="--0:#d6deeb;--1:#403f53">]</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">}</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="{  &#x22;version&#x22;: &#x22;0.2.0&#x22;,  &#x22;configurations&#x22;: [    {      &#x22;type&#x22;: &#x22;chrome&#x22;,      &#x22;request&#x22;: &#x22;launch&#x22;,      &#x22;name&#x22;: &#x22;JS Debugger&#x22;,      &#x22;userDataDir&#x22;: true,      &#x22;url&#x22;: &#x22;http://localhost:3002/&#x22;,      &#x22;webRoot&#x22;: &#x22;${workspaceFolder}&#x22;,      &#x22;sourceMapPathOverrides&#x22;: {        &#x22;webpack:///*&#x22;: &#x22;${webRoot}/*&#x22;      }    }  ]}"><div></div></button></div></figure></div>
+<small>
+  You can read more about <i>sourceMapPathOverrides</i> property in the official{" "}
+  <a href="https://github.com/Microsoft/vscode-chrome-debug/blob/master/README.md#sourcemaps" target="_blank" title="microsoft/vscode-chrome-debug README.md">
+    the README.md of microsoft/vscode-chrome-debug
+  </a>
+</small>
+<ol start="4">
+<li>The only thing that you would need to eventually fine tune is the url parameter in order to point to your local dev server.</li>
+</ol>
+<p>Now running your development server and simultaneously activating the vscode javascript debugger you’re finally able to debug your code!</p>
+<p><img  src="/_astro/vscode-debugger-part-1.DCJq9nTO_Z18SNmG.webp" alt="vscode debugger" title="vscode debugger javascript" width="2118" height="1478" loading="lazy" decoding="async"></p>
+
+<br>
+<h4 id="redux-devtools"><a class="__permalink-h" href="#redux-devtools" aria-label="redux devtools permalink">»</a>Redux DevTools</h4>
+<blockquote>
+<p>⚠️ Although this setup is handy it adds considerable overhead to your development setup. Maybe in the future, better integrations (maybe natively integrated with the IDE) will be available, or maybe there’s already some better integration that I might not be aware of, please comment this page if that’s the case.</p>
+</blockquote>
+<p>If you’re using <a href="https://redux.js.org/" target="_blank" title="a predictable state container for javascript apps">Redux</a> there is a strong possibility that you’re debugging your application state with <a href="https://marketplace.visualstudio.com/items?itemName=jingkaizhao.vscode-redux-devtools" target="_blank" title="vscode redux devtools wrapper">Redux DevTools</a>. Wouldn’t it be nice to run the Redux DevTools on a VS Code tab, along side with your shinny new debugger? 😎</p>
+<p>To bring all this convenience into your favorite IDE, you need to perform the following steps.</p>
+<ol>
+<li>
+<p>Install <a href="https://marketplace.visualstudio.com/items?itemName=jingkaizhao.vscode-redux-devtools" target="_blank" title="visual studio code extension to include remotedev-app into editor">Redux DevTools extension</a> for VS Code.</p>
+</li>
+<li>
+<p>Create a remote devserver to broadcast actions to the VS Code extension. For this you need to:</p>
+<ul>
+<li>Install as a dev dependency <a href="https://www.npmjs.com/package/remotedev-server" target="_blank" title="bridge for communicating with an application remotely via redux devtools extension, remote redux devtools or remotedev">remotedev-server</a>.</li>
+<li>Create a js script with the following snippet:</li>
+</ul>
+<div class="expressive-code"><figure class="frame has-title"><figcaption class="header"><span class="title">remotedev-server.js</span></figcaption><pre tabindex="0"><code><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8D46B4">const </span><span style="--0:#82AAFF;--1:#3C63B3">remotedev</span><span style="--0:#C792EA;--1:#8D46B4"> = </span><span style="--0:#82AAFF;--1:#3C63B3">require</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#9B504E">remotedev-server</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">remotedev</span><span style="--0:#D6DEEB;--1:#403F53">({ hostname: </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#9B504E">127.0.0.1</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">, port: </span><span style="--0:#F78C6C;--1:#AA0982">1024</span><span style="--0:#D6DEEB;--1:#403F53"> })</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="const remotedev = require(&#x27;remotedev-server&#x27;)remotedev({ hostname: &#x27;127.0.0.1&#x27;, port: 1024 })"><div></div></button></div></figure></div>
+</li>
+<li>
+<p>Now considering you are already running your local dev server, run the above snippet with <code>node remotedev-server.js</code>(this will launch the remote dev server and you should keep it running in some terminal in order to continuously broadcast actions for the extension).</p>
+</li>
+<li>
+<p>Open the extension Redux DevTools (it should open a tab with the empty devtools).</p>
+</li>
+<li>
+<p>Go to settings.</p>
+</li>
+<li>
+<p>Select use local (custom) server and set the <strong>hostname</strong> and <strong>port</strong> to the same values that you defined on the script of step 2.b. (default being <code>127.0.0.1</code> and <code>1024</code>).</p>
+</li>
+<li>
+<p>Integrate the <a href="https://github.com/zalmoxisus/remote-redux-devtools" target="_blank" title="redux devtools remotely">remote-redux-devtools</a> in you project:</p>
+<div class="expressive-code"><figure class="frame has-title"><figcaption class="header"><span class="title">el-conversor/app/common/store.js</span></figcaption><pre tabindex="0"><code><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8D46B4">import</span><span style="--0:#D6DEEB;--1:#403F53"> { createStore, applyMiddleware } </span><span style="--0:#C792EA;--1:#8D46B4">from</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#9B504E">redux</span><span style="--0:#D9F5DD;--1:#111111">'</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8D46B4">import</span><span style="--0:#D6DEEB;--1:#403F53"> { createLogger } </span><span style="--0:#C792EA;--1:#8D46B4">from</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#9B504E">redux-logger</span><span style="--0:#D9F5DD;--1:#111111">'</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8D46B4">import</span><span style="--0:#D6DEEB;--1:#403F53"> promise </span><span style="--0:#C792EA;--1:#8D46B4">from</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#9B504E">redux-promise-middleware</span><span style="--0:#D9F5DD;--1:#111111">'</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8D46B4">import</span><span style="--0:#D6DEEB;--1:#403F53"> { composeWithDevTools } </span><span style="--0:#C792EA;--1:#8D46B4">from</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#9B504E">remote-redux-devtools</span><span style="--0:#D9F5DD;--1:#111111">'</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8D46B4">import</span><span style="--0:#D6DEEB;--1:#403F53"> reducer </span><span style="--0:#C792EA;--1:#8D46B4">from</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#9B504E">./reducers</span><span style="--0:#D9F5DD;--1:#111111">'</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8D46B4">const </span><span style="--0:#82AAFF;--1:#3C63B3">ENV</span><span style="--0:#C792EA;--1:#8D46B4"> = </span><span style="--0:#7FDBCA;--1:#097174">window</span><span style="--0:#C792EA;--1:#8D46B4">.</span><span style="--0:#82AAFF;--1:#3C63B3">ENV</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8D46B4">const </span><span style="--0:#82AAFF;--1:#3C63B3">middleware</span><span style="--0:#C792EA;--1:#8D46B4"> =</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#82AAFF;--1:#3C63B3">ENV</span><span style="--0:#C792EA;--1:#8D46B4">.</span><span style="--0:#82AAFF;--1:#3C63B3">NAME</span><span style="--0:#C792EA;--1:#8D46B4"> === </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#9B504E">production</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#C792EA;--1:#8D46B4"> ? </span><span style="--0:#82AAFF;--1:#3C63B3">applyMiddleware</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3C63B3">promise</span><span style="--0:#D6DEEB;--1:#403F53">())</span><span style="--0:#C792EA;--1:#8D46B4"> : </span><span style="--0:#82AAFF;--1:#3C63B3">applyMiddleware</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3C63B3">promise</span><span style="--0:#D6DEEB;--1:#403F53">()</span><span style="--0:#C792EA;--1:#8D46B4">, </span><span style="--0:#82AAFF;--1:#3C63B3">createLogger</span><span style="--0:#D6DEEB;--1:#403F53">())</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8D46B4">const </span><span style="--0:#82AAFF;--1:#3C63B3">composeEnhancers</span><span style="--0:#C792EA;--1:#8D46B4"> = </span><span style="--0:#82AAFF;--1:#3C63B3">composeWithDevTools</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#C792EA;--1:#8D46B4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#C792EA;--1:#8D46B4">  </span></span><span style="--0:#C792EA;--1:#8D46B4">realtime: </span><span style="--0:#FF5874;--1:#A54A4A">true</span><span style="--0:#C792EA;--1:#8D46B4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#C792EA;--1:#8D46B4">  </span></span><span style="--0:#C792EA;--1:#8D46B4">name: </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#9B504E">store</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#C792EA;--1:#8D46B4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#C792EA;--1:#8D46B4">  </span></span><span style="--0:#C792EA;--1:#8D46B4">host: </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#9B504E">localhost</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#C792EA;--1:#8D46B4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#C792EA;--1:#8D46B4">  </span></span><span style="--0:#C792EA;--1:#8D46B4">port: </span><span style="--0:#F78C6C;--1:#AA0982">1024</span><span style="--0:#C792EA;--1:#8D46B4">,</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8D46B4">}</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8D46B4">export</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C792EA;--1:#8D46B4">default</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">createStore</span><span style="--1:#403F53"><span style="--0:#D6DEEB">(</span><span style="--0:#D7DBE0">reducer</span><span style="--0:#D6DEEB">, {}, </span></span><span style="--0:#82AAFF;--1:#3C63B3">composeEnhancers</span><span style="--1:#403F53"><span style="--0:#D6DEEB">(</span><span style="--0:#D7DBE0">middleware</span><span style="--0:#D6DEEB">))</span></span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="import { createStore, applyMiddleware } from &#x27;redux&#x27;import { createLogger } from &#x27;redux-logger&#x27;import promise from &#x27;redux-promise-middleware&#x27;import { composeWithDevTools } from &#x27;remote-redux-devtools&#x27;import reducer from &#x27;./reducers&#x27;const ENV = window.ENVconst middleware =  ENV.NAME === &#x27;production&#x27; ? applyMiddleware(promise()) : applyMiddleware(promise(), createLogger())const composeEnhancers = composeWithDevTools({  realtime: true,  name: &#x27;store&#x27;,  host: &#x27;localhost&#x27;,  port: 1024,})export default createStore(reducer, {}, composeEnhancers(middleware))"><div></div></button></div></figure></div>
+</li>
+<li>
+<p>Launch the VS Code debugger.</p>
+</li>
+<li>
+<p>Go back to the Redux DevTools and click the connect button.</p>
+</li>
+<li>
+<p>You’re good to go! If everything went as expected you should have a similar setup to the one below.</p>
+</li>
+</ol>
+<p><img  src="/_astro/vscode-debugger-part-2.C8N1NExP_1nMXe8.webp" alt="vscode setup redux final" title="vscode setup redux final" width="3348" height="2050" loading="lazy" decoding="async"></p>
+
+<h3 id="conclusions"><a class="__permalink-h" href="#conclusions" aria-label="conclusions permalink">»</a>Conclusions</h3>
+<p><img  src="/_astro/debug-animation-2.CwiaqGxg_LXgMQ.webp" alt="vscode setup redux final" title="vscode setup redux final" width="800" height="600" loading="lazy" decoding="async"></p>
+<p>I might have spent one or two days trying to figure out how to bring all these pieces together, but having done it, believe that it increased my productivity in ways that by far compensate the invested time. I hope you find this article useful especially if it saves you one day of trouble trying to figure out the right configs.</p>  </article> <div class="mt-9 flex text-sm font-italic opacity-80"> <span class="ml-auto">Last modified on 11, Oct, 2024</span> </div> </main> <footer class="mt-12 mb-6 text-sm"> <div class="mb-1"> <span> <a href="/rss.xml/" class="panda-link"> rss </a> <span class="mx-1">|</span> </span><span> <a href="mailto:caldasjdaniel@gmail.com" class="panda-link"> contact </a> <span class="mx-1">|</span> </span><span> <a href="https://github.com/danielcaldas/danielcaldas.github.io" class="panda-link"> github </a> <span class="mx-1">|</span> </span><span> <a href="/" class="panda-link"> ~/ </a>  </span> </div> <div class="mb-1"> <span>2018-2024</span> </div> </footer> </body></html>
