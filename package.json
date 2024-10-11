@@ -23,7 +23,8 @@
     "lodash": "latest",
     "luxon": "latest",
     "markdown-it": "latest",
-    "purgecss": "latest"
+    "purgecss": "latest",
+    "sharp": "^0.33.5"
   },
   "devDependencies": {
     "@expressive-code/core": "latest",
