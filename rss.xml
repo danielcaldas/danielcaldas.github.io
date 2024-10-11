@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Panda Blog</title><description>Panda Blog, a blog powered by Astro</description><link>https://astro-theme-panda.vercel.app/</link><item><title>CSSconf EU 2018</title><link>https://astro-theme-panda.vercel.app/posts/about-css-conf-eu-berlin-2018/</link><guid isPermaLink="true">https://astro-theme-panda.vercel.app/posts/about-css-conf-eu-berlin-2018/</guid><description>My notes on the CSSconfg EU 2018</description><pubDate>Sun, 17 Jun 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hello all!! I decided to write this blog post to share with you the new things I learned attending this year&apos;s edition of &amp;lt;a href=&amp;quot;https://2018.  cssconf.eu&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;cssconf.eu official web page&amp;quot;&amp;gt;CSSconf EU&amp;lt;/a&amp;gt; in Berlin (Friday, June 1st). In this post I will focus more on the talks, I will cover other venue details in &amp;lt;a href=&amp;quot;https://goodguydaniel.com/blog/about-js-conf-eu-berlin-2018/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;JSconf EU 2018 | Blog&amp;quot;&amp;gt;another blog post&amp;lt;/a&amp;gt; on &amp;lt;a href=&amp;quot;https://goodguydaniel.com/blog/about-js-conf-eu-berlin-2018/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;JSconf EU 2018 | Blog&amp;quot;&amp;gt;JSConf EU&amp;lt;/a&amp;gt; that had a similar organization.&lt;/p&gt;
+&lt;h3&gt;For starters&lt;/h3&gt;
+&lt;p&gt;If you were there as I was, you were probably wondering whether you were at the right conference, since at the beginning you would ask yourself &lt;strong&gt;where is the CSS&lt;/strong&gt;?&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3liNnh6dTM4ZmlwNnZiemxhMmR3aWNlYWh0ZndiZWhydGsxdWFzaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hEc4k5pN17GZq/giphy.webp&quot; alt=&quot;where is the css, john travolta&quot;&gt;
+&amp;lt;cite&amp;gt;source: giphy&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;p&gt;But don&apos;t give up already! It started poorly on the CSS field, but it evolved throughout the day with some top-notch talks, some of them include Razvan Caliman on &lt;em&gt;We have DevTools. What about DesignTools?&lt;/em&gt; and Mike Riethmuller with &lt;em&gt;Strategy Guide for CSS Custom Properties&lt;/em&gt;.&lt;/p&gt;
+&lt;h3&gt;The talks&lt;/h3&gt;
+&lt;p&gt;&amp;lt;!-- Preprocessors, Components, and CSS in JS or: How I Learned to Stop Worrying and Love the Website --&amp;gt;
+&amp;lt;!-- It’s Dangerous To Go Alone! Take This Team --&amp;gt;&lt;/p&gt;
+&lt;p&gt;As I mentioned earlier the first talk wasn&apos;t so much into CSS, what Trent &lt;a href=&quot;#list-of-talks-speakers-and-other-resources&quot;&gt;(1)&lt;/a&gt; gave to us was more of a carrier advice on how we should behave as individuals so that we are seen as part of a team, for Trent going solo in some project should never even be considered, we should always ask for feedback if we want to achieve accurate and quality results. Trent shared some personal techniques that help him grow as a developer in a controlled way avoiding things such as &lt;em&gt;burnout&lt;/em&gt;. The term &lt;em&gt;mindfulness&lt;/em&gt; came along somewhere in the talk as Trent was trying to explain the audience how he&apos;s able to keep a balanced mental health. Next we had Jackie Balzer &lt;a href=&quot;#list-of-talks-speakers-and-other-resources&quot;&gt;(2)&lt;/a&gt; who told us a bit of the history behind &amp;lt;a title=&amp;quot;Behance is a network of sites and services specializing in self-promotion&amp;quot; href=&amp;quot;https://www.behance.net/&amp;quot; target=&amp;quot;_blank&amp;quot;&amp;gt;Behance’s&amp;lt;/a&amp;gt; codebase, how major redesigns left &lt;em&gt;Jurassic&lt;/em&gt; footprints in the codebase, some of them in the form of very descriptive &amp;quot;&lt;em&gt;TODOs&lt;/em&gt;&amp;quot;, that today would probably require a herculean effort to remove. At the end Jackie just commented on how she was able to achieve peace with the reality of a fragmented codebase.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/about-css-conf-eu-berlin-2018/5.jpeg&quot; alt=&quot;this is fine dog on fire&quot; title=&quot;this is fine dog on fire meme&quot;&gt;
+&amp;lt;cite&amp;gt;source: https://twitter.com/GOP/status/757687865471963137&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;!-- The Web Is Not Just Left-to-Right --&amp;gt;&lt;/p&gt;
+&lt;p&gt;The next talk was truly eye-opening. Chen Hui Jing &lt;a href=&quot;#list-of-talks-speakers-and-other-resources&quot;&gt;(3)&lt;/a&gt; made a very cool historical overview on typography and writing systems, how some Asian language (such as Chinese, Japanese and Korean) are written vertically, and how that was transported into the web. Designing various labeled pencils in CSS, Chen explained how we could take advantage of &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;mdn css flexbox&amp;quot;&amp;gt;flexbox&amp;lt;/a&amp;gt; and &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/CSS/grid&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;mdn css grid&amp;quot;&amp;gt;grid&amp;lt;/a&amp;gt; to manipulate the way we display elements in our web pages. In the end Chen showed some cool examples of how some small tweaks to our web pages could be more interesting displaying some text vertically.&lt;/p&gt;
+&lt;p&gt;&amp;lt;!-- Refactoring with CSS Grid --&amp;gt;&lt;/p&gt;
+&lt;p&gt;Following we had Ollie Williams [(4)](#list-of-talks-sp eakers-and-other-resources) who shared the experience of using &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/CSS/grid&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;mdn css grid&amp;quot;&amp;gt;grid&amp;lt;/a&amp;gt; in production. For the first time I had the opportunity to see some real life examples on &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Glossary/Graceful_degradation&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;graceful degradation mdn description&amp;quot;&amp;gt;graceful degradation&amp;lt;/a&amp;gt; and &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;progressive enhancement description&amp;quot;&amp;gt;progressive enhancement&amp;lt;/a&amp;gt;, if you&apos;re wondering what&apos;s the difference between this two terms as I was, think of it the following way, &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Glossary/Graceful_degradation&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;graceful degradation mdn description&amp;quot;&amp;gt;graceful degradation&amp;lt;/a&amp;gt; it&apos;s where you worry about providing the best experience possible, you use the latest bleeding edge web technologies to achieve that, for older browsers you will &lt;em&gt;degrade&lt;/em&gt; user experience but always assuring some base line level of functionality. On the other hand, &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;progressive enhancement description&amp;quot;&amp;gt;progressive enhancement&amp;lt;/a&amp;gt; philosophy aims to provide the best possible experience in all browsers keeping the same levels of user experience, one will where possible use newest features to &lt;em&gt;progressively&lt;/em&gt; improve the user experience.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/about-css-conf-eu-berlin-2018/3.jpg&quot; alt=&quot;progressive enhancement vs graceful degradation&quot; title=&quot;visualization of progressive enhancement vs graceful degradation&quot;&gt;
+&amp;lt;cite&amp;gt;source: https://www.youtube.com/watch?v=tmQuGgtq5SI&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;!-- We have DevTools. What about DesignTools? --&amp;gt;&lt;/p&gt;
+&lt;p&gt;Razvan Caliman&apos;s was one of the top talks &lt;a href=&quot;#list-of-talks-speakers-and-other-resources&quot;&gt;(5)&lt;/a&gt;. The point of this talk was all about how advanced tooling we have nowadays in browsers for developers to debug and analyze applications, but on the other hand how designer tools were &lt;em&gt;left behind&lt;/em&gt;? Razvan made a pretty good point by exposing the problem this way, in fact he presented a few pains of the design part of the web from a developer perspective, these include editing styles on the fly using the element inspector, modifying &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Shapes&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;css shapes mdn&amp;quot;&amp;gt;css shapes&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;p&gt;Here you have the list of tools that Razvan mentioned in his talk:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://webflow.com/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;webflow official website&amp;quot;&amp;gt;
+Webflow
+&amp;lt;/a&amp;gt; - build responsive sites visually.&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://developers.google.com/web/updates/2018/01/devtools#overrides&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;developer chrome local  overrides&amp;quot;&amp;gt; Chrome local overrides&amp;lt;/a&amp;gt; - make changes in DevTools, and keep those changes across page loads.&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://chrome.google.com/webstore/detail/finch-developer-tools/phgdjnidddpccdkbedmfifceiljljgdo?hl=en&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Finch chrome extension&amp;quot;&amp;gt;Finch developer tools&amp;lt;/a&amp;gt; 🌟 - changes you make in the CSS code styles will be saved locally on your computer.&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://youtu.be/2gAW0pUOBRI&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;chrome color picker&amp;quot;&amp;gt;
+Chrome color picker
+&amp;lt;/a&amp;gt; - double click on some color in DevTools to open it.&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://youtu.be/9z7P4Xqr2dU&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;video chrome text shadow editor&amp;quot;&amp;gt;
+Chrome text shadow editor
+&amp;lt;/a&amp;gt; - place your mouse on the bottom right corner of some CSS block style on the DevTools.&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Examine_grid_layouts&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;firefox grid inspector&amp;quot;&amp;gt;Firefox CSS grid inspector&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Edit_CSS_filters&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;firefox filter editor&amp;quot;&amp;gt;Firefox CSS filter editor&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;http://razvan.is/speaking/cssconfeu-2018/#/26&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;safari css gradient editor&amp;quot;&amp;gt;Safari CSS gradient editor&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/View_fonts&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;firefox font editor&amp;quot;&amp;gt;Firefox font editor&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Edit_CSS_shapes&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;firefox shape path editor&amp;quot;&amp;gt;Firefox shape path editor&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The talk ended with a kind of &amp;quot;&lt;em&gt;cry for help&lt;/em&gt;&amp;quot; request, Razvan mentioned that not so many developers were focused on building design dev tools to improve development experience, he encouraged the community to make more designer tools to make us more effective and productive on designing beautiful web apps.&lt;/p&gt;
+&lt;p&gt;&amp;lt;!--Augmenting Empathy: Simulating Low-Vision Conditions with CSS, SVG and WebRTC--&amp;gt;&lt;/p&gt;
+&lt;p&gt;From this talk onwards things start focusing a lot around the &lt;strong&gt;accessibility&lt;/strong&gt; topic, Shwetank Dixit shows some of his projects on this matter &lt;a href=&quot;#list-of-talks-speakers-and-other-resources&quot;&gt;(6)&lt;/a&gt;.
+When we hear “low vision” what do we think about? Well, Shwetank explained that these days low-vision it&apos;s just an umbrella term that aggregates a bunch of eyesight conditions that affect people in many different ways. Shwetank made very clear that not conditioned people don&apos;t know the real extent of these problems unless we talk with someone who experiences them every day. Following, Shwetank just drop this one &amp;quot;&lt;em&gt;What if we could make tools to make people see what people with low vision actually see?&lt;/em&gt;&amp;quot; And that was exactly what he did, with CSS, SVG and &amp;lt;a href=&amp;quot;https://webrtc.org/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;what is webrtc&amp;quot;&amp;gt;WebRTC&amp;lt;/a&amp;gt; he was able to emulate different low vision conditions that were perceptible through a camera (with AR), this is a really noble thing to do, it certainly will make people more aware and comprehensive of this problems, specially those not affected by these problems, at the same time I guess it makes conditioned people less frustrated because I imagine it can be pretty hard to explain one&apos;s condition to another, so why not showing it instead? You can consult a list of low vision tools in &amp;lt;a href=&amp;quot;https://lowvisiontools.barrierbreak.com/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;barrierbreak low vision tools&amp;quot;&amp;gt;lowvisiontools.barrierbreak.com&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/about-css-conf-eu-berlin-2018/6.png&quot; alt=&quot;low vision tool color blindness&quot; title=&quot;low vision tool color blindness&quot;&gt;
+&amp;lt;cite&amp;gt;source: Some guy with a black shirt and red stripes&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;!--Strategy Guide for CSS Custom Properties--&amp;gt;&lt;/p&gt;
+&lt;p&gt;Next, we jump into CSS Custom Properties (&lt;em&gt;aka&lt;/em&gt; CSS variables)! In this talk &lt;a href=&quot;#list-of-talks-speakers-and-other-resources&quot;&gt;(7)&lt;/a&gt; we got a close look onto CSS custom properties, they are basically a very nice way to help in the journey of &lt;strong&gt;decoupling logic from design&lt;/strong&gt;. The main difference between CSS custom properties and variables
+that you might be using with some CSS preprocessor is that those variables are static, using CSS custom properties they can be dynamic
+and updated via javascript or for instance within a media query. Another nice detail about custom properties is that they can be scoped, so you can have local (by default they are locally scoped) or global CSS custom properties.&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;
+&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;h2 id=&amp;quot;title&amp;quot;&amp;gt;Familiy of green shapes&amp;lt;/h2&amp;gt;
+&amp;lt;button onclick=&amp;quot;update(&apos;red&apos;)&amp;quot;&amp;gt;red&amp;lt;/button&amp;gt;
+&amp;lt;button onclick=&amp;quot;update(&apos;green&apos;)&amp;quot;&amp;gt;green&amp;lt;/button&amp;gt;
+&amp;lt;div class=&amp;quot;shape square&amp;quot; /&amp;gt;
+&amp;lt;div class=&amp;quot;shape circle&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;:root {
+  --shape-color: green;
+}
+
+.shape {
+  background: var(--shape-color);
+}
+
+.square {
+  height: 50px;
+  width: 50px;
+}
+
+.circle {
+  margin-left: 100px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;function update(color) {
+  const element = document.getElementsByClassName(&apos;shape&apos;)[0]
+
+  element.style.getPropertyValue(&apos;--shape-color&apos;)
+  getComputedStyle(element).getPropertyValue(&apos;--shape-color&apos;)
+  element.style.setProperty(&apos;--shape-color&apos;, color)
+
+  document.getElementById(&apos;title&apos;).innerText = `Family of ${color} shapes`
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Mike shared his experience with custom properties and gave us some &lt;strong&gt;lessons to use them efficiently&lt;/strong&gt;, here they are:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;All global variables should be static&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Don&apos;t be too cleaver&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Change the value, not the variable&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;If it changes, it&apos;s a variable&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Separate logic from design, be aware of the &lt;em&gt;logic fold&lt;/em&gt;&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Theming will become much easier to achieve&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Capitalize global static properties&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Use custom properties now&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Check out &amp;lt;a href=&amp;quot;https://www.youtube.com/watch?v=pF0pSwbZV9Y&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;mike riethmuller about css custom properties&amp;quot;&amp;gt;Mike&apos;s talk&amp;lt;/a&amp;gt; if you want to have a close look at the above 8 lessons.&lt;/p&gt;
+&lt;p&gt;Is also relevant to mention that CSS variables are today implemented in all the major browsers (excluding IE of course).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/about-css-conf-eu-berlin-2018/4.png&quot; alt=&quot;can i use this CSS variables&quot; title=&quot;can i use this CSS variables&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;cite&amp;gt;source: https://caniuse.com/#feat=css-variables&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;!--Accessible by Law! Generating Colors with JS and CSS Custom Properties--&amp;gt;&lt;/p&gt;
+&lt;p&gt;Following, we saw a mix of &amp;lt;a href=&amp;quot;https://www.w3.org/standards/webdesign/accessibility&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;w3 accessibility standards&amp;quot;&amp;gt;accessibility&amp;lt;/a&amp;gt; and CSS custom properties &lt;a href=&quot;#list-of-talks-speakers-and-other-resources&quot;&gt;(8)&lt;/a&gt;, here we learned how to dynamically make our site accessible through CSS custom properties and javascript. In Norway accessibility in websites is &amp;lt;a href=&amp;quot;https://www.w3.org/WAI/policies/norway&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;wai policies norway&amp;quot;&amp;gt;required by law&amp;lt;/a&amp;gt; and as part of this topic your website colors need to provide an accessible experience in ways that everything is legible and by some design miscalculation, you don&apos;t get a kind of &amp;quot;&lt;em&gt;white text on white background&lt;/em&gt;&amp;quot; situation. In this medium blog post &amp;lt;a href=&amp;quot;https://medium.com/confrere/automatically-creating-an-accessible-color-palette-from-any-color-sure-e735c3f2f45e&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;medium color palette with css custom properties&amp;quot;&amp;gt;&lt;em&gt;Automatically creating an accessible color palette from any color? Sure!&lt;/em&gt;&amp;lt;/a&amp;gt; a colleague of Dag-Inge explains the process on how they generate colors in an accessible way.&lt;/p&gt;
+&lt;p&gt;&amp;lt;!--The Algorithms of CSS--&amp;gt;&lt;/p&gt;
+&lt;p&gt;Next talk won the &lt;em&gt;enthusiastic award&lt;/em&gt; &lt;a href=&quot;#list-of-talks-speakers-and-other-resources&quot;&gt;(9)&lt;/a&gt;, Lara Schenck on &lt;em&gt;The Algorithms of CSS&lt;/em&gt;. The story is simple, first Lara question herself why
+CSS it&apos;s not considered a programming language, and then she dove into the CSS implementation to find how these more high level CSS mechanisms that designers and front end developers use every day are under the hood, this gave her a more clear overview on how CSS works in general. It was an interesting perspective that Lara shared with us but &lt;strong&gt;CSS is not a programming language!&lt;/strong&gt; CSS is a &lt;strong&gt;DSL&lt;/strong&gt; (Domain Specific Language) to describe styles if you&apos;re not familiar with the DSL concept check out this &amp;lt;a href=&amp;quot;https://www.martinfowler.com/bliki/DomainSpecificLanguage.html&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;martin fowler dsl&amp;quot;&amp;gt;short description by Martin Fowler&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;p&gt;&amp;lt;!-- Container Queries: The Past, Future, and How You Can Actually Even Use Them Today --&amp;gt;&lt;/p&gt;
+&lt;p&gt;Following with Philip Walton who gave us a look into the future of CSS introducing &amp;lt;a href=&amp;quot;https://wicg.github.io/container-queries/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;container queries specification&amp;quot;&amp;gt;container queries&amp;lt;/a&amp;gt; &lt;a href=&quot;#list-of-talks-speakers-and-other-resources&quot;&gt;(10)&lt;/a&gt;. Hmm... what are container queries? According to the &amp;lt;a href=&amp;quot;https://wicg.github.io/container-queries/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;container queries specification&amp;quot;&amp;gt;specification&amp;lt;/a&amp;gt; container queries could be almost seen as a more granular kind of media queries, because they offer similar functionality but instead of allowing you to control style targeting all the viewport they allow you to control style based on the size of a containing element. If you want to have a close look at container queries I recommend you take a look at this &amp;lt;a href=&amp;quot;https://philipwalton.com/articles/responsive-components-a-solution-to-the-container-queries-problem/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;philip walton container queries&amp;quot;&amp;gt;article&amp;lt;/a&amp;gt; that Philip himself published on container queries.&lt;/p&gt;
+&lt;p&gt;&amp;lt;!--Design Systems as Facilitators--&amp;gt;&lt;/p&gt;
+&lt;p&gt;The last talk &lt;a href=&quot;#list-of-talks-speakers-and-other-resources&quot;&gt;(11)&lt;/a&gt; was about design systems and how they should make the software development process easier by serving as a mean of communication (yes, a facilitator). A design system is a collection of components (ideally reusable) that follow the same standards and that by assembling them you can build applications. In this talk, Claudina Sarahe just went around this topic on how advantageous design systems are but if you really are interested in design systems I really recommend you to take a look at this &amp;lt;a href=&amp;quot;https://www.invisionapp.com/inside-design/guide-to-design-systems/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;invisionapp the guide to design systems&amp;quot;&amp;gt;invisionapp blog post instead&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;h3&gt;Hot topics&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;mdn css variables&amp;quot;&amp;gt;CSS custom properties (variables)&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://www.w3.org/WAI/standards-guidelines/wcag/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;accessability guidelines&amp;quot;&amp;gt;
+Accessability (Web Content Accessibility Guidelines (WCAG))
+&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/CSS/@supports&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;feature queries mdn&amp;quot;&amp;gt;
+Feature queries (@supports)
+&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://wicg.github.io/container-queries/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;container queries specification&amp;quot;&amp;gt;
+Container queries
+&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/about-css-conf-eu-berlin-2018/7.jpeg&quot; alt=&quot;so hot right now&quot; title=&quot;so hot right now meme&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;cite&amp;gt;source: https://imgflip.com/memegenerator/Mugatu-So-Hot-Right-Now /&amp;gt;&lt;/p&gt;
+&lt;h3&gt;List of talks, speakers and other resources&lt;/h3&gt;
+&lt;p&gt;Here the list of the talks with links to videos (at this point the majority of the talks are not available, so I&apos;ll link to other talks of the same speakers on the same topic), author twitter and or github as well if available. Note that I marked with a star the talks that I consider to be a must see, people always ask for that. The list has the same order as the &amp;lt;a href=&amp;quot;https://2018.cssconf.eu/schedule/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;css conf.eu 2018 schedule&amp;quot;&amp;gt;conference schedule&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;p&gt;&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt;
+&amp;lt;b&amp;gt;Trent Willis &amp;lt;/b&amp;gt;
+&amp;lt;small&amp;gt;
+twitter:
+&amp;lt;a href=&amp;quot;https://github.com/trentmwillis&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;tren willis twitter&amp;quot;&amp;gt;
+trentmwillis
+&amp;lt;/a&amp;gt;
+&amp;lt;span&amp;gt; | &amp;lt;/span&amp;gt;
+github:
+&amp;lt;a href=&amp;quot;https://github.com/trentmwillis&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;tren willis github&amp;quot;&amp;gt;
+trentmwillis
+&amp;lt;/a&amp;gt;
+&amp;lt;/small&amp;gt;
+&amp;lt;em&amp;gt; - It&apos;s Dangerous To Go Alone! Take This Team - &amp;lt;/em&amp;gt;
+&amp;lt;a
+href=&amp;quot;https://www.youtube.com/watch?v=2aPjsb-kIks&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;CSSconf EU 2018 | Trent Willis: It’s Dangerous To Go Alone! Take This Team&amp;quot;
+&amp;gt;
+video
+&amp;lt;/a&amp;gt;
+&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;
+&amp;lt;b&amp;gt;Jackie Balzer &amp;lt;/b&amp;gt;
+&amp;lt;small&amp;gt;
+twitter:
+&amp;lt;a href=&amp;quot;https://twitter.com/jackiebackwards&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;jackie twitter&amp;quot;&amp;gt;
+@jackiebackwards
+&amp;lt;/a&amp;gt;
+&amp;lt;span&amp;gt; | &amp;lt;/span&amp;gt;
+github:
+&amp;lt;a href=&amp;quot;https://github.com/jackie&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;jackie github&amp;quot;&amp;gt;
+jackie
+&amp;lt;/a&amp;gt;
+&amp;lt;/small&amp;gt;
+&amp;lt;em&amp;gt; - Preprocessors, Components, and CSS in JS or: How I Learned to Stop Worrying and Love the Website - &amp;lt;/em&amp;gt;
+&amp;lt;a
+href=&amp;quot;https://www.youtube.com/watch?v=vLBBq6oizEI&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;CSSconf EU 2018 | Jackie Balzer: Preprocessors, Components, and CSS in JS&amp;quot;
+&amp;gt;
+video
+&amp;lt;/a&amp;gt;
+&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;
+&amp;lt;b&amp;gt;Chen Hui Jing &amp;lt;/b&amp;gt;
+&amp;lt;small&amp;gt;
+twitter:
+&amp;lt;a href=&amp;quot;https://twitter.com/hj_chen&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;huijing twitter&amp;quot;&amp;gt;
+@hj_chen
+&amp;lt;/a&amp;gt;
+&amp;lt;span&amp;gt; | &amp;lt;/span&amp;gt;
+github:
+&amp;lt;a href=&amp;quot;https://github.com/huijing&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;huijing github&amp;quot;&amp;gt;
+huijing
+&amp;lt;/a&amp;gt;
+&amp;lt;/small&amp;gt;
+&amp;lt;em&amp;gt; - The Web Is Not Just Left-to-Right - &amp;lt;/em&amp;gt;
+&amp;lt;a
+href=&amp;quot;https://www.youtube.com/watch?v=YpqKrVcth34&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;CSSconf EU 2018 Chen Hui Jing The Web Is Not Just Left-to-Right&amp;quot;
+&amp;gt;
+video
+&amp;lt;/a&amp;gt;
+&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;
+&amp;lt;b&amp;gt;Oliver Williams &amp;lt;/b&amp;gt;
+&amp;lt;small&amp;gt;
+github:
+&amp;lt;a href=&amp;quot;https://github.com/Ollie-w&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;ollie githhub&amp;quot;&amp;gt;
+Ollie-w
+&amp;lt;/a&amp;gt;
+&amp;lt;/small&amp;gt;
+&amp;lt;em&amp;gt; - Refactoring with CSS Grid - &amp;lt;/em&amp;gt;
+&amp;lt;a
+href=&amp;quot;https://www.youtube.com/watch?v=tmQuGgtq5SI&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;CSSconf EU 2018 | Oliver Williams: Refactoring with CSS Grid&amp;quot;
+&amp;gt;
+video
+&amp;lt;/a&amp;gt;
+&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;
+&amp;lt;b&amp;gt;Razvan Caliman &amp;lt;/b&amp;gt;
+&amp;lt;small&amp;gt;
+twitter:
+&amp;lt;a href=&amp;quot;https://twitter.com/razvancaliman&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;razvancaliman twitter&amp;quot;&amp;gt;
+@razvancaliman
+&amp;lt;/a&amp;gt;
+&amp;lt;span&amp;gt; | &amp;lt;/span&amp;gt;
+github:
+&amp;lt;a href=&amp;quot;https://github.com/oslego&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;oslego github&amp;quot;&amp;gt;
+oslego
+&amp;lt;/a&amp;gt;
+&amp;lt;/small&amp;gt;
+&amp;lt;em&amp;gt; - We have DevTools. What about DesignTools? 🌟 - &amp;lt;/em&amp;gt;
+&amp;lt;a
+href=&amp;quot;http://razvan.is/speaking/cssconfeu-2018/#/&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;we have devtools. what about designtools? slides&amp;quot;
+&amp;gt;
+slides
+&amp;lt;/a&amp;gt; | &amp;lt;a
+href=&amp;quot;https://www.youtube.com/watch?v=oGobLmA_WVQ&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;CSSconf EU 2018 | Razvan Caliman: We have DevTools. What about DesignTools?&amp;quot;
+&amp;gt;
+video
+&amp;lt;/a&amp;gt;
+&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;
+&amp;lt;b&amp;gt;Shwetank Dixit &amp;lt;/b&amp;gt;
+&amp;lt;small&amp;gt;
+twitter:
+&amp;lt;a href=&amp;quot;https://twitter.com/shwetank&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;shwetank twitter&amp;quot;&amp;gt;
+@shwetank
+&amp;lt;/a&amp;gt; github:
+&amp;lt;a href=&amp;quot;https://github.com/shwetank&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;shwetank github&amp;quot;&amp;gt;
+shwetank
+&amp;lt;/a&amp;gt;
+&amp;lt;/small&amp;gt;
+&amp;lt;em&amp;gt; - Augmenting Empathy: Simulating Low-Vision Conditions with CSS, SVG and WebRTC - &amp;lt;/em&amp;gt;
+&amp;lt;a
+href=&amp;quot;https://www.youtube.com/watch?v=aWoeK2SFSpI&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;CSSconf EU 2018 | Shwetank Dixit: Simulating Low-Vision Conditions with CSS, SVG and WebRTC&amp;quot;
+&amp;gt;
+video
+&amp;lt;/a&amp;gt;
+&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;
+&amp;lt;b&amp;gt;Mike Riethmuller &amp;lt;/b&amp;gt;
+&amp;lt;small&amp;gt;
+twitter:
+&amp;lt;a href=&amp;quot;https://twitter.com/MikeRiethmuller&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;mikeriethmuller twitter&amp;quot;&amp;gt;
+@MikeRiethmuller
+&amp;lt;/a&amp;gt;
+&amp;lt;/small&amp;gt;
+&amp;lt;em&amp;gt; - Strategy Guide for CSS Custom Properties - &amp;lt;/em&amp;gt;
+&amp;lt;a
+href=&amp;quot;https://www.youtube.com/watch?v=pF0pSwbZV9Y&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;CSSconf EU 2018 | Mike Riethmuller: Strategy Guide for CSS Custom Properties&amp;quot;
+&amp;gt;
+video
+&amp;lt;/a&amp;gt; | &amp;lt;a
+href=&amp;quot;https://www.smashingmagazine.com/2018/05/css-custom-properties-strategy-guide/&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;smashing magazine css custom properties strategy guide&amp;quot;
+&amp;gt;
+article
+&amp;lt;/a&amp;gt;
+&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;
+&amp;lt;b&amp;gt;Dag-Inge Aas &amp;lt;/b&amp;gt;
+&amp;lt;small&amp;gt;
+twitter:
+&amp;lt;a href=&amp;quot;https://twitter.com/daginge&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;daginge twitter&amp;quot;&amp;gt;
+@daginge
+&amp;lt;/a&amp;gt;
+&amp;lt;span&amp;gt; | &amp;lt;/span&amp;gt;
+medium:
+&amp;lt;a href=&amp;quot;https://medium.com/@daginge&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;daginge medium profile&amp;quot;&amp;gt;
+@daginge
+&amp;lt;/a&amp;gt;
+&amp;lt;/small&amp;gt;
+&amp;lt;em&amp;gt; - Accessible by Law! Generating Colors with JS and CSS Custom Properties - &amp;lt;/em&amp;gt;
+&amp;lt;a
+href=&amp;quot;https://www.youtube.com/watch?v=zi6L0ZqrKfA&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;CSSconf EU 2018 | Dag-Inge Aas &amp;amp; Ida Aalen: Generating Colors with JS and CSS Custom Properties&amp;quot;
+&amp;gt;
+video
+&amp;lt;/a&amp;gt;
+&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;
+&amp;lt;b&amp;gt;Lara Schenck &amp;lt;/b&amp;gt;
+&amp;lt;small&amp;gt;
+twitter:
+&amp;lt;a href=&amp;quot;https://twitter.com/laras126&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;laras126 twitter&amp;quot;&amp;gt;
+@laras126
+&amp;lt;/a&amp;gt;
+&amp;lt;span&amp;gt; | &amp;lt;/span&amp;gt;
+github:
+&amp;lt;a href=&amp;quot;https://github.com/laras126&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;laras126 github&amp;quot;&amp;gt;
+laras126
+&amp;lt;/a&amp;gt;{&amp;quot; &amp;quot;}
+&amp;lt;a href=&amp;quot;https://notlaura.com/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;about lara&amp;quot;&amp;gt;
+{&amp;quot; &amp;quot;}
+about
+&amp;lt;/a&amp;gt;
+&amp;lt;/small&amp;gt;
+&amp;lt;em&amp;gt; - The Algorithms of CSS - &amp;lt;/em&amp;gt;
+&amp;lt;a href=&amp;quot;https://notlaura.com/algorithms-of-css-sources/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;the algorithms of css slides&amp;quot;&amp;gt;
+slides
+&amp;lt;/a&amp;gt; | &amp;lt;a
+href=&amp;quot;https://www.youtube.com/watch?v=cCeqH6m_K20&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;CSSconf EU 2018 | Lara Schenck: The Algorithms of CSS&amp;quot;
+&amp;gt;
+video
+&amp;lt;/a&amp;gt;
+&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;
+&amp;lt;b&amp;gt;Philip Walton &amp;lt;/b&amp;gt;
+&amp;lt;small&amp;gt;
+twitter:
+&amp;lt;a href=&amp;quot;https://github.com/philipwalton&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;philipwalton github&amp;quot;&amp;gt;
+philipwalton
+&amp;lt;/a&amp;gt;
+&amp;lt;span&amp;gt; | &amp;lt;/span&amp;gt;
+github:
+&amp;lt;a href=&amp;quot;https://github.com/philipwalton&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;philipwalton github&amp;quot;&amp;gt;
+philipwalton
+&amp;lt;/a&amp;gt;
+&amp;lt;/small&amp;gt;
+&amp;lt;em&amp;gt; - Container Queries: The Past, Future, and How You Can Actually Even Use Them Today - &amp;lt;/em&amp;gt;
+&amp;lt;a
+href=&amp;quot;https://philipwalton.com/articles/responsive-components-a-solution-to-the-container-queries-problem/&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;responsive components philip walton&amp;quot;
+&amp;gt;
+article
+&amp;lt;/a&amp;gt; | &amp;lt;a
+href=&amp;quot;https://www.youtube.com/watch?v=0wA4CMo9_EU&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;CSSconf EU 2018 | Philip Walton: Container Queries&amp;quot;
+&amp;gt;
+video
+&amp;lt;/a&amp;gt;
+&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;
+&amp;lt;b&amp;gt;Claudina Sarahe &amp;lt;/b&amp;gt;
+&amp;lt;small&amp;gt;
+twitter:
+&amp;lt;a href=&amp;quot;https://twitter.com/itsmisscs&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;itsmisscs twitter&amp;quot;&amp;gt;
+@itsmisscs
+&amp;lt;/a&amp;gt;
+&amp;lt;/small&amp;gt;
+&amp;lt;em&amp;gt; - Design Systems as Facilitators - &amp;lt;/em&amp;gt;
+&amp;lt;a
+href=&amp;quot;https://www.youtube.com/watch?v=RCdGIrgSaBQ&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;CSSconf EU 2018 | Claudina Sarahe: Design Systems as Facilitators&amp;quot;
+&amp;gt;
+video
+&amp;lt;/a&amp;gt;
+&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;&lt;/p&gt;
+&lt;h3&gt;And then...&lt;/h3&gt;
+&lt;p&gt;I will also write &amp;lt;a href=&amp;quot;https://goodguydaniel.com/blog/about-js-conf-eu-berlin-2018/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;JSconf EU 2018 | Blog&amp;quot;&amp;gt;a blog post about the JSConf&amp;lt;/a&amp;gt; that happened in the following two days where I&apos;ll also talk about Berlin and the venue to give you a real insider perspective on the conference so that you can properly decide whether or not you will attend it next year.&lt;/p&gt;
+</content:encoded></item><item><title>Basic markdown style guide</title><link>https://astro-theme-panda.vercel.app/posts/markdown-example/</link><guid isPermaLink="true">https://astro-theme-panda.vercel.app/posts/markdown-example/</guid><description>You can author content using the familiar markdown syntax you already know. All basic markdown syntax is supported.</description><pubDate>Sat, 02 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Markdown is powered by &lt;a href=&quot;https://markdoc.dev/&quot;&gt;Markdoc&lt;/a&gt;. This is an example post to demonstrate all the basic markdown syntax. You can author content using the familiar markdown syntax you already know.&lt;/p&gt;
+&lt;h2&gt;Inline formatting&lt;/h2&gt;
+&lt;p&gt;Bold: &lt;strong&gt;This text is bold&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Italics: &lt;em&gt;This text is italics&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Strikethrough: You can &lt;s&gt;strikethrough&lt;/s&gt; text.&lt;/p&gt;
+&lt;p&gt;Inline code: You can add inline code like this &lt;code&gt;const hello = &amp;quot;world&amp;quot;&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Headings&lt;/h2&gt;
+&lt;p&gt;The following HTML &lt;code&gt;&amp;lt;h2&amp;gt;&lt;/code&gt;—&lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; elements represent five levels of section headings. &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; is also available but not recommended since the post title is already a &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; element it is not a good practice to have more than one &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; elements in a page.&lt;/p&gt;
+&lt;h2&gt;H2: Heading Two&lt;/h2&gt;
+&lt;h3&gt;H3: Heading Three&lt;/h3&gt;
+&lt;h4&gt;H4: Heading Four&lt;/h4&gt;
+&lt;h5&gt;H5: Heading Five&lt;/h5&gt;
+&lt;h6&gt;H6: Heading Six&lt;/h6&gt;
+&lt;h2&gt;Paragraph&lt;/h2&gt;
+&lt;p&gt;A standalone single paragraph of text.&lt;/p&gt;
+&lt;p&gt;Paragraphs can be multiline too when they constitute words that make up more than one line, i.e they wrap to the next line. Wow! I am really smart to write two lines of text that makes zero sense.&lt;/p&gt;
+&lt;h2&gt;Blockquotes&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is a blockquote. And it&apos;s pretty long too. Long enough to wrap to next line. Surely it will wrap.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You can use other Markdown syntax like &lt;code&gt;inline code&lt;/code&gt; within a blockquote.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Tables&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Italics&lt;/th&gt;
+&lt;th&gt;Bold&lt;/th&gt;
+&lt;th&gt;Code&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;em&gt;italics&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;bold&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;code&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;List Types&lt;/h2&gt;
+&lt;h3&gt;Ordered List&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;First item&lt;/li&gt;
+&lt;li&gt;Second item&lt;/li&gt;
+&lt;li&gt;Third item&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Unordered List&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;List item&lt;/li&gt;
+&lt;li&gt;Another item&lt;/li&gt;
+&lt;li&gt;And another item&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Nested list&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Fruit
+&lt;ul&gt;
+&lt;li&gt;Apple&lt;/li&gt;
+&lt;li&gt;Orange&lt;/li&gt;
+&lt;li&gt;Banana&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Dairy
+&lt;ul&gt;
+&lt;li&gt;Milk&lt;/li&gt;
+&lt;li&gt;Cheese&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Code Blocks&lt;/h2&gt;
+&lt;p&gt;Syntax highlighting is done using &lt;a href=&quot;https://expressive-code.com/&quot;&gt;expressive code&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+  &amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&amp;quot;utf-8&amp;quot; /&amp;gt;
+    &amp;lt;title&amp;gt;Example HTML5 Document&amp;lt;/title&amp;gt;
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body&amp;gt;
+    &amp;lt;p&amp;gt;Test&amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</content:encoded><category>tech</category></item></channel></rss>
