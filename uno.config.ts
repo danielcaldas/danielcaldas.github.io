@@ -1,4 +1,5 @@
 // uno.config.ts
+import { auto } from 'async'
 import { defineConfig, presetMini, presetTypography, transformerDirectives } from 'unocss'
 
 export default defineConfig({
@@ -61,8 +62,10 @@ export default defineConfig({
           'background-color': 'var(--color-code-bg)',
         },
         img: {
+          border: 0,
           display: 'block',
-          margin: '0 auto',
+          height: 'auto',
+          width: '100%',
         },
         cite: {
           'text-align': 'center',

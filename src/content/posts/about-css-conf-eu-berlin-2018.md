@@ -5,7 +5,7 @@ tags: ['conference', 'css', 'berlin']
 description: 'My notes on the CSSconfg EU 2018'
 ---
 
-Hello all!! I decided to write this blog post to share with you the new things I learned attending this year's edition of <a href="https://2018.  cssconf.eu" target="_blank" title="cssconf.eu official web page">CSSconf EU</a> in Berlin (Friday, June 1st). In this post I will focus more on the talks, I will cover other venue details in <a href="https://goodguydaniel.com/blog/about-js-conf-eu-berlin-2018/" target="_blank" title="JSconf EU 2018 | Blog">another blog post</a> on <a href="https://goodguydaniel.com/blog/about-js-conf-eu-berlin-2018/" target="_blank" title="JSconf EU 2018 | Blog">JSConf EU</a> that had a similar organization.
+Hello all!! I decided to write this blog post to share with you the new things I learned attending this year's edition of <a href="https://2018.  cssconf.eu" target="_blank" title="cssconf.eu official web page">CSSconf EU</a> in Berlin (Friday, June 1st). In this post I will focus more on the talks, I will cover other venue details in <a href="https://danielcaldas.github.io/posts/about-js-conf-eu-berlin-2018/" target="_blank" title="JSconf EU 2018 | Blog">another blog post</a> on <a href="https://danielcaldas.github.io/posts/about-js-conf-eu-berlin-2018/" target="_blank" title="JSconf EU 2018 | Blog">JSConf EU</a> that had a similar organization.
 
 ### For starters
 
@@ -434,4 +434,4 @@ Here the list of the talks with links to videos (at this point the majority of t
 
 ### And then...
 
-I will also write <a href="https://goodguydaniel.com/blog/about-js-conf-eu-berlin-2018/" target="_blank" title="JSconf EU 2018 | Blog">a blog post about the JSConf</a> that happened in the following two days where I'll also talk about Berlin and the venue to give you a real insider perspective on the conference so that you can properly decide whether or not you will attend it next year.
+I will also write <a href="https://danielcaldas.github.io/posts/about-js-conf-eu-berlin-2018/" target="_blank" title="JSconf EU 2018 | Blog">a blog post about the JSConf</a> that happened in the following two days where I'll also talk about Berlin and the venue to give you a real insider perspective on the conference so that you can properly decide whether or not you will attend it next year.
