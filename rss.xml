@@ -1711,6 +1711,40 @@ mutated).
 ]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&amp;lt;/Accordion&amp;gt;&lt;/p&gt;
+</content:encoded></item><item><title>How to use RxJS with Svelte</title><link>https://danielcaldas.github.io/posts/how-to-svelte-rxjs/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/how-to-svelte-rxjs/</guid><description>How to use RxJS with Svelte</description><pubDate>Mon, 05 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Svelte is an increasingly famous JavaScript framework; &amp;lt;a href=&amp;quot;https://www.reddit.com/r/javascript/comments/llk8jp/review_of_svelte/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Review of Svelte : javascript&amp;quot;&amp;gt;the community&amp;lt;/a&amp;gt; appears to be reacting positively to the developer experience offered by Svelte. RxJS has increasingly become a standard for &amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-programming-fundamentals&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Fundamentals of Reactive Programming | danielcaldas.github.io&amp;quot;&amp;gt;Reactive Programming&amp;lt;/a&amp;gt; mainly due to Angular’s endorsement that builds its core functionalities around Observables, and the framework &amp;lt;a href=&amp;quot;https://angular.io/guide/http#requesting-non-json-data&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Angular&amp;quot;&amp;gt;naturally interfaces with RxJS&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;p&gt;Svelte has a reactive nature that makes it extremely suitable to integrate with RxJS. Why would anybody put the effort? &lt;strong&gt;Well, simply put, you can leverage the whole RxJS ecosystem and APIs to manipulate data streams that would perfectly plug into Svelte&lt;/strong&gt;. Let’s look at a small example where we regularly pull data from a set of characters in a &amp;lt;a href=&amp;quot;https://anapioficeandfire.com/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;An API of Ice And Fire&amp;quot;&amp;gt;public Game of Thrones API&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const CHARACTERS_IDS = [583, 582, 581];
+let gotCharacters = of([]);
+const ajaxCharacters = () =&amp;gt;
+ CHARACTERS_IDS.map((cid) =&amp;gt;
+   ajax({
+     method: &apos;get&apos;,
+     url: `https://anapioficeandfire.com/api/characters/${cid}`,
+   })
+ );
+gotCharacters = interval(5000).pipe(
+ tap(() =&amp;gt; console.log(&apos;fetching characters...&apos;)),
+ switchMap(() =&amp;gt; combineLatest(...ajaxCharacters(CHARACTERS_IDS))),
+ startWith([])
+);
+&amp;lt;div&amp;gt;
+ {#each $gotCharacters as c}
+   &amp;lt;li id=&amp;quot;{`character-${c.id}`}&amp;quot;&amp;gt;
+     &amp;lt;ul&amp;gt;
+       &amp;lt;li id=&amp;quot;{`character-${c.id}-name`}&amp;quot;&amp;gt;
+         Name: {c.name}, Played by: {c.playedBy}
+       &amp;lt;/li&amp;gt;
+     &amp;lt;/ul&amp;gt;
+   &amp;lt;/li&amp;gt;
+ {/each}
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;See how &lt;code&gt;$gotCharacters&lt;/code&gt; &lt;strong&gt;within the Svelte template language auto subscribed to what originally is an RxJS stream? We’re directly streaming data to the UI with no boilerplate in between whatsoever to pull values out of the stream of us!&lt;/strong&gt; In this small example, we see how we can have an RxJS flavored implementation within a Svelte component, leveraging the full power of RxJS operators to create and manipulate data streams.&lt;/p&gt;
+&lt;p&gt;We can say Svelte is the &lt;em&gt;“new cool kid in the block”&lt;/em&gt;. It has enlarged its community over the years. &amp;lt;a href=&amp;quot;https://svelte.dev/blog/svelte-3-rethinking-reactivity&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Svelte 3: Rethinking reactivity&amp;quot;&amp;gt;Svelte 3&amp;lt;/a&amp;gt; comes with reactivity at its core, making it suitable to plugin RxJS into Svelte applications.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“As usual, React and Vue lead the pack, but Svelte is quickly establishing itself as a very serious contender for the front-end crown.“, &amp;lt;a href=&amp;quot;https://2020.stateofjs.com/en-US/technologies/front-end-frameworks/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;State of JS 2020: Front-end Frameworks&amp;quot;&amp;gt;State of JS 2020: Front-end Frameworks&amp;lt;/a&amp;gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;RxJS is known to be the go to library when it comes to programming with streams. Reactive programming &amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-rxjs-pros-cons&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Reactive Programming: The Good and the Bad | danielcaldas.github.io&amp;quot;&amp;gt;is famous for making complex things easier&amp;lt;/a&amp;gt; by offering an extensive API of operators that give developers extreme power and flexibility when writing complex event-driven user interfaces.&lt;/p&gt;
 </content:encoded></item><item><title>Basic markdown style guide</title><link>https://danielcaldas.github.io/posts/markdown-example/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/markdown-example/</guid><description>You can author content using the familiar markdown syntax you already know. All basic markdown syntax is supported.</description><pubDate>Sat, 02 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Markdown is powered by &lt;a href=&quot;https://markdoc.dev/&quot;&gt;Markdoc&lt;/a&gt;. This is an example post to demonstrate all the basic markdown syntax. You can author content using the familiar markdown syntax you already know.&lt;/p&gt;
 &lt;h2&gt;Inline formatting&lt;/h2&gt;
 &lt;p&gt;Bold: &lt;strong&gt;This text is bold&lt;/strong&gt;.&lt;/p&gt;
