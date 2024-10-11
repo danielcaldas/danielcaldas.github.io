@@ -1,0 +1,100 @@
+---
+import Layout from './Layout.astro'
+import {formatDateYMD} from '@utils/format'
+import type {PostFrontMatter} from '../type'
+
+interface Props {
+    FrontMatter: PostFrontMatter
+}
+const {FrontMatter} = Astro.props
+const title = FrontMatter.title
+---
+
+<Layout title={title} navbar={false}>
+    <a rel="prefetch" class="panda-link mt-6" href="/">Back</a>
+    <style is:inline>
+        /* notification */
+        .notification p {
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 0.5rem 1rem;
+            font-size: small;
+        }
+
+        .notification-warning {
+            background-color: #fff3cd;
+            border-color: #ffeeba;
+            color: #856404;
+        }
+
+        .notification-danger {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+        }
+
+        .notification-success {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+        }
+
+        .notification-info {
+            background-color: #d1ecf1;
+            border-color: #bee5eb;
+            color: #0c5460;
+        }
+
+        .dark .notification-warning {
+            background-color: #856404;
+            border-color: #ffeeba;
+            color: #fff3cd;
+        }
+
+        .dark .notification-danger {
+            background-color: #721c24;
+            border-color: #f5c6cb;
+            color: #f8d7da;
+        }
+
+        .dark .notification-success {
+            background-color: #155724;
+            border-color: #c3e6cb;
+            color: #d4edda;
+        }
+
+        .dark .notification-info {
+            background-color: #0c5460;
+            border-color: #bee5eb;
+            color: #d1ecf1;
+        }
+    </style>
+    <div class="mt-6">
+        <h1 class="text-4xl">{title}</h1>
+        <div class="flex sm:flex-row flex-col rounded-lg bg-stone-100 dark:bg-stone-600 p-2 px-4">
+            <div>
+                {
+                    FrontMatter.tags &&
+                        FrontMatter.tags.map((tag) => (
+                            <span class="ml-2">
+                                <a href={'/tags/' + tag} class="text-sm mr-2 panda-link">
+                                    #{tag}
+                                </a>
+                            </span>
+                        ))
+                }
+            </div>
+            <span class="ml-auto mr-4 text-sm font-normal"> Posted on {formatDateYMD(FrontMatter.pubDate)}</span>
+        </div>
+    </div>
+    <article class="prose dark:prose-invert prose-stone max-w-prose mt-6">
+        <slot />
+    </article>
+    {
+        FrontMatter.pubDate !== FrontMatter.lastModified && (
+            <div class="mt-9 flex text-sm font-italic opacity-80">
+                <span class="ml-auto">Last modified on {formatDateYMD(FrontMatter.lastModified)}</span>
+            </div>
+        )
+    }
+</Layout>

@@ -1,0 +1,27 @@
+---
+import BlogPostLayout from '@layouts/BlogPostLayout.astro'
+export const prerender = true
+
+export async function getStaticPaths() {
+    const all_books = await Astro.glob('../../content/bookshelf/*.{md,mdx}')
+    const default_books = all_books.filter((post) => !post.file.includes('.en.md'))
+    return default_books.map((post) => {
+        const dirs = post.file.split('/')
+        const fileName = dirs.pop().split('.').shift()
+
+        return {
+            params: {
+                slug: `${fileName}`,
+            },
+            props: {
+                post: post,
+            },
+        }
+    })
+}
+const {Content, frontmatter} = Astro.props.post
+---
+
+<BlogPostLayout FrontMatter={frontmatter}>
+    <Content />
+</BlogPostLayout>

@@ -1,0 +1,23 @@
+---
+import {PandaConfig} from '../config'
+const {start, footer} = PandaConfig
+---
+
+<footer class="mt-12 mb-6 text-sm">
+    <div class="mb-1">
+        {
+            footer &&
+                footer.map((item, index) => (
+                    <span>
+                        <a href={item.url} class="panda-link">
+                            {item.title}
+                        </a>
+                        {index !== footer.length - 1 && <span class="mx-1">|</span>}
+                    </span>
+                ))
+        }
+    </div>
+    <div class="mb-1">
+        <span>{start}-{new Date().getFullYear()}</span>
+    </div>
+</footer>

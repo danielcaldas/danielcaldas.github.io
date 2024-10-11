@@ -1,0 +1,38 @@
+---
+import BlogListLayout from '@layouts/BlogListLayout.astro'
+export const prerender = true
+
+export async function getStaticPaths() {
+    const posts = await Astro.glob('../../content/posts/**/*.{md,mdx}')
+    const postTags: Set<string> = new Set<string>(
+        posts
+            .filter((i) => i.frontmatter.tags)
+            .map((i) => i.frontmatter.tags)
+            .flat(),
+    )
+    const books = await Astro.glob('../../content/bookshelf/**/*{.md,mdx}')
+    const bookTags: Set<string> = new Set<string>(
+        books
+            .filter((i) => i.frontmatter.tags)
+            .map((i) => i.frontmatter.tags)
+            .flat(),
+    )
+
+    return Array.from(postTags.union(bookTags)).map((tag) => {
+        console.info(tag)
+        return {
+            params: {
+                tag: tag.replace(/\s/g, '-'),
+            },
+            props: {
+                tag,
+                source: postTags.has(tag) ? 'posts' : 'bookshelf',
+            },
+        }
+    })
+}
+const {tag, source} = Astro.props
+---
+
+{console.info(tag)}
+<BlogListLayout tag={tag} category="" source={source} />

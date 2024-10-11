@@ -1,0 +1,14 @@
+---
+const {title, slug, posts} = Astro.props
+
+const container = posts.find((p) => p.file.includes(`${slug}.md`))
+import Layout from '@layouts/Layout.astro'
+const {Content} = container
+export const prerender = true
+---
+
+<Layout title={title}>
+    <div class="mt-9">
+        <Content />
+    </div>
+</Layout>

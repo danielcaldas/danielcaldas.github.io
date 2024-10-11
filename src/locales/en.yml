@@ -1,0 +1,13 @@
+nav:
+    posts: posts
+footer:
+    home: home
+    rss: rss
+    timeline: timeline
+    collection: collection
+    drafts: drafts
+    contact: contact
+pagination:
+    previous: Previous
+    next: Next
+
