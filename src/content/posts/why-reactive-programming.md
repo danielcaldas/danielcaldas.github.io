@@ -189,30 +189,8 @@ If you feel like taking a shot at Reactive Programming, I'll gladly guide you th
 
 <br />
 
----
-
 - **Part 1 - Why You Should Consider Reactive Programming**
-- <a
-  href="https://danielcaldas.github.io/posts/reactive-programming-fundamentals"
-  target="\_blank"
-  title="Fundamentals of Reactive Programming | danielcaldas.github.io"
-  > Part 2 - Fundamentals of Reactive Programming
-  > </a>
-- <a
-  href="https://danielcaldas.github.io/posts/hands-on-reactive-programming-rxjs"
-  target="\_blank"
-  title="Hands-on Reactive Programming with RxJS | danielcaldas.github.io"
-  > Part 3 - Hands-on Reactive Programming with RxJS
-  > </a>
-- <a
-  href="https://danielcaldas.github.io/posts/reactive-rxjs-pros-cons"
-  target="\_blank"
-  title="Reactive Programming: The Good and the Bad | danielcaldas.github.io"
-  > Part 4 - Reactive Programming: The Good and the Bad
-  > </a>
-- <a
-  href="https://danielcaldas.github.io/posts/awesome-reactive"
-  target="\_blank"
-  title="Awesome RxJS and Reactive Programming Resources | danielcaldas.github.io"
-  > Part 5 - Awesome RxJS and Reactive Programming Resources
-  > </a>
+- <a href="https://danielcaldas.github.io/posts/reactive-programming-fundamentals" target="\_blank" title="Fundamentals of Reactive Programming | danielcaldas.github.io">Part 2 - Fundamentals of Reactive Programming</a>
+- <a href="https://danielcaldas.github.io/posts/hands-on-reactive-programming-rxjs" target="\_blank" title="Hands-on Reactive Programming with RxJS | danielcaldas.github.io">Part 3 - Hands-on Reactive Programming with RxJS</a>
+- <a href="https://danielcaldas.github.io/posts/reactive-rxjs-pros-cons" target="\_blank" title="Reactive Programming: The Good and the Bad | danielcaldas.github.io">Part 4 - Reactive Programming: The Good and the Bad</a>
+- <a href="https://danielcaldas.github.io/posts/awesome-reactive" target="_blank" title="Awesome RxJS and Reactive Programming Resources | danielcaldas.github.io">Part 5 - Awesome RxJS and Reactive Programming Resources</a>

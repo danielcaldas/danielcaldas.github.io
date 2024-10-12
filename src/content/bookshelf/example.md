@@ -1,9 +1,10 @@
 ---
-title: "Book title"
-description: "You can author content using the familiar markdown syntax you already know. All basic markdown syntax is supported."
+title: '-'
+description: 'description'
 pubDate: 2024-03-02
 tags: []
 ---
 
 ## Title
-Text
+
+This content is a work in progress.

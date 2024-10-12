@@ -1,9 +1,8 @@
 ---
 title: "There's something off about Open Source"
 description: 'OSS dilemma'
-pubDate: 2024-03-02
+pubDate: 2020-12-16
 tags: ['open-source', 'opinion']
-categories: ['tech']
 ---
 
 > **Update Oct 12th 2024**
