@@ -19,7 +19,7 @@ export default defineConfig({
           textDecorationColor: 'rgb(var(--color-text-link))',
         },
         li: {
-          'word-break': 'break-all',
+          'word-break': 'break-word',
         },
         'li code': {
           'white-space': 'pre-wrap',
@@ -44,6 +44,9 @@ export default defineConfig({
           'border-radius': '0.2em',
           'background-color': 'var(--color-code-bg)',
         },
+        p: {
+          'word-break': 'break-word',
+        },
         'p code::after': {
           content: 'none',
         },
@@ -51,7 +54,7 @@ export default defineConfig({
           content: 'none',
         },
         'blockquote p': {
-          'word-break': 'break-all',
+          'word-break': 'break-word',
         },
         'blockquote code': {
           'white-space': 'pre-wrap',
