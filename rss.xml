@@ -1711,6 +1711,57 @@ mutated).
 ]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&amp;lt;/Accordion&amp;gt;&lt;/p&gt;
+</content:encoded></item><item><title>How to Fix GitHub Actions: Support for password authentication was removed</title><link>https://danielcaldas.github.io/posts/how-to-fix-github-password-authentication/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/how-to-fix-github-password-authentication/</guid><description>Linking private repos as npm dependencies the proper way</description><pubDate>Mon, 01 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Today the GitHub PAT (&lt;em&gt;personal access token&lt;/em&gt;) expired in &lt;a href=&quot;https://tweak-extension.com&quot;&gt;one of my projects&lt;/a&gt;, I literally waked up to this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm ERR! code 128
+npm ERR! An unknown git error occurred
+npm ERR! command git --no-replace-objects ls-remote https://***@github.com/org/my-dep.git
+npm ERR! remote: Support for password authentication was removed on August 13, 2021.
+npm ERR! remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+npm ERR! fatal: Authentication failed for &apos;https://github.com/org/my-dep.git/&apos;
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/runner/.npm/_logs/2022-08-01T16_02_11_768Z-debug-0.log
+Error: Process completed with exit code 128.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;
+&amp;lt;br /&amp;gt;
+(╯°□°)╯︵ ┻━┻
+&amp;lt;br /&amp;gt;
+&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;p&gt;It happens that GitHub dropped the support to pass along the password to auth on private repos, which is part of my workflow, because I link npm dependencies with &lt;code&gt;git+https&lt;/code&gt; schema, in my &lt;code&gt;package.json&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-json&quot;&gt;// package.json
+&amp;quot;dependencies&amp;quot;: {
+  // ...
+  &amp;quot;my-dep&amp;quot;: &amp;quot;git+https://&amp;lt;PAT_TOKEN_GOES_HERE&amp;gt;@github.com/org/my-dep.git#3b3b3371d24b31d18bfef6296635df37f7131925&amp;quot;,
+  // ...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;💡 &lt;code&gt;#3b3b3371d24b31d18bfef6296635df37f7131925&lt;/code&gt; targets a specific commit.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Well for some reason this was not working anymore, that&apos;s somewhat good, because I had my PAT hardcoded right there 🤠&lt;/p&gt;
+&lt;h2&gt;Let&apos;s fix it!&lt;/h2&gt;
+&lt;p&gt;The proper way to this, which also addresses the issue I&apos;ve posted initially, is the following.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;First &lt;a href=&quot;https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token&quot;&gt;create a new PAT&lt;/a&gt; - ideally with minimum amount of scopes.&lt;/li&gt;
+&lt;li&gt;Now you have your PAT you&apos;ll have to make it accessible to whatever repo where you will use the token in its GitHub action. Add this to the &lt;a href=&quot;https://docs.github.com/en/actions/security-guides/encrypted-secrets&quot;&gt;repo secrets&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Great, now my tricky work around. Because I can only install this via GitHub (&lt;em&gt;limited infra available to manage packages&lt;/em&gt;), I add my target dependency under &lt;code&gt;optionalDependencies&lt;/code&gt; rather than &lt;code&gt;dependencies&lt;/code&gt; in the &lt;code&gt;package.json&lt;/code&gt;. This means we will use &lt;code&gt;npm install --no-optional&lt;/code&gt; in our CI in order to skip the dependency that needs auth to download the package from a private repo.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&quot;language-json&quot;&gt;&amp;quot;optionalDependencies&amp;quot;: {
+  &amp;quot;my-dep&amp;quot;: &amp;quot;git+https://github.com/org/my-dep.git#3b3b3371d24b31d18bfef6296635df37f7131925&amp;quot;
+},
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;Now &lt;strong&gt;in your GitHub action add the additional&lt;/strong&gt; steps.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&quot;language-yml&quot;&gt;  - run: npm install --no-optional
+  - run: npm install git+https://$TOKEN@github.com/org/my-dep.git#3b3b3371d24b31d18bfef6296635df37f7131925
+  env:
+    TOKEN: ${{ secrets.MY_PAT_SECRET }}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;💡 &lt;code&gt;MY_PAT_SECRET&lt;/code&gt; needs to match the secret name you added in GitHub.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Hope this workaround helps you as it helped me!&lt;/p&gt;
 </content:encoded></item><item><title>How to use RxJS with Svelte</title><link>https://danielcaldas.github.io/posts/how-to-svelte-rxjs/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/how-to-svelte-rxjs/</guid><description>How to use RxJS with Svelte</description><pubDate>Mon, 05 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Svelte is an increasingly famous JavaScript framework; &amp;lt;a href=&amp;quot;https://www.reddit.com/r/javascript/comments/llk8jp/review_of_svelte/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Review of Svelte : javascript&amp;quot;&amp;gt;the community&amp;lt;/a&amp;gt; appears to be reacting positively to the developer experience offered by Svelte. RxJS has increasingly become a standard for &amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-programming-fundamentals&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Fundamentals of Reactive Programming | danielcaldas.github.io&amp;quot;&amp;gt;Reactive Programming&amp;lt;/a&amp;gt; mainly due to Angular’s endorsement that builds its core functionalities around Observables, and the framework &amp;lt;a href=&amp;quot;https://angular.io/guide/http#requesting-non-json-data&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Angular&amp;quot;&amp;gt;naturally interfaces with RxJS&amp;lt;/a&amp;gt;.&lt;/p&gt;
 &lt;p&gt;Svelte has a reactive nature that makes it extremely suitable to integrate with RxJS. Why would anybody put the effort? &lt;strong&gt;Well, simply put, you can leverage the whole RxJS ecosystem and APIs to manipulate data streams that would perfectly plug into Svelte&lt;/strong&gt;. Let’s look at a small example where we regularly pull data from a set of characters in a &amp;lt;a href=&amp;quot;https://anapioficeandfire.com/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;An API of Ice And Fire&amp;quot;&amp;gt;public Game of Thrones API&amp;lt;/a&amp;gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const CHARACTERS_IDS = [583, 582, 581];
@@ -1745,6 +1796,194 @@ gotCharacters = interval(5000).pipe(
 &lt;p&gt;“As usual, React and Vue lead the pack, but Svelte is quickly establishing itself as a very serious contender for the front-end crown.“, &amp;lt;a href=&amp;quot;https://2020.stateofjs.com/en-US/technologies/front-end-frameworks/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;State of JS 2020: Front-end Frameworks&amp;quot;&amp;gt;State of JS 2020: Front-end Frameworks&amp;lt;/a&amp;gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;RxJS is known to be the go to library when it comes to programming with streams. Reactive programming &amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-rxjs-pros-cons&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Reactive Programming: The Good and the Bad | danielcaldas.github.io&amp;quot;&amp;gt;is famous for making complex things easier&amp;lt;/a&amp;gt; by offering an extensive API of operators that give developers extreme power and flexibility when writing complex event-driven user interfaces.&lt;/p&gt;
+</content:encoded></item><item><title>My 2 cents on (tech) job interviews</title><link>https://danielcaldas.github.io/posts/my-two-cents-on-tech-job-interviews/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/my-two-cents-on-tech-job-interviews/</guid><description>My 2 cents on (tech) job interviews</description><pubDate>Tue, 18 Dec 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Well... A few months have passed since I published my first blog posts and since then I stacked up quite a few topics that I wanted to talk about, and job interviews are one of them. In this post I&apos;ll tell you about the current process that companies within the tech industry use to recruit these days. To give you some context I&apos;ll write about my first (first worth sharing) personal experience on searching for a job as a Software Engineer, a search that led me to the role of JavaScript Engineer at trivago in mid 2018 and fall 2019.&lt;/p&gt;
+&lt;p&gt;I left my first job at &amp;lt;a href=&amp;quot;https://blip.pt/jobs/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;blip find a job&amp;quot;&amp;gt;blip&amp;lt;/a&amp;gt; to join &amp;lt;a href=&amp;quot;https://company.trivago.com/careers/open-positions/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;trivago opened positions&amp;quot;&amp;gt;trivago&amp;lt;/a&amp;gt;, but I don&apos;t want to talk about my new job, instead I want to go all the way back to November 2017 and share my experience about facing several job interviews for different companies.&lt;/p&gt;
+&lt;p&gt;For a few years I had this aspiration of living in a different country in order to get to know new cultures, travel and also because I deeply believed (not past tense, I&apos;ll still do believe) that it would do great good for my personal and professional development.&lt;/p&gt;
+&lt;p&gt;I started out really slow throwing around some CVs just to see what would happen.. Well not much happened. You see I was in my first job (1 year of experience) as a software engineer and had just finished my master&apos;s... I was already aiming for international jobs at companies such as Google, Facebook or Spotify, of course I did not even get an opportunity to interview at those companies my CV would be filtered out automatically I guess...&lt;/p&gt;
+&lt;p&gt;Entering 2018 I thought to myself: &lt;em&gt;&amp;quot;Woah, easy there, let&apos;s think with both feet on the ground and really aim to more realistic opportunities and not just apply to jobs randomly and expect it to work!&amp;quot;&lt;/em&gt;.
+And it was indeed a good decision I started to spend more time analyzing the companies and the opportunities where I could indeed be a good candidate.
+Soon positive emails start to fill in my inbox with requests to schedule interviews for the upcoming weeks/months.&lt;/p&gt;
+&lt;h3&gt;The process&lt;/h3&gt;
+&lt;p&gt;A few interviews passed and it seemed that all companies would fall into this same process to hire new personnel (of course I&apos;m referring to the software engineer role or similar):&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;HR call&lt;/strong&gt; - just to do some background check, knowing candidate expectations, also a good point to get to know the company before deciding on moving forward, duration ranging from 20 to 40 minutes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Technical challenge&lt;/strong&gt; - a task more focused on the field where the candidate applies, tasks&apos; duration ranging from hours to 1 week (insane right! 1 week!).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Video call interview&lt;/strong&gt; - with some engineer probably someone with a role close to what the candidate applies to. Here normally two things can happen (not mutually exclusive):&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;You will do a &lt;strong&gt;walkthrough on the technical task of step 2.&lt;/strong&gt; and explain you&apos;re decisions while answering technical questions that might be or not related with the task at all but it always has the task has the baseline to conduct the interview.&lt;/li&gt;
+&lt;li&gt;The task is not mentioned at all which means that it was more of a filter to exclude candidates that do not match the expertise/skill required for the position. Here various things happened to me, since answering &lt;strong&gt;more generic computer science questions&lt;/strong&gt; to &lt;strong&gt;discussing the trends on a certain technological field&lt;/strong&gt; (in my case Javascript).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;&lt;strong&gt;Final on sight interview (or another video call)&lt;/strong&gt; - here questions and challenges might not belong only on the technical realm, you will face behavioral questions, process questions, good practices and so on...&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Typical questions&lt;/h3&gt;
+&lt;p&gt;Below a list of the most frequent questions. I&apos;ll break them down into two groups: technical and non-technical.&lt;/p&gt;
+&lt;h4&gt;Introduction/Background check/Soft skills questions&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;To start, tell me a little bit about yourself, your experience, your background and current job.&lt;/li&gt;
+&lt;li&gt;Why are you applying for this job?&lt;/li&gt;
+&lt;li&gt;Describe your previous role.&lt;/li&gt;
+&lt;li&gt;Tell me something about your current job that you don&apos;t like (and one that you like).&lt;/li&gt;
+&lt;li&gt;Tell me about yourself and your career so far.&lt;/li&gt;
+&lt;li&gt;Do you have experience with the technologies &lt;em&gt;A&lt;/em&gt; or &lt;em&gt;B&lt;/em&gt;?&lt;/li&gt;
+&lt;li&gt;How does your ideal work environment look like?&lt;/li&gt;
+&lt;li&gt;What do you value in your current job that you would also like to have in some new job?&lt;/li&gt;
+&lt;li&gt;What are your salary expectations?&lt;/li&gt;
+&lt;li&gt;Is salary your main criteria for the new position you&apos;re looking for?&lt;/li&gt;
+&lt;li&gt;What are you looking for in your new job?&lt;/li&gt;
+&lt;li&gt;Are you currently employed? If yes, what is your notice period?&lt;/li&gt;
+&lt;li&gt;What are your plans for the rest of the day?&lt;/li&gt;
+&lt;li&gt;Tell me about one project/task where you were active and that for some reason did not go very well. Why
+did it went wrong and whose fault it was.&lt;/li&gt;
+&lt;li&gt;What was the last thing that you read/learned about front end? &amp;lt;small&amp;gt;(in my case front end, but I imagine this could go along with any other expertise as well)&amp;lt;/small&amp;gt;&lt;/li&gt;
+&lt;li&gt;In this paper there is code from a pull request. Please describe how you would go about
+doing the code review. Write comments on the paper but explain yourself along the way.&lt;/li&gt;
+&lt;li&gt;There are three boxes, one contains only apples, one contains only oranges, and one contains both apples and oranges. The boxes have been incorrectly labeled such that no label identifies the actual contents of the box it labels. Opening just one box, and without looking in the box, you take out one piece of fruit. How many pieces of fruit do you need to take from the boxes in order to be able to label the boxes correctly?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Technical questions&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;What&apos;s the difference between an array and a linked list in terms of complexity?&lt;/li&gt;
+&lt;li&gt;What&apos;s the difference between a set and a hashmap? Can you give concrete examples where you would use
+one over the other?&lt;/li&gt;
+&lt;li&gt;Write a function that given a string it returns a boolean that indicates whether that string is a &amp;lt;a href=&amp;quot;https://en.wikipedia.org/wiki/Palindrome&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Wikipedia palindrome&amp;quot;&amp;gt;palindrome&amp;lt;/a&amp;gt;.&lt;/li&gt;
+&lt;li&gt;You have 1 hour. Pick your framework of choice and let&apos;s build a currency exchange calculator in a pair
+programming session.&lt;/li&gt;
+&lt;li&gt;Have you used async/await? If yes please explain a little how this improve the way we do IO comparing
+to an approach using promises.&lt;/li&gt;
+&lt;li&gt;Build a function that given a list of elements which can be of any type, returns the sum of the elements in the list that are numbers (please consider that numbers can appear as strings or in the middle of strings as well e.g. &amp;quot;include the number 11 on the count&amp;quot;).&lt;/li&gt;
+&lt;li&gt;What&apos;s the difference between an inner join and an outer join?&lt;/li&gt;
+&lt;li&gt;Write the function &lt;em&gt;atoi&lt;/em&gt; (alpha to an integer) (without casting the string to a number).&lt;/li&gt;
+&lt;li&gt;Write the function &lt;em&gt;itoa&lt;/em&gt; (integer to alpha) (without casting the number into a string).&lt;/li&gt;
+&lt;li&gt;Write the function reverse that given a string returns the reversed version of it (&lt;strong&gt;important&lt;/strong&gt;: you cannot use an auxiliary array to implement the algorithm).&lt;/li&gt;
+&lt;li&gt;Implement &amp;lt;a href=&amp;quot;https://gist.github.com/jaysonrowe/1592432&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;gist for fizz buzz&amp;quot;&amp;gt;fizz buzz&amp;lt;/a&amp;gt;.&lt;/li&gt;
+&lt;li&gt;What&apos;s a balanced tree?&lt;/li&gt;
+&lt;li&gt;How could you represent a tree using data structures?&lt;/li&gt;
+&lt;li&gt;Implement &amp;lt;a href=&amp;quot;https://en.wikipedia.org/wiki/Breadth-first_search&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Wikipedia breadth-first search&amp;quot;&amp;gt;Breadth-first search (BFS)&amp;lt;/a&amp;gt; algorithm.&lt;/li&gt;
+&lt;li&gt;Implement &amp;lt;a href=&amp;quot;https://en.wikipedia.org/wiki/Depth-first_search&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Wikipedia Depth-first search&amp;quot;&amp;gt;Depth-first search (DFS)&amp;lt;/a&amp;gt; algorithm.&lt;/li&gt;
+&lt;li&gt;What data structure better suites a autocomplete search field? (&amp;lt;a href=&amp;quot;https://en.wikipedia.org/wiki/Trie&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Wikipedia trie&amp;quot;&amp;gt;checkout trie&amp;lt;/a&amp;gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;That question I always ask&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;What&apos;s the worst part of working at ...?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The cool thing is, you get to ask a question as well! I particularly found very helpful to ask this question to my
+interviewers: &lt;em&gt;&amp;quot;What&apos;s the worst part of working at your company?&amp;quot;&lt;/em&gt;. You can get a few things out of this question.
+If they replied right away with something specific enough I can immediately tell the following about the company:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;They have reasonably good transparency with employees since main issues can straight away be identified and explained.&lt;/li&gt;
+&lt;li&gt;It simply may happen that this bad thing is something that you don&apos;t tolerate at all thus it will make you consider moving onto the next interviews.
+If during the answer you get the fell that the people interviewing you try to go around the question (which it&apos;s not a very smart thing to do let&apos;s be honest) maybe you&apos;ll get the feeling that they are trying to hide something from you and there&apos;s a good chance that you&apos;re feelings are right.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;&amp;quot;Homework&amp;quot; assignments&lt;/h3&gt;
+&lt;p&gt;Yes, if you have a full-time job what would you expect? Of course you need to give up a few of those lovely weekends, but please just make it worth, even if you&apos;re not confident that you&apos;re test case will succeed at least try and learn something from it, otherwise it&apos;s just a waste of nice weekends (been there, done that).&lt;/p&gt;
+&lt;p&gt;I&apos;ve no really solid position on this topic, I agree that companies need somehow to access your skill, but I think this should not be some automated score that excludes you. Test cases should be taken seriously from both sides and they should be an indication that the candidate taking the test has already some real changes to actually get the job.&lt;/p&gt;
+&lt;p&gt;I&apos;m just impressed how simply people start to accept the fact that you need to work for free during a not that small amount of time to be considered for some job position.&lt;/p&gt;
+&lt;p&gt;Below are a list of a few assignments that companies request me to do, just so that you have an idea of the kind challenges you could face out there:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You have two APIs that provide you positions and information of taxi vehicles, please build an app that fetches and displays this information in an uniform and useful way. If possible display the vehicles information within a map (e.g. using google maps API).&lt;/li&gt;
+&lt;li&gt;Build an interface that performs currency exchange conversion using some currency conversion rates API (something similar to what you see when you convert currencies on google except for the line chart part)&lt;/li&gt;
+&lt;li&gt;Build a shopping cart with a list of items that you can dynamically add/edit/remove from the shopping cart (discounts and that kind of shit can be applied...). In this particular challenge the company sent me a layout that I was supposed to implement like &amp;quot;&lt;em&gt;pixel perfect&lt;/em&gt;&amp;quot;. Although they provided all the graphical assets and SASS stylesheets
+with color palettes and some elements already ready to use. I just found this challenge to require way too much effort.&lt;/li&gt;
+&lt;li&gt;You have an API that retrieves products from a supermarket, for each product you have the detail, price and image. Use this information to display the information in a convenient way to consult it also needs to be responsive. Special requirement is that on mobile instead of show the detail of the product you just show the name and when the product is clicked it opens a different page with the product information.&lt;/li&gt;
+&lt;li&gt;Build a &amp;lt;a href=&amp;quot;https://en.wikipedia.org/wiki/T9_(predictive_text)&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;t9 predictive text wiki page&amp;quot;&amp;gt;t9 (predictive text)&amp;lt;/a&amp;gt; number to word list converter as a Node backend and React/Redux fronted. For this challenge the whole commit history can be checked in this public repository &amp;lt;a href=&amp;quot;https://github.com/danielcaldas/el-conversor&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;el-conversor Github repository&amp;quot;&amp;gt;danielcaldas/el-conversor&amp;lt;/a&amp;gt;.&lt;/li&gt;
+&lt;li&gt;Build a classic &lt;em&gt;todo list&lt;/em&gt; using javascript only. After that try and use a JavaScript framework instead to implement the exact same app, then some smaller and more detailed tasks followed as optional work, stuff like:
+&lt;ul&gt;
+&lt;li&gt;Try and change the layout of the todo list via a query parameter;&lt;/li&gt;
+&lt;li&gt;Try to improve tolling, add hot reload for CSS files (using webpack).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Takeaways&lt;/h3&gt;
+&lt;p&gt;These are the things I wish I knew before.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Ask questions, the soon the better&lt;/strong&gt; - it&apos;s your new job that we are talking about here, just don&apos;t hold back any questions that you may have, sometimes the answer to a simple question may reveal something that changes or greatly reinforces your opinion on the company and your will to move forward with the process.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;quot;Salary is not relevant&amp;quot; is bullshit&lt;/strong&gt; - at the end everything is about money.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Be aware of the benefits and counterbalance them with the base salary&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SYAO&lt;/strong&gt; - Yes, study your ass off. Practice and read a lot. Here a few good resources to get you started:
+&lt;ul&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;http://www.crackingthecodinginterview.com/&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;nofollow&amp;quot;   title=&amp;quot;Cracking the Coding Interview: 189 Programming Questions and Solutions&amp;quot;&amp;gt; Cracking the Coding Interview&amp;lt;/a&amp;gt; - If you&apos;re going to interview for companies that focus Algorithms &amp;amp; Data Structures questions, this is a very good resource. It contains a curated list of tipical problems. It will teach you how to reason about problem solving questions and to to better approach them.&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://github.com/trekhleb/javascript-algorithms&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;algorithms and data structures implemented in javascript with explanations and links to further readings&amp;quot;&amp;gt;trekhleb/javascript-algorithms&amp;lt;/a&amp;gt; - Algorithms and data structures implemented in JavaScript with explanations and links to further readings.&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://github.com/leonardomso/33-js-concepts&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;33 concepts every javascript developer should know&amp;quot;&amp;gt;leonardomso/33-js-concepts&amp;lt;/a&amp;gt; - 33 concepts every JavaScript developer should know.&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://github.com/h5bp/Front-end-Developer-Interview-Questions&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;a list of helpful front-end related questions you can use to interview potential candidates, test yourself or completely ignore&amp;quot;&amp;gt;h5bp/Front-end-Developer-Interview-Questions&amp;lt;/a&amp;gt; - A list of helpful front-end related questions you can use to interview potential candidates, test yourself or completely ignore.&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://github.com/yangshun/tech-interview-handbook&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;algorithms study materials, behavioral content and tips for rocking your coding interview&amp;quot;&amp;gt;yangshun/tech-interview-handbook&amp;lt;/a&amp;gt; - Algorithms study materials, behavioral content and tips for rocking your coding interview.&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://github.com/yangshun/front-end-interview-handbook&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;almost complete answers to &apos;front-end job interview questions&apos; which you can use to interview potential candidates, test yourself or completely ignore&amp;quot;&amp;gt; yangshun/front-end-interview-handbook&amp;lt;/a&amp;gt; - Almost complete answers to &amp;quot;Front-end Job Interview Questions&amp;quot; which you can use to interview potential candidates,test yourself or completely ignore.&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://github.com/kdn251/interviews&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;everything you need to know to get the job&amp;quot;&amp;gt;kdn251/interviews&amp;lt;/a&amp;gt; - Everything you need to know to get the job.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lean about the company (and not only the &amp;quot;culture&amp;quot;)&lt;/strong&gt; - learn as much as you can... office location, employees reviews, are people leaving or coming, how is the company performing financially, what technologies do they use, what projects are they working on stuff like that check out &amp;lt;a href=&amp;quot;https://www.glassdoor.com/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Glassdoor is a website where employees and former employees anonymously review companies and their management&amp;quot;&amp;gt;&lt;em&gt;glassdoor.com&lt;/em&gt;&amp;lt;/a&amp;gt;, it&apos;s also nice to check the companies&apos; &amp;lt;a href=&amp;quot;https://github.com/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Github inc. is a web-based hosting service for version control using git&amp;quot;&amp;gt;&lt;em&gt;github.com&lt;/em&gt;&amp;lt;/a&amp;gt; profile to check if there are actively engaged with the open source community.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;It&apos;s ok to be nervous&lt;/strong&gt; - yes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fail&lt;/strong&gt; - &lt;em&gt;“Don&apos;t bury your failures. Let them inspire you.”&lt;/em&gt; - it&apos;s not an original quote, but it fits just great here and kind of sums up what I wanted to say.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Be honest&lt;/strong&gt; - I remember one of this technical interviews, this guy telling me: &lt;em&gt;&amp;quot;Ok, now let&apos;s do some SQL questions to see how you doing...&amp;quot;&lt;/em&gt;. My first thought was &lt;em&gt;&amp;quot;That&apos;s it, I&apos;m fucked!&amp;quot;&lt;/em&gt;, but then I didn&apos;t lose my time or theirs, I was straightforward and told him that I have very limited knowledge of SQL, never done it in a real job only had this university class that gave me some basics on database design and little bit of SQL and that&apos;s it, the guy said that it was ok and he appreciated my honesty, still I passed to the next interviews round.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Don&apos;t ever drop performance on your current job&lt;/strong&gt; - You&apos;re still employed? Then make sure that this &lt;em&gt;parallel life&lt;/em&gt; of yours does not interferes with your current job, they are the ones paying your salary not the companies you are interviewing.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Leaving your current job? Don&apos;t forget to keep connections with your old colleagues keeping the doors open&lt;/strong&gt; - especially if you enjoyed your previous company (as I did) make an effort to keep in touch.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Take the technical tasks seriously and face them as an opportunity to learn&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Take notes, learn from your mistakes&lt;/strong&gt; - It&apos;s important that you take notes and here&apos;s why. On my first few sets of interviews I thought I could just be super concentrated and memorize important details or simply wrote them down after the interview. Well I couldn&apos;t, it happens&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Be patient&lt;/strong&gt; - These days recruitment processes may take ages (can take up to several months!) so just don&apos;t be actively waiting around for the next reply otherwise it just drives you mad, just keep going with your life normally without letting this affect your stress levels too much.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Be persistent&lt;/strong&gt; - It may happen that you do 10 interviews and you don&apos;t succeed, on one hand this can be a huge source of frustration and disappointment, but on the other
+hand remember that you getting each time more experiment and more comfortable around this interviewing stuff and that experience it&apos;s powerful! You&apos;re just increasing your odds to succeed on the next interview at each failed one.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Be prepared for your new challenge&lt;/h3&gt;
+&lt;p&gt;If you&apos;re persistent you&apos;ll get that job, I have no doubts. Now, once you get that cool gig you worked so hard for, you&apos;ll want to keep performing well! Try and be proactive from day one.&lt;/p&gt;
+&lt;h3&gt;Dear recruiters please do not...&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Please do not approach someone with an offer if the person in question had just started a new job in that same week.&lt;/li&gt;
+&lt;li&gt;Please do not let candidates &lt;em&gt;hanging&lt;/em&gt;, even if the response not positive please communicate, even if it is an auto-generated email saying that the candidate was excluded from the selection process.&lt;/li&gt;
+&lt;li&gt;Please do not ask to the candidate if it&apos;s possible to deliver a task that supposedly takes 1 week to complete two or three days after you send the task to the candidate? Wait, is the candidate working for your company already?&lt;/li&gt;
+&lt;li&gt;Schedule calls and interviews with care, don&apos;t forget relevant details such as the fact that the candidate might live in some country with a different timezone.&lt;/li&gt;
+&lt;li&gt;Please do not ask candidates to do long homework assignments to exclude them due to something minor like the &amp;quot;style&amp;quot; of the code or too much over-engineering, this things can be detected with a 10 minutes coding interview by solving a simple challenge that demonstrates how the candidate approaches problems, both abstractly and implementation-wise.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Final note&lt;/h3&gt;
+&lt;p&gt;Again much of the written above is just my opinion. I hope you find useful some of the sections of this post even if you don&apos;t work on the tech industry.&lt;/p&gt;
+</content:encoded></item><item><title>There&apos;s something off about Open Source</title><link>https://danielcaldas.github.io/posts/open-source-dilemma/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/open-source-dilemma/</guid><description>OSS dilemma</description><pubDate>Sat, 02 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Update Oct 12th 2024&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I didn&apos;t modify this article. I don&apos;t fully agree with my views here anymore. The problem is not on FOSS, but rather on peoples&apos; expectations and approach to FOSS. I&apos;m still of the opinion that FOSS is not at a fully sustainable stage. Major projects today are typically funded and it&apos;s no longer rare to see full-time employed developers work on maintaining FOSS these days.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;There&apos;s no company out there these days that doesn&apos;t rely on Open Source Software (OSS) to some extent. Well, at least that&apos;s what I believe it&apos;s the case. I think something is off about OSS or the perception of it anyway.&lt;/p&gt;
+&lt;p&gt;I&apos;ve seen people rambling on tweeter; sometimes, it goes like this:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Person A&lt;/strong&gt;: &amp;quot;My OSS package has thousands of weekly downloads!&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Person B&lt;/strong&gt;: &amp;quot;Congrats, great job. Keep going!&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Person A&lt;/strong&gt;: &amp;quot;Hmm... looks like some big company is using my software. The least they could do would be to sponsor me on GitHub or something, right?&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Person B&lt;/strong&gt;: &lt;em&gt;(quietly leaves the room)&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Although platforms such as &amp;lt;a href=&amp;quot;https://github.com/sponsors&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;GitHub Sponsors&amp;quot;&amp;gt;GitHub Sponsors&amp;lt;/a&amp;gt; or &amp;lt;a href=&amp;quot;https://opencollective.com/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Open Collective - Make your community sustainable. Collect and spend money transparently&amp;quot;&amp;gt;Open Collective&amp;lt;/a&amp;gt; (which are great, btw!) exist today, there&apos;s no such thing as an economically sustainable ecosystem for OSS. I see projects like &amp;lt;a href=&amp;quot;https://webpack.js.org/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;bundle your scripts&amp;quot;&amp;gt;Webpack&amp;lt;/a&amp;gt;, massively used. If you look at their Open Collective profile today, they have an estimated annual budget of a bit more than 200K USD. That&apos;s great, but what you we probably fail to realize is that: &lt;strong&gt;critical people behind Webpack made a decision at some point, the decision to make it open&lt;/strong&gt;. Perhaps we could today live in a world where Webpack is a successful and lucrative SASS company? But we don&apos;t. Webpack is free for you to use, and its source is available for you to tweak around if you have that much time on your hands.&lt;/p&gt;
+&lt;p&gt;I think we are still in the early stages of OSS, and society is yet a bit far away from recognizing how fundamental OSS is. The role they play in the technologies we use daily. Non &lt;em&gt;tech-savvy&lt;/em&gt; people are mostly not aware of it. On our side (the &lt;em&gt;tech-savvy&lt;/em&gt; people), we build up the wrong expectations about creating and maintaining OSS projects. &lt;strong&gt;If your primary goal is to get money from it, build a business. If you make your code open, you are willingly giving it away for free. This means other developers and companies (no matter how big) are free to use it as they please&lt;/strong&gt;. This is something you should reason about from day one if your expectations sit on building some revenue source. Of course, you can cut deals with the companies, collaborate as a contractor &lt;em&gt;yadda yadda yadda&lt;/em&gt; and make some cash. Don&apos;t merely assume those entities using your software are obligated to pay you or help you in any way (well, not legally, maybe morally). That&apos;s just not how it works.&lt;/p&gt;
+&lt;h4&gt;The &amp;quot;give back to the community&amp;quot; deal&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;Oh, but this company X, built most of their stuff with OSS, they must give back to the community.&amp;quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I fell you. There&apos;s resentment, bitterness. Thinking that the company &lt;em&gt;X&lt;/em&gt; has millions of cash flow and doesn&apos;t even consider the value your OSS plays in its products, by making a simple donation. That&apos;s one of the &amp;quot;perks&amp;quot; of being an &lt;em&gt;open sourcerer&lt;/em&gt;. &lt;strong&gt;If your primary goal is to get money from it, build a business&lt;/strong&gt;.&lt;/p&gt;
+&lt;h4&gt;OSS is an endangered species&lt;/h4&gt;
+&lt;p&gt;I believe OSS is at risk. I think in the long run, attempts to build businesses around OSS might damage its core values, which I believe are:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;OSS is released under a license in which the copyright holder &lt;strong&gt;grants users the rights to use, study, change, and distribute the software to anyone and for any purpose&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;OSS is famous for being &lt;strong&gt;developed in a collaborative public manner&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Aiming to build an economically sustainable OSS could potentially incur in one of the two things (just a theory of course):&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;New types of licenses will start popping up. Regulations would be put in place to ensure that companies using OSS, that generate ridiculous amounts of cash, distribute part of the revenue with the OSS projects equitably. Which breaks property &lt;code&gt;1.&lt;/code&gt; mentioned above.&lt;/li&gt;
+&lt;li&gt;Some parts of the OSS become private, breaking &lt;code&gt;2.&lt;/code&gt; mentioned above. This means that collaboration becomes limited (limited to the actual open parts of the source code)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I&apos;m mostly worried about the last point. Would this mean that restrictions on who can contribute to the source would damage its quality? Simultaneously, would software companies that are just starting out be completely crashed because they now have to pay for every software they use?&lt;/p&gt;
+&lt;p&gt;This is quite a dilemma for me. I&apos;m interested to see how all this is going pan out. My bet is on the money. Money wins, most of the time.&lt;/p&gt;
+</content:encoded><category>tech</category></item><item><title>Reactive Series</title><link>https://danielcaldas.github.io/posts/reactive-series-preface/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/reactive-series-preface/</guid><description>A series of articles on Reactive Programming and RxJS</description><pubDate>Wed, 22 Jul 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Over the past two years, I invested some time learning &amp;lt;a href=&amp;quot;https://en.wikipedia.org/wiki/Reactive_programming&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Reactive programming - Wikipedia&amp;quot;&amp;gt;Reactive Programming&amp;lt;/a&amp;gt; (with &amp;lt;a href=&amp;quot;https://rxjs-dev.firebaseapp.com/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;RxJS&amp;quot;&amp;gt;RxJS&amp;lt;/a&amp;gt;) and
+working with Observables and Streams to build interactive UIs. The opportunity to learn RxJS never popped up until the company I
+was working with started investing heavily in RxJS. I had to learn at the job.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;I&apos;m announcing a series of articles&lt;/strong&gt; that I&apos;m writing on Reactive Programming. I want to demonstrate to you &lt;strong&gt;why you should consider
+Reactive Programming&lt;/strong&gt;. I want to tour you through this approach&apos;s foundations, introducing you to some &lt;strong&gt;core concepts&lt;/strong&gt; based on
+examples. Together &lt;strong&gt;we&apos;ll build&lt;/strong&gt; something complex enough to demonstrate the real power of this paradigm. Towards the end of this series, I&apos;ll
+be retrospectively looking at my experience with Reactive Programming to wrap up this series to summarize the pros and cons of this paradigm. I&apos;ll close with a list of awesome RxJS and reactive programming resources.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Disclaimer&lt;/strong&gt;: My experience is based using the JavaScript programming language. Although the familiarity with JavaScript is ideal
+to go through this series. I hope some of the articles are still useful even if you&apos;re not familiar with JavaScript.&lt;/p&gt;
+&lt;h4&gt;Reactive Series Articles&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/why-reactive-programming&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Why You Should Consider Reactive Programming | danielcaldas.github.io&amp;quot;&amp;gt;Part 1 - Why You Should Consider Reactive Programming&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-programming-fundamentals&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Fundamentals of Reactive Programming | danielcaldas.github.io&amp;quot;&amp;gt;Part 2 - Fundamentals of Reactive Programming&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/hands-on-reactive-programming-rxjs&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Hands-on Reactive Programming with RxJS | danielcaldas.github.io&amp;quot;&amp;gt;Part 3 - Hands-on Reactive Programming with RxJS&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-rxjs-pros-cons&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Reactive Programming: The Good and the Bad | danielcaldas.github.io&amp;quot;&amp;gt;Part 4 - Reactive Programming: The Good and the Bad&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/awesome-reactive&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Awesome RxJS and Reactive Programming Resources | danielcaldas.github.io&amp;quot;&amp;gt;Part 5 - Awesome RxJS and Reactive Programming Resources&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
 </content:encoded></item><item><title>SLIs, SLOs and SLAs in 2 minutes</title><link>https://danielcaldas.github.io/posts/sli-slo-sla/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/sli-slo-sla/</guid><description>Measuring the service level of your application</description><pubDate>Thu, 13 Aug 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;Service Level Indicator (SLI)&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;An SLI is a service level indicator — a carefully defined quantitative measure of some aspect of the level of service that is provided.&lt;/p&gt;
@@ -1799,4 +2038,207 @@ title=&amp;quot;Google - Site Reliability Engineering&amp;quot;&lt;/p&gt;
 &lt;p&gt;&amp;lt;/a&amp;gt;
 &amp;lt;/small&amp;gt;&lt;/p&gt;
 &lt;p&gt;It might be useful to think of the SLA as your answer: &lt;em&gt;&amp;quot;What happens if one fails to comply with the agreed SLOs?&amp;quot;&lt;/em&gt;&lt;/p&gt;
+</content:encoded></item><item><title>Reactive Series (pt. 1) - Why You Should Consider Reactive Programming</title><link>https://danielcaldas.github.io/posts/why-reactive-programming/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/why-reactive-programming/</guid><description>Why You Should Consider Reactive Programming</description><pubDate>Thu, 23 Jul 2020 00:00:00 GMT</pubDate><content:encoded>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Part 1 - Why You Should Consider Reactive Programming&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-programming-fundamentals&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Fundamentals of Reactive Programming | danielcaldas.github.io&amp;quot;&amp;gt;Part 2 - Fundamentals of Reactive Programming&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/hands-on-reactive-programming-rxjs&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Hands-on Reactive Programming with RxJS | danielcaldas.github.io&amp;quot;&amp;gt;Part 3 - Hands-on Reactive Programming with RxJS&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-rxjs-pros-cons&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Reactive Programming: The Good and the Bad | danielcaldas.github.io&amp;quot;&amp;gt;Part 4 - Reactive Programming: The Good and the Bad&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/awesome-reactive&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Awesome RxJS and Reactive Programming Resources | danielcaldas.github.io&amp;quot;&amp;gt;Part 5 - Awesome RxJS and Reactive Programming Resources&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;In the first part of my &amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/series-reactive-programming-rxjs/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Reactive Series | danielcaldas.github.io&amp;quot;&amp;gt;series on Reactive Programming&amp;lt;/a&amp;gt;, I
+want to answer why you should consider Reactive Programming. My answer to this question is heavily based on my experience working on
+building complex user experiences that often deal with asynchronicity in the browser. I won&apos;t cover much on how Reactive
+Programming, would help your platforms scale by providing out of the box solutions to
+handle &amp;lt;a href=&amp;quot;https://medium.com/@jayphelps/backpressure-explained-the-flow-of-data-through-software-2350b3e77ce7&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Backpressure explained — the resisted flow of data through software | by Jay Phelps | Medium&amp;quot;&amp;gt;backpressure&amp;lt;/a&amp;gt;. Still, I
+believe that the principles throughout this series can be extended to other ecosystems/platforms/programming languages.&lt;/p&gt;
+&lt;h4&gt;From callbacks to async/await&lt;/h4&gt;
+&lt;p&gt;At first, &amp;lt;a href=&amp;quot;https://en.wikipedia.org/wiki/Callback_(computer_programming)&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Callback (computer programming) - Wikipedia&amp;quot;&amp;gt;callbacks&amp;lt;/a&amp;gt; were the primary
+way for us to handle asynchronicity in JavaScript. Callbacks allow us to write code that is not yet ready to be executed because its parameters depend
+on the execution of some task(s) that will be complete in the future. Fastly we began to gain acquaintance
+with the &amp;lt;a href=&amp;quot;http://callbackhell.com/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Callback Hell&amp;quot;&amp;gt;callback hell&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;doSomething(param1, param2, function(err, paramx) {
+  doMore(paramx, function(err, result) {
+    insertRow(result function(err) {
+      yetAnotherOperation(someparameter, function(s) {
+        somethingElse(function(x) {
+          // ...
+        });
+      });
+    });
+  });
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Somewhere down the road, jQuery 1.5 introduced &amp;lt;a href=&amp;quot;https://api.jquery.com/category/deferred-object/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Deferred Object | jQuery API Documentation&amp;quot;&amp;gt;Deferred Objects&amp;lt;/a&amp;gt; to
+manipulate callback queues and provide an alternative to manage asynchronicity. By this time, the concept of &amp;lt;a href=&amp;quot;https://en.wikipedia.org/wiki/Futures_and_promises&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Futures and promises - Wikipedia&amp;quot;&amp;gt;Futures and Promises&amp;lt;/a&amp;gt; was
+not new to computer science.&lt;/p&gt;
+&lt;p&gt;It was not until &amp;lt;a href=&amp;quot;https://en.wikipedia.org/wiki/ECMAScript#6th_Edition_-_ECMAScript_2015&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;ECMAScript - Wikipedia&amp;quot;&amp;gt;ECMAScript 2015&amp;lt;/a&amp;gt; - The 6th edition, initially
+known as ECMAScript 6 (ES6) - that we got &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Promise - JavaScript | MDN&amp;quot;&amp;gt;Promises&amp;lt;/a&amp;gt; as
+a standard built-in object in the language. Before landing in ES6, Promises had already disrupted the JavaScript
+ecosystem. Libraries such as &amp;lt;a href=&amp;quot;http://bluebirdjs.com/docs/getting-started.html&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Getting Started | bluebird&amp;quot;&amp;gt;bluebird&amp;lt;/a&amp;gt;, which
+has been around since 2013, have made it possible for JavaScript programmers to handle asynchronous code with Promises.
+But why Promises were such a game-changer? Mainly because they provide a higher abstraction on top of the callback pattern. With
+Promises, you get a reference to an object that holds the resolution/failure of some future value. That reference
+is chainable. You can easily return a Promise from a function and proceed with your program flow on the callee instead of propagating
+the chain of events down through the callback hell. Great!&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;function something() {
+  return doSomething(param1, param2)
+}
+
+function main() {
+  something().then((err, paramx) =&amp;gt; {
+    // do stuff
+  })
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Again a new anti-pattern is born. We tend to attach to names emotionally, so the &amp;quot;hell&amp;quot; is back, but this
+time, instead of callback hell, we have the Promise hell.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;function something() {
+  return doSomething(param1, param2)
+}
+
+function main() {
+  something().then((err, paramx) =&amp;gt; {
+    doMore(paramx).then((err, result) =&amp;gt; {
+      insertRow(result).then((err) =&amp;gt; {
+        // ...
+      })
+    })
+  })
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The thing with Promises is that they&apos;re also tempting to nest, resulting in extremely verbose code.&lt;/p&gt;
+&lt;p&gt;In the &amp;lt;a href=&amp;quot;https://en.wikipedia.org/wiki/ECMAScript#7th_Edition_-_ECMAScript_2016&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;ECMAScript - Wikipedia&amp;quot;&amp;gt;7th and 8th editions of ECMAScript&amp;lt;/a&amp;gt;, we
+are given the &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;async function - JavaScript | MDN&amp;quot;&amp;gt;async function&amp;lt;/a&amp;gt;, a new
+mechanism to battle the complex challenge that is asynchronicity. This time we have an even higher order of abstraction, where inside an
+async function, you can handle asynchronicity and making it look exactly like synchronous code. It seems a very promising
+breakthrough, and the community goes all in. Although &lt;strong&gt;async functions are just syntactic sugar on top of Promises, they bring us&lt;/strong&gt;
+&lt;strong&gt;enormous advantages&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;By replacing Promises with async functions, we no longer end up in the scenario where there are endless &lt;code&gt;.then&lt;/code&gt; chains
+spread throughout the codebase.&lt;/li&gt;
+&lt;li&gt;Generally, the code is cleaner. The flow of functions is more natural to read, even when it performs async work. The only
+difference we notice is the presence of the async keyword.&lt;/li&gt;
+&lt;li&gt;Triggering things conditionally becomes way more straightforward. Say two asynchronous tasks are co-dependent. To execute
+the request &lt;code&gt;B&lt;/code&gt;, we depend on data provided by request &lt;code&gt;A&lt;/code&gt;. We can simply &lt;code&gt;await&lt;/code&gt; on &lt;code&gt;A&lt;/code&gt;, and with an &lt;code&gt;if&lt;/code&gt; statement
+checks, the data returned from &lt;code&gt;A&lt;/code&gt; to decide whether we need to trigger request &lt;code&gt;B&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Error handling seems to improve since one can use try/catch block to handle errors on rejected Promises, while
+with Promises, one needs to chain a catch and provide a callback to handle the error.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;After broad usage of async/await, the community started again, &lt;strong&gt;raising some cons on the construct&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Poorly explained syntax errors&lt;/strong&gt; (e.g., missing an &lt;code&gt;await&lt;/code&gt; keyword).&lt;/li&gt;
+&lt;li&gt;It &lt;strong&gt;promotes a less functional style&lt;/strong&gt; of coding, something that the JavaScript community has gained increasing excitement
+over the past few years.&lt;/li&gt;
+&lt;li&gt;It &lt;strong&gt;opens the door to the design of less performant solutions&lt;/strong&gt; because it&apos;s just easy to drop an await to get something working
+quickly but block the execution of other steps of the functions that, with a bit more effort, could be done in parallel. Other
+anti-patterns such as iterating over a collection while performing an &lt;code&gt;async/await&lt;/code&gt; task for each element, but this is
+something one could quickly point out during code review.&lt;/li&gt;
+&lt;li&gt;The &lt;strong&gt;transpiled output of async/await code is just something not pleasant to look at&lt;/strong&gt;, much less to debug. Transpiled, because
+if you&apos;re still supporting Internet Explorer, you&apos;re probably bundling polyfills for async/await.&lt;/li&gt;
+&lt;li&gt;The way synchronous code bridges over to async functions it&apos;s something yet confusing for me. It&apos;s something that it&apos;s not
+transparent. I found my self often jumping to the signature of the function I&apos;m invoking to check whether it performs some asynchronous
+task or not. How could I lose track of something like that reading through some large codebase? Perhaps it&apos;s my fault I&apos;m just
+not doing it right.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I want to reinforce that we came to a long road since callbacks, and the enhancements are noticeable, but after some time, mentions
+to the &lt;strong&gt;&amp;quot;async/await hell&amp;quot;&lt;/strong&gt; started to surface across the web.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;;(async () =&amp;gt; {
+  const pizzaData = await getPizzaData() // async call
+  const drinkData = await getDrinkData() // async call
+  const chosenPizza = choosePizza() // sync call
+  const chosenDrink = chooseDrink() // sync call
+  await addPizzaToCart(chosenPizza) // async call
+  await addDrinkToCart(chosenDrink) // async call
+  orderItems() // async call
+})()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;small&amp;gt;
+&amp;lt;i&amp;gt;
+example from:{&amp;quot; &amp;quot;}
+&amp;lt;a
+href=&amp;quot;https://medium.com/free-code-camp/avoiding-the-async-await-hell-c77a0fb71c4c&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;How to escape async/await hell. async/await freed us from callback… | by Aditya Agarwal | freeCodeCamp.org | Medium&amp;quot;
+&amp;gt;
+&amp;quot;How to escape async/await hell&amp;quot;
+&amp;lt;/a&amp;gt;
+&amp;lt;/i&amp;gt;
+&amp;lt;/small&amp;gt;&lt;/p&gt;
+&lt;p&gt;Generally speaking, something I learned over time, is that if a solution has many corner cases, requiring you to look into the
+documentation (e.g., error handling in async/await VS Promises), it means that:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The solution&apos;s not intuitive enough.&lt;/li&gt;
+&lt;li&gt;By not being intuitive, it&apos;s not evolving in the same line of reasoning of the coder&apos;s mind.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;But what if everything is asynchronous? What if synchronous and asynchronous code looks the same?&lt;/strong&gt; I believe this is the best way
+to shape our mindsets into producing highly readable and performant code. How would we achieve that? &lt;strong&gt;Observables, Reactive Programming&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;But Reactive Programming is &lt;strong&gt;not only about&lt;/strong&gt; tackling the complicated job of handling &lt;strong&gt;asynchronicity&lt;/strong&gt;. There are other amazing advantages
+that this paradigm facilitates:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;A mental framework&lt;/strong&gt; to use your &amp;lt;a href=&amp;quot;https://en.wikipedia.org/wiki/Event-driven_programming&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Event-driven programming - Wikipedia&amp;quot;&amp;gt;event-driven programming&amp;lt;/a&amp;gt; skills in
+a &lt;strong&gt;more data-oriented&lt;/strong&gt;. Event-driven programming is only about programming user/system actions (e.g., mouse clicks), what if you could apply
+this same model not only to events but also to data (e.g., changing data X triggers a change to data Y).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Functional Programming &amp;amp; Immutability&lt;/strong&gt; - it&apos;s all about generating values to respond to a change. Changes trigger
+the creation of new values, naturally promoting &amp;lt;a href=&amp;quot;https://en.wikipedia.org/wiki/Immutable_object&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Immutable object - Wikipedia&amp;quot;&amp;gt;immutability&amp;lt;/a&amp;gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Single Code Styling&lt;/strong&gt; - you&apos;ll be exposed to a &lt;strong&gt;higher abstraction level&lt;/strong&gt; of cofing where handling tasks with Promises
+or other asynchronous mechanisms can look like any other code that does not involve asynchronicity.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;State Management&lt;/strong&gt; - by following the reactive way, state updates tend to be sequential, we&apos;ll often find a solution that will help
+us eliminate some annoying global variables hanging around our code. This will become clear once we jump into our small application
+that I&apos;ll present later on in this series.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Performance&lt;/strong&gt; - from &amp;lt;a href=&amp;quot;https://jaxenter.com/the-fight-for-performance-157515.html&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;The fight for performance – Is reactive programming the right approach? - JAXenter&amp;quot;&amp;gt;&amp;quot;The fight for performance – Is reactive programming the right approach?&amp;quot;&amp;lt;/a&amp;gt;, there&apos;s a
+discussion around how Reactive Programming can overcome some potential bottlenecks caused by native threads in
+Java. In &amp;lt;a href=&amp;quot;http://lup.lub.lu.se/luur/download?func=downloadFile&amp;amp;recordOId=8932146&amp;amp;fileOId=8932147&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Reactive programming and its effect on performance and the development process, Gustav Hochbergs&amp;quot;&amp;gt;this master&apos;s thesis&amp;lt;/a&amp;gt;, the
+author boards on a journey to compare a real application&apos;s performance when migrated over to an approach based on Reactive Programming
+libraries. In short, it seems that there are no conclusive results in regards to CPU or memory usage when comparing a synchronous
+approach with a Reactive approach, but one thing stands out. The reactive approach seems to keep a good throughput under high load, where
+there&apos;s the need for processing data in super short time intervals (5ms), here is where the Reactive approach shines the most.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There&apos;s one thing I need to mention, though, which is what most of the above sources where I&apos;ve been reading about Reactive Programming
+have in common. Although we&apos;ve seen Reactive Programming taking the higher ground in several aspects compared to traditional paradigms, its
+complexity seems to be one of the main barriers to its adoption. Reactive &lt;strong&gt;implementations are said to have a higher maintenance cost compared&lt;/strong&gt;
+&lt;strong&gt;to a conventional programming style&lt;/strong&gt;. I can&apos;t argue this, the learning curve is steep, but once you pass that the rewards are noteworthy and
+things that in other times you would think of impossible or had to implement become so much easier.&lt;/p&gt;
+&lt;p&gt;If you feel like taking a shot at Reactive Programming, I&apos;ll gladly guide you through it!&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Part 1 - Why You Should Consider Reactive Programming&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a
+href=&amp;quot;https://danielcaldas.github.io/posts/reactive-programming-fundamentals&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;Fundamentals of Reactive Programming | danielcaldas.github.io&amp;quot;
+&lt;blockquote&gt;
+&lt;p&gt;Part 2 - Fundamentals of Reactive Programming
+&amp;lt;/a&amp;gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&amp;lt;a
+href=&amp;quot;https://danielcaldas.github.io/posts/hands-on-reactive-programming-rxjs&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;Hands-on Reactive Programming with RxJS | danielcaldas.github.io&amp;quot;
+&lt;blockquote&gt;
+&lt;p&gt;Part 3 - Hands-on Reactive Programming with RxJS
+&amp;lt;/a&amp;gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&amp;lt;a
+href=&amp;quot;https://danielcaldas.github.io/posts/reactive-rxjs-pros-cons&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;Reactive Programming: The Good and the Bad | danielcaldas.github.io&amp;quot;
+&lt;blockquote&gt;
+&lt;p&gt;Part 4 - Reactive Programming: The Good and the Bad
+&amp;lt;/a&amp;gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&amp;lt;a
+href=&amp;quot;https://danielcaldas.github.io/posts/awesome-reactive&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;Awesome RxJS and Reactive Programming Resources | danielcaldas.github.io&amp;quot;
+&lt;blockquote&gt;
+&lt;p&gt;Part 5 - Awesome RxJS and Reactive Programming Resources
+&amp;lt;/a&amp;gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 </content:encoded></item></channel></rss>

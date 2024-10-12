@@ -1,0 +1,251 @@
+<!DOCTYPE html><html lang="en-US" class="mx-4"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v4.5.12"><meta name="description" content="Blogpost, note taking and other things"><title>Reactive Series (pt. 1) - Why You Should Consider Reactive Programming - Hey 👋</title><link rel="stylesheet" href="/_astro/about.Crs7VaA2.css">
+<style>:root{--color-primary-main: #222222;--color-secondary-main: #444444;--color-text-body: 55 65 81;--color-text-heading: 55 65 81;--color-text-link: var(--color-primary-main);--color-text-link-hover: var(--color-secondary-main);--color-border: var(--color-primary-main);--color-code-bg: #f3f4f6;scroll-behavior:smooth}:root.dark{color-scheme:dark;--color-primary-main: 235 153 161;--color-secondary-main: 226 111 122;--color-text-body: 214 211 209;--color-text-heading: 255 255 255;--color-text-link: var(--color-primary-main);--color-text-link-hover: var(--color-secondary-main);--color-border: var(--color-primary-main);--color-code-bg: #1a202c;scroll-behavior:smooth}body{font-family:Verdana,sans-serif;overflow-y:scroll}img{max-width:28rem}time,div{color:rgb(var(--color-text-heading))}.panda-link-static{text-decoration:none;color:rgb(var(--color-text-link))}.panda-link-static:hover{text-decoration-line:underline;text-underline-offset:4px;cursor:pointer}.panda-link-static:hover{color:rgb(var(--color-text-link-hover));text-decoration-thickness:.125rem;text-underline-offset:5px}.panda-link{text-decoration:none;color:rgb(var(--color-text-link))}.panda-link:hover{cursor:pointer}.panda-link:hover{color:rgb(var(--color-text-link-hover))}a.animated{--animated-underline-from: rgb(var(--color-text-link));--animated-underline-to: rgb(var(--color-text-link));position:relative;box-decoration-break:clone;text-decoration:none}a.animated:after{left:0;right:0;bottom:-4px;content:"";height:2px;width:auto;position:absolute;transform:translateZ(0) scaleX(0);transform-origin:left center;transition:all .25s ease-in-out;background-image:linear-gradient(to right,var(--animated-underline-from),var(--animated-underline-to))}a.animated:hover:after{transform:translateZ(0) scale(1)}a.animated.active:after{transform:translateZ(0) scale(1)}.max-width{margin-left:auto;margin-right:auto;max-width:65ch}.panda-text{--un-text-opacity:1;color:rgb(29 78 216 / var(--un-text-opacity));text-decoration:none;cursor:pointer}.panda-text:hover{text-decoration-line:underline;text-underline-offset:4px}.panda-text:hover{--un-text-opacity:1;color:rgb(29 78 216 / var(--un-text-opacity))}.dark .panda-text,.dark .panda-text:hover{--un-text-opacity:1;color:rgb(245 245 244 / var(--un-text-opacity))}.prose :where(a):not(:where([data-footnote-ref],[data-footnote-backref],.not-prose,.not-prose *)){padding-left:.25rem;padding-right:.25rem;text-decoration-line:underline;text-underline-offset:4px;hover:underline}.prose :where(blockquote):not(:where(.not-prose,.not-prose *)){padding:.5rem .5rem .5rem 1rem;margin:0;--un-bg-opacity:1;background-color:rgb(243 244 246 / var(--un-bg-opacity));border-radius:.125rem .5rem .5rem .125rem;border-left-style:solid;font-size:1rem;line-height:1.5rem;font-weight:400;border-left:6px solid rgb(var(--color-primary-main))!important}.dark .prose :where(blockquote):not(:where(.not-prose,.not-prose *)){--un-bg-opacity:1;background-color:rgb(87 83 78 / var(--un-bg-opacity))}.prose :where(ol>li):not(:where(.not-prose,.not-prose *))::marker,.prose :where(ul>li):not(:where(.not-prose,.not-prose *))::marker,.prose :where(summary):not(:where(.not-prose,.not-prose *))::marker{color:rgb(var(--color-primary-main));margin-right:1rem;font-weight:600}[data-footnote-ref]:before{content:" ["}[data-footnote-ref]:after{content:"] "}[data-footnote-backref]{text-decoration:none}[data-footnote-ref]{font-weight:400;text-decoration:none}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.duration-300{transition-duration:.3s}
+</style><script type="module">document.addEventListener("astro:page-load",setup);document.addEventListener("astro:after-swap",setup);
+</script>
+<script type="module" src="/_astro/page.55INgWwS.js"></script>
+<script>!(function(w,p,f,c){if(!window.crossOriginIsolated && !navigator.serviceWorker) return;c=w[p]=Object.assign(w[p]||{},{"lib":"/~partytown/","debug":false});c[f]=(c[f]||[])})(window,'partytown','forward');/* Partytown 0.8.2 - MIT builder.io */
+!function(t,e,n,i,o,r,a,s,d,c,l,p){function u(){p||(p=1,"/"==(a=(r.lib||"/~partytown/")+(r.debug?"debug/":""))[0]&&(d=e.querySelectorAll('script[type="text/partytown"]'),i!=t?i.dispatchEvent(new CustomEvent("pt1",{detail:t})):(s=setTimeout(f,1e4),e.addEventListener("pt0",w),o?h(1):n.serviceWorker?n.serviceWorker.register(a+(r.swPath||"partytown-sw.js"),{scope:a}).then((function(t){t.active?h():t.installing&&t.installing.addEventListener("statechange",(function(t){"activated"==t.target.state&&h()}))}),console.error):f())))}function h(t){c=e.createElement(t?"script":"iframe"),t||(c.style.display="block",c.style.width="0",c.style.height="0",c.style.border="0",c.style.visibility="hidden",c.setAttribute("aria-hidden",!0)),c.src=a+"partytown-"+(t?"atomics.js?v=0.8.2":"sandbox-sw.html?"+Date.now()),e.querySelector(r.sandboxParent||"body").appendChild(c)}function f(n,o){for(w(),i==t&&(r.forward||[]).map((function(e){delete t[e.split(".")[0]]})),n=0;n<d.length;n++)(o=e.createElement("script")).innerHTML=d[n].innerHTML,o.nonce=r.nonce,e.head.appendChild(o);c&&c.parentNode.removeChild(c)}function w(){clearTimeout(s)}r=t.partytown||{},i==t&&(r.forward||[]).map((function(e){l=t,e.split(".").map((function(e,n,i){l=l[i[n]]=n+1<i.length?"push"==i[n+1]?[]:l[i[n]]||{}:function(){(t._ptf=t._ptf||[]).push(i,arguments)}}))})),"complete"==e.readyState?u():(t.addEventListener("DOMContentLoaded",u),t.addEventListener("load",u))}(window,document,navigator,top,window.crossOriginIsolated);;((d,s)=>(s=d.currentScript,d.addEventListener('astro:before-swap',()=>s.remove(),{once:true})))(document);</script></head> <body class="max-width dark:bg-stone-700"> <div class="my-6 flex"> <a href="/" class="hover:cursor-pointer opacity-100 hover:opacity-80 panda-link"> <i class="hidden">danielcaldas.github.io</i> <h1>~/</h1> </a> <div class="text-sm place-content-center inline ml-auto"> <button id="themeToggle" class="mt-1 cursor-pointer border-0 bg-transparent"> <svg width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="opacity-100 hover:opacity-80"> <path class="fill-black dark:fill-transparent" d="M20.742 13.045a8.088 8.088 0 0 1-2.077.271c-2.135 0-4.14-.83-5.646-2.336a8.025 8.025 0 0 1-2.064-7.723A1 1 0 0 0 9.73 2.034a10.014 10.014 0 0 0-4.489 2.582c-3.898 3.898-3.898 10.243 0 14.143a9.937 9.937 0 0 0 7.072 2.93 9.93 9.93 0 0 0 7.07-2.929 10.007 10.007 0 0 0 2.583-4.491 1.001 1.001 0 0 0-1.224-1.224zm-2.772 4.301a7.947 7.947 0 0 1-5.656 2.343 7.953 7.953 0 0 1-5.658-2.344c-3.118-3.119-3.118-8.195 0-11.314a7.923 7.923 0 0 1 2.06-1.483 10.027 10.027 0 0 0 2.89 7.848 9.972 9.972 0 0 0 7.848 2.891 8.036 8.036 0 0 1-1.484 2.059z"></path> <path class="fill-transparent dark:fill-white" d="M6.993 12c0 2.761 2.246 5.007 5.007 5.007s5.007-2.246 5.007-5.007S14.761 6.993 12 6.993 6.993 9.239 6.993 12zM12 8.993c1.658 0 3.007 1.349 3.007 3.007S13.658 15.007 12 15.007 8.993 13.658 8.993 12 10.342 8.993 12 8.993zM10.998 19h2v3h-2zm0-17h2v3h-2zm-9 9h3v2h-3zm17 0h3v2h-3zM4.219 18.363l2.12-2.122 1.415 1.414-2.12 2.122zM16.24 6.344l2.122-2.122 1.414 1.414-2.122 2.122zM6.342 7.759 4.22 5.637l1.415-1.414 2.12 2.122zm13.434 10.605-1.414 1.414-2.122-2.122 1.414-1.414z"></path> </svg> </button> <script>
+    function handleToggleClick() {
+        const element = document.documentElement
+        element.classList.toggle('dark')
+        const isDark = element.classList.contains('dark')
+        localStorage.setItem('theme', isDark ? 'dark' : 'light')
+    }
+
+    function setup() {
+        let current_theme
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+            current_theme = localStorage.getItem('theme')
+        }
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            current_theme = 'dark'
+        }
+        current_theme = current_theme || 'light'
+        if (current_theme === 'light') {
+            document.documentElement.classList.remove('dark')
+        } else {
+            document.documentElement.classList.add('dark')
+        }
+        window.localStorage.setItem('theme', current_theme)
+        // button event bind
+        document.getElementById('themeToggle').addEventListener('click', handleToggleClick)
+    }
+
+    setup()
+</script>  </div> </div>  <main>  <a rel="prefetch" class="panda-link mt-6" href="/">Back</a> <style>
+        /* notification */
+        .notification p {
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 0.5rem 1rem;
+            font-size: small;
+        }
+
+        .notification-warning {
+            background-color: #fff3cd;
+            border-color: #ffeeba;
+            color: #856404;
+        }
+
+        .notification-danger {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+        }
+
+        .notification-success {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+        }
+
+        .notification-info {
+            background-color: #d1ecf1;
+            border-color: #bee5eb;
+            color: #0c5460;
+        }
+
+        .dark .notification-warning {
+            background-color: #856404;
+            border-color: #ffeeba;
+            color: #fff3cd;
+        }
+
+        .dark .notification-danger {
+            background-color: #721c24;
+            border-color: #f5c6cb;
+            color: #f8d7da;
+        }
+
+        .dark .notification-success {
+            background-color: #155724;
+            border-color: #c3e6cb;
+            color: #d4edda;
+        }
+
+        .dark .notification-info {
+            background-color: #0c5460;
+            border-color: #bee5eb;
+            color: #d1ecf1;
+        }
+    </style> <div class="mt-6"> <h1 class="text-4xl">Reactive Series (pt. 1) - Why You Should Consider Reactive Programming</h1> <div class="flex sm:flex-row flex-col rounded-lg bg-stone-100 dark:bg-stone-600 p-2 px-4"> <div> <span class="ml-2"> <a href="/tags/javascript" class="text-sm mr-2 panda-link">
+#javascript </a> </span><span class="ml-2"> <a href="/tags/reactive-programming" class="text-sm mr-2 panda-link">
+#reactive-programming </a> </span> </div> <span class="ml-auto mr-4 text-sm font-normal"> Posted on 23, Jul, 2020</span> </div> </div> <article class="prose dark:prose-invert prose-stone max-w-prose mt-6">  <ul>
+<li><strong>Part 1 - Why You Should Consider Reactive Programming</strong></li>
+<li><a href="https://danielcaldas.github.io/posts/reactive-programming-fundamentals" target="\_blank" title="Fundamentals of Reactive Programming | danielcaldas.github.io">Part 2 - Fundamentals of Reactive Programming</a></li>
+<li><a href="https://danielcaldas.github.io/posts/hands-on-reactive-programming-rxjs" target="\_blank" title="Hands-on Reactive Programming with RxJS | danielcaldas.github.io">Part 3 - Hands-on Reactive Programming with RxJS</a></li>
+<li><a href="https://danielcaldas.github.io/posts/reactive-rxjs-pros-cons" target="\_blank" title="Reactive Programming: The Good and the Bad | danielcaldas.github.io">Part 4 - Reactive Programming: The Good and the Bad</a></li>
+<li><a href="https://danielcaldas.github.io/posts/awesome-reactive" target="_blank" title="Awesome RxJS and Reactive Programming Resources | danielcaldas.github.io">Part 5 - Awesome RxJS and Reactive Programming Resources</a></li>
+</ul>
+<hr>
+<p>In the first part of my <a href="https://danielcaldas.github.io/posts/series-reactive-programming-rxjs/" target="_blank" title="Reactive Series | danielcaldas.github.io">series on Reactive Programming</a>, I
+want to answer why you should consider Reactive Programming. My answer to this question is heavily based on my experience working on
+building complex user experiences that often deal with asynchronicity in the browser. I won’t cover much on how Reactive
+Programming, would help your platforms scale by providing out of the box solutions to
+handle <a href="https://medium.com/@jayphelps/backpressure-explained-the-flow-of-data-through-software-2350b3e77ce7" target="_blank" title="Backpressure explained — the resisted flow of data through software | by Jay Phelps | Medium">backpressure</a>. Still, I
+believe that the principles throughout this series can be extended to other ecosystems/platforms/programming languages.</p>
+<h4 id="from-callbacks-to-async-await"><a class="__permalink-h" href="#from-callbacks-to-async-await" aria-label="from callbacks to async await permalink">»</a>From callbacks to async/await</h4>
+<p>At first, <a href="https://en.wikipedia.org/wiki/Callback_(computer_programming)" target="_blank" title="Callback (computer programming) - Wikipedia">callbacks</a> were the primary
+way for us to handle asynchronicity in JavaScript. Callbacks allow us to write code that is not yet ready to be executed because its parameters depend
+on the execution of some task(s) that will be complete in the future. Fastly we began to gain acquaintance
+with the <a href="http://callbackhell.com/" target="_blank" title="Callback Hell">callback hell</a>.</p>
+<div class="expressive-code"><link rel="stylesheet" href="/_astro/ec.ggich.css"><script type="module" src="/_astro/ec.dy9ns.js"></script><figure class="frame"><figcaption class="header"></figcaption><pre tabindex="0"><code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">doSomething</span><span style="--1:#403F53"><span style="--0:#D6DEEB">(</span><span style="--0:#D7DBE0">param1</span><span style="--0:#D6DEEB">, </span><span style="--0:#D7DBE0">param2</span><span style="--0:#D6DEEB">, </span></span><span style="--0:#C792EA;--1:#8D46B4">function</span><span style="--0:#D9F5DD;--1:#111111">(</span><span style="--1:#403F53"><span style="--0:#D7DBE0">err</span><span style="--0:#D6DEEB">, </span><span style="--0:#D7DBE0">paramx</span></span><span style="--0:#D9F5DD;--1:#111111">)</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#82AAFF;--1:#3C63B3">doMore</span><span style="--1:#403F53"><span style="--0:#D6DEEB">(</span><span style="--0:#D7DBE0">paramx</span></span><span style="--0:#7690A6;--1:#4F687D">,</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C792EA;--1:#8D46B4">function</span><span style="--0:#D9F5DD;--1:#111111">(</span><span style="--1:#403F53"><span style="--0:#D7DBE0">err</span><span style="--0:#D6DEEB">, </span><span style="--0:#D7DBE0">result</span></span><span style="--0:#D9F5DD;--1:#111111">)</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#82AAFF;--1:#3C63B3">insertRow</span><span style="--1:#403F53"><span style="--0:#D6DEEB">(</span><span style="--0:#D7DBE0">result</span><span style="--0:#D6DEEB"> </span></span><span style="--0:#C792EA;--1:#8D46B4">function</span><span style="--0:#D9F5DD;--1:#111111">(</span><span style="--0:#D7DBE0;--1:#403F53">err</span><span style="--0:#D9F5DD;--1:#111111">)</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#82AAFF;--1:#3C63B3">yetAnotherOperation</span><span style="--1:#403F53"><span style="--0:#D6DEEB">(</span><span style="--0:#D7DBE0">someparameter</span></span><span style="--0:#7690A6;--1:#4F687D">,</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C792EA;--1:#8D46B4">function</span><span style="--0:#D9F5DD;--1:#111111">(</span><span style="--0:#D7DBE0;--1:#403F53">s</span><span style="--0:#D9F5DD;--1:#111111">)</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">        </span><span style="--0:#82AAFF;--1:#3C63B3">somethingElse</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#C792EA;--1:#8D46B4">function</span><span style="--0:#D9F5DD;--1:#111111">(</span><span style="--0:#D7DBE0;--1:#403F53">x</span><span style="--0:#D9F5DD;--1:#111111">)</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">          </span><span style="--0:#809191;--1:#5E6578">// ...</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">        </span></span><span style="--0:#D6DEEB;--1:#403F53">});</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">      </span></span><span style="--0:#D6DEEB;--1:#403F53">});</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">    </span></span><span style="--0:#D6DEEB;--1:#403F53">});</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">});</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">});</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="doSomething(param1, param2, function(err, paramx) {  doMore(paramx, function(err, result) {    insertRow(result function(err) {      yetAnotherOperation(someparameter, function(s) {        somethingElse(function(x) {          // ...        });      });    });  });});"><div></div></button></div></figure></div>
+<p>Somewhere down the road, jQuery 1.5 introduced <a href="https://api.jquery.com/category/deferred-object/" target="_blank" title="Deferred Object | jQuery API Documentation">Deferred Objects</a> to
+manipulate callback queues and provide an alternative to manage asynchronicity. By this time, the concept of <a href="https://en.wikipedia.org/wiki/Futures_and_promises" target="_blank" title="Futures and promises - Wikipedia">Futures and Promises</a> was
+not new to computer science.</p>
+<p>It was not until <a href="https://en.wikipedia.org/wiki/ECMAScript#6th_Edition_-_ECMAScript_2015" target="_blank" title="ECMAScript - Wikipedia">ECMAScript 2015</a> - The 6th edition, initially
+known as ECMAScript 6 (ES6) - that we got <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank" title="Promise - JavaScript | MDN">Promises</a> as
+a standard built-in object in the language. Before landing in ES6, Promises had already disrupted the JavaScript
+ecosystem. Libraries such as <a href="http://bluebirdjs.com/docs/getting-started.html" target="_blank" title="Getting Started | bluebird">bluebird</a>, which
+has been around since 2013, have made it possible for JavaScript programmers to handle asynchronous code with Promises.
+But why Promises were such a game-changer? Mainly because they provide a higher abstraction on top of the callback pattern. With
+Promises, you get a reference to an object that holds the resolution/failure of some future value. That reference
+is chainable. You can easily return a Promise from a function and proceed with your program flow on the callee instead of propagating
+the chain of events down through the callback hell. Great!</p>
+<div class="expressive-code"><figure class="frame"><figcaption class="header"></figcaption><pre tabindex="0"><code><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8D46B4">function</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">something</span><span style="--0:#D9F5DD;--1:#111111">()</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#C792EA;--1:#8D46B4">return</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">doSomething</span><span style="--1:#403F53"><span style="--0:#D6DEEB">(</span><span style="--0:#D7DBE0">param1</span></span><span style="--0:#7690A6;--1:#4F687D">,</span><span style="--1:#403F53"><span style="--0:#D6DEEB"> </span><span style="--0:#D7DBE0">param2</span><span style="--0:#D6DEEB">)</span></span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8D46B4">function</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">main</span><span style="--0:#D9F5DD;--1:#111111">()</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#82AAFF;--1:#3C63B3">something</span><span style="--0:#D6DEEB;--1:#403F53">()</span><span style="--0:#C792EA;--1:#8D46B4">.</span><span style="--0:#82AAFF;--1:#3C63B3">then</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#D9F5DD;--1:#111111">(</span><span style="--1:#403F53"><span style="--0:#D7DBE0">err</span><span style="--0:#D6DEEB">, </span><span style="--0:#D7DBE0">paramx</span></span><span style="--0:#D9F5DD;--1:#111111">)</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C792EA;--1:#8D46B4">=></span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#809191;--1:#5E6578">// do stuff</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">})</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="function something() {  return doSomething(param1, param2)}function main() {  something().then((err, paramx) => {    // do stuff  })}"><div></div></button></div></figure></div>
+<p>Again a new anti-pattern is born. We tend to attach to names emotionally, so the “hell” is back, but this
+time, instead of callback hell, we have the Promise hell.</p>
+<div class="expressive-code"><figure class="frame"><figcaption class="header"></figcaption><pre tabindex="0"><code><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8D46B4">function</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">something</span><span style="--0:#D9F5DD;--1:#111111">()</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#C792EA;--1:#8D46B4">return</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">doSomething</span><span style="--1:#403F53"><span style="--0:#D6DEEB">(</span><span style="--0:#D7DBE0">param1</span></span><span style="--0:#7690A6;--1:#4F687D">,</span><span style="--1:#403F53"><span style="--0:#D6DEEB"> </span><span style="--0:#D7DBE0">param2</span><span style="--0:#D6DEEB">)</span></span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8D46B4">function</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">main</span><span style="--0:#D9F5DD;--1:#111111">()</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#82AAFF;--1:#3C63B3">something</span><span style="--0:#D6DEEB;--1:#403F53">()</span><span style="--0:#C792EA;--1:#8D46B4">.</span><span style="--0:#82AAFF;--1:#3C63B3">then</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#D9F5DD;--1:#111111">(</span><span style="--1:#403F53"><span style="--0:#D7DBE0">err</span><span style="--0:#D6DEEB">, </span><span style="--0:#D7DBE0">paramx</span></span><span style="--0:#D9F5DD;--1:#111111">)</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C792EA;--1:#8D46B4">=></span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#82AAFF;--1:#3C63B3">doMore</span><span style="--1:#403F53"><span style="--0:#D6DEEB">(</span><span style="--0:#D7DBE0">paramx</span><span style="--0:#D6DEEB">)</span></span><span style="--0:#C792EA;--1:#8D46B4">.</span><span style="--0:#82AAFF;--1:#3C63B3">then</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#D9F5DD;--1:#111111">(</span><span style="--1:#403F53"><span style="--0:#D7DBE0">err</span><span style="--0:#D6DEEB">, </span><span style="--0:#D7DBE0">result</span></span><span style="--0:#D9F5DD;--1:#111111">)</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C792EA;--1:#8D46B4">=></span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#82AAFF;--1:#3C63B3">insertRow</span><span style="--1:#403F53"><span style="--0:#D6DEEB">(</span><span style="--0:#D7DBE0">result</span><span style="--0:#D6DEEB">)</span></span><span style="--0:#C792EA;--1:#8D46B4">.</span><span style="--0:#82AAFF;--1:#3C63B3">then</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#D9F5DD;--1:#111111">(</span><span style="--0:#D7DBE0;--1:#403F53">err</span><span style="--0:#D9F5DD;--1:#111111">)</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C792EA;--1:#8D46B4">=></span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">        </span><span style="--0:#809191;--1:#5E6578">// ...</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">      </span></span><span style="--0:#D6DEEB;--1:#403F53">})</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">    </span></span><span style="--0:#D6DEEB;--1:#403F53">})</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">})</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="function something() {  return doSomething(param1, param2)}function main() {  something().then((err, paramx) => {    doMore(paramx).then((err, result) => {      insertRow(result).then((err) => {        // ...      })    })  })}"><div></div></button></div></figure></div>
+<p>The thing with Promises is that they’re also tempting to nest, resulting in extremely verbose code.</p>
+<p>In the <a href="https://en.wikipedia.org/wiki/ECMAScript#7th_Edition_-_ECMAScript_2016" target="_blank" title="ECMAScript - Wikipedia">7th and 8th editions of ECMAScript</a>, we
+are given the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function" target="_blank" title="async function - JavaScript | MDN">async function</a>, a new
+mechanism to battle the complex challenge that is asynchronicity. This time we have an even higher order of abstraction, where inside an
+async function, you can handle asynchronicity and making it look exactly like synchronous code. It seems a very promising
+breakthrough, and the community goes all in. Although <strong>async functions are just syntactic sugar on top of Promises, they bring us</strong>
+<strong>enormous advantages</strong>:</p>
+<ul>
+<li>By replacing Promises with async functions, we no longer end up in the scenario where there are endless <code>.then</code> chains
+spread throughout the codebase.</li>
+<li>Generally, the code is cleaner. The flow of functions is more natural to read, even when it performs async work. The only
+difference we notice is the presence of the async keyword.</li>
+<li>Triggering things conditionally becomes way more straightforward. Say two asynchronous tasks are co-dependent. To execute
+the request <code>B</code>, we depend on data provided by request <code>A</code>. We can simply <code>await</code> on <code>A</code>, and with an <code>if</code> statement
+checks, the data returned from <code>A</code> to decide whether we need to trigger request <code>B</code>.</li>
+<li>Error handling seems to improve since one can use try/catch block to handle errors on rejected Promises, while
+with Promises, one needs to chain a catch and provide a callback to handle the error.</li>
+</ul>
+<p>After broad usage of async/await, the community started again, <strong>raising some cons on the construct</strong>:</p>
+<ul>
+<li><strong>Poorly explained syntax errors</strong> (e.g., missing an <code>await</code> keyword).</li>
+<li>It <strong>promotes a less functional style</strong> of coding, something that the JavaScript community has gained increasing excitement
+over the past few years.</li>
+<li>It <strong>opens the door to the design of less performant solutions</strong> because it’s just easy to drop an await to get something working
+quickly but block the execution of other steps of the functions that, with a bit more effort, could be done in parallel. Other
+anti-patterns such as iterating over a collection while performing an <code>async/await</code> task for each element, but this is
+something one could quickly point out during code review.</li>
+<li>The <strong>transpiled output of async/await code is just something not pleasant to look at</strong>, much less to debug. Transpiled, because
+if you’re still supporting Internet Explorer, you’re probably bundling polyfills for async/await.</li>
+<li>The way synchronous code bridges over to async functions it’s something yet confusing for me. It’s something that it’s not
+transparent. I found my self often jumping to the signature of the function I’m invoking to check whether it performs some asynchronous
+task or not. How could I lose track of something like that reading through some large codebase? Perhaps it’s my fault I’m just
+not doing it right.</li>
+</ul>
+<p>I want to reinforce that we came to a long road since callbacks, and the enhancements are noticeable, but after some time, mentions
+to the <strong>“async/await hell”</strong> started to surface across the web.</p>
+<div class="expressive-code"><figure class="frame"><figcaption class="header"></figcaption><pre tabindex="0"><code><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">;(</span><span style="--0:#C792EA;--1:#8D46B4">async</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">()</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C792EA;--1:#8D46B4">=></span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#C792EA;--1:#8D46B4">const </span><span style="--0:#82AAFF;--1:#3C63B3">pizzaData</span><span style="--0:#C792EA;--1:#8D46B4"> = await </span><span style="--0:#82AAFF;--1:#3C63B3">getPizzaData</span><span style="--0:#D6DEEB;--1:#403F53">()</span><span style="--0:#C792EA;--1:#8D46B4"> </span><span style="--0:#809191;--1:#5E6578">// async call</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#C792EA;--1:#8D46B4">const </span><span style="--0:#82AAFF;--1:#3C63B3">drinkData</span><span style="--0:#C792EA;--1:#8D46B4"> = await </span><span style="--0:#82AAFF;--1:#3C63B3">getDrinkData</span><span style="--0:#D6DEEB;--1:#403F53">()</span><span style="--0:#C792EA;--1:#8D46B4"> </span><span style="--0:#809191;--1:#5E6578">// async call</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#C792EA;--1:#8D46B4">const </span><span style="--0:#82AAFF;--1:#3C63B3">chosenPizza</span><span style="--0:#C792EA;--1:#8D46B4"> = </span><span style="--0:#82AAFF;--1:#3C63B3">choosePizza</span><span style="--0:#D6DEEB;--1:#403F53">()</span><span style="--0:#C792EA;--1:#8D46B4"> </span><span style="--0:#809191;--1:#5E6578">// sync call</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#C792EA;--1:#8D46B4">const </span><span style="--0:#82AAFF;--1:#3C63B3">chosenDrink</span><span style="--0:#C792EA;--1:#8D46B4"> = </span><span style="--0:#82AAFF;--1:#3C63B3">chooseDrink</span><span style="--0:#D6DEEB;--1:#403F53">()</span><span style="--0:#C792EA;--1:#8D46B4"> </span><span style="--0:#809191;--1:#5E6578">// sync call</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#C792EA;--1:#8D46B4">await</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">addPizzaToCart</span><span style="--1:#403F53"><span style="--0:#D6DEEB">(</span><span style="--0:#D7DBE0">chosenPizza</span><span style="--0:#D6DEEB">) </span></span><span style="--0:#809191;--1:#5E6578">// async call</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#C792EA;--1:#8D46B4">await</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">addDrinkToCart</span><span style="--1:#403F53"><span style="--0:#D6DEEB">(</span><span style="--0:#D7DBE0">chosenDrink</span><span style="--0:#D6DEEB">) </span></span><span style="--0:#809191;--1:#5E6578">// async call</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#82AAFF;--1:#3C63B3">orderItems</span><span style="--0:#D6DEEB;--1:#403F53">() </span><span style="--0:#809191;--1:#5E6578">// async call</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">})()</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code=";(async () => {  const pizzaData = await getPizzaData() // async call  const drinkData = await getDrinkData() // async call  const chosenPizza = choosePizza() // sync call  const chosenDrink = chooseDrink() // sync call  await addPizzaToCart(chosenPizza) // async call  await addDrinkToCart(chosenDrink) // async call  orderItems() // async call})()"><div></div></button></div></figure></div>
+<small>
+  <i>
+    example from:{" "}
+    <a href="https://medium.com/free-code-camp/avoiding-the-async-await-hell-c77a0fb71c4c" target="_blank" title="How to escape async/await hell. async/await freed us from callback… | by Aditya Agarwal | freeCodeCamp.org | Medium">
+      "How to escape async/await hell"
+    </a>
+  </i>
+</small>
+<p>Generally speaking, something I learned over time, is that if a solution has many corner cases, requiring you to look into the
+documentation (e.g., error handling in async/await VS Promises), it means that:</p>
+<ul>
+<li>The solution’s not intuitive enough.</li>
+<li>By not being intuitive, it’s not evolving in the same line of reasoning of the coder’s mind.</li>
+</ul>
+<p><strong>But what if everything is asynchronous? What if synchronous and asynchronous code looks the same?</strong> I believe this is the best way
+to shape our mindsets into producing highly readable and performant code. How would we achieve that? <strong>Observables, Reactive Programming</strong>.</p>
+<p>But Reactive Programming is <strong>not only about</strong> tackling the complicated job of handling <strong>asynchronicity</strong>. There are other amazing advantages
+that this paradigm facilitates:</p>
+<ul>
+<li><strong>A mental framework</strong> to use your <a href="https://en.wikipedia.org/wiki/Event-driven_programming" target="_blank" title="Event-driven programming - Wikipedia">event-driven programming</a> skills in
+a <strong>more data-oriented</strong>. Event-driven programming is only about programming user/system actions (e.g., mouse clicks), what if you could apply
+this same model not only to events but also to data (e.g., changing data X triggers a change to data Y).</li>
+<li><strong>Functional Programming &#x26; Immutability</strong> - it’s all about generating values to respond to a change. Changes trigger
+the creation of new values, naturally promoting <a href="https://en.wikipedia.org/wiki/Immutable_object" target="_blank" title="Immutable object - Wikipedia">immutability</a>.</li>
+<li><strong>Single Code Styling</strong> - you’ll be exposed to a <strong>higher abstraction level</strong> of cofing where handling tasks with Promises
+or other asynchronous mechanisms can look like any other code that does not involve asynchronicity.</li>
+<li><strong>State Management</strong> - by following the reactive way, state updates tend to be sequential, we’ll often find a solution that will help
+us eliminate some annoying global variables hanging around our code. This will become clear once we jump into our small application
+that I’ll present later on in this series.</li>
+<li><strong>Performance</strong> - from <a href="https://jaxenter.com/the-fight-for-performance-157515.html" target="_blank" title="The fight for performance – Is reactive programming the right approach? - JAXenter">“The fight for performance – Is reactive programming the right approach?”</a>, there’s a
+discussion around how Reactive Programming can overcome some potential bottlenecks caused by native threads in
+Java. In <a href="http://lup.lub.lu.se/luur/download?func=downloadFile&#x26;recordOId=8932146&#x26;fileOId=8932147" target="_blank" title="Reactive programming and its effect on performance and the development process, Gustav Hochbergs">this master’s thesis</a>, the
+author boards on a journey to compare a real application’s performance when migrated over to an approach based on Reactive Programming
+libraries. In short, it seems that there are no conclusive results in regards to CPU or memory usage when comparing a synchronous
+approach with a Reactive approach, but one thing stands out. The reactive approach seems to keep a good throughput under high load, where
+there’s the need for processing data in super short time intervals (5ms), here is where the Reactive approach shines the most.</li>
+</ul>
+<p>There’s one thing I need to mention, though, which is what most of the above sources where I’ve been reading about Reactive Programming
+have in common. Although we’ve seen Reactive Programming taking the higher ground in several aspects compared to traditional paradigms, its
+complexity seems to be one of the main barriers to its adoption. Reactive <strong>implementations are said to have a higher maintenance cost compared</strong>
+<strong>to a conventional programming style</strong>. I can’t argue this, the learning curve is steep, but once you pass that the rewards are noteworthy and
+things that in other times you would think of impossible or had to implement become so much easier.</p>
+<p>If you feel like taking a shot at Reactive Programming, I’ll gladly guide you through it!</p>
+<br>
+<hr>
+<ul>
+<li><strong>Part 1 - Why You Should Consider Reactive Programming</strong></li>
+<li>&#x3C;a
+href=“<a href="https://danielcaldas.github.io/posts/reactive-programming-fundamentals">https://danielcaldas.github.io/posts/reactive-programming-fundamentals</a>”
+target=“_blank”
+title=“Fundamentals of Reactive Programming | danielcaldas.github.io”
+<blockquote>
+<p>Part 2 - Fundamentals of Reactive Programming
+</p>
+</blockquote>
+</li>
+<li>&#x3C;a
+href=“<a href="https://danielcaldas.github.io/posts/hands-on-reactive-programming-rxjs">https://danielcaldas.github.io/posts/hands-on-reactive-programming-rxjs</a>”
+target=“_blank”
+title=“Hands-on Reactive Programming with RxJS | danielcaldas.github.io”
+<blockquote>
+<p>Part 3 - Hands-on Reactive Programming with RxJS
+</p>
+</blockquote>
+</li>
+<li>&#x3C;a
+href=“<a href="https://danielcaldas.github.io/posts/reactive-rxjs-pros-cons">https://danielcaldas.github.io/posts/reactive-rxjs-pros-cons</a>”
+target=“_blank”
+title=“Reactive Programming: The Good and the Bad | danielcaldas.github.io”
+<blockquote>
+<p>Part 4 - Reactive Programming: The Good and the Bad
+</p>
+</blockquote>
+</li>
+<li>&#x3C;a
+href=“<a href="https://danielcaldas.github.io/posts/awesome-reactive">https://danielcaldas.github.io/posts/awesome-reactive</a>”
+target=“_blank”
+title=“Awesome RxJS and Reactive Programming Resources | danielcaldas.github.io”
+<blockquote>
+<p>Part 5 - Awesome RxJS and Reactive Programming Resources
+</p>
+</blockquote>
+</li>
+</ul>  </article> <div class="mt-9 flex text-sm font-italic opacity-80"> <span class="ml-auto">Last modified on 12, Oct, 2024</span> </div> </main> <footer class="mt-12 mb-6 text-sm"> <div class="mb-1"> <span> <a href="/" class="panda-link"> ~/ </a> <span class="mx-1">|</span> </span><span> <a href="/rss.xml/" class="panda-link"> rss </a> <span class="mx-1">|</span> </span><span> <a href="mailto:caldasjdaniel@gmail.com" class="panda-link"> contact </a> <span class="mx-1">|</span> </span><span> <a href="https://github.com/danielcaldas/danielcaldas.github.io" class="panda-link"> github </a>  </span> </div> <div class="mb-1"> <span>2018-2024</span> </div> </footer> </body></html>
