@@ -2,7 +2,7 @@
 title: How to use RxJS with Svelte
 description: How to use RxJS with Svelte
 pubDate: 2021-07-05
-tags: ['javascript', 'svelte', 'reactiveprogramming']
+tags: ['javascript', 'svelte', 'reactive-programming']
 ---
 
 Svelte is an increasingly famous JavaScript framework; <a href="https://www.reddit.com/r/javascript/comments/llk8jp/review_of_svelte/" target="_blank" title="Review of Svelte : javascript">the community</a> appears to be reacting positively to the developer experience offered by Svelte. RxJS has increasingly become a standard for <a href="https://danielcaldas.github.io/posts/reactive-programming-fundamentals" target="_blank" title="Fundamentals of Reactive Programming | danielcaldas.github.io">Reactive Programming</a> mainly due to Angular’s endorsement that builds its core functionalities around Observables, and the framework <a href="https://angular.io/guide/http#requesting-non-json-data" target="_blank" title="Angular">naturally interfaces with RxJS</a>.

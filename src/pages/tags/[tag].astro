@@ -19,10 +19,9 @@ export async function getStaticPaths() {
     )
 
     return Array.from(postTags.union(bookTags)).map((tag) => {
-        console.info(tag)
         return {
             params: {
-                tag: tag.replace(/\s/g, '-'),
+                tag,
             },
             props: {
                 tag,

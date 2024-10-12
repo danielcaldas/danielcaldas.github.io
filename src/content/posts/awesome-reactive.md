@@ -1,7 +1,7 @@
 ---
 title: Reactive Series (pt. 5) - Awesome Resources for Reactive Programming
 pubDate: 2021-02-12
-tags: ['javascript', 'reactiveprogramming']
+tags: ['javascript', 'reactive-programming']
 description: 'My notes on the epic JSConf EU 2018'
 ---
 
