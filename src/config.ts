@@ -9,9 +9,9 @@ export const PandaConfig = {
     { title: 'about', url: '/about/' },
   ],
   footer: [
+      { title: '~/', url: '/' },
     { title: 'rss', url: '/rss.xml/' },
     { title: 'contact', url: 'mailto:caldasjdaniel@gmail.com' },
     { title: 'github', url: 'https://github.com/danielcaldas/danielcaldas.github.io' },
-    { title: '~/', url: '/' },
   ],
 }

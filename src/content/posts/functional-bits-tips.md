@@ -2,7 +2,7 @@
 title: Functional bits
 description: Functional bits
 pubDate: 2020-03-30
-tags: ['functionalprogramming', 'javascript']
+tags: ['functional-programming', 'javascript']
 ---
 
 Here are some of my top favorite personal utilities to make your programming style more functional. They increase the readability of my code and help me transforming those less pretty pieces of logic into something that I'm proud of and that I can confidently change by merely modifying a line of code (or maybe less).

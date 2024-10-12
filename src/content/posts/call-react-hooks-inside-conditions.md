@@ -149,7 +149,7 @@ I hope you found this pattern helpful! After working some time with <a href="htt
 <details>
 <summary>Expand to see example full code</summary>
 
-```jsx
+```jsx title="demo.tsx"
 import React, { useState, useEffect } from 'react'
 
 function getRandomInt(max) {
