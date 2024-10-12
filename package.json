@@ -1,5 +1,5 @@
 {
-  "name": "astro-theme-panda",
+  "name": "danielcaldas.github.io",
   "type": "module",
   "version": "0.1.0",
   "scripts": {
@@ -19,6 +19,7 @@
     "astro-expressive-code": "latest",
     "astro-i18n-aut": "latest",
     "astro-purgecss": "latest",
+    "latest": "^0.2.0",
     "lodash": "latest",
     "luxon": "latest",
     "markdown-it": "latest",
@@ -31,7 +32,7 @@
     "@types/lodash": "latest",
     "@types/luxon": "latest",
     "@types/markdown-it": "latest",
-    "@types/node": "^20.12.2",
+    "@types/node": "^22.7.5",
     "debug": "latest",
     "hastscript": "latest",
     "jsonc-parser": "latest",
