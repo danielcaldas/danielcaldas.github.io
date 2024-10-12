@@ -2038,6 +2038,832 @@ title=&amp;quot;Google - Site Reliability Engineering&amp;quot;&lt;/p&gt;
 &lt;p&gt;&amp;lt;/a&amp;gt;
 &amp;lt;/small&amp;gt;&lt;/p&gt;
 &lt;p&gt;It might be useful to think of the SLA as your answer: &lt;em&gt;&amp;quot;What happens if one fails to comply with the agreed SLOs?&amp;quot;&lt;/em&gt;&lt;/p&gt;
+</content:encoded></item><item><title>Tips for End to End Testing with Puppeteer</title><link>https://danielcaldas.github.io/posts/tips-end-to-end-testing-puppeteer/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/tips-end-to-end-testing-puppeteer/</guid><description>Getting up to speed with Puppeteer!</description><pubDate>Mon, 08 Jun 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&amp;lt;b&amp;gt;
+&amp;lt;a
+href=&amp;quot;https://ui.toast.com/weekly-pick/ko_20200630/&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;Puppeteer로 E2E 테스트하기 팁 - Puppeteer와 함께 속도 높이기! | TOAST UI :: Make Your Web Delicious!&amp;quot;&lt;/p&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;This article is available in Korean | 한국어 가능
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;/a&amp;gt;
+&amp;lt;/b&amp;gt;&lt;/p&gt;
+&lt;p&gt;These are exciting times for &lt;em&gt;End to End (E2E)&lt;/em&gt; testing in the JavaScript world. In the last couple of years,
+tools such as &amp;lt;a href=&amp;quot;https://www.cypress.io/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;JavaScript End to End Testing Framework | cypress.io&amp;quot;&amp;gt;cypress&amp;lt;/a&amp;gt; and &amp;lt;a href=&amp;quot;https://pptr.dev/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Puppeteer Official Home&amp;quot;&amp;gt;Puppeteer&amp;lt;/a&amp;gt; have flooded the JavaScript community and gain a fast adoption.&lt;/p&gt;
+&lt;p&gt;Today I&apos;m writing about Puppeteer. I want to share a pragmatic list of tips and resources that can help you get a fast overall understanding of things to
+consider when using Puppeteer, and what it has to offer.&lt;/p&gt;
+&lt;h6&gt;Topics I&apos;ll Cover&lt;/h6&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;#getting-things-running&quot;&gt;Getting things running&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#writing-tests&quot;&gt;Writing Tests&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#debugging&quot;&gt;Debugging&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#performance-automation&quot;&gt;Performance Automation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#browser-support&quot;&gt;Browser Support&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h4&gt;Getting things running&lt;/h4&gt;
+&lt;p&gt;In this section, I discuss the main aspects of running a test with Puppeteer, including some interoperability
+aspects that we should consider, such as the usage of an underlying testing library/framework such as Jest.&lt;/p&gt;
+&lt;h5&gt;Running tests in parallel&lt;/h5&gt;
+&lt;p&gt;To launch different browser instances to run your test suite, you can rely on your chosen test runner. For example, with &amp;lt;a href=&amp;quot;https://jestjs.io/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Jest · 🃏 Delightful JavaScript Testing&amp;quot;&amp;gt;Jest&amp;lt;/a&amp;gt;, I leverage the config &amp;lt;a href=&amp;quot;https://jestjs.io/docs/en/cli.html#--maxworkersnumstring&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Max Workers Jest Documentation&amp;quot;&amp;gt;maxWorkers&amp;lt;/a&amp;gt; to define how many browser sessions I allow to run concurrently.&lt;/p&gt;
+&lt;h5&gt;Be aware of the global timeout value&lt;/h5&gt;
+&lt;p&gt;You want to increase the default global value for a test to timeout. E2E tests might take up several seconds to run. If you&apos;re using Jest, you can configure the timeout value with the property &amp;lt;a href=&amp;quot;https://jestjs.io/docs/en/configuration#testtimeout-number&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;testTimeout Jest Documentation&amp;quot;&amp;gt;testTimeout&amp;lt;/a&amp;gt;, which for Jest 26.0 defaults to 5 seconds.&lt;/p&gt;
+&lt;p&gt;Here&apos;s an example of my &lt;code&gt;jest.config.js&lt;/code&gt; with the mentioned configurations.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;module.exports = {
+  verbose: true,
+  rootDir: &apos;.&apos;,
+  testTimeout: 30000,
+  maxWorkers: 3,
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you&apos;re using (for example) &amp;lt;a href=&amp;quot;https://jestjs.io/docs/en/configuration#testtimeout-number&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Mocha - the fun, simple, flexible JavaScript test framework&amp;quot;&amp;gt;mocha&amp;lt;/a&amp;gt;, you can add &lt;code&gt;this.timeout(VALUE_IN_SECONDS);&lt;/code&gt; at the top level of your &lt;code&gt;describe&lt;/code&gt; block.&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h5&gt;Abstracting puppeteer.launch&lt;/h5&gt;
+&lt;p&gt;To bootstrap your test, you have to run &amp;lt;a href=&amp;quot;https://pptr.dev/#?product=Puppeteer&amp;amp;version=v3.1.0&amp;amp;show=api-puppeteerlaunchoptions&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;puppeteer.launch Documentation&amp;quot;&amp;gt;puppeteer.lauch&amp;lt;/a&amp;gt;. I recommend
+you to be abstract this call within a wrapper function. Doing so allows you to centralize
+all your test environment customizations easily. I&apos;m referring to making the following things &lt;strong&gt;configurable&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Allow the client to specify what page the browser should open on.&lt;/li&gt;
+&lt;li&gt;Allow the client to decide under what &lt;strong&gt;network conditions&lt;/strong&gt; the test runs. I&apos;ll &lt;a href=&quot;#throttling-network-connection-speed&quot;&gt;also cover this in this article&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Allow the client to specify things like whether the &amp;lt;a href=&amp;quot;https://pptr.dev/#?product=Puppeteer&amp;amp;version=v3.1.0&amp;amp;show=api-puppeteerlaunchoptions&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;puppeteer.launch Documentation&amp;quot;&amp;gt;DevTools&amp;lt;/a&amp;gt; are open etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;import puppeteer from &apos;puppeteer&apos;
+
+export default async function boot(options = {}) {
+  let page = null
+  let browser = null
+
+  const { goToTargetApp = true, headless = true, devtools = false, slowMo = false } = options
+
+  browser = await puppeteer.launch({
+    headless,
+    devtools,
+    ...(slowMo &amp;amp;&amp;amp; { slowMo }),
+  })
+
+  if (goToTargetApp) {
+    page = await browser.newPage()
+    // I&apos;m assuming there&apos;s some environment variable here
+    // that points towards the app we&apos;re going to test
+    await page.goto(process.env.APP_URL)
+  }
+
+  return { page }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I like to have my launch function just dealing with the bootstrap configuration aspects of my test environment and launch the application. I try to keep it as slimmer as possible, but sometimes I feel the urge to add more stuff here. There&apos;s a saying:&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;Functions should do one thing. They should do it well. They should do it only.&amp;quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;source&lt;/em&gt;: &amp;lt;a href=&amp;quot;http://cleancoder.com/products&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;nofollow&amp;quot; title=&amp;quot;Uncle Bob Martin&amp;quot;&amp;gt;Clean Code by Robert C. Martin&amp;lt;/a&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h5&gt;Throttling Network Connection Speed&lt;/h5&gt;
+&lt;p&gt;You can run your tests under different network speed conditions. Let me share the pattern I use &amp;lt;a href=&amp;quot;https://gist.github.com/trungpv1601/2ccd3cc998149a84ba80ed7a4c9ef562&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Network throttling in Puppeteer GitHub Gist&amp;quot;&amp;gt;based on this gist that I luckily found&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;p&gt;If you &lt;a href=&quot;#abstracting-puppeteerlaunch&quot;&gt;abstract puppeteer.launch&lt;/a&gt;, your test could switch between network presets just by doing the following.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;import puppeteer from &apos;puppeteer&apos;
+import NETWORK_PRESETS from &apos;./network-presets&apos;
+
+export default async function boot(options = {}) {
+  let page = null
+  let browser = null
+
+  const { goToTargetApp = true, headless = true, devtools = false, slowMo = false } = options
+
+  browser = await puppeteer.launch({
+    headless,
+    devtools,
+    ...(slowMo &amp;amp;&amp;amp; { slowMo }),
+  })
+
+  if (goToTargetApp) {
+    page = await browser.newPage()
+    // I&apos;m assuming there&apos;s some environment variable here
+    // that points towards the app we&apos;re going to test
+    await page.goto(`${process.env.TARGET_APP_URL}${targetAppQueryParams}`)
+
+    if (network &amp;amp;&amp;amp; NETWORK_PRESETS[network]) {
+      // setup custom network speed
+      const client = await page.target().createCDPSession()
+      await client.send(&apos;Network.emulateNetworkConditions&apos;, NETWORK_PRESETS[network])
+    }
+  }
+
+  return { page }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;details&amp;gt;
+&amp;lt;summary&amp;gt;network-presets.js&amp;lt;/summary&amp;gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// source: https://gist.github.com/trungpv1601/2ccd3cc998149a84ba80ed7a4c9ef562
+export default {
+  GPRS: {
+    offline: false,
+    downloadThroughput: (50 * 1024) / 8,
+    uploadThroughput: (20 * 1024) / 8,
+    latency: 500,
+  },
+  Regular2G: {
+    offline: false,
+    downloadThroughput: (250 * 1024) / 8,
+    uploadThroughput: (50 * 1024) / 8,
+    latency: 300,
+  },
+  Good2G: {
+    offline: false,
+    downloadThroughput: (450 * 1024) / 8,
+    uploadThroughput: (150 * 1024) / 8,
+    latency: 150,
+  },
+  Regular3G: {
+    offline: false,
+    downloadThroughput: (750 * 1024) / 8,
+    uploadThroughput: (250 * 1024) / 8,
+    latency: 100,
+  },
+  Good3G: {
+    offline: false,
+    downloadThroughput: (1.5 * 1024 * 1024) / 8,
+    uploadThroughput: (750 * 1024) / 8,
+    latency: 40,
+  },
+  Regular4G: {
+    offline: false,
+    downloadThroughput: (4 * 1024 * 1024) / 8,
+    uploadThroughput: (3 * 1024 * 1024) / 8,
+    latency: 20,
+  },
+  DSL: {
+    offline: false,
+    downloadThroughput: (2 * 1024 * 1024) / 8,
+    uploadThroughput: (1 * 1024 * 1024) / 8,
+    latency: 5,
+  },
+  WiFi: {
+    offline: false,
+    downloadThroughput: (30 * 1024 * 1024) / 8,
+    uploadThroughput: (15 * 1024 * 1024) / 8,
+    latency: 2,
+  },
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;/details&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;
+&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h5&gt;Loading a Browser Extension&lt;/h5&gt;
+&lt;p&gt;Here&apos;s how you can load a browser extension.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// 1. launch puppeeter pass along the EXTENSION_PATH within your project
+// a relative path that points to the directory you output your extension assets
+browser = await puppeteer.launch({
+  // extension are allowed only in head-full mode
+  headless: false,
+  devtools,
+  args: [`--disable-extensions-except=${process.env.EXTENSION_PATH}`, `--load-extension=${process.env.EXTENSION_PATH}`],
+  ...(slowMo &amp;amp;&amp;amp; { slowMo }),
+})
+
+// 2. find the extension by the title
+// you might want to tackle this differently
+// depending on your use case
+const targets = await browser.targets()
+const extensionTarget = targets.find(({ _targetInfo }) =&amp;gt; {
+  return _targetInfo.title === &apos;my extension page title&apos;
+})
+
+// 3. getting the extensionId from the URL
+// if you have a fixed extensionId you can just pass in an
+// environment variable with that value, otherwise this works fine
+const partialExtensionUrl = extensionTarget._targetInfo.url || &apos;&apos;
+const [, , extensionID] = partialExtensionUrl.split(&apos;/&apos;)
+// here the entry point of the extension is an html file called &amp;quot;popup.html&amp;quot;
+const extensionPopupHtml = &apos;popup.html&apos;
+
+// 4. open the chrome extension in a new tab
+// notice that to properly build the extension URL you need the
+// extensionId and the entrypoint resource
+extensionPage = await browser.newPage()
+extensionUrl = `chrome-extension://${extensionID}/${extensionPopupHtml}`
+
+await extensionPage.goto(extensionUrl)
+
+// ... now use extensionPage to interact with the extension
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;p&gt;If you want to read through about testing chrome extensions with Puppeteer, I
+recommend this article: &amp;lt;a href=&amp;quot;https://gokatz.me/blog/automate-chrome-extension-testing/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Automate the UI Testing of your chrome extension - Gokul Kathirvel&amp;quot;&amp;gt;Automate the UI
+Testing of your chrome extension&amp;lt;/a&amp;gt; by &amp;lt;a href=&amp;quot;https://gokatz.me/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Gokul Kathirvel&amp;quot;&amp;gt;Gokul Kathirvel&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h4&gt;Writing Tests&lt;/h4&gt;
+&lt;p&gt;Apart from the &lt;a href=&quot;#clearing-text-from-an-input-field&quot;&gt;last subsection&lt;/a&gt;, what I discuss next,
+can be easily found in the official documentation. I&apos;m just going to step on those topics that
+I consider to be essential parts of the Puppeteer API.&lt;/p&gt;
+&lt;h5&gt;Working with page.evaluate&lt;/h5&gt;
+&lt;p&gt;You&apos;ll need to get used to the detail that when using &amp;lt;a href=&amp;quot;https://pptr.dev/#?product=Puppeteer&amp;amp;version=v3.0.3&amp;amp;show=api-pageevaluatepagefunction-args&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Puppeteer Docs page.evaluate&amp;quot;&amp;gt;page.evaluate&amp;lt;/a&amp;gt;, you run on the page context,
+meaning even if you&apos;re using arrow functions as an argument to &lt;code&gt;page.evaluate&lt;/code&gt;, you can&apos;t refer
+to things out of the scope of that function. You need to provide all the data you&apos;ll need as the
+third argument of &lt;code&gt;page.evaluate&lt;/code&gt;. Keep this in mind.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// extracting the &amp;quot;value&amp;quot; from an input element
+const inputValue = await inputEl.evaluate((e) =&amp;gt; e.value)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h5&gt;page.waitForSelector &amp;amp; page.waitForFunction&lt;/h5&gt;
+&lt;p&gt;Quickly getting familiar with the APIs &amp;lt;a href=&amp;quot;https://pptr.dev/#?product=Puppeteer&amp;amp;version=v3.1.0&amp;amp;show=api-pagewaitforselectorselector-options&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;page.waitForSelector Puppeteer Documentation&amp;quot;&amp;gt;page.waitForSelector&amp;lt;/a&amp;gt; and &amp;lt;a href=&amp;quot;https://pptr.dev/#?product=Puppeteer&amp;amp;version=v3.1.0&amp;amp;show=api-pagewaitforfunctionpagefunction-options-args&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;page.waitForFunction Puppeteer Documentation&amp;quot;&amp;gt;page.waitForFunction&amp;lt;/a&amp;gt; can reveal itself very productive. If you have a couple of tests to write changes that you&apos;ll need to wait for some condition to be met in the UI before you allowing your test to proceed, are high. Suspend the test flow and wait for the UI is a common practice, not exclusive to Puppeteer. See the below examples for some basic usages.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// this function waits for the menu to appear before
+// proceeding, this way we can ensure that  we can interact
+// with the list items in the menu
+const getSmuiSelectOptions = async () =&amp;gt; {
+  const selector = &apos;.mdc-menu-surface li&apos;
+  await page.waitForSelector(selector, { timeout: 1000 })
+  return await page.$$(selector)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// wait for a snackbar to appear when some item is deleted in the application
+await extensionPage.waitForFunction(
+  () =&amp;gt; !!document.querySelector(&apos;*[data-testid=&amp;quot;global-snackbar&amp;quot;]&apos;).innerText.includes(&apos;deleted&apos;),
+  {
+    timeout: 2000,
+  },
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;There&apos;s a decision you need to make. The choice is whereas you should have a higher or lower timeout. I usually try to advocate for lower as possible, because we want to keep our tests fast. Running E2E tests against systems where you need to perform (not mocked) network requests, means that you need to account for network instability, altough
+usually you&apos;ll run under &lt;em&gt;perfect&lt;/em&gt; network conditions, you might want to cut some slack to the timeout value.&lt;/p&gt;
+&lt;h5&gt;element.select&lt;/h5&gt;
+&lt;p&gt;I like the way it&apos;s possible to select options &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;&amp;lt;select&amp;gt; - HTML: Hypertext Markup Language | MDN&amp;quot;&amp;gt;on a native HTML select element&amp;lt;/a&amp;gt;. It works both for single and multiple selections, and it feels natural.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// selecting an HTTP method in a select element with id &amp;quot;custom-http-method&amp;quot;
+const selectEl = await page.$(&apos;#custom-http-method&apos;)
+
+await selectEl.select(&apos;POST&apos;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;While &lt;code&gt;element.select&lt;/code&gt; it&apos;s convenient, you&apos;ll probably have to approach this
+differently for custom select fields built on a &lt;code&gt;div &amp;gt; ul &amp;gt; li&lt;/code&gt; structure with a
+hidden input field, for instance &amp;lt;a href=&amp;quot;https://material-ui.com/components/selects/#select&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Select React component - Material-UI&amp;quot;&amp;gt;select Material UI components&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;h5&gt;Screenshots&lt;/h5&gt;
+&lt;p&gt;For specific test cases, I like to output a collection of screenshots that build a
+timeline of how my application looks throughout the test. Screenshotting in between
+your test helps you get an initial pointer to what you
+should be debugging in a failing test. Here&apos;s my small utility that wraps &amp;lt;a href=&amp;quot;https://pptr.dev/#?product=Puppeteer&amp;amp;version=v3.1.0&amp;amp;show=api-pagescreenshotoptions&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;page.screenshot Puppeteer Documentation&amp;quot;&amp;gt;page.screenshot&amp;lt;/a&amp;gt;
+API.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// wrapping the call to `page.screenshot` just to avoid it
+// breaking my test in case the screenshot fails
+export async function prtScn(page, path = `Screenshot ${new Date().toString()}`) {
+  try {
+    await page.screenshot({ path, type: &apos;png&apos;, fullPage: true })
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error(error)
+    // eslint-disable-next-line no-console
+    console.info(&apos;Failed to take screenshot but test will proceed...&apos;)
+    return Promise.resolve()
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;import * as utils from &apos;test-utils&apos;
+
+// (...)
+
+// Note: you can make this utility a Class and pass along the page
+// as context so that you don&apos;t need to pass it in everytime you
+// need to take a screenshot
+await utils.prtScn(page)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;
+&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h5&gt;Page Reloads&lt;/h5&gt;
+&lt;p&gt;With the &amp;lt;a href=&amp;quot;https://pptr.dev/#?product=Puppeteer&amp;amp;version=v3.1.0&amp;amp;show=api-pagereloadoptions&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;page.reload Puppeteer Documentation&amp;quot;&amp;gt;page.reload&amp;lt;/a&amp;gt; API. You can
+specify a set of options that allow you to wait for specific underlying browser tasks to idle before proceeding.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;await page.reload({ waitUntil: [&apos;networkidle0&apos;] })
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In this above example, we reload the page with &lt;code&gt;networkidle0&lt;/code&gt;, which does not allow the test to proceed unless there are no HTTP requests within a half a second period.&lt;/p&gt;
+&lt;h5&gt;Clearing Text from an Input Field&lt;/h5&gt;
+&lt;p&gt;I was stunned not to find a very out-of-the-box way to clear an input field. A few developers &amp;lt;a href=&amp;quot;https://github.com/puppeteer/puppeteer/issues/3094&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Feature request: Add &apos;clear&apos; option to the .type() function · Issue #3094 · puppeteer/puppeteer&amp;quot;&amp;gt;have expressed interest in this feature&amp;lt;/a&amp;gt;, but it seems there&apos;s no interest on the other end. I&apos;ve found a way to do it:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;/**
+ * Clears an element
+ * @param {ElementHandle} el
+ */
+export async function clear(el) {
+  await el.click({ clickCount: 3 })
+  await el.press(&apos;Backspace&apos;)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;It only works on Chrome&lt;/strong&gt; as it takes advantage of the functionality where three consecutive clicks in a text area/input field select the whole text. After that, you need to trigger a keyboard event to clear the entire field.&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h4&gt;Debugging&lt;/h4&gt;
+&lt;p&gt;I want to highlight some debugging techniques. Especially the &lt;code&gt;slowMo&lt;/code&gt; option.&lt;/p&gt;
+&lt;h5&gt;Debugging with slowMo&lt;/h5&gt;
+&lt;p&gt;You&apos;ll want to use &amp;lt;a href=&amp;quot;https://pptr.dev/#?product=Puppeteer&amp;amp;version=v3.1.0&amp;amp;show=api-puppeteerlaunchoptions&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;puppeteer.launch Documentation&amp;quot;&amp;gt;slowMo&amp;lt;/a&amp;gt; to debug individual tests. The option allows you to slow down the interactions (the steps) of your E2E test so that you can see what&apos;s going on, almost like seeing an actual human interacting with your application. I can&apos;t emphasize enough how valuable this is.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;page.launch({ slowMo: 50 })
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the following GIFs you can see the difference of running without and with the &lt;code&gt;slowMo&lt;/code&gt; option respectively. E2E test on the tweak chrome extension &amp;lt;b&amp;gt;without slowMo&amp;lt;/b&amp;gt;. You can&apos;t possibly understand what&apos;s going on.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/tips-end-to-end-testing-puppeteer/no-slowmo.gif&quot; alt=&quot;without slow motion&quot; title=&quot;without slow motion&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/tips-end-to-end-testing-puppeteer/slowmo.gif&quot; alt=&quot;with slow motion&quot; title=&quot;with slow motion&quot;&gt;&lt;/p&gt;
+&lt;p&gt;In these examples I&apos;m using the &amp;lt;a href=&amp;quot;https://tweak-extension.com/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;tweak browser extension, intercept and mock HTTP requests&amp;quot;&amp;gt;tweak browser extension&amp;lt;/a&amp;gt; to demo the different use cases.&lt;/p&gt;
+&lt;p&gt;For more awesome tips for debugging, I highly recommend this short article on Debugging Tips from Google.&lt;/p&gt;
+&lt;h5&gt;Using debugger&lt;/h5&gt;
+&lt;p&gt;I got this one from &amp;lt;a href=&amp;quot;https://developers.google.com/web/tools/puppeteer/debugging&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Debugging  |  Tools for Web Developers  |  Google Developers&amp;quot;&amp;gt;Google debugging tips&amp;lt;/a&amp;gt;. I had the habit of
+throwing a &lt;code&gt;sleep&lt;/code&gt; statement to stop my tests for &lt;em&gt;X&lt;/em&gt; seconds and inspect the application
+to see why the tests were breaking. But now I completely shifted to this.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;await page.evaluate(() =&amp;gt; {
+  debugger
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For more great debugging tips, I highly recommend &amp;lt;a href=&amp;quot;https://developers.google.com/web/tools/puppeteer/debugging&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Debugging  |  Tools for Web Developers  |  Google Developers&amp;quot;&amp;gt;this short article on Debugging Tips&amp;lt;/a&amp;gt; from Google.&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h4&gt;Performance Automation&lt;/h4&gt;
+&lt;p&gt;There&apos;s quite a &lt;em&gt;buzz&lt;/em&gt; going on about using Puppeteer to automate web performance
+testing. I couldn&apos;t write this article without giving a shout out to &amp;lt;a href=&amp;quot;https://addyosmani.com/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;AddyOsmani.com&amp;quot;&amp;gt;Addy Osmani&amp;lt;/a&amp;gt; on the
+work developed on &amp;lt;a href=&amp;quot;https://github.com/addyosmani/puppeteer-webperf&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Automating Web Performance testing with Puppeteer&amp;quot;&amp;gt;addyosmani/puppeteer-webperf&amp;lt;/a&amp;gt;, which I couldn&apos;t
+recommend more. Within the project &lt;code&gt;README.md&lt;/code&gt; you&apos;ll find the most organized
+set of examples to tune your performance automation.&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h4&gt;Browser Support&lt;/h4&gt;
+&lt;p&gt;According to the &amp;lt;a href=&amp;quot;https://pptr.dev/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Puppeteer Official Home&amp;quot;&amp;gt;official documentation&amp;lt;/a&amp;gt;, you can use Puppeteer with Firefox, with the caveat that you might encounter some issues since this capability is experimental at the time of this writing. You can specify which browser to run via &lt;code&gt;puppeteer.launch&lt;/code&gt; options API that I&apos;ve covered &lt;a href=&quot;#abstracting-puppeteerlaunch&quot;&gt;in this section&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;
+&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What are your favorite bits of Puppeteer? What would you recommend me to learn next?&lt;/strong&gt;&lt;/p&gt;
+</content:encoded></item><item><title>Unrevealed tips for unit testing with Jest</title><link>https://danielcaldas.github.io/posts/tips-jest-unit-testing/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/tips-jest-unit-testing/</guid><description>Unrevealed tips for unit testing with Jest</description><pubDate>Fri, 26 Jul 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;As a front-end engineer by profession, and having a few JavaScript open source projects myself, I&apos;ve faced some challenges around unit testing, in my particular case, with &amp;lt;a href=&amp;quot;https://jestjs.io/en/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;jest is a delightful javascript testing framework with a focus on simplicity&amp;quot;&amp;gt;Jest&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;p&gt;For several times I question myself: &amp;quot;How did the test get to the point in which it&apos;s so much more complex to implement than the feature itself?&amp;quot; - It&apos;s usually like that, don&apos;t take me wrong here, I&apos;m just referring to extreme cases, where 3rd party libraries or even architectural decisions, make your code super hard to test.&lt;/p&gt;
+&lt;p&gt;Nevertheless, I wanted to share with you a super pragmatic and short list of tips that might help you get that tricky stubborn mock to work.&lt;/p&gt;
+&lt;h3&gt;1. Mocking defaults&lt;/h3&gt;
+&lt;p&gt;In this example, I mock a 3rd party dependency called &amp;lt;a href=&amp;quot;https://github.com/ScottHamper/Cookies&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;javascript client-side cookie manipulation library&amp;quot;&amp;gt;ScottHamper/Cookies&amp;lt;/a&amp;gt;. This 3rd party exports only a default property that is a wrapper to all the cookie operations that one can perform. Internally it&apos;s actually implemented as a &amp;lt;a href=&amp;quot;https://en.wikipedia.org/wiki/Singleton_pattern&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;wikipedia singleton pattern is a software design pattern that restricts the instantiation of a class to one single instance&amp;quot;&amp;gt;singleton&amp;lt;/a&amp;gt;. The trick is to use &lt;code&gt;__esModule: true&lt;/code&gt; flag within the &lt;code&gt;jest.mock&lt;/code&gt; call.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;import Cookie from &apos;cookies-js&apos;
+
+Cookie.get(&apos;key&apos;)
+// ...
+Cookie.set(&apos;key&apos;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;let mockGetCookie = jest.fn()
+let mockSetCookie = jest.fn()
+
+jest.mock(&apos;cookies-js&apos;, () =&amp;gt; ({
+  __esModule: true, // mock the exports
+  default: {
+    set: jest.fn().mockImplementation((...args) =&amp;gt; {
+      mockSetCookie(...args)
+    }),
+    get: jest.fn().mockImplementation((...args) =&amp;gt; {
+      mockGetCookie(...args)
+    }),
+  },
+}))
+// ...
+it(&apos;should call Cookie.set&apos;, () =&amp;gt; {
+  expect(mockSetCookie).toHaveBeenCalledWith(&apos;key&apos;)
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h3&gt;2. Mocking files that don&apos;t exist in the file system! 🤯&lt;/h3&gt;
+&lt;p&gt;If you depend on a file that is generated at runtime, or a file that only exists in the context of the client (e.g., a runtime configuration file), this file it&apos;s not most likely in your filesystem when you trigger the test, but your program depends on it to run. There&apos;s a way to mock this nonexistent file with Jest, one just needs to make use of the mock configuration flag &amp;lt;a href=&amp;quot;https://jestjs.io/docs/en/jest-object.html#jestmockmodulename-factory-options&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;jest docs mocks a module with jest.mock&amp;quot;&amp;gt;virtual&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// runtimeConfig.json does not exist on the filesystem, but your test
+// will still execute and your code will use this runtimeConfig.json file
+jest.mock(&apos;./runtimeConfig.json&apos;, () =&amp;gt; ({ env: &apos;QA1&apos; }), { virtual: true })
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h3&gt;3. Complex/large assertions on function calls&lt;/h3&gt;
+&lt;p&gt;Consider the following scenario where you have a set of star wars characters
+and you can fetch them according to different kinds of sorting options.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const starWarsCharacters = [
+  { name: &apos;Luke Skywalker&apos;, height: &apos;172&apos;, mass: &apos;77&apos; },
+  { name: &apos;C-3PO&apos;, height: &apos;167&apos;, mass: &apos;75&apos; },
+  { name: &apos;R2-D2&apos;, height: &apos;96&apos;, mass: &apos;32&apos; },
+  { name: &apos;Darth Vader&apos;, height: &apos;202&apos;, mass: &apos;136&apos; },
+  { name: &apos;Leia Organa&apos;, height: &apos;150&apos;, mass: &apos;49&apos; },
+  { name: &apos;Owen Lars&apos;, height: &apos;178&apos;, mass: &apos;120&apos; },
+  { name: &apos;Beru Whitesun lars&apos;, height: &apos;165&apos;, mass: &apos;75&apos; },
+  { name: &apos;R5-D4&apos;, height: &apos;97&apos;, mass: &apos;32&apos; },
+  { name: &apos;Biggs Darklighter&apos;, height: &apos;183&apos;, mass: &apos;84&apos; },
+  { name: &apos;Obi-Wan Kenobi&apos;, height: &apos;182&apos;, mass: &apos;77&apos; },
+]
+
+function getCharacters(options) {
+  if (options.sortedByName) {
+    return sortedByName(starWarsCharacters)
+  }
+
+  if (options.sortedByHeight) {
+    return sortByHeight(starWarsCharacters)
+  }
+
+  return starWarsCharacters
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(&lt;strong&gt;Note!&lt;/strong&gt; let&apos;s ignore the return value, let&apos;s say we were only interested in knowing whether or not
+&lt;code&gt;sortedByName&lt;/code&gt; function was called).&lt;/p&gt;
+&lt;p&gt;You might have seen the following testing code somewhere:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;it(&apos;should call sortedByName with all the star wars characters&apos;, () =&amp;gt; {
+  const options = { sortedByName: true }
+
+  getCharacters(options)
+
+  // I&apos;m exaggerating to prove a point, hope nobody actually does this
+  expect(mockSortedByName).toHaveBeenCalledWith([
+    { name: &apos;Luke Skywalker&apos;, height: &apos;172&apos;, mass: &apos;77&apos; },
+    { name: &apos;C-3PO&apos;, height: &apos;167&apos;, mass: &apos;75&apos; },
+    { name: &apos;R2-D2&apos;, height: &apos;96&apos;, mass: &apos;32&apos; },
+    { name: &apos;Darth Vader&apos;, height: &apos;202&apos;, mass: &apos;136&apos; },
+    { name: &apos;Leia Organa&apos;, height: &apos;150&apos;, mass: &apos;49&apos; },
+    { name: &apos;Owen Lars&apos;, height: &apos;178&apos;, mass: &apos;120&apos; },
+    { name: &apos;Beru Whitesun lars&apos;, height: &apos;165&apos;, mass: &apos;75&apos; },
+    { name: &apos;R5-D4&apos;, height: &apos;97&apos;, mass: &apos;32&apos; },
+    { name: &apos;Biggs Darklighter&apos;, height: &apos;183&apos;, mass: &apos;84&apos; },
+    { name: &apos;Obi-Wan Kenobi&apos;, height: &apos;182&apos;, mass: &apos;77&apos; },
+  ])
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/tips-jest-unit-testing/morpheus.jpg&quot; alt=&quot;morpheus alternative meme&quot; title=&quot;morpheus alternative meme&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;cite&amp;gt;source: https://imgflip.com/memegenerator/31952703/morpheus&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;p&gt;In this cases, you can make use of &amp;lt;a href=&amp;quot;https://jestjs.io/docs/en/mock-function-api#mockfnmockcalls&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;jest docs mockFn.mock.calls&amp;quot;&amp;gt;mockFn.mock.calls&amp;lt;/a&amp;gt; to assert on the arguments that were passed into the function call, and you can use &amp;lt;a href=&amp;quot;https://jestjs.io/docs/en/snapshot-testing#snapshot-testing-with-jest&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;jest docs snapshot tests are a very useful tool whenever you want to make sure your UI does not change unexpectedly&amp;quot;&amp;gt;snapshot testing&amp;lt;/a&amp;gt; in order to keep your test case gracefully thin.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;it(&apos;should call sortedByName with all the star wars characters&apos;, () =&amp;gt; {
+  const options = { sortedByName: true }
+
+  getCharacters(options)
+
+  expect(mockSortedByName.mock.calls[0]).toMatchSnapshot()
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h3&gt;4. Inline require to mock large datasets&lt;/h3&gt;
+&lt;p&gt;In the event of facing the ideal scenario where you need to mock a full JSON API response, you might want to place your JSON separate file and then use an inline require statement to mimic a response for a particular method.&lt;/p&gt;
+&lt;p&gt;Let&apos;s again make use of the previous example with data from the &amp;lt;a href=&amp;quot;https://swapi.dev/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;the star wars api all the Star Wars data you&apos;ve ever wanted&amp;quot;&amp;gt;SWAPI (The Star Wars API)&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;p&gt;If you would have a static list of all characters in you program, or a mock of a response that you would
+want to use within your test case, you case use an inline &lt;code&gt;require&lt;/code&gt; statement (in alternative of importing the mock on the top of the file).&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;it(&apos;should get sort characters&apos;, () =&amp;gt; {
+  const result = sortedByName(require(&apos;./starWarsCharacters.json&apos;))
+
+  expect(result).toMatchSnapshot()
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h3&gt;5. Make use of async/await&lt;/h3&gt;
+&lt;p&gt;It might also come the time where you need to perform some asynchronous work inside your test case, in that case, don&apos;t hesitate in recurring to &amp;lt;a href=&amp;quot;https://jestjs.io/docs/en/tutorial-async#async-await&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;jest docs using async await&amp;quot;&amp;gt;async/await&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;it(&apos;get all star wars characters&apos;, async () =&amp;gt; {
+  const data = await fetchStarWarsCharacters()
+
+  expect(data).toMatchSnapshot()
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Oh, and there&apos;s also &amp;lt;a href=&amp;quot;https://jestjs.io/docs/en/tutorial-async#resolves&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;jest docs resolves&amp;quot;&amp;gt;.resolves&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;it(&apos;get all star wars characters (with resolves)&apos;, () =&amp;gt; {
+  const promise = fetchStarWarsCharacters()
+
+  return expect(promise).resolves.toMatchSnapshot()
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Do you have more tips that in your opinion, fit nicely in this list? I would love to hear them.&lt;/p&gt;
+&lt;h3&gt;Updates&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;I talked about this on the &lt;em&gt;JavaScript Jabber Podcast&lt;/em&gt;, you can listen to the episode here: &amp;lt;a href=&amp;quot;https://topenddevs.com/podcasts/javascript-jabber/episodes/jsj-411-unit-testing-jest-with-daniel-caldas&amp;quot; target=&amp;quot;_blank&amp;quot; alt=&amp;quot;JSJ 411: Unit Testing Jest with Daniel Caldas&amp;quot;&amp;gt;JSJ 411: Unit Testing Jest with Daniel Caldas&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;My friend &amp;lt;a href=&amp;quot;https://twitter.com/ayusharma_&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Ayush Sharma twitter profile&amp;quot;&amp;gt;@ayusharma_&amp;lt;/a&amp;gt; told me that I should mention &amp;lt;a href=&amp;quot;https://jestjs.io/docs/en/jest-object#jestdomockmodulename-factory-options&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;The Jest Object · Jest&amp;quot;&amp;gt;jest.doMock&amp;lt;/a&amp;gt; in this article. So here it is:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;When using babel-jest, calls to mock will automatically be hoisted to the top of the code block. Use this method if you want to explicitly avoid this behavior.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Think of &lt;code&gt;jest.doMock&lt;/code&gt; as a resource for you to mock differently the same module in various test cases that live under the same test file.&lt;/p&gt;
+&lt;p&gt;Cheers!&lt;/p&gt;
+</content:encoded></item><item><title>Unit testing with fixtures unleashed</title><link>https://danielcaldas.github.io/posts/unit-testing-with-fixtures-unleashed/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/unit-testing-with-fixtures-unleashed/</guid><description>Unit testing with fixtures unleashed</description><pubDate>Tue, 15 Oct 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;From project to project, I&apos;ve seen applications structured in many different ways, but most of the time, no matter how different the software was, the testing techniques and structures were almost always the same. In this article, I want to share with you an experienced-based journey on how we can differently structure our tests; &lt;strong&gt;I&apos;m calling it a fixture based architecture&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3&gt;About the unit tests we write&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;On a very high level, manipulating the execution flow through inputs, and performing assertions on outputs is what happens with all the tests that we write&lt;/strong&gt; daily (weekly at least I hope), at different levels of granularity. Whether we want to test a small function or a large JavaScript module with multiple entry points, our ultimate goal is to perform a set of assertions that bring us the peace of mind and stability to move forward and build more stuff on top.&lt;/p&gt;
+&lt;p&gt;It happens that &lt;strong&gt;in specific scenarios&lt;/strong&gt;, unit tests as we write them &lt;strong&gt;might become pure overhead&lt;/strong&gt;. How come? Because we repeat the same structures, and we write the same boilerplate code again and again, without really thinking about how these particular tests could become more pleasant to maintain and scale. Why should I care about looking for alternatives? Because it can save you time, it &lt;strong&gt;can document your codebase through well organized and self-explanatory test fixtures&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Let&apos;s take a look at how we can move on from a &lt;em&gt;routine&lt;/em&gt; unit test setup, to a fixture based setup, through a dummy case study that I specially designed to demonstrate how tests can be set up in a much more declarative way.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/unit-testing-with-fixtures-unleashed/bear-meme.jpg&quot; alt=&quot;bear, funny, meme&quot; title=&quot;bear, funny, meme&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;cite&amp;gt;source: https://makeameme.org/meme/im-so-excited-5af9fa&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;h3&gt;Test fixtures&lt;/h3&gt;
+&lt;p&gt;Before diving into details, let&apos;s take a few seconds to go through this definition of test fixtures that I came across in the &amp;lt;a href=&amp;quot;https://github.com/junit-team/junit4/wiki/test-fixtures&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;junit-team/junit4 description of test fixtures&amp;quot;&amp;gt;junit-team/junit4 GitHub wiki page&amp;lt;/a&amp;gt;, In my opinion is extremely accurate.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A test fixture is a fixed state of a set of objects used as a baseline for running tests. The purpose of a test fixture is to ensure that there is a well known and fixed environment in which tests are run so that results are repeatable. Examples of fixtures:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Preparation of input data and setup/creation of fake or mock objects&lt;/li&gt;
+&lt;li&gt;Loading a database with a specific, known set of data&lt;/li&gt;
+&lt;li&gt;Copying a specific known set of files creating a test fixture will create a set of objects initialized to certain states.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;A case study&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Slowly moving to a fixture based test setup&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I&apos;ll create a small project to illustrate the concepts throughout this article, all the code is available in the repository &amp;lt;a href=&amp;quot;https://github.com/danielcaldas/test-fixtures-pattern&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;GitHub, Daniel Caldas, test-fixtures-pattern case study project&amp;quot;&amp;gt;danielcaldas/test-fixtures-pattern&amp;lt;/a&amp;gt;. The project it&apos;s not actually something that you would use, but it&apos;s a good example to depict and analyze certain scenarios.&lt;/p&gt;
+&lt;h4&gt;📜 Small &amp;amp; dummy example for our case study&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-text&quot;&gt;├── replacer.js
+└── __tests__
+    ├── replacer.test.js
+    └── __snapshots__
+        └── replacer.test.js.snap
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;/**
+ * Replaces background color that matches a certain color by another.
+ * @param {string} target a css line
+ * @param {Object} options a set of options for the new color.
+ * @returns {string} the replaced expression or
+ * the same as the input if nothing matches.
+ */
+function backgroundColorReplacer(target, options) {
+  const { fromColor, toColor, opacity } = options
+  const bgc = `background-color: rgb(${fromColor.join(&apos;, &apos;)})`
+
+  if (target === bgc &amp;amp;&amp;amp; toColor &amp;amp;&amp;amp; toColor.length) {
+    const color = toColor.join(&apos;, &apos;)
+
+    if (opacity) {
+      return `background-color: rgba(${color}, ${opacity})`
+    }
+
+    return `background-color: rgb(${color})`
+  }
+
+  return target
+}
+
+module.exports = backgroundColorReplacer
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;small&amp;gt;
+&amp;lt;a
+href=&amp;quot;https://github.com/danielcaldas/test-fixtures-pattern/blob/master/replacer.js&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;GitHub, Daniel Caldas, test-fixtures-pattern case study project, replacer.js&amp;quot;&lt;/p&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;[replacer.js]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;/a&amp;gt;
+&amp;lt;/small&amp;gt;&lt;/p&gt;
+&lt;p&gt;So basically, we have a function that performs replacement of &lt;code&gt;background-color&lt;/code&gt; expressions given a set of options, this is very minimalistic, but the number of options can quickly scale to a few dozens depending on what kind of replacements one might want to perform in the future. The unit tests for this function might look like the following.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const backgroundColorReplacer = require(&apos;../replacer&apos;)
+
+describe(&apos;backgroundColorReplacer&apos;, () =&amp;gt; {
+  it(&apos;should replace color if they match&apos;, () =&amp;gt; {
+    const target = &apos;background-color: rgb(255, 0, 0)&apos;
+    const fromColor = [255, 0, 0]
+    const toColor = [0, 255, 0]
+    const options = { fromColor, toColor }
+
+    expect(backgroundColorReplacer(target, options)).toMatchSnapshot()
+  })
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;small&amp;gt;
+&amp;lt;a
+href=&amp;quot;https://github.com/danielcaldas/test-fixtures-pattern/blob/master/&lt;strong&gt;tests&lt;/strong&gt;/replacer.test.js&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;GitHub, Daniel Caldas, test-fixtures-pattern case study project, replacer.test.js&amp;quot;&lt;/p&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;[replacer.test.js]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;/a&amp;gt;
+&amp;lt;/small&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;
+&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h4&gt;📆 A few weeks down the road&lt;/h4&gt;
+&lt;p&gt;Let&apos;s imagine that you and your team have now been using and developing this replacer code for 2 months. It&apos;s fantastic, everybody loves it, but there&apos;s some edge case that needs attention. The developers are all over it!&lt;/p&gt;
+&lt;p&gt;Let&apos;s take a look at the test file after 2 months, there are a couple of other features available, therefore a few more tests were implemented.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const backgroundColorReplacer = require(&apos;../replacer&apos;)
+
+describe(&apos;backgroundColorReplacer&apos;, () =&amp;gt; {
+  it(&apos;should replace color if they match&apos;, () =&amp;gt; {
+    const target = &apos;background-color: rgb(255, 0, 0)&apos;
+    const fromColor = [255, 0, 0]
+    const toColor = [0, 255, 0]
+    const options = { fromColor, toColor }
+
+    expect(backgroundColorReplacer(target, options)).toMatchSnapshot()
+  })
+
+  it(&apos;should replace color if they match and add opacity when defined&apos;, () =&amp;gt; {
+    // ...
+  })
+
+  it(&apos;should not replace color if they do not match&apos;, () =&amp;gt; {
+    // ...
+  })
+
+  it(&apos;should not replace color there is no new color specified&apos;, () =&amp;gt; {
+    // ...
+  })
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;small&amp;gt;
+&amp;lt;a
+href=&amp;quot;https://github.com/danielcaldas/test-fixtures-pattern/blob/master/&lt;strong&gt;tests&lt;/strong&gt;/replacer.test.js&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;GitHub, Daniel Caldas, test-fixtures-pattern case study project, replacer.test.js&amp;quot;&lt;/p&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;[replacer.test.js]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;/a&amp;gt;
+&amp;lt;/small&amp;gt;&lt;/p&gt;
+&lt;p&gt;Now the function supports an &lt;code&gt;opacity&lt;/code&gt; option, and there are a few more test cases. Eventually some nesting and branching in the &lt;code&gt;describe&lt;/code&gt;/&lt;code&gt;it&lt;/code&gt; &lt;em&gt;madness&lt;/em&gt; starts to stack up on an overwhelmingly large file. The developer has a tough time to go through the test cases and find the right spot for the scenario he/she just fixed. On top of that, any addition to that file seems to break a few other unit tests that aren&apos;t in any way related to the new test case he/she is trying to introduce.&lt;/p&gt;
+&lt;h3&gt;Rethinking the tests architecture&lt;/h3&gt;
+&lt;p&gt;It&apos;s time to rethink the way we structure the tests for this project. Let&apos;s give a try and use fixtures to architect our new test setup.&lt;/p&gt;
+&lt;p&gt;First of all, notice that no matter the scenario, we have a single entry point &lt;code&gt;backgroundColorReplacer&lt;/code&gt; that receives two arguments, a line of some CSS file as a string, and an object with a set of options to manipulate the replacement.&lt;/p&gt;
+&lt;p&gt;Second let&apos;s think of each test case as a unique scenario with its own description.&lt;/p&gt;
+&lt;p&gt;Third, let&apos;s separate boilerplate code from the code that it&apos;s actually particular to each test case.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;it(&apos;some description&apos;, () =&amp;gt; {
+  // setup code...
+  // some operations...
+  expect(backgroundColorReplacer(target, options)).toMatchSnapshot()
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Above you can see a skeleton structure of what we repeat time after time; you open the test block, your perform a set of assignments and operations on some variables that shape your test case, and in the end, you perform an assertion on the result of calling the replacer function.&lt;/p&gt;
+&lt;p&gt;Let&apos;s separate the scenario setup and the above boilerplate code, in ways that you need only to &lt;s&gt;write&lt;/s&gt; &lt;strong&gt;describe&lt;/strong&gt; for each test case its inputs. You won&apos;t be writing anymore the boilerplate code for the test setup, or the assertion statement.&lt;/p&gt;
+&lt;p&gt;Our new project&apos;s file tree now looks like:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;├── fixtures
+│   ├── not-replace-color-if-no-match.js
+│   ├── not-replace-color-if-no-new-color-specified.js
+│   ├── replace-color-when-match-and-opacity-defined.js
+│   ├── replace-color-when-match.js
+│   └── tests (auto-generated content)
+│       ├── fixtures.spec.js
+│       └── __snapshots__
+│           └── fixtures.spec.js.snap
+├── replacer.js
+├── run-fixtures.js
+└── __tests__
+    ├── replacer.test.js
+    └── __snapshots__
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So our test consists now on declaring the inputs for the replacer function, nothing else. Let&apos;s take a look at &lt;code&gt;fixtures/replace-color-when-match.js&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const target = &apos;background-color: rgb(255, 0, 0)&apos;
+const fromColor = [255, 0, 0]
+const toColor = [0, 255, 0]
+const options = { fromColor, toColor }
+
+module.exports = { target, options }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;small&amp;gt;
+&amp;lt;a
+href=&amp;quot;https://github.com/danielcaldas/test-fixtures-pattern/blob/master/fixtures/replace-color-when-match.js&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;GitHub, Daniel Caldas, test-fixtures-pattern case study project, replace-color-when-match.js&amp;quot;&lt;/p&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;[fixtures/replace-color-when-match.js]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;/a&amp;gt;
+&amp;lt;/small&amp;gt;&lt;/p&gt;
+&lt;p&gt;Some things are still unclear tough. How do we run the tests? How exactly are these fixtures going to be fed to the replacer? Also, how will our test reports look like?&lt;/p&gt;
+&lt;p&gt;For that, we need to take a look into &lt;code&gt;run-fixtures.js&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const fs = require(&apos;fs&apos;)
+const FIXTURES_BASE_DIR = `${__dirname}/fixtures`
+
+function generateFixtureJestSnippets(files) {
+  // ...
+  const open = `
+    // WARNING: this file is generated automatically
+    const backgroundColorReplacer = require(&apos;../../replacer&apos;);
+
+    describe(&apos;backgroundColorReplacer&apos;, () =&amp;gt; {
+  `
+  const close = `});`
+  const specs = files
+    .map((fname) =&amp;gt; {
+      const input = fs.readFileSync(`${FIXTURES_BASE_DIR}/${fname}`)
+      const specName = fname.split(&apos;.js&apos;)[0].replace(/[-]/gi, &apos; &apos;)
+
+      return `
+        it(&amp;quot;${specName}&amp;quot;, () =&amp;gt; {
+          try {
+            const { target, options } = require(\`../${fname}\`);
+            expect(backgroundColorReplacer(target, options)).toMatchSnapshot();
+          } catch(error) {
+            expect(error).toMatchSnapshot();
+          }
+        });
+      `
+    })
+    .join(&apos;\n&apos;)
+
+  return `${open}${specs}${close}`
+}
+
+function parseFileTree(err, files) {
+  // ...
+  const tmp = generateFixtureJestSnippets(files.filter((f) =&amp;gt; f !== &apos;tests&apos;))
+
+  fs.writeFileSync(`${FIXTURES_BASE_DIR}/tests/fixtures.spec.js`, tmp)
+}
+
+fs.readdir(FIXTURES_BASE_DIR, parseFileTree)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;small&amp;gt;
+&amp;lt;a
+href=&amp;quot;https://github.com/danielcaldas/test-fixtures-pattern/blob/master/run-fixtures.js&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;GitHub, Daniel Caldas, test-fixtures-pattern case study project, run-fixtures.js&amp;quot;&lt;/p&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;[run-fixtures.js]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;/a&amp;gt;
+&amp;lt;/small&amp;gt;&lt;/p&gt;
+&lt;p&gt;Next, we dive deep into this &lt;code&gt;run-fixtures.js&lt;/code&gt; script and in its results.&lt;/p&gt;
+&lt;h3&gt;The results&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Generating test snippets and executing them with Jest&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The code in &lt;code&gt;run-fixtures.js&lt;/code&gt; generates a test snippet for each one of the test fixtures that you specified within the &lt;code&gt;fixtures&lt;/code&gt; directory. Of course, there are a lot of different approaches here. You can implement this script in many different ways, its scope, however, should ideally not change much, it should be: &lt;strong&gt;to &lt;em&gt;glue&lt;/em&gt; your scenarios and the underlying test runner&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The output of running the &lt;code&gt;run-fixtures.js&lt;/code&gt; script is a familiar &lt;em&gt;&amp;quot;Jest compliant&amp;quot;&lt;/em&gt; file:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// WARNING: this file is generated automatically
+const backgroundColorReplacer = require(&apos;../../replacer&apos;)
+
+describe(&apos;backgroundColorReplacer&apos;, () =&amp;gt; {
+  it(&apos;not replace color if no match&apos;, () =&amp;gt; {
+    try {
+      const { target, options } = require(`../not-replace-color-if-no-match.js`)
+      expect(backgroundColorReplacer(target, options)).toMatchSnapshot()
+    } catch (error) {
+      expect(error).toMatchSnapshot()
+    }
+  })
+
+  it(&apos;not replace color if no new color specified&apos;, () =&amp;gt; {
+    // ...
+  })
+
+  it(&apos;replace color when match and opacity defined&apos;, () =&amp;gt; {
+    // ...
+  })
+
+  it(&apos;replace color when match&apos;, () =&amp;gt; {
+    // ...
+  })
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;small&amp;gt;
+&amp;lt;a
+href=&amp;quot;https://github.com/danielcaldas/test-fixtures-pattern/blob/master/fixtures/tests/fixtures.spec.js&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;GitHub, Daniel Caldas, test-fixtures-pattern case study project, fixtures.spec.js&amp;quot;&lt;/p&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;[fixtures.spec.js]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;/a&amp;gt;
+&amp;lt;/small&amp;gt;&lt;/p&gt;
+&lt;p&gt;The output or running the above test is just a simple Jest report.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/unit-testing-with-fixtures-unleashed/final-test-report.png&quot; alt=&quot;Jest, final test report&quot; title=&quot;Jest, final test report&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;Caption /&amp;gt;&lt;/p&gt;
+&lt;p&gt;In the above implementation we have created a generic mechanism that resembles the &lt;em&gt;Command Pattern&lt;/em&gt; (&amp;lt;a href=&amp;quot;https://addyosmani.com/resources/essentialjsdesignpatterns/book/&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;nofollow&amp;quot; title=&amp;quot;Learning JavaScript Design Patterns&amp;quot;&amp;gt;reference from &amp;quot;Learning JavaScript Design Patterns&amp;quot; by Addy Osmani&amp;lt;/a&amp;gt;) where the &lt;em&gt;spec&lt;/em&gt; name itself is the &lt;em&gt;command&lt;/em&gt; we wish to execute.&lt;/p&gt;
+&lt;p&gt;My goal here is to give you the idea that, in some projects, you might be able to drop a lot of boilerplate by wisely choosing your testing architecture; The pattern you go for it&apos;s just a tool for you to organize your thoughts, &lt;strong&gt;it doesn&apos;t mean that&lt;/strong&gt; if you don&apos;t choose the right architecture you are doomed to a poorly tested codebase, you can still certainly achieve that, it just won&apos;t be as easy.&lt;/p&gt;
+&lt;h4&gt;🎰 Bonus section: development watch mode for fixtures&lt;/h4&gt;
+&lt;p&gt;Another thing that comes in handy when setting up our testing workflow, is to have a way to update the fixtures by tweaking existing test case inputs or adding new ones and automatically re-running the &lt;code&gt;run-fixtures.js&lt;/code&gt; script and the unit tests with Jest. How would that go?&lt;/p&gt;
+&lt;p&gt;If you never tried &amp;lt;a href=&amp;quot;https://github.com/remy/nodemon&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Monitor for any changes in your node.js application and automatically restart the server - perfect for development&amp;quot;&amp;gt;nodemon&amp;lt;/a&amp;gt;, now it&apos;s a good time to check it out. It&apos;s a mighty tool to restart some job based on specific changes in your project. Let&apos;s use nodemon to set up a &amp;lt;a href=&amp;quot;https://docs.npmjs.com/misc/scripts&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;npm cli documentation about scripts field&amp;quot;&amp;gt;npm script&amp;lt;/a&amp;gt; that seamlessly re-runs our fixtures. The idea is that we achieve the same workflow that we would normally have with &amp;lt;a href=&amp;quot;https://jestjs.io/docs/en/cli#watchall&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Jest cli, watch all option&amp;quot;&amp;gt;jest --watchAll&amp;lt;/a&amp;gt;, on our fixtures folder. After installing nodemon, we just need to use the &amp;lt;a href=&amp;quot;https://github.com/remy/nodemon#monitoring-multiple-directories&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Monitor for any changes in your node.js application and automatically restart the server - perfect for development, watch mode&amp;quot;&amp;gt;--watch&amp;lt;/a&amp;gt; option to check for changes in our fixtures.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-json:package.json&quot;&gt;&amp;quot;fixtures:run&amp;quot;: &amp;quot;node run-fixtures &amp;amp;&amp;amp; jest ./fixtures/tests/fixtures.spec.js&amp;quot;,
+&amp;quot;fixtures:clean&amp;quot;: &amp;quot;...&amp;quot;,
+&amp;quot;fixtures:watch&amp;quot;: &amp;quot;nodemon --watch ./fixtures --ignore ./fixtures/tests --exec \&amp;quot;npm run fixtures:run\&amp;quot;&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;small&amp;gt;
+&amp;lt;a
+href=&amp;quot;https://github.com/danielcaldas/test-fixtures-pattern/blob/master/package.json&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;GitHub, Daniel Caldas, test-fixtures-pattern case study project, package.json&amp;quot;&lt;/p&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;[package.json]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;/a&amp;gt;
+&amp;lt;/small&amp;gt;&lt;/p&gt;
+&lt;p&gt;As you can see from the above snippet, we &lt;em&gt;glue&lt;/em&gt; and chain everything together in the script &lt;code&gt;fixtures:watch&lt;/code&gt;. In fact, nodemon does most of the work. Now when we want to perform interactive changes in our fixtures we just need to type &lt;code&gt;npm run fixtures:watch&lt;/code&gt;, and &lt;em&gt;voilà&lt;/em&gt;. See the result below.&lt;/p&gt;
+&lt;p&gt;&amp;lt;GIF name=&amp;quot;fixtures-watch-mode&amp;quot; /&amp;gt;
+&amp;lt;Caption gif={true} /&amp;gt;&lt;/p&gt;
+&lt;p&gt;I found such a setup to be the ideal driver for you to advocate for &amp;lt;a href=&amp;quot;https://en.wikipedia.org/wiki/Test-driven_development&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Test-driven development - Wikipedia&amp;quot;&amp;gt;Test Driven Development (TDD)&amp;lt;/a&amp;gt; within your team. Creating fixtures to replicate tricky edge cases
+becomes trivial leading you to create the fixture that breaks your implementation in the first place, followed by fixing whatever is wrong with the actual implementation.
+But I don&apos;t want to elaborate on TDD, for that I would rather point you good resources such as &lt;em&gt;&amp;quot;Test Driven Development: By Example&amp;quot; (a book by Kent Beck)&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h3&gt;Projects using fixtures?&lt;/h3&gt;
+&lt;p&gt;If you read the article up to this point, you may now have an idea of how a fixture based architecture might look like. In real life, they appear in many other different colors and formats. Some known projects that use this pattern are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://github.com/facebook/react&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;A declarative, efficient, and flexible JavaScript library for building user interfaces. https://reactjs.org&amp;quot;&amp;gt;facebook/react&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://github.com/babel/babel&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Babel is a compiler for writing next generation JavaScript. https://babeljs.io/&amp;quot;&amp;gt;babel/babel&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://github.com/pugjs/pug&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Pug – robust, elegant, feature rich template engine for Node.js https://pugjs.org&amp;quot;&amp;gt;pugjs/pug&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://github.com/webpack/webpack&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;A bundler for javascript and friends. Packs many modules into a few bundled assets&amp;quot;&amp;gt;webpack/webpack&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Not a known project, but the babel plugin where I first implemented such architecture in &amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/presenting-babel-plugin-cloudinary/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;danielcaldas.github.io, blog post, Presenting babel-plugin-cloudinary&amp;quot;&amp;gt;babel-plugin-cloudinary&amp;lt;/a&amp;gt;, if you check the test setup, you might quickly identify the patterns explored in this article.&lt;/p&gt;
+&lt;p&gt;Do you see any similarities between all the listed projects? I do! We could say that they are all compilers, in their own ways. They often have a &lt;strong&gt;vast spectrum of inputs and narrow APIs, often exposed via a &lt;code&gt;compile&lt;/code&gt; function&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&amp;lt;small&amp;gt;
+&amp;lt;b&amp;gt;tip&amp;lt;/b&amp;gt;: to have a big picture of how these projects run fixtures, go to their repository and perform a search for
+&amp;quot;fixtures/&amp;quot; and you&apos;ll see &lt;em&gt;glue&lt;/em&gt; code somewhat related to the one demonstrated in this article; it might be a bit
+harder to follow due to the dimension of these projects
+&amp;lt;/small&amp;gt;
+.&lt;/p&gt;
+&lt;h3&gt;Reasons not to...&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/unit-testing-with-fixtures-unleashed/whats-the-catch-meme.jpg&quot; alt=&quot;so, what is the catch, meme&quot; title=&quot;so, what is the catch, meme&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;cite&amp;gt;https://imgflip.com/memegenerator/33897585/dave-chappelle&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;p&gt;I can think of two disadvantages that you should consider before exploring this option:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Unintended duplication becomes propitious&lt;/strong&gt; - since we have a flat and easily scalable structure, it might come the time where you have many scenarios, and someone introduces one or more repeated test cases without being aware of it. To avoid duplication, you can put in place, since the very beginning, some proper naming conventions for your test cases, such as prefixing common fixtures with some common keywords that show that those scenarios are somewhat related.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Setup might be too complex&lt;/strong&gt; - depending on the project and the underlying test runner, it might be more or less complex to put in place such a setup. We saw that with Jest it can be piece of cake &amp;lt;span title=&amp;quot;piece of cake&amp;quot;&amp;gt;🍰&amp;lt;/span&amp;gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Conclusions&lt;/h3&gt;
+&lt;p&gt;As already mentioned, all the code examples in this blog post are in a &amp;lt;a href=&amp;quot;https://github.com/danielcaldas/test-fixtures-pattern&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;GitHub, Daniel Caldas, test-fixtures-pattern case study project&amp;quot;&amp;gt;public GitHub repository&amp;lt;/a&amp;gt;.&amp;lt;br/&amp;gt;
+I hope that if you went through the article, you have now one more testing software pattern on your &lt;em&gt;toolbelt&lt;/em&gt; that will (for the right use cases) allow you scale the tests in your codebase effortlessly and a in self-documented/self-organized fashion.&lt;/p&gt;
+&lt;p&gt;What do you think about having a fixture based testing architecture? Do you have any project in mind where you see that this could be the right fit?&lt;/p&gt;
+</content:encoded></item><item><title>Keeping the web compatible for developers</title><link>https://danielcaldas.github.io/posts/web-compatible-developers/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/web-compatible-developers/</guid><description>Yet another Internet Explorer frustrating episode</description><pubDate>Fri, 21 Feb 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;It seems inevitable for me to fall into some browser compatibility trap from time to time. &amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/browser-polyfill-madness-mozilla-internet-explorer/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;danielcaldas.github.io, Browser polyfill madness, Mozilla and IE&amp;quot;&amp;gt;The last &lt;em&gt;&amp;quot;blogpost worthy&amp;quot;&lt;/em&gt; one that I faced was fun&amp;lt;/a&amp;gt;, but still, it was traceable through the standard browser compatibility resources such as &amp;lt;a href=&amp;quot;https://caniuse.com/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Can I use... Support tables for HTML5, CSS3, etc&amp;quot;&amp;gt;caniuse.com&amp;lt;/a&amp;gt; or &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;MDN Web Docs&amp;quot;&amp;gt;MDN Web Docs&amp;lt;/a&amp;gt; browser compatibility tables.&lt;/p&gt;
+&lt;p&gt;Well, this time, &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/API/MutationObserverInit/attributeFilter&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;MutationObserverInit, attributeFilter on MDN Web APIs&amp;quot;&amp;gt;MutationObserverInit.attributeFilter&amp;lt;/a&amp;gt; gave me a bit of a hard time.&lt;/p&gt;
+&lt;p&gt;&amp;lt;Caption source=&amp;quot;https://twitter.com/GOP/status/757687865471963137&amp;quot; /&amp;gt;&lt;/p&gt;
+&lt;p&gt;While working in some implementation that requires me to detect when a DOM element is mutated, I did not blink an eye when it came to choosing the &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;MutationObserver on MDN Web APIs&amp;quot;&amp;gt;MutationObserver API&amp;lt;/a&amp;gt; to get the job done. But this time, I used something different, that was &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/API/MutationObserverInit/attributeFilter&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;MutationObserverInit, attributeFilter on MDN Web APIs&amp;quot;&amp;gt;MutationObserverInit.attributeFilter&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;p&gt;The problem here is that the relevant browser compatibility information was not accurate for the usage of &lt;code&gt;attributeFilter&lt;/code&gt;, especially for Internet Explorer and Edge browsers. It happens that these browsers throw a syntax error upon the usage of this API without setting a flag, I won&apos;t bother you with the details, you can now check &amp;lt;a href=&amp;quot;https://caniuse.com/#search=attributeFilter&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Can I use... Support tables for HTML5, CSS3, etc search for attributeFilter&amp;quot;&amp;gt;caniuse.com &lt;code&gt;attributeFilter&lt;/code&gt; compatibility information&amp;lt;/a&amp;gt;, you might find all the details about this issue there.&lt;/p&gt;
+&lt;p&gt;The point here is that we might be reaching soon (maybe a few years more) a more stable era of browsers with the discontinuation of IE and the Microsoft Edge big move on becoming a &amp;lt;a href=&amp;quot;https://www.chromium.org/Home&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all Internet users to experience the web&amp;quot;&amp;gt;Chromium-based&amp;lt;/a&amp;gt; browser. &lt;strong&gt;In the meantime&lt;/strong&gt;, we can all contribute to a compatible web. &lt;strong&gt;How can we individually help?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You see a &lt;strong&gt;browser-specific funky issue.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;You &lt;strong&gt;can&apos;t find any references for the issue online&lt;/strong&gt;, especially in official sources such as &lt;em&gt;caniuse&lt;/em&gt; and MDN browser compatibility tables.&lt;/li&gt;
+&lt;li&gt;You &lt;strong&gt;go to &amp;lt;a href=&amp;quot;https://github.com/mdn/browser-compat-data&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;This repository contains compatibility data for Web technologies as displayed on MDN&amp;quot;&amp;gt;mdn/browser-compat-data&amp;lt;/a&amp;gt;&lt;/strong&gt;, and there&apos;s no open Pull Request or ongoing issue that points towards the problem you found.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you tick all the checkboxes ✅ in the previous list, you can go ahead and open a Pull Request on &amp;lt;a href=&amp;quot;https://github.com/mdn/browser-compat-data&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;This repository contains compatibility data for Web technologies as displayed on MDN&amp;quot;&amp;gt;mdn/browser-compat-data&amp;lt;/a&amp;gt;; the mdn team, me, and all the community own you a big thanks for documenting the issue. Lastly, but most importantly, you&apos;ll be ensuring that no one has to go through all the pain to debug and figure out why the hell your application was breaking.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets//web-compatible-developers/pr-attribute-filter-browser-compat.png&quot; alt=&quot;GitHub pull request for project browser-compat-data&quot; title=&quot;GitHub pull request for project browser-compat-data&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I did so, &amp;lt;a href=&amp;quot;https://github.com/mdn/browser-compat-data/pull/5540&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Update MutationObserverInit.attributeFilter on IE11 usage known issue on Github&amp;quot;&amp;gt;with the attributeFilter issue&amp;lt;/a&amp;gt; on the &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/API/MutationObserverInit/attributeFilter&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;MutationObserverInit, attributeFilter on MDN Web APIs&amp;quot;&amp;gt;MutationObserverInit.attributeFilter&amp;lt;/a&amp;gt; API. &amp;lt;a href=&amp;quot;https://caniuse.com/#search=attributeFilter&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Can I use... Support tables for HTML5, CSS3, etc search for attributeFilter&amp;quot;&amp;gt;Here&apos;s the final result where &lt;em&gt;caniuse&lt;/em&gt;&amp;lt;/a&amp;gt; is displaying the information for users about the compatibility issue on the &lt;code&gt;attributeFilter&lt;/code&gt; API.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets//web-compatible-developers/can-i-use-attribute-filter.png&quot; alt=&quot;GitHub pull request for project browser-compat-data&quot; title=&quot;GitHub pull request for project browser-compat-data&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;cite&amp;gt;source: https://caniuse.com/#search=attributeFilter&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;p&gt;I hope this short episode makes you aware that you can help to make the web compatible and help the community get relieved of all of these annoying nuances of the different JavaScript APIs in the various browsers, especially when working with Internet Explorer and Edge.&lt;/p&gt;
 </content:encoded></item><item><title>Reactive Series (pt. 1) - Why You Should Consider Reactive Programming</title><link>https://danielcaldas.github.io/posts/why-reactive-programming/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/why-reactive-programming/</guid><description>Why You Should Consider Reactive Programming</description><pubDate>Thu, 23 Jul 2020 00:00:00 GMT</pubDate><content:encoded>&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Part 1 - Why You Should Consider Reactive Programming&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-programming-fundamentals&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Fundamentals of Reactive Programming | danielcaldas.github.io&amp;quot;&amp;gt;Part 2 - Fundamentals of Reactive Programming&amp;lt;/a&amp;gt;&lt;/li&gt;
