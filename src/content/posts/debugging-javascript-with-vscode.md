@@ -25,7 +25,7 @@ Next we will dive deep into <a href="https://github.com/danielcaldas/el-converso
 2. On your root folder create a `.vscode` folder (it may already exist, in that case, jump this step).
 3. Create a `launch.json` file inside the `.vscode` directory with the following configuration or click on the gear icon in the debug tab on vscode:
 
-```json:title=.vscode/launch.json
+```json title=".vscode/launch.json"
 {
   "version": "0.2.0",
   "configurations": [

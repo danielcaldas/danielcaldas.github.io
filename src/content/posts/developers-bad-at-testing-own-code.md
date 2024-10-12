@@ -1,7 +1,7 @@
 ---
 title: Why are developers bad at (manually) testing their code?
 pubDate: 2021-04-06
-tags: ['softwaretesting']
+tags: ['software-testing']
 description: Why are developers bad at (manually) testing their code?
 ---
 

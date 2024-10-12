@@ -342,7 +342,7 @@ Another thing that comes in handy when setting up our testing workflow, is to ha
 
 If you never tried <a href="https://github.com/remy/nodemon" target="_blank" title="Monitor for any changes in your node.js application and automatically restart the server - perfect for development">nodemon</a>, now it's a good time to check it out. It's a mighty tool to restart some job based on specific changes in your project. Let's use nodemon to set up a <a href="https://docs.npmjs.com/misc/scripts" target="_blank" title="npm cli documentation about scripts field">npm script</a> that seamlessly re-runs our fixtures. The idea is that we achieve the same workflow that we would normally have with <a href="https://jestjs.io/docs/en/cli#watchall" target="_blank" title="Jest cli, watch all option">jest \-\-watchAll</a>, on our fixtures folder. After installing nodemon, we just need to use the <a href="https://github.com/remy/nodemon#monitoring-multiple-directories" target="_blank" title="Monitor for any changes in your node.js application and automatically restart the server - perfect for development, watch mode">\-\-watch</a> option to check for changes in our fixtures.
 
-```json:package.json
+```json title="package.json"
 "fixtures:run": "node run-fixtures && jest ./fixtures/tests/fixtures.spec.js",
 "fixtures:clean": "...",
 "fixtures:watch": "nodemon --watch ./fixtures --ignore ./fixtures/tests --exec \"npm run fixtures:run\""
