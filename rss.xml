@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Hey 👋</title><description>Blogpost, note taking and other things</description><link>https://danielcaldas.github.io/</link><item><title>CSSconf EU 2018</title><link>https://danielcaldas.github.io/posts/about-css-conf-eu-berlin-2018/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/about-css-conf-eu-berlin-2018/</guid><description>My notes on the CSSconfg EU 2018</description><pubDate>Sun, 17 Jun 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hello all!! I decided to write this blog post to share with you the new things I learned attending this year&apos;s edition of &amp;lt;a href=&amp;quot;https://2018.  cssconf.eu&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;cssconf.eu official web page&amp;quot;&amp;gt;CSSconf EU&amp;lt;/a&amp;gt; in Berlin (Friday, June 1st). In this post I will focus more on the talks, I will cover other venue details in &amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/about-js-conf-eu-berlin-2018/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;JSconf EU 2018 | Blog&amp;quot;&amp;gt;another blog post&amp;lt;/a&amp;gt; on &amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/about-js-conf-eu-berlin-2018/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;JSconf EU 2018 | Blog&amp;quot;&amp;gt;JSConf EU&amp;lt;/a&amp;gt; that had a similar organization.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>~/</title><description>Blogpost, note taking and other things</description><link>https://danielcaldas.github.io/</link><item><title>CSSconf EU 2018</title><link>https://danielcaldas.github.io/posts/about-css-conf-eu-berlin-2018/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/about-css-conf-eu-berlin-2018/</guid><description>My notes on the CSSconfg EU 2018</description><pubDate>Sun, 17 Jun 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hello all!! I decided to write this blog post to share with you the new things I learned attending this year&apos;s edition of &amp;lt;a href=&amp;quot;https://2018.  cssconf.eu&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;cssconf.eu official web page&amp;quot;&amp;gt;CSSconf EU&amp;lt;/a&amp;gt; in Berlin (Friday, June 1st). In this post I will focus more on the talks, I will cover other venue details in &amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/about-js-conf-eu-berlin-2018/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;JSconf EU 2018 | Blog&amp;quot;&amp;gt;another blog post&amp;lt;/a&amp;gt; on &amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/about-js-conf-eu-berlin-2018/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;JSconf EU 2018 | Blog&amp;quot;&amp;gt;JSConf EU&amp;lt;/a&amp;gt; that had a similar organization.&lt;/p&gt;
 &lt;h3&gt;For starters&lt;/h3&gt;
 &lt;p&gt;If you were there as I was, you were probably wondering whether you were at the right conference, since at the beginning you would ask yourself &lt;strong&gt;where is the CSS&lt;/strong&gt;?&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3liNnh6dTM4ZmlwNnZiemxhMmR3aWNlYWh0ZndiZWhydGsxdWFzaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hEc4k5pN17GZq/giphy.webp&quot; alt=&quot;where is the css, john travolta&quot;&gt;
@@ -1267,7 +1267,7 @@ export default function App() {
 &lt;li&gt;On your root folder create a &lt;code&gt;.vscode&lt;/code&gt; folder (it may already exist, in that case, jump this step).&lt;/li&gt;
 &lt;li&gt;Create a &lt;code&gt;launch.json&lt;/code&gt; file inside the &lt;code&gt;.vscode&lt;/code&gt; directory with the following configuration or click on the gear icon in the debug tab on vscode:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre&gt;&lt;code class=&quot;language-json:title=.vscode/launch.json&quot;&gt;{
+&lt;pre&gt;&lt;code class=&quot;language-json&quot;&gt;{
   &amp;quot;version&amp;quot;: &amp;quot;0.2.0&amp;quot;,
   &amp;quot;configurations&amp;quot;: [
     {
@@ -1375,6 +1375,131 @@ export default createStore(reducer, {}, composeEnhancers(middleware))
 &lt;h3&gt;Conclusions&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&quot;./assets/debugging-javascript-with-vscode/debug-animation-2.gif&quot; alt=&quot;vscode setup redux final&quot; title=&quot;vscode setup redux final&quot;&gt;&lt;/p&gt;
 &lt;p&gt;I might have spent one or two days trying to figure out how to bring all these pieces together, but having done it, believe that it increased my productivity in ways that by far compensate the invested time. I hope you find this article useful especially if it saves you one day of trouble trying to figure out the right configs.&lt;/p&gt;
+</content:encoded></item><item><title>Destructuring in JavaScript: the not so good parts</title><link>https://danielcaldas.github.io/posts/destructuring-the-not-so-good-parts/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/destructuring-the-not-so-good-parts/</guid><description>Destructuring in JavaScript: the not so good parts</description><pubDate>Thu, 20 Jun 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Generally speaking, I would say everybody loves the &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;the destructuring assignment syntax MDN web docs&amp;quot;&amp;gt;destructuring assignment&amp;lt;/a&amp;gt;, and for good reasons. Next, I list some of the amazing things one can achieve with destructuring in JavaScript.&lt;/p&gt;
+&lt;h4&gt;Object destructuring&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const user = { username: &apos;captain&apos;, email: &apos;captain@email.com&apos;, age: 30 }
+const { username, age } = user
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h4&gt;Provide default values&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const user = { email: &apos;captain@email.com&apos;, age: 30 }
+const { username = &apos;unknown&apos;, age } = user
+// you can now use username with value &apos;unknown&apos;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h4&gt;Renaming variables on creation&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const user = { username: &apos;captain&apos;, email: &apos;captain@email.com&apos;, age: 30 }
+const { username, age: userAge } = user
+// you know have age value 30 in the variable userAge
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h4&gt;Nested object destructuring ⚠️&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const user = { username: &apos;captain&apos;, age: { value: 30, label: &apos;30 years old&apos; } }
+const {
+  username,
+  age: { label },
+} = user
+// you can now use label directly
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h4&gt;Array destructuring&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const rgb = [200, 255, 100]
+const [red, green, blue] = rgb
+// the variables red, green and blue match the elements order in rgb array
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h4&gt;Works with any iterable on the right-side (e.g &lt;code&gt;Set&lt;/code&gt;)&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;let [a, b, c] = &apos;abc&apos; // [&amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;]
+let [one, two, three] = new Set([1, 2, 3])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h4&gt;Swapping Variables&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;let a = 1
+let b = 2
+;[b, a] = [a, b]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h4&gt;Swapping array positions&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const arr = [1, 3, 2, 4, 5]
+;[arr[1], arr[2]] = [arr[2], arr[1]]
+// arr is now [1, 2, 3, 4, 5]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h4&gt;Skipping items ⚠️&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const rgb = [200, 255, 100]
+// skip the first two items
+// assign the only third item to the blue variable
+const [, , blue] = rgb
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h4&gt;Nested array destructuring ⚠️&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const color = [&apos;#FF00FF&apos;, [255, 0, 255], &apos;rgb(255, 0, 255)&apos;]
+// use nested destructuring to assign red, green and blue
+const [hex, [red, green, blue]] = color
+console.log(hex, red, green, blue) // #FF00FF 255 0 255
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h4&gt;Function parameter destructuring ⚠️&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;function getUserInfo({ username, email }) {
+  return `Username: ${username}; Email: ${email}`
+}
+const user = { username: &apos;captain&apos;, email: &apos;captain@email.com&apos; }
+const userInfo = getUserInfo(user)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h3&gt;What&apos;s not so good here&lt;/h3&gt;
+&lt;p&gt;The most significant dilemma of destructuring it&apos;s related with the fact that relies on properties of nested structures that can only be evaluated at runtime, let me give you an example.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;function addEmailToList(list, { email }) {
+  if (email) {
+    list.push(email)
+  }
+}
+const list = [&apos;a@mail.com&apos;, &apos;b@mail.com&apos;]
+const user = undefined
+
+addEmailToList(list, user)
+// Uncaught TypeError: Cannot destructure property `email` of &apos;undefined&apos; or &apos;null&apos;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;On the other hand, if you write this without destructuring, you won&apos;t make assumptions on the user, you can double check whether the given user is valid.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;function addEmailToList(list, user) {
+  if (user &amp;amp;&amp;amp; user.email) {
+    list.push(user.email)
+  }
+}
+const list = [&apos;a@mail.com&apos;, &apos;b@mail.com&apos;]
+const user = undefined
+
+addEmailToList(list, user)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h4&gt;null - a catastrophe waiting to happen&lt;/h4&gt;
+&lt;p&gt;Just a note, for you to be conscious that as in default assignment &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;default function parameters allow named parameters to be initialized with default values&amp;quot;&amp;gt;default parameters&amp;lt;/a&amp;gt; the &lt;code&gt;null&lt;/code&gt; value it&apos;s not considered false, thus you can&apos;t fall back to some default value in destructuring a property whose value is &lt;code&gt;null&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;function formatAddress(info) {
+  const { country = &apos;-&apos;, city = &apos;-&apos; } = info
+  return `${country}, ${city}`
+}
+
+const info = { country: &apos;Portugal&apos;, city: null }
+const result = formatAddress(info)
+// &amp;quot;Portugal, null&amp;quot; it&apos;s what you get instead of &amp;quot;Portugal, -&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Every feature above mentioned exists for you to use, but we should find a balance (as in everything else in life). Below I list a few guidelines/rules that will help you find the balance when using destructuring.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/destructuring-the-not-so-good-parts/fat-cat-balance.jpg&quot; alt=&quot;cat kong fu balance&quot; title=&quot;cat kong fu balance&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;cite&amp;gt;source: https://imgflip.com/tag/fat+cat+balance&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;h3&gt;The 3 Golden Rules&lt;/h3&gt;
+&lt;p&gt;You might have noticed some previous warning sings (⚠️) in some of the listed usages of destructuring. I left those signs there because I consider those use cases potentially harmful.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Don&apos;t use nested destructuring on data that comes from any external data sources (such as REST APIs, GraphQL endpoints or files)&lt;/strong&gt;. You never know when these APIs change their data contracts. Hopefully all of this it&apos;s synced between teams, but sometimes we get lost on the tiny details such as that one small property in some nested object that got renamed and instead of using &lt;code&gt;snake_case&lt;/code&gt; it uses now &lt;code&gt;camelCase&lt;/code&gt; just because it made more sense from an aesthetic point of view. Now your marvelous single page application is burning and falling into pieces because you were unsafely accessing this property when you could have protected yourself against it.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Don&apos;t use nested destructuring on function arguments that have long or complicated signatures&lt;/strong&gt;. It makes it super hard to understand what the actually API of the function is, and you might get breaking behavior because someone decided to use your function, but in some edge case they do not provide you the valid input for you to destruct upon.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Don&apos;t use destructuring to retrieve a value if you rely on order.&lt;/strong&gt; I listed the possibility of skipping elements with destructuring, it might sound tempting, but you might end up again breaking your website because your simple routine relies on the access of the &lt;em&gt;Nth&lt;/em&gt; element of some inputted array. Also, you can still retrieve data out of the array, but it might be that in that position you don&apos;t get what you were expecting. If you choose this path, at this point, it should also be arguable that there&apos;s something very wrong either with your code or with the data model from where you&apos;re your reading data, use this one with care.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;References&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;the destructuring assignment syntax MDN web docs&amp;quot;&amp;gt;MDN web docs: Destructuring assignment&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;medium es6 destructuring the complete guide&amp;quot;&amp;gt;ES6 Destructuring: The Complete Guide&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://javascript.info/destructuring-assignment&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;javascript info destructuring assignment&amp;quot;&amp;gt;JAVASCRIPT.INFO: Destructuring assignment&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://github.com/getify/You-Dont-Know-JS&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;A book series on JavaScript&amp;quot;&amp;gt;You Don&apos;t Know JS: ES6 &amp;amp; Beyond&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
 </content:encoded></item><item><title>Why are developers bad at (manually) testing their code?</title><link>https://danielcaldas.github.io/posts/developers-bad-at-testing-own-code/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/developers-bad-at-testing-own-code/</guid><description>Why are developers bad at (manually) testing their code?</description><pubDate>Tue, 06 Apr 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Manual testing of any software it&apos;s a vital activity to ensure its quality and long-term stability. Together with their coding activities, developers test their code changes to understand if they produce the desired outcome without breaking any existing software functionality. So far, so good.&lt;/p&gt;
 &lt;p&gt;Today I&apos;m writing a few points on &lt;strong&gt;why developers are bad at manual testing&lt;/strong&gt; their own code changes, especially at detecting unwanted side-effects in areas of the software often unrelated to the modified parts.&lt;/p&gt;
 &lt;p&gt;I&apos;m writing because, at this point in time, I have experienced two very different setups towards software testing:&lt;/p&gt;
@@ -1711,6 +1836,732 @@ mutated).
 ]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&amp;lt;/Accordion&amp;gt;&lt;/p&gt;
+</content:encoded></item><item><title>Guide to custom React Hooks (wrap the MutationObserver)</title><link>https://danielcaldas.github.io/posts/guide-to-custom-react-hooks-with-mutationobserver/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/guide-to-custom-react-hooks-with-mutationobserver/</guid><description>Guide to custom React Hooks with MutationObserver</description><pubDate>Wed, 21 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&amp;lt;!-- canonicalUrl: &amp;quot;https://blog.logrocket.com/guide-to-custom-react-hooks-with-mutationobserver/&amp;quot; --&amp;gt;&lt;/p&gt;
+&lt;p&gt;This article was originally published by &amp;lt;a href=&amp;quot;https://logrocket.com/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;LogRocket Modern Frontend Monitoring and Product Analytics&amp;quot;&amp;gt;LogRocket&amp;lt;/a&amp;gt;. You can checkout the original post &amp;lt;a href=&amp;quot;https://blog.logrocket.com/guide-to-custom-react-hooks-with-mutationobserver/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Guide to custom React Hooks with MutationObserver LogRocket Blog&amp;quot;&amp;gt;here&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;p&gt;With the introduction of React Hooks, the amount of shareable code within React codebases has exploded. Because Hooks are thin APIs on top of React, developers can collaborate by attaching reusable behavior to components and segregating these behaviors into smaller modules.&lt;/p&gt;
+&lt;p&gt;While this is similar to how JavaScript developers abstract business logic away in vanilla JavaScript modules, Hooks provide more than pure JavaScript functions. Instead of taking data in and out, developers can stretch the spectrum of possibilities of what can happen inside a Hook.&lt;/p&gt;
+&lt;p&gt;For instance, developers can:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mutate and manage a piece of state for a specific component or an entire application&lt;/li&gt;
+&lt;li&gt;Trigger side effects on a page, like changing the title of a browser tab&lt;/li&gt;
+&lt;li&gt;Rectify external APIs by tapping into React components’ lifecycle with Hooks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In this post we’ll explore the latter possibility. As a case study, we’ll abstract the &lt;code&gt;MutationObserver&lt;/code&gt; API in a custom React Hook, demonstrating how we can build robust, shareable pieces of logic in a React codebase.&lt;/p&gt;
+&lt;p&gt;We’ll create a dynamic label that updates itself to indicate how many items we have in a list. Instead of using the provided React state array of elements, we’ll use the &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver&quot;&gt;MutationObserver API&lt;/a&gt; to detect added elements and update the label accordingly.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/guide-to-custom-react-hooks-with-mutationobserver/fruits-example.gif&quot; alt=&quot;&apos;Update the dynamic label to count the number of fruits in the list&apos;&quot; title=&quot;Update the dynamic label to count the number of fruits in the list&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;cite&amp;gt;source: https://blog.logrocket.com/guide-to-custom-react-hooks-with-mutationobserver/&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;h2&gt;Implementation overview&lt;/h2&gt;
+&lt;p&gt;The following code is a simple component that renders our list. It also updates a counter value that represents the number of fruits currently in the list:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;export default function App() {
+  const listRef = useRef()
+  const [count, setCount] = useState(2)
+  const [fruits, setFruits] = useState([&apos;apple&apos;, &apos;peach&apos;])
+  const onListMutation = useCallback(
+    (mutationList) =&amp;gt; {
+      setCount(mutationList[0].target.children.length)
+    },
+    [setCount],
+  )
+
+  useMutationObservable(listRef.current, onListMutation)
+
+  return (
+    &amp;lt;div&amp;gt;
+      &amp;lt;span&amp;gt;{`Added ${count} fruits`}&amp;lt;/span&amp;gt;
+      &amp;lt;br /&amp;gt;
+      &amp;lt;button onClick={() =&amp;gt; setFruits([...fruits, `random fruit ${fruits.length}`])}&amp;gt;Add random fruit&amp;lt;/button&amp;gt;
+      &amp;lt;ul ref={listRef}&amp;gt;
+        {fruits.map((f) =&amp;gt; (
+          &amp;lt;li key={f}&amp;gt;{f}&amp;lt;/li&amp;gt;
+        ))}
+      &amp;lt;/ul&amp;gt;
+    &amp;lt;/div&amp;gt;
+  )
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We want to trigger a callback function whenever our &lt;code&gt;list&lt;/code&gt; element is mutated. Within the callback we refer to, the element’s children give us the number of elements in the list.&lt;/p&gt;
+&lt;h2&gt;Implementing the &lt;code&gt;useMutationObservable&lt;/code&gt; custom Hook&lt;/h2&gt;
+&lt;p&gt;Let’s look at the integration point:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;useMutationObservable(listRef.current, onListMutation)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The above &lt;code&gt;useMutationObservable&lt;/code&gt; custom Hook abstracts the necessary operations to observe changes on the element passed as the first parameter. It then runs the callback passed as the second parameter whenever the target element changes.&lt;/p&gt;
+&lt;p&gt;Now, let’s implement our &lt;code&gt;useMutationObservable&lt;/code&gt; custom Hook.&lt;/p&gt;
+&lt;p&gt;In the Hook, there are a number of boilerplate operations to understand. First, we must provide a set of options that comply with the &lt;code&gt;MutationObserver&lt;/code&gt; API.&lt;/p&gt;
+&lt;p&gt;Once a &lt;code&gt;MutationObserver&lt;/code&gt; instance is created, we must call &lt;code&gt;observe&lt;/code&gt; to listen for changes in the targeted DOM element.&lt;/p&gt;
+&lt;p&gt;When we no longer need to listen to the changes, we must call &lt;code&gt;disconnect&lt;/code&gt; on the observer to clean up our subscription. This must happen when the &lt;code&gt;App&lt;/code&gt; component unmounts:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const DEFAULT_OPTIONS = {
+  config: { attributes: true, childList: true, subtree: true },
+}
+function useMutationObservable(targetEl, cb, options = DEFAULT_OPTIONS) {
+  const [observer, setObserver] = useState(null)
+
+  useEffect(() =&amp;gt; {
+    const obs = new MutationObserver(cb)
+    setObserver(obs)
+  }, [cb, options, setObserver])
+
+  useEffect(() =&amp;gt; {
+    if (!observer) return
+    const { config } = options
+    observer.observe(targetEl, config)
+    return () =&amp;gt; {
+      if (observer) {
+        observer.disconnect()
+      }
+    }
+  }, [observer, targetEl, options])
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;All the above work, including initializing the &lt;code&gt;MutationObserver&lt;/code&gt; with the right parameters, observing changes with the call to &lt;code&gt;observer.observe&lt;/code&gt;, and cleaning up with &lt;code&gt;observer.disconnect&lt;/code&gt;, are abstracted away from the client.&lt;/p&gt;
+&lt;p&gt;Not only do we export functionality, but we also clean up by hooking into the React components’ lifecycle and by leveraging cleanup callbacks on effect Hooks to tear down the &lt;code&gt;MutationObserver&lt;/code&gt; instance.&lt;/p&gt;
+&lt;p&gt;Now that we have a functional and basic version of our Hook, we can think about improving its quality by iterating on its API and enhancing the developer experience around this shareable piece of code.&lt;/p&gt;
+&lt;h3&gt;Input validation and development&lt;/h3&gt;
+&lt;p&gt;One important aspect when designing custom React Hooks is input validation. We must be able to communicate to developers when things are not running smoothly or a certain use case is hitting an edge case.&lt;/p&gt;
+&lt;p&gt;Usually, development logs help developers understand unfamiliar code to adjust their implementation. Likewise, we can enhance the above implementation by adding runtime checks and comprehensive warning logs to validate and communicate issues to other developers:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;function useMutationObservable(targetEl, cb, options = DEFAULT_OPTIONS) {
+  const [observer, setObserver] = useState(null)
+
+  useEffect(() =&amp;gt; {
+    // A)
+    if (!cb || typeof cb !== &apos;function&apos;) {
+      console.warn(`You must provide a valid callback function, instead you&apos;ve provided ${cb}`)
+      return
+    }
+    const { debounceTime } = options
+    const obs = new MutationObserver(cb)
+    setObserver(obs)
+  }, [cb, options, setObserver])
+  useEffect(() =&amp;gt; {
+    if (!observer) return
+    if (!targetEl) {
+      // B)
+      console.warn(`You must provide a valid DOM element to observe, instead you&apos;ve provided ${targetEl}`)
+    }
+    const { config } = options
+    try {
+      observer.observe(targetEl, config)
+    } catch (e) {
+      // C)
+      console.error(e)
+    }
+    return () =&amp;gt; {
+      if (observer) {
+        observer.disconnect()
+      }
+    }
+  }, [observer, targetEl, options])
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In this example, we’re checking that a callback is passed as a second argument. This API check at runtime can easily alert the developer that something is wrong on the caller side.&lt;/p&gt;
+&lt;p&gt;We can also see whether the provided DOM element is invalid with an erroneous value provided to the Hook at runtime or not. These are logged together to inform us to quickly resolve the issue.&lt;/p&gt;
+&lt;p&gt;And, if &lt;code&gt;observe&lt;/code&gt; throws an error, we can catch and report it. We must avoid breaking the JavaScript runtime flow as much as possible, so by catching the error, we can choose to either log it or report it depending on the environment.&lt;/p&gt;
+&lt;h3&gt;Extensibility via configuration&lt;/h3&gt;
+&lt;p&gt;If we want to add more capabilities to our Hook, we should do this in a retro-compatible fashion, such as an opt-in capability that has little or no friction towards its adoption.&lt;/p&gt;
+&lt;p&gt;Let’s look at how we can optionally debounce the provided callback function so callers can specify an interval of time when no other changes in the target element trigger. This runs the callback once rather than running the same amount of times the element or its children mutated:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;import debounce from &amp;quot;lodash.debounce&amp;quot;;
+
+const DEFAULT_OPTIONS = {
+  config: { attributes: true, childList: true, subtree: true },
+  debounceTime: 0
+};
+function useMutationObservable(targetEl, cb, options = DEFAULT_OPTIONS) {
+  const [observer, setObserver] = useState(null);
+  useEffect(() =&amp;gt; {
+    if (!cb || typeof cb !== &amp;quot;function&amp;quot;) {
+      console.warn(
+        `You must provide a valida callback function, instead you&apos;ve provided ${cb}`
+      );
+      return;
+    }
+    const { debounceTime } = options;
+    const obs = new MutationObserver(
+      debounceTime &amp;gt; 0 ? debounce(cb, debounceTime) : cb
+    );
+    setObserver(obs);
+  }, [cb, options, setObserver]);
+  // ...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is handy if we must run a heavy operation, such as triggering a web request, ensuring it runs the minimum number of times possible.&lt;/p&gt;
+&lt;p&gt;Our &lt;code&gt;debounceTime&lt;/code&gt; option can now pass into our custom Hook. If a value bigger than &lt;code&gt;0&lt;/code&gt; passes to &lt;code&gt;MutationObservable&lt;/code&gt;, the callback delays accordingly.&lt;/p&gt;
+&lt;p&gt;With a simple configuration exposed in our Hook API, we allow other developers to debounce their callbacks which can result in a more performant implementation given that we might drastically reduce the number of times the callback code gets executed.&lt;/p&gt;
+&lt;p&gt;Of course, we can always debounce the callback on the client side, but this way we enrich our API and make the caller-side implementation smaller and declarative.&lt;/p&gt;
+&lt;h3&gt;Testing&lt;/h3&gt;
+&lt;p&gt;Testing is an essential part of developing any kind of shared capability. It helps us ensure a certain level of quality for generic APIs when they are heavily contributed to and shared.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&quot;https://blog.logrocket.com/a-quick-guide-to-testing-react-hooks-fa584c415407/&quot;&gt;guide to testing React Hooks&lt;/a&gt; has expansive detail around testing that can be implemented into this tutorial.&lt;/p&gt;
+&lt;h3&gt;Documentation&lt;/h3&gt;
+&lt;p&gt;Documentation can level up the quality of custom Hooks and make it developer-friendly.&lt;/p&gt;
+&lt;p&gt;But even when writing plain JavaScript, &lt;a href=&quot;https://jsdoc.app/&quot;&gt;JSDoc documentation&lt;/a&gt; can be written for custom hook APIs to ensure the Hook passes the right message to developers.&lt;/p&gt;
+&lt;p&gt;Let’s focus on the &lt;code&gt;useMutationObservable&lt;/code&gt; function declaration and how to add formatted JSDoc documentation to it:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;/**
+  * This custom hooks abstracts the usage of the Mutation Observer with React components.
+  * Watch for changes being made to the DOM tree and trigger a custom callback.
+  * @param {Element} targetEl DOM element to be observed
+  * @param {Function} cb callback that will run when there&apos;s a change in targetEl or any
+  * child element (depending on the provided options)
+  * @param {Object} options
+  * @param {Object} options.config check \[options\](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver/observe)
+  * @param {number} [options.debounceTime=0] a number that represents the amount of time in ms
+  * that you which to debounce the call to the provided callback function
+  */
+function useMutationObservable(targetEl, cb, options = DEFAULT_OPTIONS) {
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Writing this is not only useful for documentation, but it also leverages IntelliSense capabilities that autocomplete Hook usage and provide spot information for the Hook’s parameters. This saves developers a few seconds per usage, potentially adding up to hours wasted on reading through the code and trying to understand it.&lt;/p&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;With different kinds of custom Hooks we can implement, we see how they integrate extrinsic APIs into the React world. It’s easy to integrate state management within Hooks and run effects based on inputs from components using the Hook.&lt;/p&gt;
+&lt;p&gt;Remember that to build quality Hooks, it’s important to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Design easy-to-use, declarative APIs&lt;/li&gt;
+&lt;li&gt;Enhance the development experience by checking for proper usage and logging warnings and errors&lt;/li&gt;
+&lt;li&gt;Expose features through configurations, such as the &lt;code&gt;debounceTime&lt;/code&gt; example&lt;/li&gt;
+&lt;li&gt;Ease Hook usage by writing JSDoc documentation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can check the &lt;a href=&quot;https://codepen.io/danielcaldas/pen/BaWPWEw&quot;&gt;full implementation of the custom React hook here&lt;/a&gt;.&lt;/p&gt;
+</content:encoded></item><item><title>Reactive Series (pt. 3) - Hands-on Reactive Programming with RxJS</title><link>https://danielcaldas.github.io/posts/hands-on-reactive-programming-rxjs/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/hands-on-reactive-programming-rxjs/</guid><description>Reactive Series (pt. 3) - Hands-on Reactive Programming with RxJS</description><pubDate>Wed, 16 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;ul&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/why-reactive-programming&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Why You Should Consider Reactive Programming | danielcaldas.github.io&amp;quot;&amp;gt;Part 1 - Why You Should Consider Reactive Programming&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-programming-fundamentals&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Fundamentals of Reactive Programming | danielcaldas.github.io&amp;quot;&amp;gt;Part 2 - Fundamentals of Reactive Programming&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Part 3 - Hands-on Reactive Programming with RxJS&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-rxjs-pros-cons&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Reactive Programming: The Good and the Bad | danielcaldas.github.io&amp;quot;&amp;gt;Part 4 - Reactive Programming: The Good and the Bad&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/awesome-reactive&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Awesome RxJS and Reactive Programming Resources | danielcaldas.github.io&amp;quot;&amp;gt;Part 5 - Awesome RxJS and Reactive Programming Resources&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This part of the series it&apos;s all about getting your hands dirty! Part 3 is a tutorial on core techniques to build an application with reactive streams using &amp;lt;a href=&amp;quot;https://rxjs-dev.firebaseapp.com/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;A reactive programming library for JavaScript&amp;quot;&amp;gt;RxJS&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#warmup---handle-a-click-event-with-rxjs&quot;&gt;Warmup - Handle a click event with RxJS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#rxjs-overview&quot;&gt;RxJS Overview&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#lets-build-something&quot;&gt;Let&apos;s build something!&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#level-1---combining-streams-of-dom-events&quot;&gt;Level 1 - Combining streams of DOM events&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#level-2---hacking-race-conditions-with-artificial-delays&quot;&gt;Level 2 - Hacking race conditions with artificial delays&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#level-3---merging-streams-into-one-stream&quot;&gt;Level 3 - Merging streams into one stream&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#bonus-for-level-3&quot;&gt;Bonus for Level 3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#note-about-the-coding-style&quot;&gt;Note about the coding style&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#level-4---flatten-observables-timers-and-cancellation&quot;&gt;Level 4 - Flatten observables, timers and cancellation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#closing-notes&quot;&gt;Closing Notes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We&apos;re going to start with a small refresher from &amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-programming-fundamentals&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Fundamentals of Reactive Programming | danielcaldas.github.io&amp;quot;&amp;gt;the previous article&amp;lt;/a&amp;gt;, implementing a click event handler with &amp;lt;a href=&amp;quot;https://rxjs-dev.firebaseapp.com/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;A reactive programming library for JavaScript&amp;quot;&amp;gt;RxJS&amp;lt;/a&amp;gt;. Next, we&apos;ll have a brief overview of RxJS, followed by the main challenge of building a small animated game the reactive way.&lt;/p&gt;
+&lt;h4&gt;Warmup - Handle a click event with RxJS&lt;/h4&gt;
+&lt;p&gt;Here&apos;s how a usual JavaScript event handler function looks like.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;button id=&amp;quot;btn&amp;quot;&amp;gt;+1&amp;lt;/button&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const btn = document.getElementById(&apos;btn&apos;)
+let counter = 0
+btn.addEventListener(&apos;click&apos;, (event) =&amp;gt; {
+  counter++
+  console.log(counter)
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the above code, we&apos;re incrementing &lt;code&gt;counter&lt;/code&gt; that is global and logging its value each time we update it.&lt;/p&gt;
+&lt;p&gt;Usually, we don&apos;t increment globals or &lt;code&gt;console.log&lt;/code&gt; directly in real-life apps, but we do have other side-effects in place (like updating something else in the UI, triggering a web request, firing an animation, etc.). You can always organize your code to split concerns, but it seems the event handler is already doing two very distinct things, and we&apos;re barely getting started.&lt;/p&gt;
+&lt;p&gt;Let&apos;s take a look at how this looks like in the reactive world, with RxJS. Here&apos;s how you should visualize and implement a stream of click events.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/hands-on-reactive-programming-rxjs/marbles-level-0-1.png&quot; alt=&quot;marbles diagram of a click event stream&quot; title=&quot;marbles diagram of a click event stream&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Note: &amp;lt;b&amp;gt;e&amp;lt;/b&amp;gt; stands for &amp;lt;b&amp;gt;event&amp;lt;/b&amp;gt; and it&apos;s the value pushed to the stream at each click in the button element, just like you would have an &amp;lt;b&amp;gt;event&amp;lt;/b&amp;gt; argument in the typical &amp;lt;b&amp;gt;onClick&amp;lt;/b&amp;gt; callback (event handler) at each click.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;let counter = 0
+const click$ = fromEvent(btn, &apos;click&apos;)
+click$.subscribe((event) =&amp;gt; {
+  counter++
+  console.log(counter)
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A few things to notice here:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://rxjs-dev.firebaseapp.com/api/index/function/fromEvent&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;RxJS - fromEvent&amp;quot;&amp;gt;
+fromEvent
+&amp;lt;/a&amp;gt; is the tool in RxJS that will allow you to transform any DOM event into an Observable, a stream of events of a given
+type (like click, drag, scroll etc.).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;subscribe&lt;/code&gt; is a must! Without subscribing to our stream, nothing would ever happen.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;$&lt;/code&gt; is just a common (non-standard) notation to identify streams in your code - totally optionally, no need to follow.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Opposite to the click event handler, you can subscribe to the stream of clicks as many times as you want and split all kinds of different tasks into separate subscriptions that &lt;strong&gt;share the same event listener&lt;/strong&gt;! &lt;strong&gt;Attaching event handlers to the DOM is costly&lt;/strong&gt; especially due to the event attaching phase that happens at page load (&lt;code&gt;onload&lt;/code&gt; or &lt;code&gt;DOMContentReady&lt;/code&gt; events) a busy period for modern web applications - &amp;lt;i&amp;gt;paraphrased from &amp;lt;a href=&amp;quot;https://www.oreilly.com/library/view/high-performance-javascript/9781449382308/&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;nofollow&amp;quot; title=&amp;quot;High Performance JavaScript, book by Nicholas C. Zakas&amp;quot;&amp;gt;&amp;quot;High Performance JavaScript&amp;quot;, book by Nicholas C. Zakas&amp;lt;/a&amp;gt;&amp;lt;/i&amp;gt;.&lt;/p&gt;
+&lt;p&gt;In a way, things are opening up, you get a more flexible model to organize your code, compared to the classic event handler callback.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Anything can be a stream, remember that, let it be the cornerstone of your reactive thinking.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This should get you warmed up for the real challenge later in the article. Before that, there&apos;s something I want to mention about the RxJS library.&lt;/p&gt;
+&lt;h4&gt;RxJS Overview&lt;/h4&gt;
+&lt;p&gt;I would highly recommend you later to go through the &amp;lt;a href=&amp;quot;https://rxjs-dev.firebaseapp.com/guide/overviewhttps://rxjs-dev.firebaseapp.com/guide/overview&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;RxJS - Introduction&amp;quot;&amp;gt;RxJS official docs overview&amp;lt;/a&amp;gt;; it complements a few concepts I&apos;ve covered in &amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-programming-fundamentals&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Fundamentals of Reactive Programming | danielcaldas.github.io&amp;quot;&amp;gt;the previous article&amp;lt;/a&amp;gt; giving you a more mature view into the fundamentals. But for now, I want to focus on two things only: &lt;strong&gt;creating streams and manipulating them&lt;/strong&gt;. Looking at RxJS, you&apos;ll see that you can identify two big groups of &amp;quot;things&amp;quot;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Stream creators/producers&lt;/strong&gt; are tools that will allow you to take anything and make it a stream. In the previous section, for example, we used &lt;code&gt;fromEvent&lt;/code&gt; to transform DOM click events into an Observable, &lt;strong&gt;a stream that you can subscribe to&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Operators&lt;/strong&gt; are instruments that will allow you to not only hook into the stream to perform operations with the data flowing through it but also combine them.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Let&apos;s build something!&lt;/h4&gt;
+&lt;p&gt;Now we&apos;ve had our refresher, we can jump into building a small animated game with RxJS, something more complex.&lt;/p&gt;
+&lt;p&gt;The game we&apos;re building is called &lt;strong&gt;&amp;quot;Take the cat to the party&amp;quot;&lt;/strong&gt;, here&apos;s how it goes down.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/hands-on-reactive-programming-rxjs/take-cat-to-party.gif&quot; alt=&quot;&apos;take the cat to the party game demonstration&apos;&quot; title=&quot;take the cat to the party game demonstration&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;There&apos;s a cat in a motorbike in your top left corner (draggable HTML element).&lt;/li&gt;
+&lt;li&gt;There&apos;s a decoy at the bottom left corner (draggable HTML element).&lt;/li&gt;
+&lt;li&gt;There&apos;s a party at the right bottom corner of the page (our drop zone).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;We need to drop the cat at the party in less than 5 seconds to win&lt;/strong&gt;. Nothing should happen if the decoy is the dragged element.&lt;/li&gt;
+&lt;li&gt;While dragging, there&apos;s an animation of the cat driving to the party and a counter appearing at the top right corner.&lt;/li&gt;
+&lt;li&gt;Per each attempt, if the cat is dragged for longer than 5 seconds you lose.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We&apos;re going to split this into &lt;strong&gt;4 levels&lt;/strong&gt;. Per each level, I&apos;ll explain the goal we&apos;re trying to achieve, show you how the implementation looks like, and what it does with plenty of detail. Feel free to try and code the levels yourself before checking the suggested solution. You can &amp;lt;a href=&amp;quot;https://github.com/danielcaldas/take-the-cat-to-the-party&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;danielcaldas/take-the-cat-to-the-party: Learn reactive programming with RxJS the fun way&amp;quot;&amp;gt;check out this repo&amp;lt;/a&amp;gt; if you&apos;re willing to give it a try. The file &amp;lt;a href=&amp;quot;https://github.com/danielcaldas/take-the-cat-to-the-party/blob/master/cat-party-empty.html&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;danielcaldas/take-the-cat-to-the-party: Learn reactive programming with RxJS the fun way template file&amp;quot;&amp;gt;cat-party-empty.html&amp;lt;/a&amp;gt; contains the necessary boilerplate in a single HTML file. You can just open it in the browser and start coding.&lt;/p&gt;
+&lt;p&gt;Before we start, let&apos;s take a look at some boilerplate code already in place.&lt;/p&gt;
+&lt;p&gt;There are a bunch of RxJS taken from the global &lt;code&gt;window&lt;/code&gt; at the top (I&apos;m just injecting RxJS via &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt; at the top of the HTML file). Then we have our markup appended to the element&apos;s &lt;code&gt;app&lt;/code&gt; &lt;code&gt;innerHTML&lt;/code&gt;. Just some boilerplate, don&apos;t bother with the detail.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;head&amp;gt;
+  &amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.5.5/rxjs.umd.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+  &amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.5.5/rxjs.umd.js.map&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+  &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+  &amp;lt;script&amp;gt;
+    const {
+      map,
+      // ...
+    } = window.rxjs.operators
+    const {
+      fromEvent,
+      // ...
+    } = window.rxjs
+    // ...
+    document.getElementById(&apos;app&apos;).innerHTML = `
+      &amp;lt;h2&amp;gt;Take the 🐈 to the 🎉&amp;lt;/h2&amp;gt;
+      &amp;lt;div id=&amp;quot;loader&amp;quot; style=&amp;quot;display:none;position:absolute;right:0;z-index:-1;&amp;quot;&amp;gt;
+        &amp;lt;img src=&amp;quot;https://media2.giphy.com/media/cfuL5gqFDreXxkWQ4o/giphy.webp?cid=ecf05e479338392950f1cf8bade564aaec071e3aae3b68b0&amp;amp;rid=giphy.webp&amp;quot; width=&amp;quot;248&amp;quot; height=&amp;quot;248&amp;quot; style=&amp;quot;opacity:0.5;&amp;quot;/&amp;gt;
+        &amp;lt;span id=&amp;quot;countdown&amp;quot; style=&amp;quot;top:0;right:0;position:absolute;z-index:9999;font-weight:bold;font-size:46px;&amp;quot;&amp;gt;-&amp;lt;/span&amp;gt;
+      &amp;lt;/div&amp;gt;
+      &amp;lt;div id=&amp;quot;drop-zone&amp;quot; style=&amp;quot;position:absolute;right:5px;bottom:5px;width:180px;height:180px;border:2px dashed black;z-index:2;&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+      &amp;lt;img src=&amp;quot;https://i.ebayimg.com/images/g/qHEAAOSw01pdVAaZ/s-l300.jpg&amp;quot; width=&amp;quot;150&amp;quot; height=&amp;quot;150&amp;quot; style=&amp;quot;position:absolute;right:20px;bottom:20px;&amp;quot;/&amp;gt;
+      &amp;lt;/div&amp;gt;
+      &amp;lt;img id=&amp;quot;cat&amp;quot; draggable=&amp;quot;true&amp;quot; src=&amp;quot;https://image.shutterstock.com/image-vector/vintage-scooter-cat-cool-stuff-260nw-429646657.jpg&amp;quot; width=&amp;quot;100&amp;quot; height=&amp;quot;100&amp;quot; style=&amp;quot;position:absolute;z-index:1;margin:18px 16px;text-align:center;cursor:grab;&amp;quot;/&amp;gt;
+      &amp;lt;div id=&amp;quot;decoy&amp;quot; draggable=&amp;quot;true&amp;quot; style=&amp;quot;font-size:28px;position:absolute;left:20px;bottom:10px;text-align:center;cursor:grab;font-weight:bold;&amp;quot;&amp;gt;DECOY&amp;lt;/div&amp;gt;
+    `
+  &amp;lt;/script&amp;gt;
+&amp;lt;/body&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The next block contains a few of the DOM elements we&apos;ll often be referring to.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const cat = document.getElementById(&apos;cat&apos;)
+const party = document.getElementById(&apos;drop-zone&apos;)
+const loading = document.getElementById(&apos;loader&apos;)
+const countdown = document.getElementById(&apos;countdown&apos;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Finally, &lt;strong&gt;we introduce three streams that we&apos;ll use quite often while going through the challenge. These are the most basic building blocks of our solutions.&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const dragstart$ = fromEvent(document, &apos;dragstart&apos;)
+const dragend$ = fromEvent(document, &apos;dragend&apos;)
+const drop$ = fromEvent(document, &apos;drop&apos;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;
+&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h4&gt;Level 1 - Combining streams of DOM events&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;We should be able to take the cat to the party by dragging it.
+&lt;ul&gt;
+&lt;li&gt;Place the cat inside the party together with other cats.&lt;/li&gt;
+&lt;li&gt;We also want to hide the original cat element while dragging it for a better user experience.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let&apos;s follow a bottom-up approach. We&apos;ll start by building some specific streams that will allow us to assemble more complex behaviors as we move along.&lt;/p&gt;
+&lt;p&gt;Let&apos;s start by answering the following: how do we know that an HTML element has been dropped at the &lt;code&gt;party&lt;/code&gt;? We&apos;ll need to detect any &lt;code&gt;drop&lt;/code&gt; event that occurs in the &lt;code&gt;party&lt;/code&gt; element.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const partyDrop$ = drop$.pipe(filter((event) =&amp;gt; event.target === party))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/hands-on-reactive-programming-rxjs/marbles-level-1-1.png&quot; alt=&quot;marbles diagram filter event target on drop event&quot; title=&quot;marbles diagram filter event target on drop event&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;Caption
+text={() =&amp;gt; (
+&amp;lt;p&amp;gt;
+&amp;lt;b&amp;gt;e&amp;lt;/b&amp;gt; stands for &amp;lt;b&amp;gt;event&amp;lt;/b&amp;gt; and it&apos;s the value pushed to the stream at each drop event in the whole document!{&amp;quot; &amp;quot;}
+&amp;lt;b&amp;gt;e1&amp;lt;/b&amp;gt;, &amp;lt;b&amp;gt;e2&amp;lt;/b&amp;gt; and &amp;lt;b&amp;gt;e3&amp;lt;/b&amp;gt; have different &amp;lt;b&amp;gt;event.target&amp;lt;/b&amp;gt; (target DOM elements).
+&amp;lt;/p&amp;gt;
+)}
+/&amp;gt;&lt;/p&gt;
+&lt;p&gt;Cool, we now have a stream that emits a &lt;code&gt;drop&lt;/code&gt; event every time something is dropped in the &lt;code&gt;party&lt;/code&gt;, we ensure that using the &amp;lt;a href=&amp;quot;https://rxjs-dev.firebaseapp.com/api/operators/filter&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;RxJS - filter&amp;quot;&amp;gt;filter&amp;lt;/a&amp;gt; operator.&lt;/p&gt;
+&lt;p&gt;I would like to pause and add further detail on this marble diagram. Notice that we read from top to bottom, meaning the last timeline is the only one that really matters, it&apos;s the fine grained stream that gives us more useful values. In this case since we won&apos;t subscribe to &lt;code&gt;drop$&lt;/code&gt; directly, think of it as an auxiliary conceptual timeline which is a step towards shaping the ideal stream to tackle our task: &lt;code&gt;partyDrop$&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Another relevant detail on the marbles diagram: &lt;code&gt;e1&lt;/code&gt; and &lt;code&gt;e2&lt;/code&gt; marbles don&apos;t make it to &lt;code&gt;partyDrop$&lt;/code&gt; (bottom stream). For those events,
+&lt;code&gt;event.target&lt;/code&gt; it&apos;s not &lt;code&gt;party&lt;/code&gt;, this means the user did not drop the HTML element in the &lt;code&gt;party&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;At this point we can already notice the exceptional compositional capabilities of streams and how easy it is to plug &amp;amp; play the smaller blocks (such as &lt;code&gt;drop$&lt;/code&gt;) to build higher level streams.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Next, let&apos;s see how we can detect that the &lt;code&gt;cat&lt;/code&gt; is dropped at the &lt;code&gt;party&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const catAtParty$ = partyDrop$.pipe(
+  withLatestFrom(dragstart$),
+  filter(([dropEvent, dragStartEvent]) =&amp;gt; dragStartEvent.target === cat),
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Alright, a few things are going on here. We&apos;re familiar with &amp;lt;a href=&amp;quot;https://rxjs-dev.firebaseapp.com/api/operators/withLatestFrom&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;RxJS - withLatestFrom&amp;quot;&amp;gt;withLatestFrom&amp;lt;/a&amp;gt;, but this time, it&apos;s a bit more complex to perceive. We&apos;re looking into a stream of &lt;code&gt;dragstart&lt;/code&gt; events &lt;code&gt;dragstart$&lt;/code&gt; and asking it for the last value emitted in that stream; this is the same as saying that we want the last draggable element in the page that emitted a &lt;code&gt;dragstart&lt;/code&gt; event! Next, we have &lt;code&gt;filter&lt;/code&gt; again. We&apos;re going to use &lt;code&gt;filter&lt;/code&gt; to narrow down our stream to allow &lt;code&gt;dragstart&lt;/code&gt; events to pass through only if their target element is &lt;code&gt;cat&lt;/code&gt;! And that&apos;s it! We have a stream that will emit an event every time we drop the cat at the party.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/hands-on-reactive-programming-rxjs/marbles-level-1-2.png&quot; alt=&quot;marbles diagram filter event target on drop event&quot; title=&quot;marbles diagram filter event target on drop event&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;Caption /&amp;gt;&lt;/p&gt;
+&lt;p&gt;In the above diagram, &lt;code&gt;e1&lt;/code&gt;, &lt;code&gt;e2&lt;/code&gt; and &lt;code&gt;e3&lt;/code&gt; are &lt;code&gt;dragstart&lt;/code&gt; events (&lt;code&gt;dragstart$&lt;/code&gt; stream) that might come from anywhere in the page. &lt;code&gt;de&lt;/code&gt; represents a &lt;code&gt;drop&lt;/code&gt; event at the &lt;code&gt;party&lt;/code&gt;. Notice how &lt;code&gt;withLatestFrom&lt;/code&gt; operates by bringing together the last element on &lt;code&gt;dragstart$&lt;/code&gt; which is &lt;code&gt;e3&lt;/code&gt; and with the &lt;code&gt;party&lt;/code&gt; element which is published to the &lt;code&gt;dragend$&lt;/code&gt; stream. Now because &lt;code&gt;e3&lt;/code&gt; event target is actually the &lt;code&gt;cat&lt;/code&gt; you&apos;ll get &lt;code&gt;e3&lt;/code&gt; pushed to our final stream &lt;code&gt;catAtParty$&lt;/code&gt;!&lt;/p&gt;
+&lt;p&gt;But we&apos;re not finished just yet; we need to leverage the work we&apos;ve constructed so far to actually render the &lt;code&gt;cat&lt;/code&gt; in the &lt;code&gt;party&lt;/code&gt;. For that, we just need to subscribe to our &lt;code&gt;catAtParty$&lt;/code&gt; stream and do some DOM manipulations.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;catAtParty$.subscribe(([partyDropEvent, dragStartEvent]) =&amp;gt; {
+  // some console.logs to check what we really get subscribing to catAtParty$
+  // console.log({ partyDropEvent, dragStartEvent });
+  // console.log({ partyDropEvent: event.type, dragStartEvent: event.type });
+  cat.remove()
+  party.appendChild(cat)
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/hands-on-reactive-programming-rxjs/game-level-1-2.png&quot; alt=&quot;result of subscribing to cat at party stream&quot; title=&quot;result of subscribing to cat at party stream&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;Caption
+text={() =&amp;gt; (
+&amp;lt;p&amp;gt;
+The &amp;lt;b&amp;gt;console.log&amp;lt;/b&amp;gt; reveals the &amp;lt;b&amp;gt;drop&amp;lt;/b&amp;gt; and &amp;lt;b&amp;gt;dragstart&amp;lt;/b&amp;gt; events as payload for our subscription. We
+also log the &amp;lt;b&amp;gt;event.type&amp;lt;/b&amp;gt; of each individual event.
+&amp;lt;/p&amp;gt;
+)}
+/&amp;gt;&lt;/p&gt;
+&lt;p&gt;If you&apos;re following this point, you&apos;ll notice that although we can drag the cat perfectly, we still see the original &lt;code&gt;cat&lt;/code&gt; element while carrying it. We see the original cat element while dragging it.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/hands-on-reactive-programming-rxjs/game-level-1-opacity-before.gif&quot; alt=&quot;&apos;dragging the cat without manipulating the opacity value&apos;&quot; title=&quot;dragging the cat without manipulating the opacity value&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;p&gt;Setting the cat&apos;s element opacity to &amp;lt;b&amp;gt;0&amp;lt;/b&amp;gt; yields a more natural user experience.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/hands-on-reactive-programming-rxjs/game-level-1-opacity-after.gif&quot; alt=&quot;&apos;dragging the cat with opacity manipulation&apos;&quot; title=&quot;dragging the cat with opacity manipulation&quot;&gt;&lt;/p&gt;
+&lt;p&gt;To achieve the same behavior we have in the above GIF, we want to toggle the &lt;code&gt;cat&lt;/code&gt; element&apos;s opacity while dragging. Yes, another side effect, we can actually simply create another subscription to take care of this.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const catDragStart$ = dragstart$.pipe(filter((event) =&amp;gt; event.target === cat))
+const catDragEnd$ = dragend$.pipe(filter((event) =&amp;gt; event.target === cat))
+catDragStart$.subscribe((event) =&amp;gt; {
+  cat.style.opacity = 0
+})
+catDragEnd$.subscribe((event) =&amp;gt; {
+  cat.style.opacity = 1
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And done with Level 1!&lt;/p&gt;
+&lt;p&gt;I want to leave a challenge for the reader. Looking at how we&apos;re setting the opacity value of the &lt;code&gt;cat&lt;/code&gt; element, could we somehow handle everything in one single subscription instead of two? I would suggest you to read the whole article and come back to this one later, you should be then able to nail it then.&lt;/p&gt;
+&lt;p&gt;&amp;lt;Accordion summary=&amp;quot;Hint&amp;quot;&amp;gt;
+Check the operator &amp;lt;b&amp;gt;merge&amp;lt;/b&amp;gt;.
+&amp;lt;/Accordion&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;Accordion summary=&apos;Solution&apos;&amp;gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const catDragStart$ = dragstart$.pipe(filter((event) =&amp;gt; event.target === cat))
+const catDragEnd$ = dragend$.pipe(filter((event) =&amp;gt; event.target === cat))
+const opacity$ = merge(catDragStart$.pipe(mapTo(0)), catDragEnd$.pipe(mapTo(1)))
+
+opacity$.subscribe((value) =&amp;gt; {
+  cat.style.opacity = value
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;/Accordion&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h4&gt;Level 2 - Hacking race conditions with artificial delays&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;We should announce the cats&apos; arrival with a &lt;code&gt;window.alert&lt;/code&gt; message.
+&lt;ul&gt;
+&lt;li&gt;Before triggering the &lt;code&gt;window.alert&lt;/code&gt; we&apos;ll want to make sure the &lt;code&gt;cat&lt;/code&gt; is actually rendered at the &lt;code&gt;party&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So we already have a stream that emits an event each time we drag the cat to the party, it&apos;s called &lt;code&gt;catAtParty$&lt;/code&gt;. Our work here is mostly done. We just need to subscribe to it.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;catAtParty$.subscribe(() =&amp;gt; {
+  window.alert(&apos;Cat is at the party! You win!&apos;)
+  window.location.reload()
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;
+&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;b&amp;gt;window.alert&amp;lt;/b&amp;gt; is triggered when we drop the cat at the &amp;lt;b&amp;gt;party&amp;lt;/b&amp;gt;, but the &amp;lt;b&amp;gt;cat&amp;lt;/b&amp;gt; is not rendered!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/hands-on-reactive-programming-rxjs/game-level-2-no-cat.gif&quot; alt=&quot;&apos;demonstration asynchronous rendering cat DOM element&apos;&quot; title=&quot;demonstration asynchronous rendering cat DOM element&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Hmm.. strange, we did everything right but the &lt;code&gt;window.alert&lt;/code&gt; triggers before we get to actually render the &lt;code&gt;cat&lt;/code&gt; at the &lt;code&gt;party&lt;/code&gt;, what a bummer.&lt;/p&gt;
+&lt;p&gt;It seems that the DOM changes don&apos;t kick in before we trigger the alert; that&apos;s because the rendering is asynchronous, and the page only gets updated later on after we&apos;re done with executing this function and dismissing the alert. I don&apos;t want to spend much time fixing this since I don&apos;t have any mechanism to tell me whether the DOM node has been rendered successfully, I&apos;m going to code a hack and trigger the alert inside a &lt;code&gt;setTimeout&lt;/code&gt; that should buy us some time to correctly render the &lt;code&gt;cat&lt;/code&gt; element.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;catAtParty$.subscribe(() =&amp;gt; {
+  setTimeout(() =&amp;gt; {
+    window.alert(&apos;Cat is at the party! You win!&apos;)
+    window.location.reload()
+  }, 100)
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;p&gt;Great! The &lt;code&gt;window.alert&lt;/code&gt; is triggered after the &lt;strong&gt;cat&lt;/strong&gt; element is rendered at the &lt;strong&gt;party&lt;/strong&gt;!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/hands-on-reactive-programming-rxjs/take-cat-to-party.gif&quot; alt=&quot;&apos;take the cat to the party game demonstration after applying delay on render&apos;&quot; title=&quot;take the cat to the party game demonstration after applying delay on render&quot;&gt;&lt;/p&gt;
+&lt;p&gt;It works. We can achieve a similar &lt;strong&gt;hack&lt;/strong&gt; with RxJS without having a solution based on callbacks keeping our subscription handler clean (&lt;strong&gt;but still a hack!&lt;/strong&gt;).&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;catAtParty$.pipe(delay(100)).subscribe(() =&amp;gt; {
+  window.alert(&apos;Cat is at the party! You win!&apos;)
+  window.location.reload()
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;See that &amp;lt;a href=&amp;quot;https://rxjs-dev.firebaseapp.com/api/operators/delay&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;RxJS - withLatestFrom&amp;quot;&amp;gt;delay&amp;lt;/a&amp;gt; there? That&apos;s another operator. It &lt;strong&gt;allows you to hold the value in the stream for a determined amount of time before pushing it to the subscribers&lt;/strong&gt;. So what&apos;s happening here is that instead of the Observer (subscription) being aware that we have to code a hack to trigger the alert after the cat enters the party, we shift that responsibility to the Observable, the stream is now the &lt;em&gt;hacky&lt;/em&gt; code that is delaying the whole thing. This is super powerful, the way you can shift responsibilities and broadcast your changes to all the subscribers. Yes, all the subscribers will receive a delayed update! &lt;strong&gt;This can be simultaneously a gift and a wrecking footgun!&lt;/strong&gt;&lt;/p&gt;
+&lt;h4&gt;Level 3 - Merging streams into one stream&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;We want to display a GIF while the cat is moving.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In our markup, there&apos;s a GIF positioned at the top right corner. We want to show it while dragging the cat and hide it again once we drop the cat.&lt;/p&gt;
+&lt;p&gt;We already have two streams: &lt;code&gt;catDragStart$&lt;/code&gt; and &lt;code&gt;catDragEnd$&lt;/code&gt; . We need to combine them to form a new stream. Let&apos;s try and draw a small diagram of what that stream should look like.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/hands-on-reactive-programming-rxjs/marbles-level-3-1.png&quot; alt=&quot;streams of events for dragging and dropping the cat respectively&quot; title=&quot;streams of events for dragging and dropping the cat respectively&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;Caption
+text={() =&amp;gt; (
+&amp;lt;p&amp;gt;
+In the image, &amp;lt;b&amp;gt;ds&amp;lt;/b&amp;gt; symbolizes a &amp;lt;b&amp;gt;dragstart&amp;lt;/b&amp;gt; event, and &amp;lt;b&amp;gt;de&amp;lt;/b&amp;gt; represents a &amp;lt;b&amp;gt;dragend&amp;lt;/b&amp;gt; event.
+&amp;lt;/p&amp;gt;
+)}
+/&amp;gt;&lt;/p&gt;
+&lt;p&gt;Our GIF is wrapped in an HTML element whose &lt;code&gt;display&lt;/code&gt; attribute is set to &lt;code&gt;&amp;quot;none&amp;quot;&lt;/code&gt; by default. We&apos;ll want to set it to &lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt; (empty string) to make it visible and back to &lt;code&gt;&amp;quot;none&amp;quot;&lt;/code&gt; once it&apos;s time to hide it again. Our side effect should look something like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// shouldHideGIF would be true in case we need to hide the GIF
+const v = shouldHideGIF ? &apos;none&apos; : &apos;&apos;
+loading.style.setProperty(&apos;display&apos;, v)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Let&apos;s try to build a stream to feed to this function a value for &lt;code&gt;display&lt;/code&gt; that reflects whether the cat is being dragged or not. Our stream should remove the necessity of the imperative logic dictated by the ternary operator, &lt;strong&gt;we&apos;ll create values that react to changes to replace the imperative code&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;First, let&apos;s look back at our streams &lt;code&gt;catDragStart$&lt;/code&gt; and &lt;code&gt;catDragEnd$&lt;/code&gt;. When &lt;code&gt;catDragStart$&lt;/code&gt; emits a value, we want to set the &lt;code&gt;display&lt;/code&gt; to &lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt;. So this means we need to somehow transform our stream of events into a stream of empty strings. Each time a string is emitted, we shall pass that value onto the function that will set the &lt;code&gt;display&lt;/code&gt; property on the &lt;code&gt;loading&lt;/code&gt; element.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/hands-on-reactive-programming-rxjs/marbles-level-3-2.png&quot; alt=&quot;stream mapping dragstart events to an empty string&quot; title=&quot;stream mapping dragstart events to an empty string&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;Caption text={&amp;quot;Mapping each event to an empty string.&amp;quot;} /&amp;gt;&lt;/p&gt;
+&lt;p&gt;After you apply an operator, you transform your stream into a more refined one, ideally better suited to the task you&apos;re trying to tackle! You&apos;re making every pushed value to the topmost timeline flow through a function provided in the &lt;code&gt;map&lt;/code&gt; operator. That function will map each value into the bottom timeline, your &lt;em&gt;&amp;quot;final&amp;quot;&lt;/em&gt; stream. If you subscribe to it now, you will receive empty strings instead of DOM events!&lt;/p&gt;
+&lt;p&gt;The same thing should happen to &lt;code&gt;catDragEnd$&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/hands-on-reactive-programming-rxjs/marbles-level-3-3.png&quot; alt=&quot;stream mapping dragend events to none&quot; title=&quot;stream mapping dragend events to none&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;Caption text={&amp;quot;Mapping each event to &apos;none&apos;.&amp;quot;} /&amp;gt;&lt;/p&gt;
+&lt;p&gt;Now we have two streams, and we could just subscribe to each one of them and set the value of the &lt;code&gt;&amp;quot;display&amp;quot;&lt;/code&gt; property for the &lt;code&gt;loading&lt;/code&gt; element!&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const catDragStartDisplay$ = catDragStart$.pipe(map((event) =&amp;gt; &apos;&apos;))
+const catDragEndDisplay$ = catDragEnd$.pipe(map((event) =&amp;gt; &apos;none&apos;))
+
+catDragStartDisplay$.subscribe((value) =&amp;gt; loading.style.setProperty(&apos;display&apos;, value))
+catDragEndDisplay$.subscribe((value) =&amp;gt; loading.style.setProperty(&apos;display&apos;, value))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Although this works, we could further refine our streams and &lt;strong&gt;merge&lt;/strong&gt; them into a single one.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/hands-on-reactive-programming-rxjs/marbles-level-3-4.png&quot; alt=&quot;two streams merged into a single&quot; title=&quot;two streams merged into a single one&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;Caption
+text={() =&amp;gt; (
+&amp;lt;p&amp;gt;
+&amp;lt;b&amp;gt;A single stream becomes the source of truth&amp;lt;/b&amp;gt; for the &amp;lt;i&amp;gt;display&amp;lt;/i&amp;gt; property value of the &amp;lt;b&amp;gt;loading&amp;lt;/b&amp;gt;{&amp;quot; &amp;quot;}
+element throughout time.
+&amp;lt;/p&amp;gt;
+)}
+/&amp;gt;&lt;/p&gt;
+&lt;p&gt;Awesome! The &amp;lt;a href=&amp;quot;https://rxjs-dev.firebaseapp.com/api/operators/merge&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;RxJS - merge&amp;quot;&amp;gt;merge&amp;lt;/a&amp;gt; operator gives us the power to take to streams and merge them into one so that the values of the &lt;code&gt;&amp;quot;display&amp;quot;&lt;/code&gt; flow through a single stream (a single source of truth). Here&apos;s how the code looks like.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const catDragStartDisplay$ = catDragStart$.pipe(map((event) =&amp;gt; &apos;&apos;))
+const catDragEndDisplay$ = catDragEnd$.pipe(map((event) =&amp;gt; &apos;none&apos;))
+const display$ = merge(catDragStartDisplay$, catDragEndDisplay$)
+
+display$.subscribe((value) =&amp;gt; loading.style.setProperty(&apos;display&apos;, value))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;One subscription to handle the toggling of showing/hiding the GIF.&lt;/p&gt;
+&lt;h6&gt;Bonus for Level 3&lt;/h6&gt;
+&lt;p&gt;I feel overwhelmed by the tremendous amount of operators offered by RxJS, its API is considerably large. We could further simplify the above implementation with the operator &amp;lt;a href=&amp;quot;https://rxjs-dev.firebaseapp.com/api/operators/mapTo&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;RxJS - mapTo&amp;quot;&amp;gt;mapTo&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const catDragStartDisplay$ = catDragStart$.pipe(mapTo(&apos;&apos;))
+const catDragEndDisplay$ = catDragEnd$.pipe(mapTo(&apos;none&apos;))
+const display$ = merge(catDragStartDisplay$, catDragEndDisplay$)
+
+display$.subscribe((value) =&amp;gt; loading.style.setProperty(&apos;display&apos;, value))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You get the same result as applying &lt;code&gt;map&lt;/code&gt; but without needing to provide a function, because we&apos;re really not doing anything else rather than returning a hardcoded value on that inline function.&lt;/p&gt;
+&lt;h6&gt;Note about the coding style&lt;/h6&gt;
+&lt;p&gt;You&apos;ve might have noticed that I&apos;m creating a new variable per each stream, this allows me to better explain the building blocks of each solution and map them to the diagrams. &lt;strong&gt;Although this helps keeping the code readable, this is not mandatory, it can be overkill per times!&lt;/strong&gt;. Streams can be inlined. Let&apos;s look again to a small refactor of the above solution to understand what I&apos;m referring to.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const display$ = merge(catDragStart$.pipe(mapTo(&apos;&apos;)), catDragEnd$.pipe(mapTo(&apos;none&apos;)))
+
+display$.subscribe((value) =&amp;gt; loading.style.setProperty(&apos;display&apos;, value))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We could drop &lt;code&gt;catDragStartDisplay$&lt;/code&gt; and &lt;code&gt;catDragEndDisplay$&lt;/code&gt; by inlining them in the &lt;code&gt;merge&lt;/code&gt; operator.&lt;/p&gt;
+&lt;h4&gt;Level 4 - Flatten observables, timers and cancellation&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;The cat needs to make it to the party in less than 5 seconds! He only has 5 seconds of gas in his bike.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We need to code a new path in our game, the one where the user loses the cat isn&apos;t dragged to the party within 5 seconds. This looks like a countdown, with a few actions tied to it:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The countdown must be &lt;strong&gt;interrupted&lt;/strong&gt; if the player manages to win within 5 seconds.&lt;/li&gt;
+&lt;li&gt;In case the countdown ends, and the cat was not dropped anywhere, we need to display a &amp;quot;&lt;em&gt;game over&lt;/em&gt;&amp;quot; message.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;As in the previous levels, let&apos;s build this incrementally. First, let&apos;s build a countdown. To emphasize how RxJS shines here, let&apos;s first see how we would make a countdown with native JavaScript APIs.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;function countdown(seconds) {
+  let secondsLeft = seconds
+  let intervalId
+
+  intervalId = setInterval(() =&amp;gt; {
+    if (secondsLeft === 0) {
+      console.log(&amp;quot;time&apos;s up!&amp;quot;)
+      clearInterval(intervalId)
+    } else {
+      console.log(secondsLeft)
+      secondsLeft--
+    }
+  }, 1000)
+}
+countdown(5)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That&apos;s a rough implementation of a countdown. We need to keep track of the timer identifier in a variable to ensure we clean up after running the &lt;code&gt;setInterval&lt;/code&gt; provided callback the expected amount of times.&lt;/p&gt;
+&lt;p&gt;Now here&apos;s how you can do the same with RxJS.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const countdown$ = timer(0, 1000).pipe(
+  map((t) =&amp;gt; 5 - t),
+  takeWhile((t) =&amp;gt; t &amp;gt; 0),
+)
+countdown$.subscribe({
+  next: (secondsLeft) =&amp;gt; console.log(secondsLeft),
+  complete: () =&amp;gt; console.log(&amp;quot;time&apos;s up!&amp;quot;),
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Let&apos;s examine the above code 🤯. This time we&apos;re not creating a stream from an event or anything like that. Instead, we use &amp;lt;a href=&amp;quot;https://rxjs-dev.firebaseapp.com/api/index/function/timer&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;RxJS - mapTo&amp;quot;&amp;gt;timer&amp;lt;/a&amp;gt; from RxJS to generate a timer stream that emits a new numeric value every second.&lt;/p&gt;
+&lt;p&gt;Now a timer emits values in ascending order (0, 1, 3, etc.). We&apos;ll want to reverse that to display an actual countdown. To reverse the numerical value on the stream, we simply use &lt;code&gt;map&lt;/code&gt;. We should only give the user 5 seconds to drag the &lt;code&gt;cat&lt;/code&gt; to the &lt;code&gt;party&lt;/code&gt;. This translates to stop emitting values when we hit the mark of the &lt;code&gt;0&lt;/code&gt; seconds, this is controlled by the &amp;lt;a href=&amp;quot;https://rxjs-dev.firebaseapp.com/api/operators/takeWhile&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;RxJS - takeWhile&amp;quot;&amp;gt;takeWhile&amp;lt;/a&amp;gt; operator. A few evident advantages compared with the classic implementation:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;No global variables&lt;/strong&gt; &lt;code&gt;secondsLeft&lt;/code&gt; and &lt;code&gt;intervalId&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Less error-prone code&lt;/strong&gt; by relying on &lt;code&gt;takeWhile&lt;/code&gt; and other built-in operators to be the rail guards of our business logic.&lt;/li&gt;
+&lt;li&gt;Once the stream emits the 6th value, &lt;strong&gt;it will complete automatically&lt;/strong&gt; and stop emitting values! &lt;strong&gt;We don&apos;t need to worry about cleanup logic&lt;/strong&gt; - with &lt;code&gt;setInterval&lt;/code&gt; we need to worry about cleaning the interval with &lt;code&gt;clearInterval&lt;/code&gt; so that it does not run indefinitely!&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/hands-on-reactive-programming-rxjs/marbles-level-4-1.png&quot; alt=&quot;diagram depicting the countdown stream&quot; title=&quot;diagram depicting the countdown stream&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;Caption /&amp;gt;&lt;/p&gt;
+&lt;p&gt;In the above image, the bottom timeline represents the stream; notice the pipe (&lt;strong&gt;|&lt;/strong&gt;) at the end of the timeline indicates that the stream completes after emitting the value &lt;strong&gt;1&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;A crucial aspect to notice is that you&apos;ll trigger a new timer as soon as you subscribe. This is a &amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-programming-fundamentals/#hot-observable-vs-cold-observable&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Fundamentals of Reactive Programming, Cold Observable&amp;quot;&amp;gt;Cold Observable&amp;lt;/a&amp;gt;. Our &lt;code&gt;countdown$&lt;/code&gt; will start emitting values right away upon subscription, so we can&apos;t just &lt;code&gt;.subscribe()&lt;/code&gt; We&apos;ll have to subscribe to the countdown when the user starts dragging the &lt;code&gt;cat&lt;/code&gt; element.&lt;/p&gt;
+&lt;p&gt;Now remember we had a stream &lt;code&gt;catDragStart$&lt;/code&gt;; we&apos;ll use that to trigger our countdown. &lt;strong&gt;But how can we trigger a subscription to a stream from within another stream?&lt;/strong&gt; In my opinion, this is a hard concept to comprehend.&lt;/p&gt;
+&lt;p&gt;Presenting the &amp;lt;a href=&amp;quot;https://rxjs-dev.firebaseapp.com/api/operators/switchMap&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;RxJS - switchMap&amp;quot;&amp;gt;switchMap&amp;lt;/a&amp;gt; operator. &lt;code&gt;switchMap&lt;/code&gt; allows you to trigger a subscription from within a stream to a second stream. Not clear yet? Think of it this way &lt;code&gt;switchMap&lt;/code&gt; &lt;strong&gt;allows you to switch to a new observable&lt;/strong&gt;. Ok, let&apos;s look at our countdown implementation, now that we have this information.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const countdown$ = timer(0, 1000).pipe(
+  map((t) =&amp;gt; 5 - t),
+  takeWhile((t) =&amp;gt; t &amp;gt;= 0),
+)
+const countdownRunning$ = catDragStart$.pipe(switchMap((event) =&amp;gt; countdown$))
+
+countdownRunning$.subscribe((secondsLeft) =&amp;gt; {
+  countdown.innerText = `${secondsLeft}`
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: You might have noticed that I&apos;m using &lt;code&gt;t =&amp;gt; t &amp;gt;= 0&lt;/code&gt; &amp;quot;&lt;em&gt;greater or equal to&lt;/em&gt;&amp;quot; in our predicate. This is just for convenience, so that we get &lt;code&gt;0&lt;/code&gt; pushed onto the stream to easily rendered it, finishing the countdown at &lt;code&gt;0&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/hands-on-reactive-programming-rxjs/marbles-level-4-2.png&quot; alt=&quot;diagram to demonstrate the switchMap operator&quot; title=&quot;diagram to demonstrate the switchMap operator&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;Caption text={() =&amp;gt; &amp;lt;p&amp;gt;We&apos;re switching from one stream to another and subscribing to it immediately.&amp;lt;/p&amp;gt;} /&amp;gt;&lt;/p&gt;
+&lt;p&gt;Notice the return value of &lt;code&gt;switchMap&lt;/code&gt; is &lt;code&gt;countdown$&lt;/code&gt;, this means that when a &lt;code&gt;dragstart&lt;/code&gt; event is emitted in &lt;code&gt;catDragStart$&lt;/code&gt; the following things will happen:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Since we subscribed, the DOM event will flow through the pipe and hit our &lt;code&gt;switchMap&lt;/code&gt; operator.&lt;/li&gt;
+&lt;li&gt;We&apos;ll automatically subscribe to &lt;code&gt;countdown$&lt;/code&gt; and start emitting its values leaving the &lt;code&gt;dragstart&lt;/code&gt; event behind (because we don&apos;t really need it for this task).&lt;/li&gt;
+&lt;li&gt;In our subscription handler, we simply do a DOM mutation to the element that displays our countdown value so that the user gets the time left displayed on the screen.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Once more, as soon as a &lt;code&gt;ds&lt;/code&gt; (&lt;code&gt;dragstart&lt;/code&gt; event in the diagram) is pushed to our &lt;code&gt;catDragStart$&lt;/code&gt; stream, &lt;code&gt;switchMap&lt;/code&gt; will kick in and subscribe to our &lt;code&gt;countdown$&lt;/code&gt; stream, &lt;em&gt;&amp;quot;passing the ball&amp;quot;&lt;/em&gt; (moving the flow of control) to the &lt;code&gt;countdown$&lt;/code&gt;. We&apos;ll start to push to our subscribers the seconds left in the countdown like if we had subscribed to the &lt;code&gt;countdown$&lt;/code&gt; in the first place, but in this case &lt;strong&gt;we programmatically triggered the subscription&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Although we&apos;re going more deep into &lt;em&gt;flattening&lt;/em&gt; Observables in this level, we&apos;ve already seen this before in this article. If you&apos;re thinking about &lt;code&gt;withLatestFrom&lt;/code&gt; from &lt;strong&gt;Level 1&lt;/strong&gt;, you&apos;re right! That operator also triggers a inner subscription.&lt;/p&gt;
+&lt;p&gt;We can now leverage &lt;code&gt;countdownRunning$&lt;/code&gt; to display an alert.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;countdownRunning$.pipe(filter((secondsLeft) =&amp;gt; secondsLeft === 0)).subscribe(() =&amp;gt; {
+  window.alert(&amp;quot;Cat didn&apos;t make it! You lose!&amp;quot;)
+  window.location.reload()
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We have a filter to check for the second &lt;code&gt;0&lt;/code&gt;; this way, we&apos;re basically ensuring that we just emit a value when the countdown runs out. Similarly to &lt;strong&gt;Level 2&lt;/strong&gt;, we have a &lt;code&gt;delay&lt;/code&gt; with random time to safeguard our countdown value gets rendered with &lt;code&gt;0&lt;/code&gt; on the screen before we trigger the alert.&lt;/p&gt;
+&lt;p&gt;Only one thing left! If you&apos;re following up until this point, you&apos;re probably wondering why the counter is not reset once you stop dragging the cat. See the following GIF to understand what I&apos;m referring to.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/hands-on-reactive-programming-rxjs/take-cat-to-party-no-cancel.gif&quot; alt=&quot;&apos;counter does not stop demonstration&apos;&quot; title=&quot;counter does not stop demonstration&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Hmm.. Strange the counter does not reset once we drop the cat! It should, since the 5 seconds didn&apos;t ran out while we were dragging the cat. Let&apos;s look at our &lt;code&gt;countdown$&lt;/code&gt; implementation once more.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const countdown$ = timer(0, 1000).pipe(
+  map((t) =&amp;gt; 5 - t),
+  takeWhile((t) =&amp;gt; t &amp;gt;= 0)
+);
+const countdownRunning$ = catDragStart$.pipe(switchMap((event) =&amp;gt; countdown$);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, it&apos;s pretty clear that we&apos;re not doing anything to &amp;quot;stop&amp;quot; the counter. Once we subscribe to &lt;code&gt;countdown$&lt;/code&gt; with the &lt;code&gt;switchMap&lt;/code&gt; operator, there&apos;s no stopping it, it will go on until it reaches the end, and when this happens, we&apos;ll display the alert to the user. Ideally, we would stop the counter upon any of the two following events:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;When the cat arrives at the party&lt;/strong&gt;. Also partially done, we have a stream &lt;code&gt;catAtParty$&lt;/code&gt;, once a value is pushed into this stream, you know the &lt;code&gt;cat&lt;/code&gt; was dropped at the &lt;code&gt;party&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;We stop dragging the cat&lt;/strong&gt;. We already have a stream &lt;code&gt;catDragEnd$&lt;/code&gt;, each emitted value means we just dropped the &lt;code&gt;cat&lt;/code&gt; element. You might be thinking the first point would be enough, but remember the cat can be dropped literally anywhere on the screen. We have no guarantees that it will get dropped at the party.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Meet &amp;lt;a href=&amp;quot;https://rxjs-dev.firebaseapp.com/api/operators/takeUntil&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;RxJS - takeUntil&amp;quot;&amp;gt;takeUntil&amp;lt;/a&amp;gt;, this operator allows you to listen to a stream until something happens! Let&apos;s look at the implementation of the &lt;code&gt;countdown$&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const countdown$ = timer(0, 1000).pipe(
+  map((t) =&amp;gt; 5 - t),
+  takeWhile((t) =&amp;gt; t &amp;gt;= 0),
+  takeUntil(/*something we&apos;ll figure out later*/),
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, what is the &lt;strong&gt;argument&lt;/strong&gt; of the &lt;code&gt;takeUntil&lt;/code&gt; operator? &lt;code&gt;takeUntil&lt;/code&gt; receives a stream, once that &lt;strong&gt;stream&lt;/strong&gt; emits a value, our &lt;code&gt;countdown$&lt;/code&gt; will stop emitting, thus canceling the timer and giving our users another chance to dragging the &lt;code&gt;cat&lt;/code&gt; to the &lt;code&gt;party&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;But we have two streams, &lt;code&gt;catDragEnd$&lt;/code&gt; and &lt;code&gt;catAtParty$&lt;/code&gt;, can we make it one? Yes, we can! We&apos;ve already met &lt;code&gt;merge&lt;/code&gt;! This operator can take multiple streams and combine into a single one, think of it as a funnel.&lt;/p&gt;
+&lt;p&gt;Let&apos;s call this last stream &lt;code&gt;cancelCountdown$&lt;/code&gt;. After we declare it, we can feed it as an input to our &lt;code&gt;takeUntil&lt;/code&gt; operator. Here&apos;s the final implementation of Level 4 with cancellation.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const cancelCountdown$ = merge(catDragEnd$, catAtParty$);
+const countdown$ = timer(0, 1000).pipe(
+  map((t) =&amp;gt; 5 - t),
+  takeWhile((t) =&amp;gt; t &amp;gt;= 0),
+  takeUntil(cancelCountdown$)
+);
+const countdownRunning$ = catDragStart$.pipe(switchMap((event) =&amp;gt; countdown$);
+
+countdownRunning$.subscribe((secondsLeft) =&amp;gt; {
+  countdown.innerText = `${secondsLeft}`;
+});
+countdownRunning$
+  .pipe(
+    filter((secondsLeft) =&amp;gt; secondsLeft === 0),
+    delay(100)
+  )
+  .subscribe(() =&amp;gt; {
+    window.alert(&amp;quot;Cat didn&apos;t make it! You lose!&amp;quot;);
+    window.location.reload();
+  });
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/hands-on-reactive-programming-rxjs/marbles-level-4-3-4.png&quot; alt=&quot;stream representation of the countdown with cancellation&quot; title=&quot;stream representation of the countdown with cancellation&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;Caption
+text={(a) =&amp;gt; (
+&amp;lt;p&amp;gt;
+In this diagram, our stream gets cancelled after the value &amp;lt;b&amp;gt;3&amp;lt;/b&amp;gt; is published. The first &amp;lt;b&amp;gt;dragend&amp;lt;/b&amp;gt; event
+causes the &amp;lt;b&amp;gt;countdownRunning$&amp;lt;/b&amp;gt; to stop emitting values.
+&amp;lt;/p&amp;gt;
+)}
+/&amp;gt;&lt;/p&gt;
+&lt;p&gt;You can check out &amp;lt;a href=&amp;quot;https://github.com/danielcaldas/take-the-cat-to-the-party&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;danielcaldas/take-the-cat-to-the-party: Learn reactive programming with RxJS the fun way&amp;quot;&amp;gt;the complete implementation of this challenge here&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h4&gt;Closing Notes&lt;/h4&gt;
+&lt;p&gt;Here are the concepts you&apos;ve learned by building this game:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Creating streams&lt;/strong&gt; from DOM events.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Manipulating streams&lt;/strong&gt; with basic operators such as &lt;code&gt;map&lt;/code&gt;, &lt;code&gt;filter&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Combining streams&lt;/strong&gt; with operators such as: &lt;code&gt;withLatestFrom&lt;/code&gt;, &lt;code&gt;switchMap&lt;/code&gt;, and &lt;code&gt;merge&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cancellation&lt;/strong&gt;, being able to stop listening to a specific stream based on another. In our last level, we used &lt;code&gt;takeUntil&lt;/code&gt; to achieve this.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Now go out there and try to apply these concepts to build your own applications. I would be pleased to hear from you if you&apos;ve learned something here today.&lt;/p&gt;
+&lt;p&gt;In the upcoming articles, I&apos;ll share with you the good and bad parts of adopting reactive programming and start using RxJS in your codebase, and at last, I&apos;ll share with you a bunch of fantastic resources to learn RxjS and reactive programming.&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/why-reactive-programming&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Why You Should Consider Reactive Programming | danielcaldas.github.io&amp;quot;&amp;gt;Part 1 - Why You Should Consider Reactive Programming&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-programming-fundamentals&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Fundamentals of Reactive Programming | danielcaldas.github.io&amp;quot;&amp;gt;Part 2 - Fundamentals of Reactive Programming&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Part 3 - Hands-on Reactive Programming with RxJS&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-rxjs-pros-cons&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Reactive Programming: The Good and the Bad | danielcaldas.github.io&amp;quot;&amp;gt;Part 4 - Reactive Programming: The Good and the Bad&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/awesome-reactive&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Awesome RxJS and Reactive Programming Resources | danielcaldas.github.io&amp;quot;&amp;gt;Part 5 - Awesome RxJS and Reactive Programming Resources&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded></item><item><title>The hidden potential of webpack DefinePlugin</title><link>https://danielcaldas.github.io/posts/hidden-potential-webpack-define-plugin/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/hidden-potential-webpack-define-plugin/</guid><description>You can author content using the familiar markdown syntax you already know. All basic markdown syntax is supported.</description><pubDate>Thu, 30 May 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;The odds are high that you&apos;re using &amp;lt;a href=&amp;quot;https://webpack.js.org/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;a bundler for javascript and friends&amp;quot;&amp;gt;webpack&amp;lt;/a&amp;gt; to bundle your assets. If you&apos;re looking into an excellent way to feed environment variables to your applications, &amp;lt;a href=&amp;quot;https://webpack.js.org/plugins/define-plugin/#usage&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;the defineplugin allows you to create global constants which can be configured at compile time&amp;quot;&amp;gt;DefinePlugin&amp;lt;/a&amp;gt; might well be the answer.&lt;/p&gt;
+&lt;h3&gt;tl;dr&lt;/h3&gt;
+&lt;p&gt;If you want to pass environment variables and use it within your JavaScript, you need to:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create the environment variable.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;MY_ENV_VAR=&amp;quot;sweet env var&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;In your webpack config, use the &lt;code&gt;webpack.DefinePlugin&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;new webpack.DefinePlugin({
+  // it won&apos;t work without JSON.stringify!!!
+  myEnvVar: JSON.stringify(process.env.MY_ENV_VAR),
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;In your JavaScript.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;console.log(`Accessing my env var like a ninja: ${myEnvVar}`)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;
+&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h3&gt;Some Background&lt;/h3&gt;
+&lt;p&gt;One of these days, I had this exciting challenge, I was integrating some third party that required from me to provide the current commit hash of the code to a JavaScript SDK that performs some magic in bug tracking and versioning.&lt;/p&gt;
+&lt;p&gt;Well seemed pretty simple for me at the time. I need to take the commit hash at build time and somehow feed it to our JavaScript, whatever that means.&lt;/p&gt;
+&lt;p&gt;In this blog post, I&apos;ll explain step by step how to implement the following:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We want to log in the console the link to the GitHub history of the application
+that points to the commit of the current version of the application.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4&gt;The step by step&lt;/h4&gt;
+&lt;p&gt;Here&apos;s a step by step implementation of the previously announced challenge. I will use one of my open source pet projects on GitHub, &amp;lt;a href=&amp;quot;https://github.com/danielcaldas/el-conversor&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;a number to word list converter as a node backend and react/redux fronted&amp;quot;&amp;gt;el-conversor&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;h5&gt;Step 1 - Grab the commit hash&lt;/h5&gt;
+&lt;p&gt;I&apos;m going to do this within a npm script in the &amp;lt;a href=&amp;quot;https://github.com/danielcaldas/el-conversor/blob/master/package.json#L17&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;a number to word list converter as a node backend and react/redux fronted package.json&amp;quot;&amp;gt;package.json&amp;lt;/a&amp;gt;. In the &lt;code&gt;dev&lt;/code&gt; npm script you can find the following:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;&amp;quot;dev&amp;quot;: &amp;quot;COMMIT_HASH=\&amp;quot;$(git rev-parse HEAD)\&amp;quot; npm-run-all --parallel *:dev&amp;quot;,
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So in &lt;code&gt;COMMIT_HASH=\&amp;quot;$(git rev-parse HEAD)\&amp;quot;&lt;/code&gt; we are basically assigning the output of the command &lt;code&gt;git rev-parse HEAD&lt;/code&gt; to an env variable &lt;code&gt;COMMIT_HASH&lt;/code&gt;.&lt;/p&gt;
+&lt;h5&gt;Step 2 - Configure webpack.DefinePlugin&lt;/h5&gt;
+&lt;p&gt;Now, let&apos;s dive into the &amp;lt;a href=&amp;quot;https://github.com/danielcaldas/el-conversor/blob/master/package.json#L17&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;a number to word list converter as a node backend and react/redux fronted package.json&amp;quot;&amp;gt;webpack.config.js&amp;lt;/a&amp;gt;. Well it&apos;s not that complicated, the only nasty detail is that even if you want to pass in a simple string, you need to wrap it with a &lt;code&gt;JSON.stringify&lt;/code&gt; otherwise, webpack dumps whatever text comes out of your environment variable and dump it in your JavaScript, and you get a very nasty syntax error. So let&apos;s use the &amp;lt;a href=&amp;quot;https://webpack.js.org/plugins/define-plugin/#usage&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;the defineplugin allows you to create global constants which can be configured at compile time&amp;quot;&amp;gt;DefinePlugin&amp;lt;/a&amp;gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;new webpack.DefinePlugin({
+  __commitHash__: JSON.stringify(process.env.COMMIT_HASH),
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Pro Tip&lt;/strong&gt;: You might be wondering why the strange naming &lt;code&gt;__commitHash__,&lt;/code&gt; well the prefix and suffix underscores are just a way to prevent naming collisions. I hope that you don&apos;t often use &lt;code&gt;__var__&lt;/code&gt; as a style to name variables in JavaScript, well I don&apos;t, that&apos;s why I found this extremely unlikely to collide.&lt;/p&gt;
+&lt;h5&gt;Step 3 - Use the environment variables&lt;/h5&gt;
+&lt;p&gt;In the end, we use the environment variable. In this case to &lt;code&gt;console.log&lt;/code&gt; a helpful GitHub link:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;console.log(
+  `You are running on this commit of the application https://github.com/danielcaldas/el-conversor/commit/${__commitHash__}`,
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can see the final result in the image below, it logs:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/hidden-potential-webpack-define-plugin/console-log.png&quot; alt=&quot;final result in console of el-conversor&quot; title=&quot;final result in console of el-conversor&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;Caption /&amp;gt;&lt;/p&gt;
+</content:encoded></item><item><title>How to overengineer copying files from any Android device</title><link>https://danielcaldas.github.io/posts/how-to-copy-file-android/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/how-to-copy-file-android/</guid><description>(especially if you have an Apple computer)</description><pubDate>Thu, 01 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;strong&gt;tl;dr&lt;/strong&gt; SSH into your android and download the files with &amp;lt;a href=&amp;quot;https://linux.die.net/man/1/scp&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;scp(1): secure copy - Linux man page&amp;quot;&amp;gt;scp&amp;lt;/a&amp;gt;. &amp;lt;a href=&amp;quot;https://play.google.com/store/apps/details?id=com.arachnoid.sshelper&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;SSHelper - Apps on Google Play&amp;quot;&amp;gt;This one&amp;lt;/a&amp;gt; works for me.&lt;/p&gt;
+&lt;p&gt;So this afternoon, I had decided to take some time to clear my smartphone, archive some old pictures and stuff. I usually park them on an external drive. Anyways, it happens that my &amp;lt;a href=&amp;quot;https://www.oneplus.com&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;OnePlus 6 - OnePlus (Nederland)&amp;quot;&amp;gt;OnePlus 6&amp;lt;/a&amp;gt; does not connect to my new shiny &amp;lt;a href=&amp;quot;https://www.apple.com/macbook-pro/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;MacBook Pro - Apple&amp;quot;&amp;gt;MacBook Pro&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;
+(╯°□°)╯︵ ┻━┻
+&amp;lt;br /&amp;gt;
+&amp;lt;br /&amp;gt;
+&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h4&gt;USB/USB-C Cables&lt;/h4&gt;
+&lt;p&gt;I tried, but Apple doesn&apos;t make it easy to recognize other devices.&lt;/p&gt;
+&lt;h4&gt;SSH to the rescue!&lt;/h4&gt;
+&lt;p&gt;I start browsing the Google Play store for some apps that allow me to run an SSH server on my smartphone. Quickly I&apos;ve stumbled into &amp;lt;a href=&amp;quot;https://play.google.com/store/apps/details?id=com.arachnoid.sshelper&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;SSHelper - Apps on Google Play&amp;quot;&amp;gt;this&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;p&gt;Straightforward setup, as you can see in the screenshot below.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/how-to-copy-file-android/ssh-server-helper-android-sm.png&quot; alt=&quot;ssh server app running on android device&quot; title=&quot;ssh server app running on android device&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Since my laptop and my smartphone are on the same network, they can communicate.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;ssh admin@&amp;lt;my_phone_ip&amp;gt; -p &amp;lt;ssh_server_port_from_app&amp;gt;
+# enter password...
+
+# then just copy stuff to my MacBook
+scp -r Images &amp;lt;my_macbook_user&amp;gt;@&amp;lt;my_macbook_ip&amp;gt;:~/Desktop
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Hope this tip helps you out in case you get stuck due to the usual apple &lt;em&gt;mumbo jumbo&lt;/em&gt;.&lt;/p&gt;
 </content:encoded></item><item><title>How to Fix GitHub Actions: Support for password authentication was removed</title><link>https://danielcaldas.github.io/posts/how-to-fix-github-password-authentication/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/how-to-fix-github-password-authentication/</guid><description>Linking private repos as npm dependencies the proper way</description><pubDate>Mon, 01 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Today the GitHub PAT (&lt;em&gt;personal access token&lt;/em&gt;) expired in &lt;a href=&quot;https://tweak-extension.com&quot;&gt;one of my projects&lt;/a&gt;, I literally waked up to this:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;npm ERR! code 128
 npm ERR! An unknown git error occurred
@@ -1935,7 +2786,7 @@ hand remember that you getting each time more experiment and more comfortable ar
 &lt;/ul&gt;
 &lt;h3&gt;Final note&lt;/h3&gt;
 &lt;p&gt;Again much of the written above is just my opinion. I hope you find useful some of the sections of this post even if you don&apos;t work on the tech industry.&lt;/p&gt;
-</content:encoded></item><item><title>There&apos;s something off about Open Source</title><link>https://danielcaldas.github.io/posts/open-source-dilemma/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/open-source-dilemma/</guid><description>OSS dilemma</description><pubDate>Sat, 02 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+</content:encoded></item><item><title>There&apos;s something off about Open Source</title><link>https://danielcaldas.github.io/posts/open-source-dilemma/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/open-source-dilemma/</guid><description>OSS dilemma</description><pubDate>Wed, 16 Dec 2020 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Update Oct 12th 2024&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;I didn&apos;t modify this article. I don&apos;t fully agree with my views here anymore. The problem is not on FOSS, but rather on peoples&apos; expectations and approach to FOSS. I&apos;m still of the opinion that FOSS is not at a fully sustainable stage. Major projects today are typically funded and it&apos;s no longer rare to see full-time employed developers work on maintaining FOSS these days.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1967,7 +2818,593 @@ hand remember that you getting each time more experiment and more comfortable ar
 &lt;/ol&gt;
 &lt;p&gt;I&apos;m mostly worried about the last point. Would this mean that restrictions on who can contribute to the source would damage its quality? Simultaneously, would software companies that are just starting out be completely crashed because they now have to pay for every software they use?&lt;/p&gt;
 &lt;p&gt;This is quite a dilemma for me. I&apos;m interested to see how all this is going pan out. My bet is on the money. Money wins, most of the time.&lt;/p&gt;
-</content:encoded><category>tech</category></item><item><title>Reactive Series</title><link>https://danielcaldas.github.io/posts/reactive-series-preface/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/reactive-series-preface/</guid><description>A series of articles on Reactive Programming and RxJS</description><pubDate>Wed, 22 Jul 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Over the past two years, I invested some time learning &amp;lt;a href=&amp;quot;https://en.wikipedia.org/wiki/Reactive_programming&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Reactive programming - Wikipedia&amp;quot;&amp;gt;Reactive Programming&amp;lt;/a&amp;gt; (with &amp;lt;a href=&amp;quot;https://rxjs-dev.firebaseapp.com/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;RxJS&amp;quot;&amp;gt;RxJS&amp;lt;/a&amp;gt;) and
+</content:encoded></item><item><title>Deleted my git stash! Please send help!</title><link>https://danielcaldas.github.io/posts/please-help-deleted-my-git-stash/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/please-help-deleted-my-git-stash/</guid><description>You can author content using the familiar markdown syntax you already know. All basic markdown syntax is supported.</description><pubDate>Sun, 09 Dec 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I have this poor habit you know... Whenever I accumulate a lot of git stashes in some repository I just get a little maniac and start cleaning everything.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/please-help-deleted-my-git-stash/please-send-help.jpg&quot; alt=&quot;please send help&quot; title=&quot;please send help doggo meme&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;Caption source=&amp;quot;https://me.me/i/please-send-help-none-c0081e69a4f4419a824e82a234ac09e6&amp;quot; /&amp;gt;&lt;/p&gt;
+&lt;p&gt;I found it sometimes even funny to open the terminal and play around with some bash to delete the stashes, look:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# if you&apos;re just flashing by don&apos;t copy and past this line into your terminal
+for i in {1..10}; do git stash drop; done
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Well, it happens that today (a few hours ago actually) I just did this and regretted the moment I did because there was this huge feature that for some reason I had locally stashed and not committed &amp;lt;br/&amp;gt; ¯\_(ツ)_/¯.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Good news!&lt;/strong&gt;, the commits are not actually gone until git runs &amp;lt;a href=&amp;quot;https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)#Reachability_of_an_object&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;wiki page garbage collection&amp;quot;&amp;gt;&lt;em&gt;garbage collection&lt;/em&gt;&amp;lt;/a&amp;gt;, so to check the list of commits that might still be rescued just go ahead and type:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;git fsck --unreachable
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;or maybe&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;git fsck --unreachable | grep commit
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;because you actually need to check whether your hash is somewhere referenced as a &lt;strong&gt;unreachable commit&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Then all you need to do once you find your &lt;em&gt;stash&lt;/em&gt; (if you don&apos;t know the hash I&apos;m afraid you will have to apply stashes until you find it) is just:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;git stash apply &amp;lt;hash&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here, some cool references on git stash:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://www.atlassian.com/git/tutorials/saving-changes/git-stash&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;atlassian tutorials git stash&amp;quot;&amp;gt;Atlassian - Git stash&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://community.atlassian.com/t5/Sourcetree-questions/Retrieve-a-deleted-stash/qaq-p/162673&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;atlassian community recover deleted stash&amp;quot;&amp;gt;Atlassian community - Retrieve a deleted stash&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Notice that the references above are from Atlassian, which I highly recommend when it comes to quick search into a specific Git topic.&lt;/p&gt;
+&lt;p&gt;And that&apos;s it, hope this saves you just like it saved me.&lt;/p&gt;
+&lt;p&gt;Have a nice day.&lt;/p&gt;
+</content:encoded></item><item><title>Presenting babel-plugin-cloudinary</title><link>https://danielcaldas.github.io/posts/presenting-babel-plugin-cloudinary/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/presenting-babel-plugin-cloudinary/</guid><description>Presenting babel-plugin-cloudinary</description><pubDate>Thu, 04 Apr 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;During the past two months, I&apos;ve been developing a side project at work, this started with me doing a simple refactor task. At the time I looked at the solution we had in place, and it was dirty, but it was necessary to skip some considerable performance penalty. Maybe it was something that we just had to learn to live with...&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/presenting-babel-plugin-cloudinary/wrong-kido.jpg&quot; alt=&quot;wrong kiddo meme&quot; title=&quot;wrong kiddo meme&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;cite&amp;gt;source: https://imgur.com/gallery/J3WYR&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;p&gt;Hell no! At the time the alternatives weren&apos;t that promising, but soon I realized the untapped potential of doing work at build time with &amp;lt;a href=&amp;quot;https://babeljs.io/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;babel or babel.js is a free and open-source javascript compiler and configurable transpiler used in web development&amp;quot;&amp;gt;babeljs&amp;lt;/a&amp;gt;. I&apos;m very proud to present &amp;lt;a href=&amp;quot;https://github.com/trivago/babel-plugin-cloudinary&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;official repository for babel-plugin-cloudinary compile cloudinary urls at build time.&amp;quot;&amp;gt;babel-plugin-cloudinary&amp;lt;/a&amp;gt;. In &amp;lt;a href=&amp;quot;https://tech.trivago.com/2019/04/02/presenting-babel-plugin-cloudinary/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;trivago tech blog official tech blog for babel-plugin-cloudinary&amp;quot;&amp;gt;this trivago tech blog article&amp;lt;/a&amp;gt;, you can find all the details and motivation behind the plugin.
+And by the way, if you want to know what the heck am I talking about, just take a look at the official repository of &amp;lt;a href=&amp;quot;https://github.com/trivago/babel-plugin-cloudinary&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;official repository for babel-plugin-cloudinary compile cloudinary urls at build time.&amp;quot;&amp;gt;babel-plugin-cloudinary&amp;lt;/a&amp;gt;.&lt;/p&gt;
+</content:encoded></item><item><title>Reactive Series (pt. 2) - Fundamentals of Reactive Programming</title><link>https://danielcaldas.github.io/posts/reactive-programming-fundamentals/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/reactive-programming-fundamentals/</guid><description>Reactive Series (pt. 2) - Fundamentals of Reactive Programming</description><pubDate>Thu, 03 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;ul&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/why-reactive-programming&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Why You Should Consider Reactive Programming | danielcaldas.github.io&amp;quot;&amp;gt;Part 1 - Why You Should Consider Reactive Programming&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Part 2 - Fundamentals of Reactive Programming&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/hands-on-reactive-programming-rxjs&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Hands-on Reactive Programming with RxJS | danielcaldas.github.io&amp;quot;&amp;gt;Part 3 - Hands-on Reactive Programming with RxJS&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-rxjs-pros-cons&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Reactive Programming: The Good and the Bad | danielcaldas.github.io&amp;quot;&amp;gt;Part 4 - Reactive Programming: The Good and the Bad&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/awesome-reactive&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Awesome RxJS and Reactive Programming Resources | danielcaldas.github.io&amp;quot;&amp;gt;Part 5 - Awesome RxJS and Reactive Programming Resources&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;lt;br&amp;gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#the-observer-pattern&quot;&gt;The Observer Pattern&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#observer-pattern-real-life-analogy&quot;&gt;Observer Pattern: Real-Life Analogy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#naming-the-things-we-already-know&quot;&gt;Naming the things we already know&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#a-naive-use-case-for-the-observer-pattern-in-javascript&quot;&gt;A naive use case for the Observer pattern in JavaScript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#observable-as-a-first-class-citizen&quot;&gt;Observable as a first-class citizen&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#reactive-programming&quot;&gt;Reactive Programming&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#core-properties-of-observables&quot;&gt;Core Properties of Observables&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#stream&quot;&gt;Stream&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#operators&quot;&gt;Operators&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#hot-observable-vs-cold-observable&quot;&gt;Hot Observable VS Cold Observable&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#brief-history-of-reactive-programming&quot;&gt;Brief History of Reactive Programming&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#quotes&quot;&gt;Quotes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let&apos;s continue our journey on Reactive Programming. This part will highlight some of this paradigm&apos;s key concepts for quick learning.&lt;/p&gt;
+&lt;h4&gt;The Observer Pattern&lt;/h4&gt;
+&lt;p&gt;You might have encountered several diagrams and explanations of the Observer pattern. For those of you that might not yet be familiar
+with it, allow me to explain it with an example-based approach, a very different one than what I had at school.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;Define a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.&amp;quot; by &amp;lt;a href=&amp;quot;https://sourcemaking.com/design_patterns/observer&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Observer Design Pattern&amp;quot;&amp;gt;sourcemaking.com&amp;lt;/a&amp;gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I didn&apos;t get it for the first time with this definition and set me away instead of fascinating me. I thought this would be
+a super tricky thing to get. But not if you&apos;ve had &lt;strong&gt;explained it to me with something we all know&lt;/strong&gt; like youtube.&lt;/p&gt;
+&lt;h5&gt;Observer Pattern: Real-Life Analogy&lt;/h5&gt;
+&lt;p&gt;Let&apos;s look at &lt;em&gt;youtube.com&lt;/em&gt; for a second. I&apos;ll use it as an example to explain this pattern&apos;s &lt;strong&gt;two core participants&lt;/strong&gt;: &lt;strong&gt;Observer&lt;/strong&gt; and &lt;strong&gt;Observable&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Your browsing on youtube and you find a new &lt;strong&gt;channel&lt;/strong&gt;. You want to &lt;strong&gt;receive notifications&lt;/strong&gt; anytime some new
+&lt;strong&gt;content is published into that youtube channel&lt;/strong&gt;, but for that, you&apos;ll need to &lt;strong&gt;hit the subscribe button first&lt;/strong&gt;. You are the &lt;strong&gt;Observer&lt;/strong&gt;, consuming the content posted (published) by that youtube channel. This makes the youtube channel the &lt;strong&gt;Observable&lt;/strong&gt;. Another vital aspect to see is the multiplicity of this relationship. There&apos;s &lt;strong&gt;one youtube channel to many youtube users&lt;/strong&gt; (subscribers).&lt;/p&gt;
+&lt;h5&gt;Naming the things we already know&lt;/h5&gt;
+&lt;p&gt;Keeping this analogy in mind, let&apos;s clarify a couple more concepts that complement the relationship between an Observable and its Observables.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Producer or creator&lt;/strong&gt; - something that generates/publishes content. Back to our analogy, the content creator is the youtube
+channel owner. An Observable produces data.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Consumer or client&lt;/strong&gt; - something that subscribes to new content (data) published by the producers; our user is the consumer in our analogy. He or she gets notified when new content is out.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Subscription&lt;/strong&gt; - think of it as an object that holds the information about you subscribing to that youtube channel. One crucial thing that the subscription must own is a way for you to unsubscribe from that youtube channel when you no longer want to be notified of new content.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pull&lt;/strong&gt; - we talk about a pull protocol when a consumer/client explicitly decides when to get data from the producer/creator. For instance, when we create a simple function and call it to do some work for us.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Push&lt;/strong&gt; - in these systems, the consumer/client doesn&apos;t know exactly when new content is published. Our youtube analogy describes such a system where the channel subscribers have no clue when a new video will be posted.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These concepts are more comfortable to follow when backing them up with some real-life example, but most importantly, it is good that you possess a &lt;strong&gt;grasp of the jargon&lt;/strong&gt;. &lt;strong&gt;It&apos;s crucial to clearly express yourself&lt;/strong&gt; with your peers. Last but not least, this &lt;strong&gt;becomes super relevant when you&apos;re trying to Google your away around some issue&lt;/strong&gt;.&lt;/p&gt;
+&lt;h5&gt;A naive use case for the Observer pattern in JavaScript&lt;/h5&gt;
+&lt;p&gt;Now let&apos;s get our hands on and implement the Observer pattern for our youtube case study. The idea is to use the Observer pattern to notify many youtube users when a new video is published into the channel. We&apos;ll keep the example slim and straightforward. The main idea is to have an end-to-end perception of how the data flows in our application when using Observables. We won&apos;t have a UI here. We will just use &lt;code&gt;console.log&lt;/code&gt; to signal some events in our small program.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;class Video {
+  constructor(title) {
+    this.title = title
+  }
+}
+
+class Channel {
+  constructor(name, subscribers = []) {
+    this.name = name
+    this.subscribers = subscribers
+    this.videos = []
+  }
+
+  // subscribes a user to an instance of channel
+  // returns the unsubscription function
+  subscribe(user) {
+    this.subscribers.push(user)
+
+    const userIndex = this.subscribers.length - 1
+
+    // remember we need to allow our users
+    // to unsubscribe anytime
+    const unsubscribe = () =&amp;gt; {
+      this.subscribers.splice(userIndex, 1)
+    }
+
+    return unsubscribe
+  }
+
+  // publishes a new video in this channel notifying
+  // all its subscribers
+  publish(video) {
+    this.videos.push(video)
+    this.subscribers.forEach((user) =&amp;gt; {
+      user.notify(`
+        Hey there ${user.email}!
+        There&apos;s a new video from ${this.name}
+        ${video.title}
+    `)
+    })
+  }
+}
+
+class User {
+  constructor(email) {
+    this.email = email
+  }
+
+  // just logs a notification update
+  notify(update) {
+    console.log(update)
+  }
+}
+
+function main() {
+  // our platform has 3 users: elisa, hans and mark
+  const elisa = new User(&apos;elisa@gmail.com&apos;)
+  const hans = new User(&apos;hans@gmail.com&apos;)
+  const mark = new User(&apos;mark@gmail.com&apos;)
+
+  // our platform has 1 channel &amp;quot;#FunnyVide0s&amp;quot;
+  const funnyVideosChannel = new Channel(&apos;#FunnyVide0s&apos;)
+
+  // Our scenario
+
+  // elisa, hans and mark hit the subscribe button on &amp;quot;#FunnyVide0s&amp;quot;
+  const subscriptions = [elisa, hans, mark].map((user) =&amp;gt; {
+    return funnyVideosChannel.subscribe(user)
+  })
+
+  // oh! it seems a new video is about to come out on &amp;quot;#FunnyVide0s&amp;quot;
+  const newVideo = new Video(&apos;funny cats (part 1)&apos;)
+  funnyVideosChannel.publish(newVideo)
+
+  // no! is seems like elisa didn&apos;t like the video &amp;quot;funny cats (part 1)&amp;quot;
+  // she unsubscribes from the channel
+  const unsubscribeElisa = subscriptions[0]
+
+  unsubscribeElisa()
+
+  // but &amp;quot;#FunnyVide0s&amp;quot; it&apos;s not going to stop!
+  // we have a new cats video, of course this time
+  // only Hans and Mark are notified
+  const yetAnotherNewVideo = new Video(&apos;funny cats (part 2)&apos;)
+  funnyVideosChannel.publish(yetAnotherNewVideo)
+}
+
+main()
+// The output is:
+//
+// Hey there elisa@gmail.com!
+// There&apos;s a new video from #FunnyVide0s
+// funny cats (part 1)
+//
+// Hey there hans@gmail.com!
+// There&apos;s a new video from #FunnyVide0s
+// funny cats (part 1)
+//
+// Hey there mark@gmail.com!
+// There&apos;s a new video from #FunnyVide0s
+// funny cats (part 1)
+//
+// Hey there hans@gmail.com!
+// There&apos;s a new video from #FunnyVide0s
+// funny cats (part 2)
+//
+// Hey there mark@gmail.com!
+// There&apos;s a new video from #FunnyVide0s
+// funny cats (part 2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Let&apos;s map the entities of the above example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The &lt;code&gt;User&lt;/code&gt; is our &lt;code&gt;Observer&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;Channel&lt;/code&gt; is our &lt;code&gt;Observable&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;Video&lt;/code&gt; is just really the contract for the payload we sent out to subscribers, it &lt;strong&gt;can really be anything&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I hope this example clarifies that you can leverage the Observer pattern with no additional libraries in any programming language. I found this knowledge of paramount importance to understand more complex use cases in reactive programming, specially when using libraries, we sit as a client, we go one layer of abstraction above what you&apos;ve seen in the previous example. With reactive programming libraries, you can juggle with Observables in fantastic ways effortlessly.&lt;/p&gt;
+&lt;p&gt;As a side note, if you&apos;re keen on learning more about the Observer pattern (or any other design pattern), I highly recommend the following resources:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://sourcemaking.com/design_patterns/observer&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Observer Design Pattern&amp;quot;&amp;gt;sourcemaking.com&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://en.wikipedia.org/wiki/Design_Patterns&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;nofollow&amp;quot; title=&amp;quot;Design Patterns: Elements of Reusable Object-Oriented Software&amp;quot;&amp;gt;Design Patterns: Elements of Reusable Object-Oriented Software&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://addyosmani.com/resources/essentialjsdesignpatterns/book/&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;nofollow&amp;quot; title=&amp;quot;Learning JavaScript Design Patterns&amp;quot;&amp;gt;Learning JavaScript Design Patterns&amp;lt;/a&amp;gt; - a better resource if you want to learn these concepts with JavaScript.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5&gt;Observable as a first-class citizen&lt;/h5&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;Observables never had a chance to shine on their own. The real win, IMO, to RxJS is the Observable type itself. Not the operators.&amp;quot; from &amp;lt;a href=&amp;quot;https://dev.to/benlesh/observables-reactive-programming-and-regret-4jm6&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Observables, Reactive Programming, and Regret - DEV&amp;quot;&amp;gt;&amp;quot;Observables, Reactive Programming and Regret&amp;quot;&amp;lt;/a&amp;gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Observables are everywhere these days. Libraries such as RxJS has an internal implementation of an Observable type, an refers to it as a &amp;lt;a href=&amp;quot;https://en.wikipedia.org/wiki/First-class_citizen&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;First-class citizen - Wikipedia&amp;quot;&amp;gt;first-class citizen&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;p&gt;I would like to highlight the &amp;lt;a href=&amp;quot;https://tc39.es/proposal-observable/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;TC39 – Specifying JavaScript, Observable proposal&amp;quot;&amp;gt;tc39 Observable proposal&amp;lt;/a&amp;gt;. Observables are a very natural fit to handle many programming challenges. I think this has become more noticeable given that people are even considering bringing it into the language (in this case JavaScript)! I believe we are blurring the line between language specification and library, but I&apos;m happy to see the proliferation of Observables&apos; discussions.&lt;/p&gt;
+&lt;h4&gt;Reactive Programming&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Reactive Programming is programming with streams of data. Streams are vessels of values pushed over time. Streams can be transformed into and combined with other streams&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;To make the above clearer&lt;/strong&gt;, let&apos;s go over a few essential concepts, those you&apos;ll hear all the time.&lt;/p&gt;
+&lt;h5&gt;Core Properties of Observables&lt;/h5&gt;
+&lt;p&gt;There are &lt;strong&gt;3 very important aspects about Observables&lt;/strong&gt; in reactive programming. Maybe some of them don&apos;t make sense now, but they will, once you have some hands-on experience with some reactive library.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Observables are&lt;/strong&gt;...&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;a primitive type&lt;/strong&gt; with 0 to many values, pushed over any amount of time (yes, mentioned quite a few times already).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;cancellable&lt;/strong&gt;, you can cancel a subscription by sending stuff to these observables: &amp;quot;I don&apos;t&apos; want you to send me those values anymore.&amp;quot;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;lazy. Observables don&apos;t do anything until you subscribe.&lt;/strong&gt; This is the complete opposite of &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Promise - JavaScript | MDN&amp;quot;&amp;gt;Promises&amp;lt;/a&amp;gt;. Promises are eager, that&apos;s why we often wrap them in a function, making them lazy, so they only execute when we call them.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5&gt;Stream&lt;/h5&gt;
+&lt;p&gt;An overused term these days, but I&apos;ll try to make it simple.
+First of all, &lt;strong&gt;a stream is an Observable&lt;/strong&gt;; you&apos;ll find that these two concepts are often interchangeable. Simply put, a stream is a collection of values pushed over time. Let&apos;s think of &lt;em&gt;&amp;quot;live streaming&amp;quot;&lt;/em&gt; in the video industry for a moment; on one end, there&apos;s your laptop observing the stream; on the other end, something is pushing several bits of data over the wire. Simple right? But &lt;strong&gt;how to think about streams in the conceptual world&lt;/strong&gt;? That&apos;s where diagrams (more precisely marble diagrams) come in handy. At the most basic level, a stream is simply represented by a horizontal line, representative of time, with geometric figures. Each figure represents an emitted value on the stream. What&apos;s an emitted value? If a stream emits a value, it means that everyone looking into the stream will get notified of that value. Hopefully, the following figure makes it crystal clear.&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;p&gt;The following represents a stream that emits 4 values (1 value emitted per second).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/reactive-programming-fundamentals/stream-basic-four-values.gif&quot; alt=&quot;&apos;simple stream animation of four values pushed over time&apos;&quot; title=&quot;stream animation&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;cite&amp;gt;source: https://rxviz.com/&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;p&gt;From now on, whenever you hear &lt;strong&gt;&amp;quot;stream&amp;quot;&lt;/strong&gt;, try to visualize the above in your head.&lt;/p&gt;
+&lt;h5&gt;Operators&lt;/h5&gt;
+&lt;p&gt;Streams alone are useful as they allow multiple Observers to subscribe to it for updates. Things start to get more enjoyable when you want to &lt;strong&gt;manipulate a stream&lt;/strong&gt;. As mentioned, streams can be transformed and even combined. The power it&apos;s all yours. Let&apos;s look at two essential operations, &lt;strong&gt;mapping, and filtering&lt;/strong&gt;. Take a look at the following animation.&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;
+&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets//reactive-programming-fundamentals/map-filter-stream.gif&quot; alt=&quot;&apos;visualization of map and filter when applied to streams&apos;&quot; title=&quot;map and filter stream&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;cite&amp;gt;source: https://reactive.how/filter&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;p&gt;As you can see on the left, &lt;code&gt;map&lt;/code&gt; applied over the left-most stream generates a new stream of values where each value in the original stream goes through the function &lt;code&gt;isEven&lt;/code&gt; provided to the mapping operation. Subscribing to this stream, you would get a boolean (true vs. false) or number (0 vs. 1) that tells you whether a given value is even or odd. Now let&apos;s look at filter. With &lt;code&gt;filter&lt;/code&gt;, instead of transforming each value, you&apos;re actually creating a new stream that only emits the original value when the same it&apos;s even. So from an Observer perspective, you would be notified half of the times, while with map your Observer will be notified for every single value.&lt;/p&gt;
+&lt;h5&gt;Hot Observable VS Cold Observable&lt;/h5&gt;
+&lt;p&gt;This is a concept that I&apos;ve experienced before understanding it, and it can be daunting.&lt;/p&gt;
+&lt;p&gt;A &lt;strong&gt;Hot Observable&lt;/strong&gt; emits values before the subscription happens. &lt;strong&gt;Think of it as a live music concert in a stadium&lt;/strong&gt;. You will only get to see the full performance if you enter the stadium (subscribe) before the show starts (stream emits values). Of course, you can arrive at the venue to see the concert at any future time. Everyone at the stadium shares the same experience (meaning the values are shared among subscribers).
+In a real use case, a Hot Observable can be a stream of click events on the page (there might be clicks happening before you subscribe to it) in a user interface.&lt;/p&gt;
+&lt;p&gt;A &lt;strong&gt;Cold Observable&lt;/strong&gt; only starts emitting values upon subscription. &lt;strong&gt;Think of it as a movie on Netflix&lt;/strong&gt;. The film only starts playing once you press play on your laptop. You won&apos;t miss pieces of the movie since you can start playing from the very start. If someone else watches the same movie on Netflix, they won&apos;t share your timeline; each user has its own individual timeline (values are not shared among subscribers).
+In a real use case, a cold Observable can be a countdown clock where each subscriber has its own clock.&lt;/p&gt;
+&lt;h5&gt;Brief History of Reactive Programming&lt;/h5&gt;
+&lt;p&gt;According to my research in the paper &amp;lt;a href=&amp;quot;http://conal.net/papers/icfp97/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Functional Reactive Animation paper&amp;quot;&amp;gt;Functional Reactive Animation (1997)&amp;lt;/a&amp;gt;, we see some first mentions to things such as: &lt;strong&gt;reactivity&lt;/strong&gt;. Some kind of temporal representation animations resembles the concept of a stream.&lt;/p&gt;
+&lt;p&gt;Haskell mentions in its WiKi page &amp;lt;a href=&amp;quot;https://wiki.haskell.org/Functional_Reactive_Programming&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Functional Reactive Programming - HaskellWiki&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;Functional Reactive Programming (FRP) integrates time flow and compositional events into functional programming.&amp;quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The phrasing here is bit complicated. There&apos;s this concept of a primitive type called &lt;code&gt;Behavior&lt;/code&gt;, which is defined as a time-varying value. This resembles a stream, right? A stream is somehow a time-varying value since you can get different values pushed to the stream over time, not that the reference to the stream changes, but its contents instead.&lt;/p&gt;
+&lt;p&gt;Today reactive is not only used to manage animated user interfaces. &lt;strong&gt;It&apos;s on every platform, from the web to mobile, from UIs to servers.&lt;/strong&gt; Here&apos;s a couple of the most famous reactive programming libraries today:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;http://baconjs.github.io/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Bacon.js - Functional Reactive Programming library for JavaScript&amp;quot;&amp;gt;bacon.js&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://vertx.io/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Eclipse Vert.x&amp;quot;&amp;gt;
+vertex.io
+&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;http://reactivex.io/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;ReactiveX&amp;quot;&amp;gt;
+ReactiveX
+&amp;lt;/a&amp;gt;(&amp;lt;a href=&amp;quot;https://github.com/ReactiveX/RxJava&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;ReactiveX/RxJava: RxJava – Reactive Extensions for the JVM – a library for composing asynchronous and event-based programs using observable sequences for the Java VM&amp;quot;
+&lt;blockquote&gt;
+&lt;p&gt;RxJava&amp;lt;/a&amp;gt;, &amp;lt;a href=&amp;quot;https://github.com/ReactiveX/RxSwift&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;ReactiveX/RxSwift: Reactive Programming in Swift&amp;quot;&amp;gt;RxSwift&amp;lt;/a&amp;gt;, &amp;lt;a href=&amp;quot;https://github.com/ReactiveX/rxjs&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;ReactiveX/rxjs: A reactive programming library for JavaScript&amp;quot;
+RxJS&amp;lt;/a&amp;gt; and others)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://kefirjs.github.io/kefir/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Kefir.js — fast and light Reactive Programming library for JavaScript inspired by Bacon.js and RxJS&amp;quot;&amp;gt;kefir&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5&gt;Quotes&lt;/h5&gt;
+&lt;p&gt;I hope this section offers some other views (and their sources) on reactive programming, expressed in a different way that might complement or even wholly build your understanding of things so far.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;Reactive Programming raises the level of abstraction of your code so you can focus on the interdependence of events that define the business logic, rather than having to constantly fiddle with a large amount of implementation details&amp;quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&amp;lt;small&amp;gt;
+&amp;lt;a
+href=&amp;quot;https://gist.github.com/staltz/868e7e9bc2a7b8c1f754&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;The introduction to Reactive Programming you&apos;ve been missing&amp;quot;&lt;/p&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;&amp;quot;The introduction to Reactive Programming you&apos;ve been missing&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;/a&amp;gt;
+&amp;lt;/small&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;When you fully embrace RP, the core of your app ends up being a declaration of a graph through which your data flows.&amp;quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&amp;lt;small&amp;gt;
+&amp;lt;a
+href=&amp;quot;https://dassur.ma/things/streams-for-reactive-programming/&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;Streams for reactive programming&amp;quot;&lt;/p&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;&amp;quot;Streams for reactive programming&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;/a&amp;gt;
+&amp;lt;/small&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;Never store a mutable state on your types. Instead, when you generate a new value in response to a change, send it in to a channel.&amp;quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&amp;lt;small&amp;gt;
+&amp;lt;a
+href=&amp;quot;https://www.cocoawithlove.com/blog/reactive-programming-what-and-why.html#a-description-of-reactive-programming&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;What is reactive programming and why should I use it?&amp;quot;&lt;/p&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;&amp;quot;What is reactive programming and why should I use it?&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;/a&amp;gt;
+&amp;lt;/small&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;p&gt;It&apos;s good that you discovered these concepts before you jump into practice. In my opinion, these can&apos;t be absorbed only by reading. Go over to the next blog post, where we&apos;ll build a small game together so that you can materialize the things I&apos;ve covered in this blog post.&lt;/p&gt;
+&lt;p&gt;&amp;lt;br&amp;gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/why-reactive-programming&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Why You Should Consider Reactive Programming | danielcaldas.github.io&amp;quot;&amp;gt;Part 1 - Why You Should Consider Reactive Programming&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Part 2 - Fundamentals of Reactive Programming&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/hands-on-reactive-programming-rxjs&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Hands-on Reactive Programming with RxJS | danielcaldas.github.io&amp;quot;&amp;gt;Part 3 - Hands-on Reactive Programming with RxJS&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-rxjs-pros-cons&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Reactive Programming: The Good and the Bad | danielcaldas.github.io&amp;quot;&amp;gt;Part 4 - Reactive Programming: The Good and the Bad&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/awesome-reactive&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Awesome RxJS and Reactive Programming Resources | danielcaldas.github.io&amp;quot;&amp;gt;Part 5 - Awesome RxJS and Reactive Programming Resources&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded></item><item><title>Reactive Series (pt. 4) - Reactive Programming: The Good and the Bad</title><link>https://danielcaldas.github.io/posts/reactive-rxjs-pros-cons/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/reactive-rxjs-pros-cons/</guid><description>Reactive Series - Part 4</description><pubDate>Thu, 03 Dec 2020 00:00:00 GMT</pubDate><content:encoded>&lt;ul&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/why-reactive-programming&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Why You Should Consider Reactive Programming | danielcaldas.github.io&amp;quot;&amp;gt;Part 1 - Why You Should Consider Reactive Programming&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-programming-fundamentals&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Fundamentals of Reactive Programming | danielcaldas.github.io&amp;quot;&amp;gt;Part 2 - Fundamentals of Reactive Programming&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/hands-on-reactive-programming-rxjs&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Hands-on Reactive Programming with RxJS | danielcaldas.github.io&amp;quot;&amp;gt;Part 3 - Hands-on Reactive Programming with RxJS&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Part 4 - Reactive Programming: The Good and the Bad&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/awesome-reactive&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Awesome RxJS and Reactive Programming Resources | danielcaldas.github.io&amp;quot;&amp;gt;Part 5 - Awesome RxJS and Reactive Programming Resources&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;lt;br&amp;gt;&lt;/p&gt;
+&lt;p&gt;After seeing reactive streams in action with RxJS, I would now like to expand &amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/why-reactive-programming&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Why You Should Consider Reactive Programming | danielcaldas.github.io&amp;quot;&amp;gt;&amp;quot;Part 1 - Why you should consider Reactive Programming&amp;quot;&amp;lt;/a&amp;gt; by debating some of the gains &amp;amp; pains of reactive streams and RxJS.
+As of now, we&apos;ve covered some fundamental aspects of reactive programming, and we&apos;ve seen some code as well!
+In this part of the series, I&apos;ll be compacting some of the benefits I felt while using reactive programming and some of the major pain points of adopting it. Since we&apos;ve used RxJS, I&apos;ll make occasional mentions of this reactive library&apos;s ups and downs.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#the-good&quot;&gt;The good&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#your-code-becomes-inheritably-lazy&quot;&gt;Your code becomes inheritably lazy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#your-code-is-likely-to-be-more-concise&quot;&gt;Your code is likely to be more concise&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#youre-likely-to-write-less-code&quot;&gt;You&apos;re likely to write less code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#effortless-cancellation&quot;&gt;Effortless cancellation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#easier-to-deal-with-backpressure&quot;&gt;Easier to deal with backpressure&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#converging-towards-a-single-style-of-coding&quot;&gt;Converging towards a single style of coding&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#complicated-things-made-easy&quot;&gt;Complicated things made easy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#maintainability&quot;&gt;Maintainability&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#the-bad&quot;&gt;The bad&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#learning-curve&quot;&gt;Learning curve&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#debugging-does-not-get-any-easier&quot;&gt;Debugging does not get any easier&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#human-creativity&quot;&gt;Human creativity&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#with-great-power&quot;&gt;With great power&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#error-handling&quot;&gt;Error handling&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#closing-notes&quot;&gt;Closing notes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;The good&lt;/h4&gt;
+&lt;p&gt;Let&apos;s explore some beneficial aspects of adopting reactive programming and RxJS now that we have looked at &amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/hands-on-reactive-programming-rxjs&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Hands-on Reactive Programming with RxJS | danielcaldas.github.io&amp;quot;&amp;gt;how to approach a problem and model it with streams&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;h5&gt;Your code becomes inheritably lazy&lt;/h5&gt;
+&lt;p&gt;Working with streams means nothing happens until you subscribe to them, which is terrific! Because any code path now has a &amp;quot;free of charge&amp;quot; stop &amp;amp; play capability! Without any effort, your computations become lazy by default executing when needed - &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Promise - JavaScript | MDN&amp;quot;&amp;gt;Promises&amp;lt;/a&amp;gt; are eager. They start running as soon as you construct them. It&apos;s common to wrap a Promise with a function to make it lazy.&lt;/p&gt;
+&lt;h5&gt;Your code is likely to be more concise&lt;/h5&gt;
+&lt;p&gt;As we&apos;ve seen in the &amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/hands-on-reactive-programming-rxjs&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Hands-on Reactive Programming with RxJS | danielcaldas.github.io&amp;quot;&amp;gt;hands-on&amp;lt;/a&amp;gt; part of this series, you&apos;ll likely have to model events and think about what parties are interested in consuming such events. You&apos;ll spend less time focusing on the implementation details. You&apos;ll rather spend your time drawing a mental map of the events&apos; interdependency that define your business logic. In my experience, this often results in more compact implementations, making it more accessible to capture the big picture of the internal flows in your application.&lt;/p&gt;
+&lt;h5&gt;You&apos;re likely to write less code&lt;/h5&gt;
+&lt;p&gt;It only makes sense that if you have an ecosystem, such as RxJS, in your arsenal, you&apos;ll spend less time implementing behaviors that are already built-in in some operator (e.g., &amp;lt;a href=&amp;quot;https://www.learnrxjs.io/learn-rxjs/operators/filtering/debounce&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;debounce - Learn RxJS&amp;quot;&amp;gt;debouncing&amp;lt;/a&amp;gt;, &amp;lt;a href=&amp;quot;https://www.learnrxjs.io/learn-rxjs/operators/filtering/throttle&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;throttle - Learn RxJS&amp;quot;&amp;gt;throttling&amp;lt;/a&amp;gt;, etc.). Just like you&apos;ll spend less time mutating the DOM directly when you use a UI framework such as React or Vue, you&apos;ll think more about how your UI looks like and what data binds to what parts of your UI.&lt;/p&gt;
+&lt;h5&gt;Effortless cancellation&lt;/h5&gt;
+&lt;p&gt;In my opinion, an overlooked easy win of coding with streams and RxJS is how easy it becomes to implement cancellation. What kind of behavior does cancellation concern, you ask? Let&apos;s see an example.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/reactive-rxjs-pros-cons/rxjs-free-cancellation.gif&quot; alt=&quot;&apos;cancellation of http request on hover items in a list&apos;&quot; title=&quot;rxjs free cancellation&quot;&gt;&lt;/p&gt;
+&lt;p&gt;In the above GIF, we have a list of items. Hovering on each item in the list triggers an ajax request to fetch some data from the server. The problem of eagerly (compared with clicking the item, for instance) triggering the requests upon mouse hovering is that you can potentially fetch the data for all the items but ending up not displaying any of the data to the end-user. To avoid that, we cancel an item&apos;s request when the user&apos;s mouse leaves it.&lt;/p&gt;
+&lt;p&gt;&amp;lt;small&amp;gt;(&amp;lt;b&amp;gt;Note&amp;lt;/b&amp;gt;: oh, btw on the above GIF, I&apos;m not calling a real API, I&apos;m just using the &amp;lt;a href=&amp;quot;https://tweak-extension.com&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;tweak browser extension mock API simulator&amp;quot;&amp;gt;tweak browser extension&amp;lt;/a&amp;gt; to mock the HTTP requests seamlessly)&amp;lt;/small&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;p&gt;Here&apos;s the snippet of the above pattern, implemented with &amp;lt;a href=&amp;quot;https://rxjs-dev.firebaseapp.com/api/operators/switchMap&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;RxJS - switchMap&amp;quot;&amp;gt;switchMap&amp;lt;/a&amp;gt; and &amp;lt;a href=&amp;quot;https://rxjs-dev.firebaseapp.com/api/operators/takeUntil&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;RxJS - takeUntil&amp;quot;&amp;gt;takeUntil&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const listEl = document.getElementById(&apos;list&apos;)
+const resEl = document.getElementById(&apos;res&apos;)
+const fetchById = (id) =&amp;gt; ajax(`https://some-service.com/api/items/${id}`).pipe(map((r) =&amp;gt; r.response))
+const mouseOutItem$ = fromEvent(listEl, &apos;mouseout&apos;)
+const mouseOverItem$ = fromEvent(listEl, &apos;mouseover&apos;)
+  .pipe(
+    switchMap((event) =&amp;gt; {
+      const id = event.target.id
+      resEl.innerHTML = `loading item ${id}...`
+      console.log(`Fetching data for item ${id}...`)
+      return fetchById(id)
+    }),
+    map((response) =&amp;gt; {
+      resEl.innerHTML = JSON.stringify(response, null, 2)
+      console.log(`Done fetching data for item ${response.item.id}!`)
+    }),
+    takeUntil(
+      mouseOutItem$.pipe(
+        tap(() =&amp;gt; {
+          console.log(`❌ Cancelled fetch data for item ${event.target.id}!`)
+          resEl.innerHTML = &apos;...&apos;
+        }),
+      ),
+    ),
+    repeat(),
+  )
+  .subscribe()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;Accordion summary=&apos;Expand to see example full code&apos;&amp;gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;!doctype html&amp;gt;
+
+&amp;lt;head&amp;gt;
+  &amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.5.5/rxjs.umd.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+  &amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.5.5/rxjs.umd.js.map&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+  &amp;lt;style&amp;gt;
+    li {
+      padding: 4px;
+      border: 1px dashed green;
+      color: black;
+    }
+
+    li:hover {
+      background-color: lightblue;
+      color: blueviolet;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  &amp;lt;/style&amp;gt;
+&amp;lt;/head&amp;gt;
+
+&amp;lt;body&amp;gt;
+  &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+  &amp;lt;script&amp;gt;
+    const { delay, filter, map, mapTo, switchMap, takeUntil, takeWhile, tap, withLatestFrom, repeat } =
+      window.rxjs.operators
+    const { fromEvent, merge, timer } = window.rxjs
+    const ajax = window.rxjs.ajax.ajax
+
+    // preventing the default event on dragover
+    // so that we&apos;re allowed to drop an element
+    fromEvent(document, &apos;dragover&apos;)
+      .pipe(tap((event) =&amp;gt; event.preventDefault()))
+      .subscribe()
+
+    // all the game markup goes here
+    document.getElementById(&apos;app&apos;).innerHTML = `
+      &amp;lt;h2&amp;gt;Hover on the items to fetch some async data&amp;lt;/h2&amp;gt;
+      &amp;lt;ul id=&amp;quot;list&amp;quot;&amp;gt;
+        &amp;lt;li id=&amp;quot;item-1&amp;quot;&amp;gt;item 1 (mouse over to fetch data)&amp;lt;/li&amp;gt;
+        &amp;lt;li id=&amp;quot;item-2&amp;quot;&amp;gt;item 2 (mouse over to fetch data)&amp;lt;/li&amp;gt;
+        &amp;lt;li id=&amp;quot;item-3&amp;quot;&amp;gt;item 3 (mouse over to fetch data)&amp;lt;/li&amp;gt;
+        &amp;lt;li id=&amp;quot;item-4&amp;quot;&amp;gt;item 4 (mouse over to fetch data)&amp;lt;/li&amp;gt;
+      &amp;lt;/ul&amp;gt;
+      &amp;lt;h3&amp;gt;Item detail&amp;lt;/h3&amp;gt;
+      &amp;lt;pre id=&amp;quot;res&amp;quot;&amp;gt;...&amp;lt;/pre&amp;gt;
+    `
+
+    const listEl = document.getElementById(&apos;list&apos;)
+    const resEl = document.getElementById(&apos;res&apos;)
+    const fetchById = (id) =&amp;gt; ajax(`https://some-service.com/api/items/${id}`).pipe(map((r) =&amp;gt; r.response))
+    const mouseOutItem$ = fromEvent(listEl, &apos;mouseout&apos;)
+    const mouseOverItem$ = fromEvent(listEl, &apos;mouseover&apos;)
+      .pipe(
+        switchMap((event) =&amp;gt; {
+          const id = event.target.id
+          resEl.innerHTML = `loading item ${id}...`
+          console.log(`Fetching data for item ${id}...`)
+          return fetchById(id)
+        }),
+        map((response) =&amp;gt; {
+          resEl.innerHTML = JSON.stringify(response, null, 2)
+          console.log(`Done fetching data for item ${response.item.id}!`)
+        }),
+        takeUntil(
+          mouseOutItem$.pipe(
+            tap(() =&amp;gt; {
+              console.log(`❌ Cancelled fetch data for item ${event.target.id}!`)
+              resEl.innerHTML = &apos;...&apos;
+            }),
+          ),
+        ),
+        repeat(),
+      )
+      .subscribe()
+  &amp;lt;/script&amp;gt;
+&amp;lt;/body&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;/Accordion&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;
+&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;h5&gt;Easier to deal with backpressure&lt;/h5&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;Backpressure is when the progress of turning that input to output is resisted in some way. In most cases that resistance is computational speed&amp;quot;, from &amp;lt;a href=&amp;quot;https://medium.com/@jayphelps/backpressure-explained-the-flow-of-data-through-software-2350b3e77ce7&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Backpressure explained — the resisted flow of data through software | by Jay Phelps | Medium&amp;quot;&amp;gt;&amp;quot;Backpressure explained — the resisted flow of data through software&amp;quot;&amp;lt;/a&amp;gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Did it ever happen that your &lt;code&gt;addEventListener&lt;/code&gt; handle is just executing too many times? For instance, while running an event handler for the &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/API/Document/scroll_event&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Document: scroll event - Web APIs | MDN&amp;quot;&amp;gt;scroll event&amp;lt;/a&amp;gt;? It&apos;s common to use a debounce strategy to run your event handler only after X time has passed since the last scroll event. Again, with built-in operators such as debounce in RxJS, you can quickly relieve the load in your consumer functions (event handlers). The operator single-handedly takes care of debouncing emissions for you!&lt;/p&gt;
+&lt;h5&gt;Converging towards a single style of coding&lt;/h5&gt;
+&lt;p&gt;I&apos;ve covered this in greater detail during &amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/why-reactive-programming&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Why You Should Consider Reactive Programming | danielcaldas.github.io&amp;quot;&amp;gt;&amp;quot;Part 1 - Why you should consider Reactive Programming&amp;quot;&amp;lt;/a&amp;gt; the gist is that working with streams when done right, might make callbacks, Promises, and async/await nearly obsolete. I say nearly because you&apos; might still use Promises under the hood, but your code now can look the same whether you&apos;re tackling synchronous or asynchronous tasks.&lt;/p&gt;
+&lt;h5&gt;Complicated things made easy&lt;/h5&gt;
+&lt;p&gt;I want to reinforce that you can leverage reactive libraries such as RxJS to solve complex problems with little effort. If you haven&apos;t watched the talk &amp;lt;a href=&amp;quot;https://www.youtube.com/watch?v=B-nFj2o03i8&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Complex features made easy with RxJS - YouTube&amp;quot;&amp;gt;&amp;quot;Complex features made easy with RxJS&amp;quot;&amp;lt;/a&amp;gt; by &amp;lt;a href=&amp;quot;https://twitter.com/BenLesh&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Ben Lesh (@BenLesh) / Twitter&amp;quot;&amp;gt;Ben Lesh&amp;lt;/a&amp;gt;, I would highly recommend it. In the first 10 minutes, you&apos;ll see how easy it becomes to tackle some of the following problems with the help of RxJS:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Basic drag &amp;amp; drop implementation &amp;lt;a href=&amp;quot;https://youtu.be/B-nFj2o03i8?t=351&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Complex features made easy with RxJS - YouTube&amp;quot;&amp;gt;[5:54]&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;Avoid double submission through a button that involves an asynchronous Ajax call &amp;lt;a href=&amp;quot;https://youtu.be/B-nFj2o03i8?t=424&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Complex features made easy with RxJS - YouTube&amp;quot;&amp;gt;[7:04]&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;Throttle autosuggestion field that involves fetching data with a given search term &amp;lt;a href=&amp;quot;https://youtu.be/B-nFj2o03i8?t=444&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Complex features made easy with RxJS - YouTube&amp;quot;&amp;gt;[7:24]&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you aim to solve one of the problems mentioned in the above list, you can avoid reinventing the wheel by following the reactive patterns demonstrated in the video.&lt;/p&gt;
+&lt;h5&gt;Maintainability&lt;/h5&gt;
+&lt;p&gt;There are two aspects of maintainability that I would point out. First, you&apos;ll write less code; there&apos;s a lot of heavy lifting that RxJS can do for you; if you leverage that, you&apos;ll undoubtedly ending writing less code. The second is that a combination of streams with powerful operators solve complex problems in a very declarative manner. Code will look concise and straightforward; instead of verbose branching and imperative logic, you&apos;ll have a few combinations of operators that will do all the magic for you.
+However, with RxJS and streams, maintainability is a double-edged sword. We&apos;re going to cover that in the next part of this article.&lt;/p&gt;
+&lt;h4&gt;The bad&lt;/h4&gt;
+&lt;p&gt;Let&apos;s look at the not so bright side.&lt;/p&gt;
+&lt;h5&gt;Learning curve&lt;/h5&gt;
+&lt;p&gt;Any modern JavaScript codebase uses a cocktail of libraries. RxJS (or whatever library you would adopt) would be just one more thing you&apos;ll have to teach newcomers. But don&apos;t take this as a light decision. You&apos;re not only introducing a new library in the codebase, but you&apos;re also introducing a new paradigm. I feel there&apos;s quite a learning curve towards mastering reactive programming and RxJS. Not only you&apos;re exposed to an entirely new ecosystem with new APIs, but you also need the time to process this different paradigm of programming with streams. As we&apos;ve experienced in previous articles, it can be quite different from a traditional writing code style (compared with imperative programming, for example).&lt;/p&gt;
+&lt;p&gt;Depending on how broadly you&apos;ll embrace this paradigm, you might need to ship new tooling for unit testing and master additional concepts such as &amp;lt;a href=&amp;quot;https://rxmarbles.com/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;RxMarbles: Interactive diagrams of Rx Observables&amp;quot;&amp;gt;marble diagrams&amp;lt;/a&amp;gt; - which helps you properly model and assert data streams. However, it might require you and your team to learn another tricky &lt;strong&gt;DSL&lt;/strong&gt; (&lt;strong&gt;d&lt;/strong&gt;omain-&lt;strong&gt;s&lt;/strong&gt;pecific &lt;strong&gt;l&lt;/strong&gt;anguage) to deal with these diagrams.&lt;/p&gt;
+&lt;p&gt;Some might argue that the &amp;quot;learning curve&amp;quot; is a &amp;quot;one-time cost&amp;quot;. As it turns out, in the software industry, software engineers tend to move a lot (due to the high demand for the skill these days), and they might be sticking around in the same company for an average of 2 to 3 years before embracing a new challenge. The bustling job market makes me believe that it is not wise to think of the &amp;quot;learning curve&amp;quot; as a one time cost because soon, your freshly trained engineer with RxJS skills might say goodbye.&lt;/p&gt;
+&lt;h5&gt;Debugging does not get any easier&lt;/h5&gt;
+&lt;p&gt;Just the same way, you can split your code into several functions, and those functions call other functions which, without some structure, might end up in spaghetti code. Likewise, you can end up entangled in a spaghetti of streams and not know which way to turn. I think simple functions are usually more straightforward to debug, given that they are composed sequentially. You&apos;re reading a function; that function might call other N functions and so forth. Well, with streams, it might not be that candid because there&apos;s no such thing as a stream invoking another stream. Instead, you&apos;ll have a stream plugging with other streams in mixed ways depending on the operators that join them. It might feel overweighing at some point to find your way around some particular flow (hopefully, you won&apos;t&apos; reach that point because your code is clear and concise).&lt;/p&gt;
+&lt;p&gt;Another aspect that you might run into while debugging streams is that such an amount of abstractions and compact implementation will let no space for you to plug into a stream and debug it or inspect it the same way you debug a function. Things tend to be on a higher level of abstraction - which is beneficial because it will free up your mind on some implementation details. Hence when it comes to the point you need to dig further down, understanding what&apos;s going on at the very core of your flow, you might need to &amp;lt;a href=&amp;quot;https://www.learnrxjs.io/learn-rxjs/operators/utility/do&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;tap / do - Learn RxJS&amp;quot;&amp;gt;tap&amp;lt;/a&amp;gt; into streams here and there to figure out what&apos;s the issue. Although old this article, it might be one of the best walkthroughs of the problem I&apos;m trying to surface here. It will give you a solid strategy to debug streams (even if you&apos;re looking at that particular code for the first time) - &lt;em&gt;tip for reading it: mentally replace &lt;code&gt;do&lt;/code&gt; per &lt;code&gt;tap&lt;/code&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;h5&gt;Human creativity&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;Kiss&lt;/strong&gt;: &lt;strong&gt;K&lt;/strong&gt;eep &lt;strong&gt;i&lt;/strong&gt;t &lt;strong&gt;S&lt;/strong&gt;imple, &lt;strong&gt;S&lt;/strong&gt;tupid, not easy with reactive streams and RxJS tough. I&apos;ll tell from personal experience that it will come the day you&apos;ll look at your code, and although it&apos;s just fine, you&apos;ll feel this &lt;strong&gt;voice inside your head: &amp;quot;Are you sure there&apos;s nothing else much fancier in the RxJS API that would allow you to write less two lines of code?&amp;quot; - fight that voice!&lt;/strong&gt; Creative solutions with RxJS might often result in dreadful consequences for your product and team. But yet, RxJS has such a unique and evolving ecosystem that will feel tempting with time to start to chime in some new operators just for the sake of adding more operators. Fight that in code reviews - this is the place you can understand why your colleague is shipping that new exotic operator and challenge simpler alternatives already in use. I guess this is general advice. I wouldn&apos;t apply it to reactive programming only. If you don&apos;t have a code review process, ¯\_(ツ)_/¯.&lt;/p&gt;
+&lt;h5&gt;With great power&lt;/h5&gt;
+&lt;p&gt;As usual, with powerful tools, there is increased responsibility towards their use. If you pick RxJS as your weapon of choice, there are things you&apos;ll need to be extra careful. I want to highlight one: shareReplay. We didn&apos;t look into this operator in particular during this series, but we did learn the difference between &amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-programming-fundamentals#hot-observable-vs-cold-observable&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Fundamentals of Reactive Programming | danielcaldas.github.io&amp;quot;&amp;gt;Hot and Cold observables&amp;lt;/a&amp;gt;, a quick refresher:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Hot Observables&lt;/strong&gt; - multicast; all subscribers get data from the same producer (e.g., a live music concert in a stadium).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cold Observables&lt;/strong&gt; - unicast; each subscriber gets data from different producers (e.g., a show on Netflix).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;lt;a
+href=&amp;quot;https://www.learnrxjs.io/learn-rxjs/operators/multicasting/sharereplay&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;shareReplay - Learn RxJS&amp;quot;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;shareReplay
+&amp;lt;/a&amp;gt; allows you to take a cold observable and make it hot in the sense that you can now multicast the underlying computation
+to multiple subscribers 🤯 - that&apos;s &amp;lt;b&amp;gt;share&amp;lt;/b&amp;gt;. With this operator, new subscribers will be able to &amp;quot;catch up&amp;quot; with
+previously emitted values at any point in time - that&apos;s &amp;lt;b&amp;gt;replay&amp;lt;/b&amp;gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Don&apos;t want to get into extensive detail of what the operator pertains to; be mindful of your implementation gaps that might trigger massive memory leaks in your application by using this operator. The gist is that &lt;strong&gt;using shareReply without refCount may origin a memory leak because the operator doesn&apos;t automatically close the stream&lt;/strong&gt; after all its consumers&apos; have unsubscribed.&lt;/p&gt;
+&lt;p&gt;Also, historically, there have been some issues around its implementation &lt;a href=&quot;https://github.com/ReactiveX/rxjs/issues/3336&quot;&gt;[1]&lt;/a&gt; &lt;a href=&quot;https://github.com/ReactiveX/rxjs/issues/5034&quot;&gt;[2]&lt;/a&gt;.&lt;/p&gt;
+&lt;h5&gt;Error handling&lt;/h5&gt;
+&lt;p&gt;Finally, yet notably, error handling. Something I did not cover in the previous articles. Error handling is yet something else that changes considerably. Let&apos;s look at a simple example comparing reactive vs. non-reactive.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;switchMap(event =&amp;gt; {
+  try {
+    const id = event.target.id;
+    resEl.innerHTML = `loading item ${id}...`;
+    console.log(`Fetching data for item ${id}...`);
+    return fetchById(id);
+  } catch (error) {
+    // that&apos;s not how this works with streams...
+  }
+}),
+map(response =&amp;gt; {
+  resEl.innerHTML = JSON.stringify(response, null, 2);
+  console.log(`Done fetching data for item ${response.item.id}!`);
+}),
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;switchMap(event =&amp;gt; {
+  const id = event.target.id;
+  resEl.innerHTML = `loading item ${id}...`;
+  console.log(`Fetching data for item ${id}...`);
+  return fetchById(id);
+}),
+catchError(error =&amp;gt; {
+  if (error) {
+    console.error(error);
+  }
+  // fallback to an empty item and a message
+  // we need to return an observable!
+  return of({
+    item: {},
+    message: &apos;something went wrong&apos;,
+  });
+}),
+map(response =&amp;gt; {
+  resEl.innerHTML = JSON.stringify(response, null, 2);
+  console.log(`Done fetching data for item ${response.item.id}!`);
+}),
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For a more natural integration, you&apos;ll have to stick with the &amp;lt;a href=&amp;quot;https://www.learnrxjs.io/learn-rxjs/operators/error_handling/catch&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;catch / catchError - Learn RxJS&amp;quot;&amp;gt;catchError operator&amp;lt;/a&amp;gt;. As a beginner, I would tend to wrap stuff around with try/catch, but things work slightly differently with streams. Observable is our primitive here, remember?
+Something mentioned as a &amp;lt;a href=&amp;quot;https://medium.com/@benlesh/on-the-subject-of-subjects-in-rxjs-2b08b7198b93#.pcmlgg1mx&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;On The Subject Of Subjects (in RxJS) | by Ben Lesh | Medium&amp;quot;&amp;gt;&amp;lt;i&amp;gt;&amp;quot;gotcha&amp;quot;&amp;lt;/i&amp;gt; of RxJS&amp;lt;/a&amp;gt; &lt;strong&gt;is the fact that an RxJS Observable does not &amp;quot;trap&amp;quot; errors&lt;/strong&gt;; when an error bubbles to the end of the observer chain, when unhandled, the error, it will be re-thrown.&lt;/p&gt;
+&lt;h4&gt;Closing notes&lt;/h4&gt;
+&lt;p&gt;Would I use reactive programming and RxJS in my next project? &lt;strong&gt;Depends...&lt;/strong&gt; There&apos;s a great deal of learning involved in using these technologies, so even though I might not always use them, I&apos;m confident that these skills will (and are!) playing an essential role in my evolution as a software engineer. Just know that &lt;strong&gt;I would do it again&lt;/strong&gt; (all the learning and writing).&lt;/p&gt;
+&lt;p&gt;I do think Reactive is powerful and useful, but it&apos;s not a holy grail that will solve all your problems overnight.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Please focus on the problem first, scrutinize the use cases, and Reactive shall reveal itself a solution.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I hope you&apos;ve enjoyed this series is now approaching its end. This series is far from the perfect learning resource, but I hope that my perspective and way of explaining things fit some of you, complementing your learnings in a way. To close, I&apos;ll leave you with a &amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/awesome-reactive&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Awesome RxJS and Reactive Programming Resources | danielcaldas.github.io&amp;quot;&amp;gt;list of fantastic learning resources for reactive programming and RxJS&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/why-reactive-programming&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Why You Should Consider Reactive Programming | danielcaldas.github.io&amp;quot;&amp;gt;Part 1 - Why You Should Consider Reactive Programming&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-programming-fundamentals&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Fundamentals of Reactive Programming | danielcaldas.github.io&amp;quot;&amp;gt;Part 2 - Fundamentals of Reactive Programming&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/hands-on-reactive-programming-rxjs&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Hands-on Reactive Programming with RxJS | danielcaldas.github.io&amp;quot;&amp;gt;Part 3 - Hands-on Reactive Programming with RxJS&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-rxjs-pros-cons&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Reactive Programming: The Good and the Bad | danielcaldas.github.io&amp;quot;&amp;gt;Part 4 - Reactive Programming: The Good and the Bad&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/awesome-reactive&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Awesome RxJS and Reactive Programming Resources | danielcaldas.github.io&amp;quot;&amp;gt;Part 5 - Awesome RxJS and Reactive Programming Resources&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded></item><item><title>Reactive Series</title><link>https://danielcaldas.github.io/posts/reactive-series-preface/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/reactive-series-preface/</guid><description>A series of articles on Reactive Programming and RxJS</description><pubDate>Wed, 22 Jul 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Over the past two years, I invested some time learning &amp;lt;a href=&amp;quot;https://en.wikipedia.org/wiki/Reactive_programming&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Reactive programming - Wikipedia&amp;quot;&amp;gt;Reactive Programming&amp;lt;/a&amp;gt; (with &amp;lt;a href=&amp;quot;https://rxjs-dev.firebaseapp.com/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;RxJS&amp;quot;&amp;gt;RxJS&amp;lt;/a&amp;gt;) and
 working with Observables and Streams to build interactive UIs. The opportunity to learn RxJS never popped up until the company I
 was working with started investing heavily in RxJS. I had to learn at the job.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;I&apos;m announcing a series of articles&lt;/strong&gt; that I&apos;m writing on Reactive Programming. I want to demonstrate to you &lt;strong&gt;why you should consider
@@ -2798,7 +4235,7 @@ title=&amp;quot;GitHub, Daniel Caldas, test-fixtures-pattern case study project,
 &lt;h4&gt;🎰 Bonus section: development watch mode for fixtures&lt;/h4&gt;
 &lt;p&gt;Another thing that comes in handy when setting up our testing workflow, is to have a way to update the fixtures by tweaking existing test case inputs or adding new ones and automatically re-running the &lt;code&gt;run-fixtures.js&lt;/code&gt; script and the unit tests with Jest. How would that go?&lt;/p&gt;
 &lt;p&gt;If you never tried &amp;lt;a href=&amp;quot;https://github.com/remy/nodemon&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Monitor for any changes in your node.js application and automatically restart the server - perfect for development&amp;quot;&amp;gt;nodemon&amp;lt;/a&amp;gt;, now it&apos;s a good time to check it out. It&apos;s a mighty tool to restart some job based on specific changes in your project. Let&apos;s use nodemon to set up a &amp;lt;a href=&amp;quot;https://docs.npmjs.com/misc/scripts&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;npm cli documentation about scripts field&amp;quot;&amp;gt;npm script&amp;lt;/a&amp;gt; that seamlessly re-runs our fixtures. The idea is that we achieve the same workflow that we would normally have with &amp;lt;a href=&amp;quot;https://jestjs.io/docs/en/cli#watchall&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Jest cli, watch all option&amp;quot;&amp;gt;jest --watchAll&amp;lt;/a&amp;gt;, on our fixtures folder. After installing nodemon, we just need to use the &amp;lt;a href=&amp;quot;https://github.com/remy/nodemon#monitoring-multiple-directories&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Monitor for any changes in your node.js application and automatically restart the server - perfect for development, watch mode&amp;quot;&amp;gt;--watch&amp;lt;/a&amp;gt; option to check for changes in our fixtures.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-json:package.json&quot;&gt;&amp;quot;fixtures:run&amp;quot;: &amp;quot;node run-fixtures &amp;amp;&amp;amp; jest ./fixtures/tests/fixtures.spec.js&amp;quot;,
+&lt;pre&gt;&lt;code class=&quot;language-json&quot;&gt;&amp;quot;fixtures:run&amp;quot;: &amp;quot;node run-fixtures &amp;amp;&amp;amp; jest ./fixtures/tests/fixtures.spec.js&amp;quot;,
 &amp;quot;fixtures:clean&amp;quot;: &amp;quot;...&amp;quot;,
 &amp;quot;fixtures:watch&amp;quot;: &amp;quot;nodemon --watch ./fixtures --ignore ./fixtures/tests --exec \&amp;quot;npm run fixtures:run\&amp;quot;&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
@@ -3027,44 +4464,11 @@ complexity seems to be one of the main barriers to its adoption. Reactive &lt;st
 things that in other times you would think of impossible or had to implement become so much easier.&lt;/p&gt;
 &lt;p&gt;If you feel like taking a shot at Reactive Programming, I&apos;ll gladly guide you through it!&lt;/p&gt;
 &lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;hr&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Part 1 - Why You Should Consider Reactive Programming&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&amp;lt;a
-href=&amp;quot;https://danielcaldas.github.io/posts/reactive-programming-fundamentals&amp;quot;
-target=&amp;quot;_blank&amp;quot;
-title=&amp;quot;Fundamentals of Reactive Programming | danielcaldas.github.io&amp;quot;
-&lt;blockquote&gt;
-&lt;p&gt;Part 2 - Fundamentals of Reactive Programming
-&amp;lt;/a&amp;gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&amp;lt;a
-href=&amp;quot;https://danielcaldas.github.io/posts/hands-on-reactive-programming-rxjs&amp;quot;
-target=&amp;quot;_blank&amp;quot;
-title=&amp;quot;Hands-on Reactive Programming with RxJS | danielcaldas.github.io&amp;quot;
-&lt;blockquote&gt;
-&lt;p&gt;Part 3 - Hands-on Reactive Programming with RxJS
-&amp;lt;/a&amp;gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&amp;lt;a
-href=&amp;quot;https://danielcaldas.github.io/posts/reactive-rxjs-pros-cons&amp;quot;
-target=&amp;quot;_blank&amp;quot;
-title=&amp;quot;Reactive Programming: The Good and the Bad | danielcaldas.github.io&amp;quot;
-&lt;blockquote&gt;
-&lt;p&gt;Part 4 - Reactive Programming: The Good and the Bad
-&amp;lt;/a&amp;gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&amp;lt;a
-href=&amp;quot;https://danielcaldas.github.io/posts/awesome-reactive&amp;quot;
-target=&amp;quot;_blank&amp;quot;
-title=&amp;quot;Awesome RxJS and Reactive Programming Resources | danielcaldas.github.io&amp;quot;
-&lt;blockquote&gt;
-&lt;p&gt;Part 5 - Awesome RxJS and Reactive Programming Resources
-&amp;lt;/a&amp;gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-programming-fundamentals&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Fundamentals of Reactive Programming | danielcaldas.github.io&amp;quot;&amp;gt;Part 2 - Fundamentals of Reactive Programming&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/hands-on-reactive-programming-rxjs&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Hands-on Reactive Programming with RxJS | danielcaldas.github.io&amp;quot;&amp;gt;Part 3 - Hands-on Reactive Programming with RxJS&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-rxjs-pros-cons&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Reactive Programming: The Good and the Bad | danielcaldas.github.io&amp;quot;&amp;gt;Part 4 - Reactive Programming: The Good and the Bad&amp;lt;/a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/awesome-reactive&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Awesome RxJS and Reactive Programming Resources | danielcaldas.github.io&amp;quot;&amp;gt;Part 5 - Awesome RxJS and Reactive Programming Resources&amp;lt;/a&amp;gt;&lt;/li&gt;
 &lt;/ul&gt;
 </content:encoded></item></channel></rss>
