@@ -1745,86 +1745,58 @@ gotCharacters = interval(5000).pipe(
 &lt;p&gt;“As usual, React and Vue lead the pack, but Svelte is quickly establishing itself as a very serious contender for the front-end crown.“, &amp;lt;a href=&amp;quot;https://2020.stateofjs.com/en-US/technologies/front-end-frameworks/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;State of JS 2020: Front-end Frameworks&amp;quot;&amp;gt;State of JS 2020: Front-end Frameworks&amp;lt;/a&amp;gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;RxJS is known to be the go to library when it comes to programming with streams. Reactive programming &amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-rxjs-pros-cons&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Reactive Programming: The Good and the Bad | danielcaldas.github.io&amp;quot;&amp;gt;is famous for making complex things easier&amp;lt;/a&amp;gt; by offering an extensive API of operators that give developers extreme power and flexibility when writing complex event-driven user interfaces.&lt;/p&gt;
-</content:encoded></item><item><title>Basic markdown style guide</title><link>https://danielcaldas.github.io/posts/markdown-example/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/markdown-example/</guid><description>You can author content using the familiar markdown syntax you already know. All basic markdown syntax is supported.</description><pubDate>Sat, 02 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Markdown is powered by &lt;a href=&quot;https://markdoc.dev/&quot;&gt;Markdoc&lt;/a&gt;. This is an example post to demonstrate all the basic markdown syntax. You can author content using the familiar markdown syntax you already know.&lt;/p&gt;
-&lt;h2&gt;Inline formatting&lt;/h2&gt;
-&lt;p&gt;Bold: &lt;strong&gt;This text is bold&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Italics: &lt;em&gt;This text is italics&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Strikethrough: You can &lt;s&gt;strikethrough&lt;/s&gt; text.&lt;/p&gt;
-&lt;p&gt;Inline code: You can add inline code like this &lt;code&gt;const hello = &amp;quot;world&amp;quot;&lt;/code&gt;.&lt;/p&gt;
-&lt;h2&gt;Headings&lt;/h2&gt;
-&lt;p&gt;The following HTML &lt;code&gt;&amp;lt;h2&amp;gt;&lt;/code&gt;—&lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; elements represent five levels of section headings. &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; is also available but not recommended since the post title is already a &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; element it is not a good practice to have more than one &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; elements in a page.&lt;/p&gt;
-&lt;h2&gt;H2: Heading Two&lt;/h2&gt;
-&lt;h3&gt;H3: Heading Three&lt;/h3&gt;
-&lt;h4&gt;H4: Heading Four&lt;/h4&gt;
-&lt;h5&gt;H5: Heading Five&lt;/h5&gt;
-&lt;h6&gt;H6: Heading Six&lt;/h6&gt;
-&lt;h2&gt;Paragraph&lt;/h2&gt;
-&lt;p&gt;A standalone single paragraph of text.&lt;/p&gt;
-&lt;p&gt;Paragraphs can be multiline too when they constitute words that make up more than one line, i.e they wrap to the next line. Wow! I am really smart to write two lines of text that makes zero sense.&lt;/p&gt;
-&lt;h2&gt;Blockquotes&lt;/h2&gt;
+</content:encoded></item><item><title>SLIs, SLOs and SLAs in 2 minutes</title><link>https://danielcaldas.github.io/posts/sli-slo-sla/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/sli-slo-sla/</guid><description>Measuring the service level of your application</description><pubDate>Thu, 13 Aug 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;Service Level Indicator (SLI)&lt;/h4&gt;
 &lt;blockquote&gt;
-&lt;p&gt;This is a blockquote. And it&apos;s pretty long too. Long enough to wrap to next line. Surely it will wrap.&lt;/p&gt;
+&lt;p&gt;An SLI is a service level indicator — a carefully defined quantitative measure of some aspect of the level of service that is provided.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;You can use other Markdown syntax like &lt;code&gt;inline code&lt;/code&gt; within a blockquote.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;Tables&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Italics&lt;/th&gt;
-&lt;th&gt;Bold&lt;/th&gt;
-&lt;th&gt;Code&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;em&gt;italics&lt;/em&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;bold&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;code&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2&gt;List Types&lt;/h2&gt;
-&lt;h3&gt;Ordered List&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;First item&lt;/li&gt;
-&lt;li&gt;Second item&lt;/li&gt;
-&lt;li&gt;Third item&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3&gt;Unordered List&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;List item&lt;/li&gt;
-&lt;li&gt;Another item&lt;/li&gt;
-&lt;li&gt;And another item&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Nested list&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Fruit
-&lt;ul&gt;
-&lt;li&gt;Apple&lt;/li&gt;
-&lt;li&gt;Orange&lt;/li&gt;
-&lt;li&gt;Banana&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Dairy
-&lt;ul&gt;
-&lt;li&gt;Milk&lt;/li&gt;
-&lt;li&gt;Cheese&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Code Blocks&lt;/h2&gt;
-&lt;p&gt;Syntax highlighting is done using &lt;a href=&quot;https://expressive-code.com/&quot;&gt;expressive code&lt;/a&gt;.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;
-&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
-  &amp;lt;head&amp;gt;
-    &amp;lt;meta charset=&amp;quot;utf-8&amp;quot; /&amp;gt;
-    &amp;lt;title&amp;gt;Example HTML5 Document&amp;lt;/title&amp;gt;
-  &amp;lt;/head&amp;gt;
-  &amp;lt;body&amp;gt;
-    &amp;lt;p&amp;gt;Test&amp;lt;/p&amp;gt;
-  &amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;
+&lt;p&gt;&amp;lt;small&amp;gt;
+&amp;lt;a
+href=&amp;quot;https://landing.google.com/sre/sre-book/chapters/service-level-objectives/&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;Google - Site Reliability Engineering&amp;quot;&lt;/p&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;source: Google SRE book
 &lt;/code&gt;&lt;/pre&gt;
-</content:encoded><category>tech</category></item></channel></rss>
+&lt;p&gt;&amp;lt;/a&amp;gt;
+&amp;lt;/small&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Examples&lt;/strong&gt;: error rate; request latency; throughput (e.g., requests p/second); availability (time the service is usable); durability (for
+data storages: the confidence of retaining data over time).&lt;/p&gt;
+&lt;h5&gt;Where and how to measure them?&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Processing server logs&lt;/strong&gt; - derive them from server-side logs. You can do this on the fly or retroactively with some post-processing job that runs on your records and collects data to backfill your SLI information.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Application-level metrics&lt;/strong&gt; - capture individual request metrics&apos; performance at the application level (e.g., how long did the server took to perform a particular operation).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Front-end metrics&lt;/strong&gt; - getting closer to the users. We can measure key user interaction points with some (out of the box) tooling made available by cloud providers. We can also perform some manual logging in specific checkpoints of the user journey with the help of platforms such as &amp;lt;a href=&amp;quot;https://www.datadoghq.com/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Cloud Monitoring as a Service | Datadog&amp;quot;&amp;gt;datadog&amp;lt;/a&amp;gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Synthetic clients&lt;/strong&gt; - this method consists of implementing bots that emulate user interaction to make sure it&apos;s possible to complete a user journey. Bots are just an approximation of the real user behavior. Users are creative and often do unexpected things. Synthetic clients generally require higher implementation effort. The previous two arguments make synthetic clients one of my least preferred methods.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Service Level Objective (SLO)&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;An SLO is a service level objective: a target value or range of or a service level that is measured by an SLI. A natural structure for SLOs is thus SLI ≤ target, or lower bound ≤ SLI ≤ upper bound.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&amp;lt;small&amp;gt;
+&amp;lt;a
+href=&amp;quot;https://landing.google.com/sre/sre-book/chapters/service-level-objectives/&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;Google - Site Reliability Engineering&amp;quot;&lt;/p&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;source: Google SRE book
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;/a&amp;gt;
+&amp;lt;/small&amp;gt;&lt;/p&gt;
+&lt;p&gt;I&apos;m new to this, but I would stick with a range of values as much as possible.
+The SLO maps to the SLI by adding boundaries. It sets a goal for an SLI over a period of time.&lt;/p&gt;
+&lt;h4&gt;Service Level Agreement (SLA)&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;service level agreements: an explicit or implicit contract with your users that includes consequences of meeting (or missing) the SLOs they contain.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&amp;lt;small&amp;gt;
+&amp;lt;a
+href=&amp;quot;https://landing.google.com/sre/sre-book/chapters/service-level-objectives/&amp;quot;
+target=&amp;quot;_blank&amp;quot;
+title=&amp;quot;Google - Site Reliability Engineering&amp;quot;&lt;/p&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;source: Google SRE book
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;/a&amp;gt;
+&amp;lt;/small&amp;gt;&lt;/p&gt;
+&lt;p&gt;It might be useful to think of the SLA as your answer: &lt;em&gt;&amp;quot;What happens if one fails to comply with the agreed SLOs?&amp;quot;&lt;/em&gt;&lt;/p&gt;
+</content:encoded></item></channel></rss>
