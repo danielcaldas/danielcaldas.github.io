@@ -3475,6 +3475,30 @@ title=&amp;quot;Google - Site Reliability Engineering&amp;quot;&lt;/p&gt;
 &lt;p&gt;&amp;lt;/a&amp;gt;
 &amp;lt;/small&amp;gt;&lt;/p&gt;
 &lt;p&gt;It might be useful to think of the SLA as your answer: &lt;em&gt;&amp;quot;What happens if one fails to comply with the agreed SLOs?&amp;quot;&lt;/em&gt;&lt;/p&gt;
+</content:encoded></item><item><title>Two Point Nine</title><link>https://danielcaldas.github.io/posts/the-average-human/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/the-average-human/</guid><description>How do we spend our time?</description><pubDate>Wed, 14 May 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;The normal human spends a significant amount of their time going through chores like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;0.6h a day doing meal prep.&lt;/li&gt;
+&lt;li&gt;0.3h a day doing home interior cleaning.&lt;/li&gt;
+&lt;li&gt;0.1h a day doing laundry &amp;amp; clothing care.&lt;/li&gt;
+&lt;li&gt;0.06h a day doing home repairs and maintenance.&lt;/li&gt;
+&lt;li&gt;For those who are parents it can be a 24/7 task when help is not available, let&apos;s discard that given that you can find meaning in it.&lt;/li&gt;
+&lt;li&gt;For those who have pets it can be time consuming as well, let&apos;s discard that as well given that you can find meaning in it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There are so many other chores that I could mention.&lt;/p&gt;
+&lt;p&gt;Summing up, humans spend 1h of every day of their lives doing something
+meaningless but that needs to be done. &lt;strong&gt;That&apos;s 7h a week&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The average human life expectancy is 70 years&lt;/strong&gt;, therefore &lt;strong&gt;the average human spends 2.9 years of their life doing something meaningless but that needs to be done&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;That&apos;s 2.9 years of your life that you will never get back.
+That&apos;s 2.9 years of your life that you could have spent doing something
+meaningful, like learning a new skill, spending time with your family, or just relaxing.
+That&apos;s 2.9 years of your life that you could have spent doing something
+that you actually enjoy.
+That&apos;s 2.9 years of your life that you could have spent doing something
+that you actually care about.
+That&apos;s 2.9 years of your life that you could have spent doing something
+that you actually love.
+That&apos;s 2.9 years of your life that you could have spent doing something
+that you actually want to do.&lt;/p&gt;
 </content:encoded></item><item><title>Tips for End to End Testing with Puppeteer</title><link>https://danielcaldas.github.io/posts/tips-end-to-end-testing-puppeteer/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/tips-end-to-end-testing-puppeteer/</guid><description>Getting up to speed with Puppeteer!</description><pubDate>Mon, 08 Jun 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&amp;lt;b&amp;gt;
 &amp;lt;a
 href=&amp;quot;https://ui.toast.com/weekly-pick/ko_20200630/&amp;quot;
