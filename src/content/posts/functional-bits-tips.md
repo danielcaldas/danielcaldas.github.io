@@ -303,7 +303,7 @@ Do you find these few bits of the functional world beneficial? Give them a try!
 
 If you fell like going through the above examples by executing them to get a better understanding of how they're working, you can use the below dataset as input.
 
-<Accordion summary="Dataset used for code examples">
+<details><summary>Dataset used for code examples</summary>
 
 ```javascript
 const users = [
@@ -361,4 +361,4 @@ const users = [
 ]
 ```
 
-</Accordion>
+</details>

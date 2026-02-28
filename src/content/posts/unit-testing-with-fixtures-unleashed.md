@@ -330,7 +330,6 @@ The output or running the above test is just a simple Jest report.
 
 ![Jest, final test report](./assets/unit-testing-with-fixtures-unleashed/final-test-report.png 'Jest, final test report')
 
-<Caption />
 
 In the above implementation we have created a generic mechanism that resembles the _Command Pattern_ (<a href="https://addyosmani.com/resources/essentialjsdesignpatterns/book/" target="_blank" rel="nofollow" title="Learning JavaScript Design Patterns">reference from "Learning JavaScript Design Patterns" by Addy Osmani</a>) where the _spec_ name itself is the _command_ we wish to execute.
 
@@ -361,7 +360,6 @@ If you never tried <a href="https://github.com/remy/nodemon" target="_blank" tit
 As you can see from the above snippet, we _glue_ and chain everything together in the script `fixtures:watch`. In fact, nodemon does most of the work. Now when we want to perform interactive changes in our fixtures we just need to type `npm run fixtures:watch`, and _voilà_. See the result below.
 
 <GIF name="fixtures-watch-mode" />
-<Caption gif={true} />
 
 I found such a setup to be the ideal driver for you to advocate for <a href="https://en.wikipedia.org/wiki/Test-driven_development" target="_blank" title="Test-driven development - Wikipedia">Test Driven Development (TDD)</a> within your team. Creating fixtures to replicate tricky edge cases
 becomes trivial leading you to create the fixture that breaks your implementation in the first place, followed by fixing whatever is wrong with the actual implementation.

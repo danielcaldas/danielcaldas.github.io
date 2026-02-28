@@ -96,7 +96,7 @@ const mouseOverItem$ = fromEvent(listEl, 'mouseover')
 
 <br />
 
-<Accordion summary='Expand to see example full code'>
+<details><summary>Expand to see example full code</summary>
 
 ```html
 <!doctype html>
@@ -178,7 +178,7 @@ const mouseOverItem$ = fromEvent(listEl, 'mouseover')
 </body>
 ```
 
-</Accordion>
+</details>
 
 <br />
 <br />

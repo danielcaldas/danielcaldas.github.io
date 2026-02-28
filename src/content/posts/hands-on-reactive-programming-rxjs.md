@@ -176,14 +176,7 @@ const partyDrop$ = drop$.pipe(filter((event) => event.target === party))
 
 ![marbles diagram filter event target on drop event](./assets/hands-on-reactive-programming-rxjs/marbles-level-1-1.png 'marbles diagram filter event target on drop event')
 
-<Caption
-  text={() => (
-    <p>
-      <b>e</b> stands for <b>event</b> and it's the value pushed to the stream at each drop event in the whole document!
-      <b>e1</b>, <b>e2</b> and <b>e3</b> have different <b>event.target</b> (target DOM elements).
-    </p>
-  )}
-/>
+<p><b>e</b> stands for <b>event</b> and it's the value pushed to the stream at each drop event in the whole document! <b>e1</b>, <b>e2</b> and <b>e3</b> have different <b>event.target</b> (target DOM elements).</p>
 
 Cool, we now have a stream that emits a `drop` event every time something is dropped in the `party`, we ensure that using the <a href="https://rxjs-dev.firebaseapp.com/api/operators/filter" target="_blank" title="RxJS - filter">filter</a> operator.
 
@@ -207,8 +200,6 @@ Alright, a few things are going on here. We're familiar with <a href="https://rx
 
 ![marbles diagram filter event target on drop event](./assets/hands-on-reactive-programming-rxjs/marbles-level-1-2.png 'marbles diagram filter event target on drop event')
 
-<Caption />
-
 In the above diagram, `e1`, `e2` and `e3` are `dragstart` events (`dragstart$` stream) that might come from anywhere in the page. `de` represents a `drop` event at the `party`. Notice how `withLatestFrom` operates by bringing together the last element on `dragstart$` which is `e3` and with the `party` element which is published to the `dragend$` stream. Now because `e3` event target is actually the `cat` you'll get `e3` pushed to our final stream `catAtParty$`!
 
 But we're not finished just yet; we need to leverage the work we've constructed so far to actually render the `cat` in the `party`. For that, we just need to subscribe to our `catAtParty$` stream and do some DOM manipulations.
@@ -225,14 +216,7 @@ catAtParty$.subscribe(([partyDropEvent, dragStartEvent]) => {
 
 ![result of subscribing to cat at party stream](./assets/hands-on-reactive-programming-rxjs/game-level-1-2.png 'result of subscribing to cat at party stream')
 
-<Caption
-  text={() => (
-    <p>
-      The <b>console.log</b> reveals the <b>drop</b> and <b>dragstart</b> events as payload for our subscription. We
-      also log the <b>event.type</b> of each individual event.
-    </p>
-  )}
-/>
+<p>The <b>console.log</b> reveals the <b>drop</b> and <b>dragstart</b> events as payload for our subscription. We also log the <b>event.type</b> of each individual event.</p>
 
 If you're following this point, you'll notice that although we can drag the cat perfectly, we still see the original `cat` element while carrying it. We see the original cat element while dragging it.
 
@@ -261,13 +245,11 @@ And done with Level 1!
 
 I want to leave a challenge for the reader. Looking at how we're setting the opacity value of the `cat` element, could we somehow handle everything in one single subscription instead of two? I would suggest you to read the whole article and come back to this one later, you should be then able to nail it then.
 
-<Accordion summary="Hint">
-  Check the operator <b>merge</b>.
-</Accordion>
+<details><summary>Hint</summary>Check the operator <b>merge</b>.</details>
 
 <br />
 
-<Accordion summary='Solution'>
+<details><summary>Solution</summary>
 
 ```javascript
 const catDragStart$ = dragstart$.pipe(filter((event) => event.target === cat))
@@ -279,7 +261,7 @@ opacity$.subscribe((value) => {
 })
 ```
 
-</Accordion>
+</details>
 
 <br />
 
@@ -344,13 +326,7 @@ We already have two streams: `catDragStart$` and `catDragEnd$` . We need to comb
 
 ![streams of events for dragging and dropping the cat respectively](./assets/hands-on-reactive-programming-rxjs/marbles-level-3-1.png 'streams of events for dragging and dropping the cat respectively')
 
-<Caption
-  text={() => (
-    <p>
-      In the image, <b>ds</b> symbolizes a <b>dragstart</b> event, and <b>de</b> represents a <b>dragend</b> event.
-    </p>
-  )}
-/>
+<p>In the image, <b>ds</b> symbolizes a <b>dragstart</b> event, and <b>de</b> represents a <b>dragend</b> event.</p>
 
 Our GIF is wrapped in an HTML element whose `display` attribute is set to `"none"` by default. We'll want to set it to `""` (empty string) to make it visible and back to `"none"` once it's time to hide it again. Our side effect should look something like this:
 
@@ -366,7 +342,7 @@ First, let's look back at our streams `catDragStart$` and `catDragEnd$`. When `c
 
 ![stream mapping dragstart events to an empty string](./assets/hands-on-reactive-programming-rxjs/marbles-level-3-2.png 'stream mapping dragstart events to an empty string')
 
-<Caption text={"Mapping each event to an empty string."} />
+<p><em>Mapping each event to an empty string.</em></p>
 
 After you apply an operator, you transform your stream into a more refined one, ideally better suited to the task you're trying to tackle! You're making every pushed value to the topmost timeline flow through a function provided in the `map` operator. That function will map each value into the bottom timeline, your _"final"_ stream. If you subscribe to it now, you will receive empty strings instead of DOM events!
 
@@ -374,7 +350,7 @@ The same thing should happen to `catDragEnd$`.
 
 ![stream mapping dragend events to none](./assets/hands-on-reactive-programming-rxjs/marbles-level-3-3.png 'stream mapping dragend events to none')
 
-<Caption text={"Mapping each event to 'none'."} />
+<p><em>Mapping each event to 'none'.</em></p>
 
 Now we have two streams, and we could just subscribe to each one of them and set the value of the `"display"` property for the `loading` element!
 
@@ -390,14 +366,7 @@ Although this works, we could further refine our streams and **merge** them into
 
 ![two streams merged into a single](./assets/hands-on-reactive-programming-rxjs/marbles-level-3-4.png 'two streams merged into a single one')
 
-<Caption
-  text={() => (
-    <p>
-      <b>A single stream becomes the source of truth</b> for the <i>display</i> property value of the <b>loading</b>
-      element throughout time.
-    </p>
-  )}
-/>
+<p><b>A single stream becomes the source of truth</b> for the <i>display</i> property value of the <b>loading</b> element throughout time.</p>
 
 Awesome! The <a href="https://rxjs-dev.firebaseapp.com/api/operators/merge" target="_blank" title="RxJS - merge">merge</a> operator gives us the power to take to streams and merge them into one so that the values of the `"display"` flow through a single stream (a single source of truth). Here's how the code looks like.
 
@@ -491,8 +460,6 @@ Now a timer emits values in ascending order (0, 1, 3, etc.). We'll want to rever
 
 ![diagram depicting the countdown stream](./assets/hands-on-reactive-programming-rxjs/marbles-level-4-1.png 'diagram depicting the countdown stream')
 
-<Caption />
-
 In the above image, the bottom timeline represents the stream; notice the pipe (**|**) at the end of the timeline indicates that the stream completes after emitting the value **1**.
 
 A crucial aspect to notice is that you'll trigger a new timer as soon as you subscribe. This is a <a href="https://danielcaldas.github.io/posts/reactive-programming-fundamentals/#hot-observable-vs-cold-observable" target="_blank" title="Fundamentals of Reactive Programming, Cold Observable">Cold Observable</a>. Our `countdown$` will start emitting values right away upon subscription, so we can't just `.subscribe()` We'll have to subscribe to the countdown when the user starts dragging the `cat` element.
@@ -517,7 +484,7 @@ countdownRunning$.subscribe((secondsLeft) => {
 
 ![diagram to demonstrate the switchMap operator](./assets/hands-on-reactive-programming-rxjs/marbles-level-4-2.png 'diagram to demonstrate the switchMap operator')
 
-<Caption text={() => <p>We're switching from one stream to another and subscribing to it immediately.</p>} />
+<p>We're switching from one stream to another and subscribing to it immediately.</p>
 
 Notice the return value of `switchMap` is `countdown$`, this means that when a `dragstart` event is emitted in `catDragStart$` the following things will happen:
 
@@ -600,14 +567,7 @@ countdownRunning$
 
 ![stream representation of the countdown with cancellation](./assets/hands-on-reactive-programming-rxjs/marbles-level-4-3-4.png 'stream representation of the countdown with cancellation')
 
-<Caption
-  text={(a) => (
-    <p>
-      In this diagram, our stream gets cancelled after the value <b>3</b> is published. The first <b>dragend</b> event
-      causes the <b>countdownRunning$</b> to stop emitting values.
-    </p>
-  )}
-/>
+<p>In this diagram, our stream gets cancelled after the value <b>3</b> is published. The first <b>dragend</b> event causes the <b>countdownRunning$</b> to stop emitting values.</p>
 
 You can check out <a href="https://github.com/danielcaldas/take-the-cat-to-the-party" target="_blank" title="danielcaldas/take-the-cat-to-the-party: Learn reactive programming with RxJS the fun way">the complete implementation of this challenge here</a>.
 

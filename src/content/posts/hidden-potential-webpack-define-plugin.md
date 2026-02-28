@@ -86,4 +86,3 @@ You can see the final result in the image below, it logs:
 
 ![final result in console of el-conversor](./assets/hidden-potential-webpack-define-plugin/console-log.png 'final result in console of el-conversor')
 
-<Caption />

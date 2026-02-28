@@ -61,7 +61,6 @@ Now running your development server and simultaneously activating the vscode jav
 
 ![vscode debugger](./assets/debugging-javascript-with-vscode/vscode-debugger-part-1.png 'vscode debugger javascript')
 
-<Caption />
 
 <br />
 
@@ -118,7 +117,6 @@ To bring all this convenience into your favorite IDE, you need to perform the fo
 
 ![vscode setup redux final](./assets/debugging-javascript-with-vscode/vscode-debugger-part-2.png 'vscode setup redux final')
 
-<Caption />
 
 ### Conclusions
 

@@ -9,7 +9,6 @@ It seems inevitable for me to fall into some browser compatibility trap from tim
 
 Well, this time, <a href="https://developer.mozilla.org/en-US/docs/Web/API/MutationObserverInit/attributeFilter" target="_blank" title="MutationObserverInit, attributeFilter on MDN Web APIs">MutationObserverInit.attributeFilter</a> gave me a bit of a hard time.
 
-<Caption source="https://twitter.com/GOP/status/757687865471963137" />
 
 While working in some implementation that requires me to detect when a DOM element is mutated, I did not blink an eye when it came to choosing the <a href="https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver" target="_blank" title="MutationObserver on MDN Web APIs">MutationObserver API</a> to get the job done. But this time, I used something different, that was <a href="https://developer.mozilla.org/en-US/docs/Web/API/MutationObserverInit/attributeFilter" target="_blank" title="MutationObserverInit, attributeFilter on MDN Web APIs">MutationObserverInit.attributeFilter</a>.
 

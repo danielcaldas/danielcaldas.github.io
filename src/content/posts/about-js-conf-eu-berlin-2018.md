@@ -234,10 +234,7 @@ I think a very strong point was a little too much implicit during this talk, per
 
 ![wasm diagram comparing to cpu architectures](./assets/about-js-conf-eu-berlin-2018/wasm-diagram.png "wasm diagram comparing to cpu architectures")
 
-<Caption
-  source="https://www.youtube.com/watch?v=bac0dGQbUto"
-  text="As you can see WASM sits between our source code and creates an abstraction layer on top of the various CPU architectures. This diagram is from the talk, 'Dan Callahan: Practical WebAssembly | JSConf Budapest 2017'"
-/>
+<p><em>As you can see WASM sits between our source code and creates an abstraction layer on top of the various CPU architectures. This diagram is from the talk, 'Dan Callahan: Practical WebAssembly | JSConf Budapest 2017'</em></p>
 
 If you want to look more into the benefits or what actually could be achieved with WASM I highly recommend the two following talks <a href="https://www.youtube.com/watch?v=PpuAqLCraAQ" target="_blank" title="real world webassembly chrome dev summit 2017">Real World WebAssembly (Chrome Dev Summit 2017)</a> and <a href="https://www.youtube.com/watch?v=bac0dGQbUto" target="_blank" title="dan callahan: practical webassembly jsconf budapest 2017">Dan Callahan: Practical WebAssembly | JSConf Budapest 2017</a>.
 
@@ -697,21 +694,10 @@ So, the event toke place at the Berlin Arena, an old building/factory kind of _h
 
 Throughout the venue there were exhibition stands of the sponsor companies, aside the _goodies_ you could see products demonstration, talk to people about the company or even get a job interview.
 
-Breakfast, lunch and dinner where included in the ticket, so we (me and my colleagues) agreed that it would be worth and try and so we venture into the vegan world (for me practically unknown at the time). The food was nice I mean, I had the opportunity to try a few dishes such as vegan hamburger, vegan gnocchi, vegan pasta, you get it...
-
-![vegan food sample](./assets/about-js-conf-eu-berlin-2018/food-sample.jpeg "js conf eu 2018 berlin vegan food sample")
-
-<Caption text="Gnocchi Pesto" />
-
-![another vegan food sample](./assets/about-js-conf-eu-berlin-2018/another-food-sample.jpeg "js conf eu 2018 berlin another vegan food sample")
-
-<Caption text="Vegan Risotto" />
-
 At the end of the day, we just grabbed a bear near the river and enjoy the remaining sunshine (no, we could not use the pool).
 
 ![js conf eu 2018 berlin venue outside view](./assets/about-js-conf-eu-berlin-2018/venue-view-outside.jpeg "js conf eu 2018 berlin venue outside view")
 
-<Caption />
 
 ## Berlin
 
@@ -721,6 +707,5 @@ And this is me (_left_) and my colleagues on our last day in Berlin.
 
 ![berliner dom group photo](./assets/about-js-conf-eu-berlin-2018/group-photo.jpeg "berliner dom group photo")
 
-<Caption />
 
 See you soon.

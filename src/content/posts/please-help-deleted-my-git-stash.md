@@ -9,7 +9,6 @@ I have this poor habit you know... Whenever I accumulate a lot of git stashes in
 
 ![please send help](./assets/please-help-deleted-my-git-stash/please-send-help.jpg 'please send help doggo meme')
 
-<Caption source="https://me.me/i/please-send-help-none-c0081e69a4f4419a824e82a234ac09e6" />
 
 I found it sometimes even funny to open the terminal and play around with some bash to delete the stashes, look:
 
