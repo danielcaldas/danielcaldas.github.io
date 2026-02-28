@@ -89,7 +89,7 @@ const title = FrontMatter.title
         <slot />
     </article>
     {
-        FrontMatter.pubDate !== FrontMatter.lastModified && (
+        FrontMatter.lastModified && FrontMatter.pubDate !== FrontMatter.lastModified && (
             <div class="mt-9 flex text-sm font-italic opacity-80">
                 <span class="ml-auto">Last modified on {formatDateYMD(FrontMatter.lastModified)}</span>
             </div>
