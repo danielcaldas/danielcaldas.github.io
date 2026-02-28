@@ -315,9 +315,8 @@ twitter:
 github:
 &amp;lt;a href=&amp;quot;https://github.com/laras126&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;laras126 github&amp;quot;&amp;gt;
 laras126
-&amp;lt;/a&amp;gt;{&amp;quot; &amp;quot;}
+&amp;lt;/a&amp;gt;
 &amp;lt;a href=&amp;quot;https://notlaura.com/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;about lara&amp;quot;&amp;gt;
-{&amp;quot; &amp;quot;}
 about
 &amp;lt;/a&amp;gt;
 &amp;lt;/small&amp;gt;
@@ -523,7 +522,7 @@ title=&amp;quot;medium walking inside the node.js event loop&amp;quot;&lt;/p&gt;
 &lt;blockquote&gt;&lt;/blockquote&gt;
 &lt;pre&gt;&lt;code&gt;this nice
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&amp;lt;/a&amp;gt;{&amp;quot; &amp;quot;}
+&lt;p&gt;&amp;lt;/a&amp;gt;
 article explains with more detail the event loop inside Node.js)
 &amp;lt;/small&amp;gt;&lt;/p&gt;
 &lt;p&gt;Regarding &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/API/Worker&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;mdn web api worker&amp;quot;&amp;gt;web workers&amp;lt;/a&amp;gt; the only relevant fact pointed out is that they are simple to understand since each web worker runs it&apos;s own event loop on a separate thread and they are not allowed to manipulate DOM so no need to worry about user interactions here.&lt;/p&gt;
@@ -568,10 +567,7 @@ Web assembly text-format (WAT)
 &lt;p&gt;Of course you probably won&apos;t be using many native WAT modules, you will compile your C, C++, Rust or whatever into WASM, using it the same way we did above.&lt;/p&gt;
 &lt;p&gt;I think a very strong point was a little too much implicit during this talk, performance was mentioned still, with WASM we will be able to obtain a &lt;strong&gt;more robust and coherent performance cross platform/browser&lt;/strong&gt; and &lt;strong&gt;portability across operating systems and different CPU architectures&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;./assets/about-js-conf-eu-berlin-2018/wasm-diagram.png&quot; alt=&quot;wasm diagram comparing to cpu architectures&quot; title=&quot;wasm diagram comparing to cpu architectures&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;Caption
-source=&amp;quot;https://www.youtube.com/watch?v=bac0dGQbUto&amp;quot;
-text=&amp;quot;As you can see WASM sits between our source code and creates an abstraction layer on top of the various CPU architectures. This diagram is from the talk, &apos;Dan Callahan: Practical WebAssembly | JSConf Budapest 2017&apos;&amp;quot;
-/&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;p&amp;gt;&amp;lt;em&amp;gt;As you can see WASM sits between our source code and creates an abstraction layer on top of the various CPU architectures. This diagram is from the talk, &apos;Dan Callahan: Practical WebAssembly | JSConf Budapest 2017&apos;&amp;lt;/em&amp;gt;&amp;lt;/p&amp;gt;&lt;/p&gt;
 &lt;p&gt;If you want to look more into the benefits or what actually could be achieved with WASM I highly recommend the two following talks &amp;lt;a href=&amp;quot;https://www.youtube.com/watch?v=PpuAqLCraAQ&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;real world webassembly chrome dev summit 2017&amp;quot;&amp;gt;Real World WebAssembly (Chrome Dev Summit 2017)&amp;lt;/a&amp;gt; and &amp;lt;a href=&amp;quot;https://www.youtube.com/watch?v=bac0dGQbUto&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;dan callahan: practical webassembly jsconf budapest 2017&amp;quot;&amp;gt;Dan Callahan: Practical WebAssembly | JSConf Budapest 2017&amp;lt;/a&amp;gt;.&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;I couldn&apos;t have imagined a better talk to end day 1 &lt;a href=&quot;#day-1&quot;&gt;&amp;lt;span id=&amp;quot;d1t5&amp;quot;&amp;gt;(5)&amp;lt;/span&amp;gt;&lt;/a&gt;. On stage we had &amp;lt;a href=&amp;quot;https://en.wikipedia.org/wiki/Ryan_Dahl&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;ryan dahl wiki page&amp;quot;&amp;gt;Ryan Dahl&amp;lt;/a&amp;gt; inventor of Node.js.
@@ -931,19 +927,12 @@ have.&lt;/li&gt;
 &lt;p&gt;&lt;img src=&quot;./assets/about-js-conf-eu-berlin-2018/venue-2.jpg&quot; alt=&quot;another venue image&quot; title=&quot;another venue image&quot;&gt;
 &amp;lt;cite&amp;gt;source: https://2018.jsconf.eu/news/photos/&amp;lt;/cite&amp;gt;&lt;/p&gt;
 &lt;p&gt;Throughout the venue there were exhibition stands of the sponsor companies, aside the &lt;em&gt;goodies&lt;/em&gt; you could see products demonstration, talk to people about the company or even get a job interview.&lt;/p&gt;
-&lt;p&gt;Breakfast, lunch and dinner where included in the ticket, so we (me and my colleagues) agreed that it would be worth and try and so we venture into the vegan world (for me practically unknown at the time). The food was nice I mean, I had the opportunity to try a few dishes such as vegan hamburger, vegan gnocchi, vegan pasta, you get it...&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;./assets/about-js-conf-eu-berlin-2018/food-sample.jpeg&quot; alt=&quot;vegan food sample&quot; title=&quot;js conf eu 2018 berlin vegan food sample&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;Caption text=&amp;quot;Gnocchi Pesto&amp;quot; /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;./assets/about-js-conf-eu-berlin-2018/another-food-sample.jpeg&quot; alt=&quot;another vegan food sample&quot; title=&quot;js conf eu 2018 berlin another vegan food sample&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;Caption text=&amp;quot;Vegan Risotto&amp;quot; /&amp;gt;&lt;/p&gt;
 &lt;p&gt;At the end of the day, we just grabbed a bear near the river and enjoy the remaining sunshine (no, we could not use the pool).&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;./assets/about-js-conf-eu-berlin-2018/venue-view-outside.jpeg&quot; alt=&quot;js conf eu 2018 berlin venue outside view&quot; title=&quot;js conf eu 2018 berlin venue outside view&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;Caption /&amp;gt;&lt;/p&gt;
 &lt;h2&gt;Berlin&lt;/h2&gt;
 &lt;p&gt;You know Berlin right? The capital and largest city in Germany, also one of the largest and multicultural cities in Europe. Despite the conference busy schedule I took sometime (mainly my last day) to visit a few of the high rated places in Berlin such as the museum island, the Berlin Cathedral, the Brandenburg Gate, Checkpoint Charlie and a few other spots. It is really worth visiting, besides the obvious places that you would wanna check as the ones mentioned previously Berlin has a great urban structure with organized and large street blocks composed by beautiful buildings, huge and various green spaces and of course an endless nightlife cater for all tastes.&lt;/p&gt;
 &lt;p&gt;And this is me (&lt;em&gt;left&lt;/em&gt;) and my colleagues on our last day in Berlin.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;./assets/about-js-conf-eu-berlin-2018/group-photo.jpeg&quot; alt=&quot;berliner dom group photo&quot; title=&quot;berliner dom group photo&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;Caption /&amp;gt;&lt;/p&gt;
 &lt;p&gt;See you soon.&lt;/p&gt;
 </content:encoded></item><item><title>Reactive Series (pt. 5) - Awesome Resources for Reactive Programming</title><link>https://danielcaldas.github.io/posts/awesome-reactive/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/awesome-reactive/</guid><description>My notes on the epic JSConf EU 2018</description><pubDate>Fri, 12 Feb 2021 00:00:00 GMT</pubDate><content:encoded>&lt;ul&gt;
 &lt;li&gt;&amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/why-reactive-programming&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Why You Should Consider Reactive Programming | danielcaldas.github.io&amp;quot;&amp;gt;Part 1 - Why You Should Consider Reactive Programming&amp;lt;/a&amp;gt;&lt;/li&gt;
@@ -1285,7 +1274,7 @@ export default function App() {
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&amp;lt;small&amp;gt;
-You can read more about &amp;lt;i&amp;gt;sourceMapPathOverrides&amp;lt;/i&amp;gt; property in the official{&amp;quot; &amp;quot;}
+You can read more about &amp;lt;i&amp;gt;sourceMapPathOverrides&amp;lt;/i&amp;gt; property in the official
 &amp;lt;a
 href=&amp;quot;https://github.com/Microsoft/vscode-chrome-debug/blob/master/README.md#sourcemaps&amp;quot;
 target=&amp;quot;_blank&amp;quot;
@@ -1300,7 +1289,6 @@ title=&amp;quot;microsoft/vscode-chrome-debug README.md&amp;quot;&lt;/p&gt;
 &lt;/ol&gt;
 &lt;p&gt;Now running your development server and simultaneously activating the vscode javascript debugger you&apos;re finally able to debug your code!&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;./assets/debugging-javascript-with-vscode/vscode-debugger-part-1.png&quot; alt=&quot;vscode debugger&quot; title=&quot;vscode debugger javascript&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;Caption /&amp;gt;&lt;/p&gt;
 &lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
 &lt;h4&gt;Redux DevTools&lt;/h4&gt;
 &lt;blockquote&gt;
@@ -1371,7 +1359,6 @@ export default createStore(reducer, {}, composeEnhancers(middleware))
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&quot;./assets/debugging-javascript-with-vscode/vscode-debugger-part-2.png&quot; alt=&quot;vscode setup redux final&quot; title=&quot;vscode setup redux final&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;Caption /&amp;gt;&lt;/p&gt;
 &lt;h3&gt;Conclusions&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&quot;./assets/debugging-javascript-with-vscode/debug-animation-2.gif&quot; alt=&quot;vscode setup redux final&quot; title=&quot;vscode setup redux final&quot;&gt;&lt;/p&gt;
 &lt;p&gt;I might have spent one or two days trying to figure out how to bring all these pieces together, but having done it, believe that it increased my productivity in ways that by far compensate the invested time. I hope you find this article useful especially if it saves you one day of trouble trying to figure out the right configs.&lt;/p&gt;
@@ -1780,7 +1767,7 @@ mutated).
 &lt;p&gt;Another tip that I would like to drop is that when adopting a functional architecture &lt;strong&gt;it&apos;s good to keep in mind some good practices when it comes to design functions&lt;/strong&gt;. I found &amp;lt;a href=&amp;quot;http://cleancoder.com/products&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;nofollow&amp;quot; title=&amp;quot;Uncle Bob Martin&amp;quot;&amp;gt;Clean Code&amp;lt;/a&amp;gt; (by &amp;lt;a href=&amp;quot;http://www.cleancoder.com/products&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Uncle Bob Martin | cleancoder.com&amp;quot;&amp;gt;Uncle Bob Martin&amp;lt;/a&amp;gt;) to be an awesome resource that helped me laying down some ground rules when it comes to designing function APIs that are clean and scalable.&lt;/p&gt;
 &lt;p&gt;Do you find these few bits of the functional world beneficial? Give them a try!&lt;/p&gt;
 &lt;p&gt;If you fell like going through the above examples by executing them to get a better understanding of how they&apos;re working, you can use the below dataset as input.&lt;/p&gt;
-&lt;p&gt;&amp;lt;Accordion summary=&amp;quot;Dataset used for code examples&amp;quot;&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;details&amp;gt;&amp;lt;summary&amp;gt;Dataset used for code examples&amp;lt;/summary&amp;gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const users = [
   {
     email: &apos;melany.wijngaard@example.com&apos;,
@@ -1835,7 +1822,7 @@ mutated).
   },
 ]
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&amp;lt;/Accordion&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;/details&amp;gt;&lt;/p&gt;
 </content:encoded></item><item><title>Guide to custom React Hooks (wrap the MutationObserver)</title><link>https://danielcaldas.github.io/posts/guide-to-custom-react-hooks-with-mutationobserver/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/guide-to-custom-react-hooks-with-mutationobserver/</guid><description>Guide to custom React Hooks with MutationObserver</description><pubDate>Wed, 21 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&amp;lt;!-- canonicalUrl: &amp;quot;https://blog.logrocket.com/guide-to-custom-react-hooks-with-mutationobserver/&amp;quot; --&amp;gt;&lt;/p&gt;
 &lt;p&gt;This article was originally published by &amp;lt;a href=&amp;quot;https://logrocket.com/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;LogRocket Modern Frontend Monitoring and Product Analytics&amp;quot;&amp;gt;LogRocket&amp;lt;/a&amp;gt;. You can checkout the original post &amp;lt;a href=&amp;quot;https://blog.logrocket.com/guide-to-custom-react-hooks-with-mutationobserver/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Guide to custom React Hooks with MutationObserver LogRocket Blog&amp;quot;&amp;gt;here&amp;lt;/a&amp;gt;.&lt;/p&gt;
 &lt;p&gt;With the introduction of React Hooks, the amount of shareable code within React codebases has exploded. Because Hooks are thin APIs on top of React, developers can collaborate by attaching reusable behavior to components and segregating these behaviors into smaller modules.&lt;/p&gt;
@@ -2157,14 +2144,7 @@ const drop$ = fromEvent(document, &apos;drop&apos;)
 &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const partyDrop$ = drop$.pipe(filter((event) =&amp;gt; event.target === party))
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&quot;./assets/hands-on-reactive-programming-rxjs/marbles-level-1-1.png&quot; alt=&quot;marbles diagram filter event target on drop event&quot; title=&quot;marbles diagram filter event target on drop event&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;Caption
-text={() =&amp;gt; (
-&amp;lt;p&amp;gt;
-&amp;lt;b&amp;gt;e&amp;lt;/b&amp;gt; stands for &amp;lt;b&amp;gt;event&amp;lt;/b&amp;gt; and it&apos;s the value pushed to the stream at each drop event in the whole document!{&amp;quot; &amp;quot;}
-&amp;lt;b&amp;gt;e1&amp;lt;/b&amp;gt;, &amp;lt;b&amp;gt;e2&amp;lt;/b&amp;gt; and &amp;lt;b&amp;gt;e3&amp;lt;/b&amp;gt; have different &amp;lt;b&amp;gt;event.target&amp;lt;/b&amp;gt; (target DOM elements).
-&amp;lt;/p&amp;gt;
-)}
-/&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;p&amp;gt;&amp;lt;b&amp;gt;e&amp;lt;/b&amp;gt; stands for &amp;lt;b&amp;gt;event&amp;lt;/b&amp;gt; and it&apos;s the value pushed to the stream at each drop event in the whole document! &amp;lt;b&amp;gt;e1&amp;lt;/b&amp;gt;, &amp;lt;b&amp;gt;e2&amp;lt;/b&amp;gt; and &amp;lt;b&amp;gt;e3&amp;lt;/b&amp;gt; have different &amp;lt;b&amp;gt;event.target&amp;lt;/b&amp;gt; (target DOM elements).&amp;lt;/p&amp;gt;&lt;/p&gt;
 &lt;p&gt;Cool, we now have a stream that emits a &lt;code&gt;drop&lt;/code&gt; event every time something is dropped in the &lt;code&gt;party&lt;/code&gt;, we ensure that using the &amp;lt;a href=&amp;quot;https://rxjs-dev.firebaseapp.com/api/operators/filter&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;RxJS - filter&amp;quot;&amp;gt;filter&amp;lt;/a&amp;gt; operator.&lt;/p&gt;
 &lt;p&gt;I would like to pause and add further detail on this marble diagram. Notice that we read from top to bottom, meaning the last timeline is the only one that really matters, it&apos;s the fine grained stream that gives us more useful values. In this case since we won&apos;t subscribe to &lt;code&gt;drop$&lt;/code&gt; directly, think of it as an auxiliary conceptual timeline which is a step towards shaping the ideal stream to tackle our task: &lt;code&gt;partyDrop$&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Another relevant detail on the marbles diagram: &lt;code&gt;e1&lt;/code&gt; and &lt;code&gt;e2&lt;/code&gt; marbles don&apos;t make it to &lt;code&gt;partyDrop$&lt;/code&gt; (bottom stream). For those events,
@@ -2178,7 +2158,6 @@ text={() =&amp;gt; (
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Alright, a few things are going on here. We&apos;re familiar with &amp;lt;a href=&amp;quot;https://rxjs-dev.firebaseapp.com/api/operators/withLatestFrom&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;RxJS - withLatestFrom&amp;quot;&amp;gt;withLatestFrom&amp;lt;/a&amp;gt;, but this time, it&apos;s a bit more complex to perceive. We&apos;re looking into a stream of &lt;code&gt;dragstart&lt;/code&gt; events &lt;code&gt;dragstart$&lt;/code&gt; and asking it for the last value emitted in that stream; this is the same as saying that we want the last draggable element in the page that emitted a &lt;code&gt;dragstart&lt;/code&gt; event! Next, we have &lt;code&gt;filter&lt;/code&gt; again. We&apos;re going to use &lt;code&gt;filter&lt;/code&gt; to narrow down our stream to allow &lt;code&gt;dragstart&lt;/code&gt; events to pass through only if their target element is &lt;code&gt;cat&lt;/code&gt;! And that&apos;s it! We have a stream that will emit an event every time we drop the cat at the party.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;./assets/hands-on-reactive-programming-rxjs/marbles-level-1-2.png&quot; alt=&quot;marbles diagram filter event target on drop event&quot; title=&quot;marbles diagram filter event target on drop event&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;Caption /&amp;gt;&lt;/p&gt;
 &lt;p&gt;In the above diagram, &lt;code&gt;e1&lt;/code&gt;, &lt;code&gt;e2&lt;/code&gt; and &lt;code&gt;e3&lt;/code&gt; are &lt;code&gt;dragstart&lt;/code&gt; events (&lt;code&gt;dragstart$&lt;/code&gt; stream) that might come from anywhere in the page. &lt;code&gt;de&lt;/code&gt; represents a &lt;code&gt;drop&lt;/code&gt; event at the &lt;code&gt;party&lt;/code&gt;. Notice how &lt;code&gt;withLatestFrom&lt;/code&gt; operates by bringing together the last element on &lt;code&gt;dragstart$&lt;/code&gt; which is &lt;code&gt;e3&lt;/code&gt; and with the &lt;code&gt;party&lt;/code&gt; element which is published to the &lt;code&gt;dragend$&lt;/code&gt; stream. Now because &lt;code&gt;e3&lt;/code&gt; event target is actually the &lt;code&gt;cat&lt;/code&gt; you&apos;ll get &lt;code&gt;e3&lt;/code&gt; pushed to our final stream &lt;code&gt;catAtParty$&lt;/code&gt;!&lt;/p&gt;
 &lt;p&gt;But we&apos;re not finished just yet; we need to leverage the work we&apos;ve constructed so far to actually render the &lt;code&gt;cat&lt;/code&gt; in the &lt;code&gt;party&lt;/code&gt;. For that, we just need to subscribe to our &lt;code&gt;catAtParty$&lt;/code&gt; stream and do some DOM manipulations.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;catAtParty$.subscribe(([partyDropEvent, dragStartEvent]) =&amp;gt; {
@@ -2190,14 +2169,7 @@ text={() =&amp;gt; (
 })
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&quot;./assets/hands-on-reactive-programming-rxjs/game-level-1-2.png&quot; alt=&quot;result of subscribing to cat at party stream&quot; title=&quot;result of subscribing to cat at party stream&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;Caption
-text={() =&amp;gt; (
-&amp;lt;p&amp;gt;
-The &amp;lt;b&amp;gt;console.log&amp;lt;/b&amp;gt; reveals the &amp;lt;b&amp;gt;drop&amp;lt;/b&amp;gt; and &amp;lt;b&amp;gt;dragstart&amp;lt;/b&amp;gt; events as payload for our subscription. We
-also log the &amp;lt;b&amp;gt;event.type&amp;lt;/b&amp;gt; of each individual event.
-&amp;lt;/p&amp;gt;
-)}
-/&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;p&amp;gt;The &amp;lt;b&amp;gt;console.log&amp;lt;/b&amp;gt; reveals the &amp;lt;b&amp;gt;drop&amp;lt;/b&amp;gt; and &amp;lt;b&amp;gt;dragstart&amp;lt;/b&amp;gt; events as payload for our subscription. We also log the &amp;lt;b&amp;gt;event.type&amp;lt;/b&amp;gt; of each individual event.&amp;lt;/p&amp;gt;&lt;/p&gt;
 &lt;p&gt;If you&apos;re following this point, you&apos;ll notice that although we can drag the cat perfectly, we still see the original &lt;code&gt;cat&lt;/code&gt; element while carrying it. We see the original cat element while dragging it.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;./assets/hands-on-reactive-programming-rxjs/game-level-1-opacity-before.gif&quot; alt=&quot;&apos;dragging the cat without manipulating the opacity value&apos;&quot; title=&quot;dragging the cat without manipulating the opacity value&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
@@ -2215,11 +2187,9 @@ catDragEnd$.subscribe((event) =&amp;gt; {
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;And done with Level 1!&lt;/p&gt;
 &lt;p&gt;I want to leave a challenge for the reader. Looking at how we&apos;re setting the opacity value of the &lt;code&gt;cat&lt;/code&gt; element, could we somehow handle everything in one single subscription instead of two? I would suggest you to read the whole article and come back to this one later, you should be then able to nail it then.&lt;/p&gt;
-&lt;p&gt;&amp;lt;Accordion summary=&amp;quot;Hint&amp;quot;&amp;gt;
-Check the operator &amp;lt;b&amp;gt;merge&amp;lt;/b&amp;gt;.
-&amp;lt;/Accordion&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;details&amp;gt;&amp;lt;summary&amp;gt;Hint&amp;lt;/summary&amp;gt;Check the operator &amp;lt;b&amp;gt;merge&amp;lt;/b&amp;gt;.&amp;lt;/details&amp;gt;&lt;/p&gt;
 &lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;Accordion summary=&apos;Solution&apos;&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;details&amp;gt;&amp;lt;summary&amp;gt;Solution&amp;lt;/summary&amp;gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const catDragStart$ = dragstart$.pipe(filter((event) =&amp;gt; event.target === cat))
 const catDragEnd$ = dragend$.pipe(filter((event) =&amp;gt; event.target === cat))
 const opacity$ = merge(catDragStart$.pipe(mapTo(0)), catDragEnd$.pipe(mapTo(1)))
@@ -2228,7 +2198,7 @@ opacity$.subscribe((value) =&amp;gt; {
   cat.style.opacity = value
 })
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&amp;lt;/Accordion&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;/details&amp;gt;&lt;/p&gt;
 &lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
 &lt;h4&gt;Level 2 - Hacking race conditions with artificial delays&lt;/h4&gt;
 &lt;ul&gt;
@@ -2274,13 +2244,7 @@ opacity$.subscribe((value) =&amp;gt; {
 &lt;p&gt;In our markup, there&apos;s a GIF positioned at the top right corner. We want to show it while dragging the cat and hide it again once we drop the cat.&lt;/p&gt;
 &lt;p&gt;We already have two streams: &lt;code&gt;catDragStart$&lt;/code&gt; and &lt;code&gt;catDragEnd$&lt;/code&gt; . We need to combine them to form a new stream. Let&apos;s try and draw a small diagram of what that stream should look like.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;./assets/hands-on-reactive-programming-rxjs/marbles-level-3-1.png&quot; alt=&quot;streams of events for dragging and dropping the cat respectively&quot; title=&quot;streams of events for dragging and dropping the cat respectively&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;Caption
-text={() =&amp;gt; (
-&amp;lt;p&amp;gt;
-In the image, &amp;lt;b&amp;gt;ds&amp;lt;/b&amp;gt; symbolizes a &amp;lt;b&amp;gt;dragstart&amp;lt;/b&amp;gt; event, and &amp;lt;b&amp;gt;de&amp;lt;/b&amp;gt; represents a &amp;lt;b&amp;gt;dragend&amp;lt;/b&amp;gt; event.
-&amp;lt;/p&amp;gt;
-)}
-/&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;p&amp;gt;In the image, &amp;lt;b&amp;gt;ds&amp;lt;/b&amp;gt; symbolizes a &amp;lt;b&amp;gt;dragstart&amp;lt;/b&amp;gt; event, and &amp;lt;b&amp;gt;de&amp;lt;/b&amp;gt; represents a &amp;lt;b&amp;gt;dragend&amp;lt;/b&amp;gt; event.&amp;lt;/p&amp;gt;&lt;/p&gt;
 &lt;p&gt;Our GIF is wrapped in an HTML element whose &lt;code&gt;display&lt;/code&gt; attribute is set to &lt;code&gt;&amp;quot;none&amp;quot;&lt;/code&gt; by default. We&apos;ll want to set it to &lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt; (empty string) to make it visible and back to &lt;code&gt;&amp;quot;none&amp;quot;&lt;/code&gt; once it&apos;s time to hide it again. Our side effect should look something like this:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// shouldHideGIF would be true in case we need to hide the GIF
 const v = shouldHideGIF ? &apos;none&apos; : &apos;&apos;
@@ -2289,11 +2253,11 @@ loading.style.setProperty(&apos;display&apos;, v)
 &lt;p&gt;Let&apos;s try to build a stream to feed to this function a value for &lt;code&gt;display&lt;/code&gt; that reflects whether the cat is being dragged or not. Our stream should remove the necessity of the imperative logic dictated by the ternary operator, &lt;strong&gt;we&apos;ll create values that react to changes to replace the imperative code&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;First, let&apos;s look back at our streams &lt;code&gt;catDragStart$&lt;/code&gt; and &lt;code&gt;catDragEnd$&lt;/code&gt;. When &lt;code&gt;catDragStart$&lt;/code&gt; emits a value, we want to set the &lt;code&gt;display&lt;/code&gt; to &lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt;. So this means we need to somehow transform our stream of events into a stream of empty strings. Each time a string is emitted, we shall pass that value onto the function that will set the &lt;code&gt;display&lt;/code&gt; property on the &lt;code&gt;loading&lt;/code&gt; element.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;./assets/hands-on-reactive-programming-rxjs/marbles-level-3-2.png&quot; alt=&quot;stream mapping dragstart events to an empty string&quot; title=&quot;stream mapping dragstart events to an empty string&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;Caption text={&amp;quot;Mapping each event to an empty string.&amp;quot;} /&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;p&amp;gt;&amp;lt;em&amp;gt;Mapping each event to an empty string.&amp;lt;/em&amp;gt;&amp;lt;/p&amp;gt;&lt;/p&gt;
 &lt;p&gt;After you apply an operator, you transform your stream into a more refined one, ideally better suited to the task you&apos;re trying to tackle! You&apos;re making every pushed value to the topmost timeline flow through a function provided in the &lt;code&gt;map&lt;/code&gt; operator. That function will map each value into the bottom timeline, your &lt;em&gt;&amp;quot;final&amp;quot;&lt;/em&gt; stream. If you subscribe to it now, you will receive empty strings instead of DOM events!&lt;/p&gt;
 &lt;p&gt;The same thing should happen to &lt;code&gt;catDragEnd$&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;./assets/hands-on-reactive-programming-rxjs/marbles-level-3-3.png&quot; alt=&quot;stream mapping dragend events to none&quot; title=&quot;stream mapping dragend events to none&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;Caption text={&amp;quot;Mapping each event to &apos;none&apos;.&amp;quot;} /&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;p&amp;gt;&amp;lt;em&amp;gt;Mapping each event to &apos;none&apos;.&amp;lt;/em&amp;gt;&amp;lt;/p&amp;gt;&lt;/p&gt;
 &lt;p&gt;Now we have two streams, and we could just subscribe to each one of them and set the value of the &lt;code&gt;&amp;quot;display&amp;quot;&lt;/code&gt; property for the &lt;code&gt;loading&lt;/code&gt; element!&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const catDragStartDisplay$ = catDragStart$.pipe(map((event) =&amp;gt; &apos;&apos;))
 const catDragEndDisplay$ = catDragEnd$.pipe(map((event) =&amp;gt; &apos;none&apos;))
@@ -2303,14 +2267,7 @@ catDragEndDisplay$.subscribe((value) =&amp;gt; loading.style.setProperty(&apos;d
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Although this works, we could further refine our streams and &lt;strong&gt;merge&lt;/strong&gt; them into a single one.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;./assets/hands-on-reactive-programming-rxjs/marbles-level-3-4.png&quot; alt=&quot;two streams merged into a single&quot; title=&quot;two streams merged into a single one&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;Caption
-text={() =&amp;gt; (
-&amp;lt;p&amp;gt;
-&amp;lt;b&amp;gt;A single stream becomes the source of truth&amp;lt;/b&amp;gt; for the &amp;lt;i&amp;gt;display&amp;lt;/i&amp;gt; property value of the &amp;lt;b&amp;gt;loading&amp;lt;/b&amp;gt;{&amp;quot; &amp;quot;}
-element throughout time.
-&amp;lt;/p&amp;gt;
-)}
-/&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;p&amp;gt;&amp;lt;b&amp;gt;A single stream becomes the source of truth&amp;lt;/b&amp;gt; for the &amp;lt;i&amp;gt;display&amp;lt;/i&amp;gt; property value of the &amp;lt;b&amp;gt;loading&amp;lt;/b&amp;gt; element throughout time.&amp;lt;/p&amp;gt;&lt;/p&gt;
 &lt;p&gt;Awesome! The &amp;lt;a href=&amp;quot;https://rxjs-dev.firebaseapp.com/api/operators/merge&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;RxJS - merge&amp;quot;&amp;gt;merge&amp;lt;/a&amp;gt; operator gives us the power to take to streams and merge them into one so that the values of the &lt;code&gt;&amp;quot;display&amp;quot;&lt;/code&gt; flow through a single stream (a single source of truth). Here&apos;s how the code looks like.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const catDragStartDisplay$ = catDragStart$.pipe(map((event) =&amp;gt; &apos;&apos;))
 const catDragEndDisplay$ = catDragEnd$.pipe(map((event) =&amp;gt; &apos;none&apos;))
@@ -2380,7 +2337,6 @@ countdown$.subscribe({
 &lt;li&gt;Once the stream emits the 6th value, &lt;strong&gt;it will complete automatically&lt;/strong&gt; and stop emitting values! &lt;strong&gt;We don&apos;t need to worry about cleanup logic&lt;/strong&gt; - with &lt;code&gt;setInterval&lt;/code&gt; we need to worry about cleaning the interval with &lt;code&gt;clearInterval&lt;/code&gt; so that it does not run indefinitely!&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&quot;./assets/hands-on-reactive-programming-rxjs/marbles-level-4-1.png&quot; alt=&quot;diagram depicting the countdown stream&quot; title=&quot;diagram depicting the countdown stream&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;Caption /&amp;gt;&lt;/p&gt;
 &lt;p&gt;In the above image, the bottom timeline represents the stream; notice the pipe (&lt;strong&gt;|&lt;/strong&gt;) at the end of the timeline indicates that the stream completes after emitting the value &lt;strong&gt;1&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;A crucial aspect to notice is that you&apos;ll trigger a new timer as soon as you subscribe. This is a &amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/reactive-programming-fundamentals/#hot-observable-vs-cold-observable&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Fundamentals of Reactive Programming, Cold Observable&amp;quot;&amp;gt;Cold Observable&amp;lt;/a&amp;gt;. Our &lt;code&gt;countdown$&lt;/code&gt; will start emitting values right away upon subscription, so we can&apos;t just &lt;code&gt;.subscribe()&lt;/code&gt; We&apos;ll have to subscribe to the countdown when the user starts dragging the &lt;code&gt;cat&lt;/code&gt; element.&lt;/p&gt;
 &lt;p&gt;Now remember we had a stream &lt;code&gt;catDragStart$&lt;/code&gt;; we&apos;ll use that to trigger our countdown. &lt;strong&gt;But how can we trigger a subscription to a stream from within another stream?&lt;/strong&gt; In my opinion, this is a hard concept to comprehend.&lt;/p&gt;
@@ -2397,7 +2353,7 @@ countdownRunning$.subscribe((secondsLeft) =&amp;gt; {
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: You might have noticed that I&apos;m using &lt;code&gt;t =&amp;gt; t &amp;gt;= 0&lt;/code&gt; &amp;quot;&lt;em&gt;greater or equal to&lt;/em&gt;&amp;quot; in our predicate. This is just for convenience, so that we get &lt;code&gt;0&lt;/code&gt; pushed onto the stream to easily rendered it, finishing the countdown at &lt;code&gt;0&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;./assets/hands-on-reactive-programming-rxjs/marbles-level-4-2.png&quot; alt=&quot;diagram to demonstrate the switchMap operator&quot; title=&quot;diagram to demonstrate the switchMap operator&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;Caption text={() =&amp;gt; &amp;lt;p&amp;gt;We&apos;re switching from one stream to another and subscribing to it immediately.&amp;lt;/p&amp;gt;} /&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;p&amp;gt;We&apos;re switching from one stream to another and subscribing to it immediately.&amp;lt;/p&amp;gt;&lt;/p&gt;
 &lt;p&gt;Notice the return value of &lt;code&gt;switchMap&lt;/code&gt; is &lt;code&gt;countdown$&lt;/code&gt;, this means that when a &lt;code&gt;dragstart&lt;/code&gt; event is emitted in &lt;code&gt;catDragStart$&lt;/code&gt; the following things will happen:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Since we subscribed, the DOM event will flow through the pipe and hit our &lt;code&gt;switchMap&lt;/code&gt; operator.&lt;/li&gt;
@@ -2459,14 +2415,7 @@ countdownRunning$
   });
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&quot;./assets/hands-on-reactive-programming-rxjs/marbles-level-4-3-4.png&quot; alt=&quot;stream representation of the countdown with cancellation&quot; title=&quot;stream representation of the countdown with cancellation&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;Caption
-text={(a) =&amp;gt; (
-&amp;lt;p&amp;gt;
-In this diagram, our stream gets cancelled after the value &amp;lt;b&amp;gt;3&amp;lt;/b&amp;gt; is published. The first &amp;lt;b&amp;gt;dragend&amp;lt;/b&amp;gt; event
-causes the &amp;lt;b&amp;gt;countdownRunning$&amp;lt;/b&amp;gt; to stop emitting values.
-&amp;lt;/p&amp;gt;
-)}
-/&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;p&amp;gt;In this diagram, our stream gets cancelled after the value &amp;lt;b&amp;gt;3&amp;lt;/b&amp;gt; is published. The first &amp;lt;b&amp;gt;dragend&amp;lt;/b&amp;gt; event causes the &amp;lt;b&amp;gt;countdownRunning$&amp;lt;/b&amp;gt; to stop emitting values.&amp;lt;/p&amp;gt;&lt;/p&gt;
 &lt;p&gt;You can check out &amp;lt;a href=&amp;quot;https://github.com/danielcaldas/take-the-cat-to-the-party&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;danielcaldas/take-the-cat-to-the-party: Learn reactive programming with RxJS the fun way&amp;quot;&amp;gt;the complete implementation of this challenge here&amp;lt;/a&amp;gt;.&lt;/p&gt;
 &lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
 &lt;h4&gt;Closing Notes&lt;/h4&gt;
@@ -2540,7 +2489,6 @@ that points to the commit of the current version of the application.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You can see the final result in the image below, it logs:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;./assets/hidden-potential-webpack-define-plugin/console-log.png&quot; alt=&quot;final result in console of el-conversor&quot; title=&quot;final result in console of el-conversor&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;Caption /&amp;gt;&lt;/p&gt;
 </content:encoded></item><item><title>How to overengineer copying files from any Android device</title><link>https://danielcaldas.github.io/posts/how-to-copy-file-android/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/how-to-copy-file-android/</guid><description>(especially if you have an Apple computer)</description><pubDate>Thu, 01 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;strong&gt;tl;dr&lt;/strong&gt; SSH into your android and download the files with &amp;lt;a href=&amp;quot;https://linux.die.net/man/1/scp&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;scp(1): secure copy - Linux man page&amp;quot;&amp;gt;scp&amp;lt;/a&amp;gt;. &amp;lt;a href=&amp;quot;https://play.google.com/store/apps/details?id=com.arachnoid.sshelper&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;SSHelper - Apps on Google Play&amp;quot;&amp;gt;This one&amp;lt;/a&amp;gt; works for me.&lt;/p&gt;
 &lt;p&gt;So this afternoon, I had decided to take some time to clear my smartphone, archive some old pictures and stuff. I usually park them on an external drive. Anyways, it happens that my &amp;lt;a href=&amp;quot;https://www.oneplus.com&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;OnePlus 6 - OnePlus (Nederland)&amp;quot;&amp;gt;OnePlus 6&amp;lt;/a&amp;gt; does not connect to my new shiny &amp;lt;a href=&amp;quot;https://www.apple.com/macbook-pro/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;MacBook Pro - Apple&amp;quot;&amp;gt;MacBook Pro&amp;lt;/a&amp;gt;.&lt;/p&gt;
 &lt;p&gt;&amp;lt;br /&amp;gt;
@@ -2820,7 +2768,6 @@ hand remember that you getting each time more experiment and more comfortable ar
 &lt;p&gt;This is quite a dilemma for me. I&apos;m interested to see how all this is going pan out. My bet is on the money. Money wins, most of the time.&lt;/p&gt;
 </content:encoded></item><item><title>Deleted my git stash! Please send help!</title><link>https://danielcaldas.github.io/posts/please-help-deleted-my-git-stash/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/please-help-deleted-my-git-stash/</guid><description>You can author content using the familiar markdown syntax you already know. All basic markdown syntax is supported.</description><pubDate>Sun, 09 Dec 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I have this poor habit you know... Whenever I accumulate a lot of git stashes in some repository I just get a little maniac and start cleaning everything.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;./assets/please-help-deleted-my-git-stash/please-send-help.jpg&quot; alt=&quot;please send help&quot; title=&quot;please send help doggo meme&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;Caption source=&amp;quot;https://me.me/i/please-send-help-none-c0081e69a4f4419a824e82a234ac09e6&amp;quot; /&amp;gt;&lt;/p&gt;
 &lt;p&gt;I found it sometimes even funny to open the terminal and play around with some bash to delete the stashes, look:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# if you&apos;re just flashing by don&apos;t copy and past this line into your terminal
 for i in {1..10}; do git stash drop; done
@@ -3221,7 +3168,7 @@ const mouseOverItem$ = fromEvent(listEl, &apos;mouseover&apos;)
   .subscribe()
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;Accordion summary=&apos;Expand to see example full code&apos;&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;details&amp;gt;&amp;lt;summary&amp;gt;Expand to see example full code&amp;lt;/summary&amp;gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;!doctype html&amp;gt;
 
 &amp;lt;head&amp;gt;
@@ -3300,7 +3247,7 @@ const mouseOverItem$ = fromEvent(listEl, &apos;mouseover&apos;)
   &amp;lt;/script&amp;gt;
 &amp;lt;/body&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&amp;lt;/Accordion&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;/details&amp;gt;&lt;/p&gt;
 &lt;p&gt;&amp;lt;br /&amp;gt;
 &amp;lt;br /&amp;gt;&lt;/p&gt;
 &lt;h5&gt;Easier to deal with backpressure&lt;/h5&gt;
@@ -4253,7 +4200,6 @@ title=&amp;quot;GitHub, Daniel Caldas, test-fixtures-pattern case study project,
 &amp;lt;/small&amp;gt;&lt;/p&gt;
 &lt;p&gt;The output or running the above test is just a simple Jest report.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;./assets/unit-testing-with-fixtures-unleashed/final-test-report.png&quot; alt=&quot;Jest, final test report&quot; title=&quot;Jest, final test report&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;Caption /&amp;gt;&lt;/p&gt;
 &lt;p&gt;In the above implementation we have created a generic mechanism that resembles the &lt;em&gt;Command Pattern&lt;/em&gt; (&amp;lt;a href=&amp;quot;https://addyosmani.com/resources/essentialjsdesignpatterns/book/&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;nofollow&amp;quot; title=&amp;quot;Learning JavaScript Design Patterns&amp;quot;&amp;gt;reference from &amp;quot;Learning JavaScript Design Patterns&amp;quot; by Addy Osmani&amp;lt;/a&amp;gt;) where the &lt;em&gt;spec&lt;/em&gt; name itself is the &lt;em&gt;command&lt;/em&gt; we wish to execute.&lt;/p&gt;
 &lt;p&gt;My goal here is to give you the idea that, in some projects, you might be able to drop a lot of boilerplate by wisely choosing your testing architecture; The pattern you go for it&apos;s just a tool for you to organize your thoughts, &lt;strong&gt;it doesn&apos;t mean that&lt;/strong&gt; if you don&apos;t choose the right architecture you are doomed to a poorly tested codebase, you can still certainly achieve that, it just won&apos;t be as easy.&lt;/p&gt;
 &lt;h4&gt;🎰 Bonus section: development watch mode for fixtures&lt;/h4&gt;
@@ -4274,8 +4220,7 @@ title=&amp;quot;GitHub, Daniel Caldas, test-fixtures-pattern case study project,
 &lt;p&gt;&amp;lt;/a&amp;gt;
 &amp;lt;/small&amp;gt;&lt;/p&gt;
 &lt;p&gt;As you can see from the above snippet, we &lt;em&gt;glue&lt;/em&gt; and chain everything together in the script &lt;code&gt;fixtures:watch&lt;/code&gt;. In fact, nodemon does most of the work. Now when we want to perform interactive changes in our fixtures we just need to type &lt;code&gt;npm run fixtures:watch&lt;/code&gt;, and &lt;em&gt;voilà&lt;/em&gt;. See the result below.&lt;/p&gt;
-&lt;p&gt;&amp;lt;GIF name=&amp;quot;fixtures-watch-mode&amp;quot; /&amp;gt;
-&amp;lt;Caption gif={true} /&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;GIF name=&amp;quot;fixtures-watch-mode&amp;quot; /&amp;gt;&lt;/p&gt;
 &lt;p&gt;I found such a setup to be the ideal driver for you to advocate for &amp;lt;a href=&amp;quot;https://en.wikipedia.org/wiki/Test-driven_development&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Test-driven development - Wikipedia&amp;quot;&amp;gt;Test Driven Development (TDD)&amp;lt;/a&amp;gt; within your team. Creating fixtures to replicate tricky edge cases
 becomes trivial leading you to create the fixture that breaks your implementation in the first place, followed by fixing whatever is wrong with the actual implementation.
 But I don&apos;t want to elaborate on TDD, for that I would rather point you good resources such as &lt;em&gt;&amp;quot;Test Driven Development: By Example&amp;quot; (a book by Kent Beck)&lt;/em&gt;.&lt;/p&gt;
@@ -4310,7 +4255,6 @@ I hope that if you went through the article, you have now one more testing softw
 &lt;p&gt;What do you think about having a fixture based testing architecture? Do you have any project in mind where you see that this could be the right fit?&lt;/p&gt;
 </content:encoded></item><item><title>Keeping the web compatible for developers</title><link>https://danielcaldas.github.io/posts/web-compatible-developers/</link><guid isPermaLink="true">https://danielcaldas.github.io/posts/web-compatible-developers/</guid><description>Yet another Internet Explorer frustrating episode</description><pubDate>Fri, 21 Feb 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;It seems inevitable for me to fall into some browser compatibility trap from time to time. &amp;lt;a href=&amp;quot;https://danielcaldas.github.io/posts/browser-polyfill-madness-mozilla-internet-explorer/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;danielcaldas.github.io, Browser polyfill madness, Mozilla and IE&amp;quot;&amp;gt;The last &lt;em&gt;&amp;quot;blogpost worthy&amp;quot;&lt;/em&gt; one that I faced was fun&amp;lt;/a&amp;gt;, but still, it was traceable through the standard browser compatibility resources such as &amp;lt;a href=&amp;quot;https://caniuse.com/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Can I use... Support tables for HTML5, CSS3, etc&amp;quot;&amp;gt;caniuse.com&amp;lt;/a&amp;gt; or &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;MDN Web Docs&amp;quot;&amp;gt;MDN Web Docs&amp;lt;/a&amp;gt; browser compatibility tables.&lt;/p&gt;
 &lt;p&gt;Well, this time, &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/API/MutationObserverInit/attributeFilter&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;MutationObserverInit, attributeFilter on MDN Web APIs&amp;quot;&amp;gt;MutationObserverInit.attributeFilter&amp;lt;/a&amp;gt; gave me a bit of a hard time.&lt;/p&gt;
-&lt;p&gt;&amp;lt;Caption source=&amp;quot;https://twitter.com/GOP/status/757687865471963137&amp;quot; /&amp;gt;&lt;/p&gt;
 &lt;p&gt;While working in some implementation that requires me to detect when a DOM element is mutated, I did not blink an eye when it came to choosing the &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;MutationObserver on MDN Web APIs&amp;quot;&amp;gt;MutationObserver API&amp;lt;/a&amp;gt; to get the job done. But this time, I used something different, that was &amp;lt;a href=&amp;quot;https://developer.mozilla.org/en-US/docs/Web/API/MutationObserverInit/attributeFilter&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;MutationObserverInit, attributeFilter on MDN Web APIs&amp;quot;&amp;gt;MutationObserverInit.attributeFilter&amp;lt;/a&amp;gt;.&lt;/p&gt;
 &lt;p&gt;The problem here is that the relevant browser compatibility information was not accurate for the usage of &lt;code&gt;attributeFilter&lt;/code&gt;, especially for Internet Explorer and Edge browsers. It happens that these browsers throw a syntax error upon the usage of this API without setting a flag, I won&apos;t bother you with the details, you can now check &amp;lt;a href=&amp;quot;https://caniuse.com/#search=attributeFilter&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Can I use... Support tables for HTML5, CSS3, etc search for attributeFilter&amp;quot;&amp;gt;caniuse.com &lt;code&gt;attributeFilter&lt;/code&gt; compatibility information&amp;lt;/a&amp;gt;, you might find all the details about this issue there.&lt;/p&gt;
 &lt;p&gt;The point here is that we might be reaching soon (maybe a few years more) a more stable era of browsers with the discontinuation of IE and the Microsoft Edge big move on becoming a &amp;lt;a href=&amp;quot;https://www.chromium.org/Home&amp;quot; target=&amp;quot;_blank&amp;quot; title=&amp;quot;Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all Internet users to experience the web&amp;quot;&amp;gt;Chromium-based&amp;lt;/a&amp;gt; browser. &lt;strong&gt;In the meantime&lt;/strong&gt;, we can all contribute to a compatible web. &lt;strong&gt;How can we individually help?&lt;/strong&gt;&lt;/p&gt;
@@ -4442,7 +4386,7 @@ to the &lt;strong&gt;&amp;quot;async/await hell&amp;quot;&lt;/strong&gt; started
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&amp;lt;small&amp;gt;
 &amp;lt;i&amp;gt;
-example from:{&amp;quot; &amp;quot;}
+example from:
 &amp;lt;a
 href=&amp;quot;https://medium.com/free-code-camp/avoiding-the-async-await-hell-c77a0fb71c4c&amp;quot;
 target=&amp;quot;_blank&amp;quot;
