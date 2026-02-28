@@ -23,7 +23,7 @@ function isRootPage() {
                 <a
                     rel="prefetch"
                     href={item.url}
-                    class="panda-link mr-4 animated hover:no-underline"
+                    class="panda-link mr-4 animated hover:no-underline whitespace-nowrap"
                     class:list={url.toString().includes(item.url) ? 'active' : ''}
                 >
                     {item.title}
