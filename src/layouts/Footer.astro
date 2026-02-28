@@ -9,7 +9,7 @@ const {start, footer} = PandaConfig
             footer &&
                 footer.map((item, index) => (
                     <span>
-                        <a href={item.url} class="panda-link">
+                        <a href={item.url} class="panda-link" target={item.url.startsWith('http') ? '_blank' : undefined} rel={item.url.startsWith('http') ? 'noopener noreferrer' : undefined}>
                             {item.title}
                         </a>
                         {index !== footer.length - 1 && <span class="mx-1">|</span>}
