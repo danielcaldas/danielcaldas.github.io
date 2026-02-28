@@ -138,7 +138,7 @@ to the **"async/await hell"** started to surface across the web.
 
 <small>
   <i>
-    example from:{" "}
+    example from:
     <a
       href="https://medium.com/free-code-camp/avoiding-the-async-await-hell-c77a0fb71c4c"
       target="_blank"

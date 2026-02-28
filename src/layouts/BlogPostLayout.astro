@@ -11,7 +11,7 @@ const title = FrontMatter.title
 ---
 
 <Layout title={title} navbar={false}>
-    <a rel="prefetch" class="panda-link mt-6" href="/">Back</a>
+    <a rel="prefetch" class="panda-link mt-6" href="/">← back</a>
     <style is:inline>
         /* notification */
         .notification p {
@@ -71,20 +71,16 @@ const title = FrontMatter.title
     </style>
     <div class="mt-6">
         <h1 class="text-4xl">{title}</h1>
-        <div class="flex sm:flex-row flex-col rounded-lg bg-stone-100 dark:bg-stone-600 p-2 px-4">
+        <div class="flex text-sm opacity-70 mt-2 gap-3 items-center">
+            <span>{formatDateYMD(FrontMatter.pubDate)}</span>
+            {FrontMatter.tags && FrontMatter.tags.length > 0 && (
+                <span class="opacity-40">·</span>
+            )}
             <div>
-                {
-                    FrontMatter.tags &&
-                        FrontMatter.tags.map((tag) => (
-                            <span class="ml-2">
-                                <a href={'/tags/' + tag} class="text-sm mr-2 panda-link">
-                                    #{tag}
-                                </a>
-                            </span>
-                        ))
-                }
+                {FrontMatter.tags && FrontMatter.tags.map(tag => (
+                    <a href={'/tags/' + tag} class="text-sm mr-2 panda-link">#{tag}</a>
+                ))}
             </div>
-            <span class="ml-auto mr-4 text-sm font-normal"> Posted on {formatDateYMD(FrontMatter.pubDate)}</span>
         </div>
     </div>
     <article class="prose dark:prose-invert prose-stone max-w-prose mt-6">

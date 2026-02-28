@@ -368,9 +368,8 @@ Here the list of the talks with links to videos (at this point the majority of t
       github:
       <a href="https://github.com/laras126" target="_blank" title="laras126 github">
         laras126
-      </a>{" "}
+      </a>
       <a href="https://notlaura.com/" target="_blank" title="about lara">
-        {" "}
         about
       </a>
     </small>

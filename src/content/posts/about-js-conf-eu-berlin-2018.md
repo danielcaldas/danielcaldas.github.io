@@ -177,7 +177,7 @@ while (tasksAreWaiting()) {
     title="medium walking inside the node.js event loop"
   >
     this nice
-  </a>{" "}
+  </a>
   article explains with more detail the event loop inside Node.js)
 </small>
 

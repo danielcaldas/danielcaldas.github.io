@@ -1,35 +1,40 @@
 :root {
-    --color-primary-main: #222222;
-    --color-secondary-main: #444444;
-    --color-text-body: 55 65 81;
-    --color-text-heading: 55 65 81;
+    --color-primary-main: #8a6520;
+    --color-secondary-main: #5c4115;
+    --color-text-body: 28 26 22;
+    --color-text-heading: 28 26 22;
     --color-text-link: var(--color-primary-main);
     --color-text-link-hover: var(--color-secondary-main);
     --color-border: var(--color-primary-main);
-    --color-code-bg: #f3f4f6;
+    --color-code-bg: #ede9e1;
 
     scroll-behavior: smooth;
 }
 
 :root.dark {
     color-scheme: dark;
-    --color-primary-main: 235 153 161;
-    /* #eb99a1 */
-    --color-secondary-main: 226 111 122;
-    /* #e26f7a */
-    --color-text-body: 214 211 209;
-    --color-text-heading: 255 255 255;
+    --color-primary-main: 201 149 42;
+    /* #c9952a */
+    --color-secondary-main: 172 122 28;
+    /* #ac7a1c */
+    --color-text-body: 232 226 213;
+    --color-text-heading: 240 236 225;
     --color-text-link: var(--color-primary-main);
     --color-text-link-hover: var(--color-secondary-main);
     --color-border: var(--color-primary-main);
-    --color-code-bg: #1a202c;
+    --color-code-bg: #1a1812;
 
     scroll-behavior: smooth;
 }
 
 body {
-    font-family: Verdana, sans-serif;
+    font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
     overflow-y: scroll;
+    background-color: #f7f5f0;
+}
+
+:root.dark body {
+    background-color: #0f0e0c;
 }
 
 img {
@@ -115,7 +120,7 @@ a.animated.active:after {
  * blockquote
  */
 .prose :where(blockquote):not(:where(.not-prose, .not-prose *)) {
-    @apply bg-gray-100 dark:bg-stone-600 text-base m-0 border-l-solid font-normal rounded-lg rounded-l-sm pl-4 p-2;
+    @apply bg-gray-100 dark:bg-stone-600 text-base m-0 border-l-solid font-normal pl-4 p-2;
     border-left: 6px solid rgb(var(--color-primary-main)) !important;
 }
 

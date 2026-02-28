@@ -179,7 +179,7 @@ const partyDrop$ = drop$.pipe(filter((event) => event.target === party))
 <Caption
   text={() => (
     <p>
-      <b>e</b> stands for <b>event</b> and it's the value pushed to the stream at each drop event in the whole document!{" "}
+      <b>e</b> stands for <b>event</b> and it's the value pushed to the stream at each drop event in the whole document!
       <b>e1</b>, <b>e2</b> and <b>e3</b> have different <b>event.target</b> (target DOM elements).
     </p>
   )}
@@ -393,7 +393,7 @@ Although this works, we could further refine our streams and **merge** them into
 <Caption
   text={() => (
     <p>
-      <b>A single stream becomes the source of truth</b> for the <i>display</i> property value of the <b>loading</b>{" "}
+      <b>A single stream becomes the source of truth</b> for the <i>display</i> property value of the <b>loading</b>
       element throughout time.
     </p>
   )}

@@ -26,7 +26,6 @@ export default defineConfig({
           'word-break': 'break-word',
           margin: '0.2rem',
           padding: '0.15em 0.3em',
-          'border-radius': '0.2em',
           'background-color': 'var(--color-code-bg)',
         },
         'li code::after': {
@@ -41,7 +40,6 @@ export default defineConfig({
         'pre code': {
           margin: '0.2rem',
           padding: '0.15em 0.3em',
-          'border-radius': '0.2em',
           'background-color': 'var(--color-code-bg)',
         },
         p: {
@@ -61,7 +59,6 @@ export default defineConfig({
           'word-break': 'break-word',
           margin: '0.2rem',
           padding: '0.15em 0.3em',
-          'border-radius': '0.2em',
           'background-color': 'var(--color-code-bg)',
         },
         img: {

@@ -45,7 +45,7 @@ Next we will dive deep into <a href="https://github.com/danielcaldas/el-converso
 ```
 
 <small>
-  You can read more about <i>sourceMapPathOverrides</i> property in the official{" "}
+  You can read more about <i>sourceMapPathOverrides</i> property in the official
   <a
     href="https://github.com/Microsoft/vscode-chrome-debug/blob/master/README.md#sourcemaps"
     target="_blank"
