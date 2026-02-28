@@ -1,0 +1,41 @@
+---
+import Layout from '@layouts/Layout.astro'
+import {formatDateMD} from '@utils/format'
+export const prerender = true
+
+const all_issues = await Astro.glob('../../content/the-weekly-inference/*.{md,mdx}')
+const issues = all_issues
+    .map((i) => {
+        const dirs = i.file.split('/')
+        const fileName = dirs.pop().split('.').shift()
+        return {
+            ...i.frontmatter,
+            url: `/the-weekly-inference/${fileName}/`,
+        }
+    })
+    .filter((i) => !i.draft)
+    .sort((a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime())
+---
+
+<Layout title="the weekly inference">
+    <main class="mt-8">
+        <div class="mb-6">
+            <h1 class="text-2xl font-bold">the weekly inference</h1>
+            <p class="text-sm opacity-60 mt-1 italic">An AI-generated weekly editorial on artificial intelligence.</p>
+        </div>
+        <ul class="px-2">
+            {
+                issues.map((issue) => (
+                    <li class="my-1 flex transition-all duration-300">
+                        <span style={{flex: '0 0 5rem'}}>
+                            <time class="mr-2">{formatDateMD(issue.pubDate)}</time>
+                        </span>
+                        <a rel="prefetch-intent" href={issue.url} class="panda-link-static">
+                            {issue.title}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </main>
+</Layout>

@@ -7,6 +7,7 @@ export const PandaConfig = {
   navbar: [
     { title: 'projects', url: '/projects/' },
     { title: 'bookshelf', url: '/bookshelf/' },
+    { title: 'weekly inference', url: '/the-weekly-inference/' },
   ],
   footer: [
     { title: '~/', url: '/' },

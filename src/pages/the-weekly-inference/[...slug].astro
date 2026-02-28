@@ -1,0 +1,26 @@
+---
+import WeeklyInferenceLayout from '@layouts/WeeklyInferenceLayout.astro'
+export const prerender = true
+
+export async function getStaticPaths() {
+    const all_issues = await Astro.glob('../../content/the-weekly-inference/*.{md,mdx}')
+    return all_issues.map((issue) => {
+        const dirs = issue.file.split('/')
+        const fileName = dirs.pop().split('.').shift()
+
+        return {
+            params: {
+                slug: `${fileName}`,
+            },
+            props: {
+                issue: issue,
+            },
+        }
+    })
+}
+const {Content, frontmatter} = Astro.props.issue
+---
+
+<WeeklyInferenceLayout FrontMatter={frontmatter}>
+    <Content />
+</WeeklyInferenceLayout>
