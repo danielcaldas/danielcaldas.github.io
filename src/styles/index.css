@@ -97,7 +97,7 @@ a.animated.active:after {
 }
 
 .max-width {
-    @apply max-w-[65ch] mx-auto;
+    @apply max-w-4xl mx-auto;
 }
 
 .panda-text {

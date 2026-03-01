@@ -36,10 +36,10 @@ const fullTitle = `${title} - ${defaultTitle}`
             gtag('config', 'G-7BXSF0SPF6');
         </script>
     </head>
-    <body class="max-width">
+    <body class="max-width flex flex-col min-h-screen">
         <Header />
         {navbar && <Navbar />}
-        <main>
+        <main class="flex-1">
             <slot />
         </main>
         <Footer />

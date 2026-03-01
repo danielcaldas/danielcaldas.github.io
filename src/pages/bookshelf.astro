@@ -1,7 +1,681 @@
 ---
-import BlogListLayout from '@layouts/BlogListLayout.astro'
+import Layout from '../layouts/Layout.astro'
 
 export const prerender = true
+
+interface Book {
+    id: number
+    title: string
+    author: string
+    rating: number
+    avgRating: number
+    pages: number
+    link: string
+    isReading: boolean
+    color: string
+    height: number
+    readAt: Date | null
+}
+
+function extractText(s: string): string {
+    const cdata = s.match(/<!\[CDATA\[([\s\S]*?)\]\]>/)
+    if (cdata) return cdata[1].trim()
+    return s.replace(/<[^>]+>/g, '').trim()
+}
+
+function parseRSS(xml: string, isReading: boolean): Omit<Book, 'id' | 'color' | 'height'>[] {
+    const books: Omit<Book, 'id' | 'color' | 'height'>[] = []
+    const items = xml.match(/<item>([\s\S]*?)<\/item>/g) ?? []
+    for (const item of items) {
+        const titleRaw = item.match(/<title>([\s\S]*?)<\/title>/)?.[1] ?? ''
+        const title = extractText(titleRaw)
+        if (!title) continue
+        const author = extractText(item.match(/<author_name>([\s\S]*?)<\/author_name>/)?.[1] ?? '')
+        const rating = parseInt(item.match(/<user_rating>\s*(\d+)\s*<\/user_rating>/)?.[1] ?? '0', 10)
+        const avgRating = parseFloat(item.match(/<average_rating>\s*([\d.]+)\s*<\/average_rating>/)?.[1] ?? '0')
+        const pages = parseInt(item.match(/<num_pages>\s*(\d+)\s*<\/num_pages>/)?.[1] ?? '0', 10)
+        const link = extractText(item.match(/<link>([\s\S]*?)<\/link>/)?.[1] ?? '')
+        const readAtStr = item.match(/<user_read_at>\s*(.*?)\s*<\/user_read_at>/)?.[1] ?? ''
+        let readAt: Date | null = null
+        if (readAtStr) {
+            const d = new Date(readAtStr)
+            if (!isNaN(d.getTime())) readAt = d
+        }
+        books.push({ title, author, rating, avgRating, pages, link, isReading, readAt })
+    }
+    return books
+}
+
+async function fetchShelf(url: string, isReading: boolean): Promise<Omit<Book, 'id' | 'color' | 'height'>[]> {
+    try {
+        const res = await fetch(url)
+        if (!res.ok) return []
+        return parseRSS(await res.text(), isReading)
+    } catch {
+        return []
+    }
+}
+
+const SPINE_COLORS = ['#c4a265', '#a67c52', '#8b5e3c', '#d4b483', '#7a5230', '#b8926a', '#9e7a4a', '#c8a87e']
+
+function bookHeight(pages: number): number {
+    if (!pages || pages < 200) return 80
+    if (pages < 400) return 100
+    return 120
+}
+
+function starRating(n: number): string {
+    const r = Math.max(0, Math.min(5, Math.round(n)))
+    return '★'.repeat(r) + '☆'.repeat(5 - r)
+}
+
+function formatDate(d: Date | null): string {
+    if (!d || isNaN(d.getTime())) return ''
+    return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
+}
+
+function spineLabel(title: string): string {
+    return title.length > 14 ? title.slice(0, 13) + '…' : title
+}
+
+const [rawReading, rawRead] = await Promise.all([
+    fetchShelf('https://www.goodreads.com/review/list_rss/182871230?shelf=currently-reading', true),
+    fetchShelf('https://www.goodreads.com/review/list_rss/182871230?shelf=read', false),
+])
+
+const allBooks: Book[] = [...rawReading, ...rawRead].map((b, i) => ({
+    ...b,
+    id: i,
+    color: SPINE_COLORS[i % SPINE_COLORS.length],
+    height: bookHeight(b.pages),
+}))
+
+const readingBooks = allBooks.slice(0, rawReading.length)
+const readBooks = allBooks.slice(rawReading.length)
+
+const BOOKS_PER_ROW = 10
+const readRows: Book[][] = []
+for (let i = 0; i < readBooks.length; i += BOOKS_PER_ROW) {
+    readRows.push(readBooks.slice(i, i + BOOKS_PER_ROW))
+}
+
+const isEmpty = allBooks.length === 0
+
+const reviewList: Book[] = [
+    ...readingBooks,
+    ...[...readBooks].sort((a, b) => {
+        if (!a.readAt && !b.readAt) return 0
+        if (!a.readAt) return 1
+        if (!b.readAt) return -1
+        return b.readAt.getTime() - a.readAt.getTime()
+    }),
+]
 ---
 
-<BlogListLayout tag="" category="" source="bookshelf" />
+<Layout title="bookshelf">
+    <div class="bookshelf-page">
+        {
+            isEmpty ? (
+                <pre class="text-sm leading-relaxed opacity-70">╔════════════════════╗
+║  shelf is empty... ║
+╚════════════════════╝</pre>
+            ) : (
+                <div class="page-split">
+                    <!-- LEFT: bookcase -->
+                    <div class="panel-bookshelf">
+                        <div class="bookcase">
+                            {readingBooks.length > 0 && (
+                                <div class="shelf reading-shelf">
+                                    <div class="shelf-label">📖 currently reading</div>
+                                    <div class="shelf-row">
+                                        {readingBooks.map((book) => (
+                                            <div class="book-wrapper">
+                                                <div
+                                                    class="book reading"
+                                                    data-book-id={book.id}
+                                                    style={`background-color: ${book.color}; height: ${book.height}px;`}
+                                                >
+                                                    <span class="spine-text">{spineLabel(book.title)}</span>
+                                                </div>
+                                                <div class="tooltip">
+                                                    <div class="tooltip-title">{book.title}</div>
+                                                    <div class="tooltip-author">{book.author}</div>
+                                                    <div class="tooltip-ratings">
+                                                        {book.rating > 0 && (
+                                                            <div class="tooltip-my-rating">
+                                                                <span class="rating-label">Daniel's</span>{' '}
+                                                                {starRating(book.rating)}
+                                                            </div>
+                                                        )}
+                                                        {book.avgRating > 0 && (
+                                                            <div class="tooltip-avg-rating">
+                                                                <span class="rating-label">avg</span>{' '}
+                                                                {book.avgRating.toFixed(2)}
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                    <div class="tooltip-badge">currently reading</div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <div class="shelf-plank" />
+                                </div>
+                            )}
+
+                            {readRows.map((row) => (
+                                <div class="shelf">
+                                    <div class="shelf-row">
+                                        {row.map((book) => (
+                                            <div class="book-wrapper">
+                                                <div
+                                                    class="book"
+                                                    data-book-id={book.id}
+                                                    style={`background-color: ${book.color}; height: ${book.height}px;`}
+                                                >
+                                                    <span class="spine-text">{spineLabel(book.title)}</span>
+                                                </div>
+                                                <div class="tooltip">
+                                                    <div class="tooltip-title">{book.title}</div>
+                                                    <div class="tooltip-author">{book.author}</div>
+                                                    <div class="tooltip-ratings">
+                                                        {book.rating > 0 && (
+                                                            <div class="tooltip-my-rating">
+                                                                <span class="rating-label">Daniel's</span>{' '}
+                                                                {starRating(book.rating)}
+                                                            </div>
+                                                        )}
+                                                        {book.avgRating > 0 && (
+                                                            <div class="tooltip-avg-rating">
+                                                                <span class="rating-label">avg</span>{' '}
+                                                                {book.avgRating.toFixed(2)}
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <div class="shelf-plank" />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: reviews -->
+                    <div class="panel-reviews">
+                        <div class="reviews-header">
+                            my reviews <span class="reviews-count">({reviewList.length})</span>
+                        </div>
+                        <div class="reviews-list">
+                            {reviewList.map((book) => (
+                                <a
+                                    class={`review-item${book.isReading ? ' review-reading' : ''}`}
+                                    href={book.link || '#'}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    data-book-id={book.id}
+                                >
+                                    <div class="review-title">{book.title}</div>
+                                    <div class="review-meta">
+                                        <span class="review-author">{book.author}</span>
+                                        {book.rating > 0 && (
+                                            <span class="review-stars">{starRating(book.rating)}</span>
+                                        )}
+                                        {book.readAt && (
+                                            <span class="review-date">{formatDate(book.readAt)}</span>
+                                        )}
+                                        {book.isReading && <span class="review-badge">reading</span>}
+                                    </div>
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+    </div>
+</Layout>
+
+<script>
+    // Cross-hover: review → book spine
+    document.querySelectorAll<HTMLElement>('.review-item').forEach((item) => {
+        const bookId = item.dataset.bookId
+        const bookEl = document.querySelector<HTMLElement>(`.book[data-book-id="${bookId}"]`)
+        if (!bookEl) return
+        item.addEventListener('mouseenter', () => bookEl.classList.add('highlighted'))
+        item.addEventListener('mouseleave', () => bookEl.classList.remove('highlighted'))
+    })
+
+    // Tooltip: position: fixed so it escapes overflow containers
+    document.querySelectorAll<HTMLElement>('.book-wrapper').forEach((wrapper) => {
+        const tip = wrapper.querySelector<HTMLElement>('.tooltip')
+        const book = wrapper.querySelector<HTMLElement>('.book')
+        if (!tip || !book) return
+
+        wrapper.addEventListener('mouseenter', () => {
+            const rect = book.getBoundingClientRect()
+            const cx = rect.left + rect.width / 2
+            // Clamp so tooltip stays within viewport horizontally
+            const clampedX = Math.max(120, Math.min(window.innerWidth - 120, cx))
+            tip.style.left = `${clampedX}px`
+            tip.style.top = `${rect.top - 14}px`
+            tip.style.transform = 'translateX(-50%) translateY(-100%)'
+            tip.style.opacity = '1'
+            tip.style.visibility = 'visible'
+        })
+
+        wrapper.addEventListener('mouseleave', () => {
+            tip.style.opacity = '0'
+            tip.style.visibility = 'hidden'
+        })
+    })
+
+    // Fit page-split to remaining viewport height
+    function fitToViewport() {
+        const el = document.querySelector<HTMLElement>('.page-split')
+        if (!el) return
+        const top = el.getBoundingClientRect().top
+        el.style.height = `${window.innerHeight - top - 8}px`
+    }
+    fitToViewport()
+    window.addEventListener('resize', fitToViewport)
+</script>
+
+<style is:global>
+    /* bookshelf page only — prevent body scroll, both panels scroll internally */
+    body {
+        overflow: hidden;
+        height: 100vh;
+    }
+</style>
+
+<style>
+    .bookshelf-page {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .page-split {
+        display: flex;
+        gap: 1.5rem;
+        overflow: hidden;
+        /* height is set dynamically by JS */
+    }
+
+    .panel-bookshelf {
+        flex: 0 0 62%;
+        min-width: 0;
+        height: 100%;
+        overflow-y: auto;
+    }
+
+    .panel-reviews {
+        flex: 1;
+        min-width: 0;
+        height: 100%;
+        overflow-y: auto;
+    }
+
+    /* thin scrollbar for reviews */
+    .panel-reviews::-webkit-scrollbar {
+        width: 4px;
+    }
+    .panel-reviews::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    .panel-reviews::-webkit-scrollbar-thumb {
+        background: rgba(138, 101, 32, 0.4);
+        border-radius: 2px;
+    }
+
+    /* ── bookcase ── */
+    .bookcase {
+        border: 2px solid #8a6520;
+        background: rgba(164, 120, 60, 0.04);
+        border-radius: 2px;
+    }
+
+    :root.dark .bookcase {
+        border-color: #c9952a;
+        background: rgba(201, 149, 42, 0.06);
+    }
+
+    .shelf {
+        padding: 1rem 1rem 0;
+    }
+
+    .reading-shelf {
+        background: rgba(201, 149, 42, 0.07);
+        border-bottom: 1px dashed #8a6520;
+    }
+
+    :root.dark .reading-shelf {
+        background: rgba(201, 149, 42, 0.1);
+        border-bottom-color: #c9952a;
+    }
+
+    .shelf-label {
+        font-size: 0.7rem;
+        color: #8a6520;
+        margin-bottom: 0.5rem;
+        letter-spacing: 0.05em;
+    }
+
+    :root.dark .shelf-label {
+        color: #c9952a;
+    }
+
+    .shelf-row {
+        display: flex;
+        align-items: flex-end;
+        gap: 3px;
+        min-height: 88px;
+        flex-wrap: nowrap;
+    }
+
+    .shelf-plank {
+        height: 10px;
+        background: linear-gradient(to bottom, #a07828, #7a5a18);
+        margin-top: 3px;
+        border-radius: 1px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);
+    }
+
+    :root.dark .shelf-plank {
+        background: linear-gradient(to bottom, #6b4f10, #4a360a);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    /* ── book spine ── */
+    .book-wrapper {
+        position: relative;
+        display: inline-flex;
+        flex-shrink: 0;
+    }
+
+    .book {
+        width: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border-left: 1px solid rgba(0, 0, 0, 0.18);
+        border-right: 1px solid rgba(0, 0, 0, 0.12);
+        border-top: 2px solid rgba(255, 255, 255, 0.25);
+        box-shadow: 2px 0 4px rgba(0, 0, 0, 0.22);
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .book:hover,
+    .book.highlighted {
+        transform: translateY(-5px);
+        box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3), 0 0 8px rgba(201, 149, 42, 0.25);
+        z-index: 10;
+        position: relative;
+    }
+
+    .book.reading {
+        border: 2px solid #c9952a;
+        transform: translateY(-6px);
+        box-shadow:
+            0 0 10px rgba(201, 149, 42, 0.45),
+            2px 0 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .book.reading:hover,
+    .book.reading.highlighted {
+        transform: translateY(-10px);
+        box-shadow:
+            0 0 14px rgba(201, 149, 42, 0.6),
+            2px 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .spine-text {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        font-size: 8px;
+        font-family: ui-monospace, monospace;
+        color: rgba(255, 255, 255, 0.82);
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
+        overflow: hidden;
+        white-space: nowrap;
+        max-height: calc(100% - 8px);
+        padding: 3px 0;
+        pointer-events: none;
+        letter-spacing: 0.4px;
+        user-select: none;
+    }
+
+    /* ── tooltip — position: fixed set by JS to escape overflow containers ── */
+    .tooltip {
+        position: fixed;
+        background: #1c1a14;
+        color: #e8e2d5;
+        border: 1px solid #a07828;
+        padding: 8px 12px;
+        border-radius: 3px;
+        min-width: 160px;
+        max-width: 230px;
+        font-size: 11px;
+        font-family: ui-monospace, monospace;
+        line-height: 1.55;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.15s ease;
+        pointer-events: none;
+        z-index: 1000;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    :root.dark .tooltip {
+        background: #0d0c09;
+        border-color: #c9952a;
+    }
+
+    .tooltip::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 5px solid transparent;
+        border-top-color: #a07828;
+    }
+
+    :root.dark .tooltip::after {
+        border-top-color: #c9952a;
+    }
+
+    .tooltip-title {
+        font-weight: bold;
+        color: #f0ead8;
+        margin-bottom: 3px;
+        font-size: 11px;
+    }
+
+    .tooltip-author {
+        color: #a89060;
+        font-size: 10px;
+        margin-bottom: 2px;
+    }
+
+    .tooltip-ratings {
+        margin-top: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .tooltip-my-rating {
+        font-size: 10px;
+        color: #c9952a;
+        letter-spacing: 0.5px;
+    }
+
+    .tooltip-avg-rating {
+        font-size: 9px;
+        color: #9a8050;
+    }
+
+    .rating-label {
+        font-size: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: #706050;
+        margin-right: 2px;
+    }
+
+    .tooltip-badge {
+        display: inline-block;
+        background: rgba(201, 149, 42, 0.18);
+        border: 1px solid #c9952a;
+        color: #c9952a;
+        font-size: 9px;
+        padding: 1px 5px;
+        border-radius: 2px;
+        margin-top: 6px;
+        letter-spacing: 0.03em;
+    }
+
+    /* ── reviews panel ── */
+    .reviews-header {
+        font-size: 0.7rem;
+        letter-spacing: 0.05em;
+        color: #8a6520;
+        margin-bottom: 0.5rem;
+        font-style: italic;
+    }
+
+    :root.dark .reviews-header {
+        color: #c9952a;
+    }
+
+    .reviews-count {
+        opacity: 0.55;
+    }
+
+    .reviews-list {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid rgba(138, 101, 32, 0.3);
+        border-radius: 2px;
+    }
+
+    :root.dark .reviews-list {
+        border-color: rgba(201, 149, 42, 0.2);
+    }
+
+    .review-item {
+        display: block;
+        padding: 6px 8px;
+        text-decoration: none;
+        border-left: 2px solid transparent;
+        border-bottom: 1px solid rgba(138, 101, 32, 0.12);
+        transition:
+            background 0.1s,
+            border-color 0.1s;
+        color: inherit;
+    }
+
+    .review-item:last-child {
+        border-bottom: none;
+    }
+
+    .review-item:hover,
+    .review-item.active {
+        background: rgba(164, 120, 60, 0.1);
+        border-left-color: #8a6520;
+    }
+
+    :root.dark .review-item:hover,
+    :root.dark .review-item.active {
+        background: rgba(201, 149, 42, 0.08);
+        border-left-color: #c9952a;
+    }
+
+    .review-reading {
+        background: rgba(201, 149, 42, 0.05);
+        border-left-color: rgba(201, 149, 42, 0.5) !important;
+    }
+
+    .review-title {
+        font-size: 11px;
+        color: #2c2418;
+        font-weight: 500;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1.4;
+    }
+
+    :root.dark .review-title {
+        color: #e0d8c8;
+    }
+
+    .review-meta {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 2px;
+    }
+
+    .review-author {
+        font-size: 9px;
+        color: #8a7050;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 120px;
+    }
+
+    :root.dark .review-author {
+        color: #a08858;
+    }
+
+    .review-stars {
+        font-size: 10px;
+        color: #c9952a;
+        letter-spacing: 0.5px;
+        flex-shrink: 0;
+    }
+
+    .review-date {
+        font-size: 9px;
+        color: #aaa;
+        margin-left: auto;
+        flex-shrink: 0;
+    }
+
+    :root.dark .review-date {
+        color: #666;
+    }
+
+    .review-badge {
+        font-size: 8px;
+        border: 1px solid #c9952a;
+        color: #c9952a;
+        padding: 0 3px;
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    /* ── responsive ── */
+    @media (max-width: 640px) {
+        .page-split {
+            flex-direction: column;
+            overflow-y: auto;
+            height: auto !important;
+        }
+        .panel-bookshelf,
+        .panel-reviews {
+            flex: none;
+            width: 100%;
+            height: auto;
+            overflow-y: visible;
+        }
+    }
+</style>

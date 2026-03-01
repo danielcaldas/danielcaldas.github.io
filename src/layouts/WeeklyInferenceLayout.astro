@@ -85,9 +85,15 @@ const title = FrontMatter.title
     <div class="notification notification-warning ai-banner mt-6 font-bold">
         This content is 100% AI-generated. No human editing or oversight.
     </div>
-    <article class="prose dark:prose-invert prose-stone max-w-prose mt-6">
+    <article class="prose dark:prose-invert prose-stone max-w-none mt-6" id="wi-content">
         <slot />
     </article>
+    <script>
+        document.querySelectorAll('#wi-content a').forEach((a) => {
+            a.setAttribute('target', '_blank')
+            a.setAttribute('rel', 'noopener noreferrer')
+        })
+    </script>
     {
         FrontMatter.lastModified && FrontMatter.pubDate !== FrontMatter.lastModified && (
             <div class="mt-9 flex text-sm font-italic opacity-80">
