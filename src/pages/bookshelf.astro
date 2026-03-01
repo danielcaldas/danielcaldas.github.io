@@ -84,8 +84,10 @@ function formatDate(d: Date | null): string {
     return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
 }
 
-function spineLabel(title: string): string {
-    return title.length > 18 ? title.slice(0, 17) + '…' : title
+// At 11px/600 weight in vertical-rl, each char ≈ 12px; 10px total padding
+function spineLabel(title: string, heightPx: number): string {
+    const maxChars = Math.max(4, Math.floor((heightPx - 10) / 12))
+    return title.length > maxChars ? title.slice(0, maxChars - 1) + '…' : title
 }
 
 const [rawReading, rawRead] = await Promise.all([
@@ -163,7 +165,7 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
                                                     data-book-id={book.id}
                                                     style={`background-color: ${book.color}; height: ${book.height}px;`}
                                                 >
-                                                    <span class="spine-text" style={`color: ${book.textColor};`}>{spineLabel(book.title)}</span>
+                                                    <span class="spine-text" style={`color: ${book.textColor};`}>{spineLabel(book.title, book.height)}</span>
                                                 </div>
                                                 <div class="tooltip">
                                                     <div class="tooltip-title">{book.title}</div>
@@ -203,7 +205,7 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
                                                     data-book-id={book.id}
                                                     style={`background-color: ${book.color}; height: ${book.height}px;`}
                                                 >
-                                                    <span class="spine-text" style={`color: ${book.textColor};`}>{spineLabel(book.title)}</span>
+                                                    <span class="spine-text" style={`color: ${book.textColor};`}>{spineLabel(book.title, book.height)}</span>
                                                 </div>
                                                 <div class="tooltip">
                                                     <div class="tooltip-title">{book.title}</div>
@@ -236,9 +238,6 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
 
                     <!-- RIGHT: reviews -->
                     <div class="panel-reviews">
-                        <div class="reviews-header">
-                            my reviews <span class="reviews-count">({reviewList.length})</span>
-                        </div>
                         <div class="reviews-list">
                             {reviewList.map((book) => (
                                 <a
@@ -270,36 +269,46 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
 </Layout>
 
 <script>
-    // Cross-hover: review → book spine
-    document.querySelectorAll<HTMLElement>('.review-item').forEach((item) => {
-        const bookId = item.dataset.bookId
-        const bookEl = document.querySelector<HTMLElement>(`.book[data-book-id="${bookId}"]`)
-        if (!bookEl) return
-        item.addEventListener('mouseenter', () => bookEl.classList.add('highlighted'))
-        item.addEventListener('mouseleave', () => bookEl.classList.remove('highlighted'))
-    })
-
-    // Tooltip: position: fixed so it escapes overflow containers
-    document.querySelectorAll<HTMLElement>('.book-wrapper').forEach((wrapper) => {
+    function showTooltip(wrapper: HTMLElement) {
         const tip = wrapper.querySelector<HTMLElement>('.tooltip')
         const book = wrapper.querySelector<HTMLElement>('.book')
         if (!tip || !book) return
+        const rect = book.getBoundingClientRect()
+        const cx = rect.left + rect.width / 2
+        const clampedX = Math.max(120, Math.min(window.innerWidth - 120, cx))
+        tip.style.left = `${clampedX}px`
+        tip.style.top = `${rect.top - 14}px`
+        tip.style.transform = 'translateX(-50%) translateY(-100%)'
+        tip.style.opacity = '1'
+        tip.style.visibility = 'visible'
+    }
 
-        wrapper.addEventListener('mouseenter', () => {
-            const rect = book.getBoundingClientRect()
-            const cx = rect.left + rect.width / 2
-            // Clamp so tooltip stays within viewport horizontally
-            const clampedX = Math.max(120, Math.min(window.innerWidth - 120, cx))
-            tip.style.left = `${clampedX}px`
-            tip.style.top = `${rect.top - 14}px`
-            tip.style.transform = 'translateX(-50%) translateY(-100%)'
-            tip.style.opacity = '1'
-            tip.style.visibility = 'visible'
+    function hideTooltip(wrapper: HTMLElement) {
+        const tip = wrapper.querySelector<HTMLElement>('.tooltip')
+        if (!tip) return
+        tip.style.opacity = '0'
+        tip.style.visibility = 'hidden'
+    }
+
+    // Book spine hover
+    document.querySelectorAll<HTMLElement>('.book-wrapper').forEach((wrapper) => {
+        wrapper.addEventListener('mouseenter', () => showTooltip(wrapper))
+        wrapper.addEventListener('mouseleave', () => hideTooltip(wrapper))
+    })
+
+    // Review hover → highlight + tooltip on the matching book
+    document.querySelectorAll<HTMLElement>('.review-item').forEach((item) => {
+        const bookId = item.dataset.bookId
+        const bookEl = document.querySelector<HTMLElement>(`.book[data-book-id="${bookId}"]`)
+        const wrapper = bookEl?.parentElement as HTMLElement | null
+        if (!bookEl || !wrapper) return
+        item.addEventListener('mouseenter', () => {
+            bookEl.classList.add('highlighted')
+            showTooltip(wrapper)
         })
-
-        wrapper.addEventListener('mouseleave', () => {
-            tip.style.opacity = '0'
-            tip.style.visibility = 'hidden'
+        item.addEventListener('mouseleave', () => {
+            bookEl.classList.remove('highlighted')
+            hideTooltip(wrapper)
         })
     })
 
@@ -436,6 +445,7 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
         display: flex;
         align-items: center;
         justify-content: center;
+        overflow: hidden;
         cursor: pointer;
         border-left: 1px solid rgba(0, 0, 0, 0.18);
         border-right: 1px solid rgba(0, 0, 0, 0.12);

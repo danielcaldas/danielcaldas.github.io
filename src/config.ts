@@ -11,10 +11,11 @@ export const PandaConfig = {
   ],
   footer: [
     { title: '~/', url: '/' },
+    { title: 'contact', url: 'mailto:caldasjdaniel@gmail.com' },
+    { title: 'x', url: 'https://x.com/_danielcaldas' },
+    { title: 'linkedin', url: 'https://www.linkedin.com/in/daniel-caldas/' },
+    { title: 'github', url: 'https://github.com/danielcaldas/danielcaldas.github.io' },
     { title: 'rss', url: '/rss.xml' },
     { title: 'weekly inference rss', url: '/the-weekly-inference/rss.xml' },
-    { title: 'contact', url: 'mailto:caldasjdaniel@gmail.com' },
-    { title: 'github', url: 'https://github.com/danielcaldas/danielcaldas.github.io' },
-    { title: 'linkedin', url: 'https://www.linkedin.com/in/daniel-caldas/' },
   ],
 }
