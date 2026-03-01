@@ -13,6 +13,7 @@ interface Book {
     link: string
     isReading: boolean
     color: string
+    textColor: string
     height: number
     readAt: Date | null
 }
@@ -35,7 +36,7 @@ function parseRSS(xml: string, isReading: boolean): Omit<Book, 'id' | 'color' | 
         const avgRating = parseFloat(item.match(/<average_rating>\s*([\d.]+)\s*<\/average_rating>/)?.[1] ?? '0')
         const pages = parseInt(item.match(/<num_pages>\s*(\d+)\s*<\/num_pages>/)?.[1] ?? '0', 10)
         const link = extractText(item.match(/<link>([\s\S]*?)<\/link>/)?.[1] ?? '')
-        const readAtStr = item.match(/<user_read_at>\s*(.*?)\s*<\/user_read_at>/)?.[1] ?? ''
+        const readAtStr = extractText(item.match(/<user_read_at>([\s\S]*?)<\/user_read_at>/)?.[1] ?? '')
         let readAt: Date | null = null
         if (readAtStr) {
             const d = new Date(readAtStr)
@@ -58,10 +59,19 @@ async function fetchShelf(url: string, isReading: boolean): Promise<Omit<Book, '
 
 const SPINE_COLORS = ['#c4a265', '#a67c52', '#8b5e3c', '#d4b483', '#7a5230', '#b8926a', '#9e7a4a', '#c8a87e']
 
+// Pick dark or white ink based on spine luminance
+function spineTextColor(hex: string): string {
+    const r = parseInt(hex.slice(1, 3), 16)
+    const g = parseInt(hex.slice(3, 5), 16)
+    const b = parseInt(hex.slice(5, 7), 16)
+    const lum = (0.299 * r + 0.587 * g + 0.114 * b) / 255
+    return lum > 0.45 ? 'rgba(0,0,0,0.8)' : 'rgba(255,255,255,0.92)'
+}
+
 function bookHeight(pages: number): number {
-    if (!pages || pages < 200) return 80
-    if (pages < 400) return 100
-    return 120
+    if (!pages || pages < 200) return 95
+    if (pages < 400) return 115
+    return 135
 }
 
 function starRating(n: number): string {
@@ -75,7 +85,7 @@ function formatDate(d: Date | null): string {
 }
 
 function spineLabel(title: string): string {
-    return title.length > 14 ? title.slice(0, 13) + '…' : title
+    return title.length > 18 ? title.slice(0, 17) + '…' : title
 }
 
 const [rawReading, rawRead] = await Promise.all([
@@ -83,33 +93,52 @@ const [rawReading, rawRead] = await Promise.all([
     fetchShelf('https://www.goodreads.com/review/list_rss/182871230?shelf=read', false),
 ])
 
-const allBooks: Book[] = [...rawReading, ...rawRead].map((b, i) => ({
-    ...b,
-    id: i,
-    color: SPINE_COLORS[i % SPINE_COLORS.length],
-    height: bookHeight(b.pages),
-}))
+const allBooks: Book[] = [...rawReading, ...rawRead].map((b, i) => {
+    const color = SPINE_COLORS[i % SPINE_COLORS.length]
+    return {
+        ...b,
+        id: i,
+        color,
+        textColor: spineTextColor(color),
+        height: bookHeight(b.pages),
+    }
+})
+
 
 const readingBooks = allBooks.slice(0, rawReading.length)
 const readBooks = allBooks.slice(rawReading.length)
 
-const BOOKS_PER_ROW = 10
-const readRows: Book[][] = []
-for (let i = 0; i < readBooks.length; i += BOOKS_PER_ROW) {
-    readRows.push(readBooks.slice(i, i + BOOKS_PER_ROW))
-}
-
-const isEmpty = allBooks.length === 0
-
-const reviewList: Book[] = [
-    ...readingBooks,
-    ...[...readBooks].sort((a, b) => {
+function sortByDateDesc(books: Book[]): Book[] {
+    return [...books].sort((a, b) => {
         if (!a.readAt && !b.readAt) return 0
         if (!a.readAt) return 1
         if (!b.readAt) return -1
         return b.readAt.getTime() - a.readAt.getTime()
-    }),
-]
+    })
+}
+
+function rowYearLabel(books: Book[]): string {
+    const years = books
+        .filter((b) => b.readAt && !isNaN(b.readAt.getTime()))
+        .map((b) => b.readAt!.getFullYear())
+    if (!years.length) return ''
+    const min = Math.min(...years)
+    const max = Math.max(...years)
+    return min === max ? `${min}` : `${min} – ${max}`
+}
+
+const sortedReadBooks = sortByDateDesc(readBooks)
+
+const BOOKS_PER_ROW = 10
+const readRows: { books: Book[]; yearLabel: string }[] = []
+for (let i = 0; i < sortedReadBooks.length; i += BOOKS_PER_ROW) {
+    const books = sortedReadBooks.slice(i, i + BOOKS_PER_ROW)
+    readRows.push({ books, yearLabel: rowYearLabel(books) })
+}
+
+const isEmpty = allBooks.length === 0
+
+const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
 ---
 
 <Layout title="bookshelf">
@@ -126,7 +155,6 @@ const reviewList: Book[] = [
                         <div class="bookcase">
                             {readingBooks.length > 0 && (
                                 <div class="shelf reading-shelf">
-                                    <div class="shelf-label">📖 currently reading</div>
                                     <div class="shelf-row">
                                         {readingBooks.map((book) => (
                                             <div class="book-wrapper">
@@ -135,7 +163,7 @@ const reviewList: Book[] = [
                                                     data-book-id={book.id}
                                                     style={`background-color: ${book.color}; height: ${book.height}px;`}
                                                 >
-                                                    <span class="spine-text">{spineLabel(book.title)}</span>
+                                                    <span class="spine-text" style={`color: ${book.textColor};`}>{spineLabel(book.title)}</span>
                                                 </div>
                                                 <div class="tooltip">
                                                     <div class="tooltip-title">{book.title}</div>
@@ -159,21 +187,23 @@ const reviewList: Book[] = [
                                             </div>
                                         ))}
                                     </div>
-                                    <div class="shelf-plank" />
+                                    <div class="shelf-plank">
+                                        <span class="shelf-year-label">currently reading</span>
+                                    </div>
                                 </div>
                             )}
 
-                            {readRows.map((row) => (
+                            {readRows.map(({ books, yearLabel }) => (
                                 <div class="shelf">
                                     <div class="shelf-row">
-                                        {row.map((book) => (
+                                        {books.map((book) => (
                                             <div class="book-wrapper">
                                                 <div
                                                     class="book"
                                                     data-book-id={book.id}
                                                     style={`background-color: ${book.color}; height: ${book.height}px;`}
                                                 >
-                                                    <span class="spine-text">{spineLabel(book.title)}</span>
+                                                    <span class="spine-text" style={`color: ${book.textColor};`}>{spineLabel(book.title)}</span>
                                                 </div>
                                                 <div class="tooltip">
                                                     <div class="tooltip-title">{book.title}</div>
@@ -196,7 +226,9 @@ const reviewList: Book[] = [
                                             </div>
                                         ))}
                                     </div>
-                                    <div class="shelf-plank" />
+                                    <div class="shelf-plank">
+                                        {yearLabel && <span class="shelf-year-label">{yearLabel}</span>}
+                                    </div>
                                 </div>
                             ))}
                         </div>
@@ -356,22 +388,11 @@ const reviewList: Book[] = [
         border-bottom-color: #c9952a;
     }
 
-    .shelf-label {
-        font-size: 0.7rem;
-        color: #8a6520;
-        margin-bottom: 0.5rem;
-        letter-spacing: 0.05em;
-    }
-
-    :root.dark .shelf-label {
-        color: #c9952a;
-    }
-
     .shelf-row {
         display: flex;
         align-items: flex-end;
-        gap: 3px;
-        min-height: 88px;
+        gap: 4px;
+        min-height: 120px;
         flex-wrap: nowrap;
     }
 
@@ -381,11 +402,26 @@ const reviewList: Book[] = [
         margin-top: 3px;
         border-radius: 1px;
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     :root.dark .shelf-plank {
         background: linear-gradient(to bottom, #6b4f10, #4a360a);
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    .shelf-year-label {
+        font-size: 9px;
+        font-weight: 600;
+        font-family: ui-monospace, monospace;
+        color: rgba(255, 255, 255, 0.88);
+        letter-spacing: 0.1em;
+        white-space: nowrap;
+        pointer-events: none;
+        user-select: none;
     }
 
     /* ── book spine ── */
@@ -396,7 +432,7 @@ const reviewList: Book[] = [
     }
 
     .book {
-        width: 22px;
+        width: 28px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -435,14 +471,15 @@ const reviewList: Book[] = [
     .spine-text {
         writing-mode: vertical-rl;
         text-orientation: mixed;
-        font-size: 8px;
+        font-size: 11px;
+        font-weight: 600;
         font-family: ui-monospace, monospace;
-        color: rgba(255, 255, 255, 0.82);
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
+        /* color set per-book via inline style based on spine luminance */
+        text-shadow: none;
         overflow: hidden;
         white-space: nowrap;
         max-height: calc(100% - 8px);
-        padding: 3px 0;
+        padding: 5px 0;
         pointer-events: none;
         letter-spacing: 0.4px;
         user-select: none;

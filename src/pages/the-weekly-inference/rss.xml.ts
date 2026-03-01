@@ -7,7 +7,7 @@ const { site } = PandaConfig
 
 export const prerender = true
 
-const parser = new MarkdownIt()
+const parser = new MarkdownIt({ html: true })
 
 export async function GET() {
     const issues = await getCollection('the-weekly-inference')

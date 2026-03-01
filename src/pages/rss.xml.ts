@@ -6,7 +6,7 @@ const { site, description, title } = PandaConfig
 
 export const prerender = true
 
-const parser = new MarkdownIt()
+const parser = new MarkdownIt({ html: true })
 
 export async function GET({ params }) {
     const blog = await getCollection('posts')
