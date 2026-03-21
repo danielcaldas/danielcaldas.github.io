@@ -16,6 +16,7 @@ interface Book {
     textColor: string
     height: number
     readAt: Date | null
+    imageUrl: string
 }
 
 function extractText(s: string): string {
@@ -42,7 +43,8 @@ function parseRSS(xml: string, isReading: boolean): Omit<Book, 'id' | 'color' | 
             const d = new Date(readAtStr)
             if (!isNaN(d.getTime())) readAt = d
         }
-        books.push({ title, author, rating, avgRating, pages, link, isReading, readAt })
+        const imageUrl = extractText(item.match(/<book_image_url>([\s\S]*?)<\/book_image_url>/)?.[1] ?? '')
+        books.push({ title, author, rating, avgRating, pages, link, isReading, readAt, imageUrl })
     }
     return books
 }
@@ -58,6 +60,12 @@ async function fetchShelf(url: string, isReading: boolean): Promise<Omit<Book, '
 }
 
 const SPINE_COLORS = ['#c4a265', '#a67c52', '#8b5e3c', '#d4b483', '#7a5230', '#b8926a', '#9e7a4a', '#c8a87e']
+
+// Goodreads thumbnails have size codes like _SX75_ or _SY160_ — swap for a larger size
+function upgradeImageUrl(url: string): string {
+    if (!url) return url
+    return url.replace(/_S[XY]\d+_/g, '_SX315_')
+}
 
 // Pick dark or white ink based on spine luminance
 function spineTextColor(hex: string): string {
@@ -103,6 +111,7 @@ const allBooks: Book[] = [...rawReading, ...rawRead].map((b, i) => {
         color,
         textColor: spineTextColor(color),
         height: bookHeight(b.pages),
+        imageUrl: upgradeImageUrl(b.imageUrl),
     }
 })
 
@@ -161,13 +170,14 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
                                         {readingBooks.map((book) => (
                                             <div class="book-wrapper">
                                                 <div
-                                                    class="book reading"
+                                                    class={`book reading${book.imageUrl ? ' has-cover' : ''}`}
                                                     data-book-id={book.id}
-                                                    style={`background-color: ${book.color}; height: ${book.height}px;`}
+                                                    style={`${book.imageUrl ? `background-image: url('${book.imageUrl}');` : `background-color: ${book.color};`} height: ${book.height}px;`}
                                                 >
-                                                    <span class="spine-text" style={`color: ${book.textColor};`}>{spineLabel(book.title, book.height)}</span>
+                                                    {!book.imageUrl && <span class="spine-text" style={`color: ${book.textColor};`}>{spineLabel(book.title, book.height)}</span>}
                                                 </div>
                                                 <div class="tooltip">
+                                                    {book.imageUrl && <img class="tooltip-cover" src={book.imageUrl} alt="" loading="lazy" />}
                                                     <div class="tooltip-title">{book.title}</div>
                                                     <div class="tooltip-author">{book.author}</div>
                                                     <div class="tooltip-ratings">
@@ -201,13 +211,14 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
                                         {books.map((book) => (
                                             <div class="book-wrapper">
                                                 <div
-                                                    class="book"
+                                                    class={`book${book.imageUrl ? ' has-cover' : ''}`}
                                                     data-book-id={book.id}
-                                                    style={`background-color: ${book.color}; height: ${book.height}px;`}
+                                                    style={`${book.imageUrl ? `background-image: url('${book.imageUrl}');` : `background-color: ${book.color};`} height: ${book.height}px;`}
                                                 >
-                                                    <span class="spine-text" style={`color: ${book.textColor};`}>{spineLabel(book.title, book.height)}</span>
+                                                    {!book.imageUrl && <span class="spine-text" style={`color: ${book.textColor};`}>{spineLabel(book.title, book.height)}</span>}
                                                 </div>
                                                 <div class="tooltip">
+                                                    {book.imageUrl && <img class="tooltip-cover" src={book.imageUrl} alt="" loading="lazy" />}
                                                     <div class="tooltip-title">{book.title}</div>
                                                     <div class="tooltip-author">{book.author}</div>
                                                     <div class="tooltip-ratings">
@@ -495,6 +506,15 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
         user-select: none;
     }
 
+    /* ── book cover image spine ── */
+    .book.has-cover {
+        background-size: cover;
+        background-position: center top;
+        border-left: 1px solid rgba(0, 0, 0, 0.25);
+        border-right: 1px solid rgba(0, 0, 0, 0.15);
+        border-top: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
     /* ── tooltip — position: fixed set by JS to escape overflow containers ── */
     .tooltip {
         position: fixed;
@@ -534,6 +554,17 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
 
     :root.dark .tooltip::after {
         border-top-color: #c9952a;
+    }
+
+    .tooltip-cover {
+        display: block;
+        width: 100%;
+        height: 140px;
+        object-fit: cover;
+        object-position: center 30%;
+        border-radius: 1px;
+        margin-bottom: 6px;
+        border: 1px solid rgba(160, 120, 40, 0.3);
     }
 
     .tooltip-title {
