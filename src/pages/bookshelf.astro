@@ -288,8 +288,16 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
         const cx = rect.left + rect.width / 2
         const clampedX = Math.max(120, Math.min(window.innerWidth - 120, cx))
         tip.style.left = `${clampedX}px`
-        tip.style.top = `${rect.top - 14}px`
-        tip.style.transform = 'translateX(-50%) translateY(-100%)'
+        // If the book is near the top of the viewport, render tooltip below instead
+        if (rect.top < 300) {
+            tip.style.top = `${rect.bottom + 14}px`
+            tip.style.transform = 'translateX(-50%)'
+            tip.classList.add('tooltip-below')
+        } else {
+            tip.style.top = `${rect.top - 14}px`
+            tip.style.transform = 'translateX(-50%) translateY(-100%)'
+            tip.classList.remove('tooltip-below')
+        }
         tip.style.opacity = '1'
         tip.style.visibility = 'visible'
     }
@@ -554,6 +562,18 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
 
     :root.dark .tooltip::after {
         border-top-color: #c9952a;
+    }
+
+    /* arrow flips when tooltip renders below the book */
+    .tooltip.tooltip-below::after {
+        top: auto;
+        bottom: 100%;
+        border-top-color: transparent;
+        border-bottom-color: #a07828;
+    }
+
+    :root.dark .tooltip.tooltip-below::after {
+        border-bottom-color: #c9952a;
     }
 
     .tooltip-cover {
