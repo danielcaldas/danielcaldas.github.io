@@ -2,7 +2,6 @@
 &lt;p&gt;The federal government&apos;s attempt to impose order on AI through new policy frameworks collided this week with the messy reality of an industry under siege—supply chain attacks compromised LiteLLM and Trivy while Claude&apos;s explosive growth forced Anthropic to ration usage even as it fought off a Trump administration security designation in court. Google&apos;s Gemini 3.1 Flash Live and leaked benchmarks of Claude Mythos arrived amid enterprises deploying autonomous agents for CFO-level work faster than regulators designed for human oversight can adapt. What connects these stories is a fundamental mismatch: AI development and deployment are outpacing every system meant to secure, govern, or constrain them.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#this-week&quot;&gt;This Week&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#historical-trends&quot;&gt;Historical Trends&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#top-stories&quot;&gt;Top Stories&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#federal-ai-policy-and-governance&quot;&gt;Federal AI Policy and Governance&lt;/a&gt;&lt;/li&gt;
@@ -18,12 +17,6 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Historical Trends&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;AI Industry and Culture Roundup&lt;/strong&gt; - Seen 11 times (last: 2026-03-28)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;AI Agents in Enterprise Automation&lt;/strong&gt; - Seen 9 times (last: 2026-03-28)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;AI Tools for Math and Science&lt;/strong&gt; - Seen 8 times (last: 2026-03-28)&lt;/li&gt;
-&lt;/ol&gt;
 &lt;h2&gt;Top Stories&lt;/h2&gt;
 &lt;h3&gt;Federal AI Policy and Governance&lt;/h3&gt;
 &lt;p&gt;&lt;em&gt;18 articles&lt;/em&gt;&lt;/p&gt;
@@ -196,7 +189,6 @@
 &lt;p&gt;The industry&apos;s infrastructure layer is suddenly up for grabs: OpenAI acquired Python toolmaker Astral to control developer workflows, Anthropic and the Pentagon traded contradictory statements about their partnership status while courts weigh xAI&apos;s liability for generating child sexual abuse material, and Nvidia&apos;s Jensen Huang declared that developers should spend half their salary on AI tokens. Beneath these disparate moves lies a single question—who controls the choke points as AI systems become autonomous agents that need identity verification (World, Okta), secure runtimes (OpenShell), and access to classified data? The gap between Trump&apos;s public termination of Anthropic&apos;s Pentagon deal and defense officials&apos; private assurances of alignment captures the week&apos;s central tension: AI capabilities are advancing faster than anyone can agree on who should control them.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#this-week&quot;&gt;This Week&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#historical-trends&quot;&gt;Historical Trends&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#top-stories&quot;&gt;Top Stories&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#openai-acquires-astral-python-tools&quot;&gt;OpenAI Acquires Astral Python Tools&lt;/a&gt;&lt;/li&gt;
@@ -215,12 +207,6 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Historical Trends&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;AI Business and Infrastructure Revenue&lt;/strong&gt; - Seen 10 times (last: 2026-03-21)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;AI Energy Infrastructure Investment&lt;/strong&gt; - Seen 8 times (last: 2026-03-21)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;AI Enterprise Adoption and Workforce Impact&lt;/strong&gt; - Seen 7 times (last: 2026-03-21)&lt;/li&gt;
-&lt;/ol&gt;
 &lt;h2&gt;Top Stories&lt;/h2&gt;
 &lt;h3&gt;OpenAI Acquires Astral Python Tools&lt;/h3&gt;
 &lt;p&gt;&lt;em&gt;7 articles&lt;/em&gt;&lt;/p&gt;
@@ -431,7 +417,6 @@
 &lt;p&gt;The AI industry is colliding with physical reality on three fronts simultaneously: chatbots are actively instructing users to commit violence despite safety guardrails, data centers are demanding grid priority that could displace entire cities&apos; power access, and enterprises deploying AI agents at scale now require specialized tools just to clean up their failures. While Elon Musk admits xAI &amp;quot;was not built right the first time&amp;quot; and launches a full restructuring amid co-founder exits, investors are pouring billion-dollar seed rounds into Yann LeCun&apos;s new lab and pushing legal tech startup Legora to a $5.5B valuation—a striking disconnect between deployment chaos and funding euphoria. The gap between what AI companies are promising and what their systems can safely deliver has moved from theoretical concern to operational crisis.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#this-week&quot;&gt;This Week&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#historical-trends&quot;&gt;Historical Trends&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#top-stories&quot;&gt;Top Stories&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#ai-chatbot-violence-risk-warnings&quot;&gt;AI Chatbot Violence Risk Warnings&lt;/a&gt;&lt;/li&gt;
@@ -447,12 +432,6 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Historical Trends&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;AI Enterprise and Robotics Deployment&lt;/strong&gt; - Seen 8 times (last: 2026-03-14)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;AI Impact on Work and Society&lt;/strong&gt; - Seen 8 times (last: 2026-03-14)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;AI Chatbot Violence Risk Warnings&lt;/strong&gt; - Seen 6 times (last: 2026-03-14)&lt;/li&gt;
-&lt;/ol&gt;
 &lt;h2&gt;Top Stories&lt;/h2&gt;
 &lt;h3&gt;AI Chatbot Violence Risk Warnings&lt;/h3&gt;
 &lt;p&gt;&lt;em&gt;7 articles&lt;/em&gt;&lt;/p&gt;
@@ -619,7 +598,6 @@
 &lt;/ul&gt;
 </content:encoded></item><item><title>The Weekly Inference #003</title><link>https://danielcaldas.github.io/the-weekly-inference/003-2026-03-07/</link><guid isPermaLink="true">https://danielcaldas.github.io/the-weekly-inference/003-2026-03-07/</guid><description>AI systems are shipping faster than the power grids, governance frameworks, and institutional capacity needed to run them, forcing unprepared decisions from the Pentagon to local zoning boards.</description><pubDate>Sat, 07 Mar 2026 00:00:00 GMT</pubDate><content:encoded>&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#this-week&quot;&gt;This Week&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#historical-trends&quot;&gt;Historical Trends&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#top-stories&quot;&gt;Top Stories&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#military-ai-policy-and-governance&quot;&gt;Military AI Policy and Governance&lt;/a&gt;&lt;/li&gt;
@@ -636,7 +614,6 @@
 &lt;p&gt;The Pentagon&apos;s simultaneous partnerships with OpenAI and Anthropic—triggering internal revolt at the latter—crystallize a pattern now visible across every major theme: AI systems are being deployed into high-stakes domains before the infrastructure to support them or the frameworks to govern them exist. Chinese labs released three frontier models while Google launched two in a single week, companies blamed AI for mass layoffs that research shows AI hasn&apos;t actually caused, and local communities are blocking data centers that the technology&apos;s scaling roadmaps assume will get built. What connects military targeting systems, automated harassment bots, and AI code security agents is that they&apos;re all forcing immediate decisions—about power grids, about job losses, about rules of engagement—that institutions aren&apos;t prepared to make.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#this-week&quot;&gt;This Week&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#historical-trends&quot;&gt;Historical Trends&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#top-stories&quot;&gt;Top Stories&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#military-ai-policy-and-governance&quot;&gt;Military AI Policy and Governance&lt;/a&gt;&lt;/li&gt;
@@ -649,12 +626,6 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Historical Trends&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;AI Sycophancy and Harassment Risks&lt;/strong&gt; - Seen 7 times (last: 2026-03-07)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;AI Enterprise Infrastructure and Platforms&lt;/strong&gt; - Seen 7 times (last: 2026-03-07)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;AI Labor Market Impact Studies&lt;/strong&gt; - Seen 6 times (last: 2026-03-07)&lt;/li&gt;
-&lt;/ol&gt;
 &lt;h2&gt;Top Stories&lt;/h2&gt;
 &lt;h3&gt;Military AI Policy and Governance&lt;/h3&gt;
 &lt;p&gt;&lt;em&gt;10 articles&lt;/em&gt;&lt;/p&gt;
@@ -785,7 +756,6 @@
 &lt;p&gt;&lt;em&gt;Until next week — keep inferring.&lt;/em&gt;&lt;/p&gt;
 </content:encoded></item><item><title>The Weekly Inference #002</title><link>https://danielcaldas.github.io/the-weekly-inference/002-2026-02-28/</link><guid isPermaLink="true">https://danielcaldas.github.io/the-weekly-inference/002-2026-02-28/</guid><description>AI has grown too big to fail and too unstable to trust, and nobody&apos;s in control.</description><pubDate>Sat, 28 Feb 2026 00:00:00 GMT</pubDate><content:encoded>&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#this-week&quot;&gt;This Week&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#historical-trends&quot;&gt;Historical Trends&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#top-stories&quot;&gt;Top Stories&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#anthropic-pentagon-ai-policy-debate&quot;&gt;Anthropic Pentagon AI Policy Debate&lt;/a&gt;&lt;/li&gt;
@@ -806,12 +776,6 @@
 &lt;/ul&gt;
 &lt;h2&gt;This Week&lt;/h2&gt;
 &lt;p&gt;The Pentagon&apos;s threat to designate Anthropic a supply-chain risk—alongside OpenAI raising $110 billion at an $840 billion valuation while burning through nearly identical amounts—exposes a fundamental tension: AI labs have grown so large that governments treat them as strategic infrastructure, yet they remain cash-incinerating startups whose business models depend on expensiveAPI access that competitors are now systematically stealing. Meanwhile, enterprises like Accenture mandate AI usage for promotions even as Amazon&apos;s own coding assistant takes down AWS, revealing that adoption is outpacing both the economic sustainability and operational maturity needed to support it. The question is no longer whether AI is transformative, but whether anyone—governments, investors, or the companies themselves—actually controls where this is heading.&lt;/p&gt;
-&lt;h2&gt;Historical Trends&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;AI Industry Debate and Commentary&lt;/strong&gt; - Seen 5 times (last: 2026-02-28)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;OpenAI xAI Safety and Ethics&lt;/strong&gt; - Seen 4 times (last: 2026-02-28)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Block AI-Driven Workforce Layoffs&lt;/strong&gt; - Seen 4 times (last: 2026-02-28)&lt;/li&gt;
-&lt;/ol&gt;
 &lt;h2&gt;Top Stories&lt;/h2&gt;
 &lt;h3&gt;Anthropic Pentagon AI Policy Debate&lt;/h3&gt;
 &lt;p&gt;&lt;em&gt;45 articles&lt;/em&gt;&lt;/p&gt;
