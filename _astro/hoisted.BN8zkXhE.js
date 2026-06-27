@@ -1,0 +1,1 @@
+import"./hoisted.D5NWCMlW.js";document.querySelectorAll("#wi-content a").forEach(t=>{t.getAttribute("href")?.startsWith("#")||(t.setAttribute("target","_blank"),t.setAttribute("rel","noopener noreferrer"))});
