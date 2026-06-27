@@ -75,6 +75,50 @@ const title = FrontMatter.title
             font-size: 0.8rem;
             font-style: italic;
         }
+
+        .ct {
+            position: fixed;
+            background: #111;
+            color: #e8e8e8;
+            border-radius: 8px;
+            padding: 10px 13px;
+            font-size: 13px;
+            max-width: 300px;
+            pointer-events: none;
+            z-index: 9999;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.08);
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            opacity: 0;
+            transition: opacity 0.12s ease;
+        }
+
+        .ct.ct-visible {
+            opacity: 1;
+        }
+
+        .ct-favicon {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+            border-radius: 3px;
+            margin-top: 2px;
+        }
+
+        .ct-favicon[src=""] { display: none; }
+
+        .ct-title {
+            font-weight: 500;
+            line-height: 1.35;
+            color: #e8e8e8;
+        }
+
+        .ct-domain {
+            font-size: 11px;
+            color: rgba(232,232,232,0.45);
+            margin-top: 3px;
+        }
     </style>
     <div class="mt-6">
         <h1 class="text-4xl">{title}</h1>
@@ -94,6 +138,71 @@ const title = FrontMatter.title
             a.setAttribute('target', '_blank')
             a.setAttribute('rel', 'noopener noreferrer')
         })
+
+        if (window.matchMedia('(pointer: fine)').matches) {
+            const CITATION_RE = /^\[\d+\]$/
+
+            // Build href → {title, domain} from cited-source anchors (non-[N] text)
+            const titleMap = new Map()
+            document.querySelectorAll('#wi-content a[href^="http"]').forEach((a) => {
+                const text = a.textContent.trim()
+                if (CITATION_RE.test(text)) return
+                const href = a.getAttribute('href')
+                if (!titleMap.has(href)) {
+                    try {
+                        const domain = new URL(href).hostname.replace(/^www\./, '')
+                        titleMap.set(href, { title: text, domain })
+                    } catch {}
+                }
+            })
+
+            // Create single shared tooltip element
+            const tt = document.createElement('div')
+            tt.className = 'ct'
+            tt.innerHTML = `<img class="ct-favicon" alt="" /><div><div class="ct-title"></div><div class="ct-domain"></div></div>`
+            document.body.appendChild(tt)
+
+            const faviconEl = tt.querySelector('.ct-favicon')
+            const titleEl = tt.querySelector('.ct-title')
+            const domainEl = tt.querySelector('.ct-domain')
+
+            let showTimer
+
+            function positionAndShow(anchor, data) {
+                titleEl.textContent = data.title
+                domainEl.textContent = data.domain
+                faviconEl.src = `https://www.google.com/s2/favicons?domain=${data.domain}&sz=32`
+                faviconEl.onerror = () => { faviconEl.src = '' }
+
+                const rect = anchor.getBoundingClientRect()
+                const ttW = 300
+                const ttH = 58
+
+                let left = rect.left
+                let top = rect.top - ttH - 10
+
+                if (top < 8) top = rect.bottom + 10
+                if (left + ttW > window.innerWidth - 8) left = window.innerWidth - ttW - 8
+                if (left < 8) left = 8
+
+                tt.style.left = `${left}px`
+                tt.style.top = `${top}px`
+                tt.classList.add('ct-visible')
+            }
+
+            document.querySelectorAll('#wi-content a[href^="http"]').forEach((a) => {
+                const data = titleMap.get(a.getAttribute('href'))
+                if (!data) return
+
+                a.addEventListener('mouseenter', () => {
+                    showTimer = setTimeout(() => positionAndShow(a, data), 250)
+                })
+                a.addEventListener('mouseleave', () => {
+                    clearTimeout(showTimer)
+                    tt.classList.remove('ct-visible')
+                })
+            })
+        }
     </script>
     {
         FrontMatter.lastModified && FrontMatter.pubDate !== FrontMatter.lastModified && (
