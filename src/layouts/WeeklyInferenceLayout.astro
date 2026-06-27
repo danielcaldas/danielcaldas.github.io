@@ -90,6 +90,7 @@ const title = FrontMatter.title
     </article>
     <script>
         document.querySelectorAll('#wi-content a').forEach((a) => {
+            if (a.getAttribute('href')?.startsWith('#')) return
             a.setAttribute('target', '_blank')
             a.setAttribute('rel', 'noopener noreferrer')
         })
