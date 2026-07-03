@@ -68,7 +68,7 @@ Because testers allocate their efforts towards manual testing and other testing-
 
 An obvious statement. Often a fresher perspective brings value to the table. This doesn't apply only to software testing. Did it ever
 happen to you being stuck at something, stopping, going for a walk, coming back, and suddenly the problem is no longer there? Well, the
-same can happened if you get someone else help.
+same can happen if you get someone else help.
 
 #### 6. The "My code is bulletproof" attitude
 
