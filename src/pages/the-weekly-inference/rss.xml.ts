@@ -28,7 +28,7 @@ export async function GET() {
                 site,
                 title: 'The Weekly Inference',
                 description:
-                    'A weekly digest powered entirely by AI, analyzing 1000+ RSS feeds to surface emerging trends in technology.',
+                    'A weekly digest powered entirely by AI, analyzing 500+ RSS feeds to surface emerging trends in technology.',
                 items,
             })
         ).body,

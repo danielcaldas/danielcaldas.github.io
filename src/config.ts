@@ -6,8 +6,9 @@ export const PandaConfig = {
   defaultLocale: 'en',
   navbar: [
     { title: 'projects', url: '/projects/' },
-    { title: 'bookshelf', url: '/bookshelf/' },
     { title: 'weekly inference', url: '/the-weekly-inference/' },
+    { title: 'spotlight', url: '/spotlight/' },
+    { title: 'bookshelf', url: '/bookshelf/' },
   ],
   footer: [
     { title: '~/', url: '/' },
