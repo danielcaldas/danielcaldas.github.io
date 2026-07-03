@@ -1567,7 +1567,7 @@ change means to the whole project. Thus &lt;strong&gt;I believe dedicated tester
 &lt;h4&gt;5. A Fresher Pair of Eyes&lt;/h4&gt;
 &lt;p&gt;An obvious statement. Often a fresher perspective brings value to the table. This doesn&apos;t apply only to software testing. Did it ever
 happen to you being stuck at something, stopping, going for a walk, coming back, and suddenly the problem is no longer there? Well, the
-same can happened if you get someone else help.&lt;/p&gt;
+same can happen if you get someone else help.&lt;/p&gt;
 &lt;h4&gt;6. The &amp;quot;My code is bulletproof&amp;quot; attitude&lt;/h4&gt;
 &lt;p&gt;There will be times when it&apos;s tempting to just push a change because you know such a simple code change &lt;strong&gt;(the famous &amp;quot;one-liner&amp;quot;) can&apos;t&lt;/strong&gt;
 &lt;strong&gt;possibly break something else totally unrelated&lt;/strong&gt;. I was proven more than once that this is not true. Getting that tiny code change through a
