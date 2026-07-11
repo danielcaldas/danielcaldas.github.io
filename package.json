@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@astrojs/mdx": "latest",
-    "@astrojs/partytown": "latest",
     "@astrojs/rss": "latest",
     "@astrojs/sitemap": "latest",
     "@astrojs/ts-plugin": "latest",

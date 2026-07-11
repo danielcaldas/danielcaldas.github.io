@@ -2,7 +2,6 @@ import {defineConfig} from 'astro/config'
 import sitemap from '@astrojs/sitemap'
 import yaml from '@rollup/plugin-yaml'
 import mdx from '@astrojs/mdx'
-import partytown from '@astrojs/partytown'
 import {remarkModifiedTime} from './src/plugins/remark-modified-time.mjs'
 import UnoCSS from 'unocss/astro'
 import expressiveCode from 'astro-expressive-code'
@@ -50,8 +49,7 @@ export default defineConfig({
                 return '.' + theme.type
             }
         }),
-        mdx(),
-        partytown()
+        mdx()
     ],
     output: 'static',
 })
