@@ -42,11 +42,5 @@
     "slash": "latest",
     "unist-util-visit": "latest",
     "unocss": "latest"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild",
-      "sharp"
-    ]
   }
 }
