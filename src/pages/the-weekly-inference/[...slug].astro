@@ -4,9 +4,16 @@ export const prerender = true
 
 export async function getStaticPaths() {
     const all_issues = await Astro.glob('../../content/the-weekly-inference/*.{md,mdx}')
-    return all_issues.map((issue) => {
-        const dirs = issue.file.split('/')
-        const fileName = dirs.pop().split('.').shift()
+    const sorted = all_issues
+        .map((issue) => {
+            const fileName = issue.file.split('/').pop().split('.').shift()
+            return {issue, fileName}
+        })
+        .sort((a, b) => a.fileName.localeCompare(b.fileName))
+
+    return sorted.map(({issue, fileName}, i) => {
+        const prev = sorted[i - 1]
+        const next = sorted[i + 1]
 
         return {
             params: {
@@ -14,13 +21,16 @@ export async function getStaticPaths() {
             },
             props: {
                 issue: issue,
+                prev: prev ? {slug: prev.fileName, title: prev.issue.frontmatter.title} : null,
+                next: next ? {slug: next.fileName, title: next.issue.frontmatter.title} : null,
             },
         }
     })
 }
 const {Content, frontmatter} = Astro.props.issue
+const {prev, next} = Astro.props
 ---
 
-<WeeklyInferenceLayout FrontMatter={frontmatter}>
+<WeeklyInferenceLayout FrontMatter={frontmatter} prev={prev} next={next}>
     <Content />
 </WeeklyInferenceLayout>

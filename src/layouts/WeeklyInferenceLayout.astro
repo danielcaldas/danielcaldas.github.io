@@ -3,15 +3,48 @@ import Layout from './Layout.astro'
 import {formatDateYMD} from '@utils/format'
 import type {PostFrontMatter} from '../type'
 
+interface IssueNav {
+    slug: string
+    title: string
+}
+
 interface Props {
     FrontMatter: PostFrontMatter
+    prev?: IssueNav | null
+    next?: IssueNav | null
 }
-const {FrontMatter} = Astro.props
+const {FrontMatter, prev, next} = Astro.props
 const title = FrontMatter.title
 ---
 
 <Layout title={title} navbar={false}>
-    <a rel="prefetch" class="panda-link mt-6" href="/the-weekly-inference/">← back</a>
+    <style is:inline>
+        .wi-issue-nav {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            opacity: 0.7;
+            gap: 1rem;
+        }
+
+        .wi-issue-nav a {
+            text-decoration: none;
+            color: rgb(var(--color-text-body));
+        }
+
+        .wi-issue-nav a:hover {
+            text-decoration: underline;
+        }
+
+        .wi-issue-nav .wi-spacer {
+            flex: 1;
+        }
+    </style>
+    <nav class="wi-issue-nav mt-4">
+        {prev ? <a href={`/the-weekly-inference/${prev.slug}/`} title={prev.title}>← previous issue</a> : <span />}
+        <span class="wi-spacer" />
+        {next ? <a href={`/the-weekly-inference/${next.slug}/`} title={next.title}>next issue →</a> : <span />}
+    </nav>
     <style is:inline>
         /* notification */
         .notification p {
@@ -211,4 +244,9 @@ const title = FrontMatter.title
             </div>
         )
     }
+    <nav class="wi-issue-nav mt-9">
+        {prev ? <a href={`/the-weekly-inference/${prev.slug}/`} title={prev.title}>← previous issue</a> : <span />}
+        <span class="wi-spacer" />
+        {next ? <a href={`/the-weekly-inference/${next.slug}/`} title={next.title}>next issue →</a> : <span />}
+    </nav>
 </Layout>
