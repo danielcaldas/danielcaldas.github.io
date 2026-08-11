@@ -2,33 +2,24 @@
 import {PandaConfig} from '../config'
 
 const {url} = Astro
-const {navbar} = PandaConfig
+const {navbar: items} = PandaConfig
 
-const items = navbar
-function isRootPage() {
-    return !items.some((item) => url.toString().includes(item.url))
-}
+const here = url.toString()
+const isRootPage = !items.some((item) => here.includes(item.url))
 ---
 
-<nav class={url.toString().includes('/posts/') ? 'hidden' : ''}>
-    <a
-        rel="prefetch"
-        href="/"
-        class="panda-link mr-4 animated hover:no-underline"
-        class:list={isRootPage() ? 'active' : ''}>posts</a
-    >
+<nav class="site-nav" aria-label="Sections">
+    <a rel="prefetch" href="/" class="site-nav__link" aria-current={isRootPage ? 'page' : undefined}>posts</a>
     {
-        items.map((item) => {
-            return (
-                <a
-                    rel="prefetch"
-                    href={item.url}
-                    class="panda-link mr-4 animated hover:no-underline whitespace-nowrap"
-                    class:list={url.toString().includes(item.url) ? 'active' : ''}
-                >
-                    {item.title}
-                </a>
-            )
-        })
+        items.map((item) => (
+            <a
+                rel="prefetch"
+                href={item.url}
+                class="site-nav__link"
+                aria-current={here.includes(item.url) ? 'page' : undefined}
+            >
+                {item.title}
+            </a>
+        ))
     }
 </nav>

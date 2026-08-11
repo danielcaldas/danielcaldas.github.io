@@ -2,14 +2,18 @@
 import ThemeIcon from '@components/ThemeIcon.astro'
 
 export const prerender = true
+
+interface Props {
+    bare?: boolean
+}
+
+const {bare = false} = Astro.props
 ---
 
-<div class="my-6 flex">
-  <a href="/" class="hover:cursor-pointer opacity-100 hover:opacity-80 panda-link">
-    <i class="hidden">danielcaldas.github.io</i>
-    <h1>~/</h1>
-  </a>
-  <div class="text-sm place-content-center inline ml-auto">
+<header class:list={['masthead', bare && 'masthead--bare']}>
+    <a href="/" class="masthead__logo">
+        <i class="hidden">danielcaldas.github.io</i>
+        ~/
+    </a>
     <ThemeIcon />
-  </div>
-</div>
+</header>
