@@ -52,44 +52,33 @@ const result = keys(postsByYear)
 ---
 
 <Layout title={'posts'}>
-    <main class="mt-8">
+    <div class="archive">
         {
-            result.map((yearItem) => {
-                return (
-                    <>
-                        <div class="text-2xl font-bold italic my-3">{yearItem.year}</div>
-                        <ul class="px-2">
-                            {yearItem.list.map((post: any) => {
-                                return (
-                                    <li class="my-1 flex  transition-all duration-300">
-                                        <span style={{flex: '0 0 5rem'}}>
-                                            <time class="mr-2">{formatDateMD(post.pubDate)}</time>
-                                        </span>
-                                        <a rel="prefetch-intent" href={post.url} class="panda-link-static">
-                                            {post.title}
-                                        </a>
-                                    </li>
-                                )
-                            })}
-                        </ul>
-                    </>
-                )
-            })
+            result.map((yearItem) => (
+                <section class="archive__group">
+                    <h2 class="archive__year">{yearItem.year}</h2>
+                    <ul class="archive__list">
+                        {yearItem.list.map((post: any) => (
+                            <li class="archive__item">
+                                <time class="archive__date">{formatDateMD(post.pubDate)}</time>
+                                <a rel="prefetch-intent" href={post.url} class="archive__link">
+                                    {post.title}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+            ))
         }
 
-        <div class="mt-6">
+        <div class="tag-cloud">
             {
-                [...tags].map((tag) => {
-                    return (
-                        <a
-                            class="mr-1 text-sm panda-link my-1 hover:font-bold"
-                            href={'/tags/' + slugifySpace(tag) + '/'}
-                        >
-                            #{tag}
-                        </a>
-                    )
-                })
+                [...tags].map((tag) => (
+                    <a class="tag" href={'/tags/' + slugifySpace(tag) + '/'}>
+                        #{tag}
+                    </a>
+                ))
             }
         </div>
-    </main>
+    </div>
 </Layout>

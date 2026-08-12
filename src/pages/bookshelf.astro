@@ -152,7 +152,7 @@ const isEmpty = allBooks.length === 0
 const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
 ---
 
-<Layout title="bookshelf">
+<Layout title="bookshelf" wide>
     <div class="bookshelf-page">
         {
             isEmpty ? (
@@ -386,20 +386,20 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
         background: transparent;
     }
     .panel-reviews::-webkit-scrollbar-thumb {
-        background: rgba(138, 101, 32, 0.4);
+        background: rgb(var(--accent) / 0.4);
         border-radius: 2px;
     }
 
     /* ── bookcase ── */
     .bookcase {
-        border: 2px solid #8a6520;
-        background: rgba(164, 120, 60, 0.04);
+        border: 2px solid rgb(var(--accent));
+        background: rgb(var(--accent) / 0.04);
         border-radius: 2px;
     }
 
     :root.dark .bookcase {
-        border-color: #c9952a;
-        background: rgba(201, 149, 42, 0.06);
+        border-color: rgb(var(--accent));
+        background: rgb(var(--accent) / 0.06);
     }
 
     .shelf {
@@ -407,13 +407,13 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
     }
 
     .reading-shelf {
-        background: rgba(201, 149, 42, 0.07);
-        border-bottom: 1px dashed #8a6520;
+        background: rgb(var(--accent) / 0.07);
+        border-bottom: 1px dashed rgb(var(--accent));
     }
 
     :root.dark .reading-shelf {
-        background: rgba(201, 149, 42, 0.1);
-        border-bottom-color: #c9952a;
+        background: rgb(var(--accent) / 0.1);
+        border-bottom-color: rgb(var(--accent));
     }
 
     .shelf-row {
@@ -444,7 +444,7 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
     .shelf-year-label {
         font-size: 9px;
         font-weight: 600;
-        font-family: ui-monospace, monospace;
+        font-family: var(--font-mono);
         color: rgba(255, 255, 255, 0.88);
         letter-spacing: 0.1em;
         white-space: nowrap;
@@ -476,16 +476,16 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
     .book:hover,
     .book.highlighted {
         transform: translateY(-5px);
-        box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3), 0 0 8px rgba(201, 149, 42, 0.25);
+        box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3), 0 0 8px rgb(var(--accent) / 0.25);
         z-index: 10;
         position: relative;
     }
 
     .book.reading {
-        border: 2px solid #c9952a;
+        border: 2px solid rgb(var(--accent));
         transform: translateY(-6px);
         box-shadow:
-            0 0 10px rgba(201, 149, 42, 0.45),
+            0 0 10px rgb(var(--accent) / 0.45),
             2px 0 4px rgba(0, 0, 0, 0.2);
     }
 
@@ -493,7 +493,7 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
     .book.reading.highlighted {
         transform: translateY(-10px);
         box-shadow:
-            0 0 14px rgba(201, 149, 42, 0.6),
+            0 0 14px rgb(var(--accent) / 0.6),
             2px 6px 12px rgba(0, 0, 0, 0.3);
     }
 
@@ -502,7 +502,7 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
         text-orientation: mixed;
         font-size: 11px;
         font-weight: 600;
-        font-family: ui-monospace, monospace;
+        font-family: var(--font-mono);
         /* color set per-book via inline style based on spine luminance */
         text-shadow: none;
         overflow: hidden;
@@ -534,7 +534,7 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
         min-width: 160px;
         max-width: 230px;
         font-size: 11px;
-        font-family: ui-monospace, monospace;
+        font-family: var(--font-mono);
         line-height: 1.55;
         opacity: 0;
         visibility: hidden;
@@ -547,7 +547,7 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
 
     :root.dark .tooltip {
         background: #0d0c09;
-        border-color: #c9952a;
+        border-color: rgb(var(--accent));
     }
 
     .tooltip::after {
@@ -561,7 +561,7 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
     }
 
     :root.dark .tooltip::after {
-        border-top-color: #c9952a;
+        border-top-color: rgb(var(--accent));
     }
 
     /* arrow flips when tooltip renders below the book */
@@ -573,7 +573,7 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
     }
 
     :root.dark .tooltip.tooltip-below::after {
-        border-bottom-color: #c9952a;
+        border-bottom-color: rgb(var(--accent));
     }
 
     .tooltip-cover {
@@ -609,7 +609,7 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
 
     .tooltip-my-rating {
         font-size: 10px;
-        color: #c9952a;
+        color: rgb(var(--accent));
         letter-spacing: 0.5px;
     }
 
@@ -628,9 +628,9 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
 
     .tooltip-badge {
         display: inline-block;
-        background: rgba(201, 149, 42, 0.18);
-        border: 1px solid #c9952a;
-        color: #c9952a;
+        background: rgb(var(--accent) / 0.18);
+        border: 1px solid rgb(var(--accent));
+        color: rgb(var(--accent));
         font-size: 9px;
         padding: 1px 5px;
         border-radius: 2px;
@@ -642,13 +642,13 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
     .reviews-header {
         font-size: 0.7rem;
         letter-spacing: 0.05em;
-        color: #8a6520;
+        color: rgb(var(--accent));
         margin-bottom: 0.5rem;
         font-style: italic;
     }
 
     :root.dark .reviews-header {
-        color: #c9952a;
+        color: rgb(var(--accent));
     }
 
     .reviews-count {
@@ -658,12 +658,12 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
     .reviews-list {
         display: flex;
         flex-direction: column;
-        border: 1px solid rgba(138, 101, 32, 0.3);
+        border: 1px solid rgb(var(--accent) / 0.3);
         border-radius: 2px;
     }
 
     :root.dark .reviews-list {
-        border-color: rgba(201, 149, 42, 0.2);
+        border-color: rgb(var(--accent) / 0.2);
     }
 
     .review-item {
@@ -671,7 +671,7 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
         padding: 6px 8px;
         text-decoration: none;
         border-left: 2px solid transparent;
-        border-bottom: 1px solid rgba(138, 101, 32, 0.12);
+        border-bottom: 1px solid rgb(var(--accent) / 0.12);
         transition:
             background 0.1s,
             border-color 0.1s;
@@ -684,19 +684,19 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
 
     .review-item:hover,
     .review-item.active {
-        background: rgba(164, 120, 60, 0.1);
-        border-left-color: #8a6520;
+        background: rgb(var(--accent) / 0.1);
+        border-left-color: rgb(var(--accent));
     }
 
     :root.dark .review-item:hover,
     :root.dark .review-item.active {
-        background: rgba(201, 149, 42, 0.08);
-        border-left-color: #c9952a;
+        background: rgb(var(--accent) / 0.08);
+        border-left-color: rgb(var(--accent));
     }
 
     .review-reading {
-        background: rgba(201, 149, 42, 0.05);
-        border-left-color: rgba(201, 149, 42, 0.5) !important;
+        background: rgb(var(--accent) / 0.05);
+        border-left-color: rgb(var(--accent) / 0.5) !important;
     }
 
     .review-title {
@@ -736,7 +736,7 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
 
     .review-stars {
         font-size: 10px;
-        color: #c9952a;
+        color: rgb(var(--accent));
         letter-spacing: 0.5px;
         flex-shrink: 0;
     }
@@ -754,8 +754,8 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
 
     .review-badge {
         font-size: 8px;
-        border: 1px solid #c9952a;
-        color: #c9952a;
+        border: 1px solid rgb(var(--accent));
+        color: rgb(var(--accent));
         padding: 0 3px;
         border-radius: 2px;
         flex-shrink: 0;

@@ -19,111 +19,36 @@ const title = FrontMatter.title
 
 <Layout title={title} navbar={false}>
     <style is:inline>
-        .wi-issue-nav {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.8rem;
-            opacity: 0.7;
-            gap: 1rem;
-        }
-
-        .wi-issue-nav a {
-            text-decoration: none;
-            color: rgb(var(--color-text-body));
-        }
-
-        .wi-issue-nav a:hover {
-            text-decoration: underline;
-        }
-
-        .wi-issue-nav .wi-spacer {
-            flex: 1;
-        }
-    </style>
-    <nav class="wi-issue-nav mt-4">
-        {prev ? <a href={`/the-weekly-inference/${prev.slug}/`} title={prev.title}>← previous issue</a> : <span />}
-        <span class="wi-spacer" />
-        {next ? <a href={`/the-weekly-inference/${next.slug}/`} title={next.title}>next issue →</a> : <span />}
-    </nav>
-    <style is:inline>
-        /* notification */
-        .notification p {
-            margin-top: 0;
-            margin-bottom: 0;
-            padding: 0.5rem 1rem;
-            font-size: small;
-        }
-
-        .notification-warning {
-            background-color: #fff3cd;
-            border-color: #ffeeba;
-            color: #856404;
-        }
-
-        .notification-danger {
-            background-color: #f8d7da;
-            border-color: #f5c6cb;
-            color: #721c24;
-        }
-
-        .notification-success {
-            background-color: #d4edda;
-            border-color: #c3e6cb;
-            color: #155724;
-        }
-
-        .notification-info {
-            background-color: #d1ecf1;
-            border-color: #bee5eb;
-            color: #0c5460;
-        }
-
-        .dark .notification-warning {
-            background-color: #856404;
-            border-color: #ffeeba;
-            color: #fff3cd;
-        }
-
-        .dark .notification-danger {
-            background-color: #721c24;
-            border-color: #f5c6cb;
-            color: #f8d7da;
-        }
-
-        .dark .notification-success {
-            background-color: #155724;
-            border-color: #c3e6cb;
-            color: #d4edda;
-        }
-
-        .dark .notification-info {
-            background-color: #0c5460;
-            border-color: #bee5eb;
-            color: #d1ecf1;
-        }
-
         .ai-banner {
-            border-left: 4px solid currentColor;
-            padding: 0.6rem 1rem;
-            font-size: 0.8rem;
-            font-style: italic;
+            margin-top: 1.75rem;
+            padding: 0.7rem 1rem;
+            border-left: 2px solid rgb(var(--accent));
+            background: rgb(var(--accent-wash) / 0.5);
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            line-height: 1.6;
+            letter-spacing: 0.02em;
+            color: rgb(var(--ink-muted));
         }
 
+        /* citation tooltip */
         .ct {
             position: fixed;
-            background: #111;
-            color: #e8e8e8;
-            border-radius: 8px;
-            padding: 10px 13px;
-            font-size: 13px;
-            max-width: 300px;
-            pointer-events: none;
             z-index: 9999;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.08);
             display: flex;
             align-items: flex-start;
             gap: 9px;
+            max-width: 300px;
+            padding: 10px 13px;
+            border-radius: 6px;
+            background: rgb(var(--ink-strong));
+            color: rgb(var(--paper));
+            font-family: var(--font-sans);
+            font-size: 12.5px;
+            line-height: 1.4;
+            pointer-events: none;
             opacity: 0;
+            box-shadow: 0 6px 24px rgb(0 0 0 / 0.28);
             transition: opacity 0.12s ease;
         }
 
@@ -135,36 +60,44 @@ const title = FrontMatter.title
             width: 16px;
             height: 16px;
             flex-shrink: 0;
+            margin-top: 1px;
             border-radius: 3px;
-            margin-top: 2px;
         }
 
-        .ct-favicon[src=""] { display: none; }
+        .ct-favicon[src=''] {
+            display: none;
+        }
 
         .ct-title {
             font-weight: 500;
-            line-height: 1.35;
-            color: #e8e8e8;
         }
 
         .ct-domain {
-            font-size: 11px;
-            color: rgba(232,232,232,0.45);
             margin-top: 3px;
+            font-family: var(--font-mono);
+            font-size: 10.5px;
+            opacity: 0.55;
         }
     </style>
-    <div class="mt-6">
-        <h1 class="text-4xl">{title}</h1>
-        <div class="flex text-sm opacity-70 mt-2 gap-3 items-center">
-            <span>{formatDateYMD(FrontMatter.pubDate)}</span>
+
+    <nav class="pager" style="margin-top: 1.75rem; padding-top: 0; border-top: 0;" aria-label="Issues">
+        {prev ? <a href={`/the-weekly-inference/${prev.slug}/`} title={prev.title}>← previous issue</a> : <span />}
+        {next ? <a href={`/the-weekly-inference/${next.slug}/`} title={next.title}>next issue →</a> : <span />}
+    </nav>
+
+    <header class="entry-header">
+        <h1 class="entry-title">{title}</h1>
+        <div class="entry-meta">
+            <time datetime={FrontMatter.pubDate}>{formatDateYMD(FrontMatter.pubDate)}</time>
         </div>
-    </div>
-    <div class="notification notification-warning ai-banner mt-6 font-bold">
-        This content is 100% AI-generated. No human editing or oversight.
-    </div>
-    <article class="prose dark:prose-invert prose-stone max-w-none mt-6" id="wi-content">
+    </header>
+
+    <p class="ai-banner">This content is 100% AI-generated. No human editing or oversight.</p>
+
+    <article class="prose content dark:prose-invert prose-stone" id="wi-content">
         <slot />
     </article>
+
     <script>
         document.querySelectorAll('#wi-content a').forEach((a) => {
             if (a.getAttribute('href')?.startsWith('#')) return
@@ -184,7 +117,7 @@ const title = FrontMatter.title
                 if (!titleMap.has(href)) {
                     try {
                         const domain = new URL(href).hostname.replace(/^www\./, '')
-                        titleMap.set(href, { title: text, domain })
+                        titleMap.set(href, {title: text, domain})
                     } catch {}
                 }
             })
@@ -205,7 +138,9 @@ const title = FrontMatter.title
                 titleEl.textContent = data.title
                 domainEl.textContent = data.domain
                 faviconEl.src = `https://www.google.com/s2/favicons?domain=${data.domain}&sz=32`
-                faviconEl.onerror = () => { faviconEl.src = '' }
+                faviconEl.onerror = () => {
+                    faviconEl.src = ''
+                }
 
                 const rect = anchor.getBoundingClientRect()
                 const ttW = 300
@@ -237,16 +172,15 @@ const title = FrontMatter.title
             })
         }
     </script>
+
     {
         FrontMatter.lastModified && FrontMatter.pubDate !== FrontMatter.lastModified && (
-            <div class="mt-9 flex text-sm font-italic opacity-80">
-                <span class="ml-auto">Last modified on {formatDateYMD(FrontMatter.lastModified)}</span>
-            </div>
+            <div class="entry-footer">last modified {formatDateYMD(FrontMatter.lastModified)}</div>
         )
     }
-    <nav class="wi-issue-nav mt-9">
+
+    <nav class="pager" aria-label="Issues">
         {prev ? <a href={`/the-weekly-inference/${prev.slug}/`} title={prev.title}>← previous issue</a> : <span />}
-        <span class="wi-spacer" />
         {next ? <a href={`/the-weekly-inference/${next.slug}/`} title={next.title}>next issue →</a> : <span />}
     </nav>
 </Layout>
