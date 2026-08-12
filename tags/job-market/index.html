@@ -1,32 +1,26 @@
-<!DOCTYPE html><html lang="en-US" class="mx-4"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v4.5.12"><meta name="description" content="Blogpost, note taking and other things"><title>posts - ~/</title><link rel="stylesheet" href="/_astro/bookshelf.DSLtMeuE.css">
-<link rel="stylesheet" href="/_astro/_category_.DSwyH1LA.css"><script type="module" src="/_astro/hoisted.D5NWCMlW.js"></script>
-<script type="module" src="/_astro/page.55INgWwS.js"></script></head> <body class="max-width flex flex-col min-h-screen"> <div class="my-6 flex"> <a href="/" class="hover:cursor-pointer opacity-100 hover:opacity-80 panda-link"> <i class="hidden">danielcaldas.github.io</i> <h1>~/</h1> </a> <div class="text-sm place-content-center inline ml-auto"> <button id="themeToggle" class="mt-1 cursor-pointer border-0 bg-transparent"> <svg width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="opacity-100 hover:opacity-80"> <path class="fill-black dark:fill-transparent" d="M20.742 13.045a8.088 8.088 0 0 1-2.077.271c-2.135 0-4.14-.83-5.646-2.336a8.025 8.025 0 0 1-2.064-7.723A1 1 0 0 0 9.73 2.034a10.014 10.014 0 0 0-4.489 2.582c-3.898 3.898-3.898 10.243 0 14.143a9.937 9.937 0 0 0 7.072 2.93 9.93 9.93 0 0 0 7.07-2.929 10.007 10.007 0 0 0 2.583-4.491 1.001 1.001 0 0 0-1.224-1.224zm-2.772 4.301a7.947 7.947 0 0 1-5.656 2.343 7.953 7.953 0 0 1-5.658-2.344c-3.118-3.119-3.118-8.195 0-11.314a7.923 7.923 0 0 1 2.06-1.483 10.027 10.027 0 0 0 2.89 7.848 9.972 9.972 0 0 0 7.848 2.891 8.036 8.036 0 0 1-1.484 2.059z"></path> <path class="fill-transparent dark:fill-white" d="M6.993 12c0 2.761 2.246 5.007 5.007 5.007s5.007-2.246 5.007-5.007S14.761 6.993 12 6.993 6.993 9.239 6.993 12zM12 8.993c1.658 0 3.007 1.349 3.007 3.007S13.658 15.007 12 15.007 8.993 13.658 8.993 12 10.342 8.993 12 8.993zM10.998 19h2v3h-2zm0-17h2v3h-2zm-9 9h3v2h-3zm17 0h3v2h-3zM4.219 18.363l2.12-2.122 1.415 1.414-2.12 2.122zM16.24 6.344l2.122-2.122 1.414 1.414-2.122 2.122zM6.342 7.759 4.22 5.637l1.415-1.414 2.12 2.122zm13.434 10.605-1.414 1.414-2.122-2.122 1.414-1.414z"></path> </svg> </button> <script>
-    function handleToggleClick() {
-        const element = document.documentElement
-        element.classList.toggle('dark')
-        const isDark = element.classList.contains('dark')
-        localStorage.setItem('theme', isDark ? 'dark' : 'light')
+<!DOCTYPE html><html lang="en-US"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Astro v4.5.12"><meta name="description" content="Blogpost, note taking and other things"><meta name="theme-color" content="#fcfbf8" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#100f0d" media="(prefers-color-scheme: dark)"><title>posts - ~/</title><link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin><script>
+            // Resolve the theme before first paint so there is no flash.
+            ;(() => {
+                const stored = localStorage.getItem('theme')
+                const theme = stored || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                document.documentElement.classList.toggle('dark', theme === 'dark')
+            })()
+        </script><link rel="stylesheet" href="/_astro/bookshelf.B5KSN0HV.css">
+<link rel="stylesheet" href="/_astro/_category_.BhkuNFxa.css"><script type="module" src="/_astro/page.55INgWwS.js"></script></head> <body class="max-width flex flex-col min-h-screen"> <a class="skip-link" href="#main">skip to content</a> <header class="masthead"> <a href="/" class="masthead__logo"> <i class="hidden">danielcaldas.github.io</i>
+~/
+</a> <button id="themeToggle" class="masthead__toggle" type="button" aria-label="Toggle colour theme"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path class="theme-icon--moon" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> <g class="theme-icon--sun"> <circle cx="12" cy="12" r="4.2"></circle> <path d="M12 1.6v2.4M12 20v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M1.6 12H4M20 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"></path> </g> </svg> </button>  <script>
+    function setupThemeToggle() {
+        const button = document.getElementById('themeToggle')
+        if (!button || button.dataset.bound) return
+        button.dataset.bound = 'true'
+        button.addEventListener('click', () => {
+            const isDark = document.documentElement.classList.toggle('dark')
+            localStorage.setItem('theme', isDark ? 'dark' : 'light')
+        })
     }
 
-    function setup() {
-        let current_theme
-        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-            current_theme = localStorage.getItem('theme')
-        }
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            current_theme = 'dark'
-        }
-        current_theme = current_theme || 'light'
-        if (current_theme === 'light') {
-            document.documentElement.classList.remove('dark')
-        } else {
-            document.documentElement.classList.add('dark')
-        }
-        window.localStorage.setItem('theme', current_theme)
-        // button event bind
-        document.getElementById('themeToggle').addEventListener('click', handleToggleClick)
-    }
-
-    setup()
-</script>  </div> </div> <nav class=""> <a rel="prefetch" href="/" class="panda-link mr-4 animated hover:no-underline active">posts</a> <a rel="prefetch" href="/projects/" class="panda-link mr-4 animated hover:no-underline whitespace-nowrap"> projects </a><a rel="prefetch" href="/the-weekly-inference/" class="panda-link mr-4 animated hover:no-underline whitespace-nowrap"> weekly inference </a><a rel="prefetch" href="/spotlight/" class="panda-link mr-4 animated hover:no-underline whitespace-nowrap"> spotlight </a><a rel="prefetch" href="/bookshelf/" class="panda-link mr-4 animated hover:no-underline whitespace-nowrap"> bookshelf </a> </nav> <main class="flex-1">  <main class="mt-8">  <div class="text-2xl font-bold italic my-3">2018</div> <ul class="px-2"> <li class="my-1 flex  transition-all duration-300"> <span style="flex:0 0 5rem"> <time class="mr-2">18, Dec</time> </span> <a rel="prefetch-intent" href="/posts/my-two-cents-on-tech-job-interviews/" class="panda-link-static"> My 2 cents on (tech) job interviews </a> </li> </ul>  <div class="mt-6"> <a class="mr-1 text-sm panda-link my-1 hover:font-bold" href="/tags/job-market/">
-#job-market </a> </div> </main>  </main> <footer class="mt-12 mb-6 text-sm"> <div class="mb-1"> <span> <a href="/" class="panda-link"> ~/ </a> <span class="mx-1">|</span> </span><span> <a href="mailto:caldasjdaniel@gmail.com" class="panda-link"> contact </a> <span class="mx-1">|</span> </span><span> <a href="https://x.com/_danielcaldas" class="panda-link" target="_blank" rel="noopener noreferrer"> x </a> <span class="mx-1">|</span> </span><span> <a href="https://www.linkedin.com/in/daniel-caldas/" class="panda-link" target="_blank" rel="noopener noreferrer"> linkedin </a> <span class="mx-1">|</span> </span><span> <a href="https://github.com/danielcaldas/danielcaldas.github.io" class="panda-link" target="_blank" rel="noopener noreferrer"> github </a> <span class="mx-1">|</span> </span><span> <a href="/rss.xml" class="panda-link"> rss </a> <span class="mx-1">|</span> </span><span> <a href="/the-weekly-inference/rss.xml" class="panda-link"> weekly inference rss </a>  </span> </div> <div class="mb-1"> <span>2018-2026</span> </div> </footer> </body></html>
+    setupThemeToggle()
+    document.addEventListener('astro:page-load', setupThemeToggle)
+    document.addEventListener('astro:after-swap', setupThemeToggle)
+</script> </header> <nav class="site-nav" aria-label="Sections"> <a rel="prefetch" href="/" class="site-nav__link" aria-current="page">posts</a> <a rel="prefetch" href="/projects/" class="site-nav__link"> projects </a><a rel="prefetch" href="/the-weekly-inference/" class="site-nav__link"> weekly inference </a><a rel="prefetch" href="/spotlight/" class="site-nav__link"> spotlight </a><a rel="prefetch" href="/bookshelf/" class="site-nav__link"> bookshelf </a> </nav> <main id="main" class="flex-1">  <div class="archive"> <section class="archive__group"> <h2 class="archive__year">2018</h2> <ul class="archive__list"> <li class="archive__item"> <time class="archive__date">18, Dec</time> <a rel="prefetch-intent" href="/posts/my-two-cents-on-tech-job-interviews/" class="archive__link"> My 2 cents on (tech) job interviews </a> </li> </ul> </section> <div class="tag-cloud"> <a class="tag" href="/tags/job-market/">
+#job-market </a> </div> </div>  </main> <footer class="site-foot"> <div class="site-foot__links"> <a href="/"> ~/ </a><a href="mailto:caldasjdaniel@gmail.com"> contact </a><a href="https://x.com/_danielcaldas" target="_blank" rel="noopener noreferrer"> x </a><a href="https://www.linkedin.com/in/daniel-caldas/" target="_blank" rel="noopener noreferrer"> linkedin </a><a href="https://github.com/danielcaldas/danielcaldas.github.io" target="_blank" rel="noopener noreferrer"> github </a><a href="/rss.xml"> rss </a><a href="/the-weekly-inference/rss.xml"> weekly inference rss </a> </div> <div class="site-foot__meta">2018—2026</div> </footer> </body></html>
