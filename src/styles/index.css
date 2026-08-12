@@ -251,8 +251,6 @@ hr {
     flex-wrap: wrap;
     gap: 0.35rem 1.25rem;
     margin-top: 1.15rem;
-    padding-bottom: 1.35rem;
-    border-bottom: 1px solid rgb(var(--rule));
 }
 
 .site-nav__link {
@@ -277,10 +275,10 @@ hr {
     text-underline-offset: 5px;
 }
 
-/* a bare hairline for pages that hide the nav (posts) */
+/* Nothing divides the masthead from the content — whitespace does the work.
+   `--bare` marks pages that hide the nav (posts), which lose its margin. */
 .masthead--bare {
-    padding-bottom: 1.35rem;
-    border-bottom: 1px solid rgb(var(--rule));
+    padding-bottom: 1.15rem;
 }
 
 /* =========================================================================
