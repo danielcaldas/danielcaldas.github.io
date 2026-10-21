@@ -153,7 +153,21 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
 ---
 
 <Layout title="bookshelf" wide>
-    <div class="bookshelf-page">
+    <div class="bookshelf-page" data-locked>
+        <form class="gate" autocomplete="off">
+            <label for="gate-password">very safe password</label>
+            <div class="gate-row">
+                <input id="gate-password" type="password" autofocus />
+                <button type="submit">enter</button>
+            </div>
+            <p class="gate-error" hidden>nope.</p>
+        </form>
+        <script is:inline>
+            if (localStorage.getItem('bookshelf-unlocked')) {
+                document.querySelector('.bookshelf-page').removeAttribute('data-locked')
+            }
+        </script>
+        <div class="bookshelf-content">
         {
             isEmpty ? (
                 <pre class="text-sm leading-relaxed opacity-70">╔════════════════════╗
@@ -276,6 +290,7 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
                 </div>
             )
         }
+        </div>
     </div>
 </Layout>
 
@@ -340,6 +355,25 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
     }
     fitToViewport()
     window.addEventListener('resize', fitToViewport)
+
+    // very safe password
+    const PASSWORD = 'Daniel'
+
+    const page = document.querySelector<HTMLElement>('.bookshelf-page')
+    const gate = document.querySelector<HTMLFormElement>('.gate')
+    const gateInput = document.querySelector<HTMLInputElement>('#gate-password')
+    const gateError = document.querySelector<HTMLElement>('.gate-error')
+    gate?.addEventListener('submit', (e) => {
+        e.preventDefault()
+        if (gateInput?.value === PASSWORD) {
+            localStorage.setItem('bookshelf-unlocked', '1')
+            page?.removeAttribute('data-locked')
+            fitToViewport()
+        } else if (gateError && gateInput) {
+            gateError.hidden = false
+            gateInput.value = ''
+        }
+    })
 </script>
 
 <style is:global>
@@ -355,6 +389,63 @@ const reviewList: Book[] = [...readingBooks, ...sortedReadBooks]
         display: flex;
         flex-direction: column;
         height: 100%;
+    }
+
+    /* ── password gate ── */
+    .bookshelf-page[data-locked] .bookshelf-content,
+    .bookshelf-page:not([data-locked]) .gate {
+        display: none;
+    }
+
+    .gate {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        max-width: 320px;
+        margin-top: 2rem;
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+    }
+
+    .gate-row {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .gate input {
+        flex: 1;
+        min-width: 0;
+        padding: 4px 8px;
+        background: transparent;
+        color: inherit;
+        border: 1px solid rgb(var(--accent) / 0.5);
+        border-radius: 2px;
+        font-family: inherit;
+    }
+
+    .gate input:focus {
+        outline: none;
+        border-color: rgb(var(--accent));
+    }
+
+    .gate button {
+        padding: 4px 12px;
+        background: transparent;
+        border: 1px solid rgb(var(--accent));
+        color: rgb(var(--accent));
+        border-radius: 2px;
+        cursor: pointer;
+        font-family: inherit;
+    }
+
+    .gate button:hover {
+        background: rgb(var(--accent) / 0.1);
+    }
+
+    .gate-error {
+        margin: 0;
+        font-size: 0.75rem;
+        opacity: 0.7;
     }
 
     .page-split {
