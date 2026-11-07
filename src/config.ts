@@ -4,6 +4,11 @@ export const PandaConfig = {
   start: '2018',
   site: 'https://danielcaldas.github.io/',
   defaultLocale: 'en',
+  newsletter: {
+    // Buttondown username for The Weekly Inference mailing list.
+    // See docs/newsletter.md for setup.
+    buttondownUsername: 'theweeklyinference',
+  },
   navbar: [
     { title: 'projects', url: '/projects/' },
     { title: 'weekly inference', url: '/the-weekly-inference/' },
