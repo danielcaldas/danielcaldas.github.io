@@ -1,6 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro'
 import {formatDateMD} from '@utils/format'
+import NewsletterSignup from '../../components/NewsletterSignup.astro'
 export const prerender = true
 
 const all_issues = await Astro.glob('../../content/the-weekly-inference/*.{md,mdx}')
@@ -26,6 +27,8 @@ const issues = all_issues
         catches your eye.
     </p>
     <p class="note" style="margin-top: 1rem;">No human editing or curation. 100% AI-generated.</p>
+
+    <NewsletterSignup variant="index" />
 
     <div class="archive">
         <ul class="archive__list">
