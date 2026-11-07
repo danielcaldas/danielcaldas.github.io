@@ -1,7 +1,8 @@
 # The Weekly Inference newsletter
 
 Signup boxes live on `/the-weekly-inference/` (above the issue list) and at the end of every issue.
-They're rendered by `src/components/NewsletterSignup.astro` and post to [Buttondown](https://buttondown.com).
+Both are rendered by `src/components/NewsletterSignup.astro` (styles are scoped inside it). The text above the
+form comes from the `label` prop. The form posts to [Buttondown](https://buttondown.com).
 
 ## Why Buttondown
 
@@ -14,8 +15,8 @@ They're rendered by `src/components/NewsletterSignup.astro` and post to [Buttond
 
 1. Create a Buttondown account. Your **username** becomes the newsletter slug
    (`buttondown.com/<username>`).
-2. Set `newsletter.buttondownUsername` in `src/config.ts` to that username
-   (it currently holds the placeholder `theweeklyinference`).
+2. `newsletter.buttondownUsername` in `src/config.ts` is set to `danielcaldas`. If your Buttondown
+   username is different, change it there; it's the only place it's set.
 3. In Buttondown settings:
    - Newsletter name: `The Weekly Inference`. Add a short description and sender name.
    - Keep **double opt-in** on (prevents spam signups via the public form).
@@ -31,5 +32,5 @@ They're rendered by `src/components/NewsletterSignup.astro` and post to [Buttond
 
 ## Switching providers
 
-Only the form `action` and field names in `NewsletterSignup.astro` are Buttondown-specific.
+Only the form `action`, the hidden `embed` field and the `embeddable-buttondown-form` class in `NewsletterSignup.astro` are Buttondown-specific.
 Most providers (Kit, Mailchimp, EmailOctopus) accept a similar HTML form POST with an `email` field.

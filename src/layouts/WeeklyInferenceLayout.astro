@@ -1,6 +1,6 @@
 ---
 import Layout from './Layout.astro'
-import NewsletterSignup from '../components/NewsletterSignup.astro'
+import NewsletterSignup from '@components/NewsletterSignup.astro'
 import {formatDateYMD} from '@utils/format'
 import type {PostFrontMatter} from '../type'
 
@@ -180,7 +180,7 @@ const title = FrontMatter.title
         )
     }
 
-    <NewsletterSignup variant="issue" />
+    <NewsletterSignup label="Liked this issue? Get the next one in your inbox." />
 
     <nav class="pager" aria-label="Issues">
         {prev ? <a href={`/the-weekly-inference/${prev.slug}/`} title={prev.title}>← previous issue</a> : <span />}
