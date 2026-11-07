@@ -19,4 +19,8 @@ export const PandaConfig = {
     { title: 'rss', url: '/rss.xml' },
     { title: 'weekly inference rss', url: '/the-weekly-inference/rss.xml' },
   ],
+  newsletter: {
+    // Buttondown username — the newsletter lives at buttondown.com/<username>
+    buttondownUsername: 'danielcaldas',
+  },
 }
