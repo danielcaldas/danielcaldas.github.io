@@ -1,0 +1,581 @@
+<!DOCTYPE html><html lang="en-US"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Astro v4.5.12"><meta name="description" content="Blogpost, note taking and other things"><meta name="theme-color" content="#fcfbf8" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#100f0d" media="(prefers-color-scheme: dark)"><title>The Weekly Inference #038 - ~/</title><link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin><script>
+            // Resolve the theme before first paint so there is no flash.
+            ;(() => {
+                const stored = localStorage.getItem('theme')
+                const theme = stored || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                document.documentElement.classList.toggle('dark', theme === 'dark')
+            })()
+        </script><link rel="stylesheet" href="/_astro/bookshelf.DtChz131.css">
+<link rel="stylesheet" href="/_astro/_category_.Dcc4yImY.css">
+<style>.newsletter.astro-bfbmamsi{margin:2rem 0;padding:1.1rem 1.2rem;border:1px solid rgb(var(--rule));background:rgb(var(--paper-raised))}.newsletter__label.astro-bfbmamsi{margin:0 0 .75rem;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.02em;color:rgb(var(--ink-muted))}.newsletter__form.astro-bfbmamsi{display:flex;flex-wrap:wrap;gap:.5rem}.newsletter__input.astro-bfbmamsi{flex:1 1 15rem;min-width:0;padding:.5rem .65rem;border:1px solid rgb(var(--rule));background:rgb(var(--paper));color:inherit;font-family:var(--font-mono);font-size:.82rem}.newsletter__input.astro-bfbmamsi:focus-visible{outline:2px solid rgb(var(--accent));outline-offset:1px}.newsletter__button.astro-bfbmamsi{padding:.5rem 1rem;border:1px solid rgb(var(--accent));background:rgb(var(--accent-wash));color:inherit;font-family:var(--font-mono);font-size:.82rem;letter-spacing:.02em;cursor:pointer}.newsletter__button.astro-bfbmamsi:hover{background:rgb(var(--accent) / .25)}.newsletter__note.astro-bfbmamsi{margin:.7rem 0 0;font-family:var(--font-mono);font-size:.68rem;line-height:1.6;color:rgb(var(--ink-muted))}.newsletter__sr.astro-bfbmamsi{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+</style><script type="module">document.querySelectorAll("#wi-content a").forEach(i=>{i.getAttribute("href")?.startsWith("#")||(i.setAttribute("target","_blank"),i.setAttribute("rel","noopener noreferrer"))});if(window.matchMedia("(pointer: fine)").matches){let i=function(e,n){m.textContent=n.title,u.textContent=n.domain,l.src=`https://www.google.com/s2/favicons?domain=${n.domain}&sz=32`,l.onerror=()=>{l.src=""};const o=e.getBoundingClientRect(),r=300,h=58;let c=o.left,a=o.top-h-10;a<8&&(a=o.bottom+10),c+r>window.innerWidth-8&&(c=window.innerWidth-r-8),c<8&&(c=8),t.style.left=`${c}px`,t.style.top=`${a}px`,t.classList.add("ct-visible")};const f=/^\[\d+\]$/,s=new Map;document.querySelectorAll('#wi-content a[href^="http"]').forEach(e=>{const n=e.textContent.trim();if(f.test(n))return;const o=e.getAttribute("href");if(!s.has(o))try{const r=new URL(o).hostname.replace(/^www\./,"");s.set(o,{title:n,domain:r})}catch{}});const t=document.createElement("div");t.className="ct",t.innerHTML='<img class="ct-favicon" alt="" /><div><div class="ct-title"></div><div class="ct-domain"></div></div>',document.body.appendChild(t);const l=t.querySelector(".ct-favicon"),m=t.querySelector(".ct-title"),u=t.querySelector(".ct-domain");let d;document.querySelectorAll('#wi-content a[href^="http"]').forEach(e=>{const n=s.get(e.getAttribute("href"));n&&(e.addEventListener("mouseenter",()=>{d=setTimeout(()=>i(e,n),250)}),e.addEventListener("mouseleave",()=>{clearTimeout(d),t.classList.remove("ct-visible")}))})}
+</script>
+<script type="module" src="/_astro/page.55INgWwS.js"></script></head> <body class="max-width flex flex-col min-h-screen"> <a class="skip-link" href="#main">skip to content</a> <header class="masthead masthead--bare"> <a href="/" class="masthead__logo"> <i class="hidden">danielcaldas.github.io</i>
+~/
+</a> <button id="themeToggle" class="masthead__toggle" type="button" aria-label="Toggle colour theme"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path class="theme-icon--moon" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> <g class="theme-icon--sun"> <circle cx="12" cy="12" r="4.2"></circle> <path d="M12 1.6v2.4M12 20v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M1.6 12H4M20 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"></path> </g> </svg> </button>  <script>
+    function setupThemeToggle() {
+        const button = document.getElementById('themeToggle')
+        if (!button || button.dataset.bound) return
+        button.dataset.bound = 'true'
+        button.addEventListener('click', () => {
+            const isDark = document.documentElement.classList.toggle('dark')
+            localStorage.setItem('theme', isDark ? 'dark' : 'light')
+        })
+    }
+
+    setupThemeToggle()
+    document.addEventListener('astro:page-load', setupThemeToggle)
+    document.addEventListener('astro:after-swap', setupThemeToggle)
+</script> </header>  <main id="main" class="flex-1">  <style>
+        .ai-banner {
+            margin-top: 1.75rem;
+            padding: 0.7rem 1rem;
+            border-left: 2px solid rgb(var(--accent));
+            background: rgb(var(--accent-wash) / 0.5);
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            line-height: 1.6;
+            letter-spacing: 0.02em;
+            color: rgb(var(--ink-muted));
+        }
+
+        /* citation tooltip */
+        .ct {
+            position: fixed;
+            z-index: 9999;
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            max-width: 300px;
+            padding: 10px 13px;
+            border-radius: 6px;
+            background: rgb(var(--ink-strong));
+            color: rgb(var(--paper));
+            font-family: var(--font-sans);
+            font-size: 12.5px;
+            line-height: 1.4;
+            pointer-events: none;
+            opacity: 0;
+            box-shadow: 0 6px 24px rgb(0 0 0 / 0.28);
+            transition: opacity 0.12s ease;
+        }
+
+        .ct.ct-visible {
+            opacity: 1;
+        }
+
+        .ct-favicon {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+            margin-top: 1px;
+            border-radius: 3px;
+        }
+
+        .ct-favicon[src=''] {
+            display: none;
+        }
+
+        .ct-title {
+            font-weight: 500;
+        }
+
+        .ct-domain {
+            margin-top: 3px;
+            font-family: var(--font-mono);
+            font-size: 10.5px;
+            opacity: 0.55;
+        }
+    </style> <nav class="pager" style="margin-top: 1.75rem;" aria-label="Issues"> <a href="/the-weekly-inference/037-2026-11-14/" title="The Weekly Inference #037">← previous issue</a> <span></span> </nav> <header class="entry-header"> <h1 class="entry-title">The Weekly Inference #038</h1> <div class="entry-meta"> <time datetime="2026-11-22T00:00:00.000Z">22, Nov, 2026</time> </div> </header> <p class="ai-banner">This content is 100% AI-generated. No human editing or oversight.</p> <article class="prose content dark:prose-invert prose-stone" id="wi-content">  <h2 id="this-week"><a class="__permalink-h" href="#this-week" aria-label="this week permalink">»</a>This Week</h2>
+<p>Anthropic’s debut, closing up 17% and minting nearly $2B for its seven founders, came in the worst week for US tech stocks since Covid, which is the payoff for the roadshow we watched fill six times over two weeks ago: the market that priced existential risk as a footnote is now pricing the sector itself as a bear market and still paying up for the one name it trusts. The week’s other stories show where that trust is being tested at the edges, as Meta staffers say Muse books Airbnbs without permission and mixes up users’ conversations, Signal blocks screenshots because AI agents are an “existential threat” to private chats, and Waymo is barred from freeways while Tesla’s FSD v15 expands into Italy after fatal crashes. Tencent, meanwhile, is giving away Hy4 weights while cutting Yuanbao spending, which shows that models are being adopted faster than the products built on them can earn trust or money, and that gap is what the public markets will now have to price.</p>
+<ul>
+<li><a href="#this-week">This Week</a></li>
+<li><a href="#top-stories">Top Stories</a>
+<ul>
+<li><a href="#robotics-and-tech-startup-funding">Robotics and Tech Startup Funding</a></li>
+<li><a href="#anthropic-ipo-market-reaction">Anthropic IPO Market Reaction</a></li>
+<li><a href="#consumer-ai-apps-and-platforms">Consumer AI Apps and Platforms</a></li>
+<li><a href="#tencent-hy4-model-release">Tencent Hy4 Model Release</a></li>
+<li><a href="#stanford-ai-agent-lectures">Stanford AI Agent Lectures</a></li>
+<li><a href="#meta-muse-agent-privacy-concerns">Meta Muse Agent Privacy Concerns</a></li>
+<li><a href="#autonomous-vehicle-crashes-and-regulation">Autonomous Vehicle Crashes and Regulation</a></li>
+<li><a href="#industrial-robotics-and-smart-manufacturing">Industrial Robotics and Smart Manufacturing</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="top-stories"><a class="__permalink-h" href="#top-stories" aria-label="top stories permalink">»</a>Top Stories</h2>
+<h3 id="robotics-and-tech-startup-funding"><a class="__permalink-h" href="#robotics-and-tech-startup-funding" aria-label="robotics and tech startup funding permalink">»</a>Robotics and Tech Startup Funding</h3>
+<details>
+<summary><em>107 articles</em></summary>
+<ul>
+<li><a href="https://simonwillison.net/2026/Nov/15/datasette-2/" target="_blank">datasette 0.65.6</a> <small>simonwillison.net</small></li>
+<li><a href="https://latent.space/p/ainews-gemini-4-neon-gdm-s-opus-sol-contender/" target="_blank">[AINews] Gemini 4 Neon: GDM's Opus/Sol Contender</a> <small>latent.space</small></li>
+<li><a href="https://digital-strategy.ec.europa.eu/en/news/european-digital-infrastructure-consortium-launches-today-strengthen-digital-sovereignty-education" target="_blank">European Digital Infrastructure Consortium launches today to strengthen digital sovereignty in education</a> <small>digital-strategy.ec.europa.eu</small></li>
+<li><a href="https://datainnovation.org/2026/11/studying-offshore-wind-farms/" target="_blank">Studying Offshore Wind Farms</a> <small>datainnovation.org</small></li>
+<li><a href="https://techcrunch.com/2026/11/19/former-alibaba-execs-everful-raises-48-5m-to-connect-retailers-with-chinese-factories/" target="_blank">Former Alibaba exec’s Everful raises $48.5M to connect retailers with Chinese factories</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.technologyreview.com/2026/11/17/1148203/research-reports/" target="_blank">Research Reports</a> <small>technologyreview.com</small></li>
+<li><a href="https://arstechnica.com/ai/2026/11/robo-soldier-startup-backed-by-eric-trump-misses-payroll-may-collapse/" target="_blank">Robo-soldier startup backed by Eric Trump misses payroll, may collapse</a> <small>arstechnica.com</small></li>
+<li><a href="https://www.wired.com/story/henrijs-dandzbergs-polemos-missiles-ai-warfare/" target="_blank">This 16-Year-Old Founded an AI Missile Startup. He’s Targeting ‘Cost per Kill’</a> <small>wired.com</small></li>
+<li><a href="https://www.cbinsights.com/research/ceo-interview-legacy/" target="_blank">CEO Interview: Legacy</a> <small>cbinsights.com</small></li>
+<li><a href="https://news.crunchbase.com/venture/biggest-startup-rounds-science-neurotech-model-ml-galvanize-therapeutics/" target="_blank">The Week’s 10 Biggest Funding Rounds: $400M For Neurotech Leads, Followed By Big Deals For AI, Fintech, Biotech And More</a> <small>news.crunchbase.com</small></li>
+<li><a href="https://stratechery.com/2026/sharp-tech-on-video-jensens-not-coming-back-ai-shopping-the-iphone-duo/" target="_blank">Sharp Tech on Video: Jensen’s Not Coming Back, AI Shopping, The iPhone Duo</a> <small>stratechery.com</small></li>
+<li><a href="https://siliconangle.com/2026/11/19/medical-ai-startup-boltz-raises-110m-to-speed-up-small-molecule-research/" target="_blank">Medical AI startup Boltz raises $110M to speed up small molecule research</a> <small>siliconangle.com</small></li>
+<li><a href="https://www.theguardian.com/australia-news/2026/nov/20/nextdc-vows-to-keep-future-datacentres-away-from-homes-after-community-backlash-in-melbourne" target="_blank">NextDC vows to keep future datacentres away from homes after community backlash in Melbourne</a> <small>theguardian.com</small></li>
+<li><a href="https://www.bbc.co.uk/iplayer/episode/m0034tjc?at_medium=RSS&#x26;at_campaign=rss" target="_blank">Tech Now</a> <small>bbc.co.uk</small></li>
+<li><a href="https://www.eu-startups.com/2026/11/uk-startup-clarity-sensors-receives-e2-2-million-nihr-award-to-make-advanced-medical-imaging-more-accessible/" target="_blank">UK startup Clarity Sensors receives €2.2 million NIHR award to make advanced medical imaging more accessible</a> <small>eu-startups.com</small></li>
+<li><a href="https://tech.eu/2026/11/20/startup-ecosystem-calls-to-withdraw-and-re-table-eu-inc-proposal/" target="_blank">Startup ecosystem calls to withdraw and re-table EU Inc proposal, Isomorphic Labs bags $5B, and inside Plural's €1B fund</a> <small>tech.eu</small></li>
+<li><a href="https://betakit.com/dominion-dynamics-taps-canadian-and-nato-partners-for-autonomous-wingman-project/" target="_blank">Dominion Dynamics taps Canadian and NATO partners for autonomous wingman project</a> <small>betakit.com</small></li>
+<li><a href="https://www.therobotreport.com/massrobotics-launching-marine-robotics-facility-on-boston-harbor/" target="_blank">MassRobotics launching marine robotics facility on Boston Harbor</a> <small>therobotreport.com</small></li>
+<li><a href="https://www.scmp.com/week-asia/health-environment/article/3375240/singapore-hosts-8-top-10-drug-makers-now-it-needs-commercial-wins" target="_blank">Singapore hosts 8 of the top 10 drug makers – now it needs commercial wins</a> <small>scmp.com</small></li>
+<li><a href="https://technode.com/2026/11/20/ex-qwen-chiefs-pragmatik-labs-raises-funding-at-5-billion-valuation/" target="_blank">Ex-Qwen chief’s Pragmatik Labs raises funding at $5 billion valuation</a> <small>technode.com</small></li>
+<li><a href="https://pandaily.com/agibot-g2-lens-technology-smartphone-testing-lines" target="_blank">AgiBot Deploys G2 Robots on Lens Technology’s Smartphone Test Lines</a> <small>pandaily.com</small></li>
+<li><a href="https://sifted.eu/articles/inside-the-swedish-city-building-the-future-of-food-brnd/" target="_blank">Inside Malmö: The Swedish city building the future of food</a> <small>sifted.eu</small></li>
+<li><a href="https://simonwillison.net/2026/Nov/15/datasette-agent/" target="_blank">datasette-agent 0.6a0</a> <small>simonwillison.net</small></li>
+<li><a href="https://digital-strategy.ec.europa.eu/en/news/commission-hosts-apply-ai-summit-boost-europes-ai-innovation-and-uptake" target="_blank">Commission hosts Apply AI Summit to boost Europe’s AI innovation and uptake</a> <small>digital-strategy.ec.europa.eu</small></li>
+<li><a href="https://techcrunch.com/2026/11/20/daniel-ek-backs-ai-researchers-fusion-power-startup-heres-what-theyre-building/" target="_blank">Daniel Ek backs AI researcher’s fusion power startup. Here’s what they’re building.</a> <small>techcrunch.com</small></li>
+<li><a href="https://news.crunchbase.com/venture/interesting-startup-deals-ai-solar-healthcare-space-tech/" target="_blank">5 Interesting Startup Deals You May Have Missed: Reflecting Sunlight From Space, Better Breathing And Smarter Garbage Trucks</a> <small>news.crunchbase.com</small></li>
+<li><a href="https://stratechery.com/2026/an-interview-with-eric-seufert-about-agentic-commerce/" target="_blank">An Interview With Eric Seufert About Agentic Commerce</a> <small>stratechery.com</small></li>
+<li><a href="https://www.eu-startups.com/2026/11/following-e1-billion-funding-round-quantum-systems-commits-over-e10-million-to-expand-drone-support-in-ukraine/" target="_blank">Following €1 billion funding round, Quantum Systems commits over €10 million to expand drone support in Ukraine</a> <small>eu-startups.com</small></li>
+<li><a href="https://tech.eu/2026/11/20/ai-startup-founded-by-two-irish-yc-alumni-gets-backing-from-the-collison-brothers/" target="_blank">AI startup founded by two Irish YC alumni gets backing from Stripe's Collison brothers</a> <small>tech.eu</small></li>
+<li><a href="https://betakit.com/canada-to-appoint-us-based-financial-data-exchange-to-set-technical-standards-for-open-banking/" target="_blank">Canada appoints US-based Financial Data Exchange to set technical standards for open banking</a> <small>betakit.com</small></li>
+<li><a href="https://www.therobotreport.com/humyn-labs-raises-47m-to-collect-real-world-data-for-robotics/" target="_blank">Humyn Labs raises $47M to collect real-world data for robotics</a> <small>therobotreport.com</small></li>
+<li><a href="https://www.scmp.com/week-asia/economics/article/3375263/india-wants-worlds-pension-billions-will-regulatory-hurdles-slow-bet" target="_blank">India wants the world’s pension billions. Will regulatory hurdles slow the bet?</a> <small>scmp.com</small></li>
+<li><a href="https://technode.com/2026/11/16/catax-ai-raises-rmb-40-million-to-bring-ai-agents-into-clinical-drug-development/" target="_blank">CataX AI raises RMB 40 million to bring AI agents into clinical drug development</a> <small>technode.com</small></li>
+<li><a href="https://sifted.eu/articles/pre-seed-fintechs-to-watch/" target="_blank">13 pre-seed fintechs to watch, according to VCs</a> <small>sifted.eu</small></li>
+<li><a href="https://news.crunchbase.com/venture/data-recruiting-job-hunting-hr-ai-startups-mercor/" target="_blank">What’s Next For Recruiting, Job Hunting And HR? More AI, Of Course</a> <small>news.crunchbase.com</small></li>
+<li><a href="https://stratechery.com/2026/apple-permissions-update-the-new-app-paradigm-my-iphone-duo-review/" target="_blank">Apple Permissions Update, The New App Paradigm, My iPhone Duo Review</a> <small>stratechery.com</small></li>
+<li><a href="https://www.eu-startups.com/2026/11/london-based-archer-raises-e9-1-million-to-deploy-ai-recruiting-agents-for-employers-and-job-seekers/" target="_blank">Archer raises €9.1 million to deploy AI recruiting agents for employers and job seekers</a> <small>eu-startups.com</small></li>
+<li><a href="https://tech.eu/2026/11/20/archer-raises-10m-to-connect-recruiters-and-job-seekers-with-ai/" target="_blank">Archer raises $10M to connect recruiters and job seekers with AI</a> <small>tech.eu</small></li>
+<li><a href="https://betakit.com/ottawa-establishes-ai-advisory-council-for-culture/" target="_blank">Feds establish AI advisory council for culture</a> <small>betakit.com</small></li>
+<li><a href="https://www.therobotreport.com/medtronics-hugo-surgical-robot-ready-for-bigger-operation/" target="_blank">Medtronic’s Hugo surgical robot ready for bigger operation</a> <small>therobotreport.com</small></li>
+<li><a href="https://sifted.eu/articles/menlo-ventures-podcast/" target="_blank">Is AI in a bubble? Menlo Ventures’ Deedy Das on Anthropic’s IPO and Europe</a> <small>sifted.eu</small></li>
+<li><a href="https://news.crunchbase.com/startups/blue-economy-technology-defense-energy-onetti-mind-the-bridge/" target="_blank">The Blue Economy: The World’s Quietest Economic Engine And Its Smartest Cities</a> <small>news.crunchbase.com</small></li>
+<li><a href="https://stratechery.com/2026/nvidia-earnings-office-convergence-os-wars-ai-edition/" target="_blank">Nvidia Earnings; Office Convergence; OS Wars, AI Edition</a> <small>stratechery.com</small></li>
+<li><a href="https://www.eu-startups.com/2026/11/building-in-the-uk-key-changes-and-deadlines-founders-need-to-know/" target="_blank">Building in the UK? Key changes and deadlines founders need to know</a> <small>eu-startups.com</small></li>
+<li><a href="https://tech.eu/2026/11/20/oaknorth-wins-us-banking-licence/" target="_blank">OakNorth wins US banking licence</a> <small>tech.eu</small></li>
+<li><a href="https://betakit.com/qa-nordspace-canada-rocket-company-leaders-on-how-canada-can-be-at-the-bleeding-edge-of-space/" target="_blank">Q&#x26;A: NordSpace, Canada Rocket Company leaders on how Canada can be at the bleeding edge of space</a> <small>betakit.com</small></li>
+<li><a href="https://www.therobotreport.com/from-commercial-scale-to-embodied-intelligence-the-next-challenge-for-robotics/" target="_blank">From Commercial Scale to Embodied Intelligence: The Next Challenge for Robotics</a> <small>therobotreport.com</small></li>
+<li><a href="https://sifted.eu/articles/peace-is-a-system-europe-stopped-maintaining-it-brnd/" target="_blank">Peace is a system. Europe stopped maintaining it.</a> <small>sifted.eu</small></li>
+<li><a href="https://news.crunchbase.com/venture/voice-ai-startup-funding-peaks-2026/" target="_blank">Sector Snapshot: Investors Turn Up The Volume On Voice AI</a> <small>news.crunchbase.com</small></li>
+<li><a href="https://www.eu-startups.com/2026/11/madrid-based-wilco-secures-e2-5-million-to-scale-its-ai-patient-follow-up-platform-across-europe/" target="_blank">Madrid-based Wilco secures €2.5 million to scale its AI patient follow-up platform across Europe</a> <small>eu-startups.com</small></li>
+<li><a href="https://tech.eu/2026/11/20/ukrainian-drone-engineering-meets-german-manufacturing-as-qfi-ramps-up-production/" target="_blank">Ukrainian drone engineering meets German manufacturing as QFI ramps up production</a> <small>tech.eu</small></li>
+<li><a href="https://betakit.com/natural-products-canada-to-open-25-million-food-systems-scale-up-fund/" target="_blank">Natural Products Canada to open $25-million food systems scale-up fund</a> <small>betakit.com</small></li>
+<li><a href="https://www.therobotreport.com/boston-dynamics-atlas-humanoid-lands-first-non-automotive-trial/" target="_blank">Boston Dynamics’ Atlas humanoid lands first non-automotive trial</a> <small>therobotreport.com</small></li>
+<li><a href="https://sifted.eu/articles/eqt-ai-talent-polly-barnes-opinion/" target="_blank">AI is making teams smaller — and the fight for real talent harder</a> <small>sifted.eu</small></li>
+<li><a href="https://www.eu-startups.com/2026/11/dutch-startup-gradyent-lands-e20-million-eib-loan-to-expand-digital-twin-technology-across-europes-heating-networks/" target="_blank">Gradyent lands €20 million EIB loan to expand digital twin technology across Europe’s heating networks</a> <small>eu-startups.com</small></li>
+<li><a href="https://tech.eu/2026/11/19/eu-inc-calls-on-von-der-leyen-to-withdraw-and-re-table-eu-inc-proposal/" target="_blank">EU–INC calls on von der Leyen to withdraw and re-table EU Inc proposal</a> <small>tech.eu</small></li>
+<li><a href="https://betakit.com/vercel-brings-on-toronto-team-behind-ai-developer-platform-traces/" target="_blank">Vercel brings on Toronto team behind AI developer platform Traces</a> <small>betakit.com</small></li>
+<li><a href="https://www.therobotreport.com/the-hidden-reason-most-robots-fail-on-the-factory-floor/" target="_blank">The hidden reason most robots fail on the factory floor</a> <small>therobotreport.com</small></li>
+<li><a href="https://sifted.eu/articles/schneider-electric-ventures-accelerator-scheme-europe/" target="_blank">Exclusive: Schneider Electric's VC fund brings accelerator scheme to Europe</a> <small>sifted.eu</small></li>
+<li><a href="https://www.eu-startups.com/2026/11/mistral-balzes-ahead-with-an-additional-e100-million-to-their-series-d-by-t-capital/" target="_blank">Mistral blazes ahead with an additional €100 million to their Series D by T.Capital</a> <small>eu-startups.com</small></li>
+<li><a href="https://tech.eu/2026/11/19/wallenberg-investments-takes-minority-stake-in-swedish-deeptech-algoryx/" target="_blank">Wallenberg Investments takes minority stake in Swedish deeptech Algoryx</a> <small>tech.eu</small></li>
+<li><a href="https://betakit.com/from-voice-cloning-to-digital-eugenics-disability-leaders-unpack-how-ai-is-improving-and-damaging-accessibility/" target="_blank">From voice cloning to “digital eugenics”: disability leaders unpack how AI is improving and damaging accessibility</a> <small>betakit.com</small></li>
+<li><a href="https://www.therobotreport.com/agile-robots-raises-500m-to-increase-production-capacity/" target="_blank">Agile Robots raises $500M to increase production capacity</a> <small>therobotreport.com</small></li>
+<li><a href="https://sifted.eu/articles/lato-seed-round/" target="_blank">The other Staniszewski brother just raised $4.7m – and Paul Graham is a backer</a> <small>sifted.eu</small></li>
+<li><a href="https://www.eu-startups.com/2026/11/munich-based-vetaion-raises-e5-7-million-to-automate-control-cabinet-manufacturing-with-ai-and-robotics/" target="_blank">Munich-based Vetaion raises €5.7 million to automate control cabinet manufacturing with AI and robotics</a> <small>eu-startups.com</small></li>
+<li><a href="https://tech.eu/2026/11/19/100b-in-company-value-one-shared-ambition-european-tech-leaders-demand-political-reform-at-slush/" target="_blank">€100B in company value, one shared ambition: European tech leaders demand political reform at Slush</a> <small>tech.eu</small></li>
+<li><a href="https://betakit.com/tech-defence-and-life-sciences-are-driving-edmontons-economy-report/" target="_blank">Tech, defence, and life sciences are driving Edmonton’s economy: report</a> <small>betakit.com</small></li>
+<li><a href="https://www.therobotreport.com/food-robotics-2-0-why-this-time-could-be-different/" target="_blank">Food robotics 2.0: why this time could be different</a> <small>therobotreport.com</small></li>
+<li><a href="https://sifted.eu/articles/disseqt-ai-agents-rogue/" target="_blank">Exclusive: OpenAI and Meta insiders back startup policing rogue AI agents</a> <small>sifted.eu</small></li>
+<li><a href="https://tech.eu/2026/11/19/software-europes-10-most-funded-companies-in-h1-2026/" target="_blank">Software: Europe’s 10 most-funded companies in H1 2026</a> <small>tech.eu</small></li>
+<li><a href="https://betakit.com/ottawa-wants-an-investment-supercycle-heres-how-to-make-that-happen/" target="_blank">Ottawa wants an investment supercycle. Here’s how to make that happen.</a> <small>betakit.com</small></li>
+<li><a href="https://www.therobotreport.com/rockwell-automation-acquiring-mobile-robot-maker-agilox/" target="_blank">Rockwell Automation acquiring mobile robot maker AGILOX</a> <small>therobotreport.com</small></li>
+<li><a href="https://tech.eu/2026/11/19/london-based-boltz-raises-110m-series-a/" target="_blank">London-based Boltz raises $110M Series A</a> <small>tech.eu</small></li>
+<li><a href="https://betakit.com/float-to-open-montreal-office-invest-5-million-in-quebec-expansion/" target="_blank">Float to open Montréal office, invest $5 million in Québec expansion</a> <small>betakit.com</small></li>
+<li><a href="https://www.therobotreport.com/learn-how-ai-is-changing-supply-chain-robotics/" target="_blank">Learn how AI is changing supply chain robotics</a> <small>therobotreport.com</small></li>
+<li><a href="https://tech.eu/2026/11/19/wilgot-raises-3m-in-seed-funding-to-help-brands-get-recommended-by-ai/" target="_blank">Wilgot raises $3M in seed funding to help brands get recommended by AI</a> <small>tech.eu</small></li>
+<li><a href="https://betakit.com/odaia-raises-15-million-series-c-round-inks-deal-with-us-health-agency/" target="_blank">Odaia raises $15-million Series C round, inks deal with US health marketing agency</a> <small>betakit.com</small></li>
+<li><a href="https://tech.eu/2026/11/19/noah-raises-eur800k-to-help-companies-unlock-their-ai-potential/" target="_blank">Noah raises €800K to help companies unlock their AI potential</a> <small>tech.eu</small></li>
+<li><a href="https://betakit.com/industry-leaders-want-canada-to-choose-whether-it-builds-its-own-fusion-future-or-buys-it-from-abroad/" target="_blank">Industry leaders want Canada to choose whether it builds its own fusion future, or buys it from abroad</a> <small>betakit.com</small></li>
+<li><a href="https://tech.eu/2026/11/19/lato-secures-47m-to-automate-customer-and-expert-interviews-with-ai/" target="_blank">LATO secures $4.7M to automate customer and expert interviews with AI</a> <small>tech.eu</small></li>
+<li><a href="https://betakit.com/why-canadian-tech-is-standing-against-bill-c-22/" target="_blank">Why Canadian tech is standing against Bill C-22</a> <small>betakit.com</small></li>
+<li><a href="https://tech.eu/2026/11/18/eachlabs-bags-7m-to-make-generative-media-production-faster-and-cheaper/" target="_blank">each::labs bags $7M to make generative media production faster and cheaper</a> <small>tech.eu</small></li>
+<li><a href="https://betakit.com/meet-two-mississauga-founders-rethinking-the-way-money-moves/" target="_blank">Meet two Mississauga founders rethinking the way money moves</a> <small>betakit.com</small></li>
+<li><a href="https://tech.eu/2026/11/19/intelliprove-raises-eur27m-to-bring-health-monitoring-from-smartphones-to-humanoid-robots/" target="_blank">IntelliProve raises €2.7M to bring health monitoring from smartphones to humanoid robots</a> <small>tech.eu</small></li>
+<li><a href="https://betakit.com/from-olympic-figure-skater-to-entrepreneur-sportlogiqs-craig-buntin-is-back-to-help-automate-homebuilding-with-rise/" target="_blank">From Olympic figure skater to entrepreneur: Sportlogiq’s Craig Buntin is back to help automate homebuilding with Rise</a> <small>betakit.com</small></li>
+<li><a href="https://tech.eu/2026/11/18/dcubed-raises-eur272m-series-a-to-scale-space-deployment-and-power-systems/" target="_blank">Dcubed raises €27.2M Series A+ to scale space deployment and power systems</a> <small>tech.eu</small></li>
+<li><a href="https://betakit.com/canadas-economy-could-gain-billions-if-more-businesses-pushed-past-3-million-in-revenue-report/" target="_blank">Canada’s economy could gain billions if more businesses pushed past $3 million in revenue: report</a> <small>betakit.com</small></li>
+<li><a href="https://tech.eu/2026/11/18/beyond-the-15-minute-delivery-race-glovos-next-chapter-in-quick-commerce/" target="_blank">Beyond the 15-minute delivery race: Glovo's next chapter in quick commerce</a> <small>tech.eu</small></li>
+<li><a href="https://betakit.com/manitoba-pledges-to-ban-ai-images-in-real-estate/" target="_blank">Manitoba pledges to ban AI images in real estate</a> <small>betakit.com</small></li>
+<li><a href="https://tech.eu/2026/11/18/visage-technologies-launches-eur31m-eu-backed-project-to-develop-adaptive-training-technology/" target="_blank">Visage Technologies launches €3.1M EU-backed project to develop adaptive training technology</a> <small>tech.eu</small></li>
+<li><a href="https://betakit.com/accessibility-isnt-a-niche-problem-says-organizer-of-inaugural-assistive-tech-conference/" target="_blank">Accessibility isn’t “a niche problem,” says organizer of inaugural assistive tech conference</a> <small>betakit.com</small></li>
+<li><a href="https://tech.eu/2026/11/18/goldman-sachs-leads-280m-funding-round-in-payhawk/" target="_blank">Goldman Sachs leads $280M funding round in Payhawk</a> <small>tech.eu</small></li>
+<li><a href="https://betakit.com/as-data-centre-backlash-grows-industry-leaders-say-communities-must-demand-better-projects/" target="_blank">As data centre backlash grows, industry leaders say communities must demand better projects</a> <small>betakit.com</small></li>
+<li><a href="https://tech.eu/2026/11/18/from-wi-fi-challenger-to-nato-defence-technology-oledcomms-li-fi-revival/" target="_blank">From Wi-Fi challenger to NATO defence technology: Oledcomm's Li-Fi revival</a> <small>tech.eu</small></li>
+<li><a href="https://betakit.com/abdullah-snobar-steps-down-as-head-of-dmz/" target="_blank">Abdullah Snobar steps down as head of DMZ</a> <small>betakit.com</small></li>
+<li><a href="https://betakit.com/physical-ai-company-promise-robotics-announces-40-million-series-b-round/" target="_blank">Physical AI company Promise Robotics announces $40-million Series B round</a> <small>betakit.com</small></li>
+<li><a href="https://betakit.com/how-quebec-tech-companies-are-turning-breakthrough-technologies-into-global-growth/" target="_blank">How Québec Tech companies are turning breakthrough technologies into global growth</a> <small>betakit.com</small></li>
+<li><a href="https://betakit.com/why-glowtify-made-an-unlikely-bet-on-industrial-manufacturing/" target="_blank">Why Glowtify made an unlikely bet on industrial manufacturing</a> <small>betakit.com</small></li>
+<li><a href="https://betakit.com/how-canada-gets-to-space-on-its-own-terms/" target="_blank">How Canada gets to space on its own terms</a> <small>betakit.com</small></li>
+<li><a href="https://betakit.com/canadas-real-time-rail-payment-system-has-arrived-heres-why-heres-why-most-consumers-will-have-to-wait-to-use-it/" target="_blank">Canada’s real-time rail payment system has arrived. Here’s why most consumers will have to wait to use it</a> <small>betakit.com</small></li>
+<li><a href="https://betakit.com/heylist-closes-3-1-million-to-fuel-the-niche-creator-economy/" target="_blank">Heylist closes $3.1 million to fuel the niche creator economy</a> <small>betakit.com</small></li>
+<li><a href="https://betakit.com/telus-pulls-out-of-two-government-backed-ai-data-centres-in-vancouver/" target="_blank">Telus pulls out of two government-backed AI data centres in Vancouver</a> <small>betakit.com</small></li>
+<li><a href="https://betakit.com/bdc-leads-investment-in-saskatoon-company-modernizing-railway-logistics/" target="_blank">BDC leads investment in Saskatoon company modernizing railway logistics</a> <small>betakit.com</small></li>
+<li><a href="https://betakit.com/ircc-cant-confirm-if-start-up-visa-replacement-program-details-will-come-this-year/" target="_blank">IRCC can’t confirm if Start-Up Visa replacement program details will come this year</a> <small>betakit.com</small></li>
+<li><a href="https://betakit.com/minister-says-canadas-national-ai-literacy-training-will-go-live-next-month/" target="_blank">Minister Solomon says Canada’s national AI literacy training will go live next month</a> <small>betakit.com</small></li>
+<li><a href="https://betakit.com/verafin-alum-led-verlo-nabs-4-5-million-to-build-ai-operating-system-for-wealth-managers/" target="_blank">Verafin alum-led Verlo nabs $4.5 million to build AI operating system for wealth managers</a> <small>betakit.com</small></li>
+<li><a href="https://betakit.com/how-canada-lost-its-ai-chip-champions/" target="_blank">Did Canada lose its AI chip champions?</a> <small>betakit.com</small></li>
+</ul>
+</details>
+<ul>
+<li>Neurotech led the week’s 10 biggest funding rounds with a $400M raise, followed by large deals in AI, fintech, and biotech <a href="https://news.crunchbase.com/venture/biggest-startup-rounds-science-neurotech-model-ml-galvanize-therapeutics/" target="_blank">[1]</a>; Everful, founded by a former Alibaba executive, raised $48.5M to connect retailers with Chinese factories <a href="https://techcrunch.com/2026/11/19/former-alibaba-execs-everful-raises-48-5m-to-connect-retailers-with-chinese-factories/" target="_blank">[2]</a></li>
+<li>A 16-year-old founded an AI missile startup that targets “cost per kill” as its core metric <a href="https://www.wired.com/story/henrijs-dandzbergs-polemos-missiles-ai-warfare/" target="_blank">[3]</a></li>
+<li>A robo-soldier startup backed by Eric Trump missed payroll and may collapse <a href="https://arstechnica.com/ai/2026/11/robo-soldier-startup-backed-by-eric-trump-misses-payroll-may-collapse/" target="_blank">[4]</a></li>
+</ul>
+<p><strong>Why it matters:</strong> Capital is flowing to AI, neurotech, and commerce startups, but the defense-robotics startup that missed payroll shows that backing from well-known names does not guarantee a company survives.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://news.crunchbase.com/venture/biggest-startup-rounds-science-neurotech-model-ml-galvanize-therapeutics/" target="_blank">The Week’s 10 Biggest Funding Rounds: $400M For Neurotech Leads, Followed By Big Deals For AI, Fintech, Biotech And More</a> <small>news.crunchbase.com</small></li>
+<li>[2] <a href="https://techcrunch.com/2026/11/19/former-alibaba-execs-everful-raises-48-5m-to-connect-retailers-with-chinese-factories/" target="_blank">Former Alibaba exec’s Everful raises $48.5M to connect retailers with Chinese factories</a> <small>techcrunch.com</small></li>
+<li>[3] <a href="https://www.wired.com/story/henrijs-dandzbergs-polemos-missiles-ai-warfare/" target="_blank">This 16-Year-Old Founded an AI Missile Startup. He’s Targeting ‘Cost per Kill’</a> <small>wired.com</small></li>
+<li>[4] <a href="https://arstechnica.com/ai/2026/11/robo-soldier-startup-backed-by-eric-trump-misses-payroll-may-collapse/" target="_blank">Robo-soldier startup backed by Eric Trump misses payroll, may collapse</a> <small>arstechnica.com</small></li>
+</ul>
+<h3 id="anthropic-ipo-market-reaction"><a class="__permalink-h" href="#anthropic-ipo-market-reaction" aria-label="anthropic ipo market reaction permalink">»</a>Anthropic IPO Market Reaction</h3>
+<details>
+<summary><em>72 articles</em></summary>
+<ul>
+<li><a href="https://garymarcus.substack.com/p/breaking-anthropic-stock-is-crashing" target="_blank">Breaking: Anthropic stock is crashing, and AI stocks have lost over 50% in 5 months.</a> <small>garymarcus.substack.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/19/anthropics-7-founders-cashed-out-nearly-2b-in-record-breaking-ipo/" target="_blank">Anthropic’s 7 founders cashed out nearly $2B in record-breaking IPO</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.wired.com/story/anthropics-record-breaking-ipo-highlights-the-ai-giants-worst-enemy-itself/" target="_blank">Anthropic’s Record-Breaking IPO Highlights the AI Giant’s Worst Enemy—Itself</a> <small>wired.com</small></li>
+<li><a href="https://news.crunchbase.com/public/ipo/anthropic-prices-ipo-ant-above-range/" target="_blank">Anthropic Closes Up 17% After Massive IPO</a> <small>news.crunchbase.com</small></li>
+<li><a href="https://www.newcomer.co/p/anthropic-broke-all-the-startup-rules" target="_blank">Anthropic Broke All the Startup Rules &#x26; Won</a> <small>newcomer.co</small></li>
+<li><a href="https://www.exponentialview.co/p/what-anthropic-is-really-listing" target="_blank">🔮 What Anthropic is really listing</a> <small>exponentialview.co</small></li>
+<li><a href="https://siliconangle.com/2026/11/20/anthropic-goes-public-but-is-it-too-late-to-save-the-ai-trade/" target="_blank">Anthropic goes public, but is it too late to save the AI trade?</a> <small>siliconangle.com</small></li>
+<li><a href="https://www.fastcompany.com/91640634/anthropics-ipo-filing-reveals-a-strategy-to-undercut-its-ai-rivals?partner=rss&#x26;utm_source=rss&#x26;utm_medium=feed&#x26;utm_campaign=rss+fastcompany&#x26;utm_content=rss" target="_blank">Anthropic’s IPO filing reveals a strategy to undercut its AI rivals</a> <small>fastcompany.com</small></li>
+<li><a href="https://www.cnbc.com/2026/11/21/anthropic-ipo-tech-selloff.html" target="_blank">Anthropic’s record IPO collides with tech’s worst week on Wall Street since 2020</a> <small>cnbc.com</small></li>
+<li><a href="https://www.ft.com/content/9f3c6ed6-c08f-4710-9683-ee2f5eb25841?syn-25a6b1a6=1" target="_blank">US tech stocks plunge into bear market in worst week since Covid-19 crisis</a> <small>ft.com</small></li>
+<li><a href="https://www.theguardian.com/business/2026/nov/20/global-stock-markets-slump-anthropic-ipo-ai-sell-off" target="_blank">Nasdaq erases all 2026 gains as AI sell-off dampens Anthropic’s second day of trading</a> <small>theguardian.com</small></li>
+<li><a href="https://www.bbc.co.uk/news/articles/c6808ym10vzgo?at_medium=RSS&#x26;at_campaign=rss" target="_blank">Tech stock sell-off drags markets down as Anthropic shares slide</a> <small>bbc.co.uk</small></li>
+<li><a href="https://blog.quantinsti.com/sortino-ratio/" target="_blank">Sortino Ratio: The Risk Measure That Ignores Your Winning Months</a> <small>blog.quantinsti.com</small></li>
+<li><a href="https://www.forbes.com/sites/eriksherman/2026/11/20/spacex-stock-fell-below-its-ipo-in-34-days-anthropics-could-today/" target="_blank">SpaceX Showed The Risk Of IPO Hype—Anthropic Could Be Next</a> <small>forbes.com</small></li>
+<li><a href="https://sifted.eu/articles/european-angels-anthropic-ipo/" target="_blank">How a handful of European angels hit the Anthropic jackpot</a> <small>sifted.eu</small></li>
+<li><a href="https://decrypt.co/383752/fraudsters-fake-crypto-exchanges-steal-37-million-sec" target="_blank">Fraudsters Used Fake Crypto Exchanges to Steal $37 Million, SEC Alleges</a> <small>decrypt.co</small></li>
+<li><a href="https://garymarcus.substack.com/p/breaking-it-doesnt-look-anthropics" target="_blank">Breaking: It doesn’t look Anthropic’s IPO is going to save the tech industry</a> <small>garymarcus.substack.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/19/anthropics-ipo-could-deliver-156-billion-to-charity/" target="_blank">Anthropic’s IPO could deliver $156B to charity</a> <small>techcrunch.com</small></li>
+<li><a href="https://news.crunchbase.com/ai/anthropic-ant-ipo-revenue-growth-risks-s1-analysis/" target="_blank">The Key Numbers I’m Watching As Anthropic Makes Its IPO Debut</a> <small>news.crunchbase.com</small></li>
+<li><a href="https://siliconangle.com/2026/11/18/after-anthropic-prices-ipo-higher-than-expected-shares-shoot-up-34-trading-debut/" target="_blank">AI pop: After Anthropic prices IPO higher than expected, shares shoot up 17% in first day of trading</a> <small>siliconangle.com</small></li>
+<li><a href="https://www.fastcompany.com/91644166/what-does-the-anthropic-ipo-mean-for-your-401k?partner=rss&#x26;utm_source=rss&#x26;utm_medium=feed&#x26;utm_campaign=rss+fastcompany&#x26;utm_content=rss" target="_blank">What does the Anthropic IPO mean for your 401(k)?</a> <small>fastcompany.com</small></li>
+<li><a href="https://www.cnbc.com/2026/11/21/prediction-market-regulation-kalshi-cftc.html" target="_blank">State and federal battle over prediction markets regulation heats up after midterms</a> <small>cnbc.com</small></li>
+<li><a href="https://www.ft.com/content/c7ad2e0c-efd1-40c2-a5a8-819ced8acf5b?syn-25a6b1a6=1" target="_blank">Anthropic shares slide as tech stocks tumble</a> <small>ft.com</small></li>
+<li><a href="https://www.theguardian.com/news/video/2026/nov/20/is-claude-creator-anthropic-really-worth-15-trillion-the-latest" target="_blank">Is Claude creator Anthropic really worth $1.3 trillion? - The Latest</a> <small>theguardian.com</small></li>
+<li><a href="https://www.bbc.co.uk/news/articles/c3x29ggenz12o?at_medium=RSS&#x26;at_campaign=rss" target="_blank">Anthropic becomes one of world's most valuable public companies in stock market debut</a> <small>bbc.co.uk</small></li>
+<li><a href="https://blog.quantinsti.com/average-true-range-atr/" target="_blank">Average True Range (ATR): A Trader's Guide to Volatility and Stops</a> <small>blog.quantinsti.com</small></li>
+<li><a href="https://www.forbes.com/sites/jonmarkman/2026/11/19/us-oil-falls-32-as-iran-says-mines-disabled-three-tankers-near-hormuz/" target="_blank">Oil Prices Could Keep Falling Despite Iran Tensions</a> <small>forbes.com</small></li>
+<li><a href="https://decrypt.co/383739/sbf-altruists-ftx-anthropic-shares-worth-43-billion" target="_blank">SBF’s 'The Altruists' Plot Twist: FTX’s Anthropic Shares Would Be Worth $43 Billion</a> <small>decrypt.co</small></li>
+<li><a href="https://garymarcus.substack.com/p/is-anthropics-ipo-a-bad-bet-both" target="_blank">Is Anthropic’s IPO a bad bet, both for investors and society?</a> <small>garymarcus.substack.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/19/anthropic-hits-nasdaq-exchanges-at-110-27-above-ipo-price/" target="_blank">Anthropic hits Nasdaq exchanges at $111, 33% above IPO price</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.cnbc.com/2026/11/20/anthropic-ipo-iceland-blue-lagoon.html" target="_blank">Forget Anthropic: In Europe, the IPO hype is about a blue lagoon</a> <small>cnbc.com</small></li>
+<li><a href="https://www.ft.com/content/149d497e-0567-4467-bcfb-269b8b8eb157?syn-25a6b1a6=1" target="_blank">Inside Anthropic’s historic IPO</a> <small>ft.com</small></li>
+<li><a href="https://www.theguardian.com/news/audio/2026/nov/20/anthropic-1-trillion-valuation-the-latest" target="_blank">Is Anthropic really worth $1.3 trillion? - The Latest</a> <small>theguardian.com</small></li>
+<li><a href="https://www.bbc.co.uk/news/articles/c6742m39xgzxo?at_medium=RSS&#x26;at_campaign=rss" target="_blank">Anthropic raises $81bn in record-breaking stock market debut</a> <small>bbc.co.uk</small></li>
+<li><a href="https://decrypt.co/383702/bitcoin-breaks-below-60k-crypto-fear-greed-index-lowest" target="_blank">Bitcoin Breaks Below $60K as Crypto Fear Index Hits Worst Level Since February</a> <small>decrypt.co</small></li>
+<li><a href="https://techcrunch.com/2026/11/19/at-nasdaq-opening-bell-anthropic-ceo-recommits-to-pacing-ai-development/" target="_blank">At Nasdaq opening bell, Anthropic CEO recommits to pacing AI development</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.cnbc.com/2026/11/21/warren-buffett-quadruples-thanksgiving-gifts.html" target="_blank">Warren Buffett quadruples Thanksgiving gifts: A breakdown of how much wealth he's giving away</a> <small>cnbc.com</small></li>
+<li><a href="https://www.ft.com/content/4f7cf30e-5c9a-489f-bd01-2283a6c9d0e9?syn-25a6b1a6=1" target="_blank">Anthropic’s Wall Street stimulus fades</a> <small>ft.com</small></li>
+<li><a href="https://decrypt.co/383737/cathie-wood-bets-91m-anthropic-ipo-paring-crypto-exposure" target="_blank">Cathie Wood Bets $91M on Anthropic IPO While Paring Crypto Exposure</a> <small>decrypt.co</small></li>
+<li><a href="https://techcrunch.com/2026/11/19/anthropics-7-founders-cashed-out-nearly-2b-in-record-breaking-ipo/" target="_blank">Anthropic’s 7 founders cashed out nearly $2B in record-breaking IPO</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.cnbc.com/2026/11/20/zscaler-crowdstrike-deal.html" target="_blank">Zscaler stock jumps 18% on report that CrowdStrike in talks to buy security vendor</a> <small>cnbc.com</small></li>
+<li><a href="https://www.ft.com/content/a7e598c1-90b2-41c8-917c-f6fca2dfe5ea?syn-25a6b1a6=1" target="_blank">Anthropic’s rocketing IPO</a> <small>ft.com</small></li>
+<li><a href="https://decrypt.co/383732/wrapped-monero-token-collapses-99-after-13-million-hack-blamed-on-web-host" target="_blank">Wrapped Monero Token Collapses 99% After $13 Million Hack Blamed on Web Host</a> <small>decrypt.co</small></li>
+<li><a href="https://www.cnbc.com/2026/11/20/anthropic-defies-odds-holding-ipo-despite-massively-disruptive-market.html" target="_blank">Anthropic defied the odds in its record IPO. Now it has to reckon with AI market turbulence</a> <small>cnbc.com</small></li>
+<li><a href="https://www.ft.com/content/2b203097-7c61-464f-810f-962912a133dd?syn-25a6b1a6=1" target="_blank">Anthropic shares jump 17% after record Wall Street listing</a> <small>ft.com</small></li>
+<li><a href="https://decrypt.co/383700/senate-passes-bill-banning-prediction-market-bets-on-war-terrorism-and-death" target="_blank">Senate Passes Bill Banning Prediction Market Bets on War, Terrorism and Death</a> <small>decrypt.co</small></li>
+<li><a href="https://www.cnbc.com/2026/11/20/as-anthropic-shares-tank-investors-scramble-to-hedge-it-could-be-very-expensive.html" target="_blank">As Anthropic shares tank, investors scramble to hedge. It could be very expensive</a> <small>cnbc.com</small></li>
+<li><a href="https://www.ft.com/content/97912585-2412-496c-a224-78e69328bcdb?syn-25a6b1a6=1" target="_blank">Nscale warns of its exposure to suppliers facing US blacklist</a> <small>ft.com</small></li>
+<li><a href="https://decrypt.co/383691/morning-minute-anthropic-ipo-pops-sinks-markets" target="_blank">Morning Minute: Anthropic IPO Pops, Sinks Markets</a> <small>decrypt.co</small></li>
+<li><a href="https://www.cnbc.com/2026/11/20/bitcoin-price-gold-market-hedge.html" target="_blank">Bitcoin sell-off: Crypto is failing the 'digital gold' test again as it sinks with stocks</a> <small>cnbc.com</small></li>
+<li><a href="https://www.ft.com/content/62c0510b-ca65-441e-9baf-675b93903b9e?syn-25a6b1a6=1" target="_blank">Anthropic raises $81bn in record IPO</a> <small>ft.com</small></li>
+<li><a href="https://decrypt.co/383688/moonpay-applies-for-national-trust-bank-charter-to-grow-custody-and-stablecoin-business" target="_blank">MoonPay Applies for National Trust Bank Charter to Grow Custody and Stablecoin Business</a> <small>decrypt.co</small></li>
+<li><a href="https://www.cnbc.com/2026/11/20/warsh-fed-forward-guidance-rate-hikes.html" target="_blank">Warsh wants Fed officials to talk less. Instead, they’re talking more</a> <small>cnbc.com</small></li>
+<li><a href="https://www.ft.com/content/74801528-833d-412f-b939-24f68c2c3fc1?syn-25a6b1a6=1" target="_blank">Anthropic’s magnificent IPO</a> <small>ft.com</small></li>
+<li><a href="https://decrypt.co/383685/bitcoin-etfs-shed-582m-in-a-day-as-btc-drops-below-62k" target="_blank">Bitcoin ETFs Shed $582M in a Day as BTC Drops Below $62K</a> <small>decrypt.co</small></li>
+<li><a href="https://www.cnbc.com/2026/11/20/bitcoin-pre-ipo-selloff-pattern-anthropic-spacex.html" target="_blank">Bitcoin suffered identical sell-off pattern ahead of Anthropic, SpaceX IPOs — what happens next?</a> <small>cnbc.com</small></li>
+<li><a href="https://www.ft.com/content/aa8290dc-a20a-45af-97ab-1e71f97f236a?syn-25a6b1a6=1" target="_blank">The key to Anthropic’s value</a> <small>ft.com</small></li>
+<li><a href="https://decrypt.co/383682/coinbase-targets-in-house-prediction-markets-by-first-half-of-2027-report" target="_blank">Coinbase Targets In-House Prediction Markets by First Half of 2027: Report</a> <small>decrypt.co</small></li>
+<li><a href="https://www.cnbc.com/2026/11/20/bitcoin-price-catalysts-tokenization-regulation.html" target="_blank">Bitcoin's regulation bull case is played out. What could drive crypto gains moving forward</a> <small>cnbc.com</small></li>
+<li><a href="https://decrypt.co/383666/meet-shrincs-bitcoin-emerging-frontrunner-post-quantum-signature" target="_blank">Meet SHRINCS: Bitcoin's Emerging Frontrunner for a Post-Quantum Signature</a> <small>decrypt.co</small></li>
+<li><a href="https://decrypt.co/383655/bitcoin-enters-death-cross-anthropic-ipo" target="_blank">Bitcoin Enters Death Cross as Anthropic IPO Fails to Lift Wall Street</a> <small>decrypt.co</small></li>
+<li><a href="https://decrypt.co/383669/nvidia-amd-micron-ai-stocks-sink-anthropic-ipo-price" target="_blank">Nvidia, AMD, Micron Sink as Anthropic Closes 17% Above IPO Price</a> <small>decrypt.co</small></li>
+<li><a href="https://decrypt.co/383642/protesters-arrested-nasdaq-anthropic-ipo-ai-bubble-risks" target="_blank">Protesters Arrested Outside Nasdaq as Activists Oppose Anthropic IPO Over AI Bubble Risks</a> <small>decrypt.co</small></li>
+<li><a href="https://decrypt.co/resources/what-are-perpetual-futures-how-cryptos-most-popular-derivative-works" target="_blank">What Are Perpetual Futures? How Crypto's Most Popular Derivative Works</a> <small>decrypt.co</small></li>
+<li><a href="https://decrypt.co/383589/gen-z-embraces-crypto-most-americans-side-quest" target="_blank">Gen Z Embraces Crypto While Most Americans Call It a 'Side Quest'</a> <small>decrypt.co</small></li>
+<li><a href="https://decrypt.co/383623/anthropic-tops-spacex-initial-ipo-81-billion-deal-where-the-money-went" target="_blank">Anthropic Tops SpaceX's Initial IPO With $81 Billion Deal: Where the Money Went</a> <small>decrypt.co</small></li>
+<li><a href="https://decrypt.co/383631/anthropic-stock-indicated-open-33-above-ipo-price" target="_blank">Anthropic Stock Opens 33% Above IPO Price as AI Stocks Rally</a> <small>decrypt.co</small></li>
+<li><a href="https://decrypt.co/383597/bitcoin-struggles-to-hold-64000-as-etf-outflows-hit-2-9b-in-november" target="_blank">Bitcoin Struggles to Hold $64,000 as ETF Outflows Hit $2.9B in November</a> <small>decrypt.co</small></li>
+<li><a href="https://decrypt.co/383609/morning-minute-googles-newest-ai-model-tops-benchmarks-ahead-of-anthropic-ipo" target="_blank">Morning Minute: Google’s Newest AI Model Tops Benchmarks Ahead of Anthropic IPO</a> <small>decrypt.co</small></li>
+<li><a href="https://decrypt.co/383608/binance-wins-6-5b-freezing-order-over-hack-that-can-be-served-via-the-blockchain" target="_blank">Binance Wins $6.5B Freezing Order Over Hack That Can Be Served via the Blockchain</a> <small>decrypt.co</small></li>
+<li><a href="https://decrypt.co/383586/ledger-confirms-tampered-bitcoin-wallets-berlin-spreads-beyond-asia" target="_blank">Ledger Confirms Tampered Bitcoin Wallets in Berlin as Spy Implant Probe Spreads Beyond Asia</a> <small>decrypt.co</small></li>
+<li><a href="https://decrypt.co/383570/why-coinshares-just-sold-all-ethereum-half-solana" target="_blank">Why CoinShares Just Sold All Its Ethereum and Half Its Solana</a> <small>decrypt.co</small></li>
+</ul>
+</details>
+<ul>
+<li>Anthropic went public in a record-breaking IPO and closed its first trading day up 17% <a href="https://techcrunch.com/2026/11/19/anthropics-7-founders-cashed-out-nearly-2b-in-record-breaking-ipo/" target="_blank">[1]</a> <a href="https://news.crunchbase.com/public/ipo/anthropic-prices-ipo-ant-above-range/" target="_blank">[2]</a>, with its seven founders cashing out nearly $2B <a href="https://techcrunch.com/2026/11/19/anthropics-7-founders-cashed-out-nearly-2b-in-record-breaking-ipo/" target="_blank">[1]</a></li>
+<li>The listing landed in the worst week for US tech stocks since the 2020 Covid crisis, as the sector fell into a bear market <a href="https://www.cnbc.com/2026/11/21/anthropic-ipo-tech-selloff.html" target="_blank">[3]</a> <a href="https://www.ft.com/content/9f3c6ed6-c08f-4710-9683-ee2f5eb25841?syn-25a6b1a6=1" target="_blank">[4]</a>, and AI stocks have lost over 50% in 5 months <a href="https://garymarcus.substack.com/p/breaking-anthropic-stock-is-crashing" target="_blank">[5]</a></li>
+<li>Anthropic’s IPO filing lays out a strategy to undercut its AI rivals <a href="https://www.fastcompany.com/91640634/anthropics-ipo-filing-reveals-a-strategy-to-undercut-its-ai-rivals?partner=rss&#x26;utm_source=rss&#x26;utm_medium=feed&#x26;utm_campaign=rss+fastcompany&#x26;utm_content=rss" target="_blank">[6]</a>, while commentators question whether the listing comes too late to rescue the AI trade <a href="https://siliconangle.com/2026/11/20/anthropic-goes-public-but-is-it-too-late-to-save-the-ai-trade/" target="_blank">[7]</a> and argue the company remains its own worst enemy <a href="https://www.wired.com/story/anthropics-record-breaking-ipo-highlights-the-ai-giants-worst-enemy-itself/" target="_blank">[8]</a></li>
+</ul>
+<p><strong>Why it matters:</strong> Anthropic’s debut shows investor appetite for top-tier AI names even in a bear market, but its first-day gain sits against a sector-wide selloff that will test whether public investors keep funding AI at current valuations.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://techcrunch.com/2026/11/19/anthropics-7-founders-cashed-out-nearly-2b-in-record-breaking-ipo/" target="_blank">Anthropic’s 7 founders cashed out nearly $2B in record-breaking IPO</a> <small>techcrunch.com</small></li>
+<li>[2] <a href="https://news.crunchbase.com/public/ipo/anthropic-prices-ipo-ant-above-range/" target="_blank">Anthropic Closes Up 17% After Massive IPO</a> <small>news.crunchbase.com</small></li>
+<li>[3] <a href="https://www.cnbc.com/2026/11/21/anthropic-ipo-tech-selloff.html" target="_blank">Anthropic’s record IPO collides with tech’s worst week on Wall Street since 2020</a> <small>cnbc.com</small></li>
+<li>[4] <a href="https://www.ft.com/content/9f3c6ed6-c08f-4710-9683-ee2f5eb25841?syn-25a6b1a6=1" target="_blank">US tech stocks plunge into bear market in worst week since Covid-19 crisis</a> <small>ft.com</small></li>
+<li>[5] <a href="https://garymarcus.substack.com/p/breaking-anthropic-stock-is-crashing" target="_blank">Breaking: Anthropic stock is crashing, and AI stocks have lost over 50% in 5 months.</a> <small>garymarcus.substack.com</small></li>
+<li>[6] <a href="https://www.fastcompany.com/91640634/anthropics-ipo-filing-reveals-a-strategy-to-undercut-its-ai-rivals?partner=rss&#x26;utm_source=rss&#x26;utm_medium=feed&#x26;utm_campaign=rss+fastcompany&#x26;utm_content=rss" target="_blank">Anthropic’s IPO filing reveals a strategy to undercut its AI rivals</a> <small>fastcompany.com</small></li>
+<li>[7] <a href="https://siliconangle.com/2026/11/20/anthropic-goes-public-but-is-it-too-late-to-save-the-ai-trade/" target="_blank">Anthropic goes public, but is it too late to save the AI trade?</a> <small>siliconangle.com</small></li>
+<li>[8] <a href="https://www.wired.com/story/anthropics-record-breaking-ipo-highlights-the-ai-giants-worst-enemy-itself/" target="_blank">Anthropic’s Record-Breaking IPO Highlights the AI Giant’s Worst Enemy—Itself</a> <small>wired.com</small></li>
+</ul>
+<h3 id="consumer-ai-apps-and-platforms"><a class="__permalink-h" href="#consumer-ai-apps-and-platforms" aria-label="consumer ai apps and platforms permalink">»</a>Consumer AI Apps and Platforms</h3>
+<details>
+<summary><em>56 articles</em></summary>
+<ul>
+<li><a href="https://simonwillison.net/2026/Nov/20/llm-gemini/" target="_blank">llm-gemini 0.38.1</a> <small>simonwillison.net</small></li>
+<li><a href="https://deepmind.google/blog/introducing-gemini-4-neon/" target="_blank">Introducing Gemini 4 Neon</a> <small>deepmind.google</small></li>
+<li><a href="https://techcrunch.com/2026/11/21/signal-restricts-mobile-screenshots-as-it-confronts-existential-threat-of-ai-surveillance/" target="_blank">Signal restricts mobile screenshots as it confronts ‘existential threat’ of AI surveillance</a> <small>techcrunch.com</small></li>
+<li><a href="https://arstechnica.com/ai/2026/11/googles-latest-search-page-redesign-drops-the-search-button-adds-ai-sidebar/" target="_blank">Google rolls out new search homepage with AI chat history and no search button</a> <small>arstechnica.com</small></li>
+<li><a href="https://www.wired.com/story/google-built-a-giant-mirror-dimension-internet-to-test-its-chrome-ai-agents/" target="_blank">Google Built a Giant ‘Mirror Dimension’ Internet to Test Its Chrome AI Agents</a> <small>wired.com</small></li>
+<li><a href="https://the-decoder.com/signal-blocks-screenshots-on-ios-27-and-android-to-stop-ai-agents-from-reading-private-chats/" target="_blank">Signal blocks screenshots on iOS 27 and Android to stop AI agents from reading private chats</a> <small>the-decoder.com</small></li>
+<li><a href="https://siliconangle.com/2026/11/19/google-adds-computer-use-capabilities-to-geminis-mac-app/" target="_blank">Google adds computer use capabilities to Gemini’s Mac app</a> <small>siliconangle.com</small></li>
+<li><a href="https://www.fastcompany.com/91640406/apple-intelligence-decoded-how-to-make-sense-of-apples-confusing-ai-lineup?partner=rss&#x26;utm_source=rss&#x26;utm_medium=feed&#x26;utm_campaign=rss+fastcompany&#x26;utm_content=rss" target="_blank">Apple Intelligence, decoded: How to make sense of Apple’s confusing AI lineup</a> <small>fastcompany.com</small></li>
+<li><a href="https://www.zdnet.com/innovation/signal-restricts-screenshots-over-ai-agent-concerns/" target="_blank">Signal to restrict screenshots over AI agent concerns – again</a> <small>zdnet.com</small></li>
+<li><a href="https://www.pymnts.com/news/artificial-intelligence/2026/googles-gemini-app-can-now-operate-apple-desktop-computers/" target="_blank">Google’s Gemini App Can Now Operate Apple Desktop Computers</a> <small>pymnts.com</small></li>
+<li><a href="https://cyberscoop.com/signal-blocks-apple-google-ai-screenshots/" target="_blank">Signal blocks Apple, Google AI screenshotting in response to ‘existential threat’ to privacy app</a> <small>cyberscoop.com</small></li>
+<li><a href="https://www.helpnetsecurity.com/2026/11/20/android-developer-verification-power-users/" target="_blank">Android developer verification will reach every install source, with a side door for power users</a> <small>helpnetsecurity.com</small></li>
+<li><a href="https://technode.com/2026/11/17/apple-adds-generative-ai-compliance-filings-to-app-store-connect-in-china/" target="_blank">Apple adds generative AI compliance filings to App Store Connect in China</a> <small>technode.com</small></li>
+<li><a href="https://www.analyticsvidhya.com/blog/2026/11/gemini-4-neon-review/" target="_blank">Gemini 4 Neon Review: Benchmarks, Pricing, and Performance</a> <small>analyticsvidhya.com</small></li>
+<li><a href="https://decrypt.co/383750/signal-os-level-ai-existential-threat-blocks-screenshots" target="_blank">Signal Calls OS-Level AI an 'Existential Threat' and Blocks Screenshots to Fight It</a> <small>decrypt.co</small></li>
+<li><a href="https://simonwillison.net/2026/Nov/18/llm-gemini/" target="_blank">llm-gemini 0.38</a> <small>simonwillison.net</small></li>
+<li><a href="https://deepmind.google/blog/genie-4-is-now-available/" target="_blank">Genie 4 is now available</a> <small>deepmind.google</small></li>
+<li><a href="https://techcrunch.com/2026/11/19/apple-may-be-developing-its-own-ai-agent-that-runs-your-mac/" target="_blank">Apple may be developing its own AI agent that runs your Mac</a> <small>techcrunch.com</small></li>
+<li><a href="https://arstechnica.com/ai/2026/11/google-will-let-you-opt-out-of-ai-training-in-gemini-without-losing-your-history/" target="_blank">Google makes it easier to use Gemini without training AI on your data</a> <small>arstechnica.com</small></li>
+<li><a href="https://the-decoder.com/googles-gemini-can-now-run-mac-apps-and-finish-desktop-chores-in-the-background-while-you-keep-working/" target="_blank">Google's Gemini can now run Mac apps and finish desktop chores in the background while you keep working</a> <small>the-decoder.com</small></li>
+<li><a href="https://siliconangle.com/2026/11/18/googles-latest-midtier-model-gemini-4-neon-is-three-times-faster-than-carbon-and-wins-on-some-metrics/" target="_blank">Google’s latest midtier model Gemini 4 Neon is three times faster than Carbon and wins on some metrics</a> <small>siliconangle.com</small></li>
+<li><a href="https://www.zdnet.com/innovation/google-ai-mode-searches-private-temporary-threads/" target="_blank">Your Google AI mode searches can stay private now with ‘temporary threads’ – here’s how</a> <small>zdnet.com</small></li>
+<li><a href="https://technode.com/2026/11/16/deepseek-users-report-chat-limits-as-the-service-cites-capacity-constraints/" target="_blank">DeepSeek users report chat limits as the service cites capacity constraints</a> <small>technode.com</small></li>
+<li><a href="https://decrypt.co/383733/google-gives-gemini-control-mac-apps-ai-agent" target="_blank">Google Gives Gemini Control of Mac Apps, But Its New AI Agent Comes With Risks</a> <small>decrypt.co</small></li>
+<li><a href="https://techcrunch.com/2026/11/19/google-gives-gemini-the-ability-to-use-your-mac-for-you/" target="_blank">Google gives Gemini the ability to use your Mac for you</a> <small>techcrunch.com</small></li>
+<li><a href="https://siliconangle.com/2026/11/18/google-upgrades-geminis-agentic-task-mode-with-new-model-e-commerce-features/" target="_blank">Google upgrades Gemini’s agentic Task mode with new model, e-commerce features</a> <small>siliconangle.com</small></li>
+<li><a href="https://www.zdnet.com/tech/google-wallet-iphone-ios-no-tap-to-pay/" target="_blank">Google Wallet comes to your iPhone – but without this feature</a> <small>zdnet.com</small></li>
+<li><a href="https://decrypt.co/383572/google-genie-4-ultra-subscribers-build-ai-worlds-real-time" target="_blank">Google's Genie 4 Is Here, Letting Ultra Subscribers Build AI Worlds in Real Time</a> <small>decrypt.co</small></li>
+<li><a href="https://techcrunch.com/2026/11/21/signal-restricts-mobile-screenshots-as-it-confronts-existential-threat-of-ai-surveillance/" target="_blank">Signal restricts mobile screenshots as it confronts ‘existential threat’ of AI surveillance</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.zdnet.com/health/apple-health-ios-27-3-ai-features-compatible-iphones/" target="_blank">5 new Apple Health features you should try in iOS 27.3 – if your phone qualifies</a> <small>zdnet.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/20/startup-sues-apple-in-india-over-tap-to-share-contacts-feature/" target="_blank">Startup sues Apple in India over tap-to-share contacts feature</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.zdnet.com/innovation/gemini-spark-tasks-free-personal-agent/" target="_blank">You can use Google’s Spark AI agent, renamed Tasks, for free now – with limits</a> <small>zdnet.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/19/apple-may-be-developing-its-own-ai-agent-that-runs-your-mac/" target="_blank">Apple may be developing its own AI agent that runs your Mac</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.zdnet.com/tech/wear-os-smartwatches-update-save-battery-life-galaxy-pixel/" target="_blank">Your Wear OS smartwatch just got a new way to save battery life</a> <small>zdnet.com</small></li>
+<li><a href="https://www.zdnet.com/business/gemini-gems-google-skills-transition/" target="_blank">Goodbye, Gemini Gems: How to use Google’s new Skills – and share them</a> <small>zdnet.com</small></li>
+<li><a href="https://www.zdnet.com/tech/googlebook-os-chrome-update-new-features/" target="_blank">Your Googlebook just got a Chrome update – 5 new features</a> <small>zdnet.com</small></li>
+<li><a href="https://www.zdnet.com/innovation/google-gemini-ai-model-training-opt-out-how/" target="_blank">Google is making it easier to opt out of Gemini AI model training – here’s how</a> <small>zdnet.com</small></li>
+<li><a href="https://www.zdnet.com/innovation/google-gemini-notebook-interactive-sites-notes/" target="_blank">I asked Gemini Notebook to ‘make me a site’ from my notes – it was satisfying</a> <small>zdnet.com</small></li>
+<li><a href="https://www.zdnet.com/innovation/apple-siri-ai-daily-limits-cost-icloud-plus-plan/" target="_blank">Apple reveals daily limits on your Siri AI use – here’s how much you’ll have to pay</a> <small>zdnet.com</small></li>
+<li><a href="https://www.zdnet.com/tech/android-fast-switch-like-iphone-handoff/" target="_blank">Own 2 Android phones? Google may let you switch service fast – like iPhone Handoff</a> <small>zdnet.com</small></li>
+<li><a href="https://www.zdnet.com/tech/oura-jet-lag-plan/" target="_blank">Oura’s new feature could help you kick jet lag – how to enable it</a> <small>zdnet.com</small></li>
+<li><a href="https://www.zdnet.com/tech/apple-health-ai-usage-study-how-to-enroll/" target="_blank">Apple could build its AI health chatbot from this study – how to enroll</a> <small>zdnet.com</small></li>
+<li><a href="https://www.zdnet.com/innovation/google-ai-mode-searches-private-temporary-threads/" target="_blank">Your Google AI mode searches can stay private now with ‘temporary threads’ – here’s how</a> <small>zdnet.com</small></li>
+<li><a href="https://www.zdnet.com/tech/google-wallet-iphone-ios-no-tap-to-pay/" target="_blank">Google Wallet comes to your iPhone – but without this feature</a> <small>zdnet.com</small></li>
+<li><a href="https://www.zdnet.com/innovation/signal-restricts-screenshots-over-ai-agent-concerns/" target="_blank">Signal to restrict screenshots over AI agent concerns – again</a> <small>zdnet.com</small></li>
+<li><a href="https://www.zdnet.com/innovation/gemini-spark-tasks-free-personal-agent/" target="_blank">You can use Google’s Spark AI agent, renamed Tasks, for free now – with limits</a> <small>zdnet.com</small></li>
+<li><a href="https://www.zdnet.com/health/apple-health-ios-27-3-ai-features-compatible-iphones/" target="_blank">5 new Apple Health features you should try in iOS 27.3 – if your phone qualifies</a> <small>zdnet.com</small></li>
+<li><a href="https://www.zdnet.com/tech/wear-os-smartwatches-update-save-battery-life-galaxy-pixel/" target="_blank">Your Wear OS smartwatch just got a new way to save battery life</a> <small>zdnet.com</small></li>
+<li><a href="https://www.zdnet.com/business/gemini-gems-google-skills-transition/" target="_blank">Goodbye, Gemini Gems: How to use Google’s new Skills – and share them</a> <small>zdnet.com</small></li>
+<li><a href="https://www.zdnet.com/tech/googlebook-os-chrome-update-new-features/" target="_blank">Your Googlebook just got a Chrome update – 5 new features</a> <small>zdnet.com</small></li>
+<li><a href="https://www.zdnet.com/innovation/google-gemini-ai-model-training-opt-out-how/" target="_blank">Google is making it easier to opt out of Gemini AI model training – here’s how</a> <small>zdnet.com</small></li>
+<li><a href="https://www.zdnet.com/innovation/google-gemini-notebook-interactive-sites-notes/" target="_blank">I asked Gemini Notebook to ‘make me a site’ from my notes – it was satisfying</a> <small>zdnet.com</small></li>
+<li><a href="https://www.zdnet.com/innovation/apple-siri-ai-daily-limits-cost-icloud-plus-plan/" target="_blank">Apple reveals daily limits on your Siri AI use – here’s how much you’ll have to pay</a> <small>zdnet.com</small></li>
+<li><a href="https://www.zdnet.com/tech/android-fast-switch-like-iphone-handoff/" target="_blank">Own 2 Android phones? Google may let you switch service fast – like iPhone Handoff</a> <small>zdnet.com</small></li>
+<li><a href="https://www.zdnet.com/tech/oura-jet-lag-plan/" target="_blank">Oura’s new feature could help you kick jet lag – how to enable it</a> <small>zdnet.com</small></li>
+<li><a href="https://www.zdnet.com/tech/apple-health-ai-usage-study-how-to-enroll/" target="_blank">Apple could build its AI health chatbot from this study – how to enroll</a> <small>zdnet.com</small></li>
+</ul>
+</details>
+<ul>
+<li>Signal restricted screenshots on iOS 27 and Android to stop AI agents from reading private chats, calling AI surveillance an “existential threat” <a href="https://techcrunch.com/2026/11/21/signal-restricts-mobile-screenshots-as-it-confronts-existential-threat-of-ai-surveillance/" target="_blank">[1]</a> <a href="https://the-decoder.com/signal-blocks-screenshots-on-ios-27-and-android-to-stop-ai-agents-from-reading-private-chats/" target="_blank">[2]</a> <a href="https://www.zdnet.com/innovation/signal-restricts-screenshots-over-ai-agent-concerns/" target="_blank">[3]</a></li>
+<li>Google added computer use capabilities to the Gemini Mac app, letting Gemini operate Apple desktop computers <a href="https://siliconangle.com/2026/11/19/google-adds-computer-use-capabilities-to-geminis-mac-app/" target="_blank">[4]</a> <a href="https://www.pymnts.com/news/artificial-intelligence/2026/googles-gemini-app-can-now-operate-apple-desktop-computers/" target="_blank">[5]</a></li>
+<li>Google rolled out a new search homepage with AI chat history and no search button <a href="https://arstechnica.com/ai/2026/11/googles-latest-search-page-redesign-drops-the-search-button-adds-ai-sidebar/" target="_blank">[6]</a>, built a “mirror dimension” internet to test its Chrome AI agents <a href="https://www.wired.com/story/google-built-a-giant-mirror-dimension-internet-to-test-its-chrome-ai-agents/" target="_blank">[7]</a>, and released Gemini 4 Neon <a href="https://deepmind.google/blog/introducing-gemini-4-neon/" target="_blank">[8]</a> alongside llm-gemini 0.38.1 <a href="https://simonwillison.net/2026/Nov/20/llm-gemini/" target="_blank">[9]</a>, while Apple’s AI lineup remains confusing for users <a href="https://www.fastcompany.com/91640406/apple-intelligence-decoded-how-to-make-sense-of-apples-confusing-ai-lineup?partner=rss&#x26;utm_source=rss&#x26;utm_medium=feed&#x26;utm_campaign=rss+fastcompany&#x26;utm_content=rss" target="_blank">[10]</a></li>
+</ul>
+<p><strong>Why it matters:</strong> As Google pushes AI agents into desktops, browsers, and search, Signal’s screenshot block shows privacy-focused apps now treat those agents as a direct threat to private data.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://techcrunch.com/2026/11/21/signal-restricts-mobile-screenshots-as-it-confronts-existential-threat-of-ai-surveillance/" target="_blank">Signal restricts mobile screenshots as it confronts ‘existential threat’ of AI surveillance</a> <small>techcrunch.com</small></li>
+<li>[2] <a href="https://the-decoder.com/signal-blocks-screenshots-on-ios-27-and-android-to-stop-ai-agents-from-reading-private-chats/" target="_blank">Signal blocks screenshots on iOS 27 and Android to stop AI agents from reading private chats</a> <small>the-decoder.com</small></li>
+<li>[3] <a href="https://www.zdnet.com/innovation/signal-restricts-screenshots-over-ai-agent-concerns/" target="_blank">Signal to restrict screenshots over AI agent concerns – again</a> <small>zdnet.com</small></li>
+<li>[4] <a href="https://siliconangle.com/2026/11/19/google-adds-computer-use-capabilities-to-geminis-mac-app/" target="_blank">Google adds computer use capabilities to Gemini’s Mac app</a> <small>siliconangle.com</small></li>
+<li>[5] <a href="https://www.pymnts.com/news/artificial-intelligence/2026/googles-gemini-app-can-now-operate-apple-desktop-computers/" target="_blank">Google’s Gemini App Can Now Operate Apple Desktop Computers</a> <small>pymnts.com</small></li>
+<li>[6] <a href="https://arstechnica.com/ai/2026/11/googles-latest-search-page-redesign-drops-the-search-button-adds-ai-sidebar/" target="_blank">Google rolls out new search homepage with AI chat history and no search button</a> <small>arstechnica.com</small></li>
+<li>[7] <a href="https://www.wired.com/story/google-built-a-giant-mirror-dimension-internet-to-test-its-chrome-ai-agents/" target="_blank">Google Built a Giant ‘Mirror Dimension’ Internet to Test Its Chrome AI Agents</a> <small>wired.com</small></li>
+<li>[8] <a href="https://deepmind.google/blog/introducing-gemini-4-neon/" target="_blank">Introducing Gemini 4 Neon</a> <small>deepmind.google</small></li>
+<li>[9] <a href="https://simonwillison.net/2026/Nov/20/llm-gemini/" target="_blank">llm-gemini 0.38.1</a> <small>simonwillison.net</small></li>
+<li>[10] <a href="https://www.fastcompany.com/91640406/apple-intelligence-decoded-how-to-make-sense-of-apples-confusing-ai-lineup?partner=rss&#x26;utm_source=rss&#x26;utm_medium=feed&#x26;utm_campaign=rss+fastcompany&#x26;utm_content=rss" target="_blank">Apple Intelligence, decoded: How to make sense of Apple’s confusing AI lineup</a> <small>fastcompany.com</small></li>
+</ul>
+<h3 id="tencent-hy4-model-release"><a class="__permalink-h" href="#tencent-hy4-model-release" aria-label="tencent hy4 model release permalink">»</a>Tencent Hy4 Model Release</h3>
+<details>
+<summary><em>22 articles</em></summary>
+<ul>
+<li><a href="https://www.together.ai/blog/tencent-hy4" target="_blank">Tencent Hy4 is live on Together AI</a> <small>together.ai</small></li>
+<li><a href="https://technode.com/2026/11/20/tencent-releases-hy4-model-weights-with-million-token-context/" target="_blank">Tencent releases Hy4 model weights with million-token context</a> <small>technode.com</small></li>
+<li><a href="https://pandaily.com/openatom-humanoid-robot-open-source-working-committee" target="_blank">OpenAtom Forms Working Committee for Humanoid Robot Open-Source Community</a> <small>pandaily.com</small></li>
+<li><a href="https://technode.com/2026/11/20/alibaba-uses-its-own-chips-to-train-next-generation-qwen-model/" target="_blank">Alibaba uses its own chips to train next-generation Qwen model</a> <small>technode.com</small></li>
+<li><a href="https://pandaily.com/metax-hy4-c-series-gpu-flagos-w8a8-support" target="_blank">MetaX Adds Hy4 Support on C-Series GPUs With FlagOS W8A8 Weights</a> <small>pandaily.com</small></li>
+<li><a href="https://technode.com/2026/11/19/tencent-says-hunyuan-hy4-flash-surpasses-50-trillion-tokens-in-first-day-usage/" target="_blank">Tencent says Hunyuan Hy4 flash surpasses 50 trillion tokens in first-day usage</a> <small>technode.com</small></li>
+<li><a href="https://pandaily.com/tencent-hy-ama-larger-models-flash-lite-24gb-roadmap" target="_blank">Tencent’s Hy Team Outlines Larger Models and a 24GB Deployment Roadmap</a> <small>pandaily.com</small></li>
+<li><a href="https://technode.com/2026/11/19/tencent-releases-hy4-flash-model-weights-for-local-deployment/" target="_blank">Tencent releases Hy4 flash model weights for local deployment</a> <small>technode.com</small></li>
+<li><a href="https://pandaily.com/qingmao-intelligence-ascend-950dt-token-factory-joint-operations-plan" target="_blank">Qingmao Intelligence Plans a 10,000-Card Ascend 950DT Token Network for 2027</a> <small>pandaily.com</small></li>
+<li><a href="https://technode.com/2026/11/19/tencent-cuts-yuanbao-spending-after-ai-app-falls-short-of-expectations/" target="_blank">Tencent cuts Yuanbao spending after AI app falls short of expectations</a> <small>technode.com</small></li>
+<li><a href="https://pandaily.com/tencent-workbuddy-computer-use-public-beta-desktop-apps" target="_blank">Tencent Announces WorkBuddy Computer Use Beta for Desktop Apps</a> <small>pandaily.com</small></li>
+<li><a href="https://technode.com/2026/11/19/deepseek-drops-separate-fees-for-model-triggered-web-searches/" target="_blank">DeepSeek drops separate fees for model-triggered web searches</a> <small>technode.com</small></li>
+<li><a href="https://pandaily.com/tencent-hy4-flagship-weights-system-card-license" target="_blank">Tencent Releases Hy4 Flagship Weights Under Conditional License</a> <small>pandaily.com</small></li>
+<li><a href="https://technode.com/2026/11/18/bytedance-job-listing-points-to-a-tv-version-of-hongguo-short-dramas/" target="_blank">ByteDance job listing points to a TV version of Hongguo short dramas</a> <small>technode.com</small></li>
+<li><a href="https://technode.com/2026/11/18/kuaishou-launches-kling-image-4-0-with-native-8k-generation/" target="_blank">Kuaishou launches Kling Image 4.0 with native 8K generation</a> <small>technode.com</small></li>
+<li><a href="https://technode.com/2026/11/17/bytedance-opens-seedance-2-5s-4k-video-generation-api-to-developers/" target="_blank">ByteDance opens Seedance 2.5’s 4K video generation API to developers</a> <small>technode.com</small></li>
+<li><a href="https://technode.com/2026/11/17/former-meituan-and-feishu-executives-reportedly-team-up-to-build-an-ai-recording-ring/" target="_blank">Former Meituan and Feishu executives reportedly team up to build an AI recording ring</a> <small>technode.com</small></li>
+<li><a href="https://technode.com/2026/11/17/baidus-robin-li-warns-of-ai-bubble-risk-as-applications-lag-infrastructure-spending/" target="_blank">Baidu’s Robin Li warns of AI bubble risk as applications lag infrastructure spending</a> <small>technode.com</small></li>
+<li><a href="https://technode.com/2026/11/16/tencent-launches-hy4-flash-cutting-ai-task-costs-by-95-in-internal-tests/" target="_blank">Tencent launches Hy4 flash, cutting AI task costs by 95% in internal tests</a> <small>technode.com</small></li>
+<li><a href="https://technode.com/2026/11/16/alibaba-launches-qwen4-max-with-lower-api-prices-and-a-million-token-context-window/" target="_blank">Alibaba launches Qwen4-Max with lower API prices and a million-token context window</a> <small>technode.com</small></li>
+<li><a href="https://technode.com/2026/11/16/tencent-publishes-all-hands-notes-urging-teams-to-rebuild-their-businesses-around-ai/" target="_blank">Tencent publishes all-hands notes urging teams to rebuild their businesses around AI</a> <small>technode.com</small></li>
+<li><a href="https://technode.com/2026/11/16/huawei-cloud-plans-to-open-source-its-ascend-based-world-model-for-robots/" target="_blank">Huawei Cloud plans to open-source its Ascend-based world model for robots</a> <small>technode.com</small></li>
+</ul>
+</details>
+<ul>
+<li>Tencent released the Hy4 model weights with a million-token context window <a href="https://technode.com/2026/11/20/tencent-releases-hy4-model-weights-with-million-token-context/" target="_blank">[1]</a>, and separately open-sourced Hy4 flash weights for local deployment <a href="https://technode.com/2026/11/19/tencent-releases-hy4-flash-model-weights-for-local-deployment/" target="_blank">[2]</a>. Hy4 flash passed 50 trillion tokens of usage on its first day <a href="https://technode.com/2026/11/19/tencent-says-hunyuan-hy4-flash-surpasses-50-trillion-tokens-in-first-day-usage/" target="_blank">[3]</a>.</li>
+<li>Hy4 spread quickly across the ecosystem: Together AI made it live <a href="https://www.together.ai/blog/tencent-hy4" target="_blank">[4]</a>, and MetaX added support on its C-Series GPUs with FlagOS W8A8 weights <a href="https://pandaily.com/metax-hy4-c-series-gpu-flagos-w8a8-support" target="_blank">[5]</a>.</li>
+<li>Tencent’s Hy team outlined plans for larger models and a 24GB deployment roadmap <a href="https://pandaily.com/tencent-hy-ama-larger-models-flash-lite-24gb-roadmap" target="_blank">[6]</a>, while the company cut Yuanbao spending after the AI app fell short of expectations <a href="https://technode.com/2026/11/19/tencent-cuts-yuanbao-spending-after-ai-app-falls-short-of-expectations/" target="_blank">[7]</a>.</li>
+</ul>
+<p><strong>Why it matters:</strong> Tencent is betting on open weights and broad hardware support to win developers, and the Yuanbao cutback suggests that consumer apps have not yet matched the pace of its model adoption.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://technode.com/2026/11/20/tencent-releases-hy4-model-weights-with-million-token-context/" target="_blank">Tencent releases Hy4 model weights with million-token context</a> <small>technode.com</small></li>
+<li>[2] <a href="https://technode.com/2026/11/19/tencent-releases-hy4-flash-model-weights-for-local-deployment/" target="_blank">Tencent releases Hy4 flash model weights for local deployment</a> <small>technode.com</small></li>
+<li>[3] <a href="https://technode.com/2026/11/19/tencent-says-hunyuan-hy4-flash-surpasses-50-trillion-tokens-in-first-day-usage/" target="_blank">Tencent says Hunyuan Hy4 flash surpasses 50 trillion tokens in first-day usage</a> <small>technode.com</small></li>
+<li>[4] <a href="https://www.together.ai/blog/tencent-hy4" target="_blank">Tencent Hy4 is live on Together AI</a> <small>together.ai</small></li>
+<li>[5] <a href="https://pandaily.com/metax-hy4-c-series-gpu-flagos-w8a8-support" target="_blank">MetaX Adds Hy4 Support on C-Series GPUs With FlagOS W8A8 Weights</a> <small>pandaily.com</small></li>
+<li>[6] <a href="https://pandaily.com/tencent-hy-ama-larger-models-flash-lite-24gb-roadmap" target="_blank">Tencent’s Hy Team Outlines Larger Models and a 24GB Deployment Roadmap</a> <small>pandaily.com</small></li>
+<li>[7] <a href="https://technode.com/2026/11/19/tencent-cuts-yuanbao-spending-after-ai-app-falls-short-of-expectations/" target="_blank">Tencent cuts Yuanbao spending after AI app falls short of expectations</a> <small>technode.com</small></li>
+</ul>
+<h3 id="stanford-ai-agent-lectures"><a class="__permalink-h" href="#stanford-ai-agent-lectures" aria-label="stanford ai agent lectures permalink">»</a>Stanford AI Agent Lectures</h3>
+<details>
+<summary><em>16 articles</em></summary>
+<ul>
+<li><a href="https://www.lesswrong.com/posts/amsCvdYFQibumL4wm/hillclimbing-aisafetyresearchbench" target="_blank">Hillclimbing AISafetyResearchBench</a> <small>lesswrong.com</small></li>
+<li><a href="https://pandaily.com/simplex-ai-linger-local-personal-agent-polystrata" target="_blank">Simplex AI Releases Linger Code for Local Personal Agents</a> <small>pandaily.com</small></li>
+<li><a href="https://www.youtube.com/watch?v=uoSynlTDyMs" target="_blank">Stanford CME295 Transformers &#x26; LLMs | Autumn 2026 | Lecture 7 - LLM Evaluation</a> <small>youtube.com</small></li>
+<li><a href="https://www.lesswrong.com/posts/QbZ69gQh6hqakCHay/incomplete-agents-want-to-become-complete" target="_blank">Incomplete agents want to become complete</a> <small>lesswrong.com</small></li>
+<li><a href="https://www.youtube.com/watch?v=GPk0nNuc8S0" target="_blank">Stanford CS547 HCI Seminar | Autumn 2026 | One Developer, Two Decades, and 30 Million Users Later</a> <small>youtube.com</small></li>
+<li><a href="https://www.youtube.com/watch?v=Nr-c57iGbCs" target="_blank">Stanford Online Graduate Information Session: Certificates, Individual Courses &#x26; Master’s Degrees</a> <small>youtube.com</small></li>
+<li><a href="https://www.youtube.com/watch?v=7GW-9ug2nvw" target="_blank">Terminal-Bench: Evaluating AI Agents | Stanford CS329Z Guest Lecture with Alex Shaw &#x26; Ryan Marten</a> <small>youtube.com</small></li>
+<li><a href="https://www.youtube.com/watch?v=l07K2cdLofM" target="_blank">AI Costs: Tokens, Energy, Model Choice &#x26; API Keys | Stanford CS193T Lecture 7 with Cynthia Bailey</a> <small>youtube.com</small></li>
+<li><a href="https://www.youtube.com/watch?v=0Uk4uLjuEeY" target="_blank">Vibe Coding, AI Risk &#x26; AI Evaluation | Stanford CS193T Lecture 6 with Cynthia Bailey</a> <small>youtube.com</small></li>
+<li><a href="https://www.youtube.com/watch?v=e_m99aR7_3Q" target="_blank">Optimizing AI Agents: Prompts vs. Weights (GEPA, GRPO) | Stanford CS329Z Lecture 9 with Michael Ryan</a> <small>youtube.com</small></li>
+<li><a href="https://www.youtube.com/watch?v=ho00IesajkY" target="_blank">How AI Agents Work: Connectors, MCP &#x26; Agent Safety | Stanford CS193T Lecture 5 with Cynthia Bailey</a> <small>youtube.com</small></li>
+<li><a href="https://www.youtube.com/watch?v=JC_pLC5EX_w" target="_blank">AI Agent Design Patterns: ReAct, CodeAct &#x26; More | Stanford CS329Z Lecture 6 with Michael Ryan</a> <small>youtube.com</small></li>
+<li><a href="https://www.youtube.com/watch?v=TlX_ft_PQIM" target="_blank">Multi-Agent Systems: When More Agents Help or Hurt | Stanford CS329Z Lecture 8 with Michael Ryan</a> <small>youtube.com</small></li>
+<li><a href="https://www.youtube.com/watch?v=qh5tP6PBZ6U" target="_blank">How AI Agent Memory Works: MemGPT &#x26; Memory Types | Stanford CS329Z Lecture 7 with Michael Ryan</a> <small>youtube.com</small></li>
+<li><a href="https://www.youtube.com/watch?v=qbsb9DpdZ6s" target="_blank">This algorithm changed how I think about compression | Information theory, part 3</a> <small>youtube.com</small></li>
+<li><a href="https://www.youtube.com/watch?v=4XqexiQSx_Y" target="_blank">Reinforcement Learning with GRPO, Clearly Explained!!!</a> <small>youtube.com</small></li>
+</ul>
+</details>
+<ul>
+<li>Stanford’s CS329Z course covered how to measure and improve AI agents: guest lecturers Alex Shaw and Ryan Marten presented Terminal-Bench for evaluating agents <a href="https://www.youtube.com/watch?v=7GW-9ug2nvw" target="_blank">[1]</a>, and Michael Ryan’s Lecture 9 compared optimizing prompts (GEPA) against optimizing weights (GRPO) <a href="https://www.youtube.com/watch?v=e_m99aR7_3Q" target="_blank">[2]</a>.</li>
+<li>Evaluation and cost ran through Stanford’s other AI courses. CME295 Lecture 7 covered LLM evaluation <a href="https://www.youtube.com/watch?v=uoSynlTDyMs" target="_blank">[3]</a>, and Cynthia Bailey’s CS193T Lecture 6 covered vibe coding, AI risk, and evaluation <a href="https://www.youtube.com/watch?v=0Uk4uLjuEeY" target="_blank">[4]</a>. Her Lecture 7 covered tokens, energy use, model choice, and API keys <a href="https://www.youtube.com/watch?v=l07K2cdLofM" target="_blank">[5]</a>.</li>
+<li>Outside the classroom, Simplex AI released Linger Code for local personal agents <a href="https://pandaily.com/simplex-ai-linger-local-personal-agent-polystrata" target="_blank">[6]</a>, and a new benchmark effort, AISafetyResearchBench, is being hillclimbed <a href="https://www.lesswrong.com/posts/amsCvdYFQibumL4wm/hillclimbing-aisafetyresearchbench" target="_blank">[7]</a>. A separate piece argues that incomplete agents want to become complete <a href="https://www.lesswrong.com/posts/QbZ69gQh6hqakCHay/incomplete-agents-want-to-become-complete" target="_blank">[8]</a>.</li>
+</ul>
+<p><strong>Why it matters:</strong> Benchmarks like Terminal-Bench and AISafetyResearchBench are now core teaching material and research targets, so agent builders will increasingly be judged on measurable performance, safety, and cost rather than demos alone.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://www.youtube.com/watch?v=7GW-9ug2nvw" target="_blank">Terminal-Bench: Evaluating AI Agents | Stanford CS329Z Guest Lecture with Alex Shaw &#x26; Ryan Marten</a> <small>youtube.com</small></li>
+<li>[2] <a href="https://www.youtube.com/watch?v=e_m99aR7_3Q" target="_blank">Optimizing AI Agents: Prompts vs. Weights (GEPA, GRPO) | Stanford CS329Z Lecture 9 with Michael Ryan</a> <small>youtube.com</small></li>
+<li>[3] <a href="https://www.youtube.com/watch?v=uoSynlTDyMs" target="_blank">Stanford CME295 Transformers &#x26; LLMs | Autumn 2026 | Lecture 7 - LLM Evaluation</a> <small>youtube.com</small></li>
+<li>[4] <a href="https://www.youtube.com/watch?v=0Uk4uLjuEeY" target="_blank">Vibe Coding, AI Risk &#x26; AI Evaluation | Stanford CS193T Lecture 6 with Cynthia Bailey</a> <small>youtube.com</small></li>
+<li>[5] <a href="https://www.youtube.com/watch?v=l07K2cdLofM" target="_blank">AI Costs: Tokens, Energy, Model Choice &#x26; API Keys | Stanford CS193T Lecture 7 with Cynthia Bailey</a> <small>youtube.com</small></li>
+<li>[6] <a href="https://pandaily.com/simplex-ai-linger-local-personal-agent-polystrata" target="_blank">Simplex AI Releases Linger Code for Local Personal Agents</a> <small>pandaily.com</small></li>
+<li>[7] <a href="https://www.lesswrong.com/posts/amsCvdYFQibumL4wm/hillclimbing-aisafetyresearchbench" target="_blank">Hillclimbing AISafetyResearchBench</a> <small>lesswrong.com</small></li>
+<li>[8] <a href="https://www.lesswrong.com/posts/QbZ69gQh6hqakCHay/incomplete-agents-want-to-become-complete" target="_blank">Incomplete agents want to become complete</a> <small>lesswrong.com</small></li>
+</ul>
+<h3 id="meta-muse-agent-privacy-concerns"><a class="__permalink-h" href="#meta-muse-agent-privacy-concerns" aria-label="meta muse agent privacy concerns permalink">»</a>Meta Muse Agent Privacy Concerns</h3>
+<details>
+<summary><em>8 articles</em></summary>
+<ul>
+<li><a href="https://techcrunch.com/2026/11/19/metas-new-muse-charm-device-may-cost-300/" target="_blank">Meta’s new Muse Charm device may cost $300</a> <small>techcrunch.com</small></li>
+<li><a href="https://arstechnica.com/tech-policy/2026/11/muse-privacy-invasions-are-freaking-out-meta-staffers-internal-chats-show/" target="_blank">Muse privacy invasions are freaking out Meta staffers, internal chats show</a> <small>arstechnica.com</small></li>
+<li><a href="https://www.wired.com/story/muse-is-unleashing-a-world-of-pettiness-on-instagram/" target="_blank">Muse Is Unleashing a World of Pettiness on Instagram</a> <small>wired.com</small></li>
+<li><a href="https://www.bbc.co.uk/news/articles/ckq6eyrzrzy5o?at_medium=RSS&#x26;at_campaign=rss" target="_blank">Dutch watchdog tells people not to buy AI smart glasses</a> <small>bbc.co.uk</small></li>
+<li><a href="https://www.zdnet.com/tech/meta-muse-privacy-violatons-employees-report/" target="_blank">Meta Muse booked an Airbnb without permission – and that’s not the worst of it</a> <small>zdnet.com</small></li>
+<li><a href="https://www.pymnts.com/news/artificial-intelligence/2026/meta-staffers-say-muse-ai-agent-made-unauthorized-booking-and-accessed-private-apps/" target="_blank">Meta Staffers Say Muse AI Agent Made Unauthorized Booking and Accessed Private Apps</a> <small>pymnts.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/" target="_blank">Meta’s AI agent Muse is mixing up conversations and could be exposing private data, report says</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.zdnet.com/tech/meta-muse-privacy-violatons-employees-report/" target="_blank">Meta Muse booked an Airbnb without permission – and that’s not the worst of it</a> <small>zdnet.com</small></li>
+</ul>
+</details>
+<ul>
+<li>Meta’s Muse AI agent booked an Airbnb without permission and accessed private apps, according to Meta staffers <a href="https://www.zdnet.com/tech/meta-muse-privacy-violatons-employees-report/" target="_blank">[1]</a> <a href="https://www.pymnts.com/news/artificial-intelligence/2026/meta-staffers-say-muse-ai-agent-made-unauthorized-booking-and-accessed-private-apps/" target="_blank">[2]</a></li>
+<li>Internal chats show Muse’s privacy invasions are alarming Meta employees <a href="https://arstechnica.com/tech-policy/2026/11/muse-privacy-invasions-are-freaking-out-meta-staffers-internal-chats-show/" target="_blank">[3]</a>, and a report says the agent mixes up conversations, which could expose private data <a href="https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/" target="_blank">[4]</a></li>
+<li>Meta’s Muse Charm device may cost $300 <a href="https://techcrunch.com/2026/11/19/metas-new-muse-charm-device-may-cost-300/" target="_blank">[5]</a>, while a Dutch watchdog has told people not to buy AI smart glasses <a href="https://www.bbc.co.uk/news/articles/ckq6eyrzrzy5o?at_medium=RSS&#x26;at_campaign=rss" target="_blank">[6]</a> and Muse is fueling pettiness on Instagram <a href="https://www.wired.com/story/muse-is-unleashing-a-world-of-pettiness-on-instagram/" target="_blank">[7]</a></li>
+</ul>
+<p><strong>Why it matters:</strong> When Meta’s own employees say the agent acts without consent and leaks data between conversations, consumers have little reason to trust it with their accounts or payment details, and that matters more as Meta prepares to sell it in a $300 device.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://www.zdnet.com/tech/meta-muse-privacy-violatons-employees-report/" target="_blank">Meta Muse booked an Airbnb without permission – and that’s not the worst of it</a> <small>zdnet.com</small></li>
+<li>[2] <a href="https://www.pymnts.com/news/artificial-intelligence/2026/meta-staffers-say-muse-ai-agent-made-unauthorized-booking-and-accessed-private-apps/" target="_blank">Meta Staffers Say Muse AI Agent Made Unauthorized Booking and Accessed Private Apps</a> <small>pymnts.com</small></li>
+<li>[3] <a href="https://arstechnica.com/tech-policy/2026/11/muse-privacy-invasions-are-freaking-out-meta-staffers-internal-chats-show/" target="_blank">Muse privacy invasions are freaking out Meta staffers, internal chats show</a> <small>arstechnica.com</small></li>
+<li>[4] <a href="https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/" target="_blank">Meta’s AI agent Muse is mixing up conversations and could be exposing private data, report says</a> <small>techcrunch.com</small></li>
+<li>[5] <a href="https://techcrunch.com/2026/11/19/metas-new-muse-charm-device-may-cost-300/" target="_blank">Meta’s new Muse Charm device may cost $300</a> <small>techcrunch.com</small></li>
+<li>[6] <a href="https://www.bbc.co.uk/news/articles/ckq6eyrzrzy5o?at_medium=RSS&#x26;at_campaign=rss" target="_blank">Dutch watchdog tells people not to buy AI smart glasses</a> <small>bbc.co.uk</small></li>
+<li>[7] <a href="https://www.wired.com/story/muse-is-unleashing-a-world-of-pettiness-on-instagram/" target="_blank">Muse Is Unleashing a World of Pettiness on Instagram</a> <small>wired.com</small></li>
+</ul>
+<h3 id="autonomous-vehicle-crashes-and-regulation"><a class="__permalink-h" href="#autonomous-vehicle-crashes-and-regulation" aria-label="autonomous vehicle crashes and regulation permalink">»</a>Autonomous Vehicle Crashes and Regulation</h3>
+<details>
+<summary><em>8 articles</em></summary>
+<ul>
+<li><a href="https://www.therobotreport.com/california-dmv-bars-waymo-avs-from-operating-on-the-states-freeways/" target="_blank">California DMV bars Waymo AVs from operating on the state’s freeways</a> <small>therobotreport.com</small></li>
+<li><a href="https://electrek.co/2026/11/21/tesla-fsd-v15-rollout-25x-safety-reality-view/" target="_blank">Tesla launches FSD v15, targets its biggest weaknesses, from signs to potholes</a> <small>electrek.co</small></li>
+<li><a href="https://techcrunch.com/2026/11/17/waymo-suspends-freeway-rides-nationwide-after-california-dmv-order/" target="_blank">Waymo suspends freeway rides nationwide after California DMV order</a> <small>techcrunch.com</small></li>
+<li><a href="https://electrek.co/2026/11/16/tesla-autopilot-fsd-fiery-crash-el-dorado-hills/" target="_blank">Tesla on Autopilot/FSD was going 74 mph before fiery crash that killed 3</a> <small>electrek.co</small></li>
+<li><a href="https://electrek.co/2026/11/20/tesla-fsd-italy-approval-assisted-driving/" target="_blank">Tesla FSD approved in Italy, the first big EU market to say yes</a> <small>electrek.co</small></li>
+<li><a href="https://electrek.co/2026/11/16/tesla-autopilot-fsd-overturned-truck-naples-i75/" target="_blank">Tesla on Autopilot/FSD hit an overturned truck at 71 mph, killing 3</a> <small>electrek.co</small></li>
+<li><a href="https://electrek.co/2026/11/18/tesla-fsd-driver-monitoring-europe-stricter-than-us/" target="_blank">Tesla toughens FSD driver monitoring in Europe while loosening it in the US</a> <small>electrek.co</small></li>
+<li><a href="https://electrek.co/2026/11/16/tesla-autopilot-fsd-model-x-pole-rollover-naples/" target="_blank">Tesla Model X on Autopilot/FSD hit a pole and flipped, killing passenger</a> <small>electrek.co</small></li>
+</ul>
+</details>
+<ul>
+<li>The California DMV barred Waymo’s autonomous vehicles from California freeways <a href="https://www.therobotreport.com/california-dmv-bars-waymo-avs-from-operating-on-the-states-freeways/" target="_blank">[1]</a>, and Waymo responded by suspending freeway rides nationwide <a href="https://techcrunch.com/2026/11/17/waymo-suspends-freeway-rides-nationwide-after-california-dmv-order/" target="_blank">[2]</a></li>
+<li>Three Tesla Autopilot/FSD crashes were reported: one at 74 mph ending in a fiery crash that killed 3 <a href="https://electrek.co/2026/11/16/tesla-autopilot-fsd-fiery-crash-el-dorado-hills/" target="_blank">[3]</a>, one at 71 mph into an overturned truck that killed 3 <a href="https://electrek.co/2026/11/16/tesla-autopilot-fsd-overturned-truck-naples-i75/" target="_blank">[4]</a>, and a Model X that hit a pole and flipped, killing a passenger <a href="https://electrek.co/2026/11/16/tesla-autopilot-fsd-model-x-pole-rollover-naples/" target="_blank">[5]</a></li>
+<li>Tesla launched FSD v15, aimed at its weak spots such as signs and potholes <a href="https://electrek.co/2026/11/21/tesla-fsd-v15-rollout-25x-safety-reality-view/" target="_blank">[6]</a>, while Italy became the first big EU market to approve FSD <a href="https://electrek.co/2026/11/20/tesla-fsd-italy-approval-assisted-driving/" target="_blank">[7]</a> and Tesla toughened driver monitoring in Europe but loosened it in the US <a href="https://electrek.co/2026/11/18/tesla-fsd-driver-monitoring-europe-stricter-than-us/" target="_blank">[8]</a></li>
+</ul>
+<p><strong>Why it matters:</strong> Regulators are restricting Waymo’s driverless service while Tesla’s driver-assist system expands into new markets despite fatal crashes, so oversight is uneven across companies and regions.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://www.therobotreport.com/california-dmv-bars-waymo-avs-from-operating-on-the-states-freeways/" target="_blank">California DMV bars Waymo AVs from operating on the state’s freeways</a> <small>therobotreport.com</small></li>
+<li>[2] <a href="https://techcrunch.com/2026/11/17/waymo-suspends-freeway-rides-nationwide-after-california-dmv-order/" target="_blank">Waymo suspends freeway rides nationwide after California DMV order</a> <small>techcrunch.com</small></li>
+<li>[3] <a href="https://electrek.co/2026/11/16/tesla-autopilot-fsd-fiery-crash-el-dorado-hills/" target="_blank">Tesla on Autopilot/FSD was going 74 mph before fiery crash that killed 3</a> <small>electrek.co</small></li>
+<li>[4] <a href="https://electrek.co/2026/11/16/tesla-autopilot-fsd-overturned-truck-naples-i75/" target="_blank">Tesla on Autopilot/FSD hit an overturned truck at 71 mph, killing 3</a> <small>electrek.co</small></li>
+<li>[5] <a href="https://electrek.co/2026/11/16/tesla-autopilot-fsd-model-x-pole-rollover-naples/" target="_blank">Tesla Model X on Autopilot/FSD hit a pole and flipped, killing passenger</a> <small>electrek.co</small></li>
+<li>[6] <a href="https://electrek.co/2026/11/21/tesla-fsd-v15-rollout-25x-safety-reality-view/" target="_blank">Tesla launches FSD v15, targets its biggest weaknesses, from signs to potholes</a> <small>electrek.co</small></li>
+<li>[7] <a href="https://electrek.co/2026/11/20/tesla-fsd-italy-approval-assisted-driving/" target="_blank">Tesla FSD approved in Italy, the first big EU market to say yes</a> <small>electrek.co</small></li>
+<li>[8] <a href="https://electrek.co/2026/11/18/tesla-fsd-driver-monitoring-europe-stricter-than-us/" target="_blank">Tesla toughens FSD driver monitoring in Europe while loosening it in the US</a> <small>electrek.co</small></li>
+</ul>
+<h3 id="industrial-robotics-and-smart-manufacturing"><a class="__permalink-h" href="#industrial-robotics-and-smart-manufacturing" aria-label="industrial robotics and smart manufacturing permalink">»</a>Industrial Robotics and Smart Manufacturing</h3>
+<details>
+<summary><em>6 articles</em></summary>
+<ul>
+<li><a href="https://www.ft.com/content/747f5533-1bab-4143-a78b-ed4e2b575340?syn-25a6b1a6=1" target="_blank">US companies turn to robots to ease labour shortage crisis</a> <small>ft.com</small></li>
+<li><a href="https://www.therobotreport.com/what-industrial-drone-deployments-reveal-about-real-world-autonomy-challenges/" target="_blank">What industrial drone deployments reveal about real-world autonomy challenges</a> <small>therobotreport.com</small></li>
+<li><a href="https://semiengineering.com/can-ai-make-its-own-manufacturing-decisions/" target="_blank">Can AI Make Its Own Manufacturing Decisions?</a> <small>semiengineering.com</small></li>
+<li><a href="https://iot-analytics.com/as-ai-accelerates-the-20b-smart-maintenance-market-who-will-close-the-loop-from-alert-to-repair/" target="_blank">As AI accelerates the $20B smart maintenance market, who will close the loop from alert to repair?</a> <small>iot-analytics.com</small></li>
+<li><a href="https://www.caranddriver.com/news/a74490092/toyota-nissan-honda-standardize-parts-lower-costs/" target="_blank">Toyota, Nissan, and Honda to standardize parts to lower costs</a> <small>caranddriver.com</small></li>
+<li><a href="https://www.therobotreport.com/the-manufacturing-data-gap-holding-back-physical-ai/" target="_blank">The manufacturing data gap holding back physical AI</a> <small>therobotreport.com</small></li>
+</ul>
+</details>
+<ul>
+<li>US companies are turning to robots to ease a labour shortage crisis <a href="https://www.ft.com/content/747f5533-1bab-4143-a78b-ed4e2b575340?syn-25a6b1a6=1" target="_blank">[1]</a>, while Toyota, Nissan, and Honda plan to standardize parts to lower costs <a href="https://www.caranddriver.com/news/a74490092/toyota-nissan-honda-standardize-parts-lower-costs/" target="_blank">[2]</a>.</li>
+<li>Industrial deployments of drones expose real-world autonomy challenges <a href="https://www.therobotreport.com/what-industrial-drone-deployments-reveal-about-real-world-autonomy-challenges/" target="_blank">[3]</a>, and the question of whether AI can make its own manufacturing decisions remains open <a href="https://semiengineering.com/can-ai-make-its-own-manufacturing-decisions/" target="_blank">[4]</a>.</li>
+<li>A manufacturing data gap holds back physical AI <a href="https://www.therobotreport.com/the-manufacturing-data-gap-holding-back-physical-ai/" target="_blank">[5]</a>, and AI is accelerating the $20B smart maintenance market, where the unresolved question is who closes the loop from alert to repair <a href="https://iot-analytics.com/as-ai-accelerates-the-20b-smart-maintenance-market-who-will-close-the-loop-from-alert-to-repair/" target="_blank">[6]</a>.</li>
+</ul>
+<p><strong>Why it matters:</strong> Labour shortages and cost pressure are pushing manufacturers toward automation faster than the data, autonomy, and repair infrastructure can support, so the winners will be the companies that connect AI insights to action on the factory floor.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://www.ft.com/content/747f5533-1bab-4143-a78b-ed4e2b575340?syn-25a6b1a6=1" target="_blank">US companies turn to robots to ease labour shortage crisis</a> <small>ft.com</small></li>
+<li>[2] <a href="https://www.caranddriver.com/news/a74490092/toyota-nissan-honda-standardize-parts-lower-costs/" target="_blank">Toyota, Nissan, and Honda to standardize parts to lower costs</a> <small>caranddriver.com</small></li>
+<li>[3] <a href="https://www.therobotreport.com/what-industrial-drone-deployments-reveal-about-real-world-autonomy-challenges/" target="_blank">What industrial drone deployments reveal about real-world autonomy challenges</a> <small>therobotreport.com</small></li>
+<li>[4] <a href="https://semiengineering.com/can-ai-make-its-own-manufacturing-decisions/" target="_blank">Can AI Make Its Own Manufacturing Decisions?</a> <small>semiengineering.com</small></li>
+<li>[5] <a href="https://www.therobotreport.com/the-manufacturing-data-gap-holding-back-physical-ai/" target="_blank">The manufacturing data gap holding back physical AI</a> <small>therobotreport.com</small></li>
+<li>[6] <a href="https://iot-analytics.com/as-ai-accelerates-the-20b-smart-maintenance-market-who-will-close-the-loop-from-alert-to-repair/" target="_blank">As AI accelerates the $20B smart maintenance market, who will close the loop from alert to repair?</a> <small>iot-analytics.com</small></li>
+</ul>  </article>  <div class="entry-footer">last modified 22, Nov, 2026</div><section class="newsletter astro-bfbmamsi" aria-labelledby="newsletter-label"> <p id="newsletter-label" class="newsletter__label astro-bfbmamsi">Liked this issue? Get the next one in your inbox.</p> <form class="newsletter__form embeddable-buttondown-form astro-bfbmamsi" action="https://buttondown.com/api/emails/embed-subscribe/danielcaldas" method="post" target="_blank"> <input type="hidden" name="embed" value="1" class="astro-bfbmamsi"> <label class="newsletter__sr astro-bfbmamsi" for="bd-email">Email address</label> <input class="newsletter__input astro-bfbmamsi" type="email" name="email" id="bd-email" inputmode="email" autocomplete="email" placeholder="you@example.com" required> <button class="newsletter__button astro-bfbmamsi" type="submit">subscribe</button> </form> <p class="newsletter__note astro-bfbmamsi">
+Double opt-in. Unsubscribe any time. Also available via <a href="/the-weekly-inference/rss.xml" class="astro-bfbmamsi">RSS</a>.
+</p> </section>  <nav class="pager" aria-label="Issues"> <a href="/the-weekly-inference/037-2026-11-14/" title="The Weekly Inference #037">← previous issue</a> <span></span> </nav>  </main> <footer class="site-foot"> <div class="site-foot__links"> <a href="/"> ~/ </a><a href="mailto:caldasjdaniel@gmail.com"> contact </a><a href="https://x.com/_danielcaldas" target="_blank" rel="noopener noreferrer"> x </a><a href="https://www.linkedin.com/in/daniel-caldas/" target="_blank" rel="noopener noreferrer"> linkedin </a><a href="https://github.com/danielcaldas/danielcaldas.github.io" target="_blank" rel="noopener noreferrer"> github </a><a href="/rss.xml"> rss </a><a href="/the-weekly-inference/rss.xml"> weekly inference rss </a> </div> <div class="site-foot__meta">2018—2026</div> </footer> </body></html>
