@@ -1,0 +1,637 @@
+<!DOCTYPE html><html lang="en-US"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Astro v4.5.12"><meta name="description" content="Blogpost, note taking and other things"><meta name="theme-color" content="#fcfbf8" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#100f0d" media="(prefers-color-scheme: dark)"><title>The Weekly Inference #037 - ~/</title><link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin><script>
+            // Resolve the theme before first paint so there is no flash.
+            ;(() => {
+                const stored = localStorage.getItem('theme')
+                const theme = stored || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                document.documentElement.classList.toggle('dark', theme === 'dark')
+            })()
+        </script><link rel="stylesheet" href="/_astro/bookshelf.DtChz131.css">
+<link rel="stylesheet" href="/_astro/_category_.Dcc4yImY.css">
+<style>.newsletter.astro-bfbmamsi{margin:2rem 0;padding:1.1rem 1.2rem;border:1px solid rgb(var(--rule));background:rgb(var(--paper-raised))}.newsletter__label.astro-bfbmamsi{margin:0 0 .75rem;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.02em;color:rgb(var(--ink-muted))}.newsletter__form.astro-bfbmamsi{display:flex;flex-wrap:wrap;gap:.5rem}.newsletter__input.astro-bfbmamsi{flex:1 1 15rem;min-width:0;padding:.5rem .65rem;border:1px solid rgb(var(--rule));background:rgb(var(--paper));color:inherit;font-family:var(--font-mono);font-size:.82rem}.newsletter__input.astro-bfbmamsi:focus-visible{outline:2px solid rgb(var(--accent));outline-offset:1px}.newsletter__button.astro-bfbmamsi{padding:.5rem 1rem;border:1px solid rgb(var(--accent));background:rgb(var(--accent-wash));color:inherit;font-family:var(--font-mono);font-size:.82rem;letter-spacing:.02em;cursor:pointer}.newsletter__button.astro-bfbmamsi:hover{background:rgb(var(--accent) / .25)}.newsletter__note.astro-bfbmamsi{margin:.7rem 0 0;font-family:var(--font-mono);font-size:.68rem;line-height:1.6;color:rgb(var(--ink-muted))}.newsletter__sr.astro-bfbmamsi{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+</style><script type="module">document.querySelectorAll("#wi-content a").forEach(i=>{i.getAttribute("href")?.startsWith("#")||(i.setAttribute("target","_blank"),i.setAttribute("rel","noopener noreferrer"))});if(window.matchMedia("(pointer: fine)").matches){let i=function(e,n){m.textContent=n.title,u.textContent=n.domain,l.src=`https://www.google.com/s2/favicons?domain=${n.domain}&sz=32`,l.onerror=()=>{l.src=""};const o=e.getBoundingClientRect(),r=300,h=58;let c=o.left,a=o.top-h-10;a<8&&(a=o.bottom+10),c+r>window.innerWidth-8&&(c=window.innerWidth-r-8),c<8&&(c=8),t.style.left=`${c}px`,t.style.top=`${a}px`,t.classList.add("ct-visible")};const f=/^\[\d+\]$/,s=new Map;document.querySelectorAll('#wi-content a[href^="http"]').forEach(e=>{const n=e.textContent.trim();if(f.test(n))return;const o=e.getAttribute("href");if(!s.has(o))try{const r=new URL(o).hostname.replace(/^www\./,"");s.set(o,{title:n,domain:r})}catch{}});const t=document.createElement("div");t.className="ct",t.innerHTML='<img class="ct-favicon" alt="" /><div><div class="ct-title"></div><div class="ct-domain"></div></div>',document.body.appendChild(t);const l=t.querySelector(".ct-favicon"),m=t.querySelector(".ct-title"),u=t.querySelector(".ct-domain");let d;document.querySelectorAll('#wi-content a[href^="http"]').forEach(e=>{const n=s.get(e.getAttribute("href"));n&&(e.addEventListener("mouseenter",()=>{d=setTimeout(()=>i(e,n),250)}),e.addEventListener("mouseleave",()=>{clearTimeout(d),t.classList.remove("ct-visible")}))})}
+</script>
+<script type="module" src="/_astro/page.55INgWwS.js"></script></head> <body class="max-width flex flex-col min-h-screen"> <a class="skip-link" href="#main">skip to content</a> <header class="masthead masthead--bare"> <a href="/" class="masthead__logo"> <i class="hidden">danielcaldas.github.io</i>
+~/
+</a> <button id="themeToggle" class="masthead__toggle" type="button" aria-label="Toggle colour theme"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path class="theme-icon--moon" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> <g class="theme-icon--sun"> <circle cx="12" cy="12" r="4.2"></circle> <path d="M12 1.6v2.4M12 20v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M1.6 12H4M20 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"></path> </g> </svg> </button>  <script>
+    function setupThemeToggle() {
+        const button = document.getElementById('themeToggle')
+        if (!button || button.dataset.bound) return
+        button.dataset.bound = 'true'
+        button.addEventListener('click', () => {
+            const isDark = document.documentElement.classList.toggle('dark')
+            localStorage.setItem('theme', isDark ? 'dark' : 'light')
+        })
+    }
+
+    setupThemeToggle()
+    document.addEventListener('astro:page-load', setupThemeToggle)
+    document.addEventListener('astro:after-swap', setupThemeToggle)
+</script> </header>  <main id="main" class="flex-1">  <style>
+        .ai-banner {
+            margin-top: 1.75rem;
+            padding: 0.7rem 1rem;
+            border-left: 2px solid rgb(var(--accent));
+            background: rgb(var(--accent-wash) / 0.5);
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            line-height: 1.6;
+            letter-spacing: 0.02em;
+            color: rgb(var(--ink-muted));
+        }
+
+        /* citation tooltip */
+        .ct {
+            position: fixed;
+            z-index: 9999;
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            max-width: 300px;
+            padding: 10px 13px;
+            border-radius: 6px;
+            background: rgb(var(--ink-strong));
+            color: rgb(var(--paper));
+            font-family: var(--font-sans);
+            font-size: 12.5px;
+            line-height: 1.4;
+            pointer-events: none;
+            opacity: 0;
+            box-shadow: 0 6px 24px rgb(0 0 0 / 0.28);
+            transition: opacity 0.12s ease;
+        }
+
+        .ct.ct-visible {
+            opacity: 1;
+        }
+
+        .ct-favicon {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+            margin-top: 1px;
+            border-radius: 3px;
+        }
+
+        .ct-favicon[src=''] {
+            display: none;
+        }
+
+        .ct-title {
+            font-weight: 500;
+        }
+
+        .ct-domain {
+            margin-top: 3px;
+            font-family: var(--font-mono);
+            font-size: 10.5px;
+            opacity: 0.55;
+        }
+    </style> <nav class="pager" style="margin-top: 1.75rem;" aria-label="Issues"> <a href="/the-weekly-inference/036-2026-11-07/" title="The Weekly Inference #036">← previous issue</a> <span></span> </nav> <header class="entry-header"> <h1 class="entry-title">The Weekly Inference #037</h1> <div class="entry-meta"> <time datetime="2026-11-14T00:00:00.000Z">14, Nov, 2026</time> </div> </header> <p class="ai-banner">This content is 100% AI-generated. No human editing or oversight.</p> <article class="prose content dark:prose-invert prose-stone" id="wi-content">  <h2 id="this-week"><a class="__permalink-h" href="#this-week" aria-label="this week permalink">»</a>This Week</h2>
+<p>Last week’s S-1 put Anthropic’s existential-risk disclosures in a prospectus; this week the roadshow is live, six times oversubscribed against a $64B target, and the only investors turned away are Chinese and Hong Kong buyers, shut out by export controls while Alibaba’s T-Head and Denglin list their own chips in Hong Kong. The week’s distinctive pattern is that every actor is now trying to make AI trustworthy through plumbing rather than proof: OpenAI’s Wallet hides card numbers from its own shopping agents, Daybreak sells enterprises a security layer for the agents OpenAI sells them, and DeepMind ships an “ASIMOV-jailbreak” benchmark beside Gemini Robotics 2.5. Meanwhile the people closest to the systems, from DeepMind staff petitioning the UK government to newsroom and public-sector unions, are demanding a say in deployment that the capital markets, now splitting along geopolitical lines, have already priced as settled.</p>
+<ul>
+<li><a href="#this-week">This Week</a></li>
+<li><a href="#top-stories">Top Stories</a>
+<ul>
+<li><a href="#nvidia-leadership-and-chip-news">Nvidia Leadership and Chip News</a></li>
+<li><a href="#ai-chips-memory-quantum-hardware">AI Chips, Memory, Quantum Hardware</a></li>
+<li><a href="#robotics-research-and-real-world-deployments">Robotics Research and Real-World Deployments</a></li>
+<li><a href="#ai-labor-unions-and-worker-pushback">AI Labor Unions and Worker Pushback</a></li>
+<li><a href="#chatgpt-wallet-and-consumer-features">ChatGPT Wallet and Consumer Features</a></li>
+<li><a href="#ai-legal-tech-platforms">AI Legal Tech Platforms</a></li>
+<li><a href="#general-news">General News</a></li>
+<li><a href="#ml-research-community-discussions">ML Research Community Discussions</a></li>
+<li><a href="#anthropic-ipo-and-investor-restrictions">Anthropic IPO and Investor Restrictions</a></li>
+<li><a href="#openai-enterprise-agent-deployments">OpenAI Enterprise Agent Deployments</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="top-stories"><a class="__permalink-h" href="#top-stories" aria-label="top stories permalink">»</a>Top Stories</h2>
+<h3 id="nvidia-leadership-and-chip-news"><a class="__permalink-h" href="#nvidia-leadership-and-chip-news" aria-label="nvidia leadership and chip news permalink">»</a>Nvidia Leadership and Chip News</h3>
+<details>
+<summary><em>126 articles</em></summary>
+<ul>
+<li><a href="https://www.forbes.com/sites/markfaithfull/2026/11/06/ethan-allen-ceo-ousted-after-four-decades-as-activist-wins-board-seats/" target="_blank">Ethan Allen CEO Ousted After Four Decades As Activist Wins Board Seats</a> <small>forbes.com</small></li>
+<li><a href="https://thezvi.substack.com/p/nvidia-ceo-jensen-huang-had-an-affair" target="_blank">Nvidia CEO Jensen Huang Had an Affair With a Chinese Spy</a> <small>thezvi.substack.com</small></li>
+<li><a href="https://garymarcus.substack.com/p/jensen-huang-resigns" target="_blank">Jensen Huang resigns.</a> <small>garymarcus.substack.com</small></li>
+<li><a href="https://www.chinatalk.media/p/the-spy-who-leased-me" target="_blank">The Spy Who Leased Me</a> <small>chinatalk.media</small></li>
+<li><a href="https://cset.georgetown.edu/article/spy-scandal-highlights-contradictions-at-heart-of-trumps-china-policy/" target="_blank">Spy scandal highlights contradictions at heart of Trump’s China policy</a> <small>cset.georgetown.edu</small></li>
+<li><a href="https://techcrunch.com/2026/11/13/jensen-huangs-departure-blasts-big-hole-in-ai-startup-funding-vcs-and-founders-say/" target="_blank">Jensen Huang’s departure blasts big hole in AI startup funding, VCs and founders say</a> <small>techcrunch.com</small></li>
+<li><a href="https://arstechnica.com/ai/2026/11/taiwans-chipmaking-giant-tsmc-to-invest-1b-in-anthropic-openai/" target="_blank">Taiwan’s chipmaking giant TSMC to invest $1B in Anthropic, OpenAI</a> <small>arstechnica.com</small></li>
+<li><a href="https://www.technologyreview.com/2026/11/12/1148483/nvidia-chip-tracking/" target="_blank">Nvidia privately confirmed it could track chips to fight smuggling, even as industry publicly questioned feasibility</a> <small>technologyreview.com</small></li>
+<li><a href="https://www.wired.com/story/jensen-huang-and-the-end-of-the-founder-fairy-tale/" target="_blank">Jensen Huang and the End of the Founder Fairy Tale</a> <small>wired.com</small></li>
+<li><a href="https://the-decoder.com/jensen-huangs-ouster-likely-traces-back-to-nvidias-risky-business-practices-more-than-his-personal-life/" target="_blank">Jensen Huang's ouster likely traces back to Nvidia's risky business practices more than his personal life</a> <small>the-decoder.com</small></li>
+<li><a href="https://news.crunchbase.com/venture/huang-nvda-ai-startup-funding-record-2026/" target="_blank">Crunchbase Data: Nvidia’s Startup Funding Deals Hit A Record. What’s Next After Huang?</a> <small>news.crunchbase.com</small></li>
+<li><a href="https://www.exponentialview.co/p/jensen-huang-and-the-future-of-the" target="_blank">🔥 Jensen Huang and the future of the AI boom</a> <small>exponentialview.co</small></li>
+<li><a href="https://siliconangle.com/2026/11/13/nvidia-ceo-jensen-huangs-abrupt-departure-shakes-ai-industrys-foundations/" target="_blank">Nvidia CEO Jensen Huang’s abrupt departure shakes AI industry’s foundations</a> <small>siliconangle.com</small></li>
+<li><a href="https://www.theverge.com/tech/1033051/nvidia-jensen-huang-chips-gpu-supply-chain-climate-pollution" target="_blank">Jensen Huang was reckless with the environment, too</a> <small>theverge.com</small></li>
+<li><a href="https://www.fastcompany.com/91642370/jensen-huangs-resignation-from-nvidia-wont-end-his-problems-with-congress?partner=rss&#x26;utm_source=rss&#x26;utm_medium=feed&#x26;utm_campaign=rss+fastcompany&#x26;utm_content=rss" target="_blank">Jensen Huang’s resignation from Nvidia won’t end his problems with Congress</a> <small>fastcompany.com</small></li>
+<li><a href="https://www.cnbc.com/2026/11/13/trump-nvidia-huang-china.html" target="_blank">Trump doesn’t plan to raise Nvidia, spy issue during China trip: U.S. officials</a> <small>cnbc.com</small></li>
+<li><a href="https://www.ft.com/content/0ef40ac9-6d01-428f-98c8-a52bf5b9a787?syn-25a6b1a6=1" target="_blank">Sam Bankman-Fried would have made nearly $40bn in Anthropic IPO</a> <small>ft.com</small></li>
+<li><a href="https://www.theguardian.com/news/video/2026/nov/13/why-the-nvidia-scandal-is-far-from-over-the-latest" target="_blank">Why the Nvidia scandal is far from over - The Latest</a> <small>theguardian.com</small></li>
+<li><a href="https://www.bbc.co.uk/news/articles/ck1exevgql4qo?at_medium=RSS&#x26;at_campaign=rss" target="_blank">How the Jensen Huang scandal created a headache for business-friendly Singapore</a> <small>bbc.co.uk</small></li>
+<li><a href="https://www.therobotreport.com/nvidia-replaces-ceo-amid-china-ai-and-robotics-concerns/" target="_blank">NVIDIA replaces CEO amid China AI and robotics concerns</a> <small>therobotreport.com</small></li>
+<li><a href="https://www.servethehome.com/nvidia-ceo-and-co-founder-jensen-huang-resigns-effective-immediately/" target="_blank">NVIDIA CEO and Co-Founder Jensen Huang Resigns, Effective Immediately</a> <small>servethehome.com</small></li>
+<li><a href="https://www.nextplatform.com/ai/2026/11/12/the-nvidia-machine-is-self-sustaining-and-was-already-facing-a-tougher-future/5309473" target="_blank">The Nvidia Machine Is Self-Sustaining – And Was Already Facing A Tougher Future</a> <small>nextplatform.com</small></li>
+<li><a href="https://www.gamedeveloper.com/business/nvidia-ceo-jensen-huang-resigns-after-scandal" target="_blank">Nvidia CEO Jensen Huang resigns after potentially damaging marital affairs</a> <small>gamedeveloper.com</small></li>
+<li><a href="https://www.scmp.com/news/world/united-states-canada/article/3374425/musk-ordered-preserve-records-ukraines-starlink-access-democratic-us-senators" target="_blank">Musk ordered to preserve records on Ukraine’s Starlink access by Democratic US senators</a> <small>scmp.com</small></li>
+<li><a href="https://technode.com/2026/11/13/bytedances-ai-chip-chief-has-submitted-his-resignation-report-says/" target="_blank">ByteDance’s AI chip chief has submitted his resignation, report says</a> <small>technode.com</small></li>
+<li><a href="https://restofworld.org/2026/jensen-huang-nvidia-exit-china-ai-chip-impact/?utm_source=rss&#x26;utm_medium=rss&#x26;utm_campaign=feeds" target="_blank">How Jensen Huang’s exit from Nvidia impacts China’s AI supply chain</a> <small>restofworld.org</small></li>
+<li><a href="https://decrypt.co/383266/china-ai-pipeline-nvidia-chips-washington-restricts" target="_blank">China’s $3.2 Billion AI Pipeline Still Calls for Nvidia Chips Washington Restricts</a> <small>decrypt.co</small></li>
+<li><a href="https://www.forbes.com/sites/markfaithfull/2026/11/12/burberry-back-in-profit-as-us-sales-help-luxury-brand-turnaround/" target="_blank">Burberry Back In Profit As U.S. Sales Help Luxury Brand Turnaround</a> <small>forbes.com</small></li>
+<li><a href="https://garymarcus.substack.com/p/jensen-is-reportedly-about-to-get" target="_blank">Jensen is reportedly about to get fired</a> <small>garymarcus.substack.com</small></li>
+<li><a href="https://cset.georgetown.edu/article/the-phantom-life-of-alice-huang-alleged-chinese-spy-who-had-affair-with-nvidia-ceo/" target="_blank">The phantom life of Alice Huang, alleged Chinese spy who had affair with Nvidia CEO</a> <small>cset.georgetown.edu</small></li>
+<li><a href="https://techcrunch.com/2026/11/13/export-banned-nvidia-chips-are-behind-chinas-most-powerful-ai-models-uh-oh-jensen/" target="_blank">Export-banned Nvidia chips are behind China’s most powerful AI models — uh-oh, Jensen!</a> <small>techcrunch.com</small></li>
+<li><a href="https://arstechnica.com/tech-policy/2026/11/ceo-jensen-huang-admits-affair-as-nvidia-probes-possible-chinese-espionage/" target="_blank">Nvidia CEO's affair becomes a national security problem</a> <small>arstechnica.com</small></li>
+<li><a href="https://www.technologyreview.com/2026/11/12/1148483/nvidia-chip-tracking/" target="_blank">Nvidia privately confirmed it could track chips to fight smuggling, even as industry publicly questioned feasibility</a> <small>technologyreview.com</small></li>
+<li><a href="https://www.wired.com/story/silicon-valley-is-still-defending-jensen-huang/" target="_blank">Silicon Valley Is Still Defending Jensen Huang</a> <small>wired.com</small></li>
+<li><a href="https://the-decoder.com/former-openai-researcher-says-he-found-nvidia-blackwell-fingerprints-hidden-inside-six-chinese-ai-models/" target="_blank">Former OpenAI researcher says he found Nvidia Blackwell fingerprints hidden inside six Chinese AI models</a> <small>the-decoder.com</small></li>
+<li><a href="https://www.fastcompany.com/91642252/5-things-jensen-huang-mastered-that-nvidias-next-ceo-will-have-to-learn?partner=rss&#x26;utm_source=rss&#x26;utm_medium=feed&#x26;utm_campaign=rss+fastcompany&#x26;utm_content=rss" target="_blank">5 things Jensen Huang mastered that Nvidia’s next CEO will have to learn</a> <small>fastcompany.com</small></li>
+<li><a href="https://www.cnbc.com/2026/11/14/nvidia-jensen-huang-ceo-succession-risk.html" target="_blank">Analysis: Companies love a ‘rockstar’ CEO. Until they depend on one</a> <small>cnbc.com</small></li>
+<li><a href="https://www.ft.com/content/692fbfe8-da52-42c0-b436-9c4aff21fbdb?syn-25a6b1a6=1" target="_blank">Amazon revives deal with troubled data centre venture backed by Rick Perry</a> <small>ft.com</small></li>
+<li><a href="https://www.theguardian.com/news/audio/2026/nov/13/why-the-nvidia-scandal-is-far-from-over-the-latest" target="_blank">Why the Nvidia scandal is far from over – The Latest</a> <small>theguardian.com</small></li>
+<li><a href="https://www.bbc.co.uk/news/articles/cqvg2d1eg7zro?at_medium=RSS&#x26;at_campaign=rss" target="_blank">Pressure grows on Trump's Commerce Secretary Lutnick in fallout from Nvidia scandal</a> <small>bbc.co.uk</small></li>
+<li><a href="https://www.scmp.com/week-asia/economics/article/3374371/indonesias-commodity-export-u-turn-no-monopoly-just-all-data" target="_blank">Indonesia’s commodity export U-turn: no monopoly, just all the data</a> <small>scmp.com</small></li>
+<li><a href="https://technode.com/2026/11/12/nexperia-interim-ceo-says-chipmaker-could-still-reunite-with-china-operations/" target="_blank">Nexperia interim CEO says chipmaker could still reunite with China operations</a> <small>technode.com</small></li>
+<li><a href="https://decrypt.co/383276/nvidia-arm-ceo-rene-haas-replace-jensen-huang" target="_blank">Could a Former Nvidia Executive Replace Jensen Huang? Arm’s Rene Haas Emerges as Candidate</a> <small>decrypt.co</small></li>
+<li><a href="https://www.forbes.com/sites/markfaithfull/2026/11/09/chapter-11-filing-means-the-childrens-place-fate-decided-by-dec-9/" target="_blank">The Children’s Place Faces Dec. 9 Deadline After Bankruptcy Filing</a> <small>forbes.com</small></li>
+<li><a href="https://garymarcus.substack.com/p/jensen-is-cooked" target="_blank">Jensen is cooked</a> <small>garymarcus.substack.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/13/nvidia-ceo-jensen-huangs-affair-with-alleged-chinese-spy-a-timeline/" target="_blank">The unfolding Jensen Huang scandal: a timeline</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.wired.com/story/jensen-huang-colette-kress-replacement-powerful-women-in-tech/" target="_blank">Jensen Huang Didn’t Name His Own Replacement as One of Tech’s Most Powerful Women</a> <small>wired.com</small></li>
+<li><a href="https://www.fastcompany.com/91638597/microsoft-is-winding-down-its-oracle-deal-it-could-be-a-sign-of-whats-to-come?partner=rss&#x26;utm_source=rss&#x26;utm_medium=feed&#x26;utm_campaign=rss+fastcompany&#x26;utm_content=rss" target="_blank">Microsoft is winding down its Oracle deal. It could be a sign of what’s to come</a> <small>fastcompany.com</small></li>
+<li><a href="https://www.cnbc.com/2026/11/13/nvidia-jensen-huang-washington-congress.html" target="_blank">Nvidia is done with Jensen Huang. The fallout in Washington is just beginning</a> <small>cnbc.com</small></li>
+<li><a href="https://www.ft.com/content/4b7b83d7-7fea-4ce2-bfe3-4f2cf75b1d82?syn-25a6b1a6=1" target="_blank">Anthropic’s Amodei ‘not super fussed’ about market turmoil ahead of IPO</a> <small>ft.com</small></li>
+<li><a href="https://www.theguardian.com/technology/2026/nov/13/nvidia-scandal-sparks-us-national-security-concerns-china" target="_blank">Nvidia scandal: US treasury chief blames Lutnick’s commerce department over alleged lack of action</a> <small>theguardian.com</small></li>
+<li><a href="https://www.bbc.co.uk/news/articles/c67429m3vem3o?at_medium=RSS&#x26;at_campaign=rss" target="_blank">How a sex scandal at Nvidia is putting pressure on the White House</a> <small>bbc.co.uk</small></li>
+<li><a href="https://www.scmp.com/opinion/china-opinion/article/3374017/dont-take-nvidia-ceo-jensen-huangs-sex-scandal-face-value" target="_blank">Don’t take Nvidia CEO Jensen Huang’s ‘sex’ scandal at face value</a> <small>scmp.com</small></li>
+<li><a href="https://technode.com/2026/11/09/tsmc-reaffirms-logic-foundry-focus-after-report-on-3d-dram-plans/" target="_blank">TSMC reaffirms logic foundry focus after report on 3D DRAM plans</a> <small>technode.com</small></li>
+<li><a href="https://decrypt.co/383221/roadmap-is-complete-cardano-founder-charles-hoskinson-says" target="_blank">‘Roadmap is Complete,' Cardano Founder Charles Hoskinson Says</a> <small>decrypt.co</small></li>
+<li><a href="https://garymarcus.substack.com/p/the-huang-affair-what-did-they-know" target="_blank">The Huang Affair: What did they know and when did they know it?</a> <small>garymarcus.substack.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/13/jensen-huang-didnt-show-confidence-in-his-successor-report-says/" target="_blank">Jensen Huang didn’t show confidence in his successor, report says</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.wired.com/story/jensen-huang-tanked-a-trillion-dollars-in-less-than-a-month/" target="_blank">Jensen Huang Basically Lit More Than $1 Trillion on Fire in Less Than a Month</a> <small>wired.com</small></li>
+<li><a href="https://www.fastcompany.com/91640632/why-anthropics-ipo-could-put-openai-at-a-disadvantage?partner=rss&#x26;utm_source=rss&#x26;utm_medium=feed&#x26;utm_campaign=rss+fastcompany&#x26;utm_content=rss" target="_blank">The AI boom was built around Jensen Huang. What happens now?</a> <small>fastcompany.com</small></li>
+<li><a href="https://www.cnbc.com/2026/11/13/howard-lutnick-nvidia-jensen-huang-china-cantor-fitzgerald.html" target="_blank">Lutnick faces questions over Nvidia spy scandal. His sons' firm has deep ties to the chipmaker</a> <small>cnbc.com</small></li>
+<li><a href="https://www.ft.com/content/8f50369d-725b-40ac-a72a-306e25f9e76f?syn-25a6b1a6=1" target="_blank">Three tremors have shaken AI</a> <small>ft.com</small></li>
+<li><a href="https://www.theguardian.com/technology/nils-pratley-on-finance/2026/nov/12/jensen-huang-was-a-busted-flush-at-nvidia-he-had-to-go" target="_blank">Jensen Huang was a busted flush at Nvidia – he had to go | Nils Pratley</a> <small>theguardian.com</small></li>
+<li><a href="https://www.bbc.co.uk/news/articles/cmq5vd1wdgz6o?at_medium=RSS&#x26;at_campaign=rss" target="_blank">Ex-Nvidia CEO Jensen Huang summoned to testify before Congress about affair with alleged Chinese spy</a> <small>bbc.co.uk</small></li>
+<li><a href="https://www.scmp.com/week-asia/politics/article/3374416/malaysias-melaka-election-begins-anwars-ph-seeks-counter-resurgent-umno" target="_blank">Melaka election: Malaysians vote as Anwar’s PH seeks to stem Umno tide</a> <small>scmp.com</small></li>
+<li><a href="https://decrypt.co/383217/nvidia-employees-push-board-to-bring-back-jensen-huang-report" target="_blank">Nvidia Employees Push Board to Bring Back Jensen Huang: Report</a> <small>decrypt.co</small></li>
+<li><a href="https://techcrunch.com/2026/11/13/israels-vcs-see-opportunity-for-challengers-in-nvidias-turmoil/" target="_blank">Israel’s VCs see opportunity for challengers in Nvidia’s turmoil</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.wired.com/story/who-is-colette-kress-the-woman-who-could-succeed-jensen-huang/" target="_blank">Meet Colette Kress, Nvidia’s New Interim CEO</a> <small>wired.com</small></li>
+<li><a href="https://www.fastcompany.com/91641238/everything-you-wanted-to-know-about-nvidia-but-were-too-afraid-to-ask?partner=rss&#x26;utm_source=rss&#x26;utm_medium=feed&#x26;utm_campaign=rss+fastcompany&#x26;utm_content=rss" target="_blank">Everything you wanted to know about Nvidia but were too afraid to ask</a> <small>fastcompany.com</small></li>
+<li><a href="https://www.cnbc.com/2026/11/12/alice-huang-jensen-huang-nvidia-huawei.html" target="_blank">Alice Huang tied to Nvidia’s biggest Chinese competitor</a> <small>cnbc.com</small></li>
+<li><a href="https://www.ft.com/content/2a64f698-46dd-4178-a3f4-4c5f4c0a0926?syn-25a6b1a6=1" target="_blank">Arm boss Rene Haas approached in Nvidia CEO search</a> <small>ft.com</small></li>
+<li><a href="https://www.theguardian.com/technology/2026/nov/12/jensen-huang-built-an-ai-kingdom-now-hes-gone-will-nvidias-ramparts-be-breached" target="_blank">Jensen Huang built an AI kingdom. Now he’s gone, will Nvidia’s ramparts be breached?</a> <small>theguardian.com</small></li>
+<li><a href="https://www.scmp.com/news/china/diplomacy/article/3374415/white-house-confirms-us-china-russia-trilateral-apec-sidelines" target="_blank">White House confirms US-China-Russia trilateral talks on Apec sidelines</a> <small>scmp.com</small></li>
+<li><a href="https://decrypt.co/383211/congress-summons-ex-nvidia-ceo-jensen-huang-lutnick-over-chip-exports-to-china" target="_blank">Congress Summons Ex-Nvidia CEO Jensen Huang, Lutnick Over Chip Exports to China</a> <small>decrypt.co</small></li>
+<li><a href="https://techcrunch.com/2026/11/12/democrats-launch-nvidia-investigation-write-scathing-letter-on-huangs-scheme-with-trump/" target="_blank">Democrats launch Nvidia investigation, write scathing letter on Huang’s ‘scheme’ with Trump</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.fastcompany.com/91641320/why-jensen-huangs-ouster-is-more-than-just-nvidias-problem?partner=rss&#x26;utm_source=rss&#x26;utm_medium=feed&#x26;utm_campaign=rss+fastcompany&#x26;utm_content=rss" target="_blank">How the effects of Jensen Huang’s ouster are spiraling out through the economy</a> <small>fastcompany.com</small></li>
+<li><a href="https://www.cnbc.com/2026/11/13/nvidia-nvda-stock-jensen-huang-transition.html" target="_blank">Nvidia closes below $4T market cap for first time since July 2025 in Huang fallout</a> <small>cnbc.com</small></li>
+<li><a href="https://www.ft.com/content/7a1ee00c-ddbd-4ae2-8323-e4dc603d7a41?syn-25a6b1a6=1" target="_blank">Will Jensen Huang sell his $135bn of stock?</a> <small>ft.com</small></li>
+<li><a href="https://www.theguardian.com/technology/2026/nov/12/rise-and-fall-of-nvidia-ceo-jensen-huang-profile" target="_blank">From washing dishes at Denny’s to rockstar of AI: the rise and fall of Nvidia’s Jensen Huang</a> <small>theguardian.com</small></li>
+<li><a href="https://www.scmp.com/week-asia/economics/article/3374368/pax-silica-means-peace-philippines-its-fight" target="_blank">Pax Silica means peace. In the Philippines, it’s a fight</a> <small>scmp.com</small></li>
+<li><a href="https://decrypt.co/383189/who-colette-kress-jensen-huang-successor-nvidia-ceo" target="_blank">Who Is Colette Kress, Jensen Huang’s Successor as Nvidia CEO?</a> <small>decrypt.co</small></li>
+<li><a href="https://techcrunch.com/2026/11/12/jensen-huang-was-having-a-third-affair-reuters-reports/" target="_blank">Jensen Huang was having a third affair, Reuters reports</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.fastcompany.com/91640982/an-expert-in-corporate-espionage-on-the-nvidia-ceo-jensen-huangs-entanglement-with-foreign-intelligence?partner=rss&#x26;utm_source=rss&#x26;utm_medium=feed&#x26;utm_campaign=rss+fastcompany&#x26;utm_content=rss" target="_blank">An expert in espionage on spies, honeypots, and Nvidia CEO Jensen Huang</a> <small>fastcompany.com</small></li>
+<li><a href="https://www.cnbc.com/2026/11/13/nvidia-jensen-huang-founder-ceo-transition.html" target="_blank">Apple, Alphabet and Uber survived major founder transitions. Nvidia will be a harder test</a> <small>cnbc.com</small></li>
+<li><a href="https://www.ft.com/content/0d4e93e4-895e-4ae0-a01b-833a3ed440a8?syn-25a6b1a6=1" target="_blank">Chinese AI sell-off deepens over fears of tougher Nvidia chip restrictions</a> <small>ft.com</small></li>
+<li><a href="https://www.scmp.com/news/china/diplomacy/article/3374412/us-congress-widens-nvidia-probe-seeking-testimony-jensen-huang-and-trump-officials" target="_blank">US Congress widens Nvidia probe, seeking testimony from Jensen Huang and Trump officials</a> <small>scmp.com</small></li>
+<li><a href="https://decrypt.co/383146/nvidia-amd-broadcom-ai-stock-winners-loses-jensen-huang" target="_blank">Nvidia, AMD, Broadcom: The AI Stock Winners and Losers After Jensen Huang’s Ousting</a> <small>decrypt.co</small></li>
+<li><a href="https://techcrunch.com/2026/11/12/hugging-face-ceo-vows-to-keep-fighting-for-open-source-ai-after-jensen-huangs-exit/" target="_blank">Hugging Face CEO vows to keep fighting for open source AI after Jensen Huang’s exit</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.fastcompany.com/91639932/jensen-huang-hollywood-spy-thrillers?partner=rss&#x26;utm_source=rss&#x26;utm_medium=feed&#x26;utm_campaign=rss+fastcompany&#x26;utm_content=rss" target="_blank">Nvidia CEO Jensen Huang’s involvement with an alleged Chinese spy is the stuff of Hollywood thrillers. These 10, for example</a> <small>fastcompany.com</small></li>
+<li><a href="https://www.cnbc.com/2026/11/13/trump-cuba-us-military-force-iran.html" target="_blank">Trump says he wants to ‘get Cuba done’ before leaving office, would consider military force</a> <small>cnbc.com</small></li>
+<li><a href="https://www.ft.com/content/74e95e42-3f1d-4128-98ef-9ce4c160b077?syn-25a6b1a6=1" target="_blank">The Silicon Valley veterans now steering Nvidia</a> <small>ft.com</small></li>
+<li><a href="https://www.scmp.com/news/china/diplomacy/article/3374333/midterm-losses-could-give-trump-quest-emerge-apec-summit-winner" target="_blank">Midterm losses could give Trump a quest to emerge from Apec summit as a winner</a> <small>scmp.com</small></li>
+<li><a href="https://decrypt.co/383134/jensen-huang-resigns-as-nvidia-ceo-with-cfo-colette-kress-named-interim-chief" target="_blank">Jensen Huang Resigns as Nvidia CEO, With CFO Colette Kress Named Interim Chief</a> <small>decrypt.co</small></li>
+<li><a href="https://techcrunch.com/2026/11/12/jensen-huangs-exit-puts-nvidias-support-for-open-source-in-question/" target="_blank">Jensen Huang’s exit puts Nvidia’s support for open source in question</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.fastcompany.com/91640747/jensen-huang-may-be-out-at-nvidia-the-rise-and-fall-of-one-of-the-key-figures-in-the-ai-boom?partner=rss&#x26;utm_source=rss&#x26;utm_medium=feed&#x26;utm_campaign=rss+fastcompany&#x26;utm_content=rss" target="_blank">Jensen Huang may be out at Nvidia: The rise and fall of a key figure in the AI boom</a> <small>fastcompany.com</small></li>
+<li><a href="https://www.cnbc.com/2026/11/13/tech-download-jensen-huang-nvidia-departure-jensenmania.html" target="_blank">I interviewed Huang at peak ‘Jensenmania.’ Three weeks later, Nvidia is grappling with a world without him</a> <small>cnbc.com</small></li>
+<li><a href="https://www.ft.com/content/83474218-387c-4f93-a27b-ffdfee624029?syn-25a6b1a6=1" target="_blank">Nvidia chief Jensen Huang toppled by revelations of extramarital affairs</a> <small>ft.com</small></li>
+<li><a href="https://www.scmp.com/news/china/diplomacy/article/3374409/bessent-blames-us-commerce-department-not-restricting-nvidia-chip-exports-china" target="_blank">Bessent blames US Commerce Department for not restricting Nvidia chip exports to China</a> <small>scmp.com</small></li>
+<li><a href="https://decrypt.co/383141/massive-mistake-tech-ai-crypto-founders-react-jensen-huang-nvidia-exit" target="_blank">'A Massive Mistake': Tech, AI and Crypto Founders React to Jensen Huang’s Nvidia Exit</a> <small>decrypt.co</small></li>
+<li><a href="https://techcrunch.com/2026/11/12/jensen-huang-agrees-to-testify-before-congress/" target="_blank">Jensen Huang agrees to testify before Congress</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.cnbc.com/2026/11/13/nvidia-scandal-lutnick-chip-sales.html" target="_blank">Nvidia scandal draws in Commerce Secretary Lutnick, who reportedly agrees to testify about China chip sales</a> <small>cnbc.com</small></li>
+<li><a href="https://www.ft.com/content/ecb2b4ed-1b61-4c8a-a2e7-a6f9c85a59ff?syn-25a6b1a6=1" target="_blank">AI boom will lift Nvidia even after Huang’s exit, investors say</a> <small>ft.com</small></li>
+<li><a href="https://www.scmp.com/news/china/diplomacy/article/3374407/us-china-board-trade-holds-first-meeting-days-trump-xi-summit" target="_blank">US-China Board of Trade holds first meeting days before Trump-Xi summit</a> <small>scmp.com</small></li>
+<li><a href="https://decrypt.co/383114/pressure-mounts-on-nvidias-jensen-huang-amid-reports-of-second-affair" target="_blank">Pressure Mounts on Nvidia's Jensen Huang Amid Reports of Second Affair</a> <small>decrypt.co</small></li>
+<li><a href="https://techcrunch.com/2026/11/13/jensen-huangs-departure-blasts-big-hole-in-ai-startup-funding-vcs-and-founders-say/" target="_blank">Jensen Huang’s departure blasts big hole in AI startup funding, VCs and founders say</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.cnbc.com/2026/11/13/nvidia-jensen-huang-alice-spy-megaspeed-.html" target="_blank">Why Singapore keeps turning up in the fight over Nvidia chips and China</a> <small>cnbc.com</small></li>
+<li><a href="https://www.ft.com/content/42bfcbcb-7121-492b-8e1d-0aceacd093e2?syn-25a6b1a6=1" target="_blank">Jensen jeopardy will disrupt the AI industry</a> <small>ft.com</small></li>
+<li><a href="https://www.scmp.com/news/china/diplomacy/article/3374393/trump-press-southeast-asia-nations-join-pax-silica-asean-summit-manila" target="_blank">Trump to press Southeast Asia nations to join Pax Silica at Asean summit in Manila</a> <small>scmp.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/13/export-banned-nvidia-chips-are-behind-chinas-most-powerful-ai-models-uh-oh-jensen/" target="_blank">Export-banned Nvidia chips are behind China’s most powerful AI models — uh-oh, Jensen!</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.cnbc.com/2026/11/11/nvidia-jensen-huang-ai-financial-system-risk.html" target="_blank">Analysis: Nvidia’s leadership crisis tests the chipmaker’s role as the ‘central bank of AI’</a> <small>cnbc.com</small></li>
+<li><a href="https://www.ft.com/content/dd9072bd-e8a3-4f8e-9985-550aa80a2fd4?syn-25a6b1a6=1" target="_blank">Jensen Huang is gone. Will the AI industry pay the price?</a> <small>ft.com</small></li>
+<li><a href="https://www.scmp.com/tech/big-tech/article/3374376/will-jensen-huangs-downfall-tip-scales-against-open-source-ai" target="_blank">Will Jensen Huang’s downfall tip the scales against open-source AI?</a> <small>scmp.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/13/nvidia-ceo-jensen-huangs-affair-with-alleged-chinese-spy-a-timeline/" target="_blank">The unfolding Jensen Huang scandal: a timeline</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.cnbc.com/2026/11/13/nvidia-stock-jensen-affair-ai.html" target="_blank">Nvidia stock suffers longest weekly losing streak since 2012 as market value sinks by $1.7 trillion</a> <small>cnbc.com</small></li>
+<li><a href="https://www.ft.com/content/d3838274-a055-4d5d-a1ff-48f2979a08f0?syn-25a6b1a6=1" target="_blank">Nvidia board to decide Jensen Huang’s fate</a> <small>ft.com</small></li>
+<li><a href="https://www.scmp.com/economy/global-economy/article/3374328/china-could-tighten-rare-earths-exports-if-us-escalates-chip-curbs-over-nvidia-analysts" target="_blank">China could tighten rare earths exports if US escalates chip curbs over Nvidia: analysts</a> <small>scmp.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/13/israels-vcs-see-opportunity-for-challengers-in-nvidias-turmoil/" target="_blank">Israel’s VCs see opportunity for challengers in Nvidia’s turmoil</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.cnbc.com/2026/11/12/colette-kress-nvidia-cfo-interim-ceo-candidate.html" target="_blank">Who is Colette Kress? Nvidia's finance chief steps in as interim CEO after Huang exit</a> <small>cnbc.com</small></li>
+<li><a href="https://www.scmp.com/week-asia/politics/article/3374373/malaysia-turns-turkey-warship-missiles-after-norways-export-freeze" target="_blank">Malaysia turns to Turkey for warship missiles after Norway’s export freeze</a> <small>scmp.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/13/jensen-huang-didnt-show-confidence-in-his-successor-report-says/" target="_blank">Jensen Huang didn’t show confidence in his successor, report says</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.cnbc.com/2026/11/13/nvidia-jensen-huang-affairs-amd-broadcom-tsmc.html" target="_blank">Nvidia’s turmoil is prompting a rotation across chip stocks. Here's what we know</a> <small>cnbc.com</small></li>
+<li><a href="https://www.scmp.com/tech/big-tech/article/3374357/jensen-huangs-exit-tests-nvidias-supply-chain-clout-ability-bankroll-ai-buildout" target="_blank">Jensen Huang’s exit tests Nvidia’s supply chain clout, ability to bankroll AI buildout</a> <small>scmp.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/12/democrats-launch-nvidia-investigation-write-scathing-letter-on-huangs-scheme-with-trump/" target="_blank">Democrats launch Nvidia investigation, write scathing letter on Huang’s ‘scheme’ with Trump</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.cnbc.com/2026/11/13/nvidia-without-jensen-huang-what-lies-ahead-for-asian-chipmakers-.html" target="_blank">Nvidia without Jensen Huang. What lies ahead for Asian chipmakers?</a> <small>cnbc.com</small></li>
+<li><a href="https://www.scmp.com/news/asia/southeast-asia/article/3374367/indonesias-upper-house-pick-new-vp-december-2" target="_blank">Indonesia’s upper house to pick new VP on December 2</a> <small>scmp.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/12/jensen-huang-was-having-a-third-affair-reuters-reports/" target="_blank">Jensen Huang was having a third affair, Reuters reports</a> <small>techcrunch.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/12/jensen-huangs-exit-puts-nvidias-support-for-open-source-in-question/" target="_blank">Jensen Huang’s exit puts Nvidia’s support for open source in question</a> <small>techcrunch.com</small></li>
+</ul>
+</details>
+<ul>
+<li>Nvidia CEO Jensen Huang resigned after reports he had an affair with a Chinese spy <a href="https://thezvi.substack.com/p/nvidia-ceo-jensen-huang-had-an-affair" target="_blank">[1]</a> <a href="https://garymarcus.substack.com/p/jensen-huang-resigns" target="_blank">[2]</a> <a href="https://www.chinatalk.media/p/the-spy-who-leased-me" target="_blank">[3]</a>, though one analysis argues his ouster traces more to Nvidia’s risky business practices than to his personal life <a href="https://the-decoder.com/jensen-huangs-ouster-likely-traces-back-to-nvidias-risky-business-practices-more-than-his-personal-life/" target="_blank">[4]</a>.</li>
+<li>The scandal exposed contradictions in Trump’s China policy <a href="https://cset.georgetown.edu/article/spy-scandal-highlights-contradictions-at-heart-of-trumps-china-policy/" target="_blank">[5]</a>, and Nvidia privately confirmed it could track chips to fight smuggling even as the industry publicly questioned whether that was feasible <a href="https://www.technologyreview.com/2026/11/12/1148483/nvidia-chip-tracking/" target="_blank">[6]</a>.</li>
+<li>Huang’s departure leaves a hole in AI startup funding, according to VCs and founders <a href="https://techcrunch.com/2026/11/13/jensen-huangs-departure-blasts-big-hole-in-ai-startup-funding-vcs-and-founders-say/" target="_blank">[7]</a>, while TSMC plans to invest $1B in Anthropic and OpenAI <a href="https://arstechnica.com/ai/2026/11/taiwans-chipmaking-giant-tsmc-to-invest-1b-in-anthropic-openai/" target="_blank">[8]</a>.</li>
+</ul>
+<p><strong>Why it matters:</strong> Huang’s exit removes the central figure of the AI chip boom just as export controls, smuggling enforcement, and startup funding all depend on Nvidia’s direction, so the choice of his successor will shape the industry’s relationship with both Washington and Beijing.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://thezvi.substack.com/p/nvidia-ceo-jensen-huang-had-an-affair" target="_blank">Nvidia CEO Jensen Huang Had an Affair With a Chinese Spy</a> <small>thezvi.substack.com</small></li>
+<li>[2] <a href="https://garymarcus.substack.com/p/jensen-huang-resigns" target="_blank">Jensen Huang resigns.</a> <small>garymarcus.substack.com</small></li>
+<li>[3] <a href="https://www.chinatalk.media/p/the-spy-who-leased-me" target="_blank">The Spy Who Leased Me</a> <small>chinatalk.media</small></li>
+<li>[4] <a href="https://the-decoder.com/jensen-huangs-ouster-likely-traces-back-to-nvidias-risky-business-practices-more-than-his-personal-life/" target="_blank">Jensen Huang’s ouster likely traces back to Nvidia’s risky business practices more than his personal life</a> <small>the-decoder.com</small></li>
+<li>[5] <a href="https://cset.georgetown.edu/article/spy-scandal-highlights-contradictions-at-heart-of-trumps-china-policy/" target="_blank">Spy scandal highlights contradictions at heart of Trump’s China policy</a> <small>cset.georgetown.edu</small></li>
+<li>[6] <a href="https://www.technologyreview.com/2026/11/12/1148483/nvidia-chip-tracking/" target="_blank">Nvidia privately confirmed it could track chips to fight smuggling, even as industry publicly questioned feasibility</a> <small>technologyreview.com</small></li>
+<li>[7] <a href="https://techcrunch.com/2026/11/13/jensen-huangs-departure-blasts-big-hole-in-ai-startup-funding-vcs-and-founders-say/" target="_blank">Jensen Huang’s departure blasts big hole in AI startup funding, VCs and founders say</a> <small>techcrunch.com</small></li>
+<li>[8] <a href="https://arstechnica.com/ai/2026/11/taiwans-chipmaking-giant-tsmc-to-invest-1b-in-anthropic-openai/" target="_blank">Taiwan’s chipmaking giant TSMC to invest $1B in Anthropic, OpenAI</a> <small>arstechnica.com</small></li>
+</ul>
+<h3 id="ai-chips-memory-quantum-hardware"><a class="__permalink-h" href="#ai-chips-memory-quantum-hardware" aria-label="ai chips memory quantum hardware permalink">»</a>AI Chips, Memory, Quantum Hardware</h3>
+<details>
+<summary><em>44 articles</em></summary>
+<ul>
+<li><a href="https://www.nextplatform.com/compute/2026/11/06/ibm-amd-and-oak-ridge-unveil-quantum-error-correction-platform/5308284" target="_blank">IBM, AMD, And Oak Ridge Unveil Quantum Error Correction Platform</a> <small>nextplatform.com</small></li>
+<li><a href="https://simonwillison.net/2026/Nov/11/anthropic-ipo-roadshow/" target="_blank">Anthropic's IPO roadshow video</a> <small>simonwillison.net</small></li>
+<li><a href="https://www.marktechpost.com/2026/11/12/ibm-quantum-nighthawk-r3-520-qubits-1040-qubit-system-2027/" target="_blank">IBM Announces IBM Quantum Nighthawk r3: A New Processor to Support 10k Quantum Operations on 520 Programmable Qubits</a> <small>marktechpost.com</small></li>
+<li><a href="https://www.sciencedaily.com/releases/2026/11/261111005855.htm" target="_blank">Tiny flaws in diamonds could unlock a quantum computing revolution</a> <small>sciencedaily.com</small></li>
+<li><a href="https://spectrum.ieee.org/speech-processing-pioneer-in-memoriam" target="_blank">Speech Processing Pioneer Bishnu Saroop Atal Dies at 93</a> <small>spectrum.ieee.org</small></li>
+<li><a href="https://www.therobotreport.com/intel-altera-expand-collaboration-simplify-sensor-integration-physical-ai/" target="_blank">Intel and Altera expand collaboration to simplify sensor integration for physical AI</a> <small>therobotreport.com</small></li>
+<li><a href="https://www.servethehome.com/this-is-the-meta-metaroce-network-adapter/" target="_blank">This is the Meta MetaRoCE Network Adapter</a> <small>servethehome.com</small></li>
+<li><a href="https://www.hpcwire.com/off-the-wire/penguin-solutions-introduces-cxl-enabled-ddr4-module-for-ai-data-centers/" target="_blank">Penguin Solutions Introduces CXL-Enabled DDR4 Module for AI Data Centers</a> <small>hpcwire.com</small></li>
+<li><a href="https://semiengineering.com/shifting-hbm4-controller-functions-closer-to-memory-uc-riverside/" target="_blank">Shifting HBM4 Controller Functions Closer To Memory (UC Riverside)</a> <small>semiengineering.com</small></li>
+<li><a href="https://pandaily.com/cxmt-ddr5-32gb-die-rdimm-mrdimm-12800mbps-server-memory" target="_blank">CXMT Moves DDR5 to 32Gb Dies and Lists MRDIMM Server Memory at Up to 12,800Mbps</a> <small>pandaily.com</small></li>
+<li><a href="https://www.newscientist.com/article/2598583-researchers-built-the-first-ever-quantum-clock-that-uses-sunlight/?utm_campaign=RSS|NSNS&#x26;utm_content=home&#x26;utm_medium=RSS&#x26;utm_source=NSNS" target="_blank">Researchers build the first ever quantum clock that uses sunlight</a> <small>newscientist.com</small></li>
+<li><a href="https://iot-analytics.com/nvidia-gtc-berlin-5-trends-whats-next-for-industrial-ai-and-ai-infrastructure/" target="_blank">NVIDIA GTC Berlin 2026: What’s next for industrial AI and AI infrastructure</a> <small>iot-analytics.com</small></li>
+<li><a href="https://www.embedded.com/taoglas-launches-crpa-reference-design-for-resilient-gnss-systems/" target="_blank">Taoglas Launches CRPA Reference Design for Resilient GNSS Systems</a> <small>embedded.com</small></li>
+<li><a href="https://arxiv.org/abs/2611.15000" target="_blank">QSim-Arena: an evolving developer for quantum simulation advantage</a> <small>arxiv.org</small></li>
+<li><a href="https://www.nextplatform.com/compute/2026/11/10/how-the-venice-epycs-measure-up-against-prior-amd-server-cpus/5308901" target="_blank">How The 'Venice' Epycs Measure Up Against Prior AMD Server CPUs</a> <small>nextplatform.com</small></li>
+<li><a href="https://www.sciencedaily.com/releases/2026/11/261109205416.htm" target="_blank">Inside this quantum computer, memory vibrates like a guitar string</a> <small>sciencedaily.com</small></li>
+<li><a href="https://www.servethehome.com/google-tpu-8tx-8i-max-amd-epyc-turin/" target="_blank">Google TPU 8tx Pairs AMD EPYC Turin Hosts with Confidential Computing while TPU 8i Max Doubles Memory Bandwidth</a> <small>servethehome.com</small></li>
+<li><a href="https://www.hpcwire.com/off-the-wire/marvell-scales-connectivity-to-address-ai-infrastructures-next-bottleneck-at-sc26/" target="_blank">Marvell Scales Connectivity to Address AI Infrastructure’s Next Bottleneck at SC26</a> <small>hpcwire.com</small></li>
+<li><a href="https://semiengineering.com/the-semiconductor-singularity/" target="_blank">The Semiconductor Singularity</a> <small>semiengineering.com</small></li>
+<li><a href="https://pandaily.com/damo-academy-xuantie-xl-300-cache-coherent-interconnect-ip-risc-v-eight-core" target="_blank">DAMO Academy's XuanTie XL-300 Interconnect IP Links Up to Eight RISC-V Cores With 32MB of L3</a> <small>pandaily.com</small></li>
+<li><a href="https://www.embedded.com/sts-unified-stm32-mcu-platform-ti-brings-agentic-ai-to-ccstudio-nxp-unified-robotics-platform-embedded-week-insights/" target="_blank">ST's Unified STM32 MCU Platform, TI Brings Agentic AI to CCStudio, NXP Unified Robotics Platform: Embedded Week Insights</a> <small>embedded.com</small></li>
+<li><a href="https://www.nextplatform.com/compute/2026/11/10/amd-tunes-up-cpus-for-agentic-ai-with-venice-epyc-processors/5308850" target="_blank">AMD Tunes Up CPUs For Agentic AI With 'Venice' Epyc Processors</a> <small>nextplatform.com</small></li>
+<li><a href="https://www.sciencedaily.com/releases/2026/11/261106174537.htm" target="_blank">A hidden limit of space and time could unlock electronics 100,000 times faster</a> <small>sciencedaily.com</small></li>
+<li><a href="https://www.servethehome.com/amd-epyc-9006-results-are-here-and-amd-delivers-a-knockout-part-deux/" target="_blank">AMD EPYC 9006 Results Are Here and AMD Delivers a Knockout Part Deux</a> <small>servethehome.com</small></li>
+<li><a href="https://www.hpcwire.com/off-the-wire/quix-quantum-secures-photondelta-funding-for-photonic-quantum-computing/" target="_blank">QuiX Quantum Secures PhotonDelta Funding for Photonic Quantum Computing</a> <small>hpcwire.com</small></li>
+<li><a href="https://semiengineering.com/beyond-bandwidth-ai-inference-is-reshaping-the-memory-wall/" target="_blank">Beyond Bandwidth: AI Inference Is Reshaping The Memory Wall</a> <small>semiengineering.com</small></li>
+<li><a href="https://pandaily.com/hust-oxygen-doped-monolayer-wse2-p-type-ballistic-transistor" target="_blank">HUST-Led Team Cuts Contact Resistance 94% in Monolayer WSe2 p-Type Transistors With Oxygen Doping</a> <small>pandaily.com</small></li>
+<li><a href="https://www.embedded.com/allegro-launches-48-v-steering-and-braking-solutions/" target="_blank">Allegro Launches 48-V Steering and Braking Solutions</a> <small>embedded.com</small></li>
+<li><a href="https://www.nextplatform.com/compute/2026/11/09/google-rejiggers-tpu-accelerators-for-broader-ai-inference-work/5308534" target="_blank">Google Rejiggers TPU Accelerators For Broader AI Inference Work</a> <small>nextplatform.com</small></li>
+<li><a href="https://www.servethehome.com/dell-poweredge-r770ap-review-one-fast-intel-xeon-6-server/" target="_blank">Dell PowerEdge R770AP Review One Fast Intel Xeon 6 Server</a> <small>servethehome.com</small></li>
+<li><a href="https://www.hpcwire.com/off-the-wire/hpe-introduces-hybrid-hpc-storage-and-rack-management-controller/" target="_blank">HPE Introduces Hybrid HPC Storage and Rack Management Controller</a> <small>hpcwire.com</small></li>
+<li><a href="https://semiengineering.com/rethinking-memory-for-ai-inference/" target="_blank">Rethinking Memory For AI Inference</a> <small>semiengineering.com</small></li>
+<li><a href="https://www.embedded.com/st-adds-softsim-remote-provisioning-to-iot-module/" target="_blank">ST Adds SoftSIM, Remote Provisioning to IoT Module</a> <small>embedded.com</small></li>
+<li><a href="https://www.hpcwire.com/off-the-wire/staera-semiconductor-emerges-from-stealth-with-4-6m-to-break-ais-data-bottleneck/" target="_blank">Staera Semiconductor Emerges from Stealth with $4.6M to Break AI’s Data Bottleneck</a> <small>hpcwire.com</small></li>
+<li><a href="https://semiengineering.com/chip-industry-week-in-review-164/" target="_blank">Chip Industry Week In Review</a> <small>semiengineering.com</small></li>
+<li><a href="https://www.embedded.com/ti-brings-agentic-ai-to-ccstudio-for-embedded-development/" target="_blank">TI Brings Agentic AI to CCStudio for Embedded Development</a> <small>embedded.com</small></li>
+<li><a href="https://semiengineering.com/the-semiconductor-singularity-when-ai-starts-accelerating-the-silicon-that-accelerates-ai/" target="_blank">The Semiconductor Singularity: When AI Starts Accelerating The Silicon That Accelerates AI</a> <small>semiengineering.com</small></li>
+<li><a href="https://www.embedded.com/nxp-unified-robotics-platform-accelerates-physical-ai-deployments/" target="_blank">NXP Unified Robotics Platform Accelerates Physical AI Deployments</a> <small>embedded.com</small></li>
+<li><a href="https://semiengineering.com/the-memory-challenge-of-physical-ai/" target="_blank">The Memory Challenge Of Physical AI</a> <small>semiengineering.com</small></li>
+<li><a href="https://www.embedded.com/skyworks-unveils-multi-core-dsps-for-in-car-audio/" target="_blank">Skyworks Unveils Multi-Core DSPs for In-Car Audio</a> <small>embedded.com</small></li>
+<li><a href="https://semiengineering.com/designing-edge-ai-socs-at-near-threshold-why-foundation-ip-can-help-you-break-down-the-power-wall/" target="_blank">Designing Edge AI SoCs At Near-Threshold: Why Foundation IP Can Help You Break Down The Power Wall</a> <small>semiengineering.com</small></li>
+<li><a href="https://www.embedded.com/eds-from-silicon-to-systems-enabling-the-next-era-of-model-based-electronics-design/" target="_blank">ESD: From Silicon to Systems: Enabling the Next Era of Model-Based Electronics Design</a> <small>embedded.com</small></li>
+<li><a href="https://semiengineering.com/ip-integration-challenges-evolve/" target="_blank">IP Integration Challenges Evolve</a> <small>semiengineering.com</small></li>
+<li><a href="https://www.embedded.com/eds-panel-discussion-future-directions-in-embedded-systems-challenges-and-opportunities/" target="_blank">ESD: Panel Discussion: Future Directions in Embedded Systems - Challenges and Opportunities</a> <small>embedded.com</small></li>
+</ul>
+</details>
+<ul>
+<li>IBM, AMD, and Oak Ridge National Laboratory unveiled a quantum error correction platform <a href="https://www.nextplatform.com/compute/2026/11/06/ibm-amd-and-oak-ridge-unveil-quantum-error-correction-platform/5308284" target="_blank">[1]</a>, while IBM announced the Quantum Nighthawk r3 processor, which supports 10,000 quantum operations on 520 programmable qubits <a href="https://www.marktechpost.com/2026/11/12/ibm-quantum-nighthawk-r3-520-qubits-1040-qubit-system-2027/" target="_blank">[2]</a></li>
+<li>Memory vendors pushed new AI-oriented products: Penguin Solutions introduced a CXL-enabled DDR4 module for AI data centers <a href="https://www.hpcwire.com/off-the-wire/penguin-solutions-introduces-cxl-enabled-ddr4-module-for-ai-data-centers/" target="_blank">[3]</a>, CXMT moved DDR5 to 32Gb dies and listed MRDIMM server memory at up to 12,800Mbps <a href="https://pandaily.com/cxmt-ddr5-32gb-die-rdimm-mrdimm-12800mbps-server-memory" target="_blank">[4]</a>, and UC Riverside researchers proposed shifting HBM4 controller functions closer to memory <a href="https://semiengineering.com/shifting-hbm4-controller-functions-closer-to-memory-uc-riverside/" target="_blank">[5]</a></li>
+<li>Intel and Altera expanded their collaboration to simplify sensor integration for physical AI <a href="https://www.therobotreport.com/intel-altera-expand-collaboration-simplify-sensor-integration-physical-ai/" target="_blank">[6]</a>, and researchers reported that tiny flaws in diamonds could unlock advances in quantum computing hardware <a href="https://www.sciencedaily.com/releases/2026/11/261111005855.htm" target="_blank">[7]</a></li>
+</ul>
+<p><strong>Why it matters:</strong> Quantum error correction is the main barrier to useful quantum machines, and the parallel push to widen memory bandwidth and capacity shows that AI hardware is being constrained and reshaped by memory as much as by processors.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://www.nextplatform.com/compute/2026/11/06/ibm-amd-and-oak-ridge-unveil-quantum-error-correction-platform/5308284" target="_blank">IBM, AMD, And Oak Ridge Unveil Quantum Error Correction Platform</a> <small>nextplatform.com</small></li>
+<li>[2] <a href="https://www.marktechpost.com/2026/11/12/ibm-quantum-nighthawk-r3-520-qubits-1040-qubit-system-2027/" target="_blank">IBM Announces IBM Quantum Nighthawk r3: A New Processor to Support 10k Quantum Operations on 520 Programmable Qubits</a> <small>marktechpost.com</small></li>
+<li>[3] <a href="https://www.hpcwire.com/off-the-wire/penguin-solutions-introduces-cxl-enabled-ddr4-module-for-ai-data-centers/" target="_blank">Penguin Solutions Introduces CXL-Enabled DDR4 Module for AI Data Centers</a> <small>hpcwire.com</small></li>
+<li>[4] <a href="https://pandaily.com/cxmt-ddr5-32gb-die-rdimm-mrdimm-12800mbps-server-memory" target="_blank">CXMT Moves DDR5 to 32Gb Dies and Lists MRDIMM Server Memory at Up to 12,800Mbps</a> <small>pandaily.com</small></li>
+<li>[5] <a href="https://semiengineering.com/shifting-hbm4-controller-functions-closer-to-memory-uc-riverside/" target="_blank">Shifting HBM4 Controller Functions Closer To Memory (UC Riverside)</a> <small>semiengineering.com</small></li>
+<li>[6] <a href="https://www.therobotreport.com/intel-altera-expand-collaboration-simplify-sensor-integration-physical-ai/" target="_blank">Intel and Altera expand collaboration to simplify sensor integration for physical AI</a> <small>therobotreport.com</small></li>
+<li>[7] <a href="https://www.sciencedaily.com/releases/2026/11/261111005855.htm" target="_blank">Tiny flaws in diamonds could unlock a quantum computing revolution</a> <small>sciencedaily.com</small></li>
+</ul>
+<h3 id="robotics-research-and-real-world-deployments"><a class="__permalink-h" href="#robotics-research-and-real-world-deployments" aria-label="robotics research and real world deployments permalink">»</a>Robotics Research and Real-World Deployments</h3>
+<details>
+<summary><em>23 articles</em></summary>
+<ul>
+<li><a href="https://www.technologyreview.com/2026/11/06/1148090/i-watched-a-humanoid-robot-clean-my-apartment-it-felt-like-a-taste-of-the-future/" target="_blank">I watched a humanoid robot clean my apartment. It felt like a taste of the future.</a> <small>technologyreview.com</small></li>
+<li><a href="https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/" target="_blank">Gemini Robotics 2.5 accelerates real-world general dexterity</a> <small>deepmind.google</small></li>
+<li><a href="https://arstechnica.com/google/2026/11/deepmind-reveals-gemini-robotics-2-5-and-open-safety-benchmark-asimov-jailbreak/" target="_blank">DeepMind reveals Gemini Robotics 2.5 and open safety benchmark "ASIMOV-jailbreak"</a> <small>arstechnica.com</small></li>
+<li><a href="https://www.nature.com/articles/s42256-026-01335-4" target="_blank">Tensegrity continuum robots enable task-adaptive morphologies for cooperative behaviours</a> <small>nature.com</small></li>
+<li><a href="https://siliconangle.com/2026/11/10/kora-builds-ai-models-and-agents-into-a-new-linux-os-bound-for-qualcomm-snapdragon-pcs/" target="_blank">Kora builds AI models and agents into a new Linux OS bound for Qualcomm Snapdragon PCs</a> <small>siliconangle.com</small></li>
+<li><a href="https://spectrum.ieee.org/innomotics-electric-motors-drive-systems" target="_blank">The Dynamo-Electric Principle: 160 Years of Powering Industry</a> <small>spectrum.ieee.org</small></li>
+<li><a href="https://www.therobotreport.com/six-agibot-g2-robots-complete-1730-tasks-in-24-hour-shanghai-convenience-store-trial/" target="_blank">Six AGIBOT G2 Robots Complete 1,730 Tasks in 24-Hour Shanghai Convenience Store Trial</a> <small>therobotreport.com</small></li>
+<li><a href="https://technode.com/2026/11/13/when-robots-dive-underwater-heymandex-sees-new-possibilities-for-dexterous-hands/" target="_blank">When robots dive underwater, HeymanDex sees new possibilities for dexterous hands</a> <small>technode.com</small></li>
+<li><a href="https://pandaily.com/ace-robotics-mundo-world-model-dual-brain-rsi-hotel-laundry-robot" target="_blank">ACE Robotics Pairs Mundo World Model With Self-Improving Skills to Run a Hotel Laundry Workflow</a> <small>pandaily.com</small></li>
+<li><a href="https://www.embedded.com/melexis-brings-3d-touch-sensing-to-humanoid-robots/" target="_blank">Melexis Brings 3D Touch Sensing to Humanoid Robots</a> <small>embedded.com</small></li>
+<li><a href="https://arxiv.org/abs/2611.15802" target="_blank">RUMI: A Robotiq-Matched Universal Manipulation Interface for Robot Learning with Augmented Reality and Haptic Feedback</a> <small>arxiv.org</small></li>
+<li><a href="https://www.therobotreport.com/narwal-builds-robot-vacuums-to-serve-regional-needs/" target="_blank">Narwal builds robot vacuums to serve regional needs</a> <small>therobotreport.com</small></li>
+<li><a href="https://technode.com/2026/11/10/ant-groups-robbyant-open-sources-tactile-ai-model-for-robot-hands/" target="_blank">Ant Group’s Robbyant open-sources tactile AI model for robot hands</a> <small>technode.com</small></li>
+<li><a href="https://www.therobotreport.com/how-rhoda-ai-is-using-video-data-to-create-generalized-ai-models-for-robots/" target="_blank">How Rhoda AI is using video data to create generalized AI models for robots</a> <small>therobotreport.com</small></li>
+<li><a href="https://www.therobotreport.com/runways-praxis-1-world-action-model-for-robotics-is-now-available/" target="_blank">Runway’s Praxis-1 world action model for robotics is now available</a> <small>therobotreport.com</small></li>
+<li><a href="https://www.therobotreport.com/serve-robotics-opens-robot-delivery-network-for-others-to-build-on/" target="_blank">Serve Robotics opens robot delivery network for others to build on</a> <small>therobotreport.com</small></li>
+<li><a href="https://www.therobotreport.com/viam-launchpad-aims-to-accelerate-robotics-deployments/" target="_blank">Viam Launchpad aims to accelerate robotics deployments</a> <small>therobotreport.com</small></li>
+<li><a href="https://www.therobotreport.com/memories-ai-builds-standardized-egocentric-video-pipeline/" target="_blank">Memories.ai builds standardized egocentric video pipeline</a> <small>therobotreport.com</small></li>
+<li><a href="https://www.therobotreport.com/dynamic-creatures-partners-sixth-wall-studio-bring-hasbro-characters-life-with-robots/" target="_blank">Dynamic Creatures partners with Sixth Wall Studio to bring Hasbro characters to life with robots</a> <small>therobotreport.com</small></li>
+<li><a href="https://www.therobotreport.com/can-ai-agents-program-industrial-robots-without-training-data-berkeley-says-yes/" target="_blank">Can AI agents program industrial robots without training data? Berkeley says yes</a> <small>therobotreport.com</small></li>
+<li><a href="https://www.therobotreport.com/why-predictive-maintenance-matters-more-as-factories-add-robots/" target="_blank">Why predictive maintenance matters more as factories add robots</a> <small>therobotreport.com</small></li>
+<li><a href="https://www.therobotreport.com/nvidia-launches-gr00t-2-isaac-lab-3-0-corl/" target="_blank">NVIDIA launches GR00T 2 and Isaac Lab 3.0 at CoRL</a> <small>therobotreport.com</small></li>
+<li><a href="https://www.therobotreport.com/boston-dynamics-adds-wheels-to-atlas-humanoid-to-test-whole-body-control/" target="_blank">Boston Dynamics adds wheels to Atlas humanoid to test whole-body control</a> <small>therobotreport.com</small></li>
+</ul>
+</details>
+<ul>
+<li>Google DeepMind released Gemini Robotics 2.5 to advance real-world general dexterity <a href="https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/" target="_blank">[1]</a>, and launched an open safety benchmark called “ASIMOV-jailbreak” alongside it <a href="https://arstechnica.com/google/2026/11/deepmind-reveals-gemini-robotics-2-5-and-open-safety-benchmark-asimov-jailbreak/" target="_blank">[2]</a></li>
+<li>Humanoid robots are working in live settings: six AGIBOT G2 robots completed 1,730 tasks in a 24-hour Shanghai convenience store trial <a href="https://www.therobotreport.com/six-agibot-g2-robots-complete-1730-tasks-in-24-hour-shanghai-convenience-store-trial/" target="_blank">[3]</a>, ACE Robotics paired its Mundo world model with self-improving skills to run a hotel laundry workflow <a href="https://pandaily.com/ace-robotics-mundo-world-model-dual-brain-rsi-hotel-laundry-robot" target="_blank">[4]</a>, and a reporter watched a humanoid clean an apartment <a href="https://www.technologyreview.com/2026/11/06/1148090/i-watched-a-humanoid-robot-clean-my-apartment-it-felt-like-a-taste-of-the-future/" target="_blank">[5]</a></li>
+<li>Hardware keeps advancing to support these deployments: Melexis introduced 3D touch sensing for humanoid robots <a href="https://www.embedded.com/melexis-brings-3d-touch-sensing-to-humanoid-robots/" target="_blank">[6]</a>, HeymanDex is developing dexterous hands for underwater robots <a href="https://technode.com/2026/11/13/when-robots-dive-underwater-heymandex-sees-new-possibilities-for-dexterous-hands/" target="_blank">[7]</a>, and researchers demonstrated tensegrity continuum robots with task-adaptive morphologies for cooperative behaviors <a href="https://www.nature.com/articles/s42256-026-01335-4" target="_blank">[8]</a></li>
+</ul>
+<p><strong>Why it matters:</strong> Foundation-model software, safety testing, and tactile hardware are maturing together, and commercial trials in retail, hospitality, and homes now give robotics its first real evidence of whether general-purpose machines can work outside the lab.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/" target="_blank">Gemini Robotics 2.5 accelerates real-world general dexterity</a> <small>deepmind.google</small></li>
+<li>[2] <a href="https://arstechnica.com/google/2026/11/deepmind-reveals-gemini-robotics-2-5-and-open-safety-benchmark-asimov-jailbreak/" target="_blank">DeepMind reveals Gemini Robotics 2.5 and open safety benchmark “ASIMOV-jailbreak”</a> <small>arstechnica.com</small></li>
+<li>[3] <a href="https://www.therobotreport.com/six-agibot-g2-robots-complete-1730-tasks-in-24-hour-shanghai-convenience-store-trial/" target="_blank">Six AGIBOT G2 Robots Complete 1,730 Tasks in 24-Hour Shanghai Convenience Store Trial</a> <small>therobotreport.com</small></li>
+<li>[4] <a href="https://pandaily.com/ace-robotics-mundo-world-model-dual-brain-rsi-hotel-laundry-robot" target="_blank">ACE Robotics Pairs Mundo World Model With Self-Improving Skills to Run a Hotel Laundry Workflow</a> <small>pandaily.com</small></li>
+<li>[5] <a href="https://www.technologyreview.com/2026/11/06/1148090/i-watched-a-humanoid-robot-clean-my-apartment-it-felt-like-a-taste-of-the-future/" target="_blank">I watched a humanoid robot clean my apartment. It felt like a taste of the future.</a> <small>technologyreview.com</small></li>
+<li>[6] <a href="https://www.embedded.com/melexis-brings-3d-touch-sensing-to-humanoid-robots/" target="_blank">Melexis Brings 3D Touch Sensing to Humanoid Robots</a> <small>embedded.com</small></li>
+<li>[7] <a href="https://technode.com/2026/11/13/when-robots-dive-underwater-heymandex-sees-new-possibilities-for-dexterous-hands/" target="_blank">When robots dive underwater, HeymanDex sees new possibilities for dexterous hands</a> <small>technode.com</small></li>
+<li>[8] <a href="https://www.nature.com/articles/s42256-026-01335-4" target="_blank">Tensegrity continuum robots enable task-adaptive morphologies for cooperative behaviours</a> <small>nature.com</small></li>
+</ul>
+<h3 id="ai-labor-unions-and-worker-pushback"><a class="__permalink-h" href="#ai-labor-unions-and-worker-pushback" aria-label="ai labor unions and worker pushback permalink">»</a>AI Labor Unions and Worker Pushback</h3>
+<details>
+<summary><em>20 articles</em></summary>
+<ul>
+<li><a href="https://garymarcus.substack.com/p/the-markets-dropped-25-trillion-yesterday" target="_blank">The markets dropped $2.5 trillion yesterday. What happens next?</a> <small>garymarcus.substack.com</small></li>
+<li><a href="https://ainowinstitute.org/news/the-ai-safety-debate-has-lost-the-plot-we-asked-10-experts-what-the-real-nightmares-are" target="_blank">The AI Safety Debate Has Lost the Plot. We Asked 10 Experts What the Real Nightmares Are</a> <small>ainowinstitute.org</small></li>
+<li><a href="https://futureoflife.org/ai-policy/government-leaders-call-for-treaty-negotiations-on-autonomous-weapons-to-begin-in-november/" target="_blank">Government leaders call for treaty negotiations on autonomous weapons to begin in November</a> <small>futureoflife.org</small></li>
+<li><a href="https://arstechnica.com/ai/2026/11/ai-is-the-most-likely-reason-youll-die-openai-board-member-warns/" target="_blank">OpenAI board member worries an AI "takeover" of society could be months away</a> <small>arstechnica.com</small></li>
+<li><a href="https://www.wired.com/story/google-deepmind-staff-escalate-their-union-fight/" target="_blank">Google DeepMind Staff Tap the UK Government to Escalate Their Unionization Fight</a> <small>wired.com</small></li>
+<li><a href="https://the-decoder.com/nearly-70-percent-of-us-agencies-use-generative-ai-and-unions-are-finally-catching-up-with-guardrails/" target="_blank">Nearly 70 percent of US agencies use generative AI, and unions are finally catching up with guardrails</a> <small>the-decoder.com</small></li>
+<li><a href="https://www.fastcompany.com/91637688/newsguild-jon-schleuss-ai-human-journalists?partner=rss&#x26;utm_source=rss&#x26;utm_medium=feed&#x26;utm_campaign=rss+fastcompany&#x26;utm_content=rss" target="_blank">How the U.S.’s biggest news union is fighting an AI onslaught</a> <small>fastcompany.com</small></li>
+<li><a href="https://www.ft.com/content/715c417d-b8e7-476e-bc66-95acc371987e?syn-25a6b1a6=1" target="_blank">Europe’s AI story. With Philip Lane</a> <small>ft.com</small></li>
+<li><a href="https://www.theguardian.com/technology/2026/nov/13/how-it-feels-to-battle-with-a-flood-of-ai-generated-complaints" target="_blank">How it feels to battle with a flood of AI-generated complaints | Letters</a> <small>theguardian.com</small></li>
+<li><a href="https://www.astralcodexten.com/p/ai-company-employees-should-unionize" target="_blank">AI Company Employees Should Unionize</a> <small>astralcodexten.com</small></li>
+<li><a href="https://betakit.com/ai-development-unlikely-to-slow-anytime-soon-openai-foundation-board-member-says/" target="_blank">AI development unlikely to slow anytime soon, OpenAI Foundation board member says</a> <small>betakit.com</small></li>
+<li><a href="https://www.pymnts.com/news/artificial-intelligence/2026/feds-barr-warns-ai-could-lower-prices-while-concentrating-market-power/" target="_blank">Fed’s Barr Warns AI Could Lower Prices While Concentrating Market Power</a> <small>pymnts.com</small></li>
+<li><a href="https://www.hollywoodreporter.com/movies/movie-news/camerimage-2026-artificial-darren-aronofsky-janusz-kaminski-1236750348/" target="_blank">Camerimage Opens With a Robot, an AI Reckoning and a Minute of Silence for Kraków</a> <small>hollywoodreporter.com</small></li>
+<li><a href="https://restofworld.org/2026/ai-government-ethics-bias-risk/?utm_source=rss&#x26;utm_medium=rss&#x26;utm_campaign=feeds" target="_blank">The promise and peril of AI in government</a> <small>restofworld.org</small></li>
+<li><a href="https://arstechnica.com/tech-policy/2026/11/families-fight-to-keep-googles-disturbing-ai-off-school-issued-chromebooks/" target="_blank">Google faces calls for AI moratoriums in schools after Gemini pilot backlash</a> <small>arstechnica.com</small></li>
+<li><a href="https://www.ft.com/content/83051c3a-cab4-4c66-89fc-ae7149047a25?syn-25a6b1a6=1" target="_blank">Huang’s fall is an indictment of founder mode at Big Tech</a> <small>ft.com</small></li>
+<li><a href="https://www.theguardian.com/books/2026/nov/12/zimbabwean-author-simbarashe-kundizeza-cleared-ai-caine-prize-winning-story" target="_blank">Zimbabwean author Simbarashe Kundizeza cleared of using AI to write prize-winning story</a> <small>theguardian.com</small></li>
+<li><a href="https://betakit.com/government-of-canada-signs-international-declaration-on-ai-safety-and-security/" target="_blank">Government of Canada signs international declaration on AI safety and security</a> <small>betakit.com</small></li>
+<li><a href="https://www.theguardian.com/technology/2026/nov/12/us-workers-governments-unions-ai" target="_blank">US public workers are fighting to protect their jobs from AI – and some are winning</a> <small>theguardian.com</small></li>
+<li><a href="https://www.theguardian.com/technology/2026/nov/12/fewer-hours-and-higher-wages-or-more-burnout-and-surveillance-employers-told-to-prepare-for-ai" target="_blank">Fewer hours and higher wages – or more burnout and surveillance: employers told to prepare for AI</a> <small>theguardian.com</small></li>
+</ul>
+</details>
+<ul>
+<li>Google DeepMind staff asked the UK government to escalate their unionization fight <a href="https://www.wired.com/story/google-deepmind-staff-escalate-their-union-fight/" target="_blank">[1]</a>, and one commentary argues that AI company employees should unionize <a href="https://www.astralcodexten.com/p/ai-company-employees-should-unionize" target="_blank">[2]</a>.</li>
+<li>Nearly 70 percent of US agencies use generative AI, and unions are now winning guardrails on its use in government workplaces <a href="https://the-decoder.com/nearly-70-percent-of-us-agencies-use-generative-ai-and-unions-are-finally-catching-up-with-guardrails/" target="_blank">[3]</a>.</li>
+<li>The biggest US news union is fighting AI in newsrooms <a href="https://www.fastcompany.com/91637688/newsguild-jon-schleuss-ai-human-journalists?partner=rss&#x26;utm_source=rss&#x26;utm_medium=feed&#x26;utm_campaign=rss+fastcompany&#x26;utm_content=rss" target="_blank">[4]</a>.</li>
+</ul>
+<p><strong>Why it matters:</strong> Organizing has spread from the AI labs themselves to government and media workplaces, so workers are now bargaining over how AI is deployed, not only reacting to it.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://www.wired.com/story/google-deepmind-staff-escalate-their-union-fight/" target="_blank">Google DeepMind Staff Tap the UK Government to Escalate Their Unionization Fight</a> <small>wired.com</small></li>
+<li>[2] <a href="https://www.astralcodexten.com/p/ai-company-employees-should-unionize" target="_blank">AI Company Employees Should Unionize</a> <small>astralcodexten.com</small></li>
+<li>[3] <a href="https://the-decoder.com/nearly-70-percent-of-us-agencies-use-generative-ai-and-unions-are-finally-catching-up-with-guardrails/" target="_blank">Nearly 70 percent of US agencies use generative AI, and unions are finally catching up with guardrails</a> <small>the-decoder.com</small></li>
+<li>[4] <a href="https://www.fastcompany.com/91637688/newsguild-jon-schleuss-ai-human-journalists?partner=rss&#x26;utm_source=rss&#x26;utm_medium=feed&#x26;utm_campaign=rss+fastcompany&#x26;utm_content=rss" target="_blank">How the U.S.’s biggest news union is fighting an AI onslaught</a> <small>fastcompany.com</small></li>
+</ul>
+<h3 id="chatgpt-wallet-and-consumer-features"><a class="__permalink-h" href="#chatgpt-wallet-and-consumer-features" aria-label="chatgpt wallet and consumer features permalink">»</a>ChatGPT Wallet and Consumer Features</h3>
+<details>
+<summary><em>19 articles</em></summary>
+<ul>
+<li><a href="https://openai.com/index/introducing-chatgpt-wallet" target="_blank">Introducing ChatGPT Wallet</a> <small>openai.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/13/chatgpts-new-wallet-lets-ai-agents-shop-and-check-out-for-you/" target="_blank">ChatGPT’s new Wallet lets AI agents shop and check out for you</a> <small>techcrunch.com</small></li>
+<li><a href="https://the-decoder.com/openai-rebuilt-ai-shopping-from-scratch-with-chatgpt-wallet/" target="_blank">OpenAI rebuilt AI shopping from scratch with ChatGPT Wallet</a> <small>the-decoder.com</small></li>
+<li><a href="https://www.theverge.com/tech/1033697/amazon-world-product-graph-ai-search" target="_blank">Amazon has a plan to index the world’s online shopping data</a> <small>theverge.com</small></li>
+<li><a href="https://www.cnbc.com/2026/11/13/openai-chatgpt-wallet-dot-purchases.html" target="_blank">OpenAI launches ChatGPT Wallet, allowing its 'dots' AI agents to make purchases for users</a> <small>cnbc.com</small></li>
+<li><a href="https://www.pymnts.com/news/artificial-intelligence/2026/openai-gives-ai-agents-a-wallet-while-blocking-them-from-seeing-the-card/" target="_blank">OpenAI Gives AI Agents a Wallet While Blocking Them From Seeing the Card</a> <small>pymnts.com</small></li>
+<li><a href="https://www.helpnetsecurity.com/2026/11/13/openai-chatgpt-wallet/" target="_blank">ChatGPT Wallet lets agents pay without seeing your card number</a> <small>helpnetsecurity.com</small></li>
+<li><a href="https://www.forbes.com/sites/petersu/2026/11/08/the-trouble-with-payment-processing-in-cannabis/" target="_blank">The Trouble With Payment Processing In Cannabis</a> <small>forbes.com</small></li>
+<li><a href="https://technode.com/2026/11/12/bytedance-reportedly-plans-ai-assistant-similar-to-metas-muse/" target="_blank">ByteDance reportedly plans AI assistant similar to Meta’s Muse</a> <small>technode.com</small></li>
+<li><a href="https://openai.com/index/chatgpt-plus-for-veterans" target="_blank">ChatGPT Plus for veterans and servicemembers</a> <small>openai.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/12/muse-can-now-place-calls-to-u-s-businesses-if-you-pay/" target="_blank">Muse can now place calls to US businesses — if you pay</a> <small>techcrunch.com</small></li>
+<li><a href="https://the-decoder.com/metas-muse-now-calls-businesses-for-you-but-many-companies-might-just-hang-up-on-the-ai/" target="_blank">Meta's Muse now calls businesses for you, but many companies might just hang up on the AI</a> <small>the-decoder.com</small></li>
+<li><a href="https://www.theverge.com/ai-artificial-intelligence/1033425/openai-chatgpt-wallet" target="_blank">ChatGPT Wallet lets OpenAI’s Dots agents make purchases for you</a> <small>theverge.com</small></li>
+<li><a href="https://www.pymnts.com/news/artificial-intelligence/2026/square-expands-agentic-ai-tools-give-sellers-more-control-over-business-operations/" target="_blank">Square Expands AI Tools to Give Sellers More Control</a> <small>pymnts.com</small></li>
+<li><a href="https://openai.com/index/helping-caregivers-use-ai-in-everyday-life" target="_blank">Helping caregivers use AI in everyday life</a> <small>openai.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/13/chatgpts-new-wallet-lets-ai-agents-shop-and-check-out-for-you/" target="_blank">ChatGPT’s new Wallet lets AI agents shop and check out for you</a> <small>techcrunch.com</small></li>
+<li><a href="https://openai.com/index/introducing-businesses-chatgpt" target="_blank">Introducing Businesses in ChatGPT</a> <small>openai.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/12/muse-can-now-place-calls-to-u-s-businesses-if-you-pay/" target="_blank">Muse can now place calls to US businesses — if you pay</a> <small>techcrunch.com</small></li>
+<li><a href="https://openai.com/index/chatgpt-enterprise-aws-marketplace" target="_blank">ChatGPT Enterprise now available in AWS Marketplace</a> <small>openai.com</small></li>
+</ul>
+</details>
+<ul>
+<li>OpenAI launched ChatGPT Wallet, letting its AI agents shop and check out on users’ behalf <a href="https://openai.com/index/introducing-chatgpt-wallet" target="_blank">[1]</a> <a href="https://techcrunch.com/2026/11/13/chatgpts-new-wallet-lets-ai-agents-shop-and-check-out-for-you/" target="_blank">[2]</a> <a href="https://www.cnbc.com/2026/11/13/openai-chatgpt-wallet-dot-purchases.html" target="_blank">[3]</a></li>
+<li>The system keeps card numbers hidden from the agents, so they can pay without ever seeing the underlying payment details <a href="https://www.pymnts.com/news/artificial-intelligence/2026/openai-gives-ai-agents-a-wallet-while-blocking-them-from-seeing-the-card/" target="_blank">[4]</a> <a href="https://www.helpnetsecurity.com/2026/11/13/openai-chatgpt-wallet/" target="_blank">[5]</a></li>
+<li>OpenAI rebuilt its AI shopping experience from scratch around the Wallet <a href="https://the-decoder.com/openai-rebuilt-ai-shopping-from-scratch-with-chatgpt-wallet/" target="_blank">[6]</a>, while Amazon is pursuing its own plan to index the world’s online shopping data <a href="https://www.theverge.com/tech/1033697/amazon-world-product-graph-ai-search" target="_blank">[7]</a></li>
+</ul>
+<p><strong>Why it matters:</strong> Letting agents pay without exposing card numbers addresses the biggest trust barrier to AI-driven commerce, and it puts OpenAI in direct competition with Amazon for control of where online purchases start.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://openai.com/index/introducing-chatgpt-wallet" target="_blank">Introducing ChatGPT Wallet</a> <small>openai.com</small></li>
+<li>[2] <a href="https://techcrunch.com/2026/11/13/chatgpts-new-wallet-lets-ai-agents-shop-and-check-out-for-you/" target="_blank">ChatGPT’s new Wallet lets AI agents shop and check out for you</a> <small>techcrunch.com</small></li>
+<li>[3] <a href="https://www.cnbc.com/2026/11/13/openai-chatgpt-wallet-dot-purchases.html" target="_blank">OpenAI launches ChatGPT Wallet, allowing its ‘dots’ AI agents to make purchases for users</a> <small>cnbc.com</small></li>
+<li>[4] <a href="https://www.pymnts.com/news/artificial-intelligence/2026/openai-gives-ai-agents-a-wallet-while-blocking-them-from-seeing-the-card/" target="_blank">OpenAI Gives AI Agents a Wallet While Blocking Them From Seeing the Card</a> <small>pymnts.com</small></li>
+<li>[5] <a href="https://www.helpnetsecurity.com/2026/11/13/openai-chatgpt-wallet/" target="_blank">ChatGPT Wallet lets agents pay without seeing your card number</a> <small>helpnetsecurity.com</small></li>
+<li>[6] <a href="https://the-decoder.com/openai-rebuilt-ai-shopping-from-scratch-with-chatgpt-wallet/" target="_blank">OpenAI rebuilt AI shopping from scratch with ChatGPT Wallet</a> <small>the-decoder.com</small></li>
+<li>[7] <a href="https://www.theverge.com/tech/1033697/amazon-world-product-graph-ai-search" target="_blank">Amazon has a plan to index the world’s online shopping data</a> <small>theverge.com</small></li>
+</ul>
+<h3 id="ai-legal-tech-platforms"><a class="__permalink-h" href="#ai-legal-tech-platforms" aria-label="ai legal tech platforms permalink">»</a>AI Legal Tech Platforms</h3>
+<details>
+<summary><em>19 articles</em></summary>
+<ul>
+<li><a href="https://www.newcomer.co/p/ceos-of-perplexity-applied-intuition" target="_blank">CEOs of Perplexity, Applied Intuition, Flapping Airplanes, Vercel &#x26; General Catalyst Join Cerebral Valley Speaker Lineup Ahead of Our Summit Next Week</a> <small>newcomer.co</small></li>
+<li><a href="https://simonwillison.net/2026/Nov/13/datasette-cluster-map/" target="_blank">datasette-cluster-map 0.19</a> <small>simonwillison.net</small></li>
+<li><a href="https://news.crunchbase.com/ai/startup-founder-diy-patents-legal-liabiity-drapkin-mutter-landfall/" target="_blank">Startup Founders Are Using AI To File Patents. Here’s Where DIY Becomes A Liability.</a> <small>news.crunchbase.com</small></li>
+<li><a href="https://www.eu-startups.com/2026/11/inmerge-innovation-summit-welcomes-speakers-and-startups-to-baku-sponsored/" target="_blank">INMerge Innovation Summit welcomes speakers and startups to Baku (Sponsored)</a> <small>eu-startups.com</small></li>
+<li><a href="https://betakit.com/why-an-ex-cohere-leader-doesnt-want-you-to-call-his-new-law-firm-ai-native/" target="_blank">Why an ex-Cohere leader doesn’t want you to call his new law firm “AI-native”</a> <small>betakit.com</small></li>
+<li><a href="https://www.pymnts.com/news/artificial-intelligence/2026/ai-law-firm-crosby-bids-for-weil-gotshals-name-and-data/" target="_blank">AI Law Firm Crosby Bids for Weil Gotshal’s Name and Data</a> <small>pymnts.com</small></li>
+<li><a href="https://www.darkreading.com/cybersecurity-operations/black-hat-india-2026-landmark-debut" target="_blank">Black Hat India 2026 Makes a Landmark Debut in Bengaluru, Bringing the Global Cybersecurity Community to India</a> <small>darkreading.com</small></li>
+<li><a href="https://www.artificiallawyer.com/2026/11/12/is-big-law-ai-gaslighting-us/" target="_blank">Is Big Law ‘AI Gaslighting’ Us?</a> <small>artificiallawyer.com</small></li>
+<li><a href="https://www.lawnext.com/2026/11/founder-nikki-shaver-to-leave-legaltech-hub-investor-jeroen-plink-to-step-in-announces-strategic-partnership-with-baretzbrunelle.html" target="_blank">Founder Nikki Shaver to Leave Legaltech Hub, Investor Jeroen Plink to Step In, Announces Strategic Partnership with Baretz+Brunelle</a> <small>lawnext.com</small></li>
+<li><a href="https://www.artificiallawyer.com/2026/11/13/legal-innovators-ny-starts-tuesday/" target="_blank">Legal Innovators NY Starts Tuesday +</a> <small>artificiallawyer.com</small></li>
+<li><a href="https://www.lawnext.com/2026/11/ken-crutchfield-is-biglaw-too-big-to-fail-are-other-firms-vulnerable-after-the-weil-wind-down.html" target="_blank">Ken Crutchfield: Is BigLaw Too Big To Fail? Are Other Firms Vulnerable After the Weil Wind-Down?</a> <small>lawnext.com</small></li>
+<li><a href="https://www.artificiallawyer.com/2026/11/11/claren-launches-envoys-inhouse-agents/" target="_blank">Claren Launches ‘Envoys’ Inhouse Agents</a> <small>artificiallawyer.com</small></li>
+<li><a href="https://www.artificiallawyer.com/2026/11/12/legal-innovators-ny-darby-green-ropes-gray/" target="_blank">Legal Innovators NY – Darby Green, Ropes &#x26; Gray</a> <small>artificiallawyer.com</small></li>
+<li><a href="https://www.artificiallawyer.com/2026/11/12/keeping-legal-ai-connected-why-your-data-and-case-should-work-together/" target="_blank">Keeping Legal AI Connected: Why Your Data and Case Should Work Together</a> <small>artificiallawyer.com</small></li>
+<li><a href="https://www.artificiallawyer.com/2026/11/10/legal-innovators-ny-keynote-roberto-alarcon-white-case/" target="_blank">Legal Innovators NY – Keynote: Roberto Alarcon, White &#x26; Case</a> <small>artificiallawyer.com</small></li>
+<li><a href="https://www.artificiallawyer.com/2026/11/11/legora-targets-public-sector-with-ex-minister/" target="_blank">Legora Targets Public Sector With Ex-Minister</a> <small>artificiallawyer.com</small></li>
+<li><a href="https://www.artificiallawyer.com/2026/11/10/blue-j-follows-legora-alliance-with-176m-raise/" target="_blank">Blue J Follows Legora Alliance With $176m Raise</a> <small>artificiallawyer.com</small></li>
+<li><a href="https://www.artificiallawyer.com/2026/11/11/mercedes-lawyer-joins-ai-native-compound-law/" target="_blank">Mercedes Lawyer Joins AI Native Compound Law</a> <small>artificiallawyer.com</small></li>
+<li><a href="https://www.artificiallawyer.com/2026/11/10/claude-on-anthropic-ipo-pressure-to-monetize-legal-vertical/" target="_blank">Claude on Anthropic IPO – ‘Pressure to Monetize Legal Vertical’</a> <small>artificiallawyer.com</small></li>
+</ul>
+</details>
+<ul>
+<li>AI law firm Crosby bid for Weil Gotshal’s name and data <a href="https://www.pymnts.com/news/artificial-intelligence/2026/ai-law-firm-crosby-bids-for-weil-gotshals-name-and-data/" target="_blank">[1]</a>, while an ex-Cohere leader launched a new law firm and pushed back on the “AI-native” label <a href="https://betakit.com/why-an-ex-cohere-leader-doesnt-want-you-to-call-his-new-law-firm-ai-native/" target="_blank">[2]</a></li>
+<li>Big Law’s AI claims face scrutiny as critics ask whether firms are “AI gaslighting” clients <a href="https://www.artificiallawyer.com/2026/11/12/is-big-law-ai-gaslighting-us/" target="_blank">[3]</a>, and startup founders who file patents with AI tools risk liability when DIY filing goes wrong <a href="https://news.crunchbase.com/ai/startup-founder-diy-patents-legal-liabiity-drapkin-mutter-landfall/" target="_blank">[4]</a></li>
+<li>Legaltech Hub founder Nikki Shaver is leaving, investor Jeroen Plink is stepping in, and the company announced a strategic partnership with Baretz+Brunelle <a href="https://www.lawnext.com/2026/11/founder-nikki-shaver-to-leave-legaltech-hub-investor-jeroen-plink-to-step-in-announces-strategic-partnership-with-baretzbrunelle.html" target="_blank">[5]</a>; Legal Innovators NY starts Tuesday <a href="https://www.artificiallawyer.com/2026/11/13/legal-innovators-ny-starts-tuesday/" target="_blank">[6]</a></li>
+</ul>
+<p><strong>Why it matters:</strong> AI-first firms are now competing directly with established law firms for brands, data, and clients, so the question of who is accountable for AI-produced legal work, at Big Law and in DIY filings alike, is becoming central to the market.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://www.pymnts.com/news/artificial-intelligence/2026/ai-law-firm-crosby-bids-for-weil-gotshals-name-and-data/" target="_blank">AI Law Firm Crosby Bids for Weil Gotshal’s Name and Data</a> <small>pymnts.com</small></li>
+<li>[2] <a href="https://betakit.com/why-an-ex-cohere-leader-doesnt-want-you-to-call-his-new-law-firm-ai-native/" target="_blank">Why an ex-Cohere leader doesn’t want you to call his new law firm “AI-native”</a> <small>betakit.com</small></li>
+<li>[3] <a href="https://www.artificiallawyer.com/2026/11/12/is-big-law-ai-gaslighting-us/" target="_blank">Is Big Law ‘AI Gaslighting’ Us?</a> <small>artificiallawyer.com</small></li>
+<li>[4] <a href="https://news.crunchbase.com/ai/startup-founder-diy-patents-legal-liabiity-drapkin-mutter-landfall/" target="_blank">Startup Founders Are Using AI To File Patents. Here’s Where DIY Becomes A Liability.</a> <small>news.crunchbase.com</small></li>
+<li>[5] <a href="https://www.lawnext.com/2026/11/founder-nikki-shaver-to-leave-legaltech-hub-investor-jeroen-plink-to-step-in-announces-strategic-partnership-with-baretzbrunelle.html" target="_blank">Founder Nikki Shaver to Leave Legaltech Hub, Investor Jeroen Plink to Step In, Announces Strategic Partnership with Baretz+Brunelle</a> <small>lawnext.com</small></li>
+<li>[6] <a href="https://www.artificiallawyer.com/2026/11/13/legal-innovators-ny-starts-tuesday/" target="_blank">Legal Innovators NY Starts Tuesday +</a> <small>artificiallawyer.com</small></li>
+</ul>
+<h3 id="general-news"><a class="__permalink-h" href="#general-news" aria-label="general news permalink">»</a>General News</h3>
+<details>
+<summary><em>17 articles</em></summary>
+<ul>
+<li><a href="https://www.lesswrong.com/posts/G9gthhpwpEtw2TbQy/the-water-is-receding" target="_blank">the water is receding</a> <small>lesswrong.com</small></li>
+<li><a href="https://www.theverge.com/tech/1032862/microsoft-outlook-down-outage" target="_blank">Microsoft&#x26;#8217;s massive Outlook outage might be over</a> <small>theverge.com</small></li>
+<li><a href="https://www.techmeme.com/261114/p3#a261114p3" target="_blank">Luminal, which provides an inference cloud and develops inference compiler software to test running AI models on different chips, raised a $25M Series A (Chris Metinko/Axios)</a> <small>techmeme.com</small></li>
+<li><a href="https://www.techmeme.com/261114/p7#a261114p7" target="_blank">Sources: despite Nvidia's 20+ years of business in China, Jensen Huang struggled to gain access to policymakers driving Beijing's chip self-sufficiency campaign (Eleanor Olcott/Financial Times)</a> <small>techmeme.com</small></li>
+<li><a href="https://www.techmeme.com/261114/p6#a261114p6" target="_blank">Operand, which offers AI-powered due diligence tools for PE firms, raised $31M across a seed and a Series A led by Khosla Ventures at a $220M valuation (Lucinda Shen/Axios)</a> <small>techmeme.com</small></li>
+<li><a href="https://www.techmeme.com/261114/p4#a261114p4" target="_blank">Charta Health, which offers AI-powered tools to automate medical chart review, billing, and coding workflows, raised a $55M Series B led by Insight Partners (Jessica Hagen/MobiHealthNews)</a> <small>techmeme.com</small></li>
+<li><a href="https://www.techmeme.com/261114/p5#a261114p5" target="_blank">WhiteMatter, which builds "guardian" AI agents to oversee file access, software use, decision making, and actions of existing AI agents, raised a $20M Series A (Alice Tecotzky/Business Insider)</a> <small>techmeme.com</small></li>
+<li><a href="https://www.techmeme.com/261114/p2#a261114p2" target="_blank">Cambridge, UK-based Tendrils, which is designing a CPU architecture with thousands of cores operating in parallel, raised $30M led by Benchmark (John Reynolds/Tech.eu)</a> <small>techmeme.com</small></li>
+<li><a href="https://www.techmeme.com/261114/p1#a261114p1" target="_blank">JD.com completes its takeover of German electronics retailer Ceconomy, after acquiring a ~60% stake for ~$1.5B, following the EU's approval of the deal (Tomoko Wakasugi/Nikkei Asia)</a> <small>techmeme.com</small></li>
+<li><a href="https://www.techmeme.com/261113/p42#a261113p42" target="_blank">Analysis: Sam Bankman-Fried's $500M Anthropic investment in 2021 would be worth ~$37B if Anthropic lists at ~$1.5T; he relinquished his stake in 2024 for ~$1.3B (George Hammond/Financial Times)</a> <small>techmeme.com</small></li>
+<li><a href="https://www.techmeme.com/261113/p41#a261113p41" target="_blank">Free speech group FIRE says DOJ and DHS will end efforts to curb "ICE Sightings - Chicagoland" Facebook group and Eyes Up iOS app, which report on ICE activity (Kanishka Singh/Reuters)</a> <small>techmeme.com</small></li>
+<li><a href="https://www.techmeme.com/261113/p40#a261113p40" target="_blank">US officials say Trump is not expected to raise allegations of a Chinese intelligence operation involving Jensen Huang during his upcoming meeting with Xi (Dan Mangan/CNBC)</a> <small>techmeme.com</small></li>
+<li><a href="https://www.techmeme.com/261113/p39#a261113p39" target="_blank">Tesla says "select customers" can now place orders for its Cybercab "for personal use", for $30K plus a required $299/month Autonomy Subscription to operate (Kara Carlson/Bloomberg)</a> <small>techmeme.com</small></li>
+<li><a href="https://www.techmeme.com/261113/p36#a261113p36" target="_blank">Sources and messages: Jensen Huang misled several Nvidia leaders, including general counsel Tim Teter, about the nature of his relationship with Alice Huang (Reuters)</a> <small>techmeme.com</small></li>
+<li><a href="https://www.techmeme.com/261113/p37#a261113p37" target="_blank">Doc: Amazon, wary of AI agents favoring sites with better data, plans to gather data on nearly every product sold anywhere, including by crawling rivals' sites (Greg Bensinger/Reuters)</a> <small>techmeme.com</small></li>
+<li><a href="https://www.techmeme.com/261113/p35#a261113p35" target="_blank">Sources: the FAA outage occurred after an update to the private communications network that connects the ATC system caused the system to reboot and crash (Kierra Frazier/CBS News)</a> <small>techmeme.com</small></li>
+<li><a href="https://www.techmeme.com/261113/p38#a261113p38" target="_blank">AI's impact on math is a preview of what AI will do to AI research, with AI matching top human researchers potentially just a couple of years away (Dwarkesh Patel/Dwarkesh Podcast)</a> <small>techmeme.com</small></li>
+</ul>
+</details>
+<p>Sources <a href="https://www.lesswrong.com/posts/G9gthhpwpEtw2TbQy/the-water-is-receding" target="_blank">[1]</a> and <a href="https://www.theverge.com/tech/1032862/microsoft-outlook-down-outage" target="_blank">[2]</a> are unrelated to the AI and tech business items, but sources <a href="https://www.techmeme.com/261114/p3#a261114p3" target="_blank">[3]</a> through <a href="https://www.techmeme.com/261113/p42#a261113p42" target="_blank">[4]</a> share a common theme: AI funding, chips, and industry valuations. The question is whether the full set is coherent. Sources <a href="https://www.lesswrong.com/posts/G9gthhpwpEtw2TbQy/the-water-is-receding" target="_blank">[1]</a> and <a href="https://www.theverge.com/tech/1032862/microsoft-outlook-down-outage" target="_blank">[2]</a> are outliers, but a majority share a clear theme, so I’ll write the summary from the related sources.</p>
+<ul>
+<li>AI startups raised major rounds: Charta Health closed a $55M Series B led by Insight Partners <a href="https://www.techmeme.com/261114/p4#a261114p4" target="_blank">[5]</a>, Operand raised $31M at a $220M valuation led by Khosla Ventures <a href="https://www.techmeme.com/261114/p6#a261114p6" target="_blank">[6]</a>, Tendrils raised $30M led by Benchmark <a href="https://www.techmeme.com/261114/p2#a261114p2" target="_blank">[7]</a>, Luminal raised a $25M Series A <a href="https://www.techmeme.com/261114/p3#a261114p3" target="_blank">[3]</a>, and WhiteMatter raised a $20M Series A <a href="https://www.techmeme.com/261114/p5#a261114p5" target="_blank">[8]</a></li>
+<li>Investors are backing AI infrastructure and oversight, including Tendrils’ CPU architecture with thousands of parallel cores <a href="https://www.techmeme.com/261114/p2#a261114p2" target="_blank">[7]</a>, Luminal’s inference compiler software for running models on different chips <a href="https://www.techmeme.com/261114/p3#a261114p3" target="_blank">[3]</a>, and WhiteMatter’s “guardian” agents that supervise other AI agents <a href="https://www.techmeme.com/261114/p5#a261114p5" target="_blank">[8]</a></li>
+<li>Chip politics and valuations shaped the wider picture: Nvidia’s Jensen Huang struggled to reach Beijing policymakers driving China’s chip self-sufficiency push despite 20+ years in the market <a href="https://www.techmeme.com/261114/p7#a261114p7" target="_blank">[9]</a>, and Sam Bankman-Fried’s $500M Anthropic stake from 2021 would be worth about $37B at a $1.5T listing, versus the ~$1.3B he sold it for in 2024 <a href="https://www.techmeme.com/261113/p42#a261113p42" target="_blank">[4]</a></li>
+</ul>
+<p><strong>Why it matters:</strong> Capital is flowing into the chip, inference, and agent-oversight layers beneath AI applications, while China’s self-sufficiency drive and soaring valuations like Anthropic’s show how much is at stake in who controls that stack.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://www.lesswrong.com/posts/G9gthhpwpEtw2TbQy/the-water-is-receding" target="_blank">the water is receding</a> <small>lesswrong.com</small></li>
+<li>[2] <a href="https://www.theverge.com/tech/1032862/microsoft-outlook-down-outage" target="_blank">Microsoft’s massive Outlook outage might be over</a> <small>theverge.com</small></li>
+<li>[3] <a href="https://www.techmeme.com/261114/p3#a261114p3" target="_blank">Luminal, which provides an inference cloud and develops inference compiler software to test running AI models on different chips, raised a $25M Series A (Chris Metinko/Axios)</a> <small>techmeme.com</small></li>
+<li>[4] <a href="https://www.techmeme.com/261113/p42#a261113p42" target="_blank">Analysis: Sam Bankman-Fried’s $500M Anthropic investment in 2021 would be worth ~$37B if Anthropic lists at ~$1.5T; he relinquished his stake in 2024 for ~$1.3B (George Hammond/Financial Times)</a> <small>techmeme.com</small></li>
+<li>[5] <a href="https://www.techmeme.com/261114/p4#a261114p4" target="_blank">Charta Health, which offers AI-powered tools to automate medical chart review, billing, and coding workflows, raised a $55M Series B led by Insight Partners (Jessica Hagen/MobiHealthNews)</a> <small>techmeme.com</small></li>
+<li>[6] <a href="https://www.techmeme.com/261114/p6#a261114p6" target="_blank">Operand, which offers AI-powered due diligence tools for PE firms, raised $31M across a seed and a Series A led by Khosla Ventures at a $220M valuation (Lucinda Shen/Axios)</a> <small>techmeme.com</small></li>
+<li>[7] <a href="https://www.techmeme.com/261114/p2#a261114p2" target="_blank">Cambridge, UK-based Tendrils, which is designing a CPU architecture with thousands of cores operating in parallel, raised $30M led by Benchmark (John Reynolds/Tech.eu)</a> <small>techmeme.com</small></li>
+<li>[8] <a href="https://www.techmeme.com/261114/p5#a261114p5" target="_blank">WhiteMatter, which builds “guardian” AI agents to oversee file access, software use, decision making, and actions of existing AI agents, raised a $20M Series A (Alice Tecotzky/Business Insider)</a> <small>techmeme.com</small></li>
+<li>[9] <a href="https://www.techmeme.com/261114/p7#a261114p7" target="_blank">Sources: despite Nvidia’s 20+ years of business in China, Jensen Huang struggled to gain access to policymakers driving Beijing’s chip self-sufficiency campaign (Eleanor Olcott/Financial Times)</a> <small>techmeme.com</small></li>
+</ul>
+<h3 id="ml-research-community-discussions"><a class="__permalink-h" href="#ml-research-community-discussions" aria-label="ml research community discussions permalink">»</a>ML Research Community Discussions</h3>
+<details>
+<summary><em>13 articles</em></summary>
+<ul>
+<li><a href="https://www.techpowerup.com/354814/nvidia-allegedly-engineered-scarcity-by-funding-ai-startups-to-buy-its-gpus" target="_blank">Nvidia allegedly engineered scarcity by funding AI startups to buy its GPUs</a> <small>techpowerup.com</small></li>
+<li><a href="https://www.reddit.com/r/MachineLearning/comments/1xue879/cvpr_2027_author_enrollment_form_d/" target="_blank">CVPR 2027 Author enrollment form [D]</a> <small>reddit.com</small></li>
+<li><a href="https://www.reddit.com/r/MachineLearning/comments/1xuvxke/i_built_tamserve_to_make_realtime_video_tracking/" target="_blank">I built tamserve to make real-time video tracking 2x cheaper [P]</a> <small>reddit.com</small></li>
+<li><a href="https://www.reddit.com/r/MachineLearning/comments/1xuillf/does_metas_brainresponse_model_tribe_v2_actually/" target="_blank">Does Meta's brain-response model (TRIBE v2) actually recover retinotopy/tonotopy/motion maps? [D]</a> <small>reddit.com</small></li>
+<li><a href="https://www.reddit.com/r/MachineLearning/comments/1xug0ym/how_to_post_an_acconfidential_comment_on/" target="_blank">How to post an AC-confidential comment on OpenReview for ICLR 2027? [D]</a> <small>reddit.com</small></li>
+<li><a href="https://www.reddit.com/r/MachineLearning/comments/1xupgn8/weights_for_mnist_handwriting_network_p/" target="_blank">Weights for MNIST Handwriting Network [P]</a> <small>reddit.com</small></li>
+<li><a href="https://www.reddit.com/r/MachineLearning/comments/1xu3n5f/how_much_does_reviewer_confidence_matter_in_iclr/" target="_blank">How much does reviewer confidence matter in ICLR decisions? [D]</a> <small>reddit.com</small></li>
+<li><a href="https://www.reddit.com/r/MachineLearning/comments/1xtt0px/have_people_given_up_on_iclr_reviews_d/" target="_blank">Have people given up on ICLR reviews? [D]</a> <small>reddit.com</small></li>
+<li><a href="https://www.reddit.com/r/MachineLearning/comments/1xu08e7/how_to_get_deskrejected_at_neuripsicmliclr_d/" target="_blank">How to get desk-rejected at NeurIPS/ICML/ICLR [D]</a> <small>reddit.com</small></li>
+<li><a href="https://www.reddit.com/r/MachineLearning/comments/1xteym8/can_we_talk_about_the_ml_research_coming_from/" target="_blank">Can we talk about the ML research coming from China? [D]</a> <small>reddit.com</small></li>
+<li><a href="https://www.reddit.com/r/MachineLearning/comments/1xutg9v/i_need_feedback_on_this_architecture_for_amodal/" target="_blank">I need feedback on this architecture for amodal raster-to-vector using a hybrid approach. [D]</a> <small>reddit.com</small></li>
+<li><a href="https://www.reddit.com/r/MachineLearning/comments/1xu1pg4/i_finetuned_eva02_in_a_week_to_build_a_neural/" target="_blank">I fine-tuned EVA-02 in a week to build a neural video retrieval engine for what CLIP still won't do [P]</a> <small>reddit.com</small></li>
+<li><a href="https://www.reddit.com/r/MachineLearning/comments/1xu1szu/missed_presentation_d/" target="_blank">Missed Presentation [D]</a> <small>reddit.com</small></li>
+</ul>
+</details>
+<ul>
+<li>ICLR 2027 peer review dominated discussion: authors asked how to post an AC-confidential comment on OpenReview <a href="https://www.reddit.com/r/MachineLearning/comments/1xug0ym/how_to_post_an_acconfidential_comment_on/" target="_blank">[1]</a>, how much reviewer confidence affects decisions <a href="https://www.reddit.com/r/MachineLearning/comments/1xu3n5f/how_much_does_reviewer_confidence_matter_in_iclr/" target="_blank">[2]</a>, and whether people have given up on ICLR reviews <a href="https://www.reddit.com/r/MachineLearning/comments/1xtt0px/have_people_given_up_on_iclr_reviews_d/" target="_blank">[3]</a>.</li>
+<li>Submission rules drew attention across the major venues, with threads on the CVPR 2027 author enrollment form <a href="https://www.reddit.com/r/MachineLearning/comments/1xue879/cvpr_2027_author_enrollment_form_d/" target="_blank">[4]</a> and how authors get desk-rejected at NeurIPS, ICML and ICLR <a href="https://www.reddit.com/r/MachineLearning/comments/1xu08e7/how_to_get_deskrejected_at_neuripsicmliclr_d/" target="_blank">[5]</a>.</li>
+<li>Beyond conferences, the community debated Nvidia allegedly engineering GPU scarcity by funding AI startups to buy its chips <a href="https://www.techpowerup.com/354814/nvidia-allegedly-engineered-scarcity-by-funding-ai-startups-to-buy-its-gpus" target="_blank">[6]</a>, and the volume of ML research coming from China <a href="https://www.reddit.com/r/MachineLearning/comments/1xteym8/can_we_talk_about_the_ml_research_coming_from/" target="_blank">[7]</a>. Developers also shared tamserve, which they say makes real-time video tracking 2x cheaper <a href="https://www.reddit.com/r/MachineLearning/comments/1xuvxke/i_built_tamserve_to_make_realtime_video_tracking/" target="_blank">[8]</a>, MNIST network weights <a href="https://www.reddit.com/r/MachineLearning/comments/1xupgn8/weights_for_mnist_handwriting_network_p/" target="_blank">[9]</a>, and a question on whether Meta’s TRIBE v2 recovers retinotopy, tonotopy and motion maps <a href="https://www.reddit.com/r/MachineLearning/comments/1xuillf/does_metas_brainresponse_model_tribe_v2_actually/" target="_blank">[10]</a>.</li>
+</ul>
+<p><strong>Why it matters:</strong> Confusion over review rules, reviewer confidence and desk-rejection triggers shows authors distrust the process that decides their careers, while the Nvidia and China threads show that compute access and research geography are also shaping who publishes.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://www.reddit.com/r/MachineLearning/comments/1xug0ym/how_to_post_an_acconfidential_comment_on/" target="_blank">How to post an AC-confidential comment on OpenReview for ICLR 2027? [D]</a> <small>reddit.com</small></li>
+<li>[2] <a href="https://www.reddit.com/r/MachineLearning/comments/1xu3n5f/how_much_does_reviewer_confidence_matter_in_iclr/" target="_blank">How much does reviewer confidence matter in ICLR decisions? [D]</a> <small>reddit.com</small></li>
+<li>[3] <a href="https://www.reddit.com/r/MachineLearning/comments/1xtt0px/have_people_given_up_on_iclr_reviews_d/" target="_blank">Have people given up on ICLR reviews? [D]</a> <small>reddit.com</small></li>
+<li>[4] <a href="https://www.reddit.com/r/MachineLearning/comments/1xue879/cvpr_2027_author_enrollment_form_d/" target="_blank">CVPR 2027 Author enrollment form [D]</a> <small>reddit.com</small></li>
+<li>[5] <a href="https://www.reddit.com/r/MachineLearning/comments/1xu08e7/how_to_get_deskrejected_at_neuripsicmliclr_d/" target="_blank">How to get desk-rejected at NeurIPS/ICML/ICLR [D]</a> <small>reddit.com</small></li>
+<li>[6] <a href="https://www.techpowerup.com/354814/nvidia-allegedly-engineered-scarcity-by-funding-ai-startups-to-buy-its-gpus" target="_blank">Nvidia allegedly engineered scarcity by funding AI startups to buy its GPUs</a> <small>techpowerup.com</small></li>
+<li>[7] <a href="https://www.reddit.com/r/MachineLearning/comments/1xteym8/can_we_talk_about_the_ml_research_coming_from/" target="_blank">Can we talk about the ML research coming from China? [D]</a> <small>reddit.com</small></li>
+<li>[8] <a href="https://www.reddit.com/r/MachineLearning/comments/1xuvxke/i_built_tamserve_to_make_realtime_video_tracking/" target="_blank">I built tamserve to make real-time video tracking 2x cheaper [P]</a> <small>reddit.com</small></li>
+<li>[9] <a href="https://www.reddit.com/r/MachineLearning/comments/1xupgn8/weights_for_mnist_handwriting_network_p/" target="_blank">Weights for MNIST Handwriting Network [P]</a> <small>reddit.com</small></li>
+<li>[10] <a href="https://www.reddit.com/r/MachineLearning/comments/1xuillf/does_metas_brainresponse_model_tribe_v2_actually/" target="_blank">Does Meta’s brain-response model (TRIBE v2) actually recover retinotopy/tonotopy/motion maps? [D]</a> <small>reddit.com</small></li>
+</ul>
+<h3 id="anthropic-ipo-and-investor-restrictions"><a class="__permalink-h" href="#anthropic-ipo-and-investor-restrictions" aria-label="anthropic ipo and investor restrictions permalink">»</a>Anthropic IPO and Investor Restrictions</h3>
+<details>
+<summary><em>10 articles</em></summary>
+<ul>
+<li><a href="https://garymarcus.substack.com/p/just-say-no-to-anthropics-ipo" target="_blank">Just say no to Anthropic’s IPO</a> <small>garymarcus.substack.com</small></li>
+<li><a href="https://the-decoder.com/banks-bar-chinese-and-hong-kong-investors-from-anthropic-ipo-over-us-export-controls/" target="_blank">Banks bar Chinese and Hong Kong investors from Anthropic IPO over US export controls</a> <small>the-decoder.com</small></li>
+<li><a href="https://news.crunchbase.com/ai/anthropic-record-ipo-ant-public-market-debut-spcx/" target="_blank">Anthropic Seeks Record $88.5B Tied To Public Market Debut</a> <small>news.crunchbase.com</small></li>
+<li><a href="https://www.exponentialview.co/p/monday-data-09-11-2026" target="_blank">📈 AI-exposed workers wait a month longer for a job</a> <small>exponentialview.co</small></li>
+<li><a href="https://siliconangle.com/2026/11/10/anthropic-launches-ipo-roadshow-with-64b-fundraising-goal/" target="_blank">Anthropic launches IPO roadshow with $64B fundraising goal</a> <small>siliconangle.com</small></li>
+<li><a href="https://www.scmp.com/business/china-business/article/3374374/beijing-clarifies-offshore-trust-tax-rules-exempting-hong-kong-mpf-accounts" target="_blank">Beijing clarifies offshore trust tax rules, exempting Hong Kong MPF accounts</a> <small>scmp.com</small></li>
+<li><a href="https://technode.com/2026/11/13/alibaba-t-head-chip-business-hong-kong-ipo/" target="_blank">Alibaba’s Chip Unit Wants to Go Public. Who Pays It?</a> <small>technode.com</small></li>
+<li><a href="https://the-decoder.com/anthropics-ipo-is-six-times-oversubscribed-and-on-track-to-become-the-largest-public-offering-in-history/" target="_blank">Anthropic's IPO is six times oversubscribed and on track to become the largest public offering in history</a> <small>the-decoder.com</small></li>
+<li><a href="https://technode.com/2026/11/11/alibaba-discloses-hong-kong-ipo-filing-for-chip-unit-t-head/" target="_blank">Alibaba discloses Hong Kong IPO filing for chip unit T-Head</a> <small>technode.com</small></li>
+<li><a href="https://technode.com/2026/11/10/chinese-gpu-maker-denglin-technology-raises-hk1-41-billion-in-hong-kong-ipo/" target="_blank">Chinese GPU maker Denglin Technology raises HK$1.41 billion in Hong Kong IPO</a> <small>technode.com</small></li>
+</ul>
+</details>
+<ul>
+<li>Anthropic launched its IPO roadshow with a $64B fundraising goal <a href="https://siliconangle.com/2026/11/10/anthropic-launches-ipo-roadshow-with-64b-fundraising-goal/" target="_blank">[1]</a>, while another report puts the public-market raise at a record $88.5B <a href="https://news.crunchbase.com/ai/anthropic-record-ipo-ant-public-market-debut-spcx/" target="_blank">[2]</a>, and demand is already six times oversubscribed, putting it on track to be the largest public offering in history <a href="https://the-decoder.com/anthropics-ipo-is-six-times-oversubscribed-and-on-track-to-become-the-largest-public-offering-in-history/" target="_blank">[3]</a></li>
+<li>Banks barred Chinese and Hong Kong investors from the Anthropic offering because of US export controls <a href="https://the-decoder.com/banks-bar-chinese-and-hong-kong-investors-from-anthropic-ipo-over-us-export-controls/" target="_blank">[4]</a>, and one commentary urges investors to skip the IPO altogether <a href="https://garymarcus.substack.com/p/just-say-no-to-anthropics-ipo" target="_blank">[5]</a></li>
+<li>Chinese AI chip firms are listing in Hong Kong at the same time: Alibaba disclosed a Hong Kong IPO filing for its chip unit T-Head <a href="https://technode.com/2026/11/11/alibaba-discloses-hong-kong-ipo-filing-for-chip-unit-t-head/" target="_blank">[6]</a> <a href="https://technode.com/2026/11/13/alibaba-t-head-chip-business-hong-kong-ipo/" target="_blank">[7]</a>, and GPU maker Denglin Technology raised HK$1.41 billion in its Hong Kong IPO <a href="https://technode.com/2026/11/10/chinese-gpu-maker-denglin-technology-raises-hk1-41-billion-in-hong-kong-ipo/" target="_blank">[8]</a></li>
+</ul>
+<p><strong>Why it matters:</strong> Anthropic’s offering shuts Chinese capital out of the biggest AI listing ever, while China’s own AI chip makers turn to Hong Kong, so the AI funding market is splitting along geopolitical lines.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://siliconangle.com/2026/11/10/anthropic-launches-ipo-roadshow-with-64b-fundraising-goal/" target="_blank">Anthropic launches IPO roadshow with $64B fundraising goal</a> <small>siliconangle.com</small></li>
+<li>[2] <a href="https://news.crunchbase.com/ai/anthropic-record-ipo-ant-public-market-debut-spcx/" target="_blank">Anthropic Seeks Record $88.5B Tied To Public Market Debut</a> <small>news.crunchbase.com</small></li>
+<li>[3] <a href="https://the-decoder.com/anthropics-ipo-is-six-times-oversubscribed-and-on-track-to-become-the-largest-public-offering-in-history/" target="_blank">Anthropic’s IPO is six times oversubscribed and on track to become the largest public offering in history</a> <small>the-decoder.com</small></li>
+<li>[4] <a href="https://the-decoder.com/banks-bar-chinese-and-hong-kong-investors-from-anthropic-ipo-over-us-export-controls/" target="_blank">Banks bar Chinese and Hong Kong investors from Anthropic IPO over US export controls</a> <small>the-decoder.com</small></li>
+<li>[5] <a href="https://garymarcus.substack.com/p/just-say-no-to-anthropics-ipo" target="_blank">Just say no to Anthropic’s IPO</a> <small>garymarcus.substack.com</small></li>
+<li>[6] <a href="https://technode.com/2026/11/11/alibaba-discloses-hong-kong-ipo-filing-for-chip-unit-t-head/" target="_blank">Alibaba discloses Hong Kong IPO filing for chip unit T-Head</a> <small>technode.com</small></li>
+<li>[7] <a href="https://technode.com/2026/11/13/alibaba-t-head-chip-business-hong-kong-ipo/" target="_blank">Alibaba’s Chip Unit Wants to Go Public. Who Pays It?</a> <small>technode.com</small></li>
+<li>[8] <a href="https://technode.com/2026/11/10/chinese-gpu-maker-denglin-technology-raises-hk1-41-billion-in-hong-kong-ipo/" target="_blank">Chinese GPU maker Denglin Technology raises HK$1.41 billion in Hong Kong IPO</a> <small>technode.com</small></li>
+</ul>
+<h3 id="openai-enterprise-agent-deployments"><a class="__permalink-h" href="#openai-enterprise-agent-deployments" aria-label="openai enterprise agent deployments permalink">»</a>OpenAI Enterprise Agent Deployments</h3>
+<details>
+<summary><em>9 articles</em></summary>
+<ul>
+<li><a href="https://openai.com/index/partnering-with-hacktron" target="_blank">Partnering with Hacktron to find vulnerabilities in OpenAI’s systems</a> <small>openai.com</small></li>
+<li><a href="https://the-decoder.com/openai-enters-the-cybersecurity-market-with-two-daybreak-products/" target="_blank">OpenAI enters the cybersecurity market with two Daybreak products</a> <small>the-decoder.com</small></li>
+<li><a href="https://www.securityweek.com/openai-unveils-daybreak-red-team-defense-factory-security-tools/" target="_blank">OpenAI Unveils Daybreak Red Team, Defense Factory Security Tools</a> <small>securityweek.com</small></li>
+<li><a href="https://www.bleepingcomputer.com/news/security/how-one-ai-agent-exposed-five-critical-enterprise-security-gaps/" target="_blank">How one AI agent exposed five critical enterprise security gaps</a> <small>bleepingcomputer.com</small></li>
+<li><a href="https://www.helpnetsecurity.com/2026/11/13/openai-daybreak-vulnerability-remediation-red-team-defense-factory-agents/" target="_blank">OpenAI’s Daybreak brings AI agents to security testing and vulnerability fixes</a> <small>helpnetsecurity.com</small></li>
+<li><a href="https://openai.com/business/customer-stories/amplitude" target="_blank">How Amplitude ships product improvements in 1–2 days with OpenAI</a> <small>openai.com</small></li>
+<li><a href="https://openai.com/index/cogent-security" target="_blank">Cogent and OpenAI build cyber defense factories for enterprises</a> <small>openai.com</small></li>
+<li><a href="https://openai.com/index/coderabbit-codex-daybreak" target="_blank">CodeRabbit scales agentic software development and ships 20x more</a> <small>openai.com</small></li>
+<li><a href="https://openai.com/business/customer-stories/shield" target="_blank">Shield helps technicians hand off legacy portal work with OpenAI</a> <small>openai.com</small></li>
+</ul>
+</details>
+<ul>
+<li>OpenAI entered the cybersecurity market with two Daybreak products, Daybreak Red Team and Defense Factory, which use AI agents for security testing and vulnerability fixes <a href="https://the-decoder.com/openai-enters-the-cybersecurity-market-with-two-daybreak-products/" target="_blank">[1]</a> <a href="https://www.securityweek.com/openai-unveils-daybreak-red-team-defense-factory-security-tools/" target="_blank">[2]</a> <a href="https://www.helpnetsecurity.com/2026/11/13/openai-daybreak-vulnerability-remediation-red-team-defense-factory-agents/" target="_blank">[3]</a></li>
+<li>OpenAI partnered with Hacktron to find vulnerabilities in its own systems, and Cogent is building cyber defense factories for enterprises on OpenAI’s technology <a href="https://openai.com/index/partnering-with-hacktron" target="_blank">[4]</a> <a href="https://openai.com/index/cogent-security" target="_blank">[5]</a>, while one AI agent exposed five critical enterprise security gaps <a href="https://www.bleepingcomputer.com/news/security/how-one-ai-agent-exposed-five-critical-enterprise-security-gaps/" target="_blank">[6]</a></li>
+<li>Enterprise customers are deploying OpenAI agents in production: Amplitude ships product improvements in 1–2 days <a href="https://openai.com/business/customer-stories/amplitude" target="_blank">[7]</a>, CodeRabbit ships 20x more with agentic software development <a href="https://openai.com/index/coderabbit-codex-daybreak" target="_blank">[8]</a>, and Shield technicians hand off legacy portal work to agents <a href="https://openai.com/business/customer-stories/shield" target="_blank">[9]</a></li>
+</ul>
+<p><strong>Why it matters:</strong> OpenAI is pairing agent deployments with a dedicated security offering, a sign that enterprise adoption now depends as much on locking down agent-exposed systems as on the productivity gains.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://the-decoder.com/openai-enters-the-cybersecurity-market-with-two-daybreak-products/" target="_blank">OpenAI enters the cybersecurity market with two Daybreak products</a> <small>the-decoder.com</small></li>
+<li>[2] <a href="https://www.securityweek.com/openai-unveils-daybreak-red-team-defense-factory-security-tools/" target="_blank">OpenAI Unveils Daybreak Red Team, Defense Factory Security Tools</a> <small>securityweek.com</small></li>
+<li>[3] <a href="https://www.helpnetsecurity.com/2026/11/13/openai-daybreak-vulnerability-remediation-red-team-defense-factory-agents/" target="_blank">OpenAI’s Daybreak brings AI agents to security testing and vulnerability fixes</a> <small>helpnetsecurity.com</small></li>
+<li>[4] <a href="https://openai.com/index/partnering-with-hacktron" target="_blank">Partnering with Hacktron to find vulnerabilities in OpenAI’s systems</a> <small>openai.com</small></li>
+<li>[5] <a href="https://openai.com/index/cogent-security" target="_blank">Cogent and OpenAI build cyber defense factories for enterprises</a> <small>openai.com</small></li>
+<li>[6] <a href="https://www.bleepingcomputer.com/news/security/how-one-ai-agent-exposed-five-critical-enterprise-security-gaps/" target="_blank">How one AI agent exposed five critical enterprise security gaps</a> <small>bleepingcomputer.com</small></li>
+<li>[7] <a href="https://openai.com/business/customer-stories/amplitude" target="_blank">How Amplitude ships product improvements in 1–2 days with OpenAI</a> <small>openai.com</small></li>
+<li>[8] <a href="https://openai.com/index/coderabbit-codex-daybreak" target="_blank">CodeRabbit scales agentic software development and ships 20x more</a> <small>openai.com</small></li>
+<li>[9] <a href="https://openai.com/business/customer-stories/shield" target="_blank">Shield helps technicians hand off legacy portal work with OpenAI</a> <small>openai.com</small></li>
+</ul>  </article>  <div class="entry-footer">last modified 22, Nov, 2026</div><section class="newsletter astro-bfbmamsi" aria-labelledby="newsletter-label"> <p id="newsletter-label" class="newsletter__label astro-bfbmamsi">Liked this issue? Get the next one in your inbox.</p> <form class="newsletter__form embeddable-buttondown-form astro-bfbmamsi" action="https://buttondown.com/api/emails/embed-subscribe/danielcaldas" method="post" target="_blank"> <input type="hidden" name="embed" value="1" class="astro-bfbmamsi"> <label class="newsletter__sr astro-bfbmamsi" for="bd-email">Email address</label> <input class="newsletter__input astro-bfbmamsi" type="email" name="email" id="bd-email" inputmode="email" autocomplete="email" placeholder="you@example.com" required> <button class="newsletter__button astro-bfbmamsi" type="submit">subscribe</button> </form> <p class="newsletter__note astro-bfbmamsi">
+Double opt-in. Unsubscribe any time. Also available via <a href="/the-weekly-inference/rss.xml" class="astro-bfbmamsi">RSS</a>.
+</p> </section>  <nav class="pager" aria-label="Issues"> <a href="/the-weekly-inference/036-2026-11-07/" title="The Weekly Inference #036">← previous issue</a> <span></span> </nav>  </main> <footer class="site-foot"> <div class="site-foot__links"> <a href="/"> ~/ </a><a href="mailto:caldasjdaniel@gmail.com"> contact </a><a href="https://x.com/_danielcaldas" target="_blank" rel="noopener noreferrer"> x </a><a href="https://www.linkedin.com/in/daniel-caldas/" target="_blank" rel="noopener noreferrer"> linkedin </a><a href="https://github.com/danielcaldas/danielcaldas.github.io" target="_blank" rel="noopener noreferrer"> github </a><a href="/rss.xml"> rss </a><a href="/the-weekly-inference/rss.xml"> weekly inference rss </a> </div> <div class="site-foot__meta">2018—2026</div> </footer> </body></html>
