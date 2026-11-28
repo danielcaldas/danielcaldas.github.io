@@ -1,0 +1,881 @@
+<!DOCTYPE html><html lang="en-US"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Astro v4.5.12"><meta name="description" content="Blogpost, note taking and other things"><meta name="theme-color" content="#fcfbf8" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#100f0d" media="(prefers-color-scheme: dark)"><title>The Weekly Inference #039 - ~/</title><link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin><script>
+            // Resolve the theme before first paint so there is no flash.
+            ;(() => {
+                const stored = localStorage.getItem('theme')
+                const theme = stored || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                document.documentElement.classList.toggle('dark', theme === 'dark')
+            })()
+        </script><link rel="stylesheet" href="/_astro/bookshelf.DtChz131.css">
+<link rel="stylesheet" href="/_astro/_category_.Dcc4yImY.css">
+<style>.newsletter.astro-bfbmamsi{margin:2rem 0;padding:1.1rem 1.2rem;border:1px solid rgb(var(--rule));background:rgb(var(--paper-raised))}.newsletter__label.astro-bfbmamsi{margin:0 0 .75rem;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.02em;color:rgb(var(--ink-muted))}.newsletter__form.astro-bfbmamsi{display:flex;flex-wrap:wrap;gap:.5rem}.newsletter__input.astro-bfbmamsi{flex:1 1 15rem;min-width:0;padding:.5rem .65rem;border:1px solid rgb(var(--rule));background:rgb(var(--paper));color:inherit;font-family:var(--font-mono);font-size:.82rem}.newsletter__input.astro-bfbmamsi:focus-visible{outline:2px solid rgb(var(--accent));outline-offset:1px}.newsletter__button.astro-bfbmamsi{padding:.5rem 1rem;border:1px solid rgb(var(--accent));background:rgb(var(--accent-wash));color:inherit;font-family:var(--font-mono);font-size:.82rem;letter-spacing:.02em;cursor:pointer}.newsletter__button.astro-bfbmamsi:hover{background:rgb(var(--accent) / .25)}.newsletter__note.astro-bfbmamsi{margin:.7rem 0 0;font-family:var(--font-mono);font-size:.68rem;line-height:1.6;color:rgb(var(--ink-muted))}.newsletter__sr.astro-bfbmamsi{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+</style><script type="module">document.querySelectorAll("#wi-content a").forEach(i=>{i.getAttribute("href")?.startsWith("#")||(i.setAttribute("target","_blank"),i.setAttribute("rel","noopener noreferrer"))});if(window.matchMedia("(pointer: fine)").matches){let i=function(e,n){m.textContent=n.title,u.textContent=n.domain,l.src=`https://www.google.com/s2/favicons?domain=${n.domain}&sz=32`,l.onerror=()=>{l.src=""};const o=e.getBoundingClientRect(),r=300,h=58;let c=o.left,a=o.top-h-10;a<8&&(a=o.bottom+10),c+r>window.innerWidth-8&&(c=window.innerWidth-r-8),c<8&&(c=8),t.style.left=`${c}px`,t.style.top=`${a}px`,t.classList.add("ct-visible")};const f=/^\[\d+\]$/,s=new Map;document.querySelectorAll('#wi-content a[href^="http"]').forEach(e=>{const n=e.textContent.trim();if(f.test(n))return;const o=e.getAttribute("href");if(!s.has(o))try{const r=new URL(o).hostname.replace(/^www\./,"");s.set(o,{title:n,domain:r})}catch{}});const t=document.createElement("div");t.className="ct",t.innerHTML='<img class="ct-favicon" alt="" /><div><div class="ct-title"></div><div class="ct-domain"></div></div>',document.body.appendChild(t);const l=t.querySelector(".ct-favicon"),m=t.querySelector(".ct-title"),u=t.querySelector(".ct-domain");let d;document.querySelectorAll('#wi-content a[href^="http"]').forEach(e=>{const n=s.get(e.getAttribute("href"));n&&(e.addEventListener("mouseenter",()=>{d=setTimeout(()=>i(e,n),250)}),e.addEventListener("mouseleave",()=>{clearTimeout(d),t.classList.remove("ct-visible")}))})}
+</script>
+<script type="module" src="/_astro/page.55INgWwS.js"></script></head> <body class="max-width flex flex-col min-h-screen"> <a class="skip-link" href="#main">skip to content</a> <header class="masthead masthead--bare"> <a href="/" class="masthead__logo"> <i class="hidden">danielcaldas.github.io</i>
+~/
+</a> <button id="themeToggle" class="masthead__toggle" type="button" aria-label="Toggle colour theme"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path class="theme-icon--moon" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> <g class="theme-icon--sun"> <circle cx="12" cy="12" r="4.2"></circle> <path d="M12 1.6v2.4M12 20v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M1.6 12H4M20 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"></path> </g> </svg> </button>  <script>
+    function setupThemeToggle() {
+        const button = document.getElementById('themeToggle')
+        if (!button || button.dataset.bound) return
+        button.dataset.bound = 'true'
+        button.addEventListener('click', () => {
+            const isDark = document.documentElement.classList.toggle('dark')
+            localStorage.setItem('theme', isDark ? 'dark' : 'light')
+        })
+    }
+
+    setupThemeToggle()
+    document.addEventListener('astro:page-load', setupThemeToggle)
+    document.addEventListener('astro:after-swap', setupThemeToggle)
+</script> </header>  <main id="main" class="flex-1">  <style>
+        .ai-banner {
+            margin-top: 1.75rem;
+            padding: 0.7rem 1rem;
+            border-left: 2px solid rgb(var(--accent));
+            background: rgb(var(--accent-wash) / 0.5);
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            line-height: 1.6;
+            letter-spacing: 0.02em;
+            color: rgb(var(--ink-muted));
+        }
+
+        /* citation tooltip */
+        .ct {
+            position: fixed;
+            z-index: 9999;
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            max-width: 300px;
+            padding: 10px 13px;
+            border-radius: 6px;
+            background: rgb(var(--ink-strong));
+            color: rgb(var(--paper));
+            font-family: var(--font-sans);
+            font-size: 12.5px;
+            line-height: 1.4;
+            pointer-events: none;
+            opacity: 0;
+            box-shadow: 0 6px 24px rgb(0 0 0 / 0.28);
+            transition: opacity 0.12s ease;
+        }
+
+        .ct.ct-visible {
+            opacity: 1;
+        }
+
+        .ct-favicon {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+            margin-top: 1px;
+            border-radius: 3px;
+        }
+
+        .ct-favicon[src=''] {
+            display: none;
+        }
+
+        .ct-title {
+            font-weight: 500;
+        }
+
+        .ct-domain {
+            margin-top: 3px;
+            font-family: var(--font-mono);
+            font-size: 10.5px;
+            opacity: 0.55;
+        }
+    </style> <nav class="pager" style="margin-top: 1.75rem;" aria-label="Issues"> <a href="/the-weekly-inference/038-2026-11-22/" title="The Weekly Inference #038">← previous issue</a> <span></span> </nav> <header class="entry-header"> <h1 class="entry-title">The Weekly Inference #039</h1> <div class="entry-meta"> <time datetime="2026-11-28T00:00:00.000Z">28, Nov, 2026</time> </div> </header> <p class="ai-banner">This content is 100% AI-generated. No human editing or oversight.</p> <article class="prose content dark:prose-invert prose-stone" id="wi-content">  <h2 id="this-week"><a class="__permalink-h" href="#this-week" aria-label="this week permalink">»</a>This Week</h2>
+<p>An Anthropic researcher says Claude proved the Riemann Hypothesis, and within a day the Lean FRO and the Mathlib Initiative confirmed that the 17-million-line formal proof checks out. That answers the verification problem raised by OpenAI’s disputed Navier–Stokes claim in September, but only by machine: no human-readable account of the proof exists yet. Around it, every other story is about delegation outrunning trust. Claude Ship takes write access to production, Meta’s Muse waits on Walmart, Amazon and a UK regulator it won’t let test it, and OpenAI’s merger quietly makes power users pay for the GPT-6.2 Astra billing fix. Jensen Huang’s political reinstatement, with Blackwell units turning up in Shanghai, shows the same gap in hardware: the industry hands over authority first and builds the means of checking it afterward, while Decart’s $7.5B sale and ElevenLabs’ reported $33B valuation show that capital does not wait for the checking.</p>
+<ul>
+<li><a href="#this-week">This Week</a></li>
+<li><a href="#top-stories">Top Stories</a>
+<ul>
+<li><a href="#ai-supply-chain-privacy-leaks">AI Supply Chain Privacy Leaks</a></li>
+<li><a href="#ai-riemann-hypothesis-proof-claims">AI Riemann Hypothesis Proof Claims</a></li>
+<li><a href="#jensen-huang-returns-as-nvidia-ceo">Jensen Huang Returns as Nvidia CEO</a></li>
+<li><a href="#chip-design-and-formal-verification">Chip Design and Formal Verification</a></li>
+<li><a href="#gpt-62-astra-hy4-model-releases">GPT-6.2 Astra, Hy4 Model Releases</a></li>
+<li><a href="#chinese-robotics-and-ai-industry">Chinese Robotics and AI Industry</a></li>
+<li><a href="#tesla-fsd-and-ev-autonomy">Tesla FSD and EV Autonomy</a></li>
+<li><a href="#stanford-ai-agents-lecture-series">Stanford AI Agents Lecture Series</a></li>
+<li><a href="#meta-muse-ai-shopping-agent">Meta Muse AI Shopping Agent</a></li>
+<li><a href="#ai-agent-commerce-and-payments">AI Agent Commerce and Payments</a></li>
+<li><a href="#spacex-orbital-ai-datacenter-plans">SpaceX Orbital AI Datacenter Plans</a></li>
+<li><a href="#chatgpt-usage-limits-after-merger">ChatGPT Usage Limits After Merger</a></li>
+<li><a href="#claude-ship-and-artifact-apps">Claude Ship and Artifact Apps</a></li>
+<li><a href="#ai-startup-funding-rounds">AI Startup Funding Rounds</a></li>
+<li><a href="#ai-threats-to-encryption">AI Threats to Encryption</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="top-stories"><a class="__permalink-h" href="#top-stories" aria-label="top stories permalink">»</a>Top Stories</h2>
+<h3 id="ai-supply-chain-privacy-leaks"><a class="__permalink-h" href="#ai-supply-chain-privacy-leaks" aria-label="ai supply chain privacy leaks permalink">»</a>AI Supply Chain Privacy Leaks</h3>
+<details>
+<summary><em>129 articles</em></summary>
+<ul>
+<li><a href="https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/" target="_blank">Researcher plants 2m canaries into the AI supply chain. A privacy disaster surfaced.</a> <small>arstechnica.com</small></li>
+<li><a href="https://www.together.ai/blog/security-event-prompt-leakage-for-requests-in-june-and-july-of-2026" target="_blank">Security event: Prompt leakage for requests in June and July of 2026</a> <small>together.ai</small></li>
+<li><a href="https://www.darkreading.com/cyberattacks-data-breaches/china-armory-castle-vmware-vcenter-zero-day" target="_blank">China's 'Armory Castle' Lays Siege to VMware vCenter Zero-Day</a> <small>darkreading.com</small></li>
+<li><a href="https://www.infosecurity-magazine.com/news/jpmorgan-data-breach-third-party/" target="_blank">JPMorgan Confirms Customer Data Breach Following Third-Party Compromise</a> <small>infosecurity-magazine.com</small></li>
+<li><a href="https://openai.com/index/introducing-shirudo" target="_blank">OpenAI and Cisco introduce Shirudo</a> <small>openai.com</small></li>
+<li><a href="https://cset.georgetown.edu/article/judge-the-cyber-apocalypse-by-the-data-not-the-headlines/" target="_blank">Judge the Cyber Apocalypse by the Data, Not the Headlines</a> <small>cset.georgetown.edu</small></li>
+<li><a href="https://montrealethics.ai/the-ai-ethics-brief-204-surveillance-pricing-reaches-parliament/" target="_blank">The AI Ethics Brief #204: Surveillance Pricing Reaches Parliament</a> <small>montrealethics.ai</small></li>
+<li><a href="https://techcrunch.com/2026/11/24/uk-warns-ai-driven-cyberattacks-are-exposing-years-of-weak-security/" target="_blank">UK warns AI-driven cyberattacks are exposing years of weak security</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.wired.com/story/ai-agents-can-get-honeypotted-too-aw/" target="_blank">Anthropic Created a Honeypot to Lure AI Agents Into Misbehaving</a> <small>wired.com</small></li>
+<li><a href="https://the-decoder.com/hackers-breached-the-us-air-forces-flagship-cloud-one-platform-report-says/" target="_blank">Hackers breached the US Air Force's flagship Cloud One platform, report says</a> <small>the-decoder.com</small></li>
+<li><a href="https://www.marktechpost.com/2026/11/24/openai-cisco-shirudo-ebpf-linux-runtime/" target="_blank">OpenAI and Cisco Releases Shirudo: An Open-Source Linux Runtime Allowing Agents to Defend Systems Without Downtime</a> <small>marktechpost.com</small></li>
+<li><a href="https://siliconangle.com/2026/11/25/your-ai-agents-can-be-fully-authorized-and-still-do-damage/" target="_blank">Your AI agents can be fully authorized and still do damage</a> <small>siliconangle.com</small></li>
+<li><a href="https://hackaday.com/2026/11/27/esp32-remote-access-done-light/" target="_blank">ESP32 Remote Access Done Light</a> <small>hackaday.com</small></li>
+<li><a href="https://www.cnbc.com/2026/11/27/us-iran-war-trump-hormuz-italian-killed-trump.html" target="_blank">Two Italians killed in Kuwait drone attack; Trump says Iran war ends ‘whenever I want it’</a> <small>cnbc.com</small></li>
+<li><a href="https://www.ft.com/content/4114d053-de5e-46a5-8b46-758726abdcb7?syn-25a6b1a6=1" target="_blank">AI and the decryption nightmare</a> <small>ft.com</small></li>
+<li><a href="https://www.bbc.co.uk/news/articles/cm1wrgqyq4d8o?at_medium=RSS&#x26;at_campaign=rss" target="_blank">Pensions and benefits services still down after 'cyber incident'</a> <small>bbc.co.uk</small></li>
+<li><a href="https://betakit.com/user-passwords-safe-after-1password-security-breach-company-says/" target="_blank">User passwords safe after 1Password security breach, company says</a> <small>betakit.com</small></li>
+<li><a href="https://www.securityweek.com/100000-potentially-impacted-by-colorado-data-breach/" target="_blank">100,000 Potentially Impacted by Colorado Data Breach</a> <small>securityweek.com</small></li>
+<li><a href="https://www.bleepingcomputer.com/news/security/pcloud-confirms-password-manager-hack-after-suspicious-login-alerts/" target="_blank">pCloud confirms password manager hack after suspicious login alerts</a> <small>bleepingcomputer.com</small></li>
+<li><a href="https://www.helpnetsecurity.com/2026/11/27/fifa-cyberattack-data-leak/" target="_blank">FIFA hacked, cybercriminals claim access to sensitive internal records</a> <small>helpnetsecurity.com</small></li>
+<li><a href="https://cyberscoop.com/fincen-investigates-cybersecurity-incident-systems-offline/" target="_blank">FinCEN investigates cybersecurity incident, takes systems offline</a> <small>cyberscoop.com</small></li>
+<li><a href="https://www.paloaltonetworks.com/blog/2026/11/why-ai-makes-identity-security-urgent/" target="_blank">Why AI Makes Identity Security Urgent</a> <small>paloaltonetworks.com</small></li>
+<li><a href="https://www.forbes.com/sites/kristenbousquet/article/how-to-become-a-product-tester/" target="_blank">Product Testing Could Be Your Next Side Hustle. Here’s How And Where To Start</a> <small>forbes.com</small></li>
+<li><a href="https://www.scmp.com/news/world/united-states-canada/article/3376113/us-military-says-cyber-systems-secure-after-reports-air-force-hack" target="_blank">US military says cyber systems secure after reports of Air Force hack</a> <small>scmp.com</small></li>
+<li><a href="https://technode.com/2026/11/23/minimax-publishes-ai-discovered-cryptographic-attacks-with-papers-and-code/" target="_blank">MiniMax publishes AI-discovered cryptographic attacks with papers and code</a> <small>technode.com</small></li>
+<li><a href="https://www.kdnuggets.com/the-roadmap-to-becoming-an-ai-security-engineer-in-2026" target="_blank">The Roadmap to Becoming an AI Security Engineer in 2027</a> <small>kdnuggets.com</small></li>
+<li><a href="https://decrypt.co/384174/us-air-force-hack-cloud-system-air-defense-munitions-data" target="_blank">Hackers Hit US Air Force Cloud System Running Air-Defense and Munitions Data</a> <small>decrypt.co</small></li>
+<li><a href="https://www.youtube.com/watch?v=4nFA4zntF7I" target="_blank">Java4Shell Exploit - Computerphile</a> <small>youtube.com</small></li>
+<li><a href="https://www.infohawk.com/news/2026-11-27-black-friday-webrtc-skimmer" target="_blank">Credit card skimming scripts using WebRTC found on popular shopping sites</a> <small>infohawk.com</small></li>
+<li><a href="https://www.abc.net.au/news/2026-11-25/nsw-government-ramps-up-efforts-to-respond-to-fire-ants-/107424812" target="_blank">Sydney Fire Ant Infestation</a> <small>abc.net.au</small></li>
+<li><a href="https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/" target="_blank">Researcher plants 2m canaries into the AI supply chain. A privacy disaster surfaced.</a> <small>arstechnica.com</small></li>
+<li><a href="https://www.darkreading.com/cybersecurity-operations/security-words-matter" target="_blank">In Security, Words Matter as Much as Tools, Maybe More</a> <small>darkreading.com</small></li>
+<li><a href="https://www.infosecurity-magazine.com/news/ransomware-recovery-20-days/" target="_blank">Ransomware Recovery Takes 20 Days for the Typical Victim, Report Finds</a> <small>infosecurity-magazine.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/25/1password-said-hackers-broke-into-its-internal-systems-but-customer-passwords-are-safe/" target="_blank">1Password said hackers broke into its internal systems, but customer passwords are safe</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.marktechpost.com/2026/11/23/27-ai-cybersecurity-terms/" target="_blank">27 Cybersecurity Terms to Prepare You for the Age of AI</a> <small>marktechpost.com</small></li>
+<li><a href="https://siliconangle.com/2026/11/23/aws-is-making-ai-agents-more-decisive-and-secure-with-its-latest-strands-updates/" target="_blank">AWS is making AI agents more decisive and secure with its latest Strands updates</a> <small>siliconangle.com</small></li>
+<li><a href="https://betakit.com/telecom-giant-bell-says-agentic-threat-actor-accessed-customer-information/" target="_blank">Telecom giant Bell says “agentic threat actor” accessed customer information</a> <small>betakit.com</small></li>
+<li><a href="https://www.securityweek.com/in-other-news-tanker-cyberattacks-eu-quantum-act-new-virustotal-capabilities/" target="_blank">In Other News: Tanker Cyberattacks, EU Quantum Act, New VirusTotal Capabilities</a> <small>securityweek.com</small></li>
+<li><a href="https://www.bleepingcomputer.com/news/security/new-boston-scientific-data-breach-exposes-personal-medical-info/" target="_blank">New Boston Scientific data breach exposes personal, medical info</a> <small>bleepingcomputer.com</small></li>
+<li><a href="https://www.helpnetsecurity.com/2026/11/27/flight-centre-travel-group-data-breach-booking-system/" target="_blank">Flight Centre Travel Group warns of customer data breach involving some passport details</a> <small>helpnetsecurity.com</small></li>
+<li><a href="https://cyberscoop.com/kash-patel-fbi-ncic-database-hack/" target="_blank">Patel mum on FBI crime info database hack, citing ongoing investigation</a> <small>cyberscoop.com</small></li>
+<li><a href="https://www.forbes.com/sites/technology/article/holiday-scams/" target="_blank">Holiday Shopping Scams Are Getting More Convincing—What To Know</a> <small>forbes.com</small></li>
+<li><a href="https://www.scmp.com/news/world/middle-east/article/3376106/son-hamas-chief-survives-israeli-strike-group-says" target="_blank">Son of Hamas chief survived Israeli strike, group says</a> <small>scmp.com</small></li>
+<li><a href="https://decrypt.co/384002/1password-breach-vaults-phishing-emails" target="_blank">The 1Password Breach Didn’t Touch Your Vault. The Phishing Emails Might</a> <small>decrypt.co</small></li>
+<li><a href="https://arstechnica.com/gadgets/2026/11/ars-live-recap-dont-expect-military-attacks-on-data-centers-to-stop/" target="_blank">Ars Live recap: Don’t expect military attacks on data centers to stop</a> <small>arstechnica.com</small></li>
+<li><a href="https://www.darkreading.com/cyber-risk/matters-india-cybersecurity-pre-series-ai-data-risks" target="_blank">Matters.AI Lands India’s Largest Cybersecurity Pre-Series A Round to Fight AI Data Risks</a> <small>darkreading.com</small></li>
+<li><a href="https://www.infosecurity-magazine.com/news/mail-bombing-attacks-it-helpdesk/" target="_blank">Mail Bombing Attacks Fuel IT Helpdesk Impersonation Scams</a> <small>infosecurity-magazine.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/25/doj-accuses-former-cyber-executive-of-defrauding-ransomware-victims-by-secretly-paying-hackers/" target="_blank">DOJ accuses former cyber executive of defrauding ransomware victims by secretly paying hackers</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.securityweek.com/hex-package-manager-warns-of-potential-data-breach/" target="_blank">Hex Package Manager Warns of Potential Data Breach</a> <small>securityweek.com</small></li>
+<li><a href="https://www.bleepingcomputer.com/news/security/us-air-force-cloud-platform-reportedly-hacked-in-latest-federal-breach/" target="_blank">US Air Force cloud platform reportedly hacked in latest federal breach</a> <small>bleepingcomputer.com</small></li>
+<li><a href="https://www.helpnetsecurity.com/2026/11/27/artex-ai-pentest-framework-china-north-korea-state-hackers/" target="_blank">Chinese and North Korean state hackers add ARTEX AI framework to their arsenal</a> <small>helpnetsecurity.com</small></li>
+<li><a href="https://cyberscoop.com/cia-odni-osint-data-breach/" target="_blank">Unclassified intel system hit by hackers, affecting CIA, ODNI</a> <small>cyberscoop.com</small></li>
+<li><a href="https://www.scmp.com/news/asia/south-asia/article/3376096/indian-police-rescue-164-malaysians-and-indonesians-delhi-scam-ring" target="_blank">Indian police rescue 164 Malaysians and Indonesians from Delhi scam ring</a> <small>scmp.com</small></li>
+<li><a href="https://decrypt.co/383999/another-bitcoin-mining-firm-hashrate-hijacking-attacks" target="_blank">Another Bitcoin Mining Firm Flags 'Hashrate Hijacking' Attacks That Reroute Rewards</a> <small>decrypt.co</small></li>
+<li><a href="https://arstechnica.com/gadgets/2026/11/faa-opens-probe-after-amazon-delivery-drone-clips-cable-crashes-into-garage/" target="_blank">Amazon drone crashes on garage after delivering shampoo, draws FAA probe</a> <small>arstechnica.com</small></li>
+<li><a href="https://www.darkreading.com/vulnerabilities-threats/god-mode-flaws-wreak-border-control-havoc" target="_blank">'God Mode' Flaws Could Wreak Border-Control Havoc</a> <small>darkreading.com</small></li>
+<li><a href="https://www.infosecurity-magazine.com/news/overlord-rat-solana-blockchain-c2/" target="_blank">Suspected North Korea-Aligned Group Hides C2 on Solana Blockchain</a> <small>infosecurity-magazine.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/25/allstate-suffers-multi-day-tech-outage-ahead-of-thanksgiving/" target="_blank">Allstate suffers multiday tech outage ahead of Thanksgiving</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.securityweek.com/sap-confirms-cyberattack-source-code-reportedly-compromised/" target="_blank">SAP Confirms Cyberattack, Source Code Reportedly Compromised</a> <small>securityweek.com</small></li>
+<li><a href="https://www.bleepingcomputer.com/news/security/unpatched-cacti-zero-day-with-public-poc-gives-remote-code-execution/" target="_blank">Unpatched Cacti zero-day with public PoC gives remote code execution</a> <small>bleepingcomputer.com</small></li>
+<li><a href="https://www.helpnetsecurity.com/2026/11/27/sailpoint-2027-ai-identity-security-predictions-report/" target="_blank">In 2027, “the agent did it” stops being an excuse</a> <small>helpnetsecurity.com</small></li>
+<li><a href="https://cyberscoop.com/uk-ncsc-ai-assisted-cyberattacks/" target="_blank">UK cyber agency, threat companies tracking rise in AI-assisted hacks</a> <small>cyberscoop.com</small></li>
+<li><a href="https://www.scmp.com/news/world/united-states-canada/article/3376087/hackers-breach-us-air-force-cloud-one-platform-putting-military-data-risk" target="_blank">Hackers breach US Air Force Cloud One platform, putting military data at risk</a> <small>scmp.com</small></li>
+<li><a href="https://decrypt.co/383997/what-is-artex-ai-hacking-tool-us-spy-agency-breach" target="_blank">What Is Artex? The AI Hacking Tool Linked to the US Spy Agency Breach</a> <small>decrypt.co</small></li>
+<li><a href="https://arstechnica.com/security/2026/11/amazon-says-hackers-ai-agents-found-and-exploited-0-day-with-little-human-input/" target="_blank">Amazon says hackers' AI agents found and exploited 0-day with little human input</a> <small>arstechnica.com</small></li>
+<li><a href="https://www.darkreading.com/cyberattacks-data-breaches/cyprus-espionage-target-iranian-hackers" target="_blank">Cyprus Becomes Espionage Target for Iranian Hackers</a> <small>darkreading.com</small></li>
+<li><a href="https://www.infosecurity-magazine.com/news/uk-welfare-services-offline/" target="_blank">UK Welfare and Pension Services Taken Offline Following Cyber Incident</a> <small>infosecurity-magazine.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/25/todoist-confirms-6-of-customers-details-were-stolen-in-data-breach/" target="_blank">Todoist confirms 6% of customers’ details were stolen in data breach</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.securityweek.com/fifa-says-it-has-been-victim-of-a-cyberattack-accessing-personal-and-business-information/" target="_blank">FIFA Says It Has Been Victim of a Cyberattack Accessing ‘Personal and Business Information’</a> <small>securityweek.com</small></li>
+<li><a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-removes-wsus-server-role-in-windows-server-2028/" target="_blank">Microsoft removes WSUS server role in Windows Server 2028</a> <small>bleepingcomputer.com</small></li>
+<li><a href="https://www.helpnetsecurity.com/2026/11/26/keenadu-malware-android-devices/" target="_blank">Preinstalled Keenadu malware turns up on 220,000+ Android devices</a> <small>helpnetsecurity.com</small></li>
+<li><a href="https://cyberscoop.com/ot-security-post-quantum-cryptography-op-ed/" target="_blank">Tomorrow’s quantum threat is today’s open door</a> <small>cyberscoop.com</small></li>
+<li><a href="https://www.scmp.com/news/hong-kong/law-and-crime/article/3376062/aeon-sets-cardless-payment-limit-0-customers-affected-cyber-attack" target="_blank">Hong Kong’s Octopus hit by cyberattack, affecting 30,000 users and merchants</a> <small>scmp.com</small></li>
+<li><a href="https://arstechnica.com/security/2026/11/amazon-says-hackers-ai-agents-found-and-exploited-0-day-with-little-human-input/" target="_blank">Amazon says hackers' AI agents found and exploited 0-day with little human input</a> <small>arstechnica.com</small></li>
+<li><a href="https://www.darkreading.com/threat-intelligence/attackers-net-developers-poisoned-job-assessments" target="_blank">Attackers Target .NET Developers With Poisoned Job Assessments</a> <small>darkreading.com</small></li>
+<li><a href="https://www.infosecurity-magazine.com/news/fifa-confirms-cyberattack/" target="_blank">FIFA Confirms Cyber-Attack, Personal and Business Information Compromised</a> <small>infosecurity-magazine.com</small></li>
+<li><a href="https://www.securityweek.com/critical-juniper-session-smart-conductor-flaw-exploited-in-attacks/" target="_blank">Critical Juniper Session Smart Conductor Flaw Exploited in Attacks</a> <small>securityweek.com</small></li>
+<li><a href="https://www.bleepingcomputer.com/news/security/your-firewall-isnt-enough-the-hidden-risk-of-unmanaged-vms/" target="_blank">Your Firewall Isn't Enough: The Hidden Risk of Unmanaged VMs</a> <small>bleepingcomputer.com</small></li>
+<li><a href="https://www.helpnetsecurity.com/2026/11/27/crest-ai-threat-led-penetration-testing/" target="_blank">AI raises new questions about what penetration testing proves</a> <small>helpnetsecurity.com</small></li>
+<li><a href="https://cyberscoop.com/hektor-avdyli-kosovo-credit-card-fraud-extradition/" target="_blank">Indicted Kosovo credit card theft suspect extradited to US</a> <small>cyberscoop.com</small></li>
+<li><a href="https://www.darkreading.com/cyber-risk/bot-world-just-living" target="_blank">It's a Bot World. We're Just Living in It</a> <small>darkreading.com</small></li>
+<li><a href="https://www.infosecurity-magazine.com/news/cyberstrikeai-shut-down-threatbook/" target="_blank">CyberStrikeAI Creator Shuts Down Open-Source AI Offensive Framework</a> <small>infosecurity-magazine.com</small></li>
+<li><a href="https://www.securityweek.com/mitel-micollab-zero-days-exploited-in-suspected-ai-assisted-attacks/" target="_blank">Mitel MiCollab Zero-Days Exploited in Suspected AI-Assisted Attacks</a> <small>securityweek.com</small></li>
+<li><a href="https://www.bleepingcomputer.com/news/security/drupal-warns-of-new-access-bypass-flaw-exploited-in-attacks/" target="_blank">Drupal warns of new site takeover flaw exploited in attacks</a> <small>bleepingcomputer.com</small></li>
+<li><a href="https://www.helpnetsecurity.com/2026/11/27/doj-scam-crackdown-800-scammers/" target="_blank">US seizes nearly $17 billion in global war on scam rings</a> <small>helpnetsecurity.com</small></li>
+<li><a href="https://cyberscoop.com/kirsten-davies-jay-clayton-national-cyber-director/" target="_blank">Kirsten Davies to become national cyber director nominee, Jay Clayton takes acting director job</a> <small>cyberscoop.com</small></li>
+<li><a href="https://www.darkreading.com/cyberattacks-data-breaches/latin-america-cyberattacks-ports-pipelines-manufacturing" target="_blank">Latin America Sees Cyberattacks on Ports, Pipelines &#x26;amp; Manufacturing</a> <small>darkreading.com</small></li>
+<li><a href="https://www.infosecurity-magazine.com/news/cisa-alert-danfoss-critical-flaw/" target="_blank">CISA Issues Alert After Danfoss Reveals Critical Flaw in Fridge Controllers</a> <small>infosecurity-magazine.com</small></li>
+<li><a href="https://www.securityweek.com/drupal-installer-patch-left-a-gap-attackers-are-already-exploiting/" target="_blank">Drupal Installer Patch Left a Gap Attackers Are Already Exploiting</a> <small>securityweek.com</small></li>
+<li><a href="https://www.bleepingcomputer.com/news/security/sap-confirms-security-incident-after-suspicious-github-activity/" target="_blank">SAP confirms security incident after suspicious GitHub activity</a> <small>bleepingcomputer.com</small></li>
+<li><a href="https://www.helpnetsecurity.com/2026/11/26/fincen-breach-systems-offline/" target="_blank">US agency tracking money laundering is latest casualty in string of federal breaches</a> <small>helpnetsecurity.com</small></li>
+<li><a href="https://cyberscoop.com/crowdstrike-to-acquire-zscaler/" target="_blank">CrowdStrike agrees to buy Zscaler for $43.9 billion in network security expansion</a> <small>cyberscoop.com</small></li>
+<li><a href="https://www.darkreading.com/perimeter/webworm-slithers-customized-softether-vpn" target="_blank">Webworm APT Slithers Into Networks With Customized SoftEther VPN</a> <small>darkreading.com</small></li>
+<li><a href="https://www.infosecurity-magazine.com/news/hugging-face-ai-builder-phishing/" target="_blank">Phishers Abuse Hugging Face's AI Site Builder to Spoof Big Brands</a> <small>infosecurity-magazine.com</small></li>
+<li><a href="https://www.securityweek.com/1password-breach-exposes-customer-data-internal-source-code/" target="_blank">1Password Breach Exposes Customer Data, Internal Source Code</a> <small>securityweek.com</small></li>
+<li><a href="https://www.bleepingcomputer.com/news/apple/fake-paid-expert-interviews-impersonate-brands-to-steal-google-logins/" target="_blank">Fake paid expert interviews impersonate brands to steal Google logins</a> <small>bleepingcomputer.com</small></li>
+<li><a href="https://www.helpnetsecurity.com/2026/11/26/ransomware-recovery-fraud-florida-firm-co-founder-charged/" target="_blank">Data recovery firm co-founder accused of cashing in on ransomware victims</a> <small>helpnetsecurity.com</small></li>
+<li><a href="https://www.darkreading.com/cyber-risk/satellites-ground-level-cybersecurity-problem" target="_blank">Satellites Have a Ground-Level Cybersecurity Problem</a> <small>darkreading.com</small></li>
+<li><a href="https://www.infosecurity-magazine.com/news/chinese-north-korea-artex/" target="_blank">Chinese, North Korean Hackers Adopt ARTEX AI Offensive Framework</a> <small>infosecurity-magazine.com</small></li>
+<li><a href="https://www.securityweek.com/two-newly-disclosed-geoserver-vulnerabilities-under-attack/" target="_blank">Two Newly Disclosed GeoServer Vulnerabilities Under Attack</a> <small>securityweek.com</small></li>
+<li><a href="https://www.bleepingcomputer.com/news/security/remus-malware-steals-gmail-messages-via-fake-google-sheets-extension/" target="_blank">Remus malware steals Gmail messages via fake Google Sheets extension</a> <small>bleepingcomputer.com</small></li>
+<li><a href="https://www.darkreading.com/cybersecurity-operations/how-southeastern-university-handle-data" target="_blank">How Southeastern University Got a Handle on Its Data</a> <small>darkreading.com</small></li>
+<li><a href="https://www.infosecurity-magazine.com/news/home-office-reprimanded-gdpr/" target="_blank">Home Office Reprimanded After GDPR Failure at the Border</a> <small>infosecurity-magazine.com</small></li>
+<li><a href="https://www.bleepingcomputer.com/news/microsoft/new-out-of-band-oob-emergency-hotpatch-fixes-windows-server-2025-crashes/" target="_blank">Microsoft pushes emergency hotpatch to fix Windows Server crashes</a> <small>bleepingcomputer.com</small></li>
+<li><a href="https://www.darkreading.com/ics-ot-security/industrial-serial-gateways-broadcast-insecure" target="_blank">Industrial Serial Gateways Broadcast That They're Insecure</a> <small>darkreading.com</small></li>
+<li><a href="https://www.infosecurity-magazine.com/news/1password-github-account-backend/" target="_blank">1Password Hit by Backend Breach via Hijacked Employee GitHub Account</a> <small>infosecurity-magazine.com</small></li>
+<li><a href="https://www.bleepingcomputer.com/news/security/new-nfs2root-linux-flaw-can-let-attackers-gain-root-privileges/" target="_blank">New NFS2ROOT Linux flaw can let attackers gain root privileges</a> <small>bleepingcomputer.com</small></li>
+<li><a href="https://www.darkreading.com/endpoint-security/crowdstrike-ai-security-push-zscaler-deal" target="_blank">CrowdStrike Makes AI Security Push With Blockbuster Zscaler Deal</a> <small>darkreading.com</small></li>
+<li><a href="https://www.infosecurity-magazine.com/news/doj-anti-scam-surge-800-defendants/" target="_blank">US Anti-Scam Surge Hits 800 Defendants and 29 Scam Compounds</a> <small>infosecurity-magazine.com</small></li>
+<li><a href="https://www.darkreading.com/cybersecurity-operations/us-cyber-director-pick-signals-shift-toward-expertise" target="_blank">US Cyber Director Pick Signals Shift Toward Expertise</a> <small>darkreading.com</small></li>
+<li><a href="https://www.infosecurity-magazine.com/news/palo-alto-fragnesia-php2shell-fix/" target="_blank">Palo Alto Fixes Fragnesia Kernel Bug Chained With PHP2Shell in Firewall Attacks</a> <small>infosecurity-magazine.com</small></li>
+<li><a href="https://www.darkreading.com/cybersecurity-operations/alias-researcher-unmasked-ransomware-actors" target="_blank">Behind the Alias: How One Researcher Unmasked a Decade of Ransomware Actors</a> <small>darkreading.com</small></li>
+<li><a href="https://www.infosecurity-magazine.com/news/ransomware-surge-october-record/" target="_blank">Ransomware Attacks Surge 23% in October Following Record Quarter</a> <small>infosecurity-magazine.com</small></li>
+<li><a href="https://www.darkreading.com/cyberattacks-data-breaches/ai-agents-flaw-discovery-root-access-11-minutes" target="_blank">AI Agents Zip From Flaw Discovery to Root Access in 11 Minutes</a> <small>darkreading.com</small></li>
+<li><a href="https://www.infosecurity-magazine.com/news/us-treasury-cyber-incident/" target="_blank">US Treasury Investigates Cyber Incident Amid Reported Federal Agency Breaches</a> <small>infosecurity-magazine.com</small></li>
+<li><a href="https://www.darkreading.com/identity-access-management-security/ai-agents-bring-enterprises-new-access-control-challenges" target="_blank">How Security Vendors Are Tackling Access-Control Challenges for AI Agents</a> <small>darkreading.com</small></li>
+<li><a href="https://www.infosecurity-magazine.com/news/ncsc-tips-tackle-agentic-threat/" target="_blank">NCSC Shares Guidance to Tackle Agentic Threat From ARTEX-Like Tools</a> <small>infosecurity-magazine.com</small></li>
+<li><a href="https://www.darkreading.com/endpoint-security/microsoft-offense-defense-ai-security-tools" target="_blank">Microsoft Debuts Offensive, Defensive Security Tools for the AI Era</a> <small>darkreading.com</small></li>
+<li><a href="https://www.infosecurity-magazine.com/news/uk-app-losses-surge-22-fraudsters/" target="_blank">UK Authorized Push Payment Losses Surge 22% as Fraudsters Steal £660m</a> <small>infosecurity-magazine.com</small></li>
+<li><a href="https://www.infosecurity-magazine.com/news/inception-extortion-sso-vishing/" target="_blank">New Inception Extortion Brand Tied to SSO Vishing Campaign</a> <small>infosecurity-magazine.com</small></li>
+<li><a href="https://www.infosecurity-magazine.com/news/openai-cisco-shirudo-linux-shields/" target="_blank">OpenAI and Cisco Release Open-Source Tool to Shield Unpatched Linux Systems</a> <small>infosecurity-magazine.com</small></li>
+<li><a href="https://www.infosecurity-magazine.com/news/la-liga-says-football-fans/" target="_blank">LaLiga Says Football Fans’ Personal Data Stolen</a> <small>infosecurity-magazine.com</small></li>
+<li><a href="https://www.infosecurity-magazine.com/news/researchers-new-ai-attack-path/" target="_blank">Researchers Find a New AI Attack Path: Agent Instructions</a> <small>infosecurity-magazine.com</small></li>
+<li><a href="https://www.infosecurity-magazine.com/news/secrethunting-trafficai-agent/" target="_blank">Bots Hide Behind AI Agent Names to Hunt for Secrets</a> <small>infosecurity-magazine.com</small></li>
+<li><a href="https://www.infosecurity-magazine.com/news/crowdstrike-to-acquire-zscaler/" target="_blank">CrowdStrike to Acquire Zscaler in Record $44 Billion Deal</a> <small>infosecurity-magazine.com</small></li>
+<li><a href="https://www.infosecurity-magazine.com/news/us-lawmakers-bill-cisa-review/" target="_blank">US Lawmakers Propose CISA Board to Review Major Cyber Incidents</a> <small>infosecurity-magazine.com</small></li>
+<li><a href="https://www.infosecurity-magazine.com/news/cleverbridge-payment-card-breached/" target="_blank">Cleverbridge Confirms Customers’ Payment Card Data Breached</a> <small>infosecurity-magazine.com</small></li>
+<li><a href="https://www.infosecurity-magazine.com/news/critical-cisco-expressway-flaw/" target="_blank">Critical Cisco Expressway Flaw Exploited in Attacks</a> <small>infosecurity-magazine.com</small></li>
+<li><a href="https://www.infosecurity-magazine.com/news/badbox-spread-ad-fraud/" target="_blank">Badbox Returns to Spread Ad Fraud and Proxyjacking Payloads</a> <small>infosecurity-magazine.com</small></li>
+</ul>
+</details>
+<ul>
+<li>A researcher planted 2 million canaries into the AI supply chain and surfaced a privacy disaster <a href="https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/" target="_blank">[1]</a>, while a separate security event involved prompt leakage for requests in June and July 2026 <a href="https://www.together.ai/blog/security-event-prompt-leakage-for-requests-in-june-and-july-of-2026" target="_blank">[2]</a>.</li>
+<li>Third-party and infrastructure compromises hit major targets. JPMorgan confirmed a customer data breach following a third-party compromise <a href="https://www.infosecurity-magazine.com/news/jpmorgan-data-breach-third-party/" target="_blank">[3]</a>, hackers breached the US Air Force’s Cloud One platform <a href="https://the-decoder.com/hackers-breached-the-us-air-forces-flagship-cloud-one-platform-report-says/" target="_blank">[4]</a>, and China’s “Armory Castle” group went after a VMware vCenter zero-day <a href="https://www.darkreading.com/cyberattacks-data-breaches/china-armory-castle-vmware-vcenter-zero-day" target="_blank">[5]</a>.</li>
+<li>The UK warned that AI-driven cyberattacks are exposing years of weak security <a href="https://techcrunch.com/2026/11/24/uk-warns-ai-driven-cyberattacks-are-exposing-years-of-weak-security/" target="_blank">[6]</a>. Anthropic built a honeypot to lure AI agents into misbehaving <a href="https://www.wired.com/story/ai-agents-can-get-honeypotted-too-aw/" target="_blank">[7]</a>, and OpenAI and Cisco introduced Shirudo <a href="https://openai.com/index/introducing-shirudo" target="_blank">[8]</a>.</li>
+</ul>
+<p><strong>Why it matters:</strong> Data leaks now run through vendors and AI pipelines that companies don’t directly control, so organizations need to audit what their suppliers and AI tools can see, not just their own perimeter.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/" target="_blank">Researcher plants 2m canaries into the AI supply chain. A privacy disaster surfaced.</a> <small>arstechnica.com</small></li>
+<li>[2] <a href="https://www.together.ai/blog/security-event-prompt-leakage-for-requests-in-june-and-july-of-2026" target="_blank">Security event: Prompt leakage for requests in June and July of 2026</a> <small>together.ai</small></li>
+<li>[3] <a href="https://www.infosecurity-magazine.com/news/jpmorgan-data-breach-third-party/" target="_blank">JPMorgan Confirms Customer Data Breach Following Third-Party Compromise</a> <small>infosecurity-magazine.com</small></li>
+<li>[4] <a href="https://the-decoder.com/hackers-breached-the-us-air-forces-flagship-cloud-one-platform-report-says/" target="_blank">Hackers breached the US Air Force’s flagship Cloud One platform, report says</a> <small>the-decoder.com</small></li>
+<li>[5] <a href="https://www.darkreading.com/cyberattacks-data-breaches/china-armory-castle-vmware-vcenter-zero-day" target="_blank">China’s ‘Armory Castle’ Lays Siege to VMware vCenter Zero-Day</a> <small>darkreading.com</small></li>
+<li>[6] <a href="https://techcrunch.com/2026/11/24/uk-warns-ai-driven-cyberattacks-are-exposing-years-of-weak-security/" target="_blank">UK warns AI-driven cyberattacks are exposing years of weak security</a> <small>techcrunch.com</small></li>
+<li>[7] <a href="https://www.wired.com/story/ai-agents-can-get-honeypotted-too-aw/" target="_blank">Anthropic Created a Honeypot to Lure AI Agents Into Misbehaving</a> <small>wired.com</small></li>
+<li>[8] <a href="https://openai.com/index/introducing-shirudo" target="_blank">OpenAI and Cisco introduce Shirudo</a> <small>openai.com</small></li>
+</ul>
+<h3 id="ai-riemann-hypothesis-proof-claims"><a class="__permalink-h" href="#ai-riemann-hypothesis-proof-claims" aria-label="ai riemann hypothesis proof claims permalink">»</a>AI Riemann Hypothesis Proof Claims</h3>
+<details>
+<summary><em>61 articles</em></summary>
+<ul>
+<li><a href="https://simonwillison.net/2026/Nov/20/ravi-vakil/" target="_blank">Quoting Ravi Vakil</a> <small>simonwillison.net</small></li>
+<li><a href="https://thezvi.substack.com/p/on-dwarkesh-patels-november-2026" target="_blank">On Dwarkesh Patel’s November 2026 Podcast With Paul Christiano</a> <small>thezvi.substack.com</small></li>
+<li><a href="https://www.technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update/" target="_blank">The most misunderstood graph in AI just got a major update</a> <small>technologyreview.com</small></li>
+<li><a href="https://www.exponentialview.co/p/ev-611" target="_blank">🔮 Certified human, twin primes, Anthropic++ #611</a> <small>exponentialview.co</small></li>
+<li><a href="https://siliconangle.com/2026/11/20/anthropic-researcher-claims-to-have-proven-riemann-hypothesis-using-claude/" target="_blank">Anthropic researcher claims to have proven Riemann hypothesis using Claude</a> <small>siliconangle.com</small></li>
+<li><a href="https://singularityhub.com/2026/11/21/this-weeks-awesome-tech-stories-from-around-the-web-through-november-21-2/" target="_blank">This Week’s Awesome Tech Stories From Around the Web (Through November 21)</a> <small>singularityhub.com</small></li>
+<li><a href="https://scottaaronson.blog/?p=10344" target="_blank">The stochastic parrots have apparently proved the Riemann Hypothesis</a> <small>scottaaronson.blog</small></li>
+<li><a href="https://www.astralcodexten.com/p/suggest-questions-for-the-2027-acxmetaculus" target="_blank">Suggest Questions For The 2027 ACX/Metaculus Prediction Contest</a> <small>astralcodexten.com</small></li>
+<li><a href="https://www.quantamagazine.org/network-researchers-nail-down-theory-of-perfect-resilience-20261120/" target="_blank">Network Researchers Nail Down Theory of ‘Perfect Resilience’</a> <small>quantamagazine.org</small></li>
+<li><a href="https://www.youtube.com/watch?v=zqzk43bSdDI" target="_blank">Since last year, we asked: “What if AI solved the Riemann Hypothesis?”</a> <small>youtube.com</small></li>
+<li><a href="https://openai.com/index/perplexity-and-intelligence" target="_blank">Perplexity and Intelligence</a> <small>openai.com</small></li>
+<li><a href="https://www.understandingai.org/p/an-anthropic-mathematician-just-solved" target="_blank">An Anthropic mathematician just solved math’s most famous problem</a> <small>understandingai.org</small></li>
+<li><a href="https://importai.substack.com/p/import-ai-482-huawei-kernel-benchmarks" target="_blank">Import AI 482: Huawei kernel benchmarks; airborne drone detection; and a national lab's AI science benchmark</a> <small>importai.substack.com</small></li>
+<li><a href="https://garymarcus.substack.com/p/levent-alpoge-has-solved-the-riemann" target="_blank">Levent Alpöge has solved the Riemann Hypothesis with help of Claude! What does it mean?</a> <small>garymarcus.substack.com</small></li>
+<li><a href="https://www.chinatalk.media/p/the-agentic-state" target="_blank">The Agentic State</a> <small>chinatalk.media</small></li>
+<li><a href="https://techcrunch.com/2026/11/25/anthropics-dario-amodei-calls-accusations-of-surrendering-human-control-to-ai-absurd/" target="_blank">Anthropic’s Dario Amodei calls accusations of surrendering human control to AI ‘absurd’</a> <small>techcrunch.com</small></li>
+<li><a href="https://arstechnica.com/ai/2026/11/ai-can-do-the-calculations-physicists-are-figuring-out-what-comes-next/" target="_blank">AI may soon change what it means to be a theoretical physicist</a> <small>arstechnica.com</small></li>
+<li><a href="https://www.wired.com/story/airplane-turbulence-is-extremely-hard-to-predict-and-avoid/" target="_blank">Airplane Turbulence Is Extremely Hard to Predict, but Maybe Not for Long</a> <small>wired.com</small></li>
+<li><a href="https://the-decoder.com/former-openai-researcher-says-the-riemann-proof-matters-less-than-the-fact-that-an-ai-system-can-produce-it/" target="_blank">Former OpenAI researcher says the Riemann proof matters less than the fact that an AI system can produce it</a> <small>the-decoder.com</small></li>
+<li><a href="https://www.fastcompany.com/91647985/openai-published-its-ai-progress-meter-to-encourage-a-slowdown-it-wont-work?partner=rss&#x26;utm_source=rss&#x26;utm_medium=feed&#x26;utm_campaign=rss+fastcompany&#x26;utm_content=rss" target="_blank">OpenAI published its AI progress meter to encourage a slowdown. It won’t work</a> <small>fastcompany.com</small></li>
+<li><a href="https://www.theguardian.com/commentisfree/2026/nov/27/the-guardian-view-on-ai-and-the-riemann-hypothesis-a-triumph-of-intelligence-a-test-of-democracy" target="_blank">The Guardian view on AI and the Riemann hypothesis: a triumph of intelligence, a test of democracy | Editorial</a> <small>theguardian.com</small></li>
+<li><a href="https://www.argmin.net/p/fly-eagles-fly" target="_blank">Fly, Eagles Fly</a> <small>argmin.net</small></li>
+<li><a href="https://dynomight.net/thanks-6/" target="_blank">Underrated reasons to be thankful VI</a> <small>dynomight.net</small></li>
+<li><a href="https://www.hpcwire.com/2026/11/24/after-167-years-ai-may-have-cracked-mathematics-greatest-mystery/" target="_blank">After 167 Years, AI May Have Cracked Mathematics’ Greatest Mystery</a> <small>hpcwire.com</small></li>
+<li><a href="https://towardsdatascience.com/ai-math-proofs-arent-knowledge-until-someone-explains-them/" target="_blank">AI Math Proofs Aren't Knowledge Until Someone Explains Them</a> <small>towardsdatascience.com</small></li>
+<li><a href="https://www.newscientist.com/article/2601034-new-scientist-book-club-how-urine-changed-the-course-of-human-history/?utm_campaign=RSS|NSNS&#x26;utm_content=home&#x26;utm_medium=RSS&#x26;utm_source=NSNS" target="_blank">New Scientist Book Club: How urine changed the course of human history</a> <small>newscientist.com</small></li>
+<li><a href="https://www.science.org/content/article/mathathon-reimagines-math-age-ai" target="_blank">A ‘Mathathon’ reimagines math in the age of AI</a> <small>science.org</small></li>
+<li><a href="https://share.transistor.fm/s/45701c1a" target="_blank">Humans in a Post-Human World</a> <small>share.transistor.fm</small></li>
+<li><a href="https://generativehistory.substack.com/p/gpt-62-astra-solves-a-historical" target="_blank">GPT 6.2 Astra Solves a Historical Mystery</a> <small>generativehistory.substack.com</small></li>
+<li><a href="https://shellzine.net/cyberpunk-television/" target="_blank">Cyberpunk Television Shows</a> <small>shellzine.net</small></li>
+<li><a href="https://hnpredictions.com/" target="_blank">Show HN: Analysis of Hacker News predictions since 2008</a> <small>hnpredictions.com</small></li>
+<li><a href="https://dragdropmath.com/" target="_blank">Show HN: DragDropMath – Learn math by feel</a> <small>dragdropmath.com</small></li>
+<li><a href="https://neuralnetworksanddeeplearning.com/" target="_blank">Michael Nielsen took down his book on neural nets</a> <small>neuralnetworksanddeeplearning.com</small></li>
+<li><a href="https://cr.yp.to/proofs/falseccp.html" target="_blank">False computer-checked proofs</a> <small>cr.yp.to</small></li>
+<li><a href="https://simonwillison.net/2026/Nov/20/levent-alpoge/" target="_blank">Quoting Levent Alpöge</a> <small>simonwillison.net</small></li>
+<li><a href="https://thezvi.substack.com/p/claude-and-levent-alpoge-prove-the" target="_blank">Claude and Levent Alpöge Prove the Riemann Hypothesis</a> <small>thezvi.substack.com</small></li>
+<li><a href="https://www.technologyreview.com/2026/11/23/1149569/a-legendary-philosopher-isnt-buying-anthropics-consciousness-argument/" target="_blank">A legendary philosopher isn’t buying Anthropic’s consciousness argument</a> <small>technologyreview.com</small></li>
+<li><a href="https://www.exponentialview.co/p/monday-data-turbulence-is-getting-weirder" target="_blank">📈 Monday data: Turbulence is getting weirder, and nobody knows why</a> <small>exponentialview.co</small></li>
+<li><a href="https://siliconangle.com/2026/11/24/staff-at-anthropic-and-open-ai-sound-alarm-on-advanced-models-too-powerful-to-release/" target="_blank">Staff at Anthropic and Open AI sound alarm on advanced models too powerful to release</a> <small>siliconangle.com</small></li>
+<li><a href="https://scottaaronson.blog/?p=10387" target="_blank">Every call</a> <small>scottaaronson.blog</small></li>
+<li><a href="https://www.astralcodexten.com/p/anima-bicameral" target="_blank">Anima, Bicameral</a> <small>astralcodexten.com</small></li>
+<li><a href="https://www.youtube.com/watch?v=hwWlEuI359w" target="_blank">Claude AI’s Biggest Math Breakthrough Has A Problem.</a> <small>youtube.com</small></li>
+<li><a href="https://www.understandingai.org/p/the-five-most-important-debates-in" target="_blank">The five most important debates in AI right now</a> <small>understandingai.org</small></li>
+<li><a href="https://techcrunch.com/2026/11/25/anthropics-dario-amodei-calls-accusations-of-surrendering-human-control-to-ai-absurd/" target="_blank">Anthropic’s Dario Amodei calls accusations of surrendering human control to AI ‘absurd’</a> <small>techcrunch.com</small></li>
+<li><a href="https://arstechnica.com/ai/2026/11/whats-going-on-with-the-riemann-hypothesis/" target="_blank">What's going on with the Riemann hypothesis?</a> <small>arstechnica.com</small></li>
+<li><a href="https://www.wired.com/story/ai-solved-maths-most-famous-problem/" target="_blank">AI Solved Math’s Most Famous Problem. Now Humans Are Struggling to Understand It</a> <small>wired.com</small></li>
+<li><a href="https://www.argmin.net/p/qualitative-forecasts" target="_blank">Qualitative Forecasts</a> <small>argmin.net</small></li>
+<li><a href="https://www.newscientist.com/article/2601043-read-an-extract-from-the-age-of-alchemy-by-kit-chapman/?utm_campaign=RSS|NSNS&#x26;utm_content=home&#x26;utm_medium=RSS&#x26;utm_source=NSNS" target="_blank">Read an extract from The Age of Alchemy by Kit Chapman</a> <small>newscientist.com</small></li>
+<li><a href="https://simonwillison.net/2026/Nov/25/scott-aaronson/" target="_blank">Quoting Scott Aaronson</a> <small>simonwillison.net</small></li>
+<li><a href="https://thezvi.substack.com/p/ai-196-the-return" target="_blank">AI #196: The Return</a> <small>thezvi.substack.com</small></li>
+<li><a href="https://www.technologyreview.com/2026/11/27/1149960/the-download-the-download-innovators-under-35-nominations-bionic-hand/" target="_blank">The Download: Innovators Under 35 nominations are open, and a bionic window into the mind</a> <small>technologyreview.com</small></li>
+<li><a href="https://scottaaronson.blog/?p=10379" target="_blank">HOLY SHIT HOLY SHIT HOLY SHIT HOLY SHIT</a> <small>scottaaronson.blog</small></li>
+<li><a href="https://www.youtube.com/watch?v=1jPdehG3Hms" target="_blank">Claude AI Solved The Secret Of Black Holes</a> <small>youtube.com</small></li>
+<li><a href="https://www.newscientist.com/article/2600704-ai-solved-the-hardest-problem-in-maths-is-there-anything-it-cant-do/?utm_campaign=RSS|NSNS&#x26;utm_content=home&#x26;utm_medium=RSS&#x26;utm_source=NSNS" target="_blank">AI solved the hardest problem in maths – is there anything it can’t do?</a> <small>newscientist.com</small></li>
+<li><a href="https://simonwillison.net/2026/Nov/24/astra-historical-mystery/" target="_blank">GPT 6.2 Astra Solves a Historical Mystery</a> <small>simonwillison.net</small></li>
+<li><a href="https://www.technologyreview.com/2026/11/25/1149808/the-download-ai-open-records-permafrost-fires/" target="_blank">The Download: AI swamping open records, and firefighting for permafrost</a> <small>technologyreview.com</small></li>
+<li><a href="https://scottaaronson.blog/?p=10362" target="_blank">I’ve been drinking wine in my kitchen</a> <small>scottaaronson.blog</small></li>
+<li><a href="https://www.youtube.com/shorts/Ji-N7w1BhMw" target="_blank">OPINIONS ARE CONCEPTS. IF THEY ARE STRONGLY LINKED TO YOUR EGO, YOU WILL BE EASILY OFFENDED.</a> <small>youtube.com</small></li>
+<li><a href="https://www.newscientist.com/article/2600491-ais-stunning-progress-in-maths-shows-how-little-we-understand-it/?utm_campaign=RSS|NSNS&#x26;utm_content=home&#x26;utm_medium=RSS&#x26;utm_source=NSNS" target="_blank">AI’s stunning progress in maths shows how little we understand it</a> <small>newscientist.com</small></li>
+<li><a href="https://www.technologyreview.com/2026/11/24/1149669/the-download-data-centers-gas-ai-consciousness/" target="_blank">The Download: AI’s gas power boom and a consciousness reality check</a> <small>technologyreview.com</small></li>
+<li><a href="https://scottaaronson.blog/?p=10359" target="_blank">Moar Videos and Links</a> <small>scottaaronson.blog</small></li>
+</ul>
+</details>
+<ul>
+<li>An Anthropic researcher claims to have proven the Riemann Hypothesis using Anthropic’s Claude model <a href="https://siliconangle.com/2026/11/20/anthropic-researcher-claims-to-have-proven-riemann-hypothesis-using-claude/" target="_blank">[1]</a> <a href="https://scottaaronson.blog/?p=10344" target="_blank">[2]</a>. On November 21 the Lean FRO and the Mathlib Initiative announced that the roughly 17-million-line Lean proof compiles, matches Mathlib’s vetted statement of the Riemann Hypothesis, and passes independent proof checkers <a href="https://www.theguardian.com/technology/2026/nov/21/anthropic-riemann-hypothesis-solved-claude-ai" target="_blank">[5]</a> <a href="https://x.com/leanprover/status/2124159121645801562" target="_blank">[6]</a>. The proof also covers the Generalized Riemann Hypothesis for Dirichlet L-functions, though no complete human-readable account has been published yet.</li>
+<li>Commentators describe the result as the “stochastic parrots” having apparently proved the Riemann Hypothesis <a href="https://scottaaronson.blog/?p=10344" target="_blank">[2]</a>. Newsletter roundups place the claim alongside twin primes and Anthropic news <a href="https://www.exponentialview.co/p/ev-611" target="_blank">[3]</a>.</li>
+<li>Forecasters and analysts had already posed the scenario, asking “What if AI solved the Riemann Hypothesis?” <a href="https://www.youtube.com/watch?v=zqzk43bSdDI" target="_blank">[4]</a>. The claim now tests that question against a real proof attempt <a href="https://siliconangle.com/2026/11/20/anthropic-researcher-claims-to-have-proven-riemann-hypothesis-using-claude/" target="_blank">[1]</a> <a href="https://www.youtube.com/watch?v=zqzk43bSdDI" target="_blank">[4]</a>.</li>
+</ul>
+<p><strong>Why it matters:</strong> The Riemann Hypothesis is one of mathematics’ most famous unsolved problems, so a formally verified AI-assisted proof is a landmark for machine reasoning, and it leaves mathematicians with a new problem: understanding a proof that a machine has already confirmed is correct.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://siliconangle.com/2026/11/20/anthropic-researcher-claims-to-have-proven-riemann-hypothesis-using-claude/" target="_blank">Anthropic researcher claims to have proven Riemann hypothesis using Claude</a> <small>siliconangle.com</small></li>
+<li>[2] <a href="https://scottaaronson.blog/?p=10344" target="_blank">The stochastic parrots have apparently proved the Riemann Hypothesis</a> <small>scottaaronson.blog</small></li>
+<li>[3] <a href="https://www.exponentialview.co/p/ev-611" target="_blank">🔮 Certified human, twin primes, Anthropic++ #611</a> <small>exponentialview.co</small></li>
+<li>[4] <a href="https://www.youtube.com/watch?v=zqzk43bSdDI" target="_blank">Since last year, we asked: “What if AI solved the Riemann Hypothesis?”</a> <small>youtube.com</small></li>
+<li>[5] <a href="https://www.theguardian.com/technology/2026/nov/21/anthropic-riemann-hypothesis-solved-claude-ai" target="_blank">Two groups verify mathematician’s claim that Claude helped prove mathematics problem</a> <small>theguardian.com</small></li>
+<li>[6] <a href="https://x.com/leanprover/status/2124159121645801562" target="_blank">Lean FRO and Mathlib Initiative joint statement on the Lean verification of the Riemann Hypothesis</a> <small>x.com</small></li>
+</ul>
+<h3 id="jensen-huang-returns-as-nvidia-ceo"><a class="__permalink-h" href="#jensen-huang-returns-as-nvidia-ceo" aria-label="jensen huang returns as nvidia ceo permalink">»</a>Jensen Huang Returns as Nvidia CEO</h3>
+<details>
+<summary><em>51 articles</em></summary>
+<ul>
+<li><a href="https://thezvi.substack.com/p/jensen-huang-reinstated-as-nvidia" target="_blank">Jensen Huang Reinstated As Nvidia CEO at Behest of President Trump</a> <small>thezvi.substack.com</small></li>
+<li><a href="https://garymarcus.substack.com/p/breaking-when-it-comes-to-generative" target="_blank">Breaking: When it comes to generative AI, the bump from rehiring Jensen doesn’t appear to be holding</a> <small>garymarcus.substack.com</small></li>
+<li><a href="https://www.chinatalk.media/p/the-remote-access-rule-will-slow" target="_blank">The Remote Access Rule Buys Six Months of Compute Lead</a> <small>chinatalk.media</small></li>
+<li><a href="https://ainowinstitute.org/news/press/6-questions-about-jensen-huangs-stunning-return-as-nvidia-ceo" target="_blank">6 Questions About Jensen Huang’s Stunning Return as Nvidia CEO</a> <small>ainowinstitute.org</small></li>
+<li><a href="https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/" target="_blank">Nvidia hits pause on chip shipments to Southeast Asia</a> <small>techcrunch.com</small></li>
+<li><a href="https://arstechnica.com/tech-policy/2026/11/how-trump-and-silicon-valley-forced-nvidia-to-take-jensen-huang-back/" target="_blank">How Trump and Silicon Valley forced Nvidia to take Jensen Huang back</a> <small>arstechnica.com</small></li>
+<li><a href="https://www.wired.com/story/jensen-huang-nvidia-us-national-security-risks/" target="_blank">Jensen Huang’s Return Shows Nvidia Is Too Big to Police</a> <small>wired.com</small></li>
+<li><a href="https://the-decoder.com/banned-nvidia-blackwell-chips-turn-up-in-a-shanghai-data-center-linked-to-alice-huang-bloomberg-reports/" target="_blank">Banned Nvidia Blackwell chips turn up in a Shanghai data center linked to Alice Huang, Bloomberg reports</a> <small>the-decoder.com</small></li>
+<li><a href="https://siliconangle.com/2026/11/27/jensen-huang-returns-but-controversies-keep-growing-around-nvidia/" target="_blank">Jensen Huang returns, but controversies keep growing around Nvidia</a> <small>siliconangle.com</small></li>
+<li><a href="https://qz.com/stocks-rise-black-friday-shortened-volatile-week-112726" target="_blank">Dow rallies nearly 600 points to close out its best week since 2022</a> <small>qz.com</small></li>
+<li><a href="https://www.fastcompany.com/91647792/8-books-secret-world-spies-power?partner=rss&#x26;utm_source=rss&#x26;utm_medium=feed&#x26;utm_campaign=rss+fastcompany&#x26;utm_content=rss" target="_blank">8 books on the secret world of spies and power</a> <small>fastcompany.com</small></li>
+<li><a href="https://www.cnbc.com/2026/11/27/tech-download-jensen-huang-ai-market.html" target="_blank">The Tech Download: Will Jensen Huang’s return be the spark the shaky AI market needs?</a> <small>cnbc.com</small></li>
+<li><a href="https://www.theguardian.com/commentisfree/2026/nov/27/donald-trump-destroying-us-law-tech-titans-jensen-huang-nvidia" target="_blank">Trump is destroying the rule of law in the US – to protect himself and the tech titans he worships as new gods | Jonathan Freedland</a> <small>theguardian.com</small></li>
+<li><a href="https://www.bbc.co.uk/news/articles/cqevr4lnd1nxo?at_medium=RSS&#x26;at_campaign=rss" target="_blank">Asia made a big AI bet on Nvidia. What happens now?</a> <small>bbc.co.uk</small></li>
+<li><a href="https://www.zdnet.com/innovation/jensen-huang-is-back-as-nvidia-ceo-after-a-stunning-reversal/" target="_blank">Nvidia CEO Jensen Huang is back after a stunning reversal</a> <small>zdnet.com</small></li>
+<li><a href="https://betakit.com/jensen-huang-didnt-believe-in-succession-plans-your-startup-shouldnt-make-the-same-mistake/" target="_blank">Jensen Huang didn’t believe in succession plans. Your startup shouldn’t make the same mistake</a> <small>betakit.com</small></li>
+<li><a href="https://www.therobotreport.com/nvidia-reinstates-jensen-huang-after-11-day-absence/" target="_blank">NVIDIA reinstates Jensen Huang after 11-day absence</a> <small>therobotreport.com</small></li>
+<li><a href="https://www.servethehome.com/jensen-is-back-at-nvidia/" target="_blank">Jensen is BACK at NVIDIA</a> <small>servethehome.com</small></li>
+<li><a href="https://www.nextplatform.com/ai/2026/11/23/jensen-huang-back-in-charge-of-nvidia/5311691" target="_blank">Jensen Huang Back In Charge Of Nvidia</a> <small>nextplatform.com</small></li>
+<li><a href="https://www.gamedeveloper.com/business/nvidia-reinstates-jensen-huang-as-ceo" target="_blank">Nvidia reinstates Jensen Huang as CEO weeks after his resignation</a> <small>gamedeveloper.com</small></li>
+<li><a href="https://decrypt.co/384153/nvidias-blackwell-chips-turn-up-in-china-as-trump-floats-government-stake" target="_blank">Nvidia's Blackwell Chips Turn Up in China as Trump Floats Government Stake</a> <small>decrypt.co</small></li>
+<li><a href="https://garymarcus.substack.com/p/breaking-jensen-is-back-and-the-market" target="_blank">Breaking: Jensen is back. And the market is way up. But things will never be the same.</a> <small>garymarcus.substack.com</small></li>
+<li><a href="https://ainowinstitute.org/news/press/too-big-to-fire-jensen-huang-is-back-at-nvidia-questions-loom-over-ai-boom-u-s-china-relations" target="_blank">Too Big to Fire? Jensen Huang Is Back at Nvidia; Questions Loom Over AI Boom &#x26; U.S.-China Relations</a> <small>ainowinstitute.org</small></li>
+<li><a href="https://techcrunch.com/2026/11/25/sp-considers-nvidia-credit-downgrade-over-governance-and-key-man-risks/" target="_blank">S&#x26;P considers Nvidia credit downgrade over governance and ‘key man’ risks</a> <small>techcrunch.com</small></li>
+<li><a href="https://arstechnica.com/ai/2026/11/jensen-huang-reinstated-as-nvidia-ceo-board-chair/" target="_blank">Jensen Huang reinstated as Nvidia CEO, board chair</a> <small>arstechnica.com</small></li>
+<li><a href="https://www.wired.com/story/jensen-huang-apologizes-to-nvidia-employees-in-first-all-hands-since-his-return/" target="_blank">Jensen Huang Apologizes to Nvidia Employees in First All-Hands Since His Return</a> <small>wired.com</small></li>
+<li><a href="https://siliconangle.com/2026/11/26/report-sheds-light-on-china-ties-of-some-us-based-nvidia-partners/" target="_blank">Report sheds light on China ties of some US-based Nvidia partners</a> <small>siliconangle.com</small></li>
+<li><a href="https://www.fastcompany.com/91648541/ai-may-not-be-a-bubble-but-the-way-were-financing-it-might-be?partner=rss&#x26;utm_source=rss&#x26;utm_medium=feed&#x26;utm_campaign=rss+fastcompany&#x26;utm_content=rss" target="_blank">AI may not be a bubble. But the way we’re financing it might be</a> <small>fastcompany.com</small></li>
+<li><a href="https://www.cnbc.com/2026/11/26/dennys-jensen-huang-nvidia.html" target="_blank">‘Your booth is waiting’: Denny’s welcomes Jensen Huang back as Nvidia CEO</a> <small>cnbc.com</small></li>
+<li><a href="https://www.bbc.co.uk/news/articles/crpdw1qx7jgxo?at_medium=RSS&#x26;at_campaign=rss" target="_blank">US attorney general dodges questions about Nvidia investigation</a> <small>bbc.co.uk</small></li>
+<li><a href="https://www.zdnet.com/innovation/jensen-huang-is-back-as-nvidia-ceo-after-a-stunning-reversal/" target="_blank">Nvidia CEO Jensen Huang is back after a stunning reversal</a> <small>zdnet.com</small></li>
+<li><a href="https://decrypt.co/384001/what-happened-alice-huang-nvidia-spy-scandal" target="_blank">What Happened to Alice Huang, the Woman at the Center of Nvidia’s Scandal?</a> <small>decrypt.co</small></li>
+<li><a href="https://garymarcus.substack.com/p/could-jensengate-take-down-the-president" target="_blank">Could Jensengate take down the President?</a> <small>garymarcus.substack.com</small></li>
+<li><a href="https://ainowinstitute.org/news/press/schumer-puts-nvidia-trump-on-notice-after-huang-reinstatement" target="_blank">Schumer puts Nvidia, Trump on notice after Huang reinstatement</a> <small>ainowinstitute.org</small></li>
+<li><a href="https://techcrunch.com/2026/11/25/jensen-huang-broke-nvidias-code-of-conduct-and-his-employees-may-not-forget-it/" target="_blank">Jensen Huang broke Nvidia’s code of conduct, and his employees may not forget it</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.wired.com/story/jensens-back-stocks-up-what-the-hell-sure/" target="_blank">Jensen Huang Is Back, and So Is Nvidia’s Stock</a> <small>wired.com</small></li>
+<li><a href="https://siliconangle.com/2026/11/23/nvidia-reverses-course-reinstating-jensen-huang-as-ceo-president-and-director/" target="_blank">Nvidia reverses course, reinstating Jensen Huang as CEO</a> <small>siliconangle.com</small></li>
+<li><a href="https://www.fastcompany.com/91648944/10-person-board-voted-reinstate-nvidias-ceo-also-now-under-scrutiny?partner=rss&#x26;utm_source=rss&#x26;utm_medium=feed&#x26;utm_campaign=rss+fastcompany&#x26;utm_content=rss" target="_blank">The 10-person board that voted to reinstate Nvidia’s CEO is also now under scrutiny</a> <small>fastcompany.com</small></li>
+<li><a href="https://www.cnbc.com/2026/11/26/neoclouds-nvidia-china-ai.html" target="_blank">Nvidia chip buyers told to rule out Chinese renters to purchase GPUs, sources say</a> <small>cnbc.com</small></li>
+<li><a href="https://www.bbc.co.uk/news/articles/c3rrgqj2zx5yo?at_medium=RSS&#x26;at_campaign=rss" target="_blank">Zoe Kleinman: Nobody is irreplaceable - unless you're Jensen Huang</a> <small>bbc.co.uk</small></li>
+<li><a href="https://techcrunch.com/2026/11/24/yales-sonnenfeld-nvidia-is-a-detriment-to-u-s-industrial-might-not-a-champion/" target="_blank">Yale’s Sonnenfeld: Nvidia is a ‘detriment’ to US industrial might — not a champion</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.wired.com/story/jensen-huang-is-back-as-nvidia-ceo/" target="_blank">Jensen Huang Is Back as Nvidia CEO</a> <small>wired.com</small></li>
+<li><a href="https://www.fastcompany.com/91647566/the-free-market-isnt-so-free-just-look-at-jensen-huang?partner=rss&#x26;utm_source=rss&#x26;utm_medium=feed&#x26;utm_campaign=rss+fastcompany&#x26;utm_content=rss" target="_blank">The free market isn’t so free. Just look at Jensen Huang</a> <small>fastcompany.com</small></li>
+<li><a href="https://www.bbc.co.uk/news/articles/cv98xpg5dg5zo?at_medium=RSS&#x26;at_campaign=rss" target="_blank">US to blacklist Asian AI firm Megaspeed after Nvidia scandal</a> <small>bbc.co.uk</small></li>
+<li><a href="https://techcrunch.com/2026/11/25/the-questions-jensen-huang-and-nvidia-will-still-have-to-answer-about-megaspeed/" target="_blank">The questions Jensen Huang and Nvidia will still have to answer about Megaspeed</a> <small>techcrunch.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/24/in-all-hands-meeting-jensen-huang-thanks-white-house-and-says-hes-in-therapy/" target="_blank">In all-hands meeting, Jensen Huang thanks White House and says he’s in therapy</a> <small>techcrunch.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/24/jensen-huang-still-thinks-a-succession-plan-creates-unnecessary-hierarchy/" target="_blank">Jensen Huang still thinks a succession plan creates unnecessary hierarchy</a> <small>techcrunch.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/" target="_blank">Nvidia hits pause on chip shipments to Southeast Asia</a> <small>techcrunch.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/26/is-alice-huang-a-spy-or-not/" target="_blank">Is Alice Huang a spy or not?</a> <small>techcrunch.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/25/sp-considers-nvidia-credit-downgrade-over-governance-and-key-man-risks/" target="_blank">S&#x26;P considers Nvidia credit downgrade over governance and ‘key man’ risks</a> <small>techcrunch.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/25/jensen-huang-broke-nvidias-code-of-conduct-and-his-employees-may-not-forget-it/" target="_blank">Jensen Huang broke Nvidia’s code of conduct, and his employees may not forget it</a> <small>techcrunch.com</small></li>
+</ul>
+</details>
+<ul>
+<li>President Trump pushed Nvidia to reinstate Jensen Huang as CEO <a href="https://thezvi.substack.com/p/jensen-huang-reinstated-as-nvidia" target="_blank">[1]</a>, and Trump and Silicon Valley leaders together forced the board to take him back <a href="https://arstechnica.com/tech-policy/2026/11/how-trump-and-silicon-valley-forced-nvidia-to-take-jensen-huang-back/" target="_blank">[2]</a> <a href="https://ainowinstitute.org/news/press/6-questions-about-jensen-huangs-stunning-return-as-nvidia-ceo" target="_blank">[3]</a>.</li>
+<li>Controversy followed his return <a href="https://siliconangle.com/2026/11/27/jensen-huang-returns-but-controversies-keep-growing-around-nvidia/" target="_blank">[4]</a>. Nvidia paused chip shipments to Southeast Asia <a href="https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/" target="_blank">[5]</a>, and bans on Blackwell chips came under scrutiny after bans-violating units turned up in a Shanghai data center linked to Alice Huang, per Bloomberg <a href="https://the-decoder.com/banned-nvidia-blackwell-chips-turn-up-in-a-shanghai-data-center-linked-to-alice-huang-bloomberg-reports/" target="_blank">[6]</a>.</li>
+<li>Commentators argue Nvidia is too big to police <a href="https://www.wired.com/story/jensen-huang-nvidia-us-national-security-risks/" target="_blank">[7]</a>, and one report says the bump from rehiring Huang isn’t holding in generative AI <a href="https://garymarcus.substack.com/p/breaking-when-it-comes-to-generative" target="_blank">[8]</a>. A remote access rule is described as buying only six months of compute lead <a href="https://www.chinatalk.media/p/the-remote-access-rule-will-slow" target="_blank">[9]</a>.</li>
+</ul>
+<p><strong>Why it matters:</strong> Huang’s return was driven by political pressure rather than a normal corporate process, and export-control failures are piling up around Nvidia, so the company’s leadership, US chip policy and the AI compute race are now tightly linked.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://thezvi.substack.com/p/jensen-huang-reinstated-as-nvidia" target="_blank">Jensen Huang Reinstated As Nvidia CEO at Behest of President Trump</a> <small>thezvi.substack.com</small></li>
+<li>[2] <a href="https://arstechnica.com/tech-policy/2026/11/how-trump-and-silicon-valley-forced-nvidia-to-take-jensen-huang-back/" target="_blank">How Trump and Silicon Valley forced Nvidia to take Jensen Huang back</a> <small>arstechnica.com</small></li>
+<li>[3] <a href="https://ainowinstitute.org/news/press/6-questions-about-jensen-huangs-stunning-return-as-nvidia-ceo" target="_blank">6 Questions About Jensen Huang’s Stunning Return as Nvidia CEO</a> <small>ainowinstitute.org</small></li>
+<li>[4] <a href="https://siliconangle.com/2026/11/27/jensen-huang-returns-but-controversies-keep-growing-around-nvidia/" target="_blank">Jensen Huang returns, but controversies keep growing around Nvidia</a> <small>siliconangle.com</small></li>
+<li>[5] <a href="https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/" target="_blank">Nvidia hits pause on chip shipments to Southeast Asia</a> <small>techcrunch.com</small></li>
+<li>[6] <a href="https://the-decoder.com/banned-nvidia-blackwell-chips-turn-up-in-a-shanghai-data-center-linked-to-alice-huang-bloomberg-reports/" target="_blank">Banned Nvidia Blackwell chips turn up in a Shanghai data center linked to Alice Huang, Bloomberg reports</a> <small>the-decoder.com</small></li>
+<li>[7] <a href="https://www.wired.com/story/jensen-huang-nvidia-us-national-security-risks/" target="_blank">Jensen Huang’s Return Shows Nvidia Is Too Big to Police</a> <small>wired.com</small></li>
+<li>[8] <a href="https://garymarcus.substack.com/p/breaking-when-it-comes-to-generative" target="_blank">Breaking: When it comes to generative AI, the bump from rehiring Jensen doesn’t appear to be holding</a> <small>garymarcus.substack.com</small></li>
+<li>[9] <a href="https://www.chinatalk.media/p/the-remote-access-rule-will-slow" target="_blank">The Remote Access Rule Buys Six Months of Compute Lead</a> <small>chinatalk.media</small></li>
+</ul>
+<h3 id="chip-design-and-formal-verification"><a class="__permalink-h" href="#chip-design-and-formal-verification" aria-label="chip design and formal verification permalink">»</a>Chip Design and Formal Verification</h3>
+<details>
+<summary><em>35 articles</em></summary>
+<ul>
+<li><a href="https://latent.space/p/formal-verification/" target="_blank">The War Against Slop and an Emerging Weapon to Fight it: Formal Verification</a> <small>latent.space</small></li>
+<li><a href="https://siliconangle.com/2026/11/21/inference-two-thirds-ai-workloads-chip-deployment-positron-sc26/" target="_blank">Inference now drives two-thirds of AI workloads, changing where chips get deployed</a> <small>siliconangle.com</small></li>
+<li><a href="https://singularityhub.com/2026/11/20/catching-ais-mistakes-is-a-mental-burden-and-a-drag-on-productivity/" target="_blank">Catching AI’s Mistakes Is a Mental Burden—and a Drag on Productivity</a> <small>singularityhub.com</small></li>
+<li><a href="https://www.lesswrong.com/posts/mLsxPqcqreDqwNDg9/from-modal-agents-to-simultaneous-proof-search-a-first" target="_blank">From modal agents to simultaneous proof search: a first attempt</a> <small>lesswrong.com</small></li>
+<li><a href="https://arstechnica.com/reviews/2026/11/review-the-asus-proart-p16-offers-a-glimpse-of-a-future-powered-by-local-ai/" target="_blank">Review: The Asus ProArt P16 offers a glimpse of a future powered by local AI</a> <small>arstechnica.com</small></li>
+<li><a href="https://www.marktechpost.com/2026/11/23/architect-labs-frostbite-ai-designed-cpu-interaction-nets/" target="_blank">Architect Labs Unveils Frostbite, an Interaction Net CPU Designed by AI</a> <small>marktechpost.com</small></li>
+<li><a href="https://vitalik.ca/general/2026/11/26/a_shallow_dive_into_open-source_chip_design.html" target="_blank">A shallow dive into open-source chip design</a> <small>vitalik.ca</small></li>
+<li><a href="https://www.servethehome.com/jetkvm-mini-w-review-a-simple-and-small-wireless-external-kvm-device/" target="_blank">JetKVM Mini W Review A Simple and Small Wireless External KVM Device</a> <small>servethehome.com</small></li>
+<li><a href="https://www.nextplatform.com/control/2026/11/27/the-software-defined-mirage-and-the-alien-worlds-of-socket-cores-and-os-kernels/5313186" target="_blank">The Software-Defined Mirage And The Alien Worlds Of Socket Cores And OS Kernels</a> <small>nextplatform.com</small></li>
+<li><a href="https://intelligence.theregister.com/paper/view/21381" target="_blank">Beating the Edge AI Power Wall with Low Voltage Foundation IP</a> <small>intelligence.theregister.com</small></li>
+<li><a href="https://semiengineering.com/blog-review-nov-25-3/" target="_blank">Blog Review: Nov. 25</a> <small>semiengineering.com</small></li>
+<li><a href="https://technode.com/2026/11/25/huawei-connects-chinese-chip-design-tools-in-real-world-project/" target="_blank">Huawei connects Chinese chip-design tools in real-world project</a> <small>technode.com</small></li>
+<li><a href="https://pandaily.com/huawei-ip-forum-tau-unifiedbus-hi-one-ai-compute" target="_blank">Beyond Moore’s Law: Huawei Is Rewriting the Rules of AI Compute with 3D Chips and Optoelectronics</a> <small>pandaily.com</small></li>
+<li><a href="https://www.embedded.com/inside-synopsys-agentengineer-llms-under-iso-26262-part-8-ai-agents-for-engineering-tools-embedded-week-insights/" target="_blank">Inside Synopsys' AgentEngineer, LLMs Under ISO 26262 Part 8, AI Agents for Engineering Tools: Embedded Week Insights</a> <small>embedded.com</small></li>
+<li><a href="https://www.servethehome.com/kioxia-gp2-series-ssd/" target="_blank">Kioxia Announces GP2 Series SSD with Over 18 Million Random Read IOPS</a> <small>servethehome.com</small></li>
+<li><a href="https://semiengineering.com/chip-industry-technical-paper-roundup-nov-25-2/" target="_blank">Chip Industry Technical Paper Roundup: Nov. 25</a> <small>semiengineering.com</small></li>
+<li><a href="https://www.embedded.com/spark-microsystems-unveils-dual-radio-platform-for-wireless-gaming/" target="_blank">Spark Microsystems Unveils Dual-Radio Platform for Wireless Gaming</a> <small>embedded.com</small></li>
+<li><a href="https://www.servethehome.com/supermicro-sys-e103-14p-h-fanless-panther-lake-review/" target="_blank">Supermicro SYS-E103-14P-H Review: A Fanless Panther Lake Edge Appliance</a> <small>servethehome.com</small></li>
+<li><a href="https://semiengineering.com/why-ai-struggles-to-reuse-chip-designs/" target="_blank">Why AI Struggles To Reuse Chip Designs</a> <small>semiengineering.com</small></li>
+<li><a href="https://www.embedded.com/quectel-launches-sp900bf-ap-edge-ai-module-with-100-tops/" target="_blank">Quectel Launches SP900BF-AP Edge AI Module with 100 TOPS</a> <small>embedded.com</small></li>
+<li><a href="https://www.servethehome.com/asus-turbo-radeon-pro-ai-r9700-review/" target="_blank">ASUS Turbo Radeon AI PRO R9700 Review</a> <small>servethehome.com</small></li>
+<li><a href="https://semiengineering.com/ai-vs-high-level-synthesis/" target="_blank">AI Vs. High-Level Synthesis</a> <small>semiengineering.com</small></li>
+<li><a href="https://www.embedded.com/microchip-avr-sd-mcus-achieve-ul-recognition/" target="_blank">Microchip AVR SD MCUs Achieve UL Recognition</a> <small>embedded.com</small></li>
+<li><a href="https://www.servethehome.com/centec-zx530s-24s2cq-review/" target="_blank">Centec ZX530S-24S2CQ Review The Cheap 10G and 100G Switch Option with a Centec Switch Chip</a> <small>servethehome.com</small></li>
+<li><a href="https://semiengineering.com/hope-is-not-a-strategy-what-first-silicon-success-really-takes/" target="_blank">Hope Is Not A Strategy: What First-Silicon Success Really Takes</a> <small>semiengineering.com</small></li>
+<li><a href="https://www.embedded.com/ic-manage-extends-gdp-ai-with-agentic-ai-integration/" target="_blank">IC Manage Extends GDP-AI with Agentic AI Integration</a> <small>embedded.com</small></li>
+<li><a href="https://semiengineering.com/why-photonic-design-is-becoming-a-system-level-challenge/" target="_blank">Why Photonic Design Is Becoming a System-Level Challenge</a> <small>semiengineering.com</small></li>
+<li><a href="https://www.embedded.com/arrow-and-seco-expand-partnership-to-accelerate-industrial-edge-ai-adoption/" target="_blank">Arrow and Seco Expand Partnership to Accelerate Industrial Edge AI Adoption</a> <small>embedded.com</small></li>
+<li><a href="https://semiengineering.com/how-can-ai-build-faster-and-better-silicon-for-physical-ai/" target="_blank">How Can AI Build Faster And Better Silicon For Physical AI?</a> <small>semiengineering.com</small></li>
+<li><a href="https://www.embedded.com/ambarella-sigma-partner-on-edge-ai-product-development/" target="_blank">Ambarella, Sigma Partner on Edge AI Product Development</a> <small>embedded.com</small></li>
+<li><a href="https://semiengineering.com/designing-a-microarchitecture-from-formal-proof-to-full-system/" target="_blank">Designing A Microarchitecture From Formal Proof To Full-System</a> <small>semiengineering.com</small></li>
+<li><a href="https://www.embedded.com/llms-under-iso-26262-part-8-qualify-the-tool-or-prove-the-review/" target="_blank">LLMs Under ISO 26262 Part 8: Qualify the Tool or Prove the Review</a> <small>embedded.com</small></li>
+<li><a href="https://semiengineering.com/a-link-is-not-architecture-why-multi-die-systems-need-more-than-die-to-die-connectivity/" target="_blank">A Link Is Not Architecture: Why Multi-Die Systems Need More Than Die-to-Die Connectivity</a> <small>semiengineering.com</small></li>
+<li><a href="https://www.embedded.com/tuyaopen-integrates-silicon-labs-siwx917-wi-fi-6-soc/" target="_blank">TuyaOpen Integrates Silicon Labs SiWx917 Wi-Fi 6 SoC</a> <small>embedded.com</small></li>
+<li><a href="https://www.embedded.com/inside-synopsys-agentengineer-long-horizon-agentic-ai-for-design-and-verification/" target="_blank">Inside Synopsys' AgentEngineer: Long-Horizon Agentic AI for Design and Verification</a> <small>embedded.com</small></li>
+</ul>
+</details>
+<ul>
+<li>Architect Labs unveiled Frostbite, an interaction net CPU designed by AI <a href="https://www.marktechpost.com/2026/11/23/architect-labs-frostbite-ai-designed-cpu-interaction-nets/" target="_blank">[1]</a>, while open-source chip design draws fresh scrutiny <a href="https://vitalik.ca/general/2026/11/26/a_shallow_dive_into_open-source_chip_design.html" target="_blank">[2]</a>.</li>
+<li>Formal verification is emerging as the main defense against AI-generated “slop” <a href="https://latent.space/p/formal-verification/" target="_blank">[3]</a>, as catching AI’s mistakes becomes a mental burden and a drag on productivity <a href="https://singularityhub.com/2026/11/20/catching-ais-mistakes-is-a-mental-burden-and-a-drag-on-productivity/" target="_blank">[4]</a>. Researchers are also exploring simultaneous proof search with modal agents <a href="https://www.lesswrong.com/posts/mLsxPqcqreDqwNDg9/from-modal-agents-to-simultaneous-proof-search-a-first" target="_blank">[5]</a>.</li>
+<li>Inference now drives two-thirds of AI workloads, changing where chips get deployed <a href="https://siliconangle.com/2026/11/21/inference-two-thirds-ai-workloads-chip-deployment-positron-sc26/" target="_blank">[6]</a>, and vendors are pitching low-voltage foundation IP to break the edge AI power wall <a href="https://intelligence.theregister.com/paper/view/21381" target="_blank">[7]</a>.</li>
+</ul>
+<p><strong>Why it matters:</strong> As AI begins designing hardware and most AI compute shifts to inference, mathematically proving that a design is correct may replace human review, which can’t keep pace with machine-generated output.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://www.marktechpost.com/2026/11/23/architect-labs-frostbite-ai-designed-cpu-interaction-nets/" target="_blank">Architect Labs Unveils Frostbite, an Interaction Net CPU Designed by AI</a> <small>marktechpost.com</small></li>
+<li>[2] <a href="https://vitalik.ca/general/2026/11/26/a_shallow_dive_into_open-source_chip_design.html" target="_blank">A shallow dive into open-source chip design</a> <small>vitalik.ca</small></li>
+<li>[3] <a href="https://latent.space/p/formal-verification/" target="_blank">The War Against Slop and an Emerging Weapon to Fight it: Formal Verification</a> <small>latent.space</small></li>
+<li>[4] <a href="https://singularityhub.com/2026/11/20/catching-ais-mistakes-is-a-mental-burden-and-a-drag-on-productivity/" target="_blank">Catching AI’s Mistakes Is a Mental Burden—and a Drag on Productivity</a> <small>singularityhub.com</small></li>
+<li>[5] <a href="https://www.lesswrong.com/posts/mLsxPqcqreDqwNDg9/from-modal-agents-to-simultaneous-proof-search-a-first" target="_blank">From modal agents to simultaneous proof search: a first attempt</a> <small>lesswrong.com</small></li>
+<li>[6] <a href="https://siliconangle.com/2026/11/21/inference-two-thirds-ai-workloads-chip-deployment-positron-sc26/" target="_blank">Inference now drives two-thirds of AI workloads, changing where chips get deployed</a> <small>siliconangle.com</small></li>
+<li>[7] <a href="https://intelligence.theregister.com/paper/view/21381" target="_blank">Beating the Edge AI Power Wall with Low Voltage Foundation IP</a> <small>intelligence.theregister.com</small></li>
+</ul>
+<h3 id="gpt-6-2-astra-hy4-model-releases"><a class="__permalink-h" href="#gpt-6-2-astra-hy4-model-releases" aria-label="gpt 6 2 astra hy4 model releases permalink">»</a>GPT-6.2 Astra, Hy4 Model Releases</h3>
+<details>
+<summary><em>30 articles</em></summary>
+<ul>
+<li><a href="https://technode.com/2026/11/20/tencent-releases-hy4-model-weights-with-million-token-context/" target="_blank">Tencent releases Hy4 model weights with million-token context</a> <small>technode.com</small></li>
+<li><a href="https://towardsdatascience.com/clairic-hit-98-accuracy-on-728-of-questions-via-confidence-scores/" target="_blank">Clairic Hit 98% Accuracy on 72.8% of Questions via Confidence Scores</a> <small>towardsdatascience.com</small></li>
+<li><a href="https://www.analyticsvidhya.com/blog/2026/11/gpt-6-2-astra-sol-review/" target="_blank">GPT-6.2 Astra and Sol: A Hands-On Performance Review</a> <small>analyticsvidhya.com</small></li>
+<li><a href="https://simonwillison.net/2026/Nov/24/llm-inflection-points/" target="_blank">Three LLM inflection points in twelve months</a> <small>simonwillison.net</small></li>
+<li><a href="https://latent.space/p/ainews-inside-the-exploding-coding-data-market/" target="_blank">[AINews] Inside the exploding Coding Data Market</a> <small>latent.space</small></li>
+<li><a href="https://thezvi.substack.com/p/astra-62s-brain-gets-smart-but-its" target="_blank">Astra 6.2’s Brain Gets Smart But Its Head Gets Dumb</a> <small>thezvi.substack.com</small></li>
+<li><a href="https://developer.nvidia.com/blog/whats-new-for-game-developers-ai-animation-and-rtx-tools/" target="_blank">What’s New for Game Developers: AI Animation and RTX Tools</a> <small>developer.nvidia.com</small></li>
+<li><a href="https://pytorch.org/blog/vllm-singapore-meetup-faster-prefill-agent-written-kernels-and-the-road-to-vera-rubin/" target="_blank">vLLM Singapore Meetup: Faster Prefill, Agent-Written Kernels and the Road to Vera Rubin</a> <small>pytorch.org</small></li>
+<li><a href="https://www.marktechpost.com/2026/11/26/tencent-dfly2-speculative-decoding-sparse-models/" target="_blank">Tencent Open-Sources DFly2: Speculative Decoding That Reuses the Target’s Sparse KV Cache</a> <small>marktechpost.com</small></li>
+<li><a href="https://www.gamedeveloper.com/programming/devs-can-now-utilize-high-end-ambient-occlusion-technique-seen-in-eve-frontier" target="_blank">Devs can now utilize the high-end ambient occlusion technique seen in EVE: Frontier</a> <small>gamedeveloper.com</small></li>
+<li><a href="https://pandaily.com/inclusionai-ming-image-0-2-design-open-source" target="_blank">Ant Group's inclusionAI Open-Sources Ming-Image-0.2-Design, a 6B Visual Design Model</a> <small>pandaily.com</small></li>
+<li><a href="https://decrypt.co/384015/china-google-released-fast-new-ai-model-free-baidu-ernie" target="_blank">China's Google Just Released Its Fast New AI Model for Free</a> <small>decrypt.co</small></li>
+<li><a href="https://www.tylermw.com/posts/rayverse/rayshader-1-0-exit-the-matrix.html" target="_blank">Rayshader 1.0: Exit the Matrix</a> <small>tylermw.com</small></li>
+<li><a href="https://technode.com/2026/11/27/tencent-launches-hy3d-3-6-for-professional-3d-asset-generation/" target="_blank">Tencent launches Hy3D 3.6 for professional 3D asset generation</a> <small>technode.com</small></li>
+<li><a href="https://towardsdatascience.com/a-second-llm-judge-hit-875-precision-but-left-21-of-33-for-humans/" target="_blank">A Second LLM Judge Hit 87.5% Precision but Left 21 of 33 for Humans</a> <small>towardsdatascience.com</small></li>
+<li><a href="https://simonwillison.net/2026/Nov/23/glm-54/" target="_blank">GLM-5.4: Toward Generalized Coding with Our First Loop Transformer</a> <small>simonwillison.net</small></li>
+<li><a href="https://latent.space/p/how-clay-builds-gtm-agents-jeff-barg-head-of-ai/" target="_blank">How Clay Builds GTM Agents — Jeff Barg, Head of AI</a> <small>latent.space</small></li>
+<li><a href="https://developer.nvidia.com/blog/qa-how-everstone-brings-where-winds-meet-to-life-with-nvidia-dlss-5/" target="_blank">Q&#x26;amp;A: How Everstone Brings Where Winds Meet to Life with NVIDIA DLSS 5</a> <small>developer.nvidia.com</small></li>
+<li><a href="https://www.marktechpost.com/2026/11/26/sakana-ai-namazu-small-30b-nemotron-3-nano/" target="_blank">Sakana AI Releases Namazu Small, a 30B Model Built on Nemotron 3 Nano</a> <small>marktechpost.com</small></li>
+<li><a href="https://pandaily.com/internlm-sage-interaction-minicpm-o-45-full-duplex" target="_blank">InternLM Team Open-Sources Sage-Interaction, a 9B Full-Duplex Model Built on MiniCPM-o 4.5</a> <small>pandaily.com</small></li>
+<li><a href="https://technode.com/2026/11/26/tencent-brings-hy4-flash-to-desktop-computers-with-quantized-model-release/" target="_blank">Tencent brings Hy4 flash to desktop computers with quantized model release</a> <small>technode.com</small></li>
+<li><a href="https://latent.space/p/ainews-math-proofs-are-landing-faster-than-we-can-read-them/" target="_blank">[AINews] Math Proofs Are Landing Faster Than We Can Read Them</a> <small>latent.space</small></li>
+<li><a href="https://www.marktechpost.com/2026/11/24/bytedance-seed-laminar-async-rl-post-training-framework/" target="_blank">ByteDance Researchers Open-Sources Laminar, an Async Reinforcement Learning RL Post-Training Framework</a> <small>marktechpost.com</small></li>
+<li><a href="https://pandaily.com/tencent-hunyuan-hy3d-3-6-professional-3d-assets" target="_blank">Tencent Hunyuan Releases Hy3D 3.6 for Professional High-Poly 3D Assets</a> <small>pandaily.com</small></li>
+<li><a href="https://technode.com/2026/11/25/ant-releases-ling-3-2-air-multimodal-model-under-mit-license/" target="_blank">Ant releases Ling-3.2-air multimodal model under MIT license</a> <small>technode.com</small></li>
+<li><a href="https://latent.space/p/ainews-gemini-4-neon-marks-gdm-s-full-return-as-a-frontier-lab/" target="_blank">[AINews] Gemini 4 Neon marks GDM's full return as a Frontier Lab</a> <small>latent.space</small></li>
+<li><a href="https://www.marktechpost.com/2026/11/23/zai-glm-5-4-loop-transformer/" target="_blank">Z AI Releases GLM-5.4: A 750B Loop Transformer That Runs 28 Layers Twice</a> <small>marktechpost.com</small></li>
+<li><a href="https://pandaily.com/tencent-hunyuan-dfly2-speculative-decoding-draft-model" target="_blank">Tencent Hunyuan Open-Sources DFly2, a Speculative-Decoding Draft Model</a> <small>pandaily.com</small></li>
+<li><a href="https://technode.com/2026/11/25/baidu-opens-ernie-5-5-flash-preview-weights-with-million-token-context/" target="_blank">Baidu opens ERNIE 5.5 Flash Preview weights with million-token context</a> <small>technode.com</small></li>
+<li><a href="https://technode.com/2026/11/23/zhipu-rolls-out-glm-5-4-with-vision-and-million-token-context/" target="_blank">Zhipu rolls out GLM-5.4 with vision and million-token context</a> <small>technode.com</small></li>
+</ul>
+</details>
+<ul>
+<li>Tencent released Hy4 model weights with a million-token context window <a href="https://technode.com/2026/11/20/tencent-releases-hy4-model-weights-with-million-token-context/" target="_blank">[1]</a>, and open-sourced DFly2, a speculative decoding method that reuses the target model’s sparse KV cache <a href="https://www.marktechpost.com/2026/11/26/tencent-dfly2-speculative-decoding-sparse-models/" target="_blank">[2]</a></li>
+<li>GPT-6.2 Astra and Sol drew hands-on performance reviews <a href="https://www.analyticsvidhya.com/blog/2026/11/gpt-6-2-astra-sol-review/" target="_blank">[3]</a>, with one review saying Astra 6.2 gets smarter in reasoning while its interface-facing behavior gets worse <a href="https://thezvi.substack.com/p/astra-62s-brain-gets-smart-but-its" target="_blank">[4]</a></li>
+<li>Inference tooling advanced alongside the releases: the vLLM Singapore meetup covered faster prefill, agent-written kernels, and support for Vera Rubin <a href="https://pytorch.org/blog/vllm-singapore-meetup-faster-prefill-agent-written-kernels-and-the-road-to-vera-rubin/" target="_blank">[5]</a>, while Clairic reported 98% accuracy on 72.8% of questions using confidence scores <a href="https://towardsdatascience.com/clairic-hit-98-accuracy-on-728-of-questions-via-confidence-scores/" target="_blank">[6]</a></li>
+</ul>
+<p><strong>Why it matters:</strong> Open weights with million-token context from Tencent, plus faster inference techniques, give developers a cheaper alternative to closed frontier models like GPT-6.2 Astra, and the mixed Astra reviews show that raw capability gains don’t guarantee a better product.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://technode.com/2026/11/20/tencent-releases-hy4-model-weights-with-million-token-context/" target="_blank">Tencent releases Hy4 model weights with million-token context</a> <small>technode.com</small></li>
+<li>[2] <a href="https://www.marktechpost.com/2026/11/26/tencent-dfly2-speculative-decoding-sparse-models/" target="_blank">Tencent Open-Sources DFly2: Speculative Decoding That Reuses the Target’s Sparse KV Cache</a> <small>marktechpost.com</small></li>
+<li>[3] <a href="https://www.analyticsvidhya.com/blog/2026/11/gpt-6-2-astra-sol-review/" target="_blank">GPT-6.2 Astra and Sol: A Hands-On Performance Review</a> <small>analyticsvidhya.com</small></li>
+<li>[4] <a href="https://thezvi.substack.com/p/astra-62s-brain-gets-smart-but-its" target="_blank">Astra 6.2’s Brain Gets Smart But Its Head Gets Dumb</a> <small>thezvi.substack.com</small></li>
+<li>[5] <a href="https://pytorch.org/blog/vllm-singapore-meetup-faster-prefill-agent-written-kernels-and-the-road-to-vera-rubin/" target="_blank">vLLM Singapore Meetup: Faster Prefill, Agent-Written Kernels and the Road to Vera Rubin</a> <small>pytorch.org</small></li>
+<li>[6] <a href="https://towardsdatascience.com/clairic-hit-98-accuracy-on-728-of-questions-via-confidence-scores/" target="_blank">Clairic Hit 98% Accuracy on 72.8% of Questions via Confidence Scores</a> <small>towardsdatascience.com</small></li>
+</ul>
+<h3 id="chinese-robotics-and-ai-industry"><a class="__permalink-h" href="#chinese-robotics-and-ai-industry" aria-label="chinese robotics and ai industry permalink">»</a>Chinese Robotics and AI Industry</h3>
+<details>
+<summary><em>29 articles</em></summary>
+<ul>
+<li><a href="https://technode.com/2026/11/20/ex-qwen-chiefs-pragmatik-labs-raises-funding-at-5-billion-valuation/" target="_blank">Ex-Qwen chief’s Pragmatik Labs raises funding at $5 billion valuation</a> <small>technode.com</small></li>
+<li><a href="https://www.cnbc.com/2026/11/26/china-ev-xpeng-humanoid-robots-household-chores.html" target="_blank">Robots could be doing household chores in just 1-2 years, Chinese EV firm says</a> <small>cnbc.com</small></li>
+<li><a href="https://www.therobotreport.com/gxo-doubling-down-on-robotics-in-2027/" target="_blank">GXO doubling down on robotics in 2027</a> <small>therobotreport.com</small></li>
+<li><a href="https://pandaily.com/micbot-movenew-p3s-pandora-china-hi-tech-fair" target="_blank">MICBOT Unveils MOVENEW P3S Base and PANDORA Swap Station at China Hi-Tech Fair</a> <small>pandaily.com</small></li>
+<li><a href="https://technode.com/2026/11/20/alibaba-uses-its-own-chips-to-train-next-generation-qwen-model/" target="_blank">Alibaba uses its own chips to train next-generation Qwen model</a> <small>technode.com</small></li>
+<li><a href="https://www.therobotreport.com/how-does-orchard-ai-fit-into-john-deeres-technology-portfolio/" target="_blank">How does Orchard AI fit into John Deere’s technology portfolio?</a> <small>therobotreport.com</small></li>
+<li><a href="https://pandaily.com/alipay-in-car-assistant-3-0-voiceprint-payment" target="_blank">Alipay Releases In-Car Assistant 3.0 With Voice Ordering and Voiceprint Payments</a> <small>pandaily.com</small></li>
+<li><a href="https://technode.com/2026/11/20/huawei-debuts-osta-smartphone-brand-with-o1-pro-starting-at-rmb-5499/" target="_blank">Huawei debuts OSTA smartphone brand with O1 Pro, starting at RMB 5,499</a> <small>technode.com</small></li>
+<li><a href="https://www.therobotreport.com/softbank-acquires-marc-raiberts-robotics-and-ai-institute/" target="_blank">SoftBank acquires Marc Raibert’s Robotics and AI Institute</a> <small>therobotreport.com</small></li>
+<li><a href="https://pandaily.com/zioneer-zanymede-zio-zemo-models-china-hi-tech-fair" target="_blank">ZIONEER Unveils Zanymede, Zio and ZEMO Models at the China Hi-Tech Fair</a> <small>pandaily.com</small></li>
+<li><a href="https://technode.com/2026/11/27/alibaba-denies-qwen-post-training-chiefs-departure-plans-lawsuit-over-rumor/" target="_blank">Alibaba denies Qwen post-training chief’s departure, plans lawsuit over rumor</a> <small>technode.com</small></li>
+<li><a href="https://pandaily.com/xiaomi-had-hyperos-1-20-causal-chain-world-model" target="_blank">Xiaomi Announces HyperOS 1.20 HAD Update With a Causal Chain and On-Vehicle World Model</a> <small>pandaily.com</small></li>
+<li><a href="https://technode.com/2026/11/27/xiaomi-reportedly-plans-december-launch-for-second-generation-ai-glasses-including-display-version/" target="_blank">Xiaomi reportedly plans December launch for second-generation AI glasses, including display version</a> <small>technode.com</small></li>
+<li><a href="https://pandaily.com/shengshu-motubrain-2-world-action-model-harness" target="_blank">ShengShu Technology Releases Motubrain 2.0 World-Action Model and Harness</a> <small>pandaily.com</small></li>
+<li><a href="https://technode.com/2026/11/26/xpeng-plans-january-production-of-iron-humanoid-robot-with-showroom-deployment-to-follow/" target="_blank">XPeng plans January production of IRON humanoid robot, with showroom deployment to follow</a> <small>technode.com</small></li>
+<li><a href="https://pandaily.com/huawei-qiankun-intelligent-automotive-parts-100-million" target="_blank">Huawei Says Qiankun Intelligent Automotive Solution Parts Have Topped 100 Million</a> <small>pandaily.com</small></li>
+<li><a href="https://technode.com/2026/11/25/insta360-sets-december-1-ace-pro-3-launch-teasing-interchangeable-lenses/" target="_blank">Insta360 sets December 1 Ace Pro 3 launch, teasing interchangeable lenses</a> <small>technode.com</small></li>
+<li><a href="https://technode.com/2026/11/25/bambu-lab-launches-1149-p3c-with-seven-slot-tool-changer/" target="_blank">Bambu Lab launches $1,149 P3C with seven-slot tool changer</a> <small>technode.com</small></li>
+<li><a href="https://technode.com/2026/11/25/huawei-launches-mate-x8-foldable-with-kirin-9050-pro-starting-at-rmb12999/" target="_blank">Huawei launches Mate X8 foldable with Kirin 9050 Pro, starting at RMB12,999</a> <small>technode.com</small></li>
+<li><a href="https://technode.com/2026/11/24/robotics-startup-synapx-reportedly-raises-hundreds-of-millions-of-yuan-with-midea-joining/" target="_blank">Robotics startup SynapX reportedly raises hundreds of millions of yuan, with Midea joining</a> <small>technode.com</small></li>
+<li><a href="https://technode.com/2026/11/24/lenovos-lecoo-launches-walking-assist-exoskeleton-from-rmb-6999/" target="_blank">Lenovo’s Lecoo launches walking-assist exoskeleton from RMB 6,999</a> <small>technode.com</small></li>
+<li><a href="https://technode.com/2026/11/24/honor-launches-700-series-with-rear-displays-and-9000mah-batteries/" target="_blank">Honor launches 700 series with rear displays and 9,000mAh batteries</a> <small>technode.com</small></li>
+<li><a href="https://technode.com/2026/11/24/bytedance-opens-invitation-only-beta-for-xiaodou-personal-ai-assistant/" target="_blank">ByteDance opens invitation-only beta for Xiaodou personal AI assistant</a> <small>technode.com</small></li>
+<li><a href="https://technode.com/2026/11/24/nothing-previews-ear-note-ai-earbuds-that-record-calls-and-meetings/" target="_blank">Nothing previews Ear (note) AI earbuds that record calls and meetings</a> <small>technode.com</small></li>
+<li><a href="https://technode.com/2026/11/24/zhihu-discloses-indirect-investment-in-deepseek-through-fund/" target="_blank">Zhihu discloses indirect investment in DeepSeek through fund</a> <small>technode.com</small></li>
+<li><a href="https://technode.com/2026/11/23/huaweis-osta-brand-reportedly-plans-tablets-laptops-and-wearables/" target="_blank">Huawei’s OSTA brand reportedly plans tablets, laptops and wearables</a> <small>technode.com</small></li>
+<li><a href="https://technode.com/2026/11/23/honor-previews-six-head-3d-printer-as-it-enters-consumer-printing-market/" target="_blank">Honor previews six-head 3D printer as it enters consumer printing market</a> <small>technode.com</small></li>
+<li><a href="https://technode.com/2026/11/23/ant-group-unveils-ai-health-ring-and-wristband-under-afu-brand/" target="_blank">Ant Group unveils AI health ring and wristband under Afu brand</a> <small>technode.com</small></li>
+<li><a href="https://technode.com/2026/11/23/ant-group-leads-100-million-round-in-humanoid-startup-simplexity-robotics/" target="_blank">Ant Group leads $100 million round in humanoid startup Simplexity Robotics</a> <small>technode.com</small></li>
+</ul>
+</details>
+<ul>
+<li>Ex-Qwen chief’s Pragmatik Labs raised funding at a $5 billion valuation, while Alibaba used its own chips to train its next-generation Qwen model <a href="https://technode.com/2026/11/20/ex-qwen-chiefs-pragmatik-labs-raises-funding-at-5-billion-valuation/" target="_blank">[1]</a> <a href="https://technode.com/2026/11/20/alibaba-uses-its-own-chips-to-train-next-generation-qwen-model/" target="_blank">[2]</a>.</li>
+<li>A Chinese EV firm said robots could do household chores within 1-2 years, and MICBOT and ZIONEER unveiled new robotics products at the China Hi-Tech Fair, including MICBOT’s MOVENEW P3S Base and PANDORA Swap Station and ZIONEER’s Zanymede, Zio and ZEMO models <a href="https://www.cnbc.com/2026/11/26/china-ev-xpeng-humanoid-robots-household-chores.html" target="_blank">[3]</a> <a href="https://pandaily.com/micbot-movenew-p3s-pandora-china-hi-tech-fair" target="_blank">[4]</a> <a href="https://pandaily.com/zioneer-zanymede-zio-zemo-models-china-hi-tech-fair" target="_blank">[5]</a>.</li>
+<li>Outside China, SoftBank acquired Marc Raibert’s Robotics and AI Institute, and GXO is doubling down on robotics in 2027 <a href="https://www.therobotreport.com/gxo-doubling-down-on-robotics-in-2027/" target="_blank">[6]</a> <a href="https://www.therobotreport.com/softbank-acquires-marc-raiberts-robotics-and-ai-institute/" target="_blank">[7]</a>.</li>
+</ul>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://technode.com/2026/11/20/ex-qwen-chiefs-pragmatik-labs-raises-funding-at-5-billion-valuation/" target="_blank">Ex-Qwen chief’s Pragmatik Labs raises funding at $5 billion valuation</a> <small>technode.com</small></li>
+<li>[2] <a href="https://technode.com/2026/11/20/alibaba-uses-its-own-chips-to-train-next-generation-qwen-model/" target="_blank">Alibaba uses its own chips to train next-generation Qwen model</a> <small>technode.com</small></li>
+<li>[3] <a href="https://www.cnbc.com/2026/11/26/china-ev-xpeng-humanoid-robots-household-chores.html" target="_blank">Robots could be doing household chores in just 1-2 years, Chinese EV firm says</a> <small>cnbc.com</small></li>
+<li>[4] <a href="https://pandaily.com/micbot-movenew-p3s-pandora-china-hi-tech-fair" target="_blank">MICBOT Unveils MOVENEW P3S Base and PANDORA Swap Station at China Hi-Tech Fair</a> <small>pandaily.com</small></li>
+<li>[5] <a href="https://pandaily.com/zioneer-zanymede-zio-zemo-models-china-hi-tech-fair" target="_blank">ZIONEER Unveils Zanymede, Zio and ZEMO Models at the China Hi-Tech Fair</a> <small>pandaily.com</small></li>
+<li>[6] <a href="https://www.therobotreport.com/gxo-doubling-down-on-robotics-in-2027/" target="_blank">GXO doubling down on robotics in 2027</a> <small>therobotreport.com</small></li>
+<li>[7] <a href="https://www.therobotreport.com/softbank-acquires-marc-raiberts-robotics-and-ai-institute/" target="_blank">SoftBank acquires Marc Raibert’s Robotics and AI Institute</a> <small>therobotreport.com</small></li>
+</ul>
+<h3 id="tesla-fsd-and-ev-autonomy"><a class="__permalink-h" href="#tesla-fsd-and-ev-autonomy" aria-label="tesla fsd and ev autonomy permalink">»</a>Tesla FSD and EV Autonomy</h3>
+<details>
+<summary><em>22 articles</em></summary>
+<ul>
+<li><a href="https://electrek.co/2026/11/21/tesla-fsd-v15-rollout-25x-safety-reality-view/" target="_blank">Tesla launches FSD v15, targets its biggest weaknesses, from signs to potholes</a> <small>electrek.co</small></li>
+<li><a href="https://technode.com/2026/11/20/byd-launches-six-seat-ti9-suv-from-rmb-279900-offers-folding-steering-wheel/" target="_blank">BYD launches six-seat Ti9 SUV from RMB 279,900, offers folding steering wheel</a> <small>technode.com</small></li>
+<li><a href="https://www.theverge.com/transportation/1044706/this-purple-electric-chinese-minivan-can-go-up-to-559-miles-on-a-charge" target="_blank">This purple electric Chinese minivan can go up to 559 miles on a charge</a> <small>theverge.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/25/the-canceled-tesla-cybertruck-is-the-fastest-selling-used-truck-in-america/" target="_blank">The canceled Tesla Cybertruck is the fastest-selling used truck in America</a> <small>techcrunch.com</small></li>
+<li><a href="https://hackaday.com/2026/11/28/who-resurrected-the-electric-car/" target="_blank">Who Resurrected the Electric Car?</a> <small>hackaday.com</small></li>
+<li><a href="https://www.ft.com/content/f83dd2dc-f51e-4151-9139-cf1918eb9d0a?syn-25a6b1a6=1" target="_blank">The Chinese car champion turning to police and nurse robots</a> <small>ft.com</small></li>
+<li><a href="https://www.bbc.co.uk/news/articles/cmwy9jne0g7qo?at_medium=RSS&#x26;at_campaign=rss" target="_blank">Why tiny cars are taking off across Europe</a> <small>bbc.co.uk</small></li>
+<li><a href="https://www.scmp.com/business/companies/article/3376061/convenience-stores-face-pressure-7-eleven-set-open-largest-china-outlet-kunming" target="_blank">As convenience stores face pressure, 7-Eleven set to open largest China outlet in Kunming</a> <small>scmp.com</small></li>
+<li><a href="https://www.citroenet.org.uk/miscellaneous/hydraulics/hydraulics-1.html" target="_blank">Citroën Hydraulic System</a> <small>citroenet.org.uk</small></li>
+<li><a href="https://electrek.co/2026/11/20/tesla-fsd-italy-approval-assisted-driving/" target="_blank">Tesla FSD approved in Italy, the first big EU market to say yes</a> <small>electrek.co</small></li>
+<li><a href="https://technode.com/2026/11/27/mercedes-launches-hybrid-cla-in-china-with-doubao-ai-and-momenta-driving-system/" target="_blank">Mercedes launches hybrid CLA in China with Doubao AI and Momenta driving system</a> <small>technode.com</small></li>
+<li><a href="https://electrek.co/2026/11/27/tesla-ai5-optimus-real-reason-tsmc-3nm/" target="_blank">This might be the real reason Elon Musk says Tesla’s AI5 chip is going to Optimus</a> <small>electrek.co</small></li>
+<li><a href="https://technode.com/2026/11/26/xiaomi-files-next-generation-su7-ultra-with-1138kw-tri-motor-powertrain/" target="_blank">Xiaomi files next-generation SU7 Ultra with 1,138kW tri-motor powertrain</a> <small>technode.com</small></li>
+<li><a href="https://electrek.co/2026/11/25/eu-delays-tesla-fsd-vote-december-15-tcmv/" target="_blank">EU pushes back Tesla ‘Full Self-Driving’ vote meeting again, now set for December 15</a> <small>electrek.co</small></li>
+<li><a href="https://technode.com/2026/11/25/xiaomi-targets-germany-car-launch-in-third-quarter-of-2027/" target="_blank">Xiaomi targets Germany car launch in third quarter of 2027</a> <small>technode.com</small></li>
+<li><a href="https://electrek.co/2026/11/23/tesla-fsd-v15-ai4-last-shot-compute-limit/" target="_blank">Tesla FSD v15 is AI4’s last shot as Musk reveals how little compute is left</a> <small>electrek.co</small></li>
+<li><a href="https://technode.com/2026/11/25/bmw-launches-china-made-neue-klasse-ix3-from-rmb269900/" target="_blank">BMW launches China-made Neue Klasse iX3 from RMB269,900</a> <small>technode.com</small></li>
+<li><a href="https://technode.com/2026/11/25/byd-launches-new-tang-ev-from-rmb187900-with-up-to-850km-range/" target="_blank">BYD launches new Tang EV from RMB187,900 with up to 850km range</a> <small>technode.com</small></li>
+<li><a href="https://technode.com/2026/11/25/byd-enters-exclusive-talks-to-buy-ineos-car-factory-in-france/" target="_blank">BYD enters exclusive talks to buy Ineos car factory in France</a> <small>technode.com</small></li>
+<li><a href="https://technode.com/2026/11/25/byd-launches-third-generation-tang-ev-with-850km-range-and-steer-by-wire-technology/" target="_blank">BYD launches third-generation Tang EV with 850km range and steer-by-wire technology</a> <small>technode.com</small></li>
+<li><a href="https://technode.com/2026/11/24/xiaomis-overseas-expansion-takes-shape-with-uae-pre-orders-and-european-ambitions/" target="_blank">Xiaomi’s overseas expansion takes shape with UAE pre-orders and European ambitions</a> <small>technode.com</small></li>
+<li><a href="https://technode.com/2026/11/23/xiaomi-reportedly-hires-former-xpeng-europe-executive-ahead-of-2027-car-launch/" target="_blank">Xiaomi reportedly hires former Xpeng Europe executive ahead of 2027 car launch</a> <small>technode.com</small></li>
+</ul>
+</details>
+<ul>
+<li>Tesla launched FSD v15, targeting its biggest weaknesses, including reading road signs and handling potholes <a href="https://electrek.co/2026/11/21/tesla-fsd-v15-rollout-25x-safety-reality-view/" target="_blank">[1]</a></li>
+<li>Italy approved Tesla FSD, becoming the first major EU market to say yes <a href="https://electrek.co/2026/11/20/tesla-fsd-italy-approval-assisted-driving/" target="_blank">[2]</a></li>
+<li>Tesla’s canceled Cybertruck is now the fastest-selling used truck in America <a href="https://techcrunch.com/2026/11/25/the-canceled-tesla-cybertruck-is-the-fastest-selling-used-truck-in-america/" target="_blank">[3]</a>, while Chinese rivals push range and features: BYD’s six-seat Ti9 SUV starts at RMB 279,900 and offers a folding steering wheel <a href="https://technode.com/2026/11/20/byd-launches-six-seat-ti9-suv-from-rmb-279900-offers-folding-steering-wheel/" target="_blank">[4]</a>, and a Chinese electric minivan reaches up to 559 miles per charge <a href="https://www.theverge.com/transportation/1044706/this-purple-electric-chinese-minivan-can-go-up-to-559-miles-on-a-charge" target="_blank">[5]</a></li>
+</ul>
+<p><strong>Why it matters:</strong> Italy’s approval gives Tesla a regulatory foothold in Europe just as FSD v15 targets its known weak spots, while Chinese automakers compete on range and cabin tech rather than driving autonomy.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://electrek.co/2026/11/21/tesla-fsd-v15-rollout-25x-safety-reality-view/" target="_blank">Tesla launches FSD v15, targets its biggest weaknesses, from signs to potholes</a> <small>electrek.co</small></li>
+<li>[2] <a href="https://electrek.co/2026/11/20/tesla-fsd-italy-approval-assisted-driving/" target="_blank">Tesla FSD approved in Italy, the first big EU market to say yes</a> <small>electrek.co</small></li>
+<li>[3] <a href="https://techcrunch.com/2026/11/25/the-canceled-tesla-cybertruck-is-the-fastest-selling-used-truck-in-america/" target="_blank">The canceled Tesla Cybertruck is the fastest-selling used truck in America</a> <small>techcrunch.com</small></li>
+<li>[4] <a href="https://technode.com/2026/11/20/byd-launches-six-seat-ti9-suv-from-rmb-279900-offers-folding-steering-wheel/" target="_blank">BYD launches six-seat Ti9 SUV from RMB 279,900, offers folding steering wheel</a> <small>technode.com</small></li>
+<li>[5] <a href="https://www.theverge.com/transportation/1044706/this-purple-electric-chinese-minivan-can-go-up-to-559-miles-on-a-charge" target="_blank">This purple electric Chinese minivan can go up to 559 miles on a charge</a> <small>theverge.com</small></li>
+</ul>
+<h3 id="stanford-ai-agents-lecture-series"><a class="__permalink-h" href="#stanford-ai-agents-lecture-series" aria-label="stanford ai agents lecture series permalink">»</a>Stanford AI Agents Lecture Series</h3>
+<details>
+<summary><em>15 articles</em></summary>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=uoSynlTDyMs" target="_blank">Stanford CME295 Transformers &#x26; LLMs | Autumn 2026 | Lecture 7 - LLM Evaluation</a> <small>youtube.com</small></li>
+<li><a href="https://www.lesswrong.com/posts/SjwzazYRZDsq4hhoq/can-llms-operate-wetlab-equipment" target="_blank">Can LLMs Operate Wetlab Equipment?</a> <small>lesswrong.com</small></li>
+<li><a href="https://www.youtube.com/watch?v=GPk0nNuc8S0" target="_blank">Stanford CS547 HCI Seminar | Autumn 2026 | One Developer, Two Decades, and 30 Million Users Later</a> <small>youtube.com</small></li>
+<li><a href="https://www.lesswrong.com/posts/kfEBtKyTrj4cKuGjk/dear-autonomous-researcher-how-to-pick-a-good-research" target="_blank">Dear autonomous researcher: how to pick a good research project when many agents are picking at the same time</a> <small>lesswrong.com</small></li>
+<li><a href="https://www.youtube.com/watch?v=aDHf1r6ZZRA" target="_blank">Andrew Ng on Building AI Agents | Stanford CS329Z Fireside Chat with Andrew Ng &#x26; Diyi Yang</a> <small>youtube.com</small></li>
+<li><a href="https://www.youtube.com/watch?v=wdjnAOrS7f8" target="_blank">Noisy Quadratic Model, Momentum &#x26; Weight Decay | Stanford CS312 Lecture 3 with Tatsunori Hashimoto</a> <small>youtube.com</small></li>
+<li><a href="https://www.youtube.com/watch?v=bZCbIoeY1fQ" target="_blank">µP &#x26; Muon: Scaling Optimizers to Infinite Width | Stanford CS312 Lecture 4 with Tatsunori Hashimoto</a> <small>youtube.com</small></li>
+<li><a href="https://www.youtube.com/watch?v=_iVIugwpiUI" target="_blank">How to Evaluate AI Agents: Benchmark Design | Stanford CS329Z Lecture 12 with John Yang</a> <small>youtube.com</small></li>
+<li><a href="https://www.youtube.com/watch?v=y2cwbmOy12U" target="_blank">Better Data for AI Agents: Data Selection &#x26; Quality | Stanford CS329Z Lecture 11 with John Yang</a> <small>youtube.com</small></li>
+<li><a href="https://www.youtube.com/watch?v=GaUI0MqNx-Q" target="_blank">Predicting Seed Variance, Warmup &#x26; LR Decay | Stanford CS312 Quiz Review with Suhas Kotha</a> <small>youtube.com</small></li>
+<li><a href="https://www.youtube.com/watch?v=tc5AVfyWkVs" target="_blank">Hyperparameter Tuning, Scaling Laws &#x26; Debugging | Stanford CS312 Lecture 2 with Tatsunori Hashimoto</a> <small>youtube.com</small></li>
+<li><a href="https://www.youtube.com/watch?v=HbgZFwWj4vY" target="_blank">What Data Do AI Agents Need? | Stanford CS329Z Lecture 10 with John Yang</a> <small>youtube.com</small></li>
+<li><a href="https://www.youtube.com/watch?v=JLcCYvUawsM" target="_blank">Deep Learning by Prediction: Intro | Stanford CS312 Lecture 1 with Tatsunori Hashimoto &#x26; Suhas Kotha</a> <small>youtube.com</small></li>
+<li><a href="https://www.youtube.com/watch?v=e1VYwgm9-_s" target="_blank">Stanford CS547 HCI Seminar | Autumn 2026 | What can CSCW Teach us About How to Work with Agents?</a> <small>youtube.com</small></li>
+<li><a href="https://www.youtube.com/watch?v=DIernxr0JQQ" target="_blank">Cleaning the house with LLMs (llm2real)</a> <small>youtube.com</small></li>
+</ul>
+</details>
+<ul>
+<li>Stanford’s CS329Z course put AI agents at the center of Autumn 2026. Andrew Ng and Diyi Yang held a fireside chat on building agents <a href="https://www.youtube.com/watch?v=aDHf1r6ZZRA" target="_blank">[1]</a>, and John Yang taught Lecture 11 on data selection and quality <a href="https://www.youtube.com/watch?v=y2cwbmOy12U" target="_blank">[2]</a> and Lecture 12 on benchmark design for evaluating agents <a href="https://www.youtube.com/watch?v=_iVIugwpiUI" target="_blank">[3]</a>.</li>
+<li>Tatsunori Hashimoto’s CS312 covered the training mechanics behind these models: the noisy quadratic model, momentum and weight decay in Lecture 3 <a href="https://www.youtube.com/watch?v=wdjnAOrS7f8" target="_blank">[4]</a>, and µP and Muon for scaling optimizers to infinite width in Lecture 4 <a href="https://www.youtube.com/watch?v=bZCbIoeY1fQ" target="_blank">[5]</a>. Suhas Kotha’s quiz review addressed predicting seed variance, warmup and learning-rate decay <a href="https://www.youtube.com/watch?v=GaUI0MqNx-Q" target="_blank">[6]</a>.</li>
+<li>Evaluation and real-world agent use run through the wider Stanford program. CME295 devoted Lecture 7 to LLM evaluation <a href="https://www.youtube.com/watch?v=uoSynlTDyMs" target="_blank">[7]</a>, while talks examined whether LLMs can operate wetlab equipment <a href="https://www.lesswrong.com/posts/SjwzazYRZDsq4hhoq/can-llms-operate-wetlab-equipment" target="_blank">[8]</a> and how autonomous research agents should pick projects when many agents choose at once <a href="https://www.lesswrong.com/posts/kfEBtKyTrj4cKuGjk/dear-autonomous-researcher-how-to-pick-a-good-research" target="_blank">[9]</a>. The CS547 HCI seminar added a developer’s perspective, two decades of work and 30 million users <a href="https://www.youtube.com/watch?v=GPk0nNuc8S0" target="_blank">[10]</a>.</li>
+</ul>
+<p><strong>Why it matters:</strong> Stanford’s syllabus pairs optimizer-level training theory with agent benchmarks and lab automation, showing that measuring whether agents work is now treated as a core skill alongside building them.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://www.youtube.com/watch?v=aDHf1r6ZZRA" target="_blank">Andrew Ng on Building AI Agents | Stanford CS329Z Fireside Chat with Andrew Ng &#x26; Diyi Yang</a> <small>youtube.com</small></li>
+<li>[2] <a href="https://www.youtube.com/watch?v=y2cwbmOy12U" target="_blank">Better Data for AI Agents: Data Selection &#x26; Quality | Stanford CS329Z Lecture 11 with John Yang</a> <small>youtube.com</small></li>
+<li>[3] <a href="https://www.youtube.com/watch?v=_iVIugwpiUI" target="_blank">How to Evaluate AI Agents: Benchmark Design | Stanford CS329Z Lecture 12 with John Yang</a> <small>youtube.com</small></li>
+<li>[4] <a href="https://www.youtube.com/watch?v=wdjnAOrS7f8" target="_blank">Noisy Quadratic Model, Momentum &#x26; Weight Decay | Stanford CS312 Lecture 3 with Tatsunori Hashimoto</a> <small>youtube.com</small></li>
+<li>[5] <a href="https://www.youtube.com/watch?v=bZCbIoeY1fQ" target="_blank">µP &#x26; Muon: Scaling Optimizers to Infinite Width | Stanford CS312 Lecture 4 with Tatsunori Hashimoto</a> <small>youtube.com</small></li>
+<li>[6] <a href="https://www.youtube.com/watch?v=GaUI0MqNx-Q" target="_blank">Predicting Seed Variance, Warmup &#x26; LR Decay | Stanford CS312 Quiz Review with Suhas Kotha</a> <small>youtube.com</small></li>
+<li>[7] <a href="https://www.youtube.com/watch?v=uoSynlTDyMs" target="_blank">Stanford CME295 Transformers &#x26; LLMs | Autumn 2026 | Lecture 7 - LLM Evaluation</a> <small>youtube.com</small></li>
+<li>[8] <a href="https://www.lesswrong.com/posts/SjwzazYRZDsq4hhoq/can-llms-operate-wetlab-equipment" target="_blank">Can LLMs Operate Wetlab Equipment?</a> <small>lesswrong.com</small></li>
+<li>[9] <a href="https://www.lesswrong.com/posts/kfEBtKyTrj4cKuGjk/dear-autonomous-researcher-how-to-pick-a-good-research" target="_blank">Dear autonomous researcher: how to pick a good research project when many agents are picking at the same time</a> <small>lesswrong.com</small></li>
+<li>[10] <a href="https://www.youtube.com/watch?v=GPk0nNuc8S0" target="_blank">Stanford CS547 HCI Seminar | Autumn 2026 | One Developer, Two Decades, and 30 Million Users Later</a> <small>youtube.com</small></li>
+</ul>
+<h3 id="meta-muse-ai-shopping-agent"><a class="__permalink-h" href="#meta-muse-ai-shopping-agent" aria-label="meta muse ai shopping agent permalink">»</a>Meta Muse AI Shopping Agent</h3>
+<details>
+<summary><em>11 articles</em></summary>
+<ul>
+<li><a href="https://techcrunch.com/2026/11/25/amazon-and-meta-reportedly-in-talks-to-lift-blockade-on-ai-agent-muse/" target="_blank">Amazon and Meta reportedly in talks to lift blockade on AI agent Muse</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.wired.com/story/meta-refused-to-share-muse-for-testing-uk-financial-watchdog-complains/" target="_blank">Meta Refused to Share Muse for Testing, UK Financial Watchdog Complains</a> <small>wired.com</small></li>
+<li><a href="https://qz.com/holiday-shoppers-ai-agents-gifts-checkout-payment-111726" target="_blank">Holiday shoppers let AI agents find gifts — but don't trust them with their credit cards</a> <small>qz.com</small></li>
+<li><a href="https://www.theguardian.com/business/2026/nov/28/ai-bots-wreak-havoc-uk-restaurant-bookings-meta-muse" target="_blank">‘I told it to never call me again’: AI bots wreak havoc with UK restaurant bookings</a> <small>theguardian.com</small></li>
+<li><a href="https://www.bbc.co.uk/news/articles/c9gkld2l38y6o?at_medium=RSS&#x26;at_campaign=rss" target="_blank">Helpful but awkward: My week with Meta's Muse ahead of its UK launch</a> <small>bbc.co.uk</small></li>
+<li><a href="https://digiday.com/marketing/walmart-is-letting-metas-muse-shop-its-shelves-but-on-its-own-terms/?utm_campaign=digidaydis&#x26;utm_medium=rss&#x26;utm_source=general-rss" target="_blank">Walmart is letting Meta’s Muse shop its shelves — but on its own terms</a> <small>digiday.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/24/walmart-teams-up-with-meta-to-bring-black-friday-deals-to-ai-agent-muse/" target="_blank">Walmart teams up with Meta to bring Black Friday deals to AI agent Muse</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.theguardian.com/business/2026/nov/27/retailers-ai-shopping-assistants-black-friday-brands-meta-muse" target="_blank">‘If the bot gets it wrong, who’s liable?’ Retailers enter the unknown with AI shopping assistants on Black Friday</a> <small>theguardian.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/24/meta-brings-its-muse-ai-assistant-directly-into-instagram-dms/" target="_blank">Meta brings its Muse AI assistant directly into Instagram DMs</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.theguardian.com/technology/2026/nov/26/employers-do-you-have-concerns-about-the-rollout-of-muse-and-other-ai-agents" target="_blank">Employers: do you have concerns about the rollout of Muse and other AI agents?</a> <small>theguardian.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/25/amazon-and-meta-reportedly-in-talks-to-lift-blockade-on-ai-agent-muse/" target="_blank">Amazon and Meta reportedly in talks to lift blockade on AI agent Muse</a> <small>techcrunch.com</small></li>
+</ul>
+</details>
+<ul>
+<li>Meta’s Muse AI shopping agent is gaining retail access on negotiated terms: Walmart opened its shelves and Black Friday deals to Muse, but on its own terms <a href="https://digiday.com/marketing/walmart-is-letting-metas-muse-shop-its-shelves-but-on-its-own-terms/?utm_campaign=digidaydis&#x26;utm_medium=rss&#x26;utm_source=general-rss" target="_blank">[1]</a> <a href="https://techcrunch.com/2026/11/24/walmart-teams-up-with-meta-to-bring-black-friday-deals-to-ai-agent-muse/" target="_blank">[2]</a>, while Amazon and Meta are reportedly in talks to lift Amazon’s blockade of the agent <a href="https://techcrunch.com/2026/11/25/amazon-and-meta-reportedly-in-talks-to-lift-blockade-on-ai-agent-muse/" target="_blank">[3]</a>. Meta also brought Muse directly into Instagram DMs <a href="https://techcrunch.com/2026/11/24/meta-brings-its-muse-ai-assistant-directly-into-instagram-dms/" target="_blank">[4]</a>.</li>
+<li>Regulators and businesses are raising concerns about Muse’s reliability and oversight: the UK financial watchdog complained that Meta refused to share Muse for testing <a href="https://www.wired.com/story/meta-refused-to-share-muse-for-testing-uk-financial-watchdog-complains/" target="_blank">[5]</a>, restaurants report AI bots wreaking havoc on bookings <a href="https://www.theguardian.com/business/2026/nov/28/ai-bots-wreak-havoc-uk-restaurant-bookings-meta-muse" target="_blank">[6]</a>, and retailers are asking who is liable if the bot gets a purchase wrong <a href="https://www.theguardian.com/business/2026/nov/27/retailers-ai-shopping-assistants-black-friday-brands-meta-muse" target="_blank">[7]</a>.</li>
+<li>Consumer trust lags behind adoption: holiday shoppers let AI agents find gifts but won’t hand them their credit cards <a href="https://qz.com/holiday-shoppers-ai-agents-gifts-checkout-payment-111726" target="_blank">[8]</a>, and a reviewer who tested Muse for a week ahead of its UK launch called it helpful but awkward <a href="https://www.bbc.co.uk/news/articles/c9gkld2l38y6o?at_medium=RSS&#x26;at_campaign=rss" target="_blank">[9]</a>. Employers are also being asked about their concerns over the rollout <a href="https://www.theguardian.com/technology/2026/nov/26/employers-do-you-have-concerns-about-the-rollout-of-muse-and-other-ai-agents" target="_blank">[10]</a>.</li>
+</ul>
+<p><strong>Why it matters:</strong> Muse’s reach now depends on whether retailers, regulators, and shoppers trust it to act on their behalf, and unresolved questions about liability and testing access could limit its adoption when it launches in the UK.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://digiday.com/marketing/walmart-is-letting-metas-muse-shop-its-shelves-but-on-its-own-terms/?utm_campaign=digidaydis&#x26;utm_medium=rss&#x26;utm_source=general-rss" target="_blank">Walmart is letting Meta’s Muse shop its shelves — but on its own terms</a> <small>digiday.com</small></li>
+<li>[2] <a href="https://techcrunch.com/2026/11/24/walmart-teams-up-with-meta-to-bring-black-friday-deals-to-ai-agent-muse/" target="_blank">Walmart teams up with Meta to bring Black Friday deals to AI agent Muse</a> <small>techcrunch.com</small></li>
+<li>[3] <a href="https://techcrunch.com/2026/11/25/amazon-and-meta-reportedly-in-talks-to-lift-blockade-on-ai-agent-muse/" target="_blank">Amazon and Meta reportedly in talks to lift blockade on AI agent Muse</a> <small>techcrunch.com</small></li>
+<li>[4] <a href="https://techcrunch.com/2026/11/24/meta-brings-its-muse-ai-assistant-directly-into-instagram-dms/" target="_blank">Meta brings its Muse AI assistant directly into Instagram DMs</a> <small>techcrunch.com</small></li>
+<li>[5] <a href="https://www.wired.com/story/meta-refused-to-share-muse-for-testing-uk-financial-watchdog-complains/" target="_blank">Meta Refused to Share Muse for Testing, UK Financial Watchdog Complains</a> <small>wired.com</small></li>
+<li>[6] <a href="https://www.theguardian.com/business/2026/nov/28/ai-bots-wreak-havoc-uk-restaurant-bookings-meta-muse" target="_blank">‘I told it to never call me again’: AI bots wreak havoc with UK restaurant bookings</a> <small>theguardian.com</small></li>
+<li>[7] <a href="https://www.theguardian.com/business/2026/nov/27/retailers-ai-shopping-assistants-black-friday-brands-meta-muse" target="_blank">‘If the bot gets it wrong, who’s liable?’ Retailers enter the unknown with AI shopping assistants on Black Friday</a> <small>theguardian.com</small></li>
+<li>[8] <a href="https://qz.com/holiday-shoppers-ai-agents-gifts-checkout-payment-111726" target="_blank">Holiday shoppers let AI agents find gifts — but don’t trust them with their credit cards</a> <small>qz.com</small></li>
+<li>[9] <a href="https://www.bbc.co.uk/news/articles/c9gkld2l38y6o?at_medium=RSS&#x26;at_campaign=rss" target="_blank">Helpful but awkward: My week with Meta’s Muse ahead of its UK launch</a> <small>bbc.co.uk</small></li>
+<li>[10] <a href="https://www.theguardian.com/technology/2026/nov/26/employers-do-you-have-concerns-about-the-rollout-of-muse-and-other-ai-agents" target="_blank">Employers: do you have concerns about the rollout of Muse and other AI agents?</a> <small>theguardian.com</small></li>
+</ul>
+<h3 id="ai-agent-commerce-and-payments"><a class="__permalink-h" href="#ai-agent-commerce-and-payments" aria-label="ai agent commerce and payments permalink">»</a>AI Agent Commerce and Payments</h3>
+<details>
+<summary><em>11 articles</em></summary>
+<ul>
+<li><a href="https://www.fastcompany.com/91647652/fast-food-workers-ranked-reprimanded-ai?partner=rss&#x26;utm_source=rss&#x26;utm_medium=feed&#x26;utm_campaign=rss+fastcompany&#x26;utm_content=rss" target="_blank">How fast-food workers are being ranked and reprimanded with AI</a> <small>fastcompany.com</small></li>
+<li><a href="https://www.ft.com/content/80a5266d-72e1-4f55-976f-e169b440066b" target="_blank">Do I need an AI art adviser?</a> <small>ft.com</small></li>
+<li><a href="https://www.theguardian.com/business/2026/nov/27/ai-agent-cardless-transaction-pizza-papa-john-uk-fca-truelayer" target="_blank">Pizza history: AI agent’s cardless purchase is a first for UK</a> <small>theguardian.com</small></li>
+<li><a href="https://tech.eu/2026/11/27/papa-johns-pizza-order-first-uk-cardless-payment-by-ai-agent/" target="_blank">Papa John’s pizza order first UK cardless payment by AI agent</a> <small>tech.eu</small></li>
+<li><a href="https://www.pymnts.com/news/artificial-intelligence/2026/bny-and-microsoft-let-ai-agents-haggle-over-treasurys/" target="_blank">BNY and Microsoft Let AI Agents Haggle Over Treasurys</a> <small>pymnts.com</small></li>
+<li><a href="https://www.forbes.com/sites/murtuza-merchant/2026/11/24/ai-agents-now-earn-money-for-you-set-these-limits-first/" target="_blank">Set These Limits As Visa Brings AI Agents Closer To Managing Your Money</a> <small>forbes.com</small></li>
+<li><a href="https://www.pymnts.com/news/artificial-intelligence/2026/startups-raise-515-million-to-build-ai-agents-their-own-internet/" target="_blank">Startups Raise $515 Million to Build AI Agents Their Own Internet</a> <small>pymnts.com</small></li>
+<li><a href="https://www.forbes.com/sites/richardkestenbaum/2026/11/23/how-ai-could-change-what-consumer-companies-are-worth/" target="_blank">How AI Could Increase What Consumer Companies Are Worth</a> <small>forbes.com</small></li>
+<li><a href="https://www.pymnts.com/news/artificial-intelligence/2026/89-percent-of-firms-without-ai-fraud-tools-fear-false-positives/" target="_blank">89% of Firms Without AI Fraud Tools Fear False Positives</a> <small>pymnts.com</small></li>
+<li><a href="https://www.pymnts.com/news/artificial-intelligence/2026/etsy-rewrites-ai-training-terms-after-sellers-close-shops/" target="_blank">Etsy Rewrites AI Training Terms After Sellers Close Shops</a> <small>pymnts.com</small></li>
+<li><a href="https://www.pymnts.com/news/artificial-intelligence/2026/fca-warns-companies-against-unregulated-agentic-activity/" target="_blank">FCA Warns Companies Against Unregulated Agentic Activity</a> <small>pymnts.com</small></li>
+</ul>
+</details>
+<ul>
+<li>Papa John’s completed the first UK cardless payment by an AI agent, with a pizza order placed and paid for without a card <a href="https://www.theguardian.com/business/2026/nov/27/ai-agent-cardless-transaction-pizza-papa-john-uk-fca-truelayer" target="_blank">[1]</a> <a href="https://tech.eu/2026/11/27/papa-johns-pizza-order-first-uk-cardless-payment-by-ai-agent/" target="_blank">[2]</a></li>
+<li>BNY and Microsoft let AI agents negotiate Treasury trades <a href="https://www.pymnts.com/news/artificial-intelligence/2026/bny-and-microsoft-let-ai-agents-haggle-over-treasurys/" target="_blank">[3]</a>, and Visa moved AI agents closer to managing consumers’ money, prompting advice to set spending limits <a href="https://www.forbes.com/sites/murtuza-merchant/2026/11/24/ai-agents-now-earn-money-for-you-set-these-limits-first/" target="_blank">[4]</a></li>
+<li>Startups raised $515 million to build a separate internet for AI agents <a href="https://www.pymnts.com/news/artificial-intelligence/2026/startups-raise-515-million-to-build-ai-agents-their-own-internet/" target="_blank">[5]</a>, while 89% of firms without AI fraud tools fear false positives <a href="https://www.pymnts.com/news/artificial-intelligence/2026/89-percent-of-firms-without-ai-fraud-tools-fear-false-positives/" target="_blank">[6]</a></li>
+</ul>
+<p><strong>Why it matters:</strong> AI agents now handle real purchases and financial trades, so payment networks, fraud defenses, and user-set spending limits will determine whether consumers and firms can trust them with money.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://www.theguardian.com/business/2026/nov/27/ai-agent-cardless-transaction-pizza-papa-john-uk-fca-truelayer" target="_blank">Pizza history: AI agent’s cardless purchase is a first for UK</a> <small>theguardian.com</small></li>
+<li>[2] <a href="https://tech.eu/2026/11/27/papa-johns-pizza-order-first-uk-cardless-payment-by-ai-agent/" target="_blank">Papa John’s pizza order first UK cardless payment by AI agent</a> <small>tech.eu</small></li>
+<li>[3] <a href="https://www.pymnts.com/news/artificial-intelligence/2026/bny-and-microsoft-let-ai-agents-haggle-over-treasurys/" target="_blank">BNY and Microsoft Let AI Agents Haggle Over Treasurys</a> <small>pymnts.com</small></li>
+<li>[4] <a href="https://www.forbes.com/sites/murtuza-merchant/2026/11/24/ai-agents-now-earn-money-for-you-set-these-limits-first/" target="_blank">Set These Limits As Visa Brings AI Agents Closer To Managing Your Money</a> <small>forbes.com</small></li>
+<li>[5] <a href="https://www.pymnts.com/news/artificial-intelligence/2026/startups-raise-515-million-to-build-ai-agents-their-own-internet/" target="_blank">Startups Raise $515 Million to Build AI Agents Their Own Internet</a> <small>pymnts.com</small></li>
+<li>[6] <a href="https://www.pymnts.com/news/artificial-intelligence/2026/89-percent-of-firms-without-ai-fraud-tools-fear-false-positives/" target="_blank">89% of Firms Without AI Fraud Tools Fear False Positives</a> <small>pymnts.com</small></li>
+</ul>
+<h3 id="spacex-orbital-ai-datacenter-plans"><a class="__permalink-h" href="#spacex-orbital-ai-datacenter-plans" aria-label="spacex orbital ai datacenter plans permalink">»</a>SpaceX Orbital AI Datacenter Plans</h3>
+<details>
+<summary><em>11 articles</em></summary>
+<ul>
+<li><a href="https://techcrunch.com/2026/11/25/fcc-approves-spacex-plan-to-put-ai-data-centers-in-space/" target="_blank">FCC approves SpaceX plan to put AI data centers in space</a> <small>techcrunch.com</small></li>
+<li><a href="https://www.cnbc.com/2026/11/27/spacex-shares-musk-donations.html" target="_blank">SpaceX shares jump over 4% amid tech rally and after Musk says he will expand on Trump Account share donations</a> <small>cnbc.com</small></li>
+<li><a href="https://www.theguardian.com/world/2026/nov/27/belgian-authorities-order-google-to-halt-datacentre-construction-over-lack-of-permits" target="_blank">Google told to halt Belgium datacentre construction over lack of planning permit</a> <small>theguardian.com</small></li>
+<li><a href="https://www.bbc.co.uk/news/articles/cwp836l8n1jgo?at_medium=RSS&#x26;at_campaign=rss" target="_blank">Musk's plan to send a million SpaceX data satellites into space approved</a> <small>bbc.co.uk</small></li>
+<li><a href="https://www.scmp.com/news/world/europe/article/3376094/belgium-orders-google-stop-work-data-centre-lacking-proper-permits" target="_blank">Belgium orders Google to stop work on data centre lacking proper permits</a> <small>scmp.com</small></li>
+<li><a href="https://decrypt.co/384043/elon-musk-says-multiplanetary-spacex-could-be-worth-118-quintillion-yes-quintillion" target="_blank">Elon Musk Says ‘Multiplanetary’ SpaceX Could Be Worth $118 Quintillion. Yes, Quintillion</a> <small>decrypt.co</small></li>
+<li><a href="https://www.cnbc.com/2026/11/26/starlink-satellites-aerospacelab-factory-belgium.html" target="_blank">Taking on Starlink: Europe’s largest satellite factory opens in push to rival Musk</a> <small>cnbc.com</small></li>
+<li><a href="https://www.theguardian.com/environment/2026/nov/27/natural-england-objected-datacentre-ministers-abolish-bristol" target="_blank">Natural England objected to a datacentre. Weeks later ministers threatened to abolish the agency</a> <small>theguardian.com</small></li>
+<li><a href="https://decrypt.co/383991/elon-musk-spacex-fcc-approval-ai-data-centers-space" target="_blank">Elon Musk’s SpaceX Gets FCC Approval to Launch AI Data Centers in Space</a> <small>decrypt.co</small></li>
+<li><a href="https://www.theguardian.com/news/video/2026/nov/26/can-elon-musk-really-put-ai-datacentres-in-space-the-latest" target="_blank">Can Elon Musk really put AI datacentres in space? - The Latest</a> <small>theguardian.com</small></li>
+<li><a href="https://www.theguardian.com/technology/2026/nov/26/elon-musk-pledges-to-give-two-spacex-shares-to-every-child-in-the-us" target="_blank">Elon Musk pledges to give two SpaceX shares to every child in the US</a> <small>theguardian.com</small></li>
+</ul>
+</details>
+<ul>
+<li>The FCC approved SpaceX’s plan to put AI data centers in space, including a constellation of up to one million data satellites proposed by Elon Musk <a href="https://techcrunch.com/2026/11/25/fcc-approves-spacex-plan-to-put-ai-data-centers-in-space/" target="_blank">[1]</a> <a href="https://www.bbc.co.uk/news/articles/cwp836l8n1jgo?at_medium=RSS&#x26;at_campaign=rss" target="_blank">[2]</a> <a href="https://decrypt.co/383991/elon-musk-spacex-fcc-approval-ai-data-centers-space" target="_blank">[3]</a></li>
+<li>Musk has pitched the orbital buildout as part of a “multiplanetary” SpaceX that he says could be worth $118 quintillion, and SpaceX shares rose over 4% in a tech rally <a href="https://www.cnbc.com/2026/11/27/spacex-shares-musk-donations.html" target="_blank">[4]</a> <a href="https://decrypt.co/384043/elon-musk-says-multiplanetary-spacex-could-be-worth-118-quintillion-yes-quintillion" target="_blank">[5]</a></li>
+<li>Analysts question whether the plan is feasible <a href="https://www.theguardian.com/news/video/2026/nov/26/can-elon-musk-really-put-ai-datacentres-in-space-the-latest" target="_blank">[6]</a>, while Europe opened its largest satellite factory to rival Starlink <a href="https://www.cnbc.com/2026/11/26/starlink-satellites-aerospacelab-factory-belgium.html" target="_blank">[7]</a> and Belgium ordered Google to halt work on a data center that lacked permits <a href="https://www.theguardian.com/world/2026/nov/27/belgian-authorities-order-google-to-halt-datacentre-construction-over-lack-of-permits" target="_blank">[8]</a> <a href="https://www.scmp.com/news/world/europe/article/3376094/belgium-orders-google-stop-work-data-centre-lacking-proper-permits" target="_blank">[9]</a></li>
+</ul>
+<p><strong>Why it matters:</strong> Regulatory approval clears the way for SpaceX to pursue orbital compute, but permitting fights over ground-based data centers in Belgium and the UK show why companies are looking for alternatives, and the technical and economic case for orbit remains unproven.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://techcrunch.com/2026/11/25/fcc-approves-spacex-plan-to-put-ai-data-centers-in-space/" target="_blank">FCC approves SpaceX plan to put AI data centers in space</a> <small>techcrunch.com</small></li>
+<li>[2] <a href="https://www.bbc.co.uk/news/articles/cwp836l8n1jgo?at_medium=RSS&#x26;at_campaign=rss" target="_blank">Musk’s plan to send a million SpaceX data satellites into space approved</a> <small>bbc.co.uk</small></li>
+<li>[3] <a href="https://decrypt.co/383991/elon-musk-spacex-fcc-approval-ai-data-centers-space" target="_blank">Elon Musk’s SpaceX Gets FCC Approval to Launch AI Data Centers in Space</a> <small>decrypt.co</small></li>
+<li>[4] <a href="https://www.cnbc.com/2026/11/27/spacex-shares-musk-donations.html" target="_blank">SpaceX shares jump over 4% amid tech rally and after Musk says he will expand on Trump Account share donations</a> <small>cnbc.com</small></li>
+<li>[5] <a href="https://decrypt.co/384043/elon-musk-says-multiplanetary-spacex-could-be-worth-118-quintillion-yes-quintillion" target="_blank">Elon Musk Says ‘Multiplanetary’ SpaceX Could Be Worth $118 Quintillion. Yes, Quintillion</a> <small>decrypt.co</small></li>
+<li>[6] <a href="https://www.theguardian.com/news/video/2026/nov/26/can-elon-musk-really-put-ai-datacentres-in-space-the-latest" target="_blank">Can Elon Musk really put AI datacentres in space? - The Latest</a> <small>theguardian.com</small></li>
+<li>[7] <a href="https://www.cnbc.com/2026/11/26/starlink-satellites-aerospacelab-factory-belgium.html" target="_blank">Taking on Starlink: Europe’s largest satellite factory opens in push to rival Musk</a> <small>cnbc.com</small></li>
+<li>[8] <a href="https://www.theguardian.com/world/2026/nov/27/belgian-authorities-order-google-to-halt-datacentre-construction-over-lack-of-permits" target="_blank">Google told to halt Belgium datacentre construction over lack of planning permit</a> <small>theguardian.com</small></li>
+<li>[9] <a href="https://www.scmp.com/news/world/europe/article/3376094/belgium-orders-google-stop-work-data-centre-lacking-proper-permits" target="_blank">Belgium orders Google to stop work on data centre lacking proper permits</a> <small>scmp.com</small></li>
+</ul>
+<h3 id="chatgpt-usage-limits-after-merger"><a class="__permalink-h" href="#chatgpt-usage-limits-after-merger" aria-label="chatgpt usage limits after merger permalink">»</a>ChatGPT Usage Limits After Merger</h3>
+<details>
+<summary><em>8 articles</em></summary>
+<ul>
+<li><a href="https://stratechery.com/2026/sharp-tech-on-video-jensens-not-coming-back-ai-shopping-the-iphone-duo/" target="_blank">Sharp Tech on Video: Jensen’s Not Coming Back, AI Shopping, The iPhone Duo</a> <small>stratechery.com</small></li>
+<li><a href="https://techcrunch.com/2026/11/25/openai-says-heavy-chatgpt-users-may-hit-limits-sooner-as-it-merges-chat-and-work/" target="_blank">OpenAI says heavy ChatGPT users may hit limits sooner as it merges Chat and Work</a> <small>techcrunch.com</small></li>
+<li><a href="https://the-decoder.com/gpt-6-2-astra-users-now-hit-limits-40-faster-after-openai-patched-a-pricing-error/" target="_blank">GPT-6.2 Astra users now hit limits 40% faster after OpenAI patched a pricing error</a> <small>the-decoder.com</small></li>
+<li><a href="https://www.pymnts.com/news/artificial-intelligence/2026/openai-says-most-users-wont-hit-limits-faster-after-merger-of-chat-and-work/" target="_blank">OpenAI Says Most Users Won’t Hit Limits Faster After Merger of Chat and Work</a> <small>pymnts.com</small></li>
+<li><a href="https://www.bleepingcomputer.com/news/artificial-intelligence/openai-warns-gpt-62-astra-will-hit-usage-limits-40-percent-faster-because-it-fixed-a-bug/" target="_blank">OpenAI warns GPT-6.2 Astra will hit usage limits 40% faster because it fixed a bug</a> <small>bleepingcomputer.com</small></li>
+<li><a href="https://decrypt.co/384053/openai-fixes-chatgpt-billing-error-promises-to-make-it-40-worse" target="_blank">OpenAI Fixes ChatGPT Billing Error, Promises to Make it 40% Worse</a> <small>decrypt.co</small></li>
+<li><a href="https://techcrunch.com/2026/11/25/openai-says-heavy-chatgpt-users-may-hit-limits-sooner-as-it-merges-chat-and-work/" target="_blank">OpenAI says heavy ChatGPT users may hit limits sooner as it merges Chat and Work</a> <small>techcrunch.com</small></li>
+<li><a href="https://decrypt.co/383963/openai-changes-chatgpt-drastically-cut-usage-limits" target="_blank">OpenAI’s Changes to ChatGPT Could Drastically Cut Usage Limits for Paying Subscribers</a> <small>decrypt.co</small></li>
+</ul>
+</details>
+<ul>
+<li>OpenAI said heavy ChatGPT users may hit usage limits sooner as it merges Chat and Work <a href="https://techcrunch.com/2026/11/25/openai-says-heavy-chatgpt-users-may-hit-limits-sooner-as-it-merges-chat-and-work/" target="_blank">[1]</a>, and one report says the changes could drastically cut limits for paying subscribers <a href="https://decrypt.co/383963/openai-changes-chatgpt-drastically-cut-usage-limits" target="_blank">[2]</a></li>
+<li>OpenAI said most users won’t hit limits faster after the merger <a href="https://www.pymnts.com/news/artificial-intelligence/2026/openai-says-most-users-wont-hit-limits-faster-after-merger-of-chat-and-work/" target="_blank">[3]</a>, which contrasts with the warnings aimed at heavy users <a href="https://techcrunch.com/2026/11/25/openai-says-heavy-chatgpt-users-may-hit-limits-sooner-as-it-merges-chat-and-work/" target="_blank">[1]</a></li>
+<li>Several outlets reported that GPT-6.2 Astra users will hit limits 40% faster after OpenAI patched a pricing or billing error <a href="https://the-decoder.com/gpt-6-2-astra-users-now-hit-limits-40-faster-after-openai-patched-a-pricing-error/" target="_blank">[4]</a> <a href="https://www.bleepingcomputer.com/news/artificial-intelligence/openai-warns-gpt-62-astra-will-hit-usage-limits-40-percent-faster-because-it-fixed-a-bug/" target="_blank">[5]</a> <a href="https://decrypt.co/384053/openai-fixes-chatgpt-billing-error-promises-to-make-it-40-worse" target="_blank">[6]</a></li>
+</ul>
+<p><strong>Why it matters:</strong> Paying subscribers who rely on ChatGPT heavily may get less usage for the same price, and OpenAI’s reassurance that most users are unaffected leaves its power users to absorb the cost of the billing fix.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://techcrunch.com/2026/11/25/openai-says-heavy-chatgpt-users-may-hit-limits-sooner-as-it-merges-chat-and-work/" target="_blank">OpenAI says heavy ChatGPT users may hit limits sooner as it merges Chat and Work</a> <small>techcrunch.com</small></li>
+<li>[2] <a href="https://decrypt.co/383963/openai-changes-chatgpt-drastically-cut-usage-limits" target="_blank">OpenAI’s Changes to ChatGPT Could Drastically Cut Usage Limits for Paying Subscribers</a> <small>decrypt.co</small></li>
+<li>[3] <a href="https://www.pymnts.com/news/artificial-intelligence/2026/openai-says-most-users-wont-hit-limits-faster-after-merger-of-chat-and-work/" target="_blank">OpenAI Says Most Users Won’t Hit Limits Faster After Merger of Chat and Work</a> <small>pymnts.com</small></li>
+<li>[4] <a href="https://the-decoder.com/gpt-6-2-astra-users-now-hit-limits-40-faster-after-openai-patched-a-pricing-error/" target="_blank">GPT-6.2 Astra users now hit limits 40% faster after OpenAI patched a pricing error</a> <small>the-decoder.com</small></li>
+<li>[5] <a href="https://www.bleepingcomputer.com/news/artificial-intelligence/openai-warns-gpt-62-astra-will-hit-usage-limits-40-percent-faster-because-it-fixed-a-bug/" target="_blank">OpenAI warns GPT-6.2 Astra will hit usage limits 40% faster because it fixed a bug</a> <small>bleepingcomputer.com</small></li>
+<li>[6] <a href="https://decrypt.co/384053/openai-fixes-chatgpt-billing-error-promises-to-make-it-40-worse" target="_blank">OpenAI Fixes ChatGPT Billing Error, Promises to Make it 40% Worse</a> <small>decrypt.co</small></li>
+</ul>
+<h3 id="claude-ship-and-artifact-apps"><a class="__permalink-h" href="#claude-ship-and-artifact-apps" aria-label="claude ship and artifact apps permalink">»</a>Claude Ship and Artifact Apps</h3>
+<details>
+<summary><em>8 articles</em></summary>
+<ul>
+<li><a href="https://www.marktechpost.com/2026/11/23/anthropic-claude-ship-pull-request-agents/" target="_blank">Anthropic Launches Claude Ship for GitHub Pull Request Review and Fixes</a> <small>marktechpost.com</small></li>
+<li><a href="https://siliconangle.com/2026/11/24/anthropic-is-trying-to-kill-traditional-desktop-apps-with-claude-generated-desktop-apps/" target="_blank">Anthropic is trying to kill traditional desktop apps with Claude-generated desktop apps</a> <small>siliconangle.com</small></li>
+<li><a href="https://www.zdnet.com/innovation/claude-artifacts-desktop-apps-mac-windows/" target="_blank">You can turn Claude artifacts into Windows and Mac apps now – here’s how</a> <small>zdnet.com</small></li>
+<li><a href="https://www.helpnetsecurity.com/2026/11/27/product-showcase-norton-claude-scam-detection/" target="_blank">Product showcase: Norton helps Claude users uncover the telltale signs of fraud</a> <small>helpnetsecurity.com</small></li>
+<li><a href="https://siliconangle.com/2026/11/23/anthropics-claude-ship-automates-the-final-stage-of-the-software-development-pipeline/" target="_blank">Anthropic’s Claude Ship automates the final stage of the software development pipeline</a> <small>siliconangle.com</small></li>
+<li><a href="https://www.zdnet.com/innovation/claude-ship-code-how-to-try/" target="_blank">Claude can ship code for you now – how to try it (if you dare)</a> <small>zdnet.com</small></li>
+<li><a href="https://www.zdnet.com/innovation/claude-artifacts-desktop-apps-mac-windows/" target="_blank">You can turn Claude artifacts into Windows and Mac apps now – here’s how</a> <small>zdnet.com</small></li>
+<li><a href="https://www.zdnet.com/innovation/claude-ship-code-how-to-try/" target="_blank">Claude can ship code for you now – how to try it (if you dare)</a> <small>zdnet.com</small></li>
+</ul>
+</details>
+<ul>
+<li>Anthropic launched Claude Ship, a tool that automates the final stage of the software development pipeline by reviewing GitHub pull requests and applying fixes <a href="https://www.marktechpost.com/2026/11/23/anthropic-claude-ship-pull-request-agents/" target="_blank">[1]</a> <a href="https://siliconangle.com/2026/11/23/anthropics-claude-ship-automates-the-final-stage-of-the-software-development-pipeline/" target="_blank">[2]</a></li>
+<li>Claude can now ship code on users’ behalf, though coverage urges caution about handing over deployment control <a href="https://www.zdnet.com/innovation/claude-ship-code-how-to-try/" target="_blank">[3]</a></li>
+<li>Anthropic also lets users turn Claude artifacts into Windows and Mac desktop apps, a move aimed at displacing traditional desktop software <a href="https://siliconangle.com/2026/11/24/anthropic-is-trying-to-kill-traditional-desktop-apps-with-claude-generated-desktop-apps/" target="_blank">[4]</a> <a href="https://www.zdnet.com/innovation/claude-artifacts-desktop-apps-mac-windows/" target="_blank">[5]</a></li>
+</ul>
+<p><strong>Why it matters:</strong> Claude now covers both code deployment and app distribution, so developers can hand off more of the build-to-release workflow to AI, but granting an AI write access to production code raises the stakes for oversight.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://www.marktechpost.com/2026/11/23/anthropic-claude-ship-pull-request-agents/" target="_blank">Anthropic Launches Claude Ship for GitHub Pull Request Review and Fixes</a> <small>marktechpost.com</small></li>
+<li>[2] <a href="https://siliconangle.com/2026/11/23/anthropics-claude-ship-automates-the-final-stage-of-the-software-development-pipeline/" target="_blank">Anthropic’s Claude Ship automates the final stage of the software development pipeline</a> <small>siliconangle.com</small></li>
+<li>[3] <a href="https://www.zdnet.com/innovation/claude-ship-code-how-to-try/" target="_blank">Claude can ship code for you now – how to try it (if you dare)</a> <small>zdnet.com</small></li>
+<li>[4] <a href="https://siliconangle.com/2026/11/24/anthropic-is-trying-to-kill-traditional-desktop-apps-with-claude-generated-desktop-apps/" target="_blank">Anthropic is trying to kill traditional desktop apps with Claude-generated desktop apps</a> <small>siliconangle.com</small></li>
+<li>[5] <a href="https://www.zdnet.com/innovation/claude-artifacts-desktop-apps-mac-windows/" target="_blank">You can turn Claude artifacts into Windows and Mac apps now – here’s how</a> <small>zdnet.com</small></li>
+</ul>
+<h3 id="ai-startup-funding-rounds"><a class="__permalink-h" href="#ai-startup-funding-rounds" aria-label="ai startup funding rounds permalink">»</a>AI Startup Funding Rounds</h3>
+<details>
+<summary><em>8 articles</em></summary>
+<ul>
+<li><a href="https://www.newcomer.co/p/scoop-ai-search-platform-exa-in-talks" target="_blank">SCOOP: AI Search Platform Exa in Talks to Raise Fresh Funds at Around a $7 Billion Valuation</a> <small>newcomer.co</small></li>
+<li><a href="https://siliconangle.com/2026/11/25/voice-ai-startup-elevenlabs-reportedly-seeking-new-funding-at-33b-valuation/" target="_blank">Voice AI startup ElevenLabs reportedly seeking new funding at $33B valuation</a> <small>siliconangle.com</small></li>
+<li><a href="https://www.forbes.com/sites/sharonedelson/2026/11/23/solink-raises-100m-to-bring-its-ai-vision-intelligence-to-retailers-and-more/" target="_blank">Solink Raises $100 Million To Bring Its AI Vision Intelligence To Retailers And More</a> <small>forbes.com</small></li>
+<li><a href="https://siliconangle.com/2026/11/24/epochal-launches-with-100m-to-help-developers-train-predictive-ai-models/" target="_blank">Epochal launches with $100M to help developers train predictive AI models</a> <small>siliconangle.com</small></li>
+<li><a href="https://siliconangle.com/2026/11/24/verra-raises-5m-to-help-consulting-firms-forget-their-institutional-amnesia/" target="_blank">Verra raises $5M to help consulting firms forget their institutional amnesia</a> <small>siliconangle.com</small></li>
+<li><a href="https://siliconangle.com/2026/11/23/amazon-acquires-key-assets-of-ai-startup-decart-for-reported-7-5b/" target="_blank">Amazon acquires key assets of AI startup Decart for reported $7.5B</a> <small>siliconangle.com</small></li>
+<li><a href="https://siliconangle.com/2026/11/23/ai-agent-provider-sierra-closes-1-75b-investment-amid-rapid-revenue-growth/" target="_blank">AI agent provider Sierra closes $1.75B investment amid rapid revenue growth</a> <small>siliconangle.com</small></li>
+<li><a href="https://siliconangle.com/2026/11/23/aevius-labs-launches-with-22m-to-bring-understandable-intelligence-to-medical-data/" target="_blank">Aevius Labs launches with $22M to bring understandable intelligence to medical data</a> <small>siliconangle.com</small></li>
+</ul>
+</details>
+<ul>
+<li>Amazon acquired key assets of AI startup Decart for a reported $7.5B <a href="https://siliconangle.com/2026/11/23/amazon-acquires-key-assets-of-ai-startup-decart-for-reported-7-5b/" target="_blank">[1]</a>, while Sierra closed a $1.75B investment amid rapid revenue growth <a href="https://siliconangle.com/2026/11/23/ai-agent-provider-sierra-closes-1-75b-investment-amid-rapid-revenue-growth/" target="_blank">[2]</a></li>
+<li>ElevenLabs is reportedly seeking new funding at a $33B valuation <a href="https://siliconangle.com/2026/11/25/voice-ai-startup-elevenlabs-reportedly-seeking-new-funding-at-33b-valuation/" target="_blank">[3]</a>, and Exa is in talks to raise at around a $7B valuation <a href="https://www.newcomer.co/p/scoop-ai-search-platform-exa-in-talks" target="_blank">[4]</a></li>
+<li>Smaller rounds spread across verticals: Solink raised $100M for AI vision intelligence in retail <a href="https://www.forbes.com/sites/sharonedelson/2026/11/23/solink-raises-100m-to-bring-its-ai-vision-intelligence-to-retailers-and-more/" target="_blank">[5]</a>, Epochal launched with $100M for predictive AI model training <a href="https://siliconangle.com/2026/11/24/epochal-launches-with-100m-to-help-developers-train-predictive-ai-models/" target="_blank">[6]</a>, Aevius Labs launched with $22M for medical data <a href="https://siliconangle.com/2026/11/23/aevius-labs-launches-with-22m-to-bring-understandable-intelligence-to-medical-data/" target="_blank">[7]</a>, and Verra raised $5M for consulting firms <a href="https://siliconangle.com/2026/11/24/verra-raises-5m-to-help-consulting-firms-forget-their-institutional-amnesia/" target="_blank">[8]</a></li>
+</ul>
+<p><strong>Why it matters:</strong> Capital is concentrating in a few billion-dollar AI leaders while specialized startups still raise sizable rounds, so founders in niche verticals can still get funded even as valuations at the top climb.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://siliconangle.com/2026/11/23/amazon-acquires-key-assets-of-ai-startup-decart-for-reported-7-5b/" target="_blank">Amazon acquires key assets of AI startup Decart for reported $7.5B</a> <small>siliconangle.com</small></li>
+<li>[2] <a href="https://siliconangle.com/2026/11/23/ai-agent-provider-sierra-closes-1-75b-investment-amid-rapid-revenue-growth/" target="_blank">AI agent provider Sierra closes $1.75B investment amid rapid revenue growth</a> <small>siliconangle.com</small></li>
+<li>[3] <a href="https://siliconangle.com/2026/11/25/voice-ai-startup-elevenlabs-reportedly-seeking-new-funding-at-33b-valuation/" target="_blank">Voice AI startup ElevenLabs reportedly seeking new funding at $33B valuation</a> <small>siliconangle.com</small></li>
+<li>[4] <a href="https://www.newcomer.co/p/scoop-ai-search-platform-exa-in-talks" target="_blank">SCOOP: AI Search Platform Exa in Talks to Raise Fresh Funds at Around a $7 Billion Valuation</a> <small>newcomer.co</small></li>
+<li>[5] <a href="https://www.forbes.com/sites/sharonedelson/2026/11/23/solink-raises-100m-to-bring-its-ai-vision-intelligence-to-retailers-and-more/" target="_blank">Solink Raises $100 Million To Bring Its AI Vision Intelligence To Retailers And More</a> <small>forbes.com</small></li>
+<li>[6] <a href="https://siliconangle.com/2026/11/24/epochal-launches-with-100m-to-help-developers-train-predictive-ai-models/" target="_blank">Epochal launches with $100M to help developers train predictive AI models</a> <small>siliconangle.com</small></li>
+<li>[7] <a href="https://siliconangle.com/2026/11/23/aevius-labs-launches-with-22m-to-bring-understandable-intelligence-to-medical-data/" target="_blank">Aevius Labs launches with $22M to bring understandable intelligence to medical data</a> <small>siliconangle.com</small></li>
+<li>[8] <a href="https://siliconangle.com/2026/11/24/verra-raises-5m-to-help-consulting-firms-forget-their-institutional-amnesia/" target="_blank">Verra raises $5M to help consulting firms forget their institutional amnesia</a> <small>siliconangle.com</small></li>
+</ul>
+<h3 id="ai-threats-to-encryption"><a class="__permalink-h" href="#ai-threats-to-encryption" aria-label="ai threats to encryption permalink">»</a>AI Threats to Encryption</h3>
+<details>
+<summary><em>6 articles</em></summary>
+<ul>
+<li><a href="https://vectorinstitute.ai/neurips-2026-machine-learning-research-papers/" target="_blank">Vector researchers advance AI with 124 accepted papers at NeurIPS 2026</a> <small>vectorinstitute.ai</small></li>
+<li><a href="https://www.ft.com/content/1a29e62d-b18d-4bad-937d-34f3eae0587a?syn-25a6b1a6=1" target="_blank">Can AI crack encryption?</a> <small>ft.com</small></li>
+<li><a href="https://www.theguardian.com/technology/2026/nov/28/ai-artificial-intelligence-encryption-global-chaos" target="_blank">AI labs sitting on ‘bombshell’ revelations that could cause global chaos, experts warn</a> <small>theguardian.com</small></li>
+<li><a href="https://decrypt.co/384218/could-ai-break-bitcoin-not-yet-research-firm-k33-says" target="_blank">Could AI Break Bitcoin? Not Yet, Research Firm K33 Says</a> <small>decrypt.co</small></li>
+<li><a href="https://www.ft.com/content/450920b9-82b8-4a66-960b-5740aa7f94ae?syn-25a6b1a6=1" target="_blank">Andrew Bailey says unreleased AI models have raised encryption concerns</a> <small>ft.com</small></li>
+<li><a href="https://www.theguardian.com/technology/2026/nov/28/could-ai-break-encryption-what-mathematical-breakthroughs-mean-for-cybersecurity" target="_blank">Could AI break encryption? What mathematical breakthroughs mean for cybersecurity</a> <small>theguardian.com</small></li>
+</ul>
+</details>
+<ul>
+<li>Andrew Bailey said unreleased AI models have raised concerns about encryption security <a href="https://www.ft.com/content/450920b9-82b8-4a66-960b-5740aa7f94ae?syn-25a6b1a6=1" target="_blank">[1]</a>, and experts warn that AI labs are sitting on “bombshell” revelations that could cause global chaos <a href="https://www.theguardian.com/technology/2026/nov/28/ai-artificial-intelligence-encryption-global-chaos" target="_blank">[2]</a>.</li>
+<li>Research firm K33 says AI cannot break Bitcoin yet <a href="https://decrypt.co/384218/could-ai-break-bitcoin-not-yet-research-firm-k33-says" target="_blank">[3]</a>.</li>
+<li>Coverage asks whether AI can crack encryption, and examines how mathematical breakthroughs could affect cybersecurity <a href="https://www.ft.com/content/1a29e62d-b18d-4bad-937d-34f3eae0587a?syn-25a6b1a6=1" target="_blank">[4]</a> <a href="https://www.theguardian.com/technology/2026/nov/28/could-ai-break-encryption-what-mathematical-breakthroughs-mean-for-cybersecurity" target="_blank">[5]</a>.</li>
+</ul>
+<p><strong>Why it matters:</strong> Officials are voicing concern about models the public has not seen, while independent analysis finds no current threat to Bitcoin. Banks, crypto holders, and security teams therefore cannot yet judge how urgently to upgrade their cryptography.</p>
+<p><strong>Cited sources:</strong></p>
+<ul>
+<li>[1] <a href="https://www.ft.com/content/450920b9-82b8-4a66-960b-5740aa7f94ae?syn-25a6b1a6=1" target="_blank">Andrew Bailey says unreleased AI models have raised encryption concerns</a> <small>ft.com</small></li>
+<li>[2] <a href="https://www.theguardian.com/technology/2026/nov/28/ai-artificial-intelligence-encryption-global-chaos" target="_blank">AI labs sitting on ‘bombshell’ revelations that could cause global chaos, experts warn</a> <small>theguardian.com</small></li>
+<li>[3] <a href="https://decrypt.co/384218/could-ai-break-bitcoin-not-yet-research-firm-k33-says" target="_blank">Could AI Break Bitcoin? Not Yet, Research Firm K33 Says</a> <small>decrypt.co</small></li>
+<li>[4] <a href="https://www.ft.com/content/1a29e62d-b18d-4bad-937d-34f3eae0587a?syn-25a6b1a6=1" target="_blank">Can AI crack encryption?</a> <small>ft.com</small></li>
+<li>[5] <a href="https://www.theguardian.com/technology/2026/nov/28/could-ai-break-encryption-what-mathematical-breakthroughs-mean-for-cybersecurity" target="_blank">Could AI break encryption? What mathematical breakthroughs mean for cybersecurity</a> <small>theguardian.com</small></li>
+</ul>  </article>  <div class="entry-footer">last modified 28, Nov, 2026</div><section class="newsletter astro-bfbmamsi" aria-labelledby="newsletter-label"> <p id="newsletter-label" class="newsletter__label astro-bfbmamsi">Liked this issue? Get the next one in your inbox.</p> <form class="newsletter__form embeddable-buttondown-form astro-bfbmamsi" action="https://buttondown.com/api/emails/embed-subscribe/danielcaldas" method="post" target="_blank"> <input type="hidden" name="embed" value="1" class="astro-bfbmamsi"> <label class="newsletter__sr astro-bfbmamsi" for="bd-email">Email address</label> <input class="newsletter__input astro-bfbmamsi" type="email" name="email" id="bd-email" inputmode="email" autocomplete="email" placeholder="you@example.com" required> <button class="newsletter__button astro-bfbmamsi" type="submit">subscribe</button> </form> <p class="newsletter__note astro-bfbmamsi">
+Double opt-in. Unsubscribe any time. Also available via <a href="/the-weekly-inference/rss.xml" class="astro-bfbmamsi">RSS</a>.
+</p> </section>  <nav class="pager" aria-label="Issues"> <a href="/the-weekly-inference/038-2026-11-22/" title="The Weekly Inference #038">← previous issue</a> <span></span> </nav>  </main> <footer class="site-foot"> <div class="site-foot__links"> <a href="/"> ~/ </a><a href="mailto:caldasjdaniel@gmail.com"> contact </a><a href="https://x.com/_danielcaldas" target="_blank" rel="noopener noreferrer"> x </a><a href="https://www.linkedin.com/in/daniel-caldas/" target="_blank" rel="noopener noreferrer"> linkedin </a><a href="https://github.com/danielcaldas/danielcaldas.github.io" target="_blank" rel="noopener noreferrer"> github </a><a href="/rss.xml"> rss </a><a href="/the-weekly-inference/rss.xml"> weekly inference rss </a> </div> <div class="site-foot__meta">2018—2026</div> </footer> </body></html>
